@@ -1,0 +1,21 @@
+wrapper object various attribut properti servic instanc 
+ 
+servic servic status descript attribut properti order 
+attribut server process 
+ 
+configur properti server process 
+ 
+servic 
+ 
+descript servic 
+ 
+map configur properti 
+ 
+current status servic 
+ 
+canon servic class 
+ 
+class canon servic class 
+ 
+add key valu attribut pair attribut tabl 
+key valu 

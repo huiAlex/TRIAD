@@ -1,0 +1,57 @@
+af info panel 
+serial version uid 
+panel 
+select button 
+visibl button 
+content 
+num uav 
+select 
+visibl 
+focus 
+map 
+drone 
+drone 
+servic 
+provid 
+mission 
+logger 
+
+
+check 
+uav status 
+hover place 
+
+select 
+visibl 
+
+
+af info panel 
+get map 
+get focus 
+add box 
+add box 
+remov box 
+select 
+get check 
+get check 
+get check 
+set visibl 
+get visibl 
+get visibl 
+set hover 
+get box 
+get num uav 
+refresh drone 
+creat content 
+
+side panel contain af info box uav inform 
+add box panel 
+remov box panel id drone 
+ 
+ 
+ 
+expand collaps box 
+ 
+ 
+get updat inform dronolog uav locat inform status 
+add ani new drone panel remov ani drone deactiv 

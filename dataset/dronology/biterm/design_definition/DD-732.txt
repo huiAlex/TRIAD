@@ -1,0 +1,6 @@
+longitudTarget:1
+commandUav:1
+coordinAltitud:1
+longitudLatitud:1
+includCoordin:1
+commandGoto:1

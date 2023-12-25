@@ -1,0 +1,17 @@
+af main layout 
+serial version uid 
+control 
+map 
+
+af control compon 
+af map compon 
+
+
+
+af main layout 
+continu follow 
+get control 
+get af map 
+
+main layout activ flight ui 
+determin map continu follow mode 

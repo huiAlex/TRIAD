@@ -1,0 +1,1 @@
+transit ground await takeoff clearanc flight plan assign uav ground state transit await takeoff clearanc state 

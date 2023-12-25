@@ -1,0 +1,25 @@
+drn 
+base station 
+target coordin 
+speed 
+altitud 
+ 
+ 
+locat 
+batteri level 
+speed 
+veloc 
+attitud 
+locat 
+status 
+speed 
+ 
+ 
+ 
+batteri level 
+veloc 
+posit 
+veloc 
+attitud 
+mode 
+command 

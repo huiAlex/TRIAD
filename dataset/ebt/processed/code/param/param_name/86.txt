@@ -1,0 +1,8 @@
+xpos 
+ypos 
+col 
+rno 
+pname 
+mname 
+mx 
+

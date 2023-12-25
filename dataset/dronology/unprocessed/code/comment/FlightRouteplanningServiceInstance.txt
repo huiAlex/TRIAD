@@ -1,0 +1,12 @@
+/**
+ * 
+ * The {@link FlightRouteplanningServiceInstance} provides capabilities for retrieving {@link FlightRoute} from the file system.
+ * When a new {@link FlightRoute} is detected in the file system it gets automatically loaded.
+ * Routes are provided via {@link FlightRouteInfo} proxies containing, basic info on the flight route.
+ * 
+ *   
+ * 
+ *  * 
+ *
+ */
+

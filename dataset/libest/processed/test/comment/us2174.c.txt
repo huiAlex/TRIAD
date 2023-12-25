@@ -1,0 +1,80 @@
+us unit test user stori proxi simpl enrol august copyright cisco system right reserv 
+defin us proxi cert ca estca privat estservercertandkey pem 
+defin us proxi key ca estca privat estservercertandkey pem 
+defin us proxi cert ca estca privat estservercertandkey pem 
+defin us proxi key ca estca privat estservercertandkey pem 
+follow csr generat use follow openssl command use cat rsa req file openssl req newkey rsa keyout rsakey pem keyform pem rsa req outform pem 
+follow csr generat use follow openssl command use cat ec req file openssl req newkey ec parm keyout eckey pem keyform pem ec req outform pem 
+follow csr generat use follow openssl command use cat dsa req file openssl req newkey dsa dsaparm keyout dsakey pem keyform pem dsa req outform pem 
+follow valid csr alreadi contain pop challengepassword collect use estserv dumpbin function csr work sinc pop valu stale 
+auth credenti token cb applic layer callback function return token base authent credenti call regist est client use est client set auth cred cb test function requir set global valu order make callback oper way test case want auth cred forc error tell function forc respons code error test token pointer hard code string token string return callback provid token credenti heap base buffer ownership buffer implicit transfer et client librari return 
+auth credenti basic cb same token base abov instead return basic credenti userid password 
+auth credenti digest cb same basic base abov instead verfi auth mode pass digest 
+report callback call 
+see test request forc error respons code callback 
+callback function pass est client init 
+us simpl enrol use test case perform simpl enrol 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+simpl enrol proxi basic server basic make sure token auth mode did break anyth 
+sinc pass valid userid password expect server respond 
+simpl enrol proxi token server token 
+simpl enrol proxi token server basic 
+simpl enrol proxi basic server token 
+simpl enrol proxi token server token 
+main function set run test return cue success success run anoth cunit error code failur 
+creat rsa keypair assign pkey return 
+report callback call 
+see test request forc error respons code callback 
+report callback call 
+see test request forc error respons code callback 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat client context 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+cleanup 
+creat client context 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+retriev cert given us est server 
+creat client context 
+cert switch server token mode 
+set est server address port 
+attempt reenrol token mode convert cert warn pure hackeri pdb convers code come test case 
+new cert onli cert pkcs blob shouldn iter find 
+pdb note moment expect fail sinc server doe understand request token authent onc complet assert begin fail need chang pass respons 
+cleanup 
+first start est server act ca 
+next start est proxi act ra server side oper token auth mode 
+read ca certif 
+start instanc est server automat enrol enabl 
+set server token auth challeng tell server token accept 
+set proxi token auth challeng tell token accept 
+tell client side proxi token credenti use 
+set est client perform simpl enrol enrol succeed 
+callback call 
+set server basic auth challeng 
+set proxi token auth challeng tell token accept 
+tell client side proxi token credenti use 
+set est client perform simpl enrol enrol succeed 
+callback call 
+set server token auth challeng tell server token accept 
+set proxi basic auth challeng tell token accept 
+st proxi set srv valid token good token 
+tell client side proxi token credenti use 
+set est client perform simpl enrol enrol succeed 
+callback call 
+set server token auth challeng tell server token accept 
+set proxi token auth challeng tell token accept 
+tell client side proxi token credenti use 
+set est client perform simpl enrol enrol succeed 
+callback call 
+add suit registri 
+add test suit 
+null cu add test psuit proxi enrol basic saniti test us test || 
+test token set anyth need alloc space heap copi valu 
+far token ptr point string contain token return assign return success 
+use strlen string larg need test est client 

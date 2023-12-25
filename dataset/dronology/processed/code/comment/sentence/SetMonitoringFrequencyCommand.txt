@@ -1,0 +1,2 @@
+Command sent to the GCS for adjusting the monitoring frequency.
+The frequency is sent in ms.      /

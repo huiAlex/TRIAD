@@ -1,0 +1,15 @@
+serialVersionUID
+layout
+flightRouteService
+flightInfoService
+provider
+UAVid
+boxID
+serialVersionUID
+layout
+dropHandler
+serialVersionUID
+dropHandler
+content
+serialVersionUID
+layout

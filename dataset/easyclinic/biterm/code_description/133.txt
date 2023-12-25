@@ -1,0 +1,13 @@
+reservChang:1
+reservDelet:1
+reservManag:1
+managReserv:1
+deletReserv:1
+datumAnagrafica:2
+datumPatient:1
+patientDatum:1
+reservDatum:1
+changReserv:1
+datumReserv:1
+anagraficaDatum:2
+guiPazient:2

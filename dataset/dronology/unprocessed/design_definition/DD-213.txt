@@ -1,0 +1,4 @@
+[SUMMARY]
+Log all GCS related events
+[DESCRIPTION]
+All commands sent to and messages received from a _CGC_ shall be logged to a dedicated GCS log file

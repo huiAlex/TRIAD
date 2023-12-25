@@ -1,0 +1,5 @@
+uav status 
+side panel 
+status content 
+rout info 
+index 

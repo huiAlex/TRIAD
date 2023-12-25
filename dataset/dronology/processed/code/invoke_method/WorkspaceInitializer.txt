@@ -1,0 +1,20 @@
+get path 
+format path 
+prepar root 
+prepar flight path workspac 
+prepar specif workspac 
+prepar area map workspac 
+prepar mission plan workspac 
+import file 
+save byte array file 
+get flight rout locat 
+get drone specif locat 
+get mission plan locat 
+get area map locat 
+get flight rout locat 
+get path 
+import flight path 
+get default root folder 
+get path 
+string 
+get locat 

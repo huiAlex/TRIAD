@@ -1,0 +1,58 @@
+   Performs parsing of HTTP Authentication header from   the client when Basic authentication is used.  /
+   Performs parsing of HTTP Authentication header from   the client when Digest authentication is used.  /
+   Performs parsing of HTTP Authentication header from   the client when Token(bearer) authentication is used.  /
+   This function parses the HTTP Authentication header   from the client.  It will fill in the fields on the   EST_HTTP_AUTH_HDR struct, which are used later for   verifying the user's credentials using either HTTP   Basic or HTTP Digest authentication. The ah parameter   should already be allocated when calling this function.     Return either good, bad, or missing   /
+   This function parses the HTTP Authentication header   from the client.  It will fill in the fields on the   EST_HTTP_AUTH_HDR struct, which are used later for   verifying the user's credentials using either HTTP   Basic or HTTP Digest authentication. The ah parameter   should already be allocated when calling this function.     Return either good, bad, or missing   /
+   This function is called by the Mongoose code when an   incoming HTTP request is processed.   Returns 0 on success, non-zero if the request wasn't   handled.  /
+       Slight deviation from Mongoose behavior here.  We will close the       connection when sending a 202 Accepted response.  We will also       close the connection for any 4xx response, where Mongoose was only       closing for the 401 Unauthorized      /
+ will contain both UID and PWD /
+       Make sure there's a ':' in the string      /
+       did it start with a colon, meaning no userid?      /
+       Get the Auth header from the HTTP client       /
+        If we're doing digest auth, make sure all the values       were parsed      /
+ If we were not able to parse a user ID and we're not       in token auth mode, then make sure we fail the authentication.      /
+ EST only allows GET & POST /
+ content length html header /
+ content type html header /
+       Process the request      /
+       Set the Session ID context to enable OpenSSL session       reuse, which improves performance.  We set the ID to       ESTxxxxxxxx, where the x values are random numbers      /
+       Note that we disable TLS tickets, which is another       way to reuse TLS sessions to avoid all the key exchange       overhead of the TLS handshake.  We've enabled session       reuse above.  But session reuse will not        work when ticket support is enabled on the server.       We may want to look into enabling tickets       in the future, but for now the session reuse       above gives us a performance boost.             The other options set here are to improve forward       secrecty and comply with the EST draft.      /
+        Set the ECDH single use parms.  Use the configured       curve, or use prime256v1 as the default.      /
+       Setup additional cert checks including CRL, depth       and purpose.      /
+ Enable CRL checks /
+ Note: the purpose is only checked when the keyusage       value is present in the client's cert /
+       Set the single-use DH parameters if the application       has requested this capability.      /
+       There should be no need to include the cert chain for the       server's certificate in the TLS Certificate message from       the server.  The reason is the EST draft specifies that       all the subordinate CA certs should be included in the       cacerts message flow.  Hence, the client will already have       the full cert chain.  Therfore, the TLS handshake will only       contain the server's cert, not the full chain.              SSL_CTX_use_certificate_chain_file(ctx->ssl_ctx,                                          ctx->est_ctx->http_cert_file);      /
+ accumlate the total amount of time waited /
+           check to see if it's time to give up.  If it is, set           things accordingly to close the session down          /
+           Continue waiting,           - while there's nothing to read from the socket or             the poll was interrupted by a signal AND           - the master process has not indicated to stop AND           - the waiting for read timeout has not occurred          /
+ These modes are not valid at this point 	  nothing to do here. /
+ Started with a userid,            Parse the username and password, which are separated by a ":"          /
+Copy the token into the auth header structure. /
+ Make sure server is configured for digest auth /
+ Make sure server is configured for basic auth /
+ Make sure server is configured for bearer(token) auth /
+ Only Basic, Digest and Bearer Token authentication are supported /
+           Save the user ID on the connection context.           We will want to pass this to the CA later.          /
+           At this point, Content-Length value has already been           error checked and is guaranteed to be within the correct           range.  Obtain the length, allocate the buffer for the           body, and read it in.          /
+ Make sure the buffer is null terminated /
+ Setup the user selected curve /
+ Default to prime256 curve /
+ 	  Set the application specific handler for 	  providing the SRP parameters during user  	  authentication. 	 /
+ 	  Set the TLS cipher suites that should be allowed. 	  This disables anonymous and null ciphers 	 /
+ This should never happen, not sure what would cause this /
+           EST require TLS,  Setup the TLS tunnel          /
+           Send HTTP 200 header          /
+           Send the CSR in the body          /
+ Send a 204 response indicating the server doesn't have a CSR /
+ Nothing to do, it's a graceful shutdown /
+ 	      More data may be coming, change nread to zero 	      so Mongoose will attempt to read more data 	      from the peer.  This would occur if the peer 	      initiated an SSL renegotation. 	     /
+ 	      For all other errors, simply log the error 	      and make sure nread is -1 to indicate an 	      error to the function above us. 	     /
+               Ensure that the content-length value is a size that               the EST code is willing to accept              /
+ just a password /
+ We got neither userid nor password /
+ n == 0. retry /
+ OpenSSL docs say to call shutdown again for this case /
+ Nothing to do, shutdown worked /
+ Log an error /
+ Some unknown OpenSSL error, dump the  		      OpenSSL error log to learn more about this /

@@ -1,0 +1,13 @@
+Class:GUIAnagrafica
+Date: 18/09/2003
+Version: 0.01.000
+
+Description:Make the mask used to show the detailed anagrafica data of the patient
+
+Attributes:
+btnRitorna ;Private; Button used to return to mask GUIPrincipale
+panelDati ; Private; Panel containing all the anagrafica data on the patient
+
+Methods:
+visualizzaAnagrafica;  Public;      Manages viewing anagrafica data on the master patient
+getAnagrafica;        Public;      Gets the description of anagrafica patient data that logged on

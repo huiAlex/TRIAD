@@ -1,0 +1,42 @@
+est ut max cmd len 
+us server port 
+us server ip 
+us uidpwd good 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us proxi cert 
+us proxi key 
+us cacert 
+client ut cacert 
+client ut pubkey 
+us cacert 
+us trust cert 
+us server certkey 
+us proxi cert 
+us proxi key 
+us cacert 
+client ut cacert 
+client ut pubkey 
+us enrol url ba 
+us enrol url ba backslash 
+us enrol url ba noseg 
+us pkcs ct 
+us pkcs rsa 
+us tcp proxi port 
+path seg valid 
+path seg mani seg 
+path seg oper 
+path seg contain oper 
+path seg max 
+path seg long 
+us proxi enrol url valid 
+us proxi enrol url long 
+us proxi enrol url max 
+us proxi enrol url mani 
+us proxi enrol url oper 
+us proxi enrol url contain oper 
+us proxi cacert url valid 
+us pkcs req 

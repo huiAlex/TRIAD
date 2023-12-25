@@ -1,0 +1,4 @@
+initWorkspace
+WatchServiceRunner
+saveByteArrayToFile
+stop

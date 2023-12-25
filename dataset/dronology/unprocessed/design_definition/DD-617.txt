@@ -1,0 +1,4 @@
+[SUMMARY]
+Log all commands sent to GCS
+[DESCRIPTION]
+Each command sent to a _GCS_ via the _GCS_Middleware_ shall be logged

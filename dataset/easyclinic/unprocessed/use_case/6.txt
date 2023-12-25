@@ -1,0 +1,29 @@
+Use case:
+Delete doctor anagrafica
+
+Description:
+It allows the operator to delete the anagrafica of a doctor who works at the outpatient
+
+Preconditions:
+He works for the delete of data of anagrafica related to a doctor
+The Operator has been recognized by system (See UcValOp) and anagrafica of the doctor is present within the SIO
+
+Postconditions:
+The details of the doctor are not modified, remain in this state was before execution
+The doctor anagrafica is successfully deleted
+
+Sub-flows:
+The operator activates the execution of delete of the register service laboratory
+1 View the list of laboratories that are in the SIO
+2 Select the doctor which changing the anagrafica
+3 Confirm the selection
+4 View the mask to delete the doctor anagrafica
+6 confirm to delete of doctor
+7 Delete the data  about anagrafica of doctor
+8 Notify that the operation is finished with success
+
+
+Alternative flows:
+Operator cancels operation
+  3 1 ends the execution of use case with failure
+   4 1 The mask will contain data about the medical selected so as to allow the operator to examine them in detail before proceeding to delete

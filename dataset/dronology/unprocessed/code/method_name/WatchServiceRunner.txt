@@ -1,0 +1,9 @@
+WatchServiceRunner
+run
+changed
+run
+registerAll
+preVisitDirectory
+visitFileFailed
+register
+stop

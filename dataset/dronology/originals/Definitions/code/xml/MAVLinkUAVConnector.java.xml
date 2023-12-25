@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/MAVLinkUAVConnector.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:44">package <name pos:start="1:9" pos:end="1:43"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">gstation</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:43">connector</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:53">//package edu.nd.dronology.gstation.python.connector;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:2">//</comment>
+<comment type="line" pos:start="4:1" pos:end="4:29">//import java.io.IOException;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:30">//import java.net.InetAddress;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:36">//import java.net.InetSocketAddress;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:25">//import java.net.Socket;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:39">//import java.net.UnknownHostException;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:23">//import java.icse.model.util.Map;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:48">//import java.icse.model.util.concurrent.ConcurrentHashMap;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:46">//import java.icse.model.util.concurrent.ExecutorService;</comment>
+<comment type="line" pos:start="12:1" pos:end="12:40">//import java.icse.model.util.concurrent.Executors;</comment>
+<comment type="line" pos:start="13:1" pos:end="13:2">//</comment>
+<comment type="line" pos:start="14:1" pos:end="14:58">//import edu.nd.dronology.core.IUAVPropertyUpdateNotifier;</comment>
+<comment type="line" pos:start="15:1" pos:end="15:57">//import edu.nd.dronology.core.exceptions.DroneException;</comment>
+<comment type="line" pos:start="16:1" pos:end="16:60">//import edu.nd.dronology.core.vehicle.IDroneCommandHandler;</comment>
+<comment type="line" pos:start="17:1" pos:end="17:62">//import edu.nd.dronology.core.vehicle.commands.IDroneCommand;</comment>
+<comment type="line" pos:start="18:1" pos:end="18:82">//import edu.nd.dronology.gstation.python.connector.dispatch.DispatchQueueManager;</comment>
+<comment type="line" pos:start="19:1" pos:end="19:76">//import edu.nd.dronology.gstation.python.connector.dispatch.ReadDispatcher;</comment>
+<comment type="line" pos:start="20:1" pos:end="20:77">//import edu.nd.dronology.gstation.python.connector.dispatch.WriteDispatcher;</comment>
+<comment type="line" pos:start="21:1" pos:end="21:50">//import edu.nd.dronology.icse.model.util.NamedThreadFactory;</comment>
+<comment type="line" pos:start="22:1" pos:end="22:32">//import net.mv.logging.ILogger;</comment>
+<comment type="line" pos:start="23:1" pos:end="23:39">//import net.mv.logging.LoggerProvider;</comment>
+<comment type="line" pos:start="24:1" pos:end="24:2">//</comment>
+<comment type="line" pos:start="25:1" pos:end="25:68">//public class MAVLinkUAVConnector implements IDroneCommandHandler {</comment>
+<comment type="line" pos:start="26:1" pos:end="26:2">//</comment>
+<comment type="line" pos:start="27:1" pos:end="27:98">//	private static final ILogger LOGGER = LoggerProvider.getLogger(MAVLinkUAVConnector.class);</comment>
+<comment type="line" pos:start="28:1" pos:end="28:2">//</comment>
+<comment type="line" pos:start="29:1" pos:end="29:98">//	protected static final ExecutorService servicesExecutor = Executors.newFixedThreadPool(10,</comment>
+<comment type="line" pos:start="30:1" pos:end="30:73">//			new NamedThreadFactory("Groundstation-Threads"));</comment>
+<comment type="line" pos:start="31:1" pos:end="31:2">//</comment>
+<comment type="line" pos:start="32:1" pos:end="32:62">//	// socket for communication with python ground station</comment>
+<comment type="line" pos:start="33:1" pos:end="33:36">//	private Socket pythonSocket;</comment>
+<comment type="line" pos:start="34:1" pos:end="34:110">//	private final Map&lt;String, IUAVPropertyUpdateNotifier&gt; registeredListeners = new ConcurrentHashMap&lt;&gt;();</comment>
+<comment type="line" pos:start="35:1" pos:end="35:46">//	private ReadDispatcher readDispatcher;</comment>
+<comment type="line" pos:start="36:1" pos:end="36:48">//	private WriteDispatcher writeDispatcher;</comment>
+<comment type="line" pos:start="37:1" pos:end="37:45">//	private final String groundstationid;</comment>
+<comment type="line" pos:start="38:1" pos:end="38:64">//	private final DispatchQueueManager dispatchQueueManager;</comment>
+<comment type="line" pos:start="39:1" pos:end="39:34">//	private final String host;</comment>
+<comment type="line" pos:start="40:1" pos:end="40:31">//	private final int port;</comment>
+<comment type="line" pos:start="41:1" pos:end="41:34">//	private boolean connected;</comment>
+<comment type="line" pos:start="42:1" pos:end="42:2">//</comment>
+<comment type="line" pos:start="43:1" pos:end="43:83">//	public MAVLinkUAVConnector(String groundstationid, String host, int port) {</comment>
+<comment type="line" pos:start="44:1" pos:end="44:55">//		this.groundstationid = groundstationid;</comment>
+<comment type="line" pos:start="45:1" pos:end="45:81">//		dispatchQueueManager = new DispatchQueueManager(groundstationid);</comment>
+<comment type="line" pos:start="46:1" pos:end="46:33">//		this.host = host;</comment>
+<comment type="line" pos:start="47:1" pos:end="47:33">//		this.port = port;</comment>
+<comment type="line" pos:start="48:1" pos:end="48:39">//		this.connected = false;</comment>
+<comment type="line" pos:start="49:1" pos:end="49:26">//		connect();</comment>
+<comment type="line" pos:start="50:1" pos:end="50:9">//	}</comment>
+<comment type="line" pos:start="51:1" pos:end="51:2">//</comment>
+<comment type="line" pos:start="52:1" pos:end="52:32">//	private void connect() {</comment>
+<comment type="line" pos:start="53:1" pos:end="53:21">//		try {</comment>
+<comment type="line" pos:start="54:1" pos:end="54:75">//			InetAddress hostAddr = InetAddress.getByName(host);</comment>
+<comment type="line" pos:start="55:1" pos:end="55:2">//</comment>
+<comment type="line" pos:start="56:1" pos:end="56:61">//			String hostStr = hostAddr.toString();</comment>
+<comment type="line" pos:start="57:1" pos:end="57:2">//</comment>
+<comment type="line" pos:start="58:1" pos:end="58:89">//			LOGGER.info("Connecting to Python base " + hostStr + "@" + port);</comment>
+<comment type="line" pos:start="59:1" pos:end="59:52">//			pythonSocket = new Socket();</comment>
+<comment type="line" pos:start="60:1" pos:end="60:90">//			pythonSocket.connect(new InetSocketAddress(hostAddr, port), 5000);</comment>
+<comment type="line" pos:start="61:1" pos:end="61:60">//			// pythonSocket.setSoTimeout(20000);</comment>
+<comment type="line" pos:start="62:1" pos:end="62:2">//</comment>
+<comment type="line" pos:start="63:1" pos:end="63:129">//			LOGGER.hwInfo("Connected to " + pythonSocket.getInetAddress().toString() + "@" + pythonSocket.getPort());</comment>
+<comment type="line" pos:start="64:1" pos:end="64:96">//		//	readDispatcher = new ReadDispatcher(pythonSocket, dispatchQueueManager);</comment>
+<comment type="line" pos:start="65:1" pos:end="65:124">//			writeDispatcher = new WriteDispatcher(pythonSocket, dispatchQueueManager.getOutgoingCommandQueue());</comment>
+<comment type="line" pos:start="66:1" pos:end="66:64">//			servicesExecutor.submit(readDispatcher);</comment>
+<comment type="line" pos:start="67:1" pos:end="67:65">//			servicesExecutor.submit(writeDispatcher);</comment>
+<comment type="line" pos:start="68:1" pos:end="68:41">//			connected = true;</comment>
+<comment type="line" pos:start="69:1" pos:end="69:50">//		} catch (UnknownHostException e) {</comment>
+<comment type="line" pos:start="70:1" pos:end="70:81">//			LOGGER.hwFatal("Can't connect to Python Groundstation ");</comment>
+<comment type="line" pos:start="71:1" pos:end="71:44">//			scheduleReconnect();</comment>
+<comment type="line" pos:start="72:1" pos:end="72:39">//		} catch (Throwable e) {</comment>
+<comment type="line" pos:start="73:1" pos:end="73:98">//			LOGGER.hwFatal("Can't connect to Python Groundstation " + e.getMessage());</comment>
+<comment type="line" pos:start="74:1" pos:end="74:44">//			scheduleReconnect();</comment>
+<comment type="line" pos:start="75:1" pos:end="75:17">//		}</comment>
+<comment type="line" pos:start="76:1" pos:end="76:9">//	}</comment>
+<comment type="line" pos:start="77:1" pos:end="77:2">//</comment>
+<comment type="line" pos:start="78:1" pos:end="78:42">//	private void scheduleReconnect() {</comment>
+<comment type="line" pos:start="79:1" pos:end="79:39">//		// TODO implement me...</comment>
+<comment type="line" pos:start="80:1" pos:end="80:2">//</comment>
+<comment type="line" pos:start="81:1" pos:end="81:9">//	}</comment>
+<comment type="line" pos:start="82:1" pos:end="82:2">//</comment>
+<comment type="line" pos:start="83:1" pos:end="83:17">//	@Override</comment>
+<comment type="line" pos:start="84:1" pos:end="84:74">//	public void sendCommand(IDroneCommand cmd) throws DroneException {</comment>
+<comment type="line" pos:start="85:1" pos:end="85:93">//		LOGGER.hwInfo(groundstationid + " Sending Command to UAV " + cmd.toString());</comment>
+<comment type="line" pos:start="86:1" pos:end="86:47">//		dispatchQueueManager.send(cmd);</comment>
+<comment type="line" pos:start="87:1" pos:end="87:9">//	}</comment>
+<comment type="line" pos:start="88:1" pos:end="88:2">//</comment>
+<comment type="line" pos:start="89:1" pos:end="89:17">//	@Override</comment>
+<comment type="line" pos:start="90:1" pos:end="90:117">//	public void setStatusCallbackNotifier(String id, IUAVPropertyUpdateNotifier listener) throws DroneException {</comment>
+<comment type="line" pos:start="91:1" pos:end="91:58">//		if (registeredListeners.containsKey(id)) {</comment>
+<comment type="line" pos:start="92:1" pos:end="92:104">//			throw new DroneException("An listener with '" + id + "' is already registered");</comment>
+<comment type="line" pos:start="93:1" pos:end="93:17">//		}</comment>
+<comment type="line" pos:start="94:1" pos:end="94:54">//		registeredListeners.put(id, listener);</comment>
+<comment type="line" pos:start="95:1" pos:end="95:72">//		dispatchQueueManager.createDispatchThread(id, listener);</comment>
+<comment type="line" pos:start="96:1" pos:end="96:9">//	}</comment>
+<comment type="line" pos:start="97:1" pos:end="97:2">//</comment>
+<comment type="line" pos:start="98:1" pos:end="98:32">//	public void tearDown() {</comment>
+<comment type="line" pos:start="99:1" pos:end="99:21">//		try {</comment>
+<comment type="line" pos:start="100:1" pos:end="100:45">//			pythonSocket.close();</comment>
+<comment type="line" pos:start="101:1" pos:end="101:50">//			readDispatcher.tearDonw();</comment>
+<comment type="line" pos:start="102:1" pos:end="102:51">//			writeDispatcher.tearDown();</comment>
+<comment type="line" pos:start="103:1" pos:end="103:56">//			dispatchQueueManager.tearDown();</comment>
+<comment type="line" pos:start="104:1" pos:end="104:41">//		} catch (IOException e) {</comment>
+<comment type="line" pos:start="105:1" pos:end="105:42">//			LOGGER.hwFatal(e);</comment>
+<comment type="line" pos:start="106:1" pos:end="106:17">//		}</comment>
+<comment type="line" pos:start="107:1" pos:end="107:9">//	}</comment>
+<comment type="line" pos:start="108:1" pos:end="108:2">//</comment>
+<comment type="line" pos:start="109:1" pos:end="109:17">//	@Override</comment>
+<comment type="line" pos:start="110:1" pos:end="110:38">//	public String getHandlerId() {</comment>
+<comment type="line" pos:start="111:1" pos:end="111:39">//		return groundstationid;</comment>
+<comment type="line" pos:start="112:1" pos:end="112:9">//	}</comment>
+<comment type="line" pos:start="113:1" pos:end="113:2">//</comment>
+<comment type="line" pos:start="114:1" pos:end="114:99">//	public void registerMonitoringMessageHandler(IMonitoringMessageHandler monitoringhandler) {</comment>
+<comment type="line" pos:start="115:1" pos:end="115:89">//		dispatchQueueManager.registerMonitoringMessageHandler(monitoringhandler);</comment>
+<comment type="line" pos:start="116:1" pos:end="116:2">//</comment>
+<comment type="line" pos:start="117:1" pos:end="117:9">//	}</comment>
+<comment type="line" pos:start="118:1" pos:end="118:2">//</comment>
+<comment type="line" pos:start="119:1" pos:end="119:76">//	public void registerSafetyValidator(IUAVSafetyValidator validator) {</comment>
+<comment type="line" pos:start="120:1" pos:end="120:72">//		dispatchQueueManager.registerSafetyValidator(validator);</comment>
+<comment type="line" pos:start="121:1" pos:end="121:2">//</comment>
+<comment type="line" pos:start="122:1" pos:end="122:9">//	}</comment>
+<comment type="line" pos:start="123:1" pos:end="123:2">//</comment>
+<comment type="line" pos:start="124:1" pos:end="124:3">//}</comment>
+</unit>

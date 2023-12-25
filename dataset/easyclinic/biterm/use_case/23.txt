@@ -1,0 +1,14 @@
+anagraficaShow:1
+showAnagrafica:1
+obtainPatient:1
+retrievInform:1
+patientObtain:1
+taxCode:1
+datumAnagrafica:3
+datumPatient:1
+patientDatum:1
+informRetriev:1
+anagraficaDatum:3
+agePatient:1
+patientAge:1
+codeTax:1

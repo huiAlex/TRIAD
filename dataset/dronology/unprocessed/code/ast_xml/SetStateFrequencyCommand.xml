@@ -1,0 +1,40 @@
+<Class>
+    <Id>26</Id>
+    <Package>edu.nd.dronology.core.vehicle.commands</Package>
+    <ClassName>SetStateFrequencyCommand</ClassName>
+    <SuperClass>AbstractDroneCommand</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IDroneCommand</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>SetStateFrequencyCommand  /** 
+ * Command sent to the GCS for adjusting the state frequency.&lt;br&gt; The frequency is sent in ms. 
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>SetStateFrequencyCommand</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String droneId</ParameterType>
+                <ParameterType>long frequency</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>data;put;[ATTRIBUTE_FREQUENCY, frequency]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

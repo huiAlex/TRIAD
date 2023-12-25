@@ -1,0 +1,105 @@
+<Class>
+    <Id>42</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.tasks</Package>
+    <ClassName>DelayTask</ClassName>
+    <SuperClass>AbstractMissionTask</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>DelayTask  /** 
+ * Delay tasks specifying a delay after a route has been executed before commencing with the next round. 
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>duration</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>startTime</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>DelayTask</MethodName>
+            <MethodComment>/** 
+ * @param uavID
+ * @param taskName
+ * @param duration in seconds
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String uavID</ParameterType>
+                <ParameterType>String taskName</ParameterType>
+                <ParameterType>double duration</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getDuration</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>startDelayTask</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["Delay started for UAV '" + getUAVId() + "' duration: "+ duration]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>isFinished</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [finished=System.currentTimeMillis() - startTime &gt; duration * 1000]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,7 @@
+serial version uid 
+drone id 
+waypoint 
+waypoint 
+start locat 
+start time 
+end time 

@@ -1,0 +1,11 @@
+panel
+centerLat
+centerLon
+zoomLevel
+follow
+followZoom
+names
+event
+event
+focused
+checkedNames

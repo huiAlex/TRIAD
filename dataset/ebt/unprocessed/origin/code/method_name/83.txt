@@ -1,0 +1,18 @@
+Variable
+Variable
+Variable
+toString
+getId
+getLogic
+getName
+getValue
+setId
+setLogic
+setName
+setValue
+getSpeculateValue
+setSpeculateValue
+getType()
+setType
+getProject_ path
+setProject_ path

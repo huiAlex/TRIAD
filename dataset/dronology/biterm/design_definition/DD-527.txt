@@ -1,0 +1,4 @@
+sendUav:1
+sendWaypoint:2
+waypointFirst:1
+planFlight:2

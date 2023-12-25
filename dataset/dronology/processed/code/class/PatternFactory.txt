@@ -1,0 +1,13 @@
+pattern factori 
+
+
+type 
+
+
+get pattern 
+
+factori class predefin flight pattern 
+ 
+pattern type flight pattern creat 
+illeg argument except case pattern support 
+ 

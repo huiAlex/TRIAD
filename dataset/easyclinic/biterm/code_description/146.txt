@@ -1,0 +1,8 @@
+datumFind:1
+doctorAnagrafica:1
+requirOper:1
+anagraficaDatum:3
+anagraficaDoctor:1
+operRequir:1
+findDatum:1
+datumAnagrafica:3

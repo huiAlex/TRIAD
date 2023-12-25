@@ -1,0 +1,3 @@
+command sent gcs set veloc vector uav 
+vector specifi ned north east 
+ 

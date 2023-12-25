@@ -1,0 +1,21 @@
+uav mode chang messag 
+serial version uid 
+messag type 
+data 
+mode 
+gs id 
+uav id 
+
+
+groundstationid 
+uavid 
+mode 
+type 
+
+
+uav mode chang messag 
+set type 
+get mode 
+
+monitor messag receiv gcs specif uav 
+ 

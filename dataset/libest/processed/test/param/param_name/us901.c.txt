@@ -1,0 +1,7 @@
+server type 
+ptr 
+size 
+nmemb 
+userdata 
+ 
+expect fail 

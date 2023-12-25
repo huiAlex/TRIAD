@@ -1,0 +1,14 @@
+DroneSimulatorServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+getServiceInfo
+createItem
+getPath
+fromFile
+hasProperties
+notifyFileChange
+activateScenario
+getCategories

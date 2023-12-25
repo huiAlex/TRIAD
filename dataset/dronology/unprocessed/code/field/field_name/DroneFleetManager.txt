@@ -1,0 +1,10 @@
+LOGGER
+INSTANCE
+registeredDrones
+registeredDrones
+availableDrones
+availableDrones
+busyDrones
+busyDrones
+listeners
+listeners

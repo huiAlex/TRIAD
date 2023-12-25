@@ -1,0 +1,9 @@
+simul factori 
+use simpl simul 
+
+
+drone 
+
+
+get simul 
+

@@ -1,0 +1,13 @@
+event model 
+get ip server 
+clear vector 
+draw model 
+draw model 
+clear data 
+click 
+check notifi status 
+build event 
+add event rect 
+get requir text 
+generat event 
+paint compon 

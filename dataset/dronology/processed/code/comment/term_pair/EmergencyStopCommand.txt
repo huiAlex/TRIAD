@@ -1,0 +1,6 @@
+send command:nsubj
+remain command:nsubj
+send stop:advcl
+send remain:conj
+remain hover:xcomp
+hover place:obl

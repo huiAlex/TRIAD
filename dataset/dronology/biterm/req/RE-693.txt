@@ -1,0 +1,5 @@
+realTime:1
+sendUav:1
+uavMultipl:2
+operEmerg:2
+allowUser:1

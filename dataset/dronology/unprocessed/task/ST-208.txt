@@ -1,0 +1,4 @@
+[SUMMARY]
+Emergency operation buttons
+[DESCRIPTION]
+Create the emergency operation buttons specified in the mockup 

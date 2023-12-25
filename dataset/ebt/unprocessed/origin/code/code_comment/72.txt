@@ -1,0 +1,7 @@
+Symbol represents what will be placed on the stack.
+Print an error message for unbalanced symbols.
+Print an error message if clSym does not match opSym.
+main routine for balanced symbol checker.
+Slightly different from text.
+If no command line parameters, standard input is used.
+Otherwise, files in command line are used.

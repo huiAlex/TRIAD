@@ -1,0 +1,2 @@
+Factory class for creating { AbstractUAVMessage} from JSON strings.
+/

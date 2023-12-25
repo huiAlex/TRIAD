@@ -1,0 +1,16 @@
+targetCoordinates
+speed
+altitude
+lat
+lon
+alt
+i
+distanceMovedPerTimeStep
+basePosition
+speed
+x
+y
+z
+coordinate
+command
+managedDrone

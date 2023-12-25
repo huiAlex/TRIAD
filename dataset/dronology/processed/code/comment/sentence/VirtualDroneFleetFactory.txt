@@ -1,0 +1,2 @@
+Factory class for initializing a new { VirtualDrone} instance.
+/

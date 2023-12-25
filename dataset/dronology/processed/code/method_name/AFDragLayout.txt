@@ -1,0 +1,21 @@
+af drag layout 
+creat compon 
+get sortabl layout 
+add new compon 
+remov compon 
+get compon 
+get compon count 
+get compon index 
+sortabl layout 
+get vertic layout 
+get compon count 
+get compon index 
+get compon 
+add new compon 
+remov compon 
+wrap compon 
+get drop handler 
+get content 
+reorder layout drop handler 
+get accept criterion 
+drop 

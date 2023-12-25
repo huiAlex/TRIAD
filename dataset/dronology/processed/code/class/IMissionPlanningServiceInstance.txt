@@ -1,0 +1,16 @@
+mission plan servic instanc 
+
+
+mission 
+uavid 
+info 
+mission 
+map 
+
+
+execut mission plan 
+cancel mission 
+remov uav 
+execut mission plan 
+execut mission plan 
+

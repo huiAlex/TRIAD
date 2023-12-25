@@ -1,0 +1,22 @@
+sociat drone state object drone 
+normal behavior ground await takeoff clearanc take fli air land unavail transit result except thrown 
+ 
+constructor state flight mode safeti mode set initi state uav uav state manag assign 
+ 
+set flight mode ground mode chang doe follow allow state transit 
+ 
+set flight mode control 
+set flight mode await takeoff clearanc mode chang doe follow allow state transit 
+ 
+set flight mode take mode chang doe follow allow state transit 
+ 
+set flight mode fli mode chang doe follow allow state transit 
+ 
+set flight mode land mode chang doe follow allow state transit 
+ 
+true drone current ground fals otherwis 
+true drone current await take clearanc mode fals otherwis 
+true drone current take fals otherwis 
+true drone current fli fals otherwis 
+true drone current land fals otherwis 
+current status 

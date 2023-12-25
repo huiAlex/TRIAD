@@ -1,0 +1,14 @@
+get 
+initi drone 
+initi drone 
+initi drone 
+lla coordin 
+lla coordin 
+lla coordin 
+get servic 
+get servic 
+get servic 
+drone initi info 
+drone initi info 
+drone initi info 
+get item 

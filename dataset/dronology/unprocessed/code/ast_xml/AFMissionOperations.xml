@@ -1,0 +1,101 @@
+<Class>
+    <Id>177</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFMissionOperations</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFMissionOperations  /** 
+ * This is the set of map operation buttons in the AFInfoPanel
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>buttons</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>upload</FieldName>
+            <FieldType>Upload</FieldType>
+        </Field>
+        <Field>
+            <FieldName>cancelMission</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>executeMission</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFMissionOperations</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>AFInfoPanel infoPanel</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [layout=new VerticalLayout()]</InnerVar>
+                <InnerVar>Label [caption=new Label("Mission Operations")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>layout;addStyleName;["af_mission_group"]</InnerMethodInvoke>
+                <InnerMethodInvoke>cancelMission;addClickListener;[e -&gt; {
+  cancelMisison();
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>executeMission;addClickListener;[e -&gt; {
+  UI.getCurrent().addWindow(new AFChooseMissionWindow(infoPanel));
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addComponents;[executeMission, cancelMission]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponents;[caption, buttons]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[layout]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>cancelMisison</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addOnClickListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>LayoutClickListener listener</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>buttons;addLayoutClickListener;[listener]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

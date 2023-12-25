@@ -1,0 +1,5 @@
+DroneMonitoringServiceRemoteFacade
+getInstance
+registerMonitoringMessageHandler
+registerMonitoringMessageHandler
+setMonitoringFrequency

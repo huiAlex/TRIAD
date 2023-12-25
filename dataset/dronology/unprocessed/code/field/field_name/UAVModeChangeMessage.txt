@@ -1,0 +1,6 @@
+serialVersionUID
+MESSAGE_TYPE
+DATA
+MODE
+GS_ID
+UAV_ID

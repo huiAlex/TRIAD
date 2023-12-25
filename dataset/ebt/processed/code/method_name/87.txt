@@ -1,0 +1,18 @@
+ebt 
+get requir text 
+mous 
+mous 
+mous click 
+mous exit 
+mous press 
+mous releas 
+mous enter 
+paint 
+updat 
+get split pane 
+valu chang 
+valu report 
+valu chang 
+redraw 
+main 
+window close 

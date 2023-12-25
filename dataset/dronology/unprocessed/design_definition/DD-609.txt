@@ -1,0 +1,4 @@
+[SUMMARY]
+Simulate battery drain in NVECSimulator
+[DESCRIPTION]
+When a simulated UAV is in flight  the _NVECSimulator_ shall reduce the battery every second by {{SIMULATOR_BATTERY_DRAIN_VOLTS}}.

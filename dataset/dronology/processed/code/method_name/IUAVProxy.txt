@@ -1,0 +1,11 @@
+get id 
+get status 
+get longitud 
+get latitud 
+get altitud 
+get batteri level 
+get veloc 
+get info 
+get coordin 
+get home locat 
+get groundstat id 

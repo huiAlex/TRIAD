@@ -1,0 +1,57 @@
+drone fleet manag 
+logger 
+instanc 
+regist drone 
+regist drone 
+avail drone 
+avail drone 
+busi drone 
+busi drone 
+listen 
+listen 
+
+drone fleet manag 
+manag drone 
+manag drone 
+
+design drone id 
+add 
+manag drone 
+drone 
+manag drone 
+manag drone 
+uavid 
+id 
+listen 
+
+manag drone 
+manag drone 
+manag drone 
+manag drone 
+
+get instanc 
+drone fleet manag 
+avail drone 
+get avail drone 
+get avail drone 
+notifi listen 
+return drone avail pool 
+add drone 
+remov drone 
+get regist drone 
+get regist drone 
+unregist droe 
+add drone fleet listen 
+
+hold fleet virtual physic drone 
+activ uav regist fleet manag retriev assign rout 
+ 
+specifi virtual physic drone creat accord previous specifi runtim drone type 
+see runtim drone type java 
+check avail drone fleet 
+ 
+return next avail drone 
+current use fifo recycl drone 
+ 
+drone complet mission return pool avail drone 
+ 

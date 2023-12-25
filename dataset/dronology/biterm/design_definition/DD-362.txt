@@ -1,0 +1,5 @@
+coordinFlight:1
+uavMultipl:1
+plannerMission:1
+missionPlanner:2
+flightUav:1

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/CoordinateChange.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:30">package <name pos:start="1:9" pos:end="1:29"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name></name>;</package>
+
+
+<annotation_defn pos:start="4:1" pos:end="9:1"><specifier pos:start="4:1" pos:end="4:6">public</specifier> @interface <name pos:start="4:19" pos:end="4:34">CoordinateChange</name> <block pos:start="4:36" pos:end="9:1">{
+	
+
+	 
+
+}</block></annotation_defn>
+</unit>

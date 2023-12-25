@@ -1,0 +1,388 @@
+us4020.c
+us4020_logger_stderr
+generate_private_key
+us4020_clean
+us4020_start_server
+shutdown_antinat
+shutdown_haproxy
+us4020_init_suite
+us4020_destroy_suite
+client_manual_cert_verify
+us4020_test1
+us4020_test2
+us4020_test3
+us4020_test4
+us4020_test5
+us4020_test6
+us4020_test7
+us4020_test8
+us4020_test9
+us4020_test10
+client_proxy_enabled
+us4020_add_suite
+EnterCriticalSection
+vfprintf
+fflush
+LeaveCriticalSection
+BN_set_word
+RSA_generate_key_ex
+EVP_PKEY_new
+RSA_free
+BN_free
+st_start
+open
+read
+printf
+snprintf
+system
+open
+read
+printf
+snprintf
+system
+InitializeCriticalSection
+est_init_logger
+est_init_logger
+read_binary_file
+us4020_clean
+us4020_start_server
+st_stop
+free
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_antinat
+est_destroy
+snprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_proxy
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+shutdown_haproxy
+est_destroy
+est_client_set_proxy
+CU_add_suite
+format
+l
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+char
+va_list
+int
+int
+X509
+int
+MAX_4020_CMDS
+US4020_SERVER_DOMAIN_NAME
+US4020_SERVER_IP
+US4020_SERVER_TCP_PORT
+US4020_PROXY_IP
+US4020_PROXY_TCP_PORT
+US4020_UID
+US4020_PWD
+US4020_CACERTS
+US4020_CACERTS
+MAX_CMD_BUF
+MAX_PID_BUF
+------------------------------------------------------------------   us4020.c - Unit Test for User Story 4020 - Unit test client              proxy mode.  Test the new API function and              verify correct operation of Client proxy modes.     October, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+ #define US4020_CACERT "CA/estCA/cacert.crt" /
+ #define US4020_SERVER_CERT "CA/estCA/private/estservercertandkey.pem" /
+ #define US4020_SERVER_KEY "CA/estCA/private/estservercertandkey.pem" /
+ #define US4020_CLIENT_CERT "CA/estCA/private/estservercertandkey.pem" /
+ #define US4020_CLIENT_KEY  "CA/estCA/private/estservercertandkey.pem" /
+ #define US4020_CACERT "CA\\estCA\\cacert.crt" /
+ #define US4020_SERVER_CERT "CA\\estCA\\private\\estservercertandkey.pem" /
+ #define US4020_SERVER_KEY "CA\\estCA\\private\\estservercertandkey.pem" /
+ #define US4020_CLIENT_CERT "CA\\estCA\\private\\estservercertandkey.pem" /
+ #define US4020_CLIENT_KEY  "CA\\estCA\\private/estservercertandkey.pem" /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Error check the parameters to the API  /
+   Test for SOCKS 4 mode, no credentials, should pass    /
+   Test for SOCKS 4 mode, with credentials, should pass    /
+   Test for SOCKS 5 mode    /
+   Test for SOCKS 4A mode    /
+   Test for SOCKS 5 mode, with no credentials    /
+   Test for SOCKS 5 mode, with good credentials    /
+   Test for SOCKS 5 mode, with good credentials, but forgotten    /
+   Test for SOCKS 5 mode, with bad credentials    /
+   could be tested, but needs certifcates updated  /
+   Test for SOCKS 4A mode, with domain name     /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+   Test HTTP proxy mode     NOTE: only non-tunnel mode is tested.  tunnel mode does not   work with CiscoEST server.  /
+   Indicate whether client proxy support has been built into   the library or not  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+     int readbyte_count = 0; /
+     readbyte_count = read(fh, read_pid, MAX_PID_BUF); /
+       Read in the CA certificates      /
+       Start an instance of the EST server with        automatic enrollment enabled.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context       /
+        Attempt to call the API without a context      /
+       valid call      /
+       don't set the server       /
+       server to empty string      /
+       max server name       /
+       server name too long      /
+       don't set the port      /
+ proxy protocol invalid /
+ proxy protocol invalid /
+ proxy auth invalid /
+       max userid      /
+       userid too long      /
+       userid is an empty string      /
+       max pwd      /
+       pwd too long      /
+       password is an empty string      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+                                "estuser", "estpwd"); /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+                                "estuser", "estpwd"); /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a SOCKS 4 proxy server locally      /
+       Create a client context       /
+        socks4      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Set up a HTTP proxy server locally      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+ add a suite to the registry /
+      client proxy mode is only supported when libcurl has been specified.     /
+ add the tests to the suite /
+            (NULL == CU_add_test(pSuite, "SOCKS 4A mode with domain name instead of IP address", us4020_test7)) || /

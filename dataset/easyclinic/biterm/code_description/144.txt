@@ -1,0 +1,14 @@
+storeCard:1
+storeDatum:1
+requirOper:1
+codeCard:2
+cardHospit:6
+cardCode:2
+cardStore:1
+hospitCard:10
+cardPatient:1
+datumStore:1
+datumCard:2
+operRequir:1
+patientCard:1
+cardDatum:2

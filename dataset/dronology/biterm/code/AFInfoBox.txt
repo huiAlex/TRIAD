@@ -1,0 +1,8 @@
+resendCommand:2
+informUav:1
+returnHome:2
+assignRout:1
+uavStatus:2
+containInform:1
+assignNew:1
+hoverPlace:7

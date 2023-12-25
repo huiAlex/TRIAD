@@ -1,0 +1,14 @@
+validFunction:1
+cardPin:2
+systemAccess:1
+functionValid:1
+cardHospit:2
+failValid:1
+patientAccess:1
+operLogin:1
+hospitCard:2
+accessSystem:1
+pinCard:2
+loginOper:1
+accessPatient:1
+validFail:1

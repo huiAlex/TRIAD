@@ -1,0 +1,1 @@
+cartella clinica manag manag data make medic record patient get cartella clinica find inform clinic folder patient get dettag provid load visit get dati pazient find anagrafica data patient 

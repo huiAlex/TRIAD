@@ -1,0 +1,3 @@
+State message received from the GCS for a specific UAV.
+/
+/

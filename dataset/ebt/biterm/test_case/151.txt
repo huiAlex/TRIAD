@@ -1,0 +1,2 @@
+constructQueri:1
+queriSpecul:1

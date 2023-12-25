@@ -1,0 +1,12 @@
+uav monitor messag 
+uav monitor messag 
+uav monitor messag 
+uav monitor messag 
+uav monitor messag 
+creat messag 
+string 
+string 
+state wrapper 
+get design drone id 
+get design drone id 
+get uav id 

@@ -1,0 +1,12 @@
+planNext:2
+waypointFinal:1
+planExecut:1
+reachWaypoint:1
+setPlan:2
+signPlan:1
+signComplet:1
+waypointPlan:1
+removPlan:1
+planCurrent:1
+completFlight:1
+planFlight:4

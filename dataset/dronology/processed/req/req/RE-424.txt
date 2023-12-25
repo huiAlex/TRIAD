@@ -1,0 +1,1 @@
+return home detour return home command issu flight manag return uav origin launch locat issu addit waypoint rout command 

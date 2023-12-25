@@ -1,0 +1,15 @@
+author routin 
+function use load store use raw data buffer data expect pem encod return number cert ad store 
+function use popul store structur use openssl tls stack verifi tls peer store alreadi alloc paramet store pointer store structur hold cert raw char array contain pem encod cert store size length raw char array 
+function use output openssl error buffer use openssl api call fail like provid user regard caus failur 
+est convert pem convert base encod pkcs respons est server pem format cert point buffer contain base encod pkcs data cert len indic size cert buffer pem doubl pointer receiv pem encod data sever est messag return data contain base encod pkcs certif function use convert data pem format function alloc memori point pem argument caller respons releas memori return valu length pem buffer error int 
+load file stack crl pkey set 
+scan pull crl 
+base decod incom ca cert buffer decod alway take origin buffer 
+get pkcs format buffer certif read stack cert 
+ve decod cert get refer stack cert 
+output cert new bio use pem format 
+convert bio char 
+ve enabl crl check tls stack applic hasn load crl verifi error occur peer cert valid confirm revok ll warn applic 
+sinc just check certif ok self sign warn user 
+continu extens error 

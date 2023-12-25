@@ -1,0 +1,3 @@
+manag pend plan individu uav 
+activ uav plan pool track assign pend flight plan 
+ 

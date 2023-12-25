@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/RouteSelector.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:64">package <name pos:start="1:9" pos:end="1:63"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:44">extensions</name><operator pos:start="1:45" pos:end="1:45">.</operator><name pos:start="1:46" pos:end="1:56">areamapping</name><operator pos:start="1:57" pos:end="1:57">.</operator><name pos:start="1:58" pos:end="1:63">unused</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:59">//package edu.nd.dronology.services.extensions.areamapping;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:2">//</comment>
+<comment type="line" pos:start="4:1" pos:end="4:30">//import java.awt.geom.Path2D;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:31">//import java.awt.geom.Point2D;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:29">//import java.icse.model.util.ArrayList;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:30">//import java.icse.model.util.Collection;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:31">//import java.icse.model.util.Collections;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:27">//import java.icse.model.util.HashSet;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:24">//import java.icse.model.util.List;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:23">//import java.icse.model.util.Set;</comment>
+<comment type="line" pos:start="12:1" pos:end="12:2">//</comment>
+<comment type="line" pos:start="13:1" pos:end="13:56">//import edu.nd.dronology.core.coordinate.LlaCoordinate;</comment>
+<comment type="line" pos:start="14:1" pos:end="14:49">//import edu.nd.dronology.core.vehicle.IUAVProxy;</comment>
+<comment type="line" pos:start="15:1" pos:end="15:70">//import edu.nd.dronology.services.core.areamapping.MetricsStatistics;</comment>
+<comment type="line" pos:start="16:1" pos:end="16:76">//import edu.nd.dronology.services.extensions.areamapping.internal.Geometry;</comment>
+<comment type="line" pos:start="17:1" pos:end="17:77">//import edu.nd.dronology.services.extensions.areamapping.internal.RiverBank;</comment>
+<comment type="line" pos:start="18:1" pos:end="18:88">//import edu.nd.dronology.services.extensions.areamapping.metrics.AllocationInformation;</comment>
+<comment type="line" pos:start="19:1" pos:end="19:72">//import edu.nd.dronology.services.extensions.areamapping.metrics.Drone;</comment>
+<comment type="line" pos:start="20:1" pos:end="20:80">//import edu.nd.dronology.services.extensions.areamapping.metrics.MetricsRunner;</comment>
+<comment type="line" pos:start="21:1" pos:end="21:83">//import edu.nd.dronology.services.extensions.areamapping.metrics.MetricsUtilities;</comment>
+<comment type="line" pos:start="22:1" pos:end="22:79">//import edu.nd.dronology.services.extensions.areamapping.model.RoutePrimitive;</comment>
+<comment type="line" pos:start="23:1" pos:end="23:73">//import
+    edu.nd.dronology.services.extensions.areamapping.icse.model.util.Utilities;</comment>
+<comment type="line" pos:start="24:1" pos:end="24:2">//</comment>
+<comment type="line" pos:start="25:1" pos:end="25:31">//public class RouteSelector  {</comment>
+<comment type="line" pos:start="26:1" pos:end="26:2">//</comment>
+<comment type="line" pos:start="27:1" pos:end="27:57">//	private static final double APERATURE_WIDTH = 10;</comment>
+<comment type="line" pos:start="28:1" pos:end="28:75">//	private static final double APERATURE_HEIGHT= 0.8* APERATURE_WIDTH;</comment>
+<comment type="line" pos:start="29:1" pos:end="29:57">//	private static final double OVERLAP_FACTOR = 0.7;</comment>
+<comment type="line" pos:start="30:1" pos:end="30:35">//	private double avgLatitude;</comment>
+<comment type="line" pos:start="31:1" pos:end="31:36">//	private int availableDrones;</comment>
+<comment type="line" pos:start="32:1" pos:end="32:53">//	private List&lt;RoutePrimitive&gt; routePrimitives;</comment>
+<comment type="line" pos:start="33:1" pos:end="33:44">//	private MetricsRunner metricsRunner;</comment>
+<comment type="line" pos:start="34:1" pos:end="34:37">//	private List&lt;IUAVProxy&gt; uavs;</comment>
+<comment type="line" pos:start="35:1" pos:end="35:2">//</comment>
+<comment type="line" pos:start="36:1" pos:end="36:8">//	</comment>
+<comment type="line" pos:start="37:1" pos:end="37:197">//	public void initialize(List&lt;RoutePrimitive&gt;routePrimitives, List&lt;RiverBank&gt; bankList, Path2D.Double totalRiverSegment, int availableDrones, double avgLatitude, Collection&lt;IUAVProxy&gt; uavs) {</comment>
+<comment type="line" pos:start="38:1" pos:end="38:50">//		// TODO Auto-generated method stub</comment>
+<comment type="line" pos:start="39:1" pos:end="39:119">//		routePrimitives = Utilities.splitRoutePrimitives(routePrimitives, 4, APERATURE_HEIGHT, OVERLAP_FACTOR);</comment>
+<comment type="line" pos:start="40:1" pos:end="40:55">//		this.routePrimitives = routePrimitives;</comment>
+<comment type="line" pos:start="41:1" pos:end="41:55">//		this.availableDrones = availableDrones;</comment>
+<comment type="line" pos:start="42:1" pos:end="42:47">//		this.avgLatitude = avgLatitude;</comment>
+<comment type="line" pos:start="43:1" pos:end="43:50">//		this.uavs = new ArrayList&lt;&gt;(uavs);</comment>
+<comment type="line" pos:start="44:1" pos:end="44:144">//		metricsRunner = new MetricsRunner(routePrimitives, totalRiverSegment, bankList, APERATURE_WIDTH, APERATURE_HEIGHT, uavs.size());</comment>
+<comment type="line" pos:start="45:1" pos:end="45:9">//	}</comment>
+<comment type="line" pos:start="46:1" pos:end="46:8">//	</comment>
+<comment type="line" pos:start="47:1" pos:end="47:38">//	//GeneratedRouteAssignment....</comment>
+<comment type="line" pos:start="48:1" pos:end="48:56">//	private List&lt;Drone&gt; generateRandomAssingments(){</comment>
+<comment type="line" pos:start="49:1" pos:end="49:62">//		Set&lt;Integer&gt; assignedRoutes = new HashSet&lt;&gt;();</comment>
+<comment type="line" pos:start="50:1" pos:end="50:46">//		availableDrones = uavs.size();</comment>
+<comment type="line" pos:start="51:1" pos:end="51:29">//		int droneNum;</comment>
+<comment type="line" pos:start="52:1" pos:end="52:29">//		int routeNum;</comment>
+<comment type="line" pos:start="53:1" pos:end="53:8">//	</comment>
+<comment type="line" pos:start="54:1" pos:end="54:108">//		int routeAssignmentNum = MetricsUtilities.generateRandomNumber(routePrimitives.size()-1, 1);</comment>
+<comment type="line" pos:start="55:1" pos:end="55:58">//		List&lt;Drone&gt; droneList = new ArrayList&lt;&gt;();</comment>
+<comment type="line" pos:start="56:1" pos:end="56:58">//		for(int i = 0; i &lt; availableDrones; i++) {</comment>
+<comment type="line" pos:start="57:1" pos:end="57:51">//			droneList.add(new Drone());</comment>
+<comment type="line" pos:start="58:1" pos:end="58:75">//			LlaCoordinate home = uavs.get(i).getHomeLocation();</comment>
+<comment type="line" pos:start="59:1" pos:end="59:85">//			LlaCoordinate currentLocation = uavs.get(i).getCoordinates();</comment>
+<comment type="line" pos:start="60:1" pos:end="60:160">//			droneList.get(i).setDroneHomeLocation(Geometry.gpsToCartesian(new Point2D.Double(home.getLatitude(),home.getLongitude()), avgLatitude));</comment>
+<comment type="line" pos:start="61:1" pos:end="61:180">//			droneList.get(i).setDroneStartPoint(Geometry.gpsToCartesian(new Point2D.Double(currentLocation.getLatitude(),currentLocation.getLongitude()), avgLatitude));</comment>
+<comment type="line" pos:start="62:1" pos:end="62:71">//			droneList.get(i).setUAVId(uavs.get(i).getID());</comment>
+<comment type="line" pos:start="63:1" pos:end="63:17">//		}</comment>
+<comment type="line" pos:start="64:1" pos:end="64:67">//		while(assignedRoutes.size() &lt; routeAssignmentNum) {</comment>
+<comment type="line" pos:start="65:1" pos:end="65:53">//			//assign drone routes in here</comment>
+<comment type="line" pos:start="66:1" pos:end="66:94">//			droneNum = MetricsUtilities.generateRandomNumber(availableDrones-1,0);</comment>
+<comment type="line" pos:start="67:1" pos:end="67:96">//			routeNum = MetricsUtilities.generateRandomNumber(routeAssignmentNum, 0);</comment>
+<comment type="line" pos:start="68:1" pos:end="68:66">//			while(assignedRoutes.contains(routeNum)) {</comment>
+<comment type="line" pos:start="69:1" pos:end="69:104">//				routeNum = MetricsUtilities.generateRandomNumber(routeAssignmentNum, 0);</comment>
+<comment type="line" pos:start="70:1" pos:end="70:25">//			}</comment>
+<comment type="line" pos:start="71:1" pos:end="71:109">//			droneList.get(droneNum).getDroneRouteAssignment().add(routePrimitives.get(routeNum));</comment>
+<comment type="line" pos:start="72:1" pos:end="72:53">//			assignedRoutes.add(routeNum);</comment>
+<comment type="line" pos:start="73:1" pos:end="73:17">//		}</comment>
+<comment type="line" pos:start="74:1" pos:end="74:33">//		return droneList;</comment>
+<comment type="line" pos:start="75:1" pos:end="75:9">//	}</comment>
+<comment type="line" pos:start="76:1" pos:end="76:8">//	</comment>
+<comment type="line" pos:start="77:1" pos:end="77:81">//	private MetricsStatistics generateMetricsStatistics(List&lt;Drone&gt; drones) {</comment>
+<comment type="line" pos:start="78:1" pos:end="78:58">//		metricsRunner.setDroneAssignments(drones);</comment>
+<comment type="line" pos:start="79:1" pos:end="79:50">//		return metricsRunner.runMetrics();</comment>
+<comment type="line" pos:start="80:1" pos:end="80:9">//	}</comment>
+<comment type="line" pos:start="81:1" pos:end="81:8">//	</comment>
+<comment type="line" pos:start="82:1" pos:end="82:39">//	//use a loop to pick best route</comment>
+<comment type="line" pos:start="83:1" pos:end="83:52">//	//return wrapper for list&lt;drone&gt; and metrics</comment>
+<comment type="line" pos:start="84:1" pos:end="84:66">//	public List&lt;AllocationInformation&gt; generateAssignments() {</comment>
+<comment type="line" pos:start="85:1" pos:end="85:75">//		// loop to create assignments and check for best assignment</comment>
+<comment type="line" pos:start="86:1" pos:end="86:79">//		List&lt;AllocationInformation&gt; allAllocations = new ArrayList&lt;&gt;();</comment>
+<comment type="line" pos:start="87:1" pos:end="87:84">//		AllocationInformation finalAllocation = new AllocationInformation();</comment>
+<comment type="line" pos:start="88:1" pos:end="88:71">//		/*List&lt;Drone&gt; assignment = generateRandomAssingments();</comment>
+<comment type="line" pos:start="89:1" pos:end="89:64">//		finalAllocation.setDroneAllocations(assignment);</comment>
+<comment type="line" pos:start="90:1" pos:end="90:92">//		finalAllocation.setMetricsStatistics(generateMetricsStatistics(assignment));</comment>
+<comment type="line" pos:start="91:1" pos:end="91:54">//		allAllocations.add(finalAllocation);*/</comment>
+<comment type="line" pos:start="92:1" pos:end="92:46">//		for(int i = 0; i &lt; 100; i++) {</comment>
+<comment type="line" pos:start="93:1" pos:end="93:78">//			List&lt;Drone&gt; assignments = generateRandomAssingments();</comment>
+<comment type="line" pos:start="94:1" pos:end="94:94">//			AllocationInformation currentAllocation = new AllocationInformation();</comment>
+<comment type="line" pos:start="95:1" pos:end="95:75">//			currentAllocation.setDroneAllocations(assignments);</comment>
+<comment type="line" pos:start="96:1" pos:end="96:103">//			currentAllocation.setMetricsStatistics(generateMetricsStatistics(assignments));</comment>
+<comment type="line" pos:start="97:1" pos:end="97:62">//			allAllocations.add(currentAllocation);</comment>
+<comment type="line" pos:start="98:1" pos:end="98:48">//			/*boolean added = false;</comment>
+<comment type="line" pos:start="99:1" pos:end="99:73">//			for(int j = 0; j &lt; top5Allocations.size(); j++) {</comment>
+<comment type="line" pos:start="100:1" pos:end="100:53">//				//allows 0 collisions</comment>
+<comment type="line" pos:start="101:1" pos:end="101:230">//				if(top5Allocations.get(j).getMetricStatistics().getAllocationScore() &lt; currentAllocation.getMetricStatistics().getAllocationScore() &amp;&amp; currentAllocation.getMetricStatistics().getCollisions() == 0) {</comment>
+<comment type="line" pos:start="102:1" pos:end="102:82">//					top5Allocations.add(j, currentAllocation);</comment>
+<comment type="line" pos:start="103:1" pos:end="103:53">//					added = true;</comment>
+<comment type="line" pos:start="104:1" pos:end="104:72">//					if(top5Allocations.size() &gt; 5) {</comment>
+<comment type="line" pos:start="105:1" pos:end="105:97">//						top5Allocations.remove(top5Allocations.size()-1);</comment>
+<comment type="line" pos:start="106:1" pos:end="106:41">//					}</comment>
+<comment type="line" pos:start="107:1" pos:end="107:46">//					break;</comment>
+<comment type="line" pos:start="108:1" pos:end="108:33">//				}</comment>
+<comment type="line" pos:start="109:1" pos:end="109:25">//			}</comment>
+<comment type="line" pos:start="110:1" pos:end="110:45">//			//allows 0 collisions</comment>
+<comment type="line" pos:start="111:1" pos:end="111:130">//			if(top5Allocations.size() &lt; 5 &amp;&amp; !added &amp;&amp; currentAllocation.getMetricStatistics().getCollisions() == 0) {</comment>
+<comment type="line" pos:start="112:1" pos:end="112:71">//				top5Allocations.add(currentAllocation);</comment>
+<comment type="line" pos:start="113:1" pos:end="113:27">//			}*/</comment>
+<comment type="line" pos:start="114:1" pos:end="114:24">//			</comment>
+<comment type="line" pos:start="115:1" pos:end="115:17">//		}</comment>
+<comment type="line" pos:start="116:1" pos:end="116:49">//		Collections.sort(allAllocations);</comment>
+<comment type="line" pos:start="117:1" pos:end="117:68">//	/*	for(AllocationInformation entry : top5Allocations) {</comment>
+<comment type="line" pos:start="118:1" pos:end="118:73">//			List&lt;Drone&gt; routeAssignments = new ArrayList&lt;&gt;();</comment>
+<comment type="line" pos:start="119:1" pos:end="119:71">//			routeAssignments = entry.getDroneAllocations();</comment>
+<comment type="line" pos:start="120:1" pos:end="120:61">//			for(Drone drone : routeAssignments) {</comment>
+<comment type="line" pos:start="121:1" pos:end="121:66">//				drone.cartesianToGps(avgLatitude);</comment>
+<comment type="line" pos:start="122:1" pos:end="122:25">//			}</comment>
+<comment type="line" pos:start="123:1" pos:end="123:68">//			entry.setDroneAllocations(routeAssignments);</comment>
+<comment type="line" pos:start="124:1" pos:end="124:19">//		}*/</comment>
+<comment type="line" pos:start="125:1" pos:end="125:61">//		for(RoutePrimitive route : routePrimitives) {</comment>
+<comment type="line" pos:start="126:1" pos:end="126:87">//			route = Utilities.cartesianRouteToGpsRoute(route, avgLatitude);</comment>
+<comment type="line" pos:start="127:1" pos:end="127:17">//		}</comment>
+<comment type="line" pos:start="128:1" pos:end="128:62">//		//are home and start locations converted back?</comment>
+<comment type="line" pos:start="129:1" pos:end="129:38">//		return allAllocations;</comment>
+<comment type="line" pos:start="130:1" pos:end="130:9">//	}</comment>
+<comment type="line" pos:start="131:1" pos:end="131:8">//	</comment>
+<comment type="line" pos:start="132:1" pos:end="132:2">//</comment>
+<comment type="line" pos:start="133:1" pos:end="133:3">//}</comment>
+</unit>

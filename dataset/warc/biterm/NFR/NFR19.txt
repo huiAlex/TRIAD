@@ -1,0 +1,6 @@
+makeImplement:1
+libwarcImplement:1
+interfacImplement:1
+implementMake:1
+implementInterfac:1
+implementLibwarc:1

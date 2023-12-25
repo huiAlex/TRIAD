@@ -1,0 +1,11 @@
+command tell uav fli direct specifi time 
+ 
+creat command tell uav fli direct given ned vector given time 
+compon ned vector given meter second 
+time paramet given second 
+exampl creat ned command tell uav fli north meter second second 
+north north compon veloc vector given meter second east east compon veloc vector given meter second compon veloc vector given meter second time time fli given veloc second 
+north compon veloc vector meter second 
+east compon veloc vector meter second 
+compon veloc vector meter second 
+time fli given veloc second 

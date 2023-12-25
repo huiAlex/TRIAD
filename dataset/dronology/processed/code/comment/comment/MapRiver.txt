@@ -1,0 +1,6 @@
+method use gson librari automat pars riverbank json file 
+method preprocess riverbank node ensur necessari order rout generat algorithm 
+bank map river bank requir order 
+method export rout drone rout 
+method generat varieti rout primit option select 
+rout primit 

@@ -1,0 +1,7 @@
+center panel 
+des label 
+chang label 
+label 
+label 
+aread text 
+ 

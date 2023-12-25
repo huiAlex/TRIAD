@@ -1,0 +1,12 @@
+/**
+ * 
+ * Proxy class for Manged Drones. 
+ * This datastructure is intended to be passed to external clients and contains
+ * necessary information regarding the actual UAV managed by Dronology
+ *
+ */
+
+/**
+	 * 
+	 */
+

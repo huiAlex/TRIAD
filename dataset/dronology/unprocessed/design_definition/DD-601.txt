@@ -1,0 +1,4 @@
+[SUMMARY]
+Simulate travel to target
+[DESCRIPTION]
+While responding to a goto command  the _InternalSimulator_ shall continue moving in steps towards the target coordinates until the target has been reached.

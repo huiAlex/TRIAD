@@ -1,0 +1,22 @@
+Associates a drone state object with a drone.
+Normal behavior : ON_GROUND -> AWAITING_TAKEOFF_CLEARANCE -> TAKING_OFF -> FLYING -> In IN_AIR -> LANDING   Unavailable transitions will result in an exception being thrown.
+/
+Constructor States for both FlightMode and SafetyMode set to initial state	  	  	           The UAV the state manager is assigned to.
+/
+Set Flight Mode to OnGround	  	  	            if mode change does not follow allowed state transition.
+/
+Set Flight Mode to UserControlled	  	 /
+Set Flight mode to awaiting Takeoff Clearance	  	  	            if mode change does not follow allowed state transition.
+/
+Set flight mode to Taking off	  	  	            if mode change does not follow allowed state transition.
+/
+Set flight mode to Flying	  	  	            if mode change does not follow allowed state transition.
+/
+Set flight mode to Landing	  	  	            if mode change does not follow allowed state transition.
+/
+/
+/
+/
+/
+/
+/

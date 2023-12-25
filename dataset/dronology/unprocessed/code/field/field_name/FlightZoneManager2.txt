@@ -1,0 +1,10 @@
+LOGGER
+planPoolManager
+droneFleet
+ca
+activeUAVS
+awaitingTakeOffFlights
+awaitingTakeOffFlights
+awaitingLandingFlights
+awaitingLandingFlights
+timer

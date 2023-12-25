@@ -1,0 +1,5 @@
+Services for planning and executing missions for multiple UAVs .
+Initial implementation of mission planning capabilities.
+Allows retrieving sending a mission plan as JSON String to Dronology.
+/
+/

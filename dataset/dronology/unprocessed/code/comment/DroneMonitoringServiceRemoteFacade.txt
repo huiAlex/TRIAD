@@ -1,0 +1,13 @@
+/**
+ * 
+ * Remote facade for monitoring UAVs
+ * Allows registering {@link IRemoteMonitoringMessageHandler} to subscribe to certain message types or topics
+ * 
+ * 
+ *  *
+ */
+
+/**
+	 * 
+	 */
+

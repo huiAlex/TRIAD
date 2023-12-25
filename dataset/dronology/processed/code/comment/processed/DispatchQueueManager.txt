@@ -1,0 +1,4 @@
+dispatch queue manag handl incom outgo queue 
+incom queue contain uav state receiv uav dispatch physic drone 
+outgo queue contain drone command sent uav 
+ 

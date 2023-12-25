@@ -1,0 +1,4 @@
+pointSynchron:1
+assignUav:1
+registUav:1
+reachPoint:1

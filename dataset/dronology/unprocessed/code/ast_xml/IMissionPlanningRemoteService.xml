@@ -1,0 +1,67 @@
+<Class>
+    <Id>162</Id>
+    <Package>edu.nd.dronology.services.core.remote</Package>
+    <ClassName>IMissionPlanningRemoteService</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IRemoteableService</SuperInterface>
+        <SuperInterface>IFileTransmitRemoteService</SuperInterface>
+        <SuperInterface>MissionInfo</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>IMissionPlanningRemoteService  /** 
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>executeMissionPlan</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String mission</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>Exception</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>cancelMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>executeMissionPlan</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>MissionInfo info</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>executeMissionPlan</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>MissionInfo info</ParameterType>
+                <ParameterType>UAVMappingInfo mapping</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

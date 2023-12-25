@@ -1,0 +1,13 @@
+class central:amod
+class control:compound
+initi class:dep
+class respons:dep
+respons build:obl
+initi execut:conj
+execut mission plan:obj
+check mission control:nsubj
+task new:amod
+check task:nmod
+check activ:acl
+check activ:acl
+activ demand:obl

@@ -1,0 +1,5 @@
+event dialog 
+ok button action perform 
+cancel button action perform 
+left click 
+right click 

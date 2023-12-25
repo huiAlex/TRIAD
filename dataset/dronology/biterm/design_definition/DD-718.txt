@@ -1,0 +1,4 @@
+activUav:2
+requestActiv:1
+uavActiv:1
+uavAddit:1

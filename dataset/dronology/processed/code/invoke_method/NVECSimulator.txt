@@ -1,0 +1,14 @@
+drone voltag simul 
+
+equal 
+
+set coordin 
+equal 
+vector 
+vector 
+start batteri drain 
+start batteri drain 
+get voltag 
+check point 
+lla coordin 
+travel distanc 

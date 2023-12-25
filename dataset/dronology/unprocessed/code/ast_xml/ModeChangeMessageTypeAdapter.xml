@@ -1,0 +1,44 @@
+<Class>
+    <Id>46</Id>
+    <Package>edu.nd.dronology.gstation.connector.messages</Package>
+    <ClassName>ModeChangeMessageTypeAdapter</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>JsonDeserializer</SuperInterface>
+        <SuperInterface>UAVModeChangeMessage</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>deserialize</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>UAVModeChangeMessage</ReturnType>
+            <ParameterList>
+                <ParameterType>JsonElement element</ParameterType>
+                <ParameterType>Type mapType</ParameterType>
+                <ParameterType>JsonDeserializationContext arg2</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JsonObject [mapObject=element.getAsJsonObject()]</InnerVar>
+                <InnerVar>String [uavid=mapObject.get(UAVModeChangeMessage.UAV_ID).getAsString()]</InnerVar>
+                <InnerVar>String [gsid=mapObject.get(UAVModeChangeMessage.GS_ID).getAsString()]</InnerVar>
+                <InnerVar>JsonObject [data=mapObject.getAsJsonObject("data")]</InnerVar>
+                <InnerVar>String [mode=data.get(UAVModeChangeMessage.MODE).getAsString()]</InnerVar>
+                <InnerVar>String [dMode=FlightMode.USER_CONTROLLED.toString()]</InnerVar>
+                <InnerVar>UAVModeChangeMessage [message=new UAVModeChangeMessage(gsid,uavid,dMode)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>JsonParseException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

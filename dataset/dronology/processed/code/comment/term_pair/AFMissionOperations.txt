@@ -1,0 +1,4 @@
+button map:compound
+button oper:compound
+set button:nmod
+button info panel:nmod

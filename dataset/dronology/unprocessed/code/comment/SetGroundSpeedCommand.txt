@@ -1,0 +1,8 @@
+/**
+	 * 
+	 * Command sent to the GCS for setting the groundspeed of the UAV.
+	 * Ground speed is specified in m/s.
+	 * 
+	 *  
+	 * 	 */
+

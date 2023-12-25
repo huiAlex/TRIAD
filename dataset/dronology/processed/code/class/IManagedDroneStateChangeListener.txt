@@ -1,0 +1,7 @@
+manag drone state chang listen 
+
+
+
+
+notifi state chang 
+

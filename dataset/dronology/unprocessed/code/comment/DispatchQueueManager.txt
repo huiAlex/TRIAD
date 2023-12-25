@@ -1,0 +1,8 @@
+/**
+ * The {@link DispatchQueueManager} handles both incoming and outgoing queues. 
+ * Incoming queues contain {@link UAVState} received from the UAV to be dispatched to the {@link PhysicalDrone}.
+ * The outgoing queue contains {@link IDroneCommand}s being sent to the UAV.
+ * 
+ *  *
+ */
+

@@ -1,0 +1,6 @@
+uav id 
+synch mgr 
+alt 
+task 
+synch mgr 
+ 

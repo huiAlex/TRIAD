@@ -1,0 +1,87 @@
+------------------------------------------------------------------   us3512.c - Unit Tests URI path segment support in the Server     April, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   max command line length when generating system commands  /
+   The CA certificate used to verify the EST server.  Grab it from the server's directory  /
+ #define CLIENT_UT_CACERT "../../example/server/estCA/cacert.crt" /
+   The CA certificate used to verify the EST server.  Grab it from the server's directory  /
+ #define CLIENT_UT_CACERT "../../example/server/estCA/cacert.crt" /
+   This routine is called when CUnit initializes this test   suite.   1. Generate the keypair to be used for this EST Client UT suite  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Sanity check of the server side path segment processing.   - simple enroll   - direct to server   - with path segment   Outcome: pass  /
+   This function performs a basic simple enroll using   a UID/PWD to identify the client to the server.  This   is used for a variety of test cases in this module.  /
+   taken from US899/test1   Simple enroll -  including a path segment in the uri.     Path Segment testing   - This verifies the client includes a configured     path segment properly and sends it.   - This verifies that the server correctly parses out     a valid path segment and passes it up on a simple enroll.    /
+   taken from US898/test1   Simple re-enroll -  including a path segment in the uri.     Path Segment testing   - Verifies the client includes a configured     path segment   - Verifies that the server correctly parses out     a valid path segment and passes it up on a simple re-enroll     as well as the auth callback.  /
+   taken from US897/test11   CAcerts to the server - including a path segment in the uri.     Path Segment testing   - Verifies the client includes a configured     path segment   - Verifies that the server correctly parses out     a valid path segment and passes it up on the CA certs callback.  /
+   taken from US898/test1   CSRAttributes -  including a path segment in the uri.     Path Segment testing   - Verifies the client includes a configured     path segment   - Verifies that the server correctly parses out     a valid path segment and passes it up on a csr attributes callback  /
+   Test the flow of path segments through proxy mode - valid path segment   SimpleEnroll  /
+   Test the flow of path segments through proxy mode -    path segment is set to the maximum size    /
+   Test the flow of path segments through proxy mode -    path segment that is too large    /
+   Test segment that is an operation path    /
+   Test segment that is an operation path    /
+   Test segment that contains a valid operation string within it,   in this case, at the front.  This is a valid path segment, so   the test should pass.    /
+   taken from US897/test11   CAcerts to the server - including a path segment in the uri.     Path Segment testing   - Verifies the client includes a configured     path segment   - Verifies that the server correctly parses out     a valid path segment and passes it up on the CA certs callback.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Next we start an EST proxy acting as an RA.      /
+       Read in the CA certificates      /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Read in the CA certificates      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Read in the CA certificates      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Convert the cert to an X509.  Be warned this is       pure hackery.      /
+ our new cert should be the one and only       cert in the pkcs7 blob.  We shouldn't have to       iterate through the full list to find it. /
+       Wow, that's a lot of work, but we finally have the X509.       (don't you just love OpenSSL!!!)       Now that we have an X509 representation of the cert,       let's try to re-enroll this cert with the CA      /
+       Cleanup      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       clear out the global that proves that the path segment       made it to the application layer's cal back function      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       verify that the path segment made it all the way to the callback function       at the application layer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Read in the CA certificates      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       clear out the global that proves that the path segment       made it to the application layer's cal back function      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       verify that the path segment made it all the way to the callback function       at the application layer      /
+       Cleanup      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in a path segment that is too long, it       should get caught at the proxy and a 400 should be returned      /
+       Since we passed in a path segment that is too long, it       should get caught at the proxy and a 400 should be returned      /
+       Since we passed in a path segment that equals an operation we       should get a 400 in return      /
+       Since we passed in a path segment that equals an operation we       should get a 400 in return      /
+       Since we passed in a path segment that equals an operation we       should get a 400 in return      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       clear out the global that proves that the path segment       made it to the application layer's cal back function      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       verify that the path segment made it all the way to the callback function       at the application layer      /
+       output the retrieved ca certs and compare to what they should be      /
+ add a suite to the registry /
+       check to see if path segment support has been compiled in      /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /

@@ -1,0 +1,16 @@
+coordin land pattern 
+
+
+uav mission 
+current locat 
+target locat 
+
+lla coordin 
+lla coordin 
+
+coordin land pattern 
+expand flight pattern 
+creat sync point 
+
+predefin pattern coordin land expand part pattern task mission plan 
+ 

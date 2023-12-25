@@ -1,0 +1,107 @@
+default logger routin just dump log data stderr applic overrid call est init logger pass function pointer function implement prototyp 
+default logger routin just dump log data stderr applic overrid call est init logger pass function pointer function implement prototyp 
+global function call log someth 
+global function call log someth 
+global function call log someth 
+est get version allow applic retriev libest version string return char array contain version string valu librari const char 
+est get api level allow applic retriev libest api level numer valu indic api level librari new version libest releas api chang valu increment applic use determin capabl libest librari attempt int 
+use log libest version inform log messag log compil time run time openssl version 
+est init logger allow applic overrid default log handler est log messag lvl set desir log level est log level loggerfunc set callback function handl log function allow applic use est provid function log est messag est provid default handler send messag stderr applic desir send messag syslog log facil applic provid function pointer use method intercept handl est log messag set global librari impact context est error 
+est enabl backtrac allow applic toggl stack trace warn error log messag come libest enabl set zero disabl stack trace non zero enabl stack trace log facil function allow applic enabl stack trace use troubleshoot libest librari stack trace disabl default call function non zero argument enabl stack trace warn error log messag set global librari impact context void 
+convert pem pkcs encod cert option appli base encod output use creat cach cacert respons return bio contain pkcs encod cert respons option base encod pass non zero valu base argument caller function invok bio free return valu avoid memori leak note bio free suffici 
+take raw char array conta ca certif read data load certif context pkcs cert store est context use respond cacert request requir pkcs encod function load store context use verifi peer 
+take char array contain pem encod ca certif implicit explict cert decod load trust cert store member est context cert store use tls stack peer verif tls layer note includ defens code check null argument becaus function part public api check alreadi perform 
+est set ex data set applic specif data est context ctx pointer est context ex data pointer applic specif data pass est callback est error function use link applic specif data est ctx structur use applic bind applic specif data est oper libest doe use applic specif data ex data pointer pass applic libest invok enrol enrol csr attribut http auth callback libest free memori referenc ex data paramet est destroy invok applic respons releas applic specif data 
+est get ex data retriev applic specif data est context ctx pointer est context void function use attain refer applic specif data est ctx structur data set invok est set ex data earlier otherwis return null 
+est destroy free est context ctx pointer est context est error function use releas memori alloc est ctx call perform est oper use context 
+routin use determin bio flag base nl option need use use openssl base decod take string input check contain newlin charact return openssl use bio flag base nl option return otherwis 
+routin use decod base encod data pass base encod data pointer buffer receiv decod data length decod data return return valu zero negat error occur dst size paramet maximum allow size decod data 
+routin use encod base data pass unencod data length sourc buffer pointer buffer receiv encod data length encod data return return valu zero error occur max dest len paramet maximum allow size encod data 
+routin use encod base data pass unencod data length sourc buffer pointer buffer receiv encod data length encod data return return valu zero error occur max dest len paramet maximum allow size encod data 
+util function convert hex valu string use http digest authent logic 
+est enabl crl use applic enabl check certif revoc valid client tls peer certif dure tls handshak enabl ca chain paramet provid est server init est client init contain trust certif crl entri crl entri appen end ctx pointer est context crl check disabl default function call invok est server init est client init prior perform ani est oper therefor disabl version method est error 
+est asn saniti test perform saniti test csr attribut string function oper asn hex string alreadi base return est error presenc challengepassword 
+est challengepassword present take base encod asn string scan see challengepassword includ return est error presenc challengepassword 
+est asn pars attribut base decod saniti test given attribut string return est error presenc challengepassword 
+est add challengepassword caller verifi challengepassword configur includ add attribut saniti check need sinc est challengepassword present alreadi call 
+est add attribut helper add nid charact string req attribut req req structur use csr request nid nid ad attribut string pointer nid string need chtype type string use nid est error function use add csr attribut csr request est client 
+est decod attribut helper decod base encod string der format asn hex csrattr pointer base encod string csrattr len base string length der ptr pointer pointer store der encod string der len pointer store der string length est error function use decod base encod csr attribut string der format perform rang check input paramet 
+est get attribut helper get attribut nid der encod string der ptr pointer pointer der encod string der len pointer der encod string length new nid pointer storag nid est error function use find next nid der encod string nid befor reach end string new nid return zero est err bad asn hex 
+cleans auth credenti walk auth credenti structur overwrit free valu 
+given input string look valid oper 
+given input string look valid oper 
+given input string look valid oper 
+store path segment context 
+store path segment context 
+pull argument stack invok logger function 
+check user log messag 
+pull argument stack invok logger function 
+spit backtrac enabl global 
+spit backtrac enabl global 
+win 
+disabl backtrac 
+initi logger 
+set desir log level 
+check error pars input data 
+creat pkcs object 
+creat pkcs sign object 
+set version 
+creat stack cert 
+popul cert stack 
+creat bio receiv output 
+add base encod need 
+convert pem pkcs 
+onli need cleanup free cert stack alloc us sinc link 
+onli server proxi mode load cacert respons 
+convert ca cert pkcs encod char array use est server respond cacert request 
+creat combin cert store context contain implicit explicit cert 
+onli free ssl context act client oper server expect web server free context 
+final free est context 
+start look newlin th posit 
+decod base output alway smaller ratio determin max size input base size given output buffer make sure actual input buffer big 
+get length base encod data make sure big 
+encod base output alway larger ratio determin max size input base size given output buffer make sure actual input buffer big 
+don insert new line 
+write sourc buffer bio get pointer result memori buffer side obtain result 
+rfc state first finish messag use deriv tls uniqu id session resumpt use server send first finish messag normal client send first finish messag 
+awar openssl add newlin charact end base encod data 
+assum challengepassword oid present 
+make sure long asn 
+assum 
+just return data 
+check smallest possibl base case saniti test check min max valu asn data 
+grab first pop stuff 
+remov lead sequenc length copi new buffer 
+need byte seq header 
+onli mbstring asc use today caller pass valu 
+just return data 
+check smallest possibl base case saniti test check min max valu asn data 
+char path seg end 
+int path seg len 
+assum uri point known est oper 
+reset alreadi cach 
+instal default logger 
+ssl session cach mean ssl get session call need explict freed get ref count decrememnt 
+ani base byte shouldn problem openssl sinc minimum line length base encod 
+enabl newlin option input data doesn contain ani newlin charact bad openssl doesn implicit 
+make sure respons null termin 
+copi result base encod string make sure null termin return length 
+need byte seq header 
+els just need byte header 
+valid uri pars path prefix known est look see path segment extens determin oper 
+next segment segment extens oper 
+anoth segment use find end els walk length 
+see current segment need string 
+look see oper path come next cacert csrattr simpleenrol simplereenrol 
+log encount safec error 
+adjust string pointer 
+adjust string pointer 
+wasn known oper path segment pars find end path segment determin length save away 
+path seg end char cur seg text afterlast 
+path seg end null 
+path seg len path seg end cur seg str 
+ 
+path segment pars tri oper jump path segment next 
+oper make sure end 
+oper code suppos next 
+just signifiy 

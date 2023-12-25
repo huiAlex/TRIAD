@@ -1,0 +1,1 @@
+person abstract class use defin oper doctor patient class cap postal code codic fiscal compani id person first person data nascita date birth person address address person luogo nascita place birth person luogo residenza place resid person person note addit note provincia nascita provinc birth person provincia residen resid provinc person person address sex sex person 

@@ -1,0 +1,1 @@
+simul goto nvec simul given goto command nvec simul comput next coordin base normal vector altitud current posit normal vector altitud destin simul uav infinit acceler use numer method hone next coordin simul step size meter current posit travel path 

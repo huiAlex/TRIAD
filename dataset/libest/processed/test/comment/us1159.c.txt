@@ -1,0 +1,105 @@
+us unit test user stori csr attribut enforc octob copyright cisco system right reserv 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+function generat ec public privat key pair use certif provis 
+test attempt doe simpl enrol client provid csr attribut challengepassword enrol succeed 
+routin build pkcs csr 
+sign certif request use digest key pass return openssl error code req sign ctx 
+encod use der asn set modifi flag req becaus openssl cach copi der encod data case set flag tell openssl run asn encod use cach copi 
+test attempt doe simpl enrol client provid requir csr attribut csr enrol succeed 
+test attempt doe simpl enrol client provid requir csr attribut csr except bit curv use enrol fail sinc server csr attr specifi use bit curv 
+test attempt doe simpl enrol client provid requir csr attribut csr except sha use signatur enrol fail sinc server csr attr requir sha 
+test attempt doe simpl enrol server csr attribut configur onli requir commonnam csr attribut server configur static api callback 
+test attempt doe simpl enrol client provid requir csr attribut csr client provid larg quantiti addit attriut 
+test attempt doe simpl enrol client provid requir csr attribut csr client provid attribut veri long valu 
+test attempt doe simpl enrol server csr attribut configur pop enabl 
+test attempt doe simpl enrol server csr attribut configur pop disabl 
+main function set run test return cue success success run anoth cunit error code failur 
+start est server act ca 
+read ca certif 
+start instanc est server automat enrol enabl 
+creat rsa keypair assign pkey return 
+generat ec key 
+read evp pkey struct 
+read privat key file expect pem encod privat key use der encod invok privatekey bio instead 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+setup version number 
+add common entri 
+add serial number entri 
+add attribut server expect 
+set public key request 
+set attribut server 
+generat privat key 
+sign request 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+set attribut server 
+generat privat key 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+use simplifi api enrol csr 
+cleanup 
+set attribut server 
+generat privat key 
+creat client context 
+chang sha signatur 
+set authent mode use user id password 
+set est server address port 
+use simplifi api enrol csr 
+cleanup 
+disabl csr attr callback server context 
+configur static csr attribut valu 
+generat privat key 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+enrol new cert 
+cleanup 
+set attribut server 
+generat privat key 
+jam anoth attribut request caus failur est server base decod csr safec constraint max string size safec default byte 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+set attribut server 
+generat privat key 
+add attribut long valu 
+add attribut long 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+disabl csr attr callback server context 
+generat privat key 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+enrol new cert 
+cleanup 
+disabl csr attr callback server context 
+generat privat key 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+enrol new cert 
+cleanup 
+add suit registri 
+add test suit 
+note order import test fread fprintf 
+nid prime 

@@ -1,0 +1,3 @@
+locatUav:1
+registUav:1
+updatLocat:2

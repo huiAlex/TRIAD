@@ -1,0 +1,6 @@
+DroneInitializationInfo
+getMode
+getType
+getInitialLocation
+getSafetyInformation
+setSafetyInformation

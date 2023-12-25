@@ -1,0 +1,34 @@
+terrestri posit wgs 
+class implement util method subclass 
+ 
+convert posit necessari vector 
+terrestri posit defin vector altitud 
+ 
+convert posit necessari vector 
+terrestri posit defin coordin 
+ 
+convert posit necessari lla coordin 
+terrestri posit defin latitud longitud altitud 
+ 
+calcul distanc posit posit 
+distanc laser bean travel reach point 
+posit point calcul distanc 
+distanc posit meter 
+calcul distanc drone realist travel get posit posit 
+warn 
+code slow 
+time take run proport distanc 
+posit point calcul distanc 
+distanc drone need travel get posit meter 
+calcul rotat matrix represent posit 
+rotat matrix take displac vector ecef coordin rotat ned coordin posit 
+posit pole north east direct don make sens 
+matrix invers equat paper 
+rotat matrix row interpret unit vector point north east direct respect 
+ 
+calcul number meter north east ned coordin posit anoth global posit 
+terrestri posit transform ned coordin use posit origin ned coordin vector element first element number meter north second element number meter east element number meter 
+ 
+calcul latitud longitud altitud relat posit given number meter north east posit 
+ned vector element first number meter north second number meter east number meter 
+latitud longitud altitud posit 

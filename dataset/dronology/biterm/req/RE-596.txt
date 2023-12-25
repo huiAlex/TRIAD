@@ -1,0 +1,10 @@
+commandIntern:1
+altitudCorrespond:1
+simulLand:1
+commandLand:1
+longitudCurrent:1
+correspondLatitud:1
+longitudLatitud:1
+correspondLongitud:1
+commandGive:1
+altitudGround:1

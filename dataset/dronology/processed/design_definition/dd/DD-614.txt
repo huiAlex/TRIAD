@@ -1,0 +1,1 @@
+creat log event uav reach waypoint uav reach waypoint execut flight plan log event creat includ coordin waypoint uav flight plan assign flight plan id timestamp 

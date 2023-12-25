@@ -1,0 +1,33 @@
+flockfil 
+entercriticalsect 
+fflush 
+funlockfil 
+leavecriticalsect 
+initializecriticalsect 
+est init logger 
+us start server 
+st proxi start srp 
+read binari file 
+srp vbase new 
+st stop 
+st proxi stop 
+free 
+printf 
+st stop 
+sleep 
+cu assert 
+cu assert 
+st stop 
+sleep 
+us start server 
+cu assert 
+curl http post srp 
+cu assert 
+curl http post srp 
+cu assert 
+curl http post srp 
+cu assert 
+st proxi http disabl 
+curl http post srp 
+cu assert 
+cu add suit 

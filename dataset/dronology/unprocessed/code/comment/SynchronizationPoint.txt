@@ -1,0 +1,8 @@
+/**
+ * 
+ * Synchronization Point for routes assigned to UAVs. 
+ * Once a {@link SynchronizationPoint} is {@link SynchronizationState#ACTIVE} by one UAV, all collaborators (i.e., registered UAV) have to reach the sync point in order to proceed.
+ * 
+ *  *
+ */
+

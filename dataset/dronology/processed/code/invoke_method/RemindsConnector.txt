@@ -1,0 +1,64 @@
+creat 
+get state probe 
+transform 
+get monitor probe 
+transform 
+get probe 
+transform 
+get uavid 
+equal 
+equal 
+equal 
+equal 
+get data type 
+equal 
+get type 
+string 
+equal 
+equal 
+get type 
+string 
+equal 
+equal 
+equal 
+get type 
+string 
+equal 
+get data type 
+equal 
+get type 
+string 
+equal 
+get type 
+string 
+equal 
+get type 
+string 
+equal 
+get type 
+string 
+equal 
+get type 
+string 
+equal 
+equal 
+get data 
+get 
+get 
+get 
+get data 
+get data type 
+get type 
+get data 
+get data type 
+get type 
+get uavid 
+get uavid 
+creat 
+creat 
+creat 
+string 
+get data 
+json 
+json 
+get data 

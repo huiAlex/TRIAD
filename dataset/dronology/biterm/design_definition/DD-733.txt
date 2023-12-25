@@ -1,0 +1,4 @@
+commandUav:1
+specifiSpeed:1
+specifiMeter:1
+speedGround:1

@@ -1,0 +1,9 @@
+runtim drone type 
+get instanc 
+set virtual environ 
+set physic environ 
+simul 
+physic 
+regist command handler 
+get command handler 
+unregist command handler 

@@ -1,0 +1,14 @@
+uavid 
+old state 
+new state 
+drone id 
+old state 
+new state 
+plan 
+plan 
+cmd 
+type 
+uavid 
+data 
+type 
+uavid 

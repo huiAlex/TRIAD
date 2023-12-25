@@ -1,0 +1,207 @@
+<Class>
+    <Id>96</Id>
+    <Package>edu.nd.dronology.monitoring.reminds</Package>
+    <ClassName>RemindsConnector</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>gson</FieldName>
+            <FieldType>Gson</FieldType>
+        </Field>
+        <Field>
+            <FieldName>stateProbes</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>stateProbes</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dronologyProbes</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dronologyProbes</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>monitoringProbes</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>monitoringProbes</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>notify</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVStateMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>MockupProbe [probePoint=getStateProbe(message.getUavid())]</InnerVar>
+                <InnerVar>TransmittableEventObject [event=transform(message)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>notify</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitoringMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>MockupProbe [probePoint=getMonitoringProbes(message.getUavid())]</InnerVar>
+                <InnerVar>TransmittableEventObject [event=transform(message)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>notify</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitorableMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>MockupProbe [probePoint=getProbe(message)]</InnerVar>
+                <InnerVar>TransmittableEventObject [event=transform(message)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getProbe</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>MockupProbe</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitorableMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [uavid=message.getUavid()]</InnerVar>
+                <InnerVar>String [msgType=message.getData() != null ? message.getDataType() : message.getType().name()]</InnerVar>
+                <InnerVar>String [id="dronology." + msgType + "."+ uavid]</InnerVar>
+                <InnerVar>String [scope=("dronology." + msgType)]</InnerVar>
+                <InnerVar>MockupProbe [pp=new MockupProbe(id,"DRONOLOGY_INTERNAL",scope)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>dronologyProbes;put;[id, pp]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getStateProbe</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>MockupProbe</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [scope=("dronology.gcs1.uav@" + uavid)]</InnerVar>
+                <InnerVar>String [probename=uavid + "-statemessages"]</InnerVar>
+                <InnerVar>MockupProbe [pp=new MockupProbe(probename,"CS",scope)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>stateProbes;put;[uavid, pp]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getMonitoringProbes</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>MockupProbe</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [scope=("dronology.gcs1.uav@" + uavid)]</InnerVar>
+                <InnerVar>String [probename=uavid + "-monitoringmessage"]</InnerVar>
+                <InnerVar>MockupProbe [pp=new MockupProbe(probename,"CS",scope)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>monitoringProbes;put;[uavid, pp]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>transform</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>TransmittableEventObject</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVStateMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>TransmittableEventObject [event=TransmittableObjectFactory.createEventObject(PreciseTimestamp.create(),"UAVStateMessage")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>event;addData;[TransmittableObjectFactory.createEventData(gson.toJson(message),"state")]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>transform</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>TransmittableEventObject</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitoringMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>TransmittableEventObject [event=TransmittableObjectFactory.createEventObject(PreciseTimestamp.create(),"UAVMonitoringMessage")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>event;addData;[TransmittableObjectFactory.createEventData(gson.toJson(message),"monitoring")]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>transform</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>TransmittableEventObject</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitorableMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [msgType=message.getData() != null ? message.getDataType() : message.getType().name()]</InnerVar>
+                <InnerVar>TransmittableEventObject [event=TransmittableObjectFactory.createEventObject(PreciseTimestamp.create(),msgType)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

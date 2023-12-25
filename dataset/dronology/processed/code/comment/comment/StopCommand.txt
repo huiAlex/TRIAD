@@ -1,0 +1,13 @@
+command tell uav hover place 
+ 
+creat stop command 
+command tell uav hover place specifi number second 
+given negat zero time paramet command remain effect indefinit 
+exampl creat stop command second time second stop command remain effect 
+valu equal indic command remain effect indefinit someon someth interven 
+ 
+return time command remain effect 
+valu equal indic command remain effect indefinit 
+time stop command remain effect 
+valu equal indic command remain effect indefinit 
+ 

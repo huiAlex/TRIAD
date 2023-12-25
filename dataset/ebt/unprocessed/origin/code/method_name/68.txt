@@ -1,0 +1,11 @@
+EventsProcessor
+windowClosing
+doubleClickEventList
+popupOpenActionPerformed
+popupViewActionPerformed
+DeleteEvent
+DeleteRelatedEvents
+AddSubscription
+UpdateDisplayList
+Check_Subscription
+Analyze_CheckSubscription

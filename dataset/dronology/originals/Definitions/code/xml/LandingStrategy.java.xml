@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/LandingStrategy.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:42">package <name pos:start="1:9" pos:end="1:41"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name><operator pos:start="1:38" pos:end="1:38">.</operator><name pos:start="1:39" pos:end="1:41">uav</name></name>;</package>
+
+<class pos:start="3:1" pos:end="11:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> class <name pos:start="3:14" pos:end="3:28">LandingStrategy</name> <super_list pos:start="3:30" pos:end="3:53"><implements pos:start="3:30" pos:end="3:53">implements <super pos:start="3:41" pos:end="3:53"><name pos:start="3:41" pos:end="3:53">IStopStrategy</name></super></implements></super_list> <block pos:start="3:55" pos:end="11:1">{
+
+	<function pos:start="5:9" pos:end="9:9"><annotation pos:start="5:9" pos:end="5:17">@<name pos:start="5:10" pos:end="5:17">Override</name></annotation>
+	<type pos:start="6:9" pos:end="6:19"><specifier pos:start="6:9" pos:end="6:14">public</specifier> <name pos:start="6:16" pos:end="6:19">void</name></type> <name pos:start="6:21" pos:end="6:27">execute</name><parameter_list pos:start="6:28" pos:end="6:29">()</parameter_list> <block pos:start="6:31" pos:end="9:9">{<block_content>
+		<comment type="line" pos:start="7:17" pos:end="7:50">// TODO Auto-generated method stub</comment>
+		
+	</block_content>}</block></function>
+
+}</block></class>
+</unit>

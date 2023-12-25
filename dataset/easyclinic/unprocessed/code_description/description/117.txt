@@ -1,0 +1,15 @@
+Class:GUIPrenotazioni
+Date: 18/09/2003
+Version: 0 01 000
+
+Description:Make the mask used for reservation display by Patient
+
+Attributes:
+btnRitorna; Private;    button used to return to mask GUIPrincipale
+gridElenco; Private;   Grid in which only the reservations that meet the search criteria set by the Patient are displayed
+listaAppuntamenti; Private; list containing all reservations made by Patient
+panelParametri; Private; panel containing all objects giving the possibility to the Patient to set the parameters for research reservations: start date search and filtering type visit
+
+Methods:
+visualizzaPrenotazioni; Public;   Filter and displays reservations in listaAppuntamenti based on the criteria chosen by the Patient and displays the results in gridElenco
+getPrenotazioni;        Public;   Get the list of reservations made by the Patient

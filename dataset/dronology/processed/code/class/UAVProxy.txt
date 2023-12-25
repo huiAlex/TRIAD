@@ -1,0 +1,59 @@
+uav proxi 
+serial version uid 
+latitud 
+longitud 
+altitud 
+id 
+batteri level 
+veloc 
+info 
+info 
+status 
+groundstat id 
+home 
+
+lla coordin 
+
+id 
+latitud 
+longitud 
+altitud 
+batteri level 
+veloc 
+status 
+latitud 
+longitud 
+altitud 
+batteri level 
+veloc 
+veloc 
+groundstat id 
+home 
+
+lla coordin 
+
+uav proxi 
+get id 
+get groundstat id 
+set status 
+get status 
+updat coordin 
+updat batteri level 
+updat veloc 
+string 
+hash code 
+get longitud 
+get latitud 
+get altitud 
+get batteri level 
+get veloc 
+get info 
+get coordin 
+set veloc 
+set groundstat id 
+get home locat 
+set home locat 
+
+proxi class mang drone 
+datastructur intend pass extern client contain necessari inform regard actual uav manag dronolog 
+ 

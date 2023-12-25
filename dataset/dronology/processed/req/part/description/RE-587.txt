@@ -1,0 +1,1 @@
+uav deactiv uav activ manag cancel current schedul flight plan 

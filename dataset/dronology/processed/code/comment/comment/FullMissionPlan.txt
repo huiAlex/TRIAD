@@ -1,0 +1,17 @@
+manag mission plan 
+mission plan mission plan instanc uav mission plan instanc uav mission plan 
+uav individu mission plan compos mission task 
+onc entir mission plan load thread creat check individu uav mission plan determin start next task 
+ 
+construct coordin mission instanc 
+mission consist uav set assign task synchron point 
+mission 
+load mission json file 
+current hard code 
+mission 
+add addit uav mission plan 
+creat uav mission task instanc pass refer synch point mgr uav uav 
+sign task specif uav uav uav identifi task task perform rout waypoint synchron flight pattern task task specif specif waypoint rout 
+build synch point 
+activ next task uav mission unfinish activ task 
+expand flight pattern task coordin take coordin land 

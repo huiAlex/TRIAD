@@ -1,0 +1,230 @@
+   Utility function to set the certificate and private key to use   for a SSL context.     Returns 0 on success  /
+   Sign an X509 certificate request using the digest and the key passed.   Returns OpenSSL error code from X509_REQ_sign_ctx();  /
+   populate_x509_request will build an x509 request buffer.  It does this by   calls into OpenSSL to insert the fields of the x509 header.     Parameters:  	req:	pointer to the buffer that is to hold the x509 request header  	pkey:   public key to be placed into the x509 request  	cn:     Common Name to be placed into the x509 request        cp:     challenge password to be placed into the x509 header     Return value:  	EST_ERR_NONE if success  /
+   This function will generate a PKCS10 request.     Parameters:  	cn:	Common Name to put into the certificate.  	cp:     TLS unique ID for the SSL session, becomes the challenge password  	pkey:	Private key to use for signing the request.     Return value:  	EST_ERR_NONE if success  /
+   This function is a callback used by OpenSSL's verify_cert function.   It's called at the end of a cert verification to allow an opportunity to   gather more information regarding a failing cert verification, and to   possibly change the result of the verification.     This callback is similar to the ossl routine, but does not alter   the verification result.  /
+   This function will remove CRLs from a received cacert response buffer.     Parameters:  	ctx:	EST Context representing this session    cacerts:    pointer to the buffer holding the resulting CA certs     cacerts_len: length of the cacerts buffer         p7:    pointer to the pkcs7 buffer that was received     Return value:  	EST_ERR_NONE if success    /
+   This function will decode the passed base64 encoded buffer and return the   decoded cacerts. If returning EST_ERR_NONE, caller is responsible for   freeing the cacerts_decoded buffer  /
+   If returning EST_ERR_NONE, caller is responsible for freeing the PKCS7 struct  /
+   This function is invoked when the CACerts response has been received.  The   cert chain is built into a cert store and then each certificate is verified   against this store essentially verifying the cert chain against itself to   ensure that each intermediate can be verified back to one of the included   root certs in the CACerts response.  If CRLs are attached these will be   removed and a new PKCS7 buffer is created.     Parameters:  	ctx:	EST Context representing this session    cacerts:    pointer to the buffer holding the received CA certs     cacerts_len: length of the cacerts buffer     Return value:  	EST_ERR_NONE if success    /
+   This function is registered with SSL to be called during the verification   of each certificate in the server's identity cert chain.  The main purpose   is to look for the case where the cert could not be verified.  In this case,   if the EST client app has registered a callback to receive these untrusted   certs, it will be forwarded up to the EST client application.     Parameters:  	ok:	The status of this certificate from the SSL verify code.     x_ctx:     Ptr to the X509 certificate store structure       Return value:     int: The potentially modified status after processing this certificate. This cane          be modified by the ET client application if they've provided a callback          allowing it to be processed, or modified here in this callback.  /
+   This function is used to create and initialize an   SSL_CTX that will be used for client and proxy EST operations.   The SSL_CTX is stored on the EST_CTX.     Parameters:  	ctx:	EST Context     Return value:  	EST_ERROR           EST_ERR_NONE if success  /
+   This function calculates the digest value to be   used in HTTP requests when the server has asked   the client to use HTTP digest authentication.   It uses the tokens that were parsed from the HTTP   server response earlier to calculate the digest.  /
+   est_client_retrieve_credentials() is used to retrieve the credentials when   the server has requested either BASIC or DIGEST mode.  The values needed from   the application layer in either mode are the same, username, password, but the   API will indicate the mode to the callback in case anything changes.  /
+   This function adds the HTTP authentication header to   an outgoing HTTP request, allowing the server to   authenticate the EST client.     Parameters:  	ctx:	    EST context  	hdr:        pointer to the buffer to hold the header        uri:        pointer to a buffer that holds the uri to be used in the header  /
+   This function is used to build the HTTP header for   the CAcerts request flow.     Parameters:  	ctx:	    EST context  	hdr:        pointer to the buffer to hold the header  /
+   This function is used to build the HTTP header for   the CSR attributes request flow.     Parameters:  	ctx:	    EST context  	hdr:        pointer to the buffer to hold the header  /
+   This function does the work for the CSR attributes request flow.     Parameters:  	ctx:	    EST context  	ssl:	    SSL context  /
+   This function is used to build the HTTP header for   the Simple Enroll flow.     Parameters:  	ctx:	    EST context  	hdr:        pointer to the buffer to hold the header        pkcs10_len: length of the buffer pointed to by hdr   /
+   This function is used to build the HTTP header for   the Simple ReEnroll flow.     Parameters:  	ctx:	    EST context  	hdr:        pointer to the buffer to hold the header        pkcs10_len: length of the buffer pointed to by hdr   /
+   This function sends the HTTP request for a Simple Enroll   The CSR (pkcs10) is already built at this point.  This   function simply creates the HTTP header and body and puts   it on the wire.  It then waits for a response from the   server and copies the response to a buffer provided by   the caller     Parameters:  	ctx:	    EST context  	ssl:	    SSL context  	bptr:	    pointer containing PKCS10 CSR  	pkcs7:	    pointer that will receive the pkcs7 response  	pkcs7_len:  length of pkcs7 response  	reenroll:   Set to 1 to do a reenroll instead of an enroll    /
+   This function does a sanity check on the X509   prior to attempting to convert the X509 to   a CSR for a reenroll operation.     Returns an EST_ERROR code  /
+   This function is used to clear any ChallengePassword   attributes in an X509 CSR.  This is used because when   HTTP authentication is used during the enrollment   process, the PoP value will change when the client   sends the second HTTP request that contains the HTTP   authorization values. Since the CSR is reused between   both the initial and secondary requests, we need to   clear the PoP value from the CSR before submitting   the secondary request.  /
+   This function does the work of converting the X509_REQ to   the base64 encoded DER format as specified in the EST RFC.   Once converted to the proper format, this routine will   forward the request to the server, check the response,   and save the cert on the local context where it can be   retrieved later by the application layer.  /
+  est_client_enroll_pkcs10() This function implements the Simple Enroll    flow. It signs the CSR that was provided and then sends the CSR    to the EST server and retrieves the pkcs7 response.      Parameters:      ctx    EST context      ssl    SSL context being used for this EST session      csr    Pointer to X509_REQ object containing the PKCS10 CSR      pkcs7_len  pointer to an integer in which the length of the recieved                 pkcs7 response is placed.      priv_key Pointer to the private key used to sign the CSR.      reenroll Set to 1 to do a reenroll instead of an enroll      Returns EST_ERROR    /
+  est_client_enroll_cn() This function implements the Simple Enroll     flow. It uses the private key to generate a CSR (pkcs10) request.  It     then sends the request to the EST server and retrieves the pkcs7     response.  The user of this function simply provides the CommonName     value to be placed in the PKCS10 CSR.  This is a simplified interface,     none of the other CSR attributes can be specified.       ctx EST context      ssl SSL context being used for this EST session      cn pointer to the common name that is to be placed in the x509     request      pkcs7_len pointer to an integer in which the length of the recieved     pkcs7 response is placed.      pkey The new client public key that is to be enrolled       EST_ERROR   /
+    The following function was taken from cURL     The content that was incorporated were portions of   - lib/hostcheck.c   - lib/rawstr.c     Portable, consistent toupper (remember EBCDIC). Do not use toupper() because   its behavior is altered by the current locale.   /
+   The following function was taken from cURL     Curl_raw_equal() is for doing "raw" case insensitive strings. This is meant   to be locale independent and only compare strings we know are safe for   this.  See http://daniel.haxx.se/blog/2008/10/15/strcasecmp-in-turkish/ for   some further explanation to why this function is necessary.     The function is capable of comparing a-z case insensitively even for   non-ascii.  /
+   The following function was taken from cURL     Curl_raw_equal() is for doing "raw" case insensitive strings. This is meant   to be locale independent and only compare strings we know are safe for   this.  See http://daniel.haxx.se/blog/2008/10/15/strcasecmp-in-turkish/ for   some further explanation to why this function is necessary.     The function is capable of comparing a-z case insensitively even for   non-ascii.  /
+   The following function was taken from cURL     Curl_raw_equal() is for doing "raw" case insensitive strings. This is meant   to be locale independent and only compare strings we know are safe for   this.  See http://daniel.haxx.se/blog/2008/10/15/strcasecmp-in-turkish/ for   some further explanation to why this function is necessary.     The function is capable of comparing a-z case insensitively even for   non-ascii.  /
+   The following function was taken from cURL for the   FQDN check on the server cert  /
+   This routine checks the FQDN in the server certificate   against the configure server name used to establish   the TCP connection with the EST server.   This is required per section 3.6 in the EST spec.   Note, we only do the FQDN check as defined in RFC 6125.   We do not look for the id-kp-cmcRA extended key usage   extension in the server cert.  While this is more    restrictive by not allowing FQDN mismatches when the   id-kp-cmcRA is present, we currently have no way to   determine when we're using the explicit trust anchor to   allow this additional flexibility.  /
+   This function will open a TCP socket and establish a TLS session   with the EST server.  This should be called after est_client_init().     Parameters:  	ctx:	    Pointer to EST context for client session        ssl:        pointer to an SSL context structure to return the                    SSL context created,   Reurns:  	EST_ERR_NONE if success  /
+   This function will close the TLS session and the underlying socket.     Parameters:  	ssl:	    Pointer to SSL context that has been set up for this connection                    to the EST server.  /
+   This function does the work for the CACerts request flow.     Parameters:  	ctx:	    EST context  	ssl:	    SSL context        ca_certs_len: pointer to the unsigned int that will hold the length of the                      returned CA certs.  /
+   This function does the work for the CACerts request flow.     Parameters:  	ctx:	    EST context  	ssl:	    SSL context        ca_certs_len: pointer to the unsigned int that will hold the length of the                      returned CA certs.  /
+!  est_client_copy_enrolled_cert() passes back the client certificate     that was previously obtained from the EST server by the call to     est_client_enroll().        ctx Pointer to an EST context      cn Pointer to the Common Name value to be used in the enrollment     request.      pkcs7 Pointer to a pointer that will point to the buffer that     contains the newly enrolled client certificate.        EST_ERROR      est_client_copy_enrolled_cert() copies the previously obtained client     certificate from the EST context to the application's buffer.  Once this     client certificate is copied out of the context it is removed from the     context.  /
+!  est_client_get_cacerts() performs a CAcerts GET request to the EST server        ctx Pointer to an EST context      ca_certs_len Pointer to an integer to hold the length of the CA certs     buffer        EST_ERROR      est_client_get_cacerts() connects to the EST server, builds a CA certs     request, and sends the GET CA certs request.  The response is placed in a     buffer allocated and maintained by the EST client library and a pointer to     this buffer is returned to the calling application.  The returned CA certs     are in base64 encoded DER format and is stored in a NULL terminated string     buffer.      Once the CA certificates are retrieved from the EST server, the ET Client     library must be reset.  The retrieved CA certificates should now be passed     into the EST client initialization function as the explicit TA database.  /
+!  est_client_copy_cacerts() copies the previously retrieved CA     certificates to the application's buffer.        ctx Pointer to the current EST context.      ca_certs Pointer to the buffer into which the retrieved CA certificates     are to be copied.         EST_ERROR      est_client_copy_cacerts() copies the most recently retrieved CA     certificates from the EST server.  Once these CA certificates are copied     to the application's buffer pointed to by ca_certs they are removed from     the EST clietn context.      Once the CA certificates are retrieved by the application, the EST client     library must be reset.  When this reset is performed, the CA certificates     retrieved in this est_client_copy_cacerts call should be passed into the     EST client initialization function as the explicit TA database.  /
+!  est_client_get_csrattrs() performs the CSR attributes request to     the EST server.        ctx Pointer to EST context for a client session      csr_data Pointer to a buffer that is to hold the returned CSR     attributes      csr_len Pointer to an integer that is to hold the length of the CSR     attributes buffer        EST_ERROR      est_client_get_csrattrs() connects to the EST server, sends the CSR attributes     request to the server, saves aways the returned CSR attribute data, and then     disconnects from the EST server.  /
+!  est_client_set_sign_digest() is called by the application layer to      specify the hash algorithm used to sign the PKCS10 CSR during the      enroll operation. It must be called after      est_client_init() and prior to issuing any EST commands.        ctx Pointer to EST context for a client session      nid This is the NID value defined in the OpenSSL header file obj_mac.h                for the desired digest to use for signing.          EST_ERROR     EST_ERR_NONE - Success.     EST_ERR_NO_CTX - NULL value passed for EST context     EST_ERR_INVALID_DIGEST - An unsupported NID was provided.      libEST supports SHA1, SHA224, SHA256, SHA384, and SHA512 digests.       SHA256 is the default digest to use for signing.  There's no need     to invoke this function unless another digest is desired. The     supported NID values are: 	NID_sha1 	NID_sha224  	NID_sha256  	NID_sha384  	NID_sha512        /
+!  est_client_force_pop() is used by an application to enable      the proof-of-possession generation at the EST client.  This proves     that the EST client that sent the CSR to the server/proxy is in possession     of the private key that was used to sign the CSR.  This binds the TLS      session ID to the CSR.      Note, if the CSR attributes configured on the server require PoP      checking, then there is no need to call this function to enable     PoP.  The PoP will be enabled automatically under this scenario     when the CSR attributes are requested from the server/proxy.           ctx Pointer to the EST context      This function may be called at any time.           EST_ERROR.  /
+!  est_client_unforce_pop() is used by an application to disable      the proof-of-possession generation at the EST client.  Please see     the documenation for est_client_force_pop() for more information     on the proof-of-possession check.       ctx Pointer to the EST context      This function may be called at any time.           EST_ERROR.  /
+!  est_client_set_read_timeout() is used by an application to set     timeout value of read operations.  After the EST client sends a request to     the EST server it will attempt to read the response from the server.  This     timeout value limits the amount of time the client will wait for the     response.       ctx Pointer to the EST context      timeout Integer value representing the read timeout in seconds.     The minimum value is EST_SSL_READ_TIMEOUT_MIN and the maximum value is     EST_SSL_READ_TIMEOUT_MAX.        EST_ERROR.  /
+!  est_client_get_last_http_status() is used by an application to get     the HTTP status code returned by the EST server for the most recent     operation.        ctx Pointer to the EST context      This can be called after an EST operation, such as an enroll operation.     This function will return the most recent HTTP status code received     from the EST server.  Normally, a status of 200 would be returned     by the EST server to indicate a successful operation.  However, if the     operation failed for some reason, the HTTP status code may be useful     to understand the reason for failure.  For instance, the EST server      would return a HTTP status of 401 if the EST client was not authorized.     Please see RFC 2616 for a description of the various HTTP status codes.        int value representing the HTTP status code, or NULL if the     a NULL EST context was provided.  /
+       Verify the key matches the cert      /
+       Encode using DER (ASN.1)              We have to set the modified flag on the X509_REQ because       OpenSSL keeps a cached copy of the DER encoded data in some       cases.  Setting this flag tells OpenSSL to run the ASN       encoding again rather than using the cached copy.      /
+ setup version number /
+       Add Common Name entry      /
+       Add challengePassword attribute if required       No need to remove/add attributes here, only the PoP is       part of the simple enroll flow.      /
+       Set the public key on the request      /
+       Sign the request      /
+       If CRLs were removed, then the original PKCS7 buffer needs to be       updated.  This will always be base64 encoded.       - Allocate the BIOs,       - Write the PKCS7 struct back into PEM format,       - Get the pointer and length to the new base64 PEM encoded buffer,       - and then copy it into the original buffer that was passed in.       Since the CRLs are being removed, the new buffer will always be shorter       and will fit into the original buffer.      /
+       Decoding will always take up less than the original buffer.      /
+       Now get the PKCS7 formatted buffer of certificates read into a stack of       X509 certs      /
+       - Base64 decode the incoming ca certs buffer,       - convert to a PKCS7 structure,       - extract out the stack of certs.      /
+       At this point we have the stack of X509 certs that make up       the CA certs response sent from the EST server.       - Build a store of "trusted" certs to use in the verify       - walk through each cert and verify it          - Build a store context from the store and the cert to be verified and           call the verify function      /
+       set up a X509 Store Context      /
+       Finally, remove any CRLs that might be attached.      /
+       Retrieve the pointer to the SSL structure for this connection and then       the application specific data stored into the SSL object.  This will be       our EST ctx for this EST session.      /
+       Only TLS 1.1 or above can be used for EST      /
+       limit the cipher suites that are offered      /
+       Make sure we're verifying the server      /
+       leverage the cert store we already created from the       trusted CA chain provided by the application.             In either case, the SSL stack will clean up the cert store during the       SSL_CTX_free(), so let's remove our reference to it so we don't try to       clean it up ourselves later      /
+       Set up X509 params and assign them to the SSL ctx       - Enable CRL checks       - Max # of untrusted CA certs that can exist in a chain       - ensure that the cert is being used as intended, if         it contains the X509 KeyUsage extension      /
+ Enable CRL checks /
+       Save the reference to the SSL session       This will be used later when matching the EST_CTX to the SSL context       in est_ssl_info_cb().      /
+       This last config setting is not ctx based, but instead, global to the       entire libcrypto library.  Need to ensure that CSR string attributes       are added in ASCII printable format.      /
+       Calculate HA1 using username, realm, password, and server nonce      /
+       Calculate HA2 using method, URI,      /
+       Calculate auth digest using HA1, nonce, nonce count, client nonce, qop, HA2      /
+       See if we only have one part of them.  If so, reset the part we       have.      /
+       Need to ask the application layer for the credentials      /
+       Did we get the credentials we expected?  If not, point to a NULL string       to generate the header      /
+ both UID and PWD + ":" + /0 /
+ assume defeat /
+       Build the HTTP request       - allocate buffer: header, no data, terminating characters       - build the header       - no data       - terminate it      /
+       terminate the HTTP header      /
+       no data is being sent so go ahead and terminate the HTTP request      /
+       Send the request to the server and wait for a response      /
+       Assume the enroll will fail, set return length to zero       to be defensive.      /
+       Build the HTTP request       - allocate buffer: header, data, terminating characters       - build the header       - no data       - terminate it      /
+       terminate the HTTP header      /
+       Build the HTTP body containing the pkcs10 request      /
+       terminate the HTTP request      /
+       Send the request to the server and wait for a response      /
+       Make sure the cert is signed      /
+       Make sure the signature length is not invalid       /
+       The challenge password (PoP) may be in the CSR        more than once.  This should never happen, but       we're being defensive.      /
+       Grab the PKCS10 PEM encoded data      /
+       Encode using DER (ASN.1)              We have to set the modified flag on the X509_REQ because       OpenSSL keeps a cached copy of the DER encoded data in some       cases.  Setting this flag tells OpenSSL to run the ASN       encoding again rather than using the cached copy.       /
+       Get the buffer in which to place the entire response from the server      /
+       Send the PKCS10 as an HTTP request to the EST server      /
+       Make sure the PoP is removed from the CSR before we proceed      /
+       Get the PoP value from the TLS session and embed this into       the CSR if required.      /
+       Sign the CSR      /
+       Attempt to create the PKCS10 certificate request.       Get the TLS uid in case we need it during populate.      /
+ we do the comparison here (possibly again), just to make sure that if the        loop above is skipped because one of the strings reached zero, we must not        return this as a successful match /
+ detect IP address as hostname and fail the match if so /
+ We require at least 2 dots in pattern to avoid too wide wildcard        match. /
+ The wildcard must match at least one character, so the left-most        label of the hostname is at least as large as the left-most label        of the pattern. /
+       Sanity check input       /
+       trival case      /
+ -1 is no alternative match yet, 1 means match and 0                              means mismatch /
+       Attempt to resolve host name to v4 address       /
+ get a "list" of alternative names /
+       Establish the connection through a proxy (if applicable)      /
+       Enable TCP keep-alive      /
+       Pass the socket to the BIO interface, which OpenSSL uses       to create the TLS session.      /
+       Need to set the EST ctx into the exdata of the SSL session context so       that it can be retrieved on a per session basis.      /
+       Set the EST server name in the SSL context so that it'll be sent in the       in the server name extension in the client hello.      /
+       Now that we've established a TLS session with the EST server,       we need to verify that the FQDN in the server cert matches       the server name we used to establish the connection.       This is from section 3.6 in the EST spec.      /
+       if first disconnect, get the session id to cache it away to use for       session resumption.      /
+       Build the HTTP request       - allocate buffer: header, no data, terminating characters       - build the header       - no data       - terminate it      /
+       terminate the HTTP header      /
+       no data is being sent so go ahead and terminate the HTTP request      /
+       Send the request to the server and wait for a response      /
+       If there's a userid, there must be a password, and vice versa.       The userid can still be an empty string ( "" ), but it cannot       be NULL if there's a password. (3.2.3).      /
+       if uid/pwd set, then we're doing basic/digest authentication      /
+       Establish TLS session with the EST server      /
+       Make sure we have non-NULL pointers for the lengths      /
+       First, get the latest trust anchor certs from the server.      /
+       The certs are base64 DER encoded.  We need to convert       them to PEM.      /
+       We now have the new trust anchor and it's PEM encoded.       Let's load it into the current EST context.  All       future EST operations will then be using this new       trust anchor.      /
+       Since we've reset the trust store, mark the client       context as initialized.      /
+       Next we need to get the CSR attributes, which allows libEST       to know if the challengePassword needs to be included in the       CSR.      /
+       Finally, we can attempt to enroll a new certificate using the       Common Name provided by the application.      /
+       Check the X509 given to us      /
+       Check that the private key matches the public key       in the cert.      /
+       Convert the existing certificate to a CSR       This will copy the subject name from the cert into       a new CSR.  We pass in NULL for the private key parameter       below because we will sign this CSR ourselves later.      /
+       Copy the X509 extensions from the old certificate       to the CSR.  The CA may or may not retain these, as       this behavior depends on policy.  When using the        OpenSSL test CA, set the copy_extensions setting        in the config file to copyall to retain the       extensions in the CSR when issuing a new cert.      /
+       Establish TLS session with the EST server      /
+       Send the re-enroll request      /
+       Now that the copy in the context has been handed over,       free it up      /
+       if the CA certs were obtained, then the client lib needs to be reset.      /
+ assume defeat /
+       Connect to the EST server      /
+       free the current attributes if cached      /
+       Send the HTTP request to the EST server      /
+        have to allocate the new memory prior to        parsing to be sure it is null terminated.      /
+ Now make sure the data is valid /
+       Enable just the SRP cipher suites.  When SRP is enabled,       it's used exclusively.             Check if we have a trust anchor configured.  We will       enable the DSS and RSA auth cipher suites if we do.      /
+        Set the SRP user name and password.        /
+       cache away the client cert and the associated private key, then       get them loaded into the SSL context so that they'll be used.      /
+       Load the client cert if it's available      /
+ 	Initialize Winsock 	/
+        If a CA chain was passed in, then check the length value passed in.  It       should match the calculated length of the buffer.  This will verify       both that the length value is correct, and that the buffer is properly       null terminated.      /
+       Load the local CA certificates into memory and retain       for future use.  This will be used for /CACerts requests.      /
+       save away the client's callback function that allows for manual verification of       the server's identity certificate      /
+       Set the default value for the  socket read timeout.      /
+       We use SHA-256 as the default hash algorithm       for signing the CSR.  This can be changed by the       application by using the est_client_set_sign_digest()        function.      /
+       build out a canned URI to pass to the uriparser library.       This will cause the incoming path segment to be in the       correct spot within a URI as it gets validated.  Main issue       is the possible use of a ':' in the path segment becoming a       theme delimiter      /
+           look to see if the operation path comes next:           cacerts, csrattrs, simpleenroll, simplereenroll.           If any of the operations occur in this path segment           string, then this is a problem.          /
+       Look to see if there are multiple segments      /
+       If the EST library was not built with support for libcurl then client       proxy mode is not supported.      /
+           If no uriparser support, then we cannot support           a path segment being passed in          /
+           Is it self signed?  If so, add it in the trusted store, otherwise,           add it to the untrusted store.          /
+           make sure we have both parts of the credentials to send.  If we do,           then we're operating in the original mode where the app layer           provides them up front before they're needed.  If not, then we can           now go ask for them from the app layer.          /
+           base64 encode the combined string and build the HTTP auth header          /
+ Generate a client nonce /
+           Check to see if the application layer has provided username and password           up front during configuration.  If it has not, go retrieve them now, otherwise,           copy them into the local buffers to get them ready          /
+           Did we get the credentials we expected?  If not, point to a NULL string           to generate the header          /
+           base64 encode the combined string and build the HTTP auth header          /
+ 	  Look for the PoP value in the CSR  	 /
+           Make sure that even though we got a success return code, that we           actually received something          /
+           Resize the buffer holding the retrieved client certificate and link           it into the ctx.  Get rid of the http hdr and any extra space on           the back.          /
+           pass back the length of this newly enrolled cert          /
+           BIO_get_mem_data just returns the pointer and length to the data           contained in the mem BIO.  Nothing is allocated and passed back          /
+           copy the new buffer back into the old buffer          /
+           Try to get the response from the server          /
+ Perform a /simpleenroll /
+ Perform a /simplereenroll /
+           Try to get the response from the server          /
+ they are equal this far /
+ 	  Try to see if hostname resolves to v6 address 	 /
+ get amount of alternatives, RFC2459 claims there MUST be at least            one, but we don't depend on it... /
+ loop through all alternatives while none has matched /
+ an alternative name matched the server hostname /
+ an alternative name field existed, but didn't match and then            we MUST fail /
+ we have to look to the last occurrence of a commonName in the            distinguished one to get the most significant one. /
+ The following is done because of a bug in 0.9.6b /
+ we have the name entry and we will now convert this to a string            that we can use for comparison. Doing this we support BMPstring,            UTF8 etc. /
+ 	  The host name did not match, shut down the tunnel and bail 	 /
+           if not the first time to disconnect, see if the session id changed.           If it did, officially re-obtain it with a get1 call and cache it away          /
+           Try to get the response from the server          /
+           HTTPS digest mode requires the use of MD5.  Make sure we're not           in FIPS mode and can use MD5          /
+ Try one more time if we're doing Digest auth /
+           HTTPS digest mode requires the use of MD5.  Make sure we're not           in FIPS mode and can use MD5          /
+ Try one more time if we're doing Digest auth /
+           HTTPS digest mode requires the use of MD5.  Make sure we're not           in FIPS mode and can use MD5          /
+ Try one more time if we're doing Digest auth /
+               Make sure it's not too long              /
+               Validate the incoming path segment string              /
+               valid.  store it away in the context              /
+               this cert failed verification.  Log this and continue on              /
+               Cases where we notify the client application:                             CERT_UNTRUSTED is what is expected, but not what we get in the               case where we cannot verify our server's cert.               SELF_SIGNED_CERT_IN_CHAIN is what currently results with our server               when we cannot verify its cert.               UNABLE_TO_GET_CRL is passed up to make sure the application knows               that although              /
+               If the application provided a callback then go ahead and pass               this cert store up.  If not, then log a warning and return what               SSL gave us for a status.              /
+ The remainder of these will result in the ok state remaining unchanged           and a EST log warning message being logged.          /
+ since we are just checking the certificates, it is           ok if they are self signed. But we should still warn           the user.          /
+ Continue after extension errors too /
+               regardless of what comes back, build the string containing both              /
+               Use what was given during configuration through est_client_set_auth              /
+ Force hdr to a null string /
+ Force hdr to a null string /
+               Make sure the token we were given is not too long.               If it is, force it to NULL to cause the auth failure at               the server just as if no credentials were provided              /
+  	      If found, delete it 	     /
+ get out of the loop as soon as they don't match /
+ get a handle to alternative name number i /
+ get data and length /
+               Make sure that even though we got a success return code, that we               actually received something              /
+               Resize the buffer holding the retrieved CA cert and link it               into the ctx.  Get rid of the http hdr and any extra space on               the back.              /
+               Verify the returned CA cert chain              /
+               pass back the length of the retrieved CA cert buffer              /
+ In OpenSSL 0.9.7d and earlier, ASN1_STRING_to_UTF8 fails if the input                is already UTF-8 encoded. We check for this case and copy the raw                string manually to avoid the problem. This code can be made                conditional in the future when OpenSSL has been fixed. Work-around                brought by Alexis S. L. Carvalho. /
+ convert peer_CN from UTF8 /
+ Curl_convert_from_utf8 calls failf if unsuccessful /
+ error already detected, pass through /
+ initialize /
+               If we're attempting token mode for the second time, and               the server responded with error attributes, log them now              /
+               If we're attempting token mode for the second time, and               the server responded with error attributes, log them now              /
+ name/pattern comparison /
+ The OpenSSL man page explicitly says: "In general it cannot be                    assumed that the data returned by ASN1_STRING_data() is null                    terminated or does not contain embedded nulls." But also that                    "The actual format of the data will depend on the actual string                    type itself: for example for and IA5String the data will be ASCII"                     Gisle researched the OpenSSL sources:                    "I checked the 0.9.6 and 0.9.8 sources before my patch and                    it always 0-terminates an IA5String."                  /
+ IP address comparison /
+ compare alternative IP address if the data chunk is the same size                    our server IP address is /
+                   For PSB compliance, use SafeC library memcmp_s                  /
+ 		  There are no docs in OpenSSL that show how 		  to use X509_REQ_delete_attr.  Going to assume 		  we need to free the attribute ourselves.  There 		  do not appear to be any good examples on how 		  to use this API. 		 /
+ if this isn't true, there was an embedded zero in the name                        string and we cannot match it. /
+                      Should never get here...so force matched to be 0                     /
+                       We've enabled CRL checking in the TLS stack.  If the                       application hasn't loaded a CRL, then this verify error                       can occur.  The peer's cert is valid, but we can't                       confirm if it was revoked.  The app has not provided                       a way for us to notify on this, so our only option is                       to log a warning and proceed on.                      /
+ not a UTF8 name /
+ there was a terminating zero before the end of string, this                        cannot match and we return failure! /

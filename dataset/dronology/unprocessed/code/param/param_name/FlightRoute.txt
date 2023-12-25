@@ -1,0 +1,9 @@
+name
+description
+category
+waypoint
+coordinate
+waypoint
+index
+index
+altitude

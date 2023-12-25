@@ -1,0 +1,12 @@
+get instanc 
+initi drone 
+get instanc 
+add drone status chang listen 
+get instanc 
+remov drone status chang listen 
+get instanc 
+get activ uav 
+get instanc 
+resend command 
+get instanc 
+drone setup servic remot facad 

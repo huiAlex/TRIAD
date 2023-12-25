@@ -1,0 +1,334 @@
+us901.c
+us901_clean
+us901_init_suite
+us901_destory_suite
+us901_start_server
+us901_test1
+us901_test2
+us901_test3
+us901_test4
+write_func
+us901_test5
+us901_test_sslversion
+us901_test6
+us901_test7
+us901_test8
+us901_test9
+us901_test10
+us901_test11
+us901_test12
+us901_test13
+us901_test14
+us901_test15
+us901_test16
+us901_test17
+us901_test18
+us901_test19
+us901_test20
+us901_test21
+us901_test22
+us901_test23
+us901_add_suite
+sprintf
+system
+us901_clean
+est_init_logger
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+fwrite
+us901_start_server
+SLEEP
+fopen
+curl_http_get
+fclose
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SSL_CTX_new
+CU_ASSERT
+open_tcp_socket_ipv4
+CU_ASSERT
+SSL_new
+SSL_set_bio
+SSL_connect
+SSL_shutdown
+SSL_free
+SSL_CTX_free
+st_stop
+SLEEP
+us901_test_sslversion
+us901_test_sslversion
+us901_test_sslversion
+us901_test_sslversion
+us901_start_server
+SLEEP
+curl_http_post_cert
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post_cert
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post_cert
+CU_ASSERT
+st_stop
+us901_start_server
+SLEEP
+curl_http_post_cert
+CU_ASSERT
+st_stop
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+read_binary_file
+CU_ASSERT
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_X509
+CU_ASSERT
+BIO_free
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_PrivateKey
+CU_ASSERT
+BIO_free
+est_init_logger
+est_server_init
+CU_ASSERT
+X509_free
+EVP_PKEY_free
+read_binary_file
+CU_ASSERT
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_PrivateKey
+CU_ASSERT
+BIO_free
+est_init_logger
+est_server_init
+CU_ASSERT
+EVP_PKEY_free
+read_binary_file
+CU_ASSERT
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_X509
+CU_ASSERT
+BIO_free
+est_init_logger
+est_server_init
+CU_ASSERT
+X509_free
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_X509
+CU_ASSERT
+BIO_free
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_PrivateKey
+CU_ASSERT
+BIO_free
+est_init_logger
+est_server_init
+CU_ASSERT
+X509_free
+EVP_PKEY_free
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_X509
+CU_ASSERT
+BIO_free
+BIO_new
+BIO_read_filename
+CU_ASSERT
+PEM_read_bio_PrivateKey
+CU_ASSERT
+BIO_free
+est_init_logger
+est_server_init
+CU_ASSERT
+X509_free
+EVP_PKEY_free
+us901_start_server
+SLEEP
+fopen
+curl_http_post
+fclose
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post_certuid
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post_certuid
+CU_ASSERT
+st_stop
+SLEEP
+us901_start_server
+SLEEP
+curl_http_post
+CU_ASSERT
+st_stop
+SLEEP
+CU_add_suite
+server_type
+ptr
+size
+nmemb
+userdata
+m
+expect_fail
+char
+void
+size_t
+size_t
+void
+SSL_METHOD
+int
+US901_PKCS10_REQ
+US901_ENROLL_URL
+US901_CACERT_URL
+US901_PKCS10_CT
+US901_UIDPWD_GOOD
+US901_UIDPWD_BAD
+US901_SERVER_PORT
+US901_CACERTS
+US901_EXPLICIT_CERT
+US901_EXPLICIT_KEY
+US901_IMPLICIT_CERT
+US901_IMPLICIT_KEY
+US901_REVOKED_CERT
+US901_REVOKED_KEY
+US901_SELFSIGN_CERT
+US901_SELFSIGN_KEY
+US901_CACERT
+US901_EXTCERT
+US901_SERVER_CERT
+US901_SERVER_KEY
+US901_SERVER_CERTKEY
+US901_CACERTS
+US901_EXPLICIT_CERT
+US901_EXPLICIT_KEY
+US901_IMPLICIT_CERT
+US901_IMPLICIT_KEY
+US901_REVOKED_CERT
+US901_REVOKED_KEY
+US901_SELFSIGN_CERT
+US901_SELFSIGN_KEY
+US901_CACERT
+US901_EXTCERT
+US901_SERVER_CERT
+US901_SERVER_KEY
+US901_SERVER_CERTKEY
+------------------------------------------------------------------   us901.c - Unit Tests for User Story 901 - Server cacerts     June, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Start the appropriate flavor of st_server   based what character is specified   B - Basic auth   D - Digest auth   C - CRL checking   N = No auth  /
+   HTTP Basic auth     This test case uses libcurl to test HTTP Basic   authentication is working on the EST server.   It must use a simpleenroll message since the   cacerts message does not require the client   to be authenticated.  The EST server should be   running and listing to port 8088 prior to this   test being run.  /
+   HTTP Basic Auth failure     This test case uses libcurl to test HTTP Basic   authentication is working on the EST server,   while using a bogus password.   It must use a simpleenroll message since the   cacerts message does not require the client   to be authenticated.  The EST server should be   running prior to this test being run.  /
+   HTTP Digest Auth     This test case uses libcurl to test HTTP Digest   authentication is working on the EST server.   It must use a simpleenroll message since the   cacerts message does not require the client   to be authenticated.  The EST server should be   running and listening to port 8087 prior to this   test being run.  /
+   HTTP Digest Auth fail     This test case uses libcurl to test HTTP Digest   authentication is working on the EST server.   This is the negative test case for Digest auth.   It must use a simpleenroll message since the   cacerts message does not require the client   to be authenticated.  The EST server should be   running and listening to port 8087 prior to this   test being run.  /
+   This test case does a simple cacerts request   and looks for the HTTP 200 response code.  /
+   This test attempts to create a SSL 3.0 connection   with the EST server.  This should fail, as TLS 1.0   is not allowed.  /
+   This test attempts to create a TLS 1.0 connection   with the EST server.  This should fail, as TLS 1.0   is not allowed.  /
+   This test attempts to create a TLS 1.1 connection   with the EST server.  This should succeed.  /
+   This test attempts to create a TLS 1.2 connection   with the EST server.  This should succeed.  /
+   This test attempts to use a client certificate to   verify the TLS client authentiaiton is working.   The certificate used is signed by the explicit cert   chain. This should succeed.  /
+   This test attempts to use a client certificate to   verify the TLS client authentiaiton is working.   The certificate used is signed by the implicit cert   chain. This should succeed.  /
+   This test attempts to use a revoked client certificate to   verify CRL checks are working in the TLS layer.   This should fail.  /
+   This test attempts to use a self-signed client certificate to   verify cert chain will reject a cert that has not been   signed by a valid CA.  This should fail.  /
+   TLS anonymous cipher suites disabled     This test case uses libcurl to test that the   EST server will not accept anonymous cipher   suites from the client.  We only test a single   cipher suite here.  This attempts to do a   simple enroll with the server.  /
+   Null HTTP realm when initializing server  /
+   Null Server certificate when initializing server  /
+   Null Server certificate private key when initializing server  /
+   Null trusted CA chain when initializing server  /
+   Corrupted CA chain when initializing server  /
+   This test case attempts simple cacerts request using   POST instead of GET.  It should fail.  /
+   This test attempts to use a client certificate to   verify the TLS client authentiaiton is working.   The certificate used is signed by the explicit cert   chain. Valid HTTP authentication credentials are   also provided.  This should succeed.  /
+   This test attempts to use a client certificate to   verify the TLS client authentiaiton is working.   The certificate used is signed by the explicit cert   chain. Invalid HTTP authentication credentials are   also provided.  This should fail with a 401 response.  /
+   This test attempts to enroll without using a certificate   to identity the client, while using a good user ID/pwd.   However, the EST server is setup to only perform   certificate authentication (HTTP auth disabled).   This should fail with a 401 response.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in an invalid userID/password,       we expect the server to respond with 400      /
+       Since we passed in a valid userID/password,       we expect the server to respond with success      /
+       Since we passed in an invalid userID/password,       we expect the server to respond with a 400      /
+       we expect the server to respond with a 200      /
+       Now that the SSL context is ready, open a socket       with the server and bind that socket to the context.      /
+       Creaea SSL session context      /
+       Now that we have everything ready, let's initiate the TLS       handshake.      /
+       Cleanup all the data      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since the client cert has been revoked the TLS handshake       will fail.  The EST server should return a 401 response.      /
+       Since the client cert is not signed by either the local CA       or external CA, the TLS handshake will fail.       We will not receive an HTTP status message       from the server.      /
+       TLS handshake should have failed, curl should return 0      /
+       Read in the CA certificates      /
+       Read the server cert      /
+       Read the server key      /
+       Attempt to init EST server using NULL realm      /
+       Read in the CA certificates      /
+       Read the server key      /
+       Attempt to init EST server using NULL server key      /
+       Read in the CA certificates      /
+       Read the server cert      /
+       Attempt to init EST server using NULL private key      /
+       Read the server cert      /
+       Read the server key      /
+       Attempt to init EST server using NULL local CA chain      /
+       Read the server cert      /
+       Read the server key      /
+       Attempt to init EST server a corrupted CA chain      /
+       we expect the server to respond with a 400      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in an invalid userID/password,       we expect the server to respond with 401      /
+       Since we passed in an invalid userID/password,       we expect the server to respond with 401      /
+ add a suite to the registry /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /

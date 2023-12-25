@@ -1,0 +1,63 @@
+------------------------------------------------------------------   us903.c - Unit Tests for User Story 903 - Server simple enroll     August, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   The following CSR was generated using the following openssl command and then   using cat on the rsa.req file:     openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM  /
+   The following CSR was generated using the following openssl command and then   using cat on the ec.req file:     openssl req -newkey ec:256parms -keyout eckey.pem -keyform PEM -out ec.req -outform PEM  /
+   The following CSR was generated using the following openssl command and then   using cat on the dsa.req file:     openssl req -newkey dsa:dsaparms -keyout dsakey.pem -keyform PEM -out dsa.req -outform PEM  /
+   The following is a valid CSR that already contains a PoP   challengePassword.  This was collected using estserver with   the dumpbin() function.  This CSR should never work since   the PoP value in it will be stale.  /
+   Callback function passed to est_client_init()  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Simple enroll - RSA 2048     This test case uses libcurl to test simple   enrollment of a 2048 bit RSA CSR.  HTTP Basic   authentication is used.  /
+   Simple enroll - EC prime 256     This test case uses libcurl to test simple   enrollment of a 256 bit EC CSR.  HTTP Basic   authentication is used.  /
+   Simple enroll - DSA prime 1024     This test case uses libcurl to test simple   enrollment of a 1024 bit DSA CSR.  HTTP Basic   authentication is used.  /
+   Simple enroll - Corrupted PKCS10     This test case uses libcurl to test simple   enrollment usinga corrupted CSR.  HTTP Basic   authentication is used.  /
+   Simple enroll - manual enrollment     This test case verifies the server is   sending the appropriate retry-after response.  /
+   Simple enroll - PoP check fails with curl     This test case verifies the server is   verifying the PoP from the client CSR.  Since curl does not   set the PoP, the EST enrollment should fail.  /
+   Simple enroll - PoP check succeeds with estclient     This test case verifies the server is   verifying the PoP from the client CSR.  We use   estclient since it supports the PoP.  /
+   Simple enroll - Use a non-default ECDHE curve     This test case verifies the est_server_set_ecdhe_curve()   function is working.  /
+   Simple enroll - PoP is disabled, the CSR contains a                   valid PoP.     This test case ensures the server can handle the   scenario where the CSR includes a valid PoP even when   the server didn't request it.  We have to use   CiscoEST as the client to generate a CSR containing   a valid PoP.  There's no way to include a valid PoP   using Curl since the TLS channel binding information   is not known in advance.  /
+   Simple enroll - PoP is disabled, the CSR contains a                   invalid PoP.     This test case ensures the server can handle the   scenario where the CSR includes an invalid PoP even when   the server didn't request it.  /
+   Simple enroll - PoP is enabled, the CSR contains a                   invalid PoP, and the client uses                   a cert that contains id-kp-cmcRA.     This test case ensures the server disables the PoP   check when the client is using a cert that contains   id-kp-cmcRA, which indicates the client is an RA.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Since the CSR is not valid, the server should       respond with a 400.      /
+ Stop the EST server /
+ Restart the server with manual enrollment enabled /
+       Since the server hasn't seen this CSR in the past,       it should respond with a retry-after 202 response.      /
+       Verify the retry-after value      /
+       We will avoid waiting the full retry period since we're       only simulating manual enrollment.  Wait a second and then       try to enroll the cert again.      /
+       This enrollment request should succeed this time       Our simulated manual enrollment will automatically       enroll on the second attempt.      /
+ Stop the EST server /
+ Restart the server with manual enrollment disabled /
+       Send a valid enroll request using curl.  Curl does not       include the PoP      /
+       The server should respond with a failure code      /
+       This test case requires PoP to be enabled      /
+       Create a client context      /
+       Specify user ID and password since the server is running       in Basic Authentication mode.      /
+       get a keypair to be used in the enroll.      /
+       Attempt to enroll a CSR      /
+       Check HTTP status code received from server is 200      /
+       Client library has obtained the new client certificate.       Now retrieve it from the library.      /
+       Clean up      /
+       Disable PoP for future test cases      /
+ Stop the EST server /
+ Restart the server using the secp384r1 curve  /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Make sure our EST server has PoP disabled      /
+       Read in the CA certs      /
+       Init the client context      /
+       We'll use simple HTTP auth to identify ourselves      /
+       Create some space to hold the cert and generate       a private key      /
+       Attempt to enroll      /
+       Make sure our EST server has PoP disabled      /
+       The enroll request should fail since the PoP was invalid       We expect a 400 response.      /
+       Make sure our EST server has PoP disabled      /
+       Even though the PoP value doesn't match in this CSR,       the enroll will succeed since the client is using       an RA certificate. We expect a 200 response.      /
+ add a suite to the registry /
+ add the tests to the suite /

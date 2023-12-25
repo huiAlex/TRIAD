@@ -1,0 +1,18 @@
+variabl 
+variabl 
+variabl 
+string 
+get id 
+get logic 
+get 
+get valu 
+set id 
+set logic 
+set 
+set valu 
+get specul valu 
+set specul valu 
+get type 
+set type 
+get project path 
+set project path 

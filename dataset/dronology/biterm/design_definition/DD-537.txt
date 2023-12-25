@@ -1,0 +1,7 @@
+pointSynchron:2
+missionPlan:1
+assignUav:1
+routAssign:1
+planUav:1
+planFlight:1
+routFlight:1

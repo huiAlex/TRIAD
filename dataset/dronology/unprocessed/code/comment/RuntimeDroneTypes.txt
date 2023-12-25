@@ -1,0 +1,25 @@
+/**
+ * This is a SINGLETON class. To get an instance call getInstance() Sets the runtime mode of FlightZone either as SIMULATION or PHYSICAL The mode may only be set one time during execution. Simulation
+ * uses soft drone objects. Physical uses real drones controlled using Dronekit API.
+ * 
+ *  *
+ */
+
+/**
+	 * Sets flightmode to SIMULATION. Does not allow the flight mode to be reset after it is initially set.
+	 * 
+	 * 	 */
+
+/**
+	 * Sets flightmode to PHYSICAL Does not allow the flight mode to be reset after it is initially set.
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+

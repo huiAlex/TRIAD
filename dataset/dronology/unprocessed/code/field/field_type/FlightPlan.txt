@@ -1,0 +1,4 @@
+Waypoint
+LlaCoordinate
+LlaCoordinate
+ManagedDrone

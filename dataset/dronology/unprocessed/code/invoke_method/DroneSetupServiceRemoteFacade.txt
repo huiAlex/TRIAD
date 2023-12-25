@@ -1,0 +1,12 @@
+getInstance
+initializeDrones
+getInstance
+addDroneStatusChangeListener
+getInstance
+removeDroneStatusChangeListener
+getInstance
+getActiveUAVs
+getInstance
+resendCommand
+getInstance
+DroneSetupServiceRemoteFacade

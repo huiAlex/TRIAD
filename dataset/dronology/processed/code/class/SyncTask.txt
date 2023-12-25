@@ -1,0 +1,9 @@
+sync task 
+
+
+uav id 
+task 
+
+
+sync task 
+

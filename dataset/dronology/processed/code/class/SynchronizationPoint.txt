@@ -1,0 +1,23 @@
+synchron point 
+synch 
+collabor 
+collabor 
+synchron state 
+
+
+
+uav 
+uavid 
+
+
+synchron point 
+string 
+regist collabor 
+activ synchron point 
+remov collabor 
+count unsynch 
+synch 
+
+synchron point rout assign uav 
+onc synchron point synchron state activ uav collabor regist uav reach sync point order proceed 
+ 

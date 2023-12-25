@@ -1,0 +1,14 @@
+Show clinic folder
+The service is launched following the explicit request by the Patient actor.
+The Patient accesses the main form (for instance GUIPrincipale) for the management of all services provided by the system to the demands of patients and selects the display of their clinic folder.
+Control passes to the instance of GUIPrincipaleHandler, which delegates the task of managing the service to the instance of GUICartellaClinicaHandler.
+The first step is to find the data for all visits and examinations carried out by the Patient applicant, and therefore control passes to the instance of CartellaClinicaManager.
+Through an iterative process, the retrieval of all visits and examinations is carried out as follows:
+a. The body of VisiteManager retrieves data for a visit through the application of the Visits data.
+b. Control then passes to EsamiManager, which finds all examinations for the visit through instances of Consideration.
+c. At the end of this process, the results are sent to the instance of CartellaClinicaManager.
+The next step is to find anagrafica data relating to the Patient applicant, and therefore control passes to the instance of PazienteManager.
+Through the instance of PazienteManager, the request for Patient data is retrieved and sent backward to the instance of CartellaClinicaManager.
+Control then switches from GUICartellaClinicaHandler to the instance responsible for the visualization of anagrafica data and Patient visits performed on the mask on the management of clinic folders (for instance GUICartellaClinica).
+The information received is displayed on the mask for the detailed display of clinic folders.
+This feature is described by the collaboration diagram of Fig 3 11.

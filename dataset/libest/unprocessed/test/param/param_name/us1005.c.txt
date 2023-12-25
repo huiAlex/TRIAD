@@ -1,0 +1,10 @@
+format
+l
+manual_enroll
+nid
+no_http_auth
+enable_pop
+cn
+server
+ba_hint
+use_cert

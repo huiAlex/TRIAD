@@ -1,0 +1,302 @@
+<Class>
+    <Id>122</Id>
+    <Package>edu.nd.dronology.gstation.connector.dispatch</Package>
+    <ClassName>DispatchQueueManager</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>DispatchQueueManager  /** 
+ * The  {@link DispatchQueueManager} handles both &lt;i&gt;incoming&lt;/i&gt; and &lt;i&gt;outgoing&lt;/i&gt; queues. &lt;/br&gt;Incoming queues contain  {@link UAVState} received from the UAV to be dispatched to the {@link PhysicalDrone}.&lt;br&gt; The outgoing queue contains  {@link IDroneCommand}s being sent to the UAV.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>NUM_THREADS</FieldName>
+            <FieldType>int</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SERVICE_EXECUTOR</FieldName>
+            <FieldType>ExecutorService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>USE_MONITORING</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>queueMap</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>queueMap</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dispatchThreads</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dispatchThreads</FieldName>
+            <FieldType>Future</FieldType>
+        </Field>
+        <Field>
+            <FieldName>outgoingCommandQueue</FieldName>
+            <FieldType>BlockingQueue</FieldType>
+        </Field>
+        <Field>
+            <FieldName>outgoingCommandQueue</FieldName>
+            <FieldType>IDroneCommand</FieldType>
+        </Field>
+        <Field>
+            <FieldName>monitoringQueue</FieldName>
+            <FieldType>BlockingQueue</FieldType>
+        </Field>
+        <Field>
+            <FieldName>monitoringQueue</FieldName>
+            <FieldType>AbstractUAVMessage</FieldType>
+        </Field>
+        <Field>
+            <FieldName>groundstationid</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>validator</FieldName>
+            <FieldType>IUAVSafetyValidator</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>getGroundstationid</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>DispatchQueueManager</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String groundstationid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>postDroneStatusUpdate</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+                <ParameterType>? status</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>forwardToValidator</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVStateMessage status</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerNewDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>UAVHandshakeMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>DroneInitializationInfo [info=new DroneInitializationInfo(PysicalDroneIdGenerator.generate(uavid,groundstationid),DroneMode.MODE_PHYSICAL,uavid,message.getHome())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;hwInfo;["New drone registered with  '" + uavid + "' -&gt; "+ message.toString()]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createDispatchThread</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+                <ParameterType>IUAVPropertyUpdateNotifier listener</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createMonitoringDispatchThread</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>AbstractUAVMessage queue</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>MonitoringDispatchThread [thread=new MonitoringDispatchThread(queue)]</InnerVar>
+                <InnerVar>Future [ftr=SERVICE_EXECUTOR.submit(thread)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;hwInfo;["New Monitoring Dispatch-Thread created"]</InnerMethodInvoke>
+                <InnerMethodInvoke>dispatchThreads;add;[ftr]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>tearDown</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;hwInfo;["Ground Control Station '" + groundstationid + "' terminated"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getOutgoingCommandQueue</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IDroneCommand</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>send</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IDroneCommand cmd</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [taken=outgoingCommandQueue.offer(cmd)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;trace;["Command added to queue!"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>postMonitoringMessage</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMonitoringMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [uavid=message.getUavid()]</InnerVar>
+                <InnerVar>boolean [success=false]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>postDoneHandshakeMessage</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>UAVHandshakeMessage message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerSafetyValidator</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IUAVSafetyValidator validator</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

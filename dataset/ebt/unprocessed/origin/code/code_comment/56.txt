@@ -1,0 +1,6 @@
+EventParser Constructor
+initializes the Database connection
+Check if a subscription exists
+Insert a subscription into the ""Subscription"" table
+DeleteSubscription from the ""Subscription"" table
+

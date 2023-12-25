@@ -1,0 +1,6 @@
+warcFile:1
+validIdentifi:1
+identifiFile:1
+fileIdentifi:1
+identifiValid:1
+fileWarc:1

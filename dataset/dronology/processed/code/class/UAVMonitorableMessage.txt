@@ -1,0 +1,32 @@
+uav monitor messag 
+serial version uid 
+gson 
+type 
+timestamp 
+id 
+uavid 
+data 
+datatyp 
+
+artifact identifi 
+
+type 
+uavid 
+type 
+uavid 
+data 
+
+
+uav monitor messag 
+uav monitor messag 
+get type 
+get timestamp 
+get uavid 
+get data 
+get identifi 
+get data type 
+string 
+
+base class monitor messag 
+ 
+ 

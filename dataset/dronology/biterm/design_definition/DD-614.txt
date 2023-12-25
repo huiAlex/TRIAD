@@ -1,0 +1,6 @@
+reachWaypoint:2
+executPlan:1
+includCoordin:1
+assignPlan:1
+eventLog:2
+planFlight:2

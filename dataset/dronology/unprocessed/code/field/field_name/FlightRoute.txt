@@ -1,0 +1,8 @@
+serialVersionUID
+name
+id
+category
+waypoints
+waypoints
+takeoffaltitude
+description

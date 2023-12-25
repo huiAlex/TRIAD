@@ -1,0 +1,37 @@
+Use case:
+Changing reservation
+
+Description:
+It allows the operator to meet request to change a reservation a service by Outpatient
+
+Preconditions:
+The Operator has an interest in changing the renting an outpatient service previously requested by a patient
+The Operator has been recognized by system (See UcValOp)
+The patient has been recognized by the system (See UcValPaz)
+The reservation of which requires the amendment is in the SIO
+
+Postconditions:
+The data in the SIO not be modified
+The reservation is successfully slipped a date
+
+Sub-flows:
+The operator activates the execution of service to changing a reservation
+1 View the list of reservations for the patient
+2 Select the reservation to be changed
+3 Confirm the selection
+4 View the mask for changing the reservations
+5 Select dates available
+6 confirm the change 
+7 verifies that the sequence of reservations is valid (See BrValSeq)
+8 updates the data
+9 Notify the operator that the operation was concluded successfully
+
+Alternative flows:
+Sequence reservations invalid 
+   7 1 Show an appropriate message
+   7 2 Rejuvenating running from step 4
+
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure
+  7 1 The sequence of reservations must be ricontrollata because the patient may take a different reservation since last editing

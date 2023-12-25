@@ -1,0 +1,3 @@
+messagMonitor:2
+publishMessag:1
+typeMessag:1

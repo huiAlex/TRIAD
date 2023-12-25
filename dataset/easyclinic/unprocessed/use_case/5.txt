@@ -1,0 +1,33 @@
+Use case:
+Changing  doctor anagrafica
+
+Description:
+It allows the operator to change the anagrafica of a doctor who works at the outpatient. It deals with the modification of data about a doctor anagrafica
+
+Preconditions:
+The Operator has been recognized by the System (See UcValOp) and the doctor is present within the SIO.
+
+Postconditions:
+The anagrafica data of the doctor are not modified, remain in this was before.
+The personal doctor is correctly changed.The anagrafica data of the doctor are updated.
+
+Sub-flows:
+The operator activates the execution of Chanching service of the doctor anagrafica
+1 View the list of doctors present in the SIO.
+2 Select the anagrafica doctor which change the anagrafica
+3 Confirm the selection
+4 View the mask for changing of the doctor anagrafica
+5 Changing the anagrafica of doctor
+6 Confirm Changes
+7 Verify the data insert by operator
+8 Remember the updates
+9 Notify that the operation is finished with success.
+
+Alternative flows:
+Data entered invalid
+   7 1 Display a message showing the data are invalid
+   7 2 take back running from 4 underpinned the fields of the form with data insert by user
+Operator cancels operation
+  3 1 ends the execution of use case with failure
+   5 1 The anagrafica of a doctor is characterized by the following data: name, surname, sex, code, tax code, date of birth, place of birth, province of birth, place of address home, province of residence, address ZIP code, telephone, specialization, year certification, and additional notes. NB: In italics are highlighted data Optional whose inclusion does not affect on the correct completion of the operation.
+

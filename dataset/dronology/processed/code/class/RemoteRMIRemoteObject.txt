@@ -1,0 +1,36 @@
+remot rmi remot object 
+serial version uid 
+logger 
+default port 
+reg bind 
+instanc 
+
+
+port 
+servic 
+process listen 
+process listen 
+info 
+info 
+port 
+servic 
+servic instanc 
+
+
+remot rmi remot object 
+remot rmi remot object 
+initi 
+get servic 
+add servic listen 
+remov servic listen 
+get servic 
+get core servic 
+get servic 
+get file servic 
+regist 
+unregist 
+tear 
+get instanc 
+contribut servic 
+
+ 

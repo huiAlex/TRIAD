@@ -1,0 +1,15 @@
+serial version uid 
+messag type 
+locat 
+attitud 
+veloc 
+mode 
+status 
+arm 
+armabl 
+groundspe 
+batterystatus 
+serial version uid 
+current 
+voltag 
+level 

@@ -1,0 +1,17 @@
+examinVisit:1
+visitNew:1
+managVisit:1
+notifiUser:1
+visitManag:1
+operSuccess:1
+guiVisita:2
+visitExamin:1
+successOper:1
+outpatiVisit:1
+findInform:1
+visitOutpati:1
+userNotifi:1
+selectVisit:1
+visitSelect:1
+informFind:1
+newVisit:1

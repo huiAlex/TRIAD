@@ -1,0 +1,1 @@
+abstract base class servic allow transfer file byte array 

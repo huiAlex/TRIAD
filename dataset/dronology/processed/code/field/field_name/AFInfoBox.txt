@@ -1,0 +1,28 @@
+serial version uid 
+visibl 
+check 
+hover place 
+check click 
+check 
+status info 
+status info 
+status info 
+health 
+locat info 
+locat info 
+hover switch 
+return home 
+takeoff 
+takeoff icon 
+rtl icon 
+assign rout icon 
+resend icon 
+ok icon 
+user control 
+assign new rout 
+resend command 
+main content 
+content 
+middl content 
+content 
+uav status 

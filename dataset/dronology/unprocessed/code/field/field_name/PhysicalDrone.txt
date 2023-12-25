@@ -1,0 +1,7 @@
+LOGGER
+baseStation
+droneID
+currentTarget
+lastCommand
+latestDroneSnapshot
+r

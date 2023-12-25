@@ -1,0 +1,4 @@
+resendCommand:3
+activUav:3
+uavActiv:1
+uavPhysic:1

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/FlightZoneException.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:41">package <name pos:start="1:9" pos:end="1:40"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:40">exceptions</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="9:3">/**
+ * Supports customized flight zone exceptions
+ * 
+ * @author Jane Cleland-Huang
+ * @version 0.1
+ *
+ */</comment>
+<class pos:start="10:1" pos:end="23:1"><specifier pos:start="10:1" pos:end="10:6">public</specifier> class <name pos:start="10:14" pos:end="10:32">FlightZoneException</name> <super_list pos:start="10:34" pos:end="10:50"><extends pos:start="10:34" pos:end="10:50">extends <super pos:start="10:42" pos:end="10:50"><name pos:start="10:42" pos:end="10:50">Throwable</name></super></extends></super_list> <block pos:start="10:52" pos:end="23:1">{
+	<comment type="block" format="javadoc" pos:start="11:9" pos:end="13:10">/**
+	* 
+	*/</comment>
+	<decl_stmt pos:start="14:9" pos:end="14:74"><decl pos:start="14:9" pos:end="14:73"><type pos:start="14:9" pos:end="14:33"><specifier pos:start="14:9" pos:end="14:15">private</specifier> <specifier pos:start="14:17" pos:end="14:22">static</specifier> <specifier pos:start="14:24" pos:end="14:28">final</specifier> <name pos:start="14:30" pos:end="14:33">long</name></type> <name pos:start="14:35" pos:end="14:50">serialVersionUID</name> <init pos:start="14:52" pos:end="14:73">= <expr pos:start="14:54" pos:end="14:73"><literal type="number" pos:start="14:54" pos:end="14:73">8522577350228262490L</literal></expr></init></decl>;</decl_stmt>
+
+	<constructor pos:start="16:9" pos:end="18:9"><specifier pos:start="16:9" pos:end="16:14">public</specifier> <name pos:start="16:16" pos:end="16:34">FlightZoneException</name><parameter_list pos:start="16:35" pos:end="16:46">(<parameter pos:start="16:36" pos:end="16:45"><decl pos:start="16:36" pos:end="16:45"><type pos:start="16:36" pos:end="16:41"><name pos:start="16:36" pos:end="16:41">String</name></type> <name pos:start="16:43" pos:end="16:45">msg</name></decl></parameter>)</parameter_list> <block pos:start="16:48" pos:end="18:9">{<block_content pos:start="17:17" pos:end="17:27">
+		<expr_stmt pos:start="17:17" pos:end="17:27"><expr pos:start="17:17" pos:end="17:26"><call pos:start="17:17" pos:end="17:26"><name pos:start="17:17" pos:end="17:21">super</name><argument_list pos:start="17:22" pos:end="17:26">(<argument pos:start="17:23" pos:end="17:25"><expr pos:start="17:23" pos:end="17:25"><name pos:start="17:23" pos:end="17:25">msg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+
+	<constructor pos:start="20:9" pos:end="22:9"><specifier pos:start="20:9" pos:end="20:14">public</specifier> <name pos:start="20:16" pos:end="20:34">FlightZoneException</name><parameter_list pos:start="20:35" pos:end="20:47">(<parameter pos:start="20:36" pos:end="20:46"><decl pos:start="20:36" pos:end="20:46"><type pos:start="20:36" pos:end="20:44"><name pos:start="20:36" pos:end="20:44">Throwable</name></type> <name pos:start="20:46" pos:end="20:46">t</name></decl></parameter>)</parameter_list> <block pos:start="20:49" pos:end="22:9">{<block_content pos:start="21:17" pos:end="21:25">
+		<expr_stmt pos:start="21:17" pos:end="21:25"><expr pos:start="21:17" pos:end="21:24"><call pos:start="21:17" pos:end="21:24"><name pos:start="21:17" pos:end="21:21">super</name><argument_list pos:start="21:22" pos:end="21:24">(<argument pos:start="21:23" pos:end="21:23"><expr pos:start="21:23" pos:end="21:23"><name pos:start="21:23" pos:end="21:23">t</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+}</block></class>
+</unit>

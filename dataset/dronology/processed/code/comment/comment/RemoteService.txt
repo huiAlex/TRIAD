@@ -1,0 +1,1 @@
+singleton remot servic instanc 

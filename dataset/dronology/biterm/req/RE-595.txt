@@ -1,0 +1,7 @@
+locatUav:1
+simulGoto:1
+commandGive:1
+uavLocat:1
+commandGoto:1
+simulIntern:1
+updatLocat:1

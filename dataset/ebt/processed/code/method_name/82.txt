@@ -1,0 +1,10 @@
+token 
+get line number 
+get error count 
+get next open close 
+id char 
+get remain string 
+get ne 
+char 
+skip 
+process slash 

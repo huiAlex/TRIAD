@@ -1,0 +1,26 @@
+/**
+ * A structured Identifier. Each object holds an id part and refers to child IDs
+ * which in turn 
+ * hold again one id part, etc, which altogether form the whole identifier.
+ * 
+ * 
+ *  * 
+ */
+
+/**
+	 * 
+	 * 	 *            The ids that will be mapped to root and child ArtifactIdentifier
+	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * Returns all artifact identifier concatenated (separated by ::)
+	 */
+

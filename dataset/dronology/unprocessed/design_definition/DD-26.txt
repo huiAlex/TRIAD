@@ -1,0 +1,4 @@
+[SUMMARY]
+Activation state is ON_GROUND
+[DESCRIPTION]
+When a UAV is initially activated on the ground it is in the {{ON_GROUND}} state

@@ -1,0 +1,122 @@
+<Class>
+    <Id>77</Id>
+    <Package>edu.nd.dronology.gstation.connector.messages</Package>
+    <ClassName>StateMessageTypeAdapter</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>JsonDeserializer</SuperInterface>
+        <SuperInterface>Map</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>deserialize</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Map</ReturnType>
+            <ParameterList>
+                <ParameterType>JsonElement element</ParameterType>
+                <ParameterType>Type mapType</ParameterType>
+                <ParameterType>JsonDeserializationContext arg2</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Map&lt;String,Object&gt; [dataMap=new HashMap&lt;&gt;()]</InnerVar>
+                <InnerVar>JsonObject [mapObject=element.getAsJsonObject()]</InnerVar>
+                <InnerVar>LlaCoordinate [location=deserializeLLACoordinate(mapObject,UAVStateMessage.LOCATION)]</InnerVar>
+                <InnerVar>Vector3D [attitude=deserializeVector3D(mapObject,UAVStateMessage.ATTITUDE)]</InnerVar>
+                <InnerVar>Vector3D [velocity=deserializeVector3D(mapObject,UAVStateMessage.VELOCITY)]</InnerVar>
+                <InnerVar>String [statusString=mapObject.get(UAVStateMessage.STATUS).getAsString()]</InnerVar>
+                <InnerVar>String [modeString=mapObject.get(UAVStateMessage.MODE).getAsString()]</InnerVar>
+                <InnerVar>boolean [armedValue=mapObject.get(UAVStateMessage.ARMED).getAsBoolean()]</InnerVar>
+                <InnerVar>boolean [armableValue=mapObject.get(UAVStateMessage.ARMABLE).getAsBoolean()]</InnerVar>
+                <InnerVar>double [groundspeed=mapObject.get(UAVStateMessage.GROUNDSPEED).getAsDouble()]</InnerVar>
+                <InnerVar>BatteryStatus [batteryStatus=deserializeBatteryStatus(mapObject,UAVStateMessage.BATTERYSTATUS)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.LOCATION, location]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.ATTITUDE, attitude]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.VELOCITY, velocity]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.STATUS, DroneStatus.valueOf(statusString)]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.MODE, DroneMode.valueOf(modeString)]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.ARMED, Boolean.valueOf(armedValue)]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.ARMABLE, Boolean.valueOf(armableValue)]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.GROUNDSPEED, Double.valueOf(groundspeed)]</InnerMethodInvoke>
+                <InnerMethodInvoke>dataMap;put;[UAVStateMessage.BATTERYSTATUS, batteryStatus]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>JsonParseException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>deserializeBatteryStatus</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>BatteryStatus</ReturnType>
+            <ParameterList>
+                <ParameterType>JsonObject mapObject</ParameterType>
+                <ParameterType>String itemname</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JsonElement [locationElem=mapObject.get(itemname)]</InnerVar>
+                <InnerVar>JsonObject [locObject=locationElem.getAsJsonObject()]</InnerVar>
+                <InnerVar>double [bcurrent=-1]</InnerVar>
+                <InnerVar>double [blevel=-1]</InnerVar>
+                <InnerVar>double [bvoltage=-1]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>deserializeLLACoordinate</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType>JsonObject mapObject</ParameterType>
+                <ParameterType>String itemname</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JsonElement [locationElem=mapObject.get(itemname)]</InnerVar>
+                <InnerVar>JsonObject [locObject=locationElem.getAsJsonObject()]</InnerVar>
+                <InnerVar>JsonPrimitive [latitude=locObject.getAsJsonPrimitive("x")]</InnerVar>
+                <InnerVar>JsonPrimitive [longitude=locObject.getAsJsonPrimitive("y")]</InnerVar>
+                <InnerVar>JsonPrimitive [altitude=locObject.getAsJsonPrimitive("z")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>deserializeVector3D</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Vector3D</ReturnType>
+            <ParameterList>
+                <ParameterType>JsonObject mapObject</ParameterType>
+                <ParameterType>String itemname</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JsonElement [locationElem=mapObject.get(itemname)]</InnerVar>
+                <InnerVar>JsonObject [locObject=locationElem.getAsJsonObject()]</InnerVar>
+                <InnerVar>JsonPrimitive [x=locObject.getAsJsonPrimitive("x")]</InnerVar>
+                <InnerVar>JsonPrimitive [y=locObject.getAsJsonPrimitive("y")]</InnerVar>
+                <InnerVar>JsonPrimitive [z=locObject.getAsJsonPrimitive("z")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

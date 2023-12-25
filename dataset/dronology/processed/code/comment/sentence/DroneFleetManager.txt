@@ -1,0 +1,12 @@
+Holds a fleet of virtual or physical drones.
+When activated, UAVs are registered with the fleet manager and can be retrieved for assigning routes to them.
+/
+Specifies whether virtual or physical drones will be created according to the previously specified runtime drone type.
+(See RuntimeDroneTypes.java)	 /
+Checks for an available drone from the fleet.
+/
+Returns the next available drone.
+Currently uses FIFO to recycle drones.
+/
+When a drone completes a mission, returns it to the pool of available drones.
+/

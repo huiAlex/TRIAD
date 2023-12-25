@@ -1,0 +1,15 @@
+/**
+ * This is the box in the side panel that contains a UAV's information
+ * 
+ *  *
+ */
+
+/**
+	 * default constructor
+	 */
+
+/**
+	 * Expands and collapses the box
+	 * 
+	 * 	 */
+

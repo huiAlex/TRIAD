@@ -1,0 +1,1 @@
+visit contain data relat visit held outpati histori histori doctor data date patient support visit diagnosi medic diagnosi doctor reason reason visit observ instrument observ visit therapi treatment prescrib doctor creat creat new object type visit delet delet visit descript save store data relat visit sio get attribut retriev inform relat visit set attribut set attribut visit 

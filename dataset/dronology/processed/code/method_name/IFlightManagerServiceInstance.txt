@@ -1,0 +1,10 @@
+get flight 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get flight info 
+get current flight 
+cancel pend flight 
+takeoff 
+emerg stop 

@@ -1,0 +1,10 @@
+format 
+ 
+manual enrol 
+nid 
+http auth 
+enabl pop 
+cn 
+server 
+ba hint 
+use cert 

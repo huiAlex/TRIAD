@@ -1,0 +1,10 @@
+constraint 
+string 
+get id 
+get logic 
+get 
+get valu 
+set id 
+set logic 
+set 
+set valu 

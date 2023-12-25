@@ -1,0 +1,1 @@
+medici manag manag oper requir access anagrafica data doctor outpati del medico manag dispos data doctor edit medico manag chang anagrafica data doctor get elenco medici find anagrafica data doctor get medico rais anagrafica doctor new medico manag insert new doctor 

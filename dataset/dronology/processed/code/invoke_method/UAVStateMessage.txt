@@ -1,0 +1,20 @@
+get 
+get 
+get 
+get 
+get 
+get 
+get 
+get 
+get 
+arm 
+get mode 
+string 
+string 
+string 
+get locat 
+get latitud 
+get locat 
+get longitud 
+get locat 
+get altitud 

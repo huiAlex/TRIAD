@@ -1,0 +1,10 @@
+serverClient:2
+useCertif:1
+passwordSuit:1
+clientServer:2
+useAuthent:3
+useSuit:1
+suitCipher:6
+certifUse:1
+authentUse:3
+passwordSrp:1

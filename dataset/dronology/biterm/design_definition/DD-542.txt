@@ -1,0 +1,5 @@
+setWaypoint:1
+pointSynchron:1
+planMission:1
+setPoint:1
+flightPattern:1

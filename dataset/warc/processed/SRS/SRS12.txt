@@ -1,0 +1,1 @@
+srs possibl creat warc record use constructor return abstract handl data repres warc record 

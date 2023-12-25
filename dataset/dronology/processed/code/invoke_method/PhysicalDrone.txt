@@ -1,0 +1,39 @@
+lla coordin 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+get coordin 
+get altitud 
+get coordin 
+get batteri level 
+destin reach 
+updat coordin 
+updat veloc 
+updat batteri level 
+updat collis avoid 
+set coordin 
+updat batteri level 
+set veloc 
+equal 
+set status callback notifi 
+set groundstat id 
+send command 
+send command 
+send command 
+send command 
+send command 
+send command 
+set user control 
+distanc 
+get drone 
+get handler id 
+send command 
+land command 
+takeoff command 
+set ground speed command 
+set veloc command 
+drone except 
+command 
+send command 
+set ground speed command 

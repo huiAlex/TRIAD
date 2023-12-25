@@ -1,0 +1,8 @@
+serialVersionUID
+GSON
+data
+data
+uavid
+command
+sendtimestamp
+commandid

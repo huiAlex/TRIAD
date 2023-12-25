@@ -1,0 +1,6 @@
+/**
+ * A {@link PatternTask} represents a predefined pattern that is expanded when the mission is created.
+ * 
+ *  * 
+ */
+

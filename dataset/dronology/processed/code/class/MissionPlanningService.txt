@@ -1,0 +1,26 @@
+mission plan servic 
+instanc 
+
+mission plan servic 
+
+mission 
+uavid 
+mission 
+mission 
+map 
+
+
+mission plan servic 
+get instanc 
+init servic instanc 
+execut mission plan 
+cancel mission 
+remov uav 
+execut mission plan 
+execut mission plan 
+
+servic plan execut mission multipl uav 
+initi implement mission plan capabl 
+allow retriev send mission plan json string dronolog 
+ 
+ 

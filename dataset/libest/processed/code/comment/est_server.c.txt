@@ -1,0 +1,120 @@
+function send est specif http error respons 
+function send http accept respons client retri valu ca notifi client check later see csr approv 
+function handl incom cacert request client 
+handl ca cert request applic layer regist callback call els applic layer provid local configur buffer send els return error indic ca cert avail 
+function alloc http authent header structur use pass auth credenti applic layer allow app authent est client 
+function free element http authent header structur 
+function verifi peer provid certif verif tls stack http authent credenti provid return est auth state author result 
+function use determin est client ra use certif contain id kp cmcra usag extens usag bit present pop check disabl allow ra use case logic taken cach extens purp openssl return cert contain id kp cmcra extend key usag extens otherwis return 
+util function convert base der encod csr openssl req pointer return null problem 
+function perform simpl saniti check pkcs csr check signatur csr return success non zero saniti check fail 
+free link contain attribut client csr 
+add new entri tail attribut client csr 
+recurs routin walk asn blob look asn object definit ani oid object ad est oid first argument end result routin contain oid valu everi asn object blob code shameless taken openssl pars explain poor chosen variabl 
+util function popul link contain oid attribut present client csr 
+function check local configur csr attribut attribut csr ani attribut miss csr error return 
+function use server process incom simpl enrol request client 
+function use server process incom csr attribut request client 
+function call web server layer http request arriv listen port est server determin est request type dispatch request appropri handler paramt ctx pointer est ctx http ctx context pointer web server method html method request get post uri pointer http uri bodi pointer html bodi content bodi len length html bodi ct html content type header 
+est server start use applic start est server est server init call requir callback function provid applic ctx pointer est context libest use http code mongoos http server function allow applic start http servic layer requir est est error 
+est server stop use applic stop est server call prior est destroy ctx pointer est context libest use http code mongoos http server function allow applic stop http servic layer est error 
+est server set auth mode use applic configur http authent method use valid ident est client ctx pointer est context amod follow auth basic auth digest auth token function option invok applic chang default http authent mode default mode http basic authent applic desir use digest token authent instead case function use set mode function invok prior start est server est error 
+est set ca enrol cb use applic instal handler sign incom pkcs request ctx pointer est context cb function address handler function call prior start est server callback function match follow prototyp int func unsign char int unsign char int char char void function call libest certif request need sign ca server applic need forward request sign author return respons respons pkcs sign certif est error 
+est set ca reenrol cb use applic instal handler enrol certif ctx pointer est context cb function address handler function call prior start est server callback function match follow prototyp int func unsign char int unsign char int char function call libest certif need renew ca server applic need forward request sign author return respons respons pkcs sign certif est error 
+est set http auth requir use applic defin http authent requir addit use client certif ctx pointer est context requir flag indic http authent requir set http auth requir valu requir http auth set http auth requir http auth occur onli tls client authent fail est error default mode http auth requir mean http authent attempt tls client authent succeed http authent onli need tls client auth fail set http auth requir 
+est server enabl pop use applic enabl proof possess check est server prove est client sent csr server posses privat key use sign csr bind tls session id csr note csr attribut configur server requir pop check need call function enabl pop pop enabl automat scenario note pop check possibl est proxi use est client est server sinc proxi possess privat key est server woul fail pop check howev est proxi enabl featur ensur est client sign key ctx pointer est context function call ani time est error 
+est server disabl pop use applic disabl proof possess check est server pleas see documen est server enabl pop inform proof possess check ctx pointer est context function call ani time est error 
+est server set retri period use applic chang default retri period sent est client ca server configur auto enrol retri valu notifi client long wait befor attempt enrol oper see ca approv origin csr ctx pointer est context second number second server use retri respons function call ani time context creat est error 
+est server set ecdh curv use applic specifi ecc curv use ephemer diffi hellman key dure tls handshak ephemer diffi hellman enabl libest provid better forward secreci curv specifi applic use function prime curv use default curv ctx pointer est context nid openssl nid valu desir curv function call prior start est server nid valu defin openssl obj mac typic nid valu provid function includ nid prime nid prime nid secp nid secp est error 
+est server set dh parm use applic specifi diffi hellman paramet use singl use dh key generat dure tls handshak paramet use singl use dh key generat enabl enabl improv forward secreci tls handshak oper dh paramet provid api hard code applic paramet generat time instal reus paramet multipl instal result vulner ctx pointer est context parm pointer openssl dh paramet function call prior start est server est error 
+est server enabl tls deprec function tls violat rfc longer support est librari function log error messag return est err bad mode ctx pointer est context function call prior start est server est error 
+est server enforc csrattr use applic enabl check csr attribut est server enabl est client provid csr attribut csrattr respons sent server enrol fail client fail provid csr attribut set appli simpl enrol reenrol oper set appli onli server mode bear proxi mode oper ctx pointer est context function call prior start est server est error 
+est server set read timeout use applic set timeout valu server read oper onc socket open est server begin attempt read socket timeout valu limit time client wait respons default valu set est ssl read timeout def ctx pointer est context timeout integ valu repres read timeout second minimum valu est ssl read timeout min maximum valu est ssl read timeout max est error 
+send http header 
+send ca cert bodi 
+call set call otherwis local configur cacert buffer return otherwis return error indic don ani cacert 
+calcul ha use method uri 
+calcul auth digest use ha nonc nonc count client nonc qop ha 
+get client certif tls stack 
+see srp use certif 
+applic layer enabl http authent attempt http authent tls client auth fail requir http auth flag set applic assum applic layer provid http auth callback facil 
+get extend key usag extens loop valu look ik kp cmcra valu extens 
+get origin pkcs request client 
+read pem encod pkcs cert request 
+get index challengepassword attribut request 
+extract public key csr 
+verifi signatur csr 
+check result 
+doesn head new entri simpli becom head 
+grab space hold decod csr data 
+decod csr data 
+build attribut present csr use later confirm requir attribut present 
+get csr attribut configur server ll need look csr make sure csr provid use callback configur otherwis use local copi 
+csr configur server need base decod check smallest possibl base case saniti test check min max valu asn data 
+grab space hold decod csr data 
+decod csr data 
+pointer fun start joy openssl 
+make sure long asn 
+iter csr attribut configur server 
+file check ensur didn miss someth pars local configur csr attribut 
+lucki make far mean local configur csr attribut client csr 
+make sure client sent us pkcs csr request 
+authent client 
+pars pkcs csr client 
+perform saniti check csr 
+get peer certif avail identifi client ca desir inform 
+pop check proof possess challeng password pkcs request match tls uniqu id pop check performend client ra 
+check need ensur client includ csr attribut requir ca 
+bodi point pkcs data pass enrol routin 
+peer cert longer need delet 
+invok ca server callback retriev csr callback take prioriti save valu context note need authent client see sec 
+verifi context server client 
+see cacert request 
+saniti check input 
+check length valu match 
+load ca certif local memori retain futur use use cacert request option paramet altern app layer provid callback return fli 
+creat new asn object id kp cmcra oid openssl doesn defin need creat ourselv http www openssl org doc crypto obj nid obj html 
+verifi context server client proxi 
+free old version previous initi 
+caller just want clear return 
+order run client negat unit test paramet pop pars check need disabl defin coupl place 
+check smallest possibl base case saniti test check min max valu asn data 
+assum pop csr attribut 
+see simpl enrol request 
+see enrol request 
+see keygen request fixm current implement 
+onli post allow 
+see csr attribut request 
+send error uri didn match 
+get next attribut 
+mean user author http authorizt certif author 
+sinc http digest auth use md make sure fip mode 
+fallthrough 
+get length password zeroiz 
+tri http authent 
+iter extend key usag valu 
+pop enabl fail point sinc client didn send channel bind info csr 
+get refer attribut know locat rfc requir check pop present 
+attribut get actual valu challengepassword 
+challengepassword client cert request compar tls uid calcul server side implement pop check verifi client hold privat key use sign cert request 
+walk find tail add new entri end 
+send http header 
+send sign pkcs certif bodi 
+ca did sign request ask client retri futur occur ca configur automat enrol send http retri respons client 
+onli get allow 
+rc est handl cacert ctx ctx ca cert ctx ca cert len 
+http ctx path seg 
+rc est server handl cacert ctx http ctx path seg 
+onli post allow 
+get ssl context requir authent client 
+onli post allow 
+get ssl context requir authent client 
+onli get allow 
+challengepassword need check alreadi cover authent client 
+attrubut csr bail 
+iter attribut csr 
+adjust string pointer next item 
+invok applic specif auth check user credenti 
+compar current iter global id kp cmcra valu creat earlier 
+need bail sinc client use bogus cert need contiu http authent 
+send respons indic server doesn csr 

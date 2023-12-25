@@ -1,0 +1,47 @@
+flight simul 
+logger 
+current posit 
+target posit 
+previous distanc 
+reach 
+drone 
+
+lla coordin 
+lla coordin 
+virtual drone 
+
+drone 
+current pos 
+target pos 
+step 
+distanc time step 
+
+virtual drone 
+lla coordin 
+lla coordin 
+
+flight simul 
+set flight path 
+get remain distanc 
+comput latitud delta 
+comput longitud delta 
+comput angl 
+
+destin reach 
+
+comput current posit virtual drone dure flight 
+serv lightweight sitl drone 
+ 
+creat flight simul object singl virtual drone 
+set current flight path current posit target posit coordin current posit coordin target posit 
+comput distanc current posit target posit 
+comput delta drone current latitud target latitud 
+ 
+comput delta drone current longitud target longitud 
+comput angl drone fli respect vertic 
+comput posit drone follow step 
+check destin reach 
+distanc degre point iter 
+check drone reach target destin 
+check locat respect target posit 
+ 

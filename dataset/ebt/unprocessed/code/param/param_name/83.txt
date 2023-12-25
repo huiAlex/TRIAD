@@ -1,0 +1,24 @@
+id
+type
+name
+value
+speculateValue
+logic
+project_ path
+id
+type
+name
+value
+speculateValue
+id
+type
+name
+value
+logic
+id
+logic
+name
+value
+speculateValue
+type
+project_ path

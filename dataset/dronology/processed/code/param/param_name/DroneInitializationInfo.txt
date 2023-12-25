@@ -1,0 +1,5 @@
+id 
+mode 
+type 
+initi locat 
+safeti inform 

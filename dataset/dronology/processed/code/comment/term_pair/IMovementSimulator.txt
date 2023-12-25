@@ -1,0 +1,6 @@
+simul movement:compound
+simul movement:obj
+movement virtual drone:nmod
+simul reach:advcl
+waypoint assign:amod
+reach waypoint:obj

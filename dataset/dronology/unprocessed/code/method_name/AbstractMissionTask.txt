@@ -1,0 +1,4 @@
+AbstractMissionTask
+getTaskName
+getUAVId
+getWaypoint

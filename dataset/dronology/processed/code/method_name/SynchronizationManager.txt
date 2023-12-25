@@ -1,0 +1,12 @@
+synchron manag 
+get instanc 
+get next altitud 
+creat synchron point 
+synch point exist 
+add synch item 
+activ synch point 
+uav visit synch point 
+get count unsynch uav 
+fulli synch 
+remov uav 
+reset altitud 

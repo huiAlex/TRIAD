@@ -1,0 +1,40 @@
+abstract file transmit servic instanc 
+logger 
+extens 
+file manag 
+listen 
+listen 
+itemmap 
+itemmap 
+storag path 
+
+
+id 
+descript 
+extens 
+id 
+id 
+id 
+content 
+chang 
+itemid 
+listen 
+listen 
+id 
+file 
+
+
+abstract file transmit servic instanc 
+get item 
+get item 
+request server 
+transmit server 
+notifi file chang 
+reload item 
+delet item 
+add item chang listen 
+remov item chang listen 
+get path 
+file 
+
+abstract base class servic allow transfer file byte array 

@@ -1,0 +1,4 @@
+[SUMMARY]
+Update UAV location frequency
+[DESCRIPTION]
+The UAV location shall be updated on the map at the currently defined {{UI_UAV_REFRESH_RATE}}

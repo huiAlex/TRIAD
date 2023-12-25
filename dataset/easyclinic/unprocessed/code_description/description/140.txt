@@ -1,0 +1,17 @@
+Class: GUIVisita
+Date: 16/09/2003
+Version: 0 01 000
+Description: Make the mask for managing visits within an outpatient.
+
+Attributes:
+btnDelete;private; a button that allows you to start the procedure for deleting a visit.
+btnEdit;private; a button that allows you to start the procedure for changing a visit.
+btnNew;private;a button that allows you to start the procedure for adding a new visit.
+btnSave;private; a button that allows you to save a visit that has just been changed or added.
+btnUndo;private; a button that allows you to cancel the last operation performed.
+
+Methods:
+notificaSuccesso;public;this method notifies the user of the success of a certain operation.
+visualizzaElencoVisite;public; this method displays the list of visits.
+examinations;public; this method manages the event generated when the user selects a visit from the list and requires access to the section that shows the examination for that visit.
+visit;public; this method finds the necessary information for the realization of the GUIVisita.

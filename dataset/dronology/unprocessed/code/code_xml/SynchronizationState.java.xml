@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="src/SynchronizationState.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:66">package <name pos:start="1:9" pos:end="1:65"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:44">extensions</name><operator pos:start="1:45" pos:end="1:45">.</operator><name pos:start="1:46" pos:end="1:60">missionplanning</name><operator pos:start="1:61" pos:end="1:61">.</operator><name pos:start="1:62" pos:end="1:65">sync</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="8:3">/**
+ * Possible state of a {@link SynchronizationPoint}
+ * 
+ * @author Jane Cleland-Huang 
+ *
+ */</comment>
+<enum pos:start="9:1" pos:end="11:1"><specifier pos:start="9:1" pos:end="9:6">public</specifier> enum <name pos:start="9:13" pos:end="9:32">SynchronizationState</name> <block pos:start="9:34" pos:end="11:1">{
+	<decl pos:start="10:9" pos:end="10:20"><name pos:start="10:9" pos:end="10:20">NOTACTIVATED</name></decl>, <decl pos:start="10:23" pos:end="10:28"><name pos:start="10:23" pos:end="10:28">ACTIVE</name></decl>, <decl pos:start="10:31" pos:end="10:37"><name pos:start="10:31" pos:end="10:37">SYNCHED</name></decl>; 
+}</block></enum>
+</unit>

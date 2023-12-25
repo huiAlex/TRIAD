@@ -1,0 +1,16 @@
+uav handl:amod
+servic uav:nmod
+allow initi:xcomp
+uav new:amod
+initi uav:obj
+allow retriev:xcomp
+uav activ:amod
+retriev uav:obj
+uav return:acl
+return proxi:obj
+proxi iuav proxi:appos
+uav actual:amod
+uav physic:amod
+physic virtual:conj
+uav virtual:amod
+proxi uav:nmod

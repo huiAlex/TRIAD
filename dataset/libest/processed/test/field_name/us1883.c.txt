@@ -1,0 +1,23 @@
+us server ip 
+us tcp port 
+us pkcs rsa 
+us pkcs req 
+us enrol url ba 
+us pkcs ct 
+us uidpwd good 
+us cacert 
+us cacert 
+us server cert 
+us server key 
+us client cert 
+us client key 
+us cacert 
+us cacert 
+us server cert 
+us server key 
+us client cert 
+us client key 
+good token 
+differ token 
+null token 
+long token 

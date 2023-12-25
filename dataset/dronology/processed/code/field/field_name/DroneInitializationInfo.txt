@@ -1,0 +1,5 @@
+serial version uid 
+type 
+initi locat 
+mode 
+safeti inform 

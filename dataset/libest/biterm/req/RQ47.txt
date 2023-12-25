@@ -1,0 +1,14 @@
+estServer:1
+requestEnrol:2
+keyPublic:1
+requirAttribut:1
+allowAttribut:1
+authentClient:1
+attributRequir:1
+attributRequest:1
+serverEst:1
+csrAttribut:2
+requirAuthent:1
+providAttribut:1
+attributCsr:2
+requestClient:1

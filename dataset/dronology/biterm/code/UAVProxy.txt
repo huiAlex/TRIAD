@@ -1,0 +1,3 @@
+informUav:1
+containInform:1
+uavRegard:1

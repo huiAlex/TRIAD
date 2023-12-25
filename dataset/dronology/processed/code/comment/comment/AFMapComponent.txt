@@ -1,0 +1,18 @@
+map compon activ flight 
+function set center zoom map includ drone flight rout 
+find averag latitud longitud first 
+find point farthest center base zoom level point 
+ 
+follow boolean variabl true map follow drone 
+follow zoom determin map zoom drone follow mode 
+onli happen onc initi user click button follow drone map 
+ 
+function set center map averag drone follow 
+constant chang drone fli 
+drone map follow 
+listen info box popup drone just hover 
+return waypoint popup 
+return drone popup 
+listen popup inform certain waypoint 
+virtual same listen use flight rout 
+ 

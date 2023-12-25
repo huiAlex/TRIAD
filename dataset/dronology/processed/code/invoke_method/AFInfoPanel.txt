@@ -1,0 +1,113 @@
+af map oper 
+af mission oper 
+get home 
+get compon count 
+creat content 
+get compon count 
+get compon count 
+af emerg compon 
+af info box 
+af info box 
+get check 
+equal 
+get check 
+equal 
+get visibl 
+equal 
+get visibl 
+equal 
+get servic 
+set check 
+set box visibl 
+set hover place 
+get activ uav 
+string 
+string 
+string 
+get activ uav 
+get compon 
+get 
+equal 
+get compon 
+equal 
+get compon 
+get check 
+get compon 
+get check 
+get compon 
+get check 
+get compon 
+get compon 
+get box visibl 
+get compon 
+get box visibl 
+get compon 
+get activ uav 
+add box 
+remov compon 
+get compon count 
+set check click 
+add 
+get servic 
+get servic 
+get 
+get check 
+string 
+get 
+get compon 
+get id 
+equal 
+select 
+select 
+set visibl 
+set visibl 
+updat 
+add box 
+get check click 
+get id 
+equal 
+get id 
+equal 
+get 
+get 
+set check 
+get 
+equal 
+get id 
+get id 
+get compon 
+get id 
+equal 
+get 
+get servic 
+remov box 
+get compon 
+get 
+equal 
+get compon 
+get 
+equal 
+get 
+get 
+set check 
+set check click 
+get 
+get 
+get status 
+equal 
+get 
+get 
+get compon 
+get status 
+equal 
+get 
+return home 
+get compon 
+get 
+equal 
+get 
+get 
+get status 
+equal 
+return home 
+get 

@@ -1,0 +1,32 @@
+A terrestrial position in WGS-84.
+this class implements utility methods for  subclasses.
+/
+Convert this position if necessary to an NVector.
+/
+Convert this position if necessary to a PVector.
+/
+Convert this position if necessary to an LlaCoordinate.
+altitude.
+/
+Calculates the distance from this position to other position.
+This is the	  distance a laser bean would travel to reach the other point.
+the position of the point to calculate the distance to.
+/
+Calculates the distance a drone would realistically travel to get from	  this position to the other position.
+Warning!
+this code is slow.
+The time it takes to run is proportional to the	  distance from this to other.
+the position of the point to calculate the distance to.
+position in meters	 /
+Calculate the rotation matrix representation of this position.
+This	  rotation matrix can take displacement vectors in ECEF coordinates and	  rotate them into NED coordinates at this position.
+This position cannot be at the poles as north and east directions don't	  make sense there.
+This is the matrix inverse of equation 11 in this	  paper.
+unit vectors pointing in the north, east and down directions	          respectively.
+/
+Calculates the number of meters North, East and down (NED coordinates)	  from this position to another global position.
+the terrestrial position to transform into NED coordinates	             using this position as the origin	  	          (0th) element is the number of meters north, the second element	          is the number of meters east and the third element is the number	          of meters down.
+/
+Calculates the latitude, longitude and altitude of a relative position	  given as the number of meters North, East, and down from this position.
+a vector with three elements where the first is the number of	             meters north, the second is the number of meters east, and the	             third is the number of meters down.
+/

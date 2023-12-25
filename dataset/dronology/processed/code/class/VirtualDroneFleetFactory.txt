@@ -1,0 +1,18 @@
+virtual drone fleet factori 
+instanc 
+
+virtual drone fleet factori 
+
+drone id 
+drone type 
+latitud 
+longitud 
+altitud 
+
+
+virtual drone fleet factori 
+get instanc 
+initi drone 
+
+factori class initi new virtual drone instanc 
+ 

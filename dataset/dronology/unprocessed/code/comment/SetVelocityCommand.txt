@@ -1,0 +1,8 @@
+/**
+	 * 
+	 * Command sent to the GCS for setting a velocity vector to the UAV.
+	 * The vector is specified in NED (north,east,down).
+	 * 
+	 * 
+	 * 	 */
+

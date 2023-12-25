@@ -1,0 +1,3 @@
+servic handl uav flight allow assign flight plan uav allow send flight relat command uav take return home 
+ 
+singleton configur servic instanc 

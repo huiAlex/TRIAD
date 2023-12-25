@@ -1,0 +1,12 @@
+/**
+ * 
+ * Service for UAV monitoring messages
+ * Allows registering {@link IRemoteMonitoringMessageHandler} to subscribe to certain message types or topics
+ * 
+ *  
+ *  *
+ */
+
+/**
+	 * 	 */
+

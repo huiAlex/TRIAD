@@ -1,0 +1,4 @@
+action doubl click event 
+action open first record popup menu 
+action current record popup menu 
+pass check subscript messag eventserv wait respons 

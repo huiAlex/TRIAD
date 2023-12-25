@@ -1,0 +1,13 @@
+monitor messag 
+
+
+
+
+get identifi 
+get uavid 
+get data 
+get timestamp 
+get type 
+
+interfac messag subscrib monitor api 
+ 

@@ -1,0 +1,4 @@
+commandUav:1
+forwardMiddlewar:1
+middlewarForward:1
+forwardCommand:1

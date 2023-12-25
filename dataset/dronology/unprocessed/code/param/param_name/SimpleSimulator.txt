@@ -1,0 +1,5 @@
+drone
+currentPosition
+targetCoordinates
+distanceMovedPerTimeStep
+step

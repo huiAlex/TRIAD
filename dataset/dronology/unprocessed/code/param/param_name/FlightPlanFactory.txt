@@ -1,0 +1,5 @@
+uavid
+planName
+waypoints
+planName
+waypoints

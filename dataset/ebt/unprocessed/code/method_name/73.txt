@@ -1,0 +1,10 @@
+Constraints
+toString
+getId
+getLogic
+getName
+getValue
+setId
+setLogic
+setName
+setValue

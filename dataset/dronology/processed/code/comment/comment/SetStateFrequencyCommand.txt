@@ -1,0 +1,2 @@
+command sent gcs adjust state frequenc 
+frequenc sent 

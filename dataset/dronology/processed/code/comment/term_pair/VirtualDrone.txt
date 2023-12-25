@@ -1,0 +1,14 @@
+uav virtual:amod
+represent uav:nmod
+uav control:acl
+simul intern:amod
+control simul:obl
+drone construct:nsubj
+drone specifi:advcl
+posit current:amod
+specifi posit:obj
+use physic:obl
+use drone:ccomp
+status posit:compound
+acquir status:nsubj
+drone acquir:advcl

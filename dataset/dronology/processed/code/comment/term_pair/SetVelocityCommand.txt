@@ -1,0 +1,7 @@
+send command:nsubj
+send set:advcl
+vector veloc:compound
+set vector:obj
+set uav:obl
+specifi vector:nsubj
+specifi ned:obl

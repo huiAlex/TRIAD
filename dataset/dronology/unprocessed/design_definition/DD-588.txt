@@ -1,0 +1,4 @@
+[SUMMARY]
+Deactivates Physical UAVs
+[DESCRIPTION]
+When a UAV is deactivated all scheduled flight plans shall be removed from the UAV's flightplan pool.

@@ -1,0 +1,22 @@
+physic drone fleet factori 
+logger 
+instanc 
+command handler 
+
+physic drone fleet factori 
+
+command handler 
+drone id 
+drone type 
+latitud 
+longitud 
+altitud 
+
+
+physic drone fleet factori 
+set command handler 
+get instanc 
+initi drone 
+
+factori class initi new physic drone instanc 
+ 

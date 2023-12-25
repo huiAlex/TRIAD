@@ -1,0 +1,1 @@
+state activ uav state batteri level speed current coordin uav 

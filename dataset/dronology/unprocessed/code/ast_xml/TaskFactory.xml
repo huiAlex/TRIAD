@@ -1,0 +1,101 @@
+<Class>
+    <Id>15</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.tasks</Package>
+    <ClassName>TaskFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>FLIGHTPATTERN</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>ROUTE</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SYNC</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>WAYPOINT</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TAKEOFF</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>LAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>DELAY</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>getTask</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IMissionTask</ReturnType>
+            <ParameterList>
+                <ParameterType>String type</ParameterType>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>String taskname</ParameterType>
+                <ParameterType>Object params</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getTask</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IMissionTask</ReturnType>
+            <ParameterList>
+                <ParameterType>String type</ParameterType>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>String taskname</ParameterType>
+                <ParameterType>String params</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getTask</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IMissionTask</ReturnType>
+            <ParameterList>
+                <ParameterType>String type</ParameterType>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>LlaCoordinate coordinate</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

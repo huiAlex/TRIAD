@@ -1,0 +1,6 @@
+rejectRequest:1
+typeContent:1
+requestPost:1
+httpPost:1
+requestValid:1
+requestParamet:1

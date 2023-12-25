@@ -1,0 +1,12 @@
+tablish new:xcomp
+tablish handl:conj
+connect establish:amod
+handl connect:obj
+handl dronolog:obl
+thread new:amod
+thread read dispatch:compound
+read dispatch write dispatch:conj
+thread write dispatch:compound
+creat thread:obj
+establish connect:nsubj
+thread establish:acl

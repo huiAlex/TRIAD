@@ -1,0 +1,15 @@
+Find the next token, skipping blanks, and return it.
+For VALUE token, place the processed value in currentValue.
+Print error message if input is unrecognized.
+Construct an evaluator object.
+Public routine that performs the evaluation.
+Examine thepostfix machine to see if a single result is left and if so, return it; otherwise print error.
+Internal method that hides type-casting.
+Changed the method to support double
+Another internal method that hides type-casting.
+After a token is read, use operator precedence parsing approach to process it; missing opening parentheses are detected here.
+topAndPop the postfix machine stack; return the result. If the stack is empty, print an error message.
+Internal routine to compute x^ n.
+Process an operator by taking two items off the postfix stack, applying the operator, and pushing the result.
+Print error if missing closing parenthesis or division by 0.
+

@@ -1,0 +1,16 @@
+serial version uid 
+panel 
+select button 
+visibl button 
+content 
+num uav 
+select 
+visibl 
+focus 
+map 
+drone 
+drone 
+servic 
+provid 
+mission 
+logger 

@@ -1,0 +1,1 @@
+set veloc specifi veloc vector specifi use ned north east direct 

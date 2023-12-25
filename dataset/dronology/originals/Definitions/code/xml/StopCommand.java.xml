@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/StopCommand.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:66">package <name pos:start="1:9" pos:end="1:65"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:48">collisionavoidance</name><operator pos:start="1:49" pos:end="1:49">.</operator><name pos:start="1:50" pos:end="1:65">guidancecommands</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="5:3">/**
+ * A command that tells the UAV to hover in place.
+ */</comment>
+<class pos:start="6:1" pos:end="56:1"><specifier pos:start="6:1" pos:end="6:6">public</specifier> class <name pos:start="6:14" pos:end="6:24">StopCommand</name> <super_list pos:start="6:26" pos:end="6:40"><extends pos:start="6:26" pos:end="6:40">extends <super pos:start="6:34" pos:end="6:40"><name pos:start="6:34" pos:end="6:40">Command</name></super></extends></super_list> <block pos:start="6:42" pos:end="56:1">{
+
+    <decl_stmt pos:start="8:5" pos:end="8:30"><decl pos:start="8:5" pos:end="8:29"><type pos:start="8:5" pos:end="8:24"><specifier pos:start="8:5" pos:end="8:11">private</specifier> <specifier pos:start="8:13" pos:end="8:17">final</specifier> <name pos:start="8:19" pos:end="8:24">double</name></type> <name pos:start="8:26" pos:end="8:29">time</name></decl>;</decl_stmt>
+
+    <comment type="block" format="javadoc" pos:start="10:5" pos:end="36:7">/**
+     * &lt;p&gt;
+     * Creates a stop command. This command tells the UAV to hover in place for the specified number of seconds. If
+     * given a negative or zero time parameter, then this command will remain in effect indefinitely.
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * &lt;p&gt;
+     * For example, to create a stop command that lasts for 10 seconds
+     * &lt;pre&gt;
+     *         {@code
+     *         StopCommand stop = new StopCommand(10.0);
+     *         }
+     *     &lt;/pre&gt;
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * &lt;p&gt;
+     * To create a stop command that lasts until someone or something intervenes
+     * &lt;pre&gt;
+     *         {@code
+     *         StopCommand stopForever = new StopCommand(0);
+     *         }
+     *     &lt;/pre&gt;
+     * &lt;/p&gt;
+     *
+     * @param time in seconds that this stop command is to remain in effect. A value less than or equal to 0 indicates
+     *             that this command should remain in effect indefinitely or until someone or something intervenes.
+     */</comment>
+    <constructor pos:start="37:5" pos:end="39:5"><specifier pos:start="37:5" pos:end="37:10">public</specifier> <name pos:start="37:12" pos:end="37:22">StopCommand</name><parameter_list pos:start="37:23" pos:end="37:35">(<parameter pos:start="37:24" pos:end="37:34"><decl pos:start="37:24" pos:end="37:34"><type pos:start="37:24" pos:end="37:29"><name pos:start="37:24" pos:end="37:29">double</name></type> <name pos:start="37:31" pos:end="37:34">time</name></decl></parameter>)</parameter_list> <block pos:start="37:37" pos:end="39:5">{<block_content pos:start="38:9" pos:end="38:25">
+        <expr_stmt pos:start="38:9" pos:end="38:25"><expr pos:start="38:9" pos:end="38:24"><name pos:start="38:9" pos:end="38:17"><name pos:start="38:9" pos:end="38:12">this</name><operator pos:start="38:13" pos:end="38:13">.</operator><name pos:start="38:14" pos:end="38:17">time</name></name> <operator pos:start="38:19" pos:end="38:19">=</operator> <name pos:start="38:21" pos:end="38:24">time</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <comment type="block" format="javadoc" pos:start="41:5" pos:end="47:7">/**
+     * Return the amount of time this command should remain in effect. A value less than or equal to 0 indicates that
+     * this command should remain in effect indefinitely.
+     *
+     * @return time this stop command is to remain in effect. A value less than or equal to 0 indicates that this
+     * command should remain in effect indefinitely.
+     */</comment>
+    <function pos:start="48:5" pos:end="50:5"><type pos:start="48:5" pos:end="48:17"><specifier pos:start="48:5" pos:end="48:10">public</specifier> <name pos:start="48:12" pos:end="48:17">double</name></type> <name pos:start="48:19" pos:end="48:25">getTime</name><parameter_list pos:start="48:26" pos:end="48:27">()</parameter_list> <block pos:start="48:29" pos:end="50:5">{<block_content pos:start="49:9" pos:end="49:20">
+        <return pos:start="49:9" pos:end="49:20">return <expr pos:start="49:16" pos:end="49:19"><name pos:start="49:16" pos:end="49:19">time</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function pos:start="52:5" pos:end="55:5"><annotation pos:start="52:5" pos:end="52:13">@<name pos:start="52:6" pos:end="52:13">Override</name></annotation>
+    <type pos:start="53:5" pos:end="53:17"><specifier pos:start="53:5" pos:end="53:10">public</specifier> <name pos:start="53:12" pos:end="53:17">String</name></type> <name pos:start="53:19" pos:end="53:26">toString</name><parameter_list pos:start="53:27" pos:end="53:28">()</parameter_list> <block pos:start="53:30" pos:end="55:5">{<block_content pos:start="54:9" pos:end="54:51">
+        <return pos:start="54:9" pos:end="54:51">return <expr pos:start="54:16" pos:end="54:50"><literal type="string" pos:start="54:16" pos:end="54:29">"StopCommand("</literal> <operator pos:start="54:31" pos:end="54:31">+</operator> <name pos:start="54:33" pos:end="54:36">time</name> <operator pos:start="54:38" pos:end="54:38">+</operator> <literal type="string" pos:start="54:40" pos:end="54:50">" seconds)"</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class>
+</unit>

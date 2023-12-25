@@ -1,0 +1,3 @@
+Abstract Base class for both virtual and physical drones        /
+Set base coordinates for the drone	  	  	 /
+Get unique base coordinates for the drone	  	  	 /

@@ -1,0 +1,11 @@
+datumPatient:1
+visitMask:1
+examinVisit:2
+patientDatum:1
+datumVisit:1
+visitExamin:2
+maskVisit:1
+folderClinic:1
+visitDatum:1
+clinicFolder:1
+guiVisita:2

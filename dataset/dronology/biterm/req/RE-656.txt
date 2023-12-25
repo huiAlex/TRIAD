@@ -1,0 +1,10 @@
+assignRout:1
+modifiRout:1
+uavAssign:1
+assignPlan:1
+assignUav:1
+routAssign:1
+removPlan:1
+planAssign:1
+reorderRout:1
+planFlight:1

@@ -1,0 +1,3 @@
+wayPoints
+wayPoint
+home

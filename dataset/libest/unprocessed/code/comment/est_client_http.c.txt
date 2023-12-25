@@ -1,0 +1,88 @@
+  signed long to signed int /
+   parsedate()     Returns:     PARSEDATE_OK     - a fine conversion   PARSEDATE_FAIL   - failed to convert   PARSEDATE_LATER  - time overflow at the far end of time_t   PARSEDATE_SOONER - time underflow at the low end of time_t  /
+ returns:    -1 no day    0 monday - 6 sunday /
+ returns:    -1 no day    0 monday - 6 sunday /
+ return the time zone offset between GMT and the input one, in number    of seconds or -1 if the timezone wasn't found/legal /
+ return the time zone offset between GMT and the input one, in number    of seconds or -1 if the timezone wasn't found/legal /
+ struct tm to time since epoch in GMT time zone.   This is similar to the standard mktime function but for GMT only, and   doesn't suffer from the various bugs and portability problems that   some systems' implementations have.  /
+   parsedate()     Returns:     PARSEDATE_OK     - a fine conversion   PARSEDATE_FAIL   - failed to convert   PARSEDATE_LATER  - time overflow at the far end of time_t   PARSEDATE_SOONER - time underflow at the low end of time_t  /
+	Find next Field 	--------------- 	Finds the next RFC822 token in a string 	On entry, 	pstr	points to a string containing a word separated 		by white white space "," ";" or "=". The word 		can optionally be quoted using <"> or "<" ">" 		Comments surrrounded by '(' ')' are filtered out    On exit, 	pstr	has been moved to the first delimiter past the 		field 		THE STRING HAS BEEN MUTILATED by a 0 terminator  	Returns	a pointer to the first word or NULL on error /
+   This function parses the authentication tokens from   the server when the server is requesting HTTP digest   authentication.  The tokens are required to generate   a valid authentication response in future HTTP   requests.  /
+   This function parses the authentication tokens from   the server when the server is requesting HTTP digest   authentication.  The tokens are required to generate   a valid authentication response in future HTTP   requests.  /
+   This function parses the HTTP status code   in the first header.  Only a handful of codes are   handled by EST.  We are not a full HTTP stack.  Any   unrecognized codes will result in an error.   Note that HTTP 1.1 is expected.  /
+   This function searches for and processes the WWW-Authenticate header from   the server.  The result is the setting of the auth_mode value in the   context.  If there is no WWW-Authenticate header, or the values in the   header are invalid, it will set the auth_mode to a failure setting.  If   there are multiple Authenticate headers, only the first one will be   processed.  /
+   This function takes in the list of headers that were in the server's   response, it walks through the headers looking for a Retry-After response   header.  If one is found, the value is parsed and saved away in the EST   context.  This value can be in one of two formats, both are represented as   an ASCII string.  The first format can be a count of the number of seconds   the client should wait before retrying the request.  The second format is a   time/date stamp of the point in time at which the client should retry the   request.  The result of this function is the setting of the retry_after   values in the context.  If no retry-after header was received, or was   received and could not be parsed, the values will be zero, otherwise, they   are set to the value received.     NOTE: The EST client currently does not support the time/date format   response and will not process a response in this format.  /
+   This function verifies the content type header and also   returns the length of the content header.  The   content type is important.  For example, the content   type is expected to be pkcs7 on a simple enrollment.  /
+   This function verifies the content type header and also   returns the length of the content header.  The   content type is important.  For example, the content   type is expected to be pkcs7 on a simple enrollment.  /
+   This function extracts data from the SSL context and puts   it into a buffer.  /
+   This function provides the primary entry point into   this module.  It's used by the EST client to read the   HTTP response from the server.  The data is read from   the SSL context and HTTP parsing is invoked.     If EST_ERR_NONE is returned then the raw_buf buffer must   be freed by the caller, otherwise, it is freed here.  /
+ conversion may lose significant bits /
+ return the offset or -1, no real offset is -1 /
+ skip everything that aren't letters or digits /
+ day of the week number, 0-6 (mon-sun) /
+ month of the year number, 0-11 /
+ day of month, 1 - 31 /
+ save the original pointer /
+ max 6 parts /
+ no time, make it zero /
+ 32 bit time_t can only hold dates to the beginning of 2038 /
+ clearly an illegal date /
+ my_timegm() returns a time_t. time_t is often 32 bits, even on many      architectures that feature 64 bit 'long'.       Some systems have 64 bit time_t and deal with years beyond 2038. However,      even on some of the systems with 64 bit time_t mktime() returns -1 for      dates beyond 03:14:07 UTC, January 19, 2038. (Such as AIX 5100-06)   /
+ time zone adjust (cast t to int to compare to negative one) /
+       header will come in with the basic or digest field still on the front.       skip over it.      /
+       Find offset of header deliminter      /
+       Skip the first line      /
+       Walk the headers looking for the WWW-Authenticate.  We'll       only process the first one.  If an erroneous second one       is included, it will be ignored.      /
+       Initialize assuming there was no retry-after header.      /
+       Traverse all the http headers and process the ones that need to be       checked      /
+       Make sure all the necessary headers were present.      /
+       load up the timeval struct to be passed to the select      /
+       Multiple calls to SSL_read may be required to get the full       HTTP payload.      /
+       Read the raw data from the SSL connection      /
+       Parse the HTTP header to get the status       Look for status 200 for success      /
+       Check the Status header first to see       if the server accepted our request.      /
+ Strip white space and other delimiters /
+           Content type          /
+ Server reported OK, nothing to do /
+ Server is asking for a retry /
+ Server is requesting user auth credentials /
+ Check if we've already tried authenticating, if so, then bail           First time through, auth_mode will be set to NONE          /
+ Unsupported HTTP response /
+ Some other HTTP response was given, do we want to handle these? /
+ we don't support years before 1970 as they will cause this function        to return a negative value /
+ lacks vital info, fail /
+ Add the time zone diff between local time zone and GMT. /
+ time_t overflow /
+           Get the Content-Type and Content-Length headers           and verify the HTTP response contains the correct amount           of data.          /
+ a name coming up /
+ bad string /
+ a digit /
+ No field /
+ quoted field /
+ kr95-10-9: needs to stop here /
+ quoted field /
+ kr95-10-9: needs to stop here /
+ Comment /
+ Spool field /
+ Got it /
+               Determine whether or not the value is a date/time string               or is an integer representing the number of seconds               that the client must wait.              /
+               Verify content is pkcs7 data              /
+               Content Length              /
+               Allocate the buffer to hold the payload to be passed back              /
+ this just must be a time zone string /
+ time stamp! /
+ time stamp without seconds /
+                    We only support MD5 for the moment                  /
+ Parse the realm /
+ Parse the realm and nonce /
+ Parse the realm and possible token error fields /
+                   Convert the date/time string into a time_t                  /
+                   This format is not currently supported.                  /
+                   make sure it's all digits, make sure it's no larger than a                   four byte integer, and cache away the value returned for                   the retry delay.                  /
+ Skip escaped chars /
+ Skip escaped chars /
+ Skip escaped chars /
+ four digits and a value less than or equal to 1400 (to take into              account all sorts of funny time zone diffs) and it is preceded              with a plus or minus. This is a time zone indication.  1400 is              picked since +1300 is frequently used and +1400 is mentioned as              an edge number in the document "ISO C 200X Proposal: Timezone              Functions" at http://david.tribble.com/text/c0xtimezone.html If              anyone has a more authoritative source for the exact maximum time              zone offsets, please speak up! /
+ the + and - prefix indicates the local time compared to GMT,              this we need ther reversed math to get what we want /
+ 8 digits, no year, month or day yet. This is YYYYMMDD /
+ month is 0 - 11 /

@@ -1,0 +1,4 @@
+AFMainLayout
+continueFollowing
+getControls
+getAFMap

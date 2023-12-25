@@ -1,0 +1,18 @@
+manag hash tabl 
+serial version uid 
+
+
+key 
+key 
+hash code 
+elem 
+
+
+remov 
+get 
+add 
+
+manag hashtabl store key valu queri hashtabl return null empti 
+doe need creat initi key type 
+valu type 
+ 

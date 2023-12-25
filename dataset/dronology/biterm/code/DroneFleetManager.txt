@@ -1,0 +1,2 @@
+assignRout:1
+registUav:1

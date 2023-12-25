@@ -1,0 +1,9 @@
+routExist:1
+existRout:1
+selectRout:1
+signRout:1
+assignRout:1
+selectAssign:1
+uavAssign:1
+assignUav:1
+routAssign:1

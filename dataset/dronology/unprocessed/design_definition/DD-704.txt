@@ -1,0 +1,4 @@
+[SUMMARY]
+Hierarchical organization of monitoring topics
+[DESCRIPTION]
+Topics shall be organized in a hierarchical manner meaning that clients can subscribe to all messages  messages from certain GCS  UAVS  and properties

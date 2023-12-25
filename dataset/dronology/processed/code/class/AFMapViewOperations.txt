@@ -1,0 +1,16 @@
+af map oper 
+serial version uid 
+button 
+follow 
+
+
+
+listen 
+
+
+af map oper 
+get follow button 
+get button 
+add click listen 
+
+set map oper button af info panel 

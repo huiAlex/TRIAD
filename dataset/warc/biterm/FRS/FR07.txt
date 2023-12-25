@@ -1,0 +1,6 @@
+providLibwarc:1
+functionMake:1
+makeFunction:1
+recordArc:1
+libwarcProvid:1
+arcRecord:1

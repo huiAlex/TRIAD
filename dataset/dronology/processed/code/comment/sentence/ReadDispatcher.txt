@@ -1,0 +1,3 @@
+Threat handling incoming messages from a GCS.
+The { ReadDispatcher} can handle json messages that are transformed into UAV Messages (extending { AbstractUAVMessage}) by the { UAVMessageFactory}.
+/

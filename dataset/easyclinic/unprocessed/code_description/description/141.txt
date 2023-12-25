@@ -1,0 +1,17 @@
+Class: GUIEsame
+Date: 16/09/2003
+Version: 0.01.000
+Description: The GUIEsame class is responsible for managing the examinations related to a particular visit.
+
+Attributes:
+btnDelete;Private;A button that allows the user to delete an examination.
+btnEdit;Private;A button that allows the user to edit an examination.
+btnNew;Private;A button that allows the user to input a new examination.
+btnSave;Private;A button that allows the user to save a recently added or modified examination.
+btnUndo;Private;A button that allows the user to undo the last operation performed.
+
+Methods:
+notificaSuccesso;Public;notify the success of a successful change, insertion or deletion.
+visualizzaDatiEsame;Public;Shows the details of an examination.
+visualizzaElencoEsami;Public;Shows the list of examinations of visit.
+examinations;Public;Finds the necessary information for the realization of GUIEsame.

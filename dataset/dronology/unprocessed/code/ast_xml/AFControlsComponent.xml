@@ -1,0 +1,63 @@
+<Class>
+    <Id>32</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFControlsComponent</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFControlsComponent  /** 
+ * This is the control panel framework for the Activated Flights UI
+ * @author Jinghui Cheng
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>info</FieldName>
+            <FieldType>AFInfoPanel</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFControlsComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [content=new VerticalLayout()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>this;setWidth;["100%"]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addStyleName;["controls_component"]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponent;[info]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[content]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getPanel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>AFInfoPanel</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

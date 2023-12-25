@@ -1,0 +1,36 @@
+us tcp server port 
+us tcp proxi port 
+us pkcs rsa 
+us pkcs corrupt 
+us server ip 
+us reenrol url ba 
+us pkcs ct 
+us uidpwd good 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us proxi cert 
+us proxi key 
+us untrust cert 
+us untrust key 
+us expir key 
+us expir cert 
+us tc cert txt 
+us tc cert 
+us tc cert pk 
+us tc cert pem 
+us cacert 
+us trust cert 
+us server certkey 
+us proxi cert 
+us proxi key 
+us untrust cert 
+us untrust key 
+us expir key 
+us expir cert 
+us tc cert txt 
+us tc cert 
+us tc cert pk 
+us tc cert pem 

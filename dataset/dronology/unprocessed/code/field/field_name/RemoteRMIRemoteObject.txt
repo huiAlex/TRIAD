@@ -1,0 +1,5 @@
+serialVersionUID
+LOGGER
+DEFAULT_PORT
+REG_BINDING
+instance

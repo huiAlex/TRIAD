@@ -1,0 +1,2 @@
+incom groundstat connect server 
+run 

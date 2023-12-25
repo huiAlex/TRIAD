@@ -1,0 +1,4 @@
+init workspac 
+watch servic runner 
+save byte array file 
+stop 

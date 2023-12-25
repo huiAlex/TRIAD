@@ -1,0 +1,6 @@
+providLibwarc:1
+apiProvid:1
+implementIndepend:1
+independImplement:1
+libwarcProvid:1
+providApi:1

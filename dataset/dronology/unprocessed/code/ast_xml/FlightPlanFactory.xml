@@ -1,0 +1,50 @@
+<Class>
+    <Id>152</Id>
+    <Package>edu.nd.dronology.core.flight</Package>
+    <ClassName>FlightPlanFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>create</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IFlightPlan</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>String planName</ParameterType>
+                <ParameterType>Waypoint waypoints</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>create</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IFlightPlan</ReturnType>
+            <ParameterList>
+                <ParameterType>String planName</ParameterType>
+                <ParameterType>Waypoint waypoints</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

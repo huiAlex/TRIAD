@@ -1,0 +1,7 @@
+DistanceChecker
+getInstance
+notify
+run
+processMessage
+calculateDistance
+calculateDistance

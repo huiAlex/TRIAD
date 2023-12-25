@@ -1,0 +1,9 @@
+get coordin 
+waypoint 
+waypoint 
+equal 
+reach 
+hash code 
+reach 
+get approachingspe 
+set approachingspe 

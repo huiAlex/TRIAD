@@ -1,0 +1,40 @@
+<Class>
+    <Id>137</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.patterns</Package>
+    <ClassName>PatternFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>PatternFactory  /** 
+ * Factory class for predefined  {@link IFlightPattern}.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>getPattern</MethodName>
+            <MethodComment>/** 
+ * @param type The  {@link PatternType} of the flight pattern to create.
+ * @return A flight pattern for the given pattern type.
+ * @throws An
+ * @{@link IllegalArgumentException} in case the pattern is not supported.
+ */
+</MethodComment>
+            <ReturnType>IFlightPattern</ReturnType>
+            <ParameterList>
+                <ParameterType>PatternType type</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

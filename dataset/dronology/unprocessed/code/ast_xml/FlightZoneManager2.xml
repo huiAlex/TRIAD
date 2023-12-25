@@ -1,0 +1,562 @@
+<Class>
+    <Id>16</Id>
+    <Package>edu.nd.dronology.core.flightzone</Package>
+    <ClassName>FlightZoneManager2</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IPlanStatusChangeListener</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>FlightZoneManager2  /** 
+ * Central management class for all UAV related actions. &lt;br&gt; This includes take-off, and landing checks as well as assignment of flight plans to UAVs.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>planPoolManager</FieldName>
+            <FieldType>PlanPoolManager</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneFleet</FieldName>
+            <FieldType>DroneFleetManager</FieldType>
+        </Field>
+        <Field>
+            <FieldName>ca</FieldName>
+            <FieldType>CollisionAvoidanceMessenger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>activeUAVS</FieldName>
+            <FieldType>AtomicInteger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>awaitingTakeOffFlights</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>awaitingTakeOffFlights</FieldName>
+            <FieldType>IFlightPlan</FieldType>
+        </Field>
+        <Field>
+            <FieldName>awaitingLandingFlights</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>awaitingLandingFlights</FieldName>
+            <FieldType>IFlightPlan</FieldType>
+        </Field>
+        <Field>
+            <FieldName>timer</FieldName>
+            <FieldType>Timer</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>FlightZoneManager2</MethodName>
+            <MethodComment>/** 
+ * Constructs a new FlightZoneManager.
+ * @throws InterruptedException
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>CollisionAvoidanceCheckTask [caTask=new CollisionAvoidanceCheckTask(new StopEveryoneWaypoint(20))]</InnerVar>
+                <InnerVar>Thread [caThread=new Thread(new Runnable(){
+  @Override public void run(){
+    try {
+      Thread.sleep(100);
+    }
+ catch (    InterruptedException e) {
+      e.printStackTrace();
+    }
+    RateLimiter limiter=RateLimiter.create(DronologyConstants.FREQUENCY_COLLISION_CHECKS);
+    while (true) {
+      limiter.acquire();
+      caTask.run();
+    }
+  }
+}
+)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>planPoolManager;addPlanStatusChangeListener;[this]</InnerMethodInvoke>
+                <InnerMethodInvoke>timer;scheduleAtFixedRate;[new StatusCheckTask(), 100, DronologyConstants.FREQUENCY_STATUS_CHECKS]</InnerMethodInvoke>
+                <InnerMethodInvoke>caThread;setDaemon;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>caThread;start;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>InterruptedException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>RateLimiter [limiter=RateLimiter.create(DronologyConstants.FREQUENCY_COLLISION_CHECKS)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>tryAssignUAV</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>IFlightPlan [nextPlan=planPoolManager.getNextPendingPlan()]</InnerVar>
+                <InnerVar>ManagedDrone [drone]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>droneAdded</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>ManagedDrone drone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>drone;addObserver;[(observable,arg) -&gt; {
+  ca.sendManagedDroneUpdate(drone.getDroneName(),null,null,null,drone);
+}
+]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>droneRemoved</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>ManagedDrone drone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>ca;sendCheckTask;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkForTakeOffReadiness</MethodName>
+            <MethodComment>/** 
+ * Checks if the next pending flight is able to takeoff. Currently takeoff occurs in order of pending list.
+ * @param droneFleet
+ * @throws FlightZoneException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkPendingForFlying</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkPendingForFlyingWithTakeoff</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkForScheduling</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IFlightPlan pendingPlan</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone]</InnerVar>
+                <InnerVar>IFlightDirector [flightDirectives=new SoloDirector(drone)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>planPoolManager;activatePlan;[pendingPlan, drone.getDroneName()]</InnerMethodInvoke>
+                <InnerMethodInvoke>flightDirectives;setWayPoints;[pendingPlan.getWayPoints()]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone.getMessenger();assignFlight;[flightDirectives]</InnerMethodInvoke>
+                <InnerMethodInvoke>pendingPlan;setStatusToFlying;[drone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkForSchedulingWithTakeoff</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IFlightPlan pendingPlan</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone]</InnerVar>
+                <InnerVar>IFlightDirector [flightDirectives=new SoloDirector(drone)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>planPoolManager;activatePlan;[pendingPlan, drone.getDroneName()]</InnerMethodInvoke>
+                <InnerMethodInvoke>flightDirectives;setWayPoints;[pendingPlan.getWayPoints()]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone.getMessenger();assignFlight;[flightDirectives]</InnerMethodInvoke>
+                <InnerMethodInvoke>pendingPlan;setStatusToFlying;[drone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkForLandingReadiness</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hasAwaitingLanding</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAwaitingTakeOffFlights</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IFlightPlan</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkForCompletedPlans</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>planPoolManager;checkFormCompletedPlans;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hasAwaitingTakeOff</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>planFlight</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>String planName</ParameterType>
+                <ParameterType>Waypoint waypoints</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>IFlightPlan [plan=FlightPlanFactory.create(uavid,planName,waypoints)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>PlanPoolManager.getInstance();addNewPlan;[plan]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>planFlight</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String planName</ParameterType>
+                <ParameterType>Waypoint waypoints</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>IFlightPlan [plan=FlightPlanFactory.create(planName,waypoints)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>PlanPoolManager.getInstance();addNewPlan;[plan]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>notifyPlanChange</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IFlightPlan changedPlan</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>returnToHome</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone=droneFleet.getRegisteredDrone(uavid)]</InnerVar>
+                <InnerVar>LlaCoordinate [baseCoordinate=drone.getBaseCoordinates()]</InnerVar>
+                <InnerVar>double [currentAltitude=drone.getCoordinates().getAltitude()]</InnerVar>
+                <InnerVar>LlaCoordinate [homeCoordinate=new LlaCoordinate(baseCoordinate.getLatitude(),baseCoordinate.getLongitude(),currentAltitude)]</InnerVar>
+                <InnerVar>LlaCoordinate [homeCoordinateAltitude=new LlaCoordinate(baseCoordinate.getLatitude(),baseCoordinate.getLongitude(),DronologyConstants.HOME_ALTITUDE)]</InnerVar>
+                <InnerVar>Waypoint [wps=new Waypoint(homeCoordinate)]</InnerVar>
+                <InnerVar>Waypoint [wps2=new Waypoint(homeCoordinateAltitude)]</InnerVar>
+                <InnerVar>List&lt;Waypoint&gt; [wpsList=new ArrayList&lt;&gt;()]</InnerVar>
+                <InnerVar>IFlightPlan [homePlane=FlightPlanFactory.create(uavid,"Return to Home",wpsList)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;[uavid + " returning to home"]</InnerMethodInvoke>
+                <InnerMethodInvoke>wpsList;add;[wps]</InnerMethodInvoke>
+                <InnerMethodInvoke>wpsList;add;[wps2]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>cancelPendingFlights</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>PlanPoolManager.getInstance();cancelPendingPlans;[uavid]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>pauseFlight</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone=droneFleet.getRegisteredDrone(uavid)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;[uavid + " Pause current flight"]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone;haltInPlace;[300000]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>resumeFlight</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone=droneFleet.getRegisteredDrone(uavid)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;[uavid + " Resume current flight"]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone;resumeFlight;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>takeoff</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone=droneFleet.getRegisteredDrone(uavid)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;[uavid + " Takeoff"]</InnerMethodInvoke>
+                <InnerMethodInvoke>PlanPoolManager.getInstance();addNewPlan;[new SimpleTakeoffFlightPlan(drone,"TAKE-OFF",altitude)]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+                <ExceptionType>FlightZoneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>emergencyStop</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [drone=droneFleet.getRegisteredDrone(uavid)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>drone;emergencyStop;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

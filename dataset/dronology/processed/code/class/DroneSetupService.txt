@@ -1,0 +1,31 @@
+drone setup servic 
+instanc 
+
+drone setup servic 
+
+info 
+listen 
+listen 
+status 
+uav id 
+uavid 
+
+drone initi info 
+iuav proxi 
+
+drone setup servic 
+get instanc 
+init servic instanc 
+initi drone 
+add drone status chang listen 
+remov drone status chang listen 
+get activ uav 
+deactiv drone 
+get activ uav 
+resend command 
+
+servic handl uav 
+allow initi new uav 
+allow retriev activ uav return proxi iuav proxi actual physic virtual uav 
+ 
+ 

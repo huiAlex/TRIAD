@@ -1,0 +1,12 @@
+confirmSelect:1
+operSelect:1
+selectOper:1
+guiMask:1
+informRetriev:1
+operConfirm:1
+selectReserv:1
+reservSelect:1
+retrievInform:1
+confirmOper:1
+selectConfirm:1
+maskGui:1

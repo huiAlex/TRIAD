@@ -1,0 +1,17 @@
+General Constructor to initialize all the members
+Constructor to Add driver related members
+Constructor to Add constraints related members
+Returns the id.
+Returns the logic.
+Returns the name.
+Returns the value.
+Sets the id.
+Sets the logic.
+Sets the name.
+Sets the value.
+Returns the speculateValue.
+Sets the speculateValue.
+Returns the type.
+Sets the type.
+Returns the project_ path.
+Sets the project_ path.

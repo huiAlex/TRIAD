@@ -1,0 +1,22 @@
+us cacert 
+us explicit cert 
+us explicit key 
+us cacert 
+us trust cert 
+us server cert key 
+us cacert 
+us explicit cert 
+us explicit key 
+us cacert 
+us trust cert 
+us server cert key 
+us retri interv 
+us tcp port 
+us pkcs rsa 
+us pkcs dsa 
+us pkcs ecdsa 
+us pkcs corrupt 
+us pkcs stale pop 
+us enrol url ba 
+us pkcs ct 
+us uidpwd good 

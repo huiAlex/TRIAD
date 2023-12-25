@@ -1,0 +1,1 @@
+uav set groundspe command set groundspe command specifi ground speed meter second 

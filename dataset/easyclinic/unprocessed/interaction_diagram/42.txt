@@ -1,0 +1,36 @@
+reservation for a visit after initial
+The Operator logs on to the main section of the Patient form (e.g. GUIPaziente)
+The Operator checks the reservation function for the visit
+The GUIPazienteHandler instance receives the request and delegates it to the instance of GUIPrenotaVisitaHandler to manage the service.
+
+Choosing the type of visit
+     
+The application of class GUIPrenotaVisitaHandler displays the mask on the reservation to visit the Patient must be subject (for instance GUIPrenotaVisita).
+The Operator selects the form and confirms the type of access.
+Control returns to the instance of which GUIPrenotaVisitaHandler delegating the task to insert a new one application of PrenotazioniManager.
+     
+
+Creating the new reservation
+     
+The application of class PrenotazioniManager creates a new reservation.
+The body of Reservation verifies the validity of the reservation or checks that the new reservation respects the sequence of valid reservations.
+If the reservation is valid, the success of the creation of a reservation is notified backward to the instance of GUIPrenotaVisitaHandler.
+
+
+Finding data available
+     
+The application of the proxy class GUIPrenotaVisitaHandler is used to make a request to the instance of PrenotazioniManager to find the first available date for a visit.
+PrenotazioniManager task finds the first available date when the visit can be scheduled and returns it to the instance of GUIPrenotaVisitaHandler.
+GUIPrenotaVisitaHandler displays the available date on the reservation form (for instance GUIPrenotaVisita).
+The Operator confirms the proposed date and control is returned to the instance of GUIPrenotaVisitaHandler.
+     
+     
+
+Saving Reservation
+
+The application of class GUIPrenotaVisitaHandler delegates the task of saving the reservation to the instance of PrenotazioniManager through the application.
+PrenotazioniManager creates a new reservation and verifies its validity. If the reservation is valid, it notifies the success of the creation of a reservation.
+Control is returned to the instance of GUIPrenotaVisitaHandler.
+GUIPrenotaVisitaHandler displays a special message on the screen to notify the success of the reservation to the user (for instance GUIPrenotaVisita).
+This feature is described by the collaboration diagram of Fig 3.17.
+Also an activity diagram (Fig 3.18) is presented to make the iterations among the players and the system, as booking an outpatient service is considered "the heart of it."

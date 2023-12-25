@@ -1,0 +1,6 @@
+Returns the id.
+Returns the name.
+Returns the value.
+Sets the id.
+Sets the name.
+Sets the value.

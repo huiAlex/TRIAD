@@ -1,0 +1,3 @@
+[SUMMARY]
+Refresh drone imformation from dronology to UI
+[DESCRIPTION]

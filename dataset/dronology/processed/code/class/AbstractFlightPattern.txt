@@ -1,0 +1,19 @@
+abstract flight pattern 
+synch point mgr 
+task 
+
+task 
+
+synch point mgr 
+pointnam 
+task 
+
+mission task 
+
+initi 
+creat sync point 
+add sync point 
+add task 
+get task 
+
+base class predefin flight pattern exand 

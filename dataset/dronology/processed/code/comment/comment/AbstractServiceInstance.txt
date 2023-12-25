@@ -1,0 +1,11 @@
+base class servic instanc implement 
+ 
+servic 
+ 
+servic 
+descript descript servic 
+ 
+set status servic 
+call subsequ server thread deleg 
+interfac method therefor intend call outsid 
+status 

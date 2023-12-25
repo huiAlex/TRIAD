@@ -1,0 +1,13 @@
+A position on Earth, represented as an X, Y and Z coordinate in an  Earth centered Earth fixed reference frame.
+The origin of this frame is at the center of mass of the Earth.
+The X-axis  points towards where the equator meets the prime meridean (latitude 0,  longitude 0).
+The Z-axis points towards the geographic north pole (latitude  90, longitude undefined).
+The Y-axis can be derived using right hand rule and  points towards latitude 0, longitude 90.
+All units are in meters.
+/
+the distance in meters along the axis that points from the	             center of mass of the Earth towards where the equator meets	             the prime meridean (latitude 0, longitude 0)	  	             the distance in meters along the axis that points from the	             center of mass of the Earth towards latitude 0, longitude 90	  	             the distance in meters along the axis that points from the	             center of mass of the Earth towards the geographic north pole	             (latitude 90, longitude undefined)	 /
+/
+/
+/
+/
+/

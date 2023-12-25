@@ -1,0 +1,4 @@
+[SUMMARY]
+Monitoring API
+[DESCRIPTION]
+The _DronologyRuntimeMonitor_ shall allow to publish arbitrary monitoring messages and subscribe to certain message types

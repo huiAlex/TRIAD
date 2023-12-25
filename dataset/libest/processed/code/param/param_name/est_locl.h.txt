@@ -1,0 +1,85 @@
+lvl 
+format 
+ssl 
+client 
+ctx 
+raw 
+size 
+ctx 
+cert 
+cert len 
+lvl 
+format 
+dst 
+src 
+len 
+src 
+actual src len 
+dst 
+max dst len 
+src 
+dst 
+max len 
+ctx 
+http ctx 
+method 
+uri 
+bodi 
+bodi len 
+ct 
+ctx 
+ssl 
+ctx 
+ssl 
+bptr 
+pkcs 
+pkcs len 
+reenrol 
+ctx 
+ssl 
+ctx 
+cert 
+key 
+ctx 
+uid 
+pwd 
+ctx 
+ssl 
+op 
+buf 
+payload len 
+ctx 
+http ctx 
+method 
+uri 
+bodi 
+bodi len 
+ct 
+ctx 
+ 
+len 
+offset 
+base ptr 
+len 
+offset 
+base ptr 
+len 
+new csr 
+pop len 
+ctx 
+cacert rtn 
+cacert rtn len 
+ctx 
+csr data 
+csr len 
+http ctx 
+auth cred 
+uri 
+oper 
+path seg 
+ctx 
+path segment 
+path segment len 
+op path 
+ 
+ 

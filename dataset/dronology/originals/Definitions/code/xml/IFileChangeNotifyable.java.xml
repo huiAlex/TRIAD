@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IFileChangeNotifyable.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:43">package <name pos:start="1:9" pos:end="1:42"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:42">api</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:21">import <name pos:start="3:8" pos:end="3:20"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:20">Set</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="5:1" pos:end="9:3">/**
+ * Interface for being notified on changing objects on the server.
+ * @author Michael Vierhauser
+ *
+ */</comment>
+<interface pos:start="10:1" pos:end="18:1"><specifier pos:start="10:1" pos:end="10:6">public</specifier> interface <name pos:start="10:18" pos:end="10:38">IFileChangeNotifyable</name> <block pos:start="10:40" pos:end="18:1">{
+
+<comment type="block" format="javadoc" pos:start="12:1" pos:end="15:3">/**
+ * 
+ * @param changed The set of changed item names.
+ */</comment>
+	<function_decl pos:start="16:9" pos:end="16:51"><type pos:start="16:9" pos:end="16:12"><name pos:start="16:9" pos:end="16:12">void</name></type> <name pos:start="16:14" pos:end="16:29">notifyFileChange</name><parameter_list pos:start="16:30" pos:end="16:50">(<parameter pos:start="16:31" pos:end="16:49"><decl pos:start="16:31" pos:end="16:49"><type pos:start="16:31" pos:end="16:41"><name pos:start="16:31" pos:end="16:41"><name pos:start="16:31" pos:end="16:33">Set</name><argument_list type="generic" pos:start="16:34" pos:end="16:41">&lt;<argument pos:start="16:35" pos:end="16:40"><name pos:start="16:35" pos:end="16:40">String</name></argument>&gt;</argument_list></name></type> <name pos:start="16:43" pos:end="16:49">changed</name></decl></parameter>)</parameter_list>;</function_decl>
+
+}</block></interface>
+</unit>

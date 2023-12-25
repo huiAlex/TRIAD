@@ -1,0 +1,55 @@
+add 
+add plan 
+add 
+get 
+get 
+set next plan current 
+set design drone id 
+get instanc 
+publish 
+add plan 
+add 
+get 
+overrid plan 
+get 
+cancel pend plan 
+get design drone id 
+get 
+get 
+get 
+get 
+get 
+get 
+get 
+get 
+notifi plan chang 
+assign plan 
+assign pool 
+plan pool 
+get 
+drone except 
+creat plan activ 
+plan pool 
+get 
+get 
+get current plan 
+get 
+get pend plan 
+get 
+get complet plan 
+drone except 
+drone except 
+get current plan 
+get current plan 
+complet 
+get current plan 
+set current flight complet 
+get instanc 
+publish 
+notifi plan chang 
+add 
+get design drone id 
+equal 
+get current plan 
+creat plan complet 
+get current plan 

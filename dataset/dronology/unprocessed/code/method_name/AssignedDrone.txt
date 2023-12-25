@@ -1,0 +1,6 @@
+AssignedDrone
+getStartCoordinate
+setStartCoordinate
+hashCode
+equals
+getName

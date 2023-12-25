@@ -1,0 +1,13 @@
+estClient:3
+useAuthent:3
+estServer:2
+authentUse:3
+enrolIniti:1
+useEnrol:1
+useCertif:2
+authentClient:4
+serverEst:2
+clientEst:3
+enrolUse:1
+certifUse:2
+certifClient:3

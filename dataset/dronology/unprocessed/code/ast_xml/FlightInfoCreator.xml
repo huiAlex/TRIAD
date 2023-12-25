@@ -1,0 +1,51 @@
+<Class>
+    <Id>112</Id>
+    <Package>edu.nd.dronology.services.instances.flightmanager</Package>
+    <ClassName>FlightInfoCreator</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>createInfo</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FlightInfo</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavId</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>FlightInfo [info=new FlightInfo(uavId,uavId)]</InnerVar>
+                <InnerVar>IFlightPlan [currentFlight=PlanPoolManager.getInstance().getCurrentPlan(uavId)]</InnerVar>
+                <InnerVar>List&lt;IFlightPlan&gt; [pendingPlans=PlanPoolManager.getInstance().getPendingPlans(uavId)]</InnerVar>
+                <InnerVar>List&lt;IFlightPlan&gt; [completedPlans=PlanPoolManager.getInstance().getCompletedPlans(uavId)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>DroneSetupService.getInstance();getActiveUAV;[uavId]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCurrenctFlights</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FlightPlanInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>List&lt;IFlightPlan&gt; [current=new ArrayList&lt;&gt;(PlanPoolManager.getInstance().getCurrentFlights())]</InnerVar>
+                <InnerVar>List&lt;FlightPlanInfo&gt; [planInfo=new ArrayList&lt;&gt;()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

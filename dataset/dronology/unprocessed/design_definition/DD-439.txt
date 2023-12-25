@@ -1,0 +1,4 @@
+[SUMMARY]
+Multiple Map Layers
+[DESCRIPTION]
+The open street map component shall support multiple map providers.

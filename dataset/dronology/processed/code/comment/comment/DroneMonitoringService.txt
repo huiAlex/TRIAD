@@ -1,0 +1,2 @@
+servic uav monitor messag allow regist remot monitor messag handler subscrib certain messag type topic 
+singleton drone monitor servic instanc 

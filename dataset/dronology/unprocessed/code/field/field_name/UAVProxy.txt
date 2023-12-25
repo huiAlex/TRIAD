@@ -1,0 +1,12 @@
+serialVersionUID
+latitude
+longitude
+altitude
+ID
+batteryLevel
+velocity
+info
+info
+status
+groundstationId
+home

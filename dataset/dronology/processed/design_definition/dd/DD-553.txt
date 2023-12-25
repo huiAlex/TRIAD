@@ -1,0 +1,1 @@
+remov pend plan return home uav issu return home command flight current flight plan abort schedul flight plan remov flight plan queue 

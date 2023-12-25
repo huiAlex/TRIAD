@@ -1,0 +1,10 @@
+fileSpecif:1
+warcFile:3
+toolWarc:1
+validIdentifi:1
+warcTool:1
+identifiFile:2
+fileIdentifi:2
+identifiValid:1
+specifFile:1
+fileWarc:3

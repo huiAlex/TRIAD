@@ -1,0 +1,1 @@
+test case user construct specul queri precondit perform model built requir constraint defin perform model step user construct specul queri use gui tool postcondit specul event messag receiv event server

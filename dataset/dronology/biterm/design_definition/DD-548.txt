@@ -1,0 +1,6 @@
+altitudTakeoff:1
+schedulPlan:1
+planNew:1
+planFlight:2
+routFlight:1
+schedulRout:1

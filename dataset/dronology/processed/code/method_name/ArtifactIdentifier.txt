@@ -1,0 +1,11 @@
+artifact identifi 
+get id 
+get child 
+string 
+hash code 
+equal 
+final 
+get attach item 
+attach item 
+remov attach item 
+attach item 

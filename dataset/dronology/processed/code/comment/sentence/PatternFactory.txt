@@ -1,0 +1,5 @@
+Factory class for predefined { IFlightPattern}.
+/
+The { PatternType} of the flight pattern to create.
+{ IllegalArgumentException} in case the pattern is not supported.
+/

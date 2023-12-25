@@ -1,0 +1,15 @@
+char
+va_list
+int
+int
+X509
+int
+X509_REQ
+EVP_PKEY
+char
+X509_REQ
+EVP_PKEY
+EVP_MD
+char
+char
+EST_ERROR

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IMissionPlan.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:45">package <name pos:start="1:9" pos:end="1:44"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:44">items</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:22">import <name pos:start="3:8" pos:end="3:21"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:21">List</name></name>;</import>
+
+<interface pos:start="5:1" pos:end="17:1"><specifier pos:start="5:1" pos:end="5:6">public</specifier> interface <name pos:start="5:18" pos:end="5:29">IMissionPlan</name> <super_list pos:start="5:31" pos:end="5:54"><extends pos:start="5:31" pos:end="5:54">extends <super pos:start="5:39" pos:end="5:54"><name pos:start="5:39" pos:end="5:54">IPersistableItem</name></super></extends></super_list><block pos:start="5:55" pos:end="17:1">{
+
+	<function_decl pos:start="7:9" pos:end="7:32"><type pos:start="7:9" pos:end="7:14"><name pos:start="7:9" pos:end="7:14">String</name></type> <name pos:start="7:16" pos:end="7:29">getDescription</name><parameter_list pos:start="7:30" pos:end="7:31">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="9:9" pos:end="9:48"><type pos:start="9:9" pos:end="9:12"><name pos:start="9:9" pos:end="9:12">void</name></type> <name pos:start="9:14" pos:end="9:27">setDescription</name><parameter_list pos:start="9:28" pos:end="9:47">(<parameter pos:start="9:29" pos:end="9:46"><decl pos:start="9:29" pos:end="9:46"><type pos:start="9:29" pos:end="9:34"><name pos:start="9:29" pos:end="9:34">String</name></type> <name pos:start="9:36" pos:end="9:46">description</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="11:9" pos:end="11:62"><type pos:start="11:9" pos:end="11:36"><name pos:start="11:9" pos:end="11:36"><name pos:start="11:9" pos:end="11:12">List</name><argument_list type="generic" pos:start="11:13" pos:end="11:36">&lt;<argument pos:start="11:14" pos:end="11:35"><name pos:start="11:14" pos:end="11:35">IUAVMissionDescription</name></argument>&gt;</argument_list></name></type> <name pos:start="11:38" pos:end="11:59">getMissionDescriptions</name><parameter_list pos:start="11:60" pos:end="11:61">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="13:9" pos:end="13:71"><type pos:start="13:9" pos:end="13:12"><name pos:start="13:9" pos:end="13:12">void</name></type> <name pos:start="13:14" pos:end="13:34">addMissionDescription</name><parameter_list pos:start="13:35" pos:end="13:70">(<parameter pos:start="13:36" pos:end="13:69"><decl pos:start="13:36" pos:end="13:69"><type pos:start="13:36" pos:end="13:57"><name pos:start="13:36" pos:end="13:57">IUAVMissionDescription</name></type> <name pos:start="13:59" pos:end="13:69">description</name></decl></parameter>)</parameter_list>;</function_decl>
+
+
+
+}</block></interface>
+</unit>

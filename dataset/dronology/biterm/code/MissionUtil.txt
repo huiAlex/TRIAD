@@ -1,0 +1,4 @@
+activUav:1
+coordinUav:1
+coordinHome:1
+planFlight:1

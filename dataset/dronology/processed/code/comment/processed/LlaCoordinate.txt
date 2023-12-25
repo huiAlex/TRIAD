@@ -1,0 +1,13 @@
+ 
+terrestri posit defin latitud longitud altitud lla 
+terrestri posit defin latitud longitud altitud lla 
+angl north equat degre negat angl defin latitud southern hemispher 
+valu interv latitud angl east prime meridian degre negat angl defin longitud western hemispher 
+valu interv longitud distanc abov sea level meter precis distanc abov surfac wgs refer ellipsoid 
+latitud longitud outsid specifi rang 
+altitud 
+latitud angl 
+ 
+longitud angl 
+ 
+ 

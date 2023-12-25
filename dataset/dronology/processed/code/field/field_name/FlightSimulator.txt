@@ -1,0 +1,6 @@
+logger 
+current posit 
+target posit 
+previous distanc 
+reach 
+drone 

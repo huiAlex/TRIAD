@@ -1,0 +1,5 @@
+get activ uav 
+initi drone 
+add drone status chang listen 
+remov drone status chang listen 
+resend command 

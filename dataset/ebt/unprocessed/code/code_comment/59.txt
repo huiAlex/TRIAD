@@ -1,0 +1,6 @@
+This boolean keeps track of if the very first thread has started or not. This prevents this objec
+This method can be called to block the current thread until the ThreadPool is done.
+Called to wait for the first thread to start. Once this method returns the process has begun.
+Called by a Worker object to indicate that it has begun working on a workload.
+Called by a Worker object to indicate that it has completed a workload.
+Called to reset this object to its initial state.

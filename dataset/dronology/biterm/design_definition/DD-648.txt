@@ -1,0 +1,3 @@
+assignRout:2
+assignUav:1
+uavSelect:1

@@ -1,0 +1,1 @@
+simul takeoff given takeoff command intern simul uav takeoff altitud correspond current longitud latitud 

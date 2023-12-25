@@ -1,0 +1,184 @@
+<Class>
+    <Id>119</Id>
+    <Package>edu.nd.dronology.services.core.remote</Package>
+    <ClassName>IRemoteManager</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IRemotable</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>IRemoteManager  /** 
+ * Interface for handling communication between server UI and server services.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>getService</MethodName>
+            <MethodComment>/** 
+ * Retrieve the desired service to offer remote operations.&lt;br&gt; Requested service has to extends  {@link IRemoteableService}.
+ * @param service The Service to retrieve.
+ * @return The requested Service.
+ * @throws RemoteException
+ * @throws DronologyServiceException
+ */
+</MethodComment>
+            <ReturnType>Object</ReturnType>
+            <ParameterList>
+                <ParameterType>? service</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getServices</MethodName>
+            <MethodComment>/** 
+ * @return A list of all registered Services.
+ * @throws RemoteException
+ * @throws DronologyServiceException
+ */
+</MethodComment>
+            <ReturnType>ServiceInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addServiceListener</MethodName>
+            <MethodComment>/** 
+ * Adds a service listener to all currently available services informing on service status changes.
+ * @param listener The listener to be added.
+ * @throws RemoteException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteServiceListener listener</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>removeServiceListener</MethodName>
+            <MethodComment>/** 
+ * @param listener The listener to be removed.
+ * @throws RemoteException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteServiceListener listener</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>register</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>RemoteInfo rInfo</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>unregister</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>RemoteInfo create</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCoreServices</MethodName>
+            <MethodComment>/** 
+ * @return
+ * @throws RemoteException
+ * @throws DronologyServiceException
+ */
+</MethodComment>
+            <ReturnType>ServiceInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFileServices</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ServiceInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAllServices</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ServiceInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initialize</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>tearDown</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>contributeService</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>Class service</ParameterType>
+                <ParameterType>IRemoteableService serviceInstance</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

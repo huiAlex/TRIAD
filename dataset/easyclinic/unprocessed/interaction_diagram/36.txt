@@ -1,0 +1,13 @@
+Record visit 
+
+The service is initiated upon the explicit request of the operator.
+The operator accesses the main mask (for instance GUIPrincipale) and selects the "visit management" function.
+Control is passed to the instance of GUIPrincipaleHandler, which delegates the task of providing the service to the instance of GUIVisitaHandler.
+The first step is to obtain a list of all outpatient visits.
+Control passes to the instance of VisiteManager, which iteratively retrieves data on all visits.
+For each visit, the VisiteManager retrieves data on all examinations related to the visit through the instance of EsamiManager.
+The list of visits and examinations is passed to the instance of GUIVisitaHandler, which displays the visits on the visit management mask (for instance GUIVisite).
+The operator selects the "insert new visit" function and enters the data for the new visit.
+The operator confirms the data entered, and control is passed to the instance of GUIVisitaHandler, which delegates the task of entering the new visit to the instance of VisiteManager.
+The VisiteManager enters the new visit data through the visit panel and returns control to GUIVisitaHandler.
+GUIVisitaHandler notifies the operator of the success of the operation by displaying a message on the visit management mask (for instance GUIVisita).

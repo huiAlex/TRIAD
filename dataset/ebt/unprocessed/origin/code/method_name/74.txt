@@ -1,0 +1,9 @@
+getConnection
+get
+saveCurrentModel
+injectVa
+solveStructure
+solveStructureEquation
+getTrackVariableName
+setCalculatedValues
+getImpactReport

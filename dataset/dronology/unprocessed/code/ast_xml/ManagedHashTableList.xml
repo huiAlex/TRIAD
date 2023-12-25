@@ -1,0 +1,76 @@
+<Class>
+    <Id>22</Id>
+    <Package>edu.nd.dronology.core.util</Package>
+    <ClassName>ManagedHashTableList</ClassName>
+    <SuperClass>Hashtable</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>ManagedHashTableList  /** 
+ * Managed Hashtable: stores a key and a list as value -&gt; a query on the hashtable never returns null but an empty list. The list does not need to be created initially
+ * @author Michael Vierhauser
+ * @param &lt; K &gt; Key type.
+ * @param &lt; V &gt; Value type.
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>removeAll</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>K key</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>List&lt;V&gt; [list=super.get(key)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>get</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>V</ReturnType>
+            <ParameterList>
+                <ParameterType>Object key</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>add</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>K hashCode</ParameterType>
+                <ParameterType>V elem</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

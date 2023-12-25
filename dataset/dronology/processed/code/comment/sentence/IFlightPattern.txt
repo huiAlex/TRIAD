@@ -1,0 +1,2 @@
+Interface for all flight pattern implementations that can be expanded into several different { IMissionTask}.
+/

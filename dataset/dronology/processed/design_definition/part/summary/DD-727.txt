@@ -1,0 +1,1 @@
+uav set monitor frequenc command 

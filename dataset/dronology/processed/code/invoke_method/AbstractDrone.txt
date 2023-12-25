@@ -1,0 +1,22 @@
+uav proxi 
+get instanc 
+add drone 
+lla coordin 
+updat coordin 
+updat coordin 
+get latitud 
+get longitud 
+get altitud 
+lla coordin 
+set home locat 
+updat veloc 
+updat batteri level 
+get flight mode state 
+set mode user control 
+get latitud 
+get longitud 
+get altitud 
+get latitud 
+get longitud 
+get altitud 
+string 

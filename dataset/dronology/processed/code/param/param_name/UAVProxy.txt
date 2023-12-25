@@ -1,0 +1,15 @@
+id 
+latitud 
+longitud 
+altitud 
+batteri level 
+veloc 
+status 
+latitud 
+longitud 
+altitud 
+batteri level 
+veloc 
+veloc 
+groundstat id 
+home 

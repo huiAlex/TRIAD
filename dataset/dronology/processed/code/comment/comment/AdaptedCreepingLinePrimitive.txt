@@ -1,0 +1,6 @@
+method generat creep line rout sourc point 
+side side rout primit 
+helper method generat creep line rout handl ani sourc point miss begin rout 
+side side new rout first oppos rout index 
+helper method generat creep line rout handl sourc point miss end rout 
+side side new rout oppos rout index 

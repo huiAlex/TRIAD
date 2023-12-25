@@ -1,0 +1,5 @@
+/**
+ * This is the control panel framework for the Activated Flights UI
+ * 
+ *  */
+

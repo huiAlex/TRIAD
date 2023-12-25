@@ -1,0 +1,2 @@
+find subscrib requir 
+read result identifi subscrib method select add result actual subscrib vector 

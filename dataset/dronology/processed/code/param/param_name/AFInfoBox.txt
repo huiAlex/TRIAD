@@ -1,0 +1,8 @@
+check 
+uav status 
+hover place 
+check 
+hover place 
+visibl 
+check click 
+uav status 

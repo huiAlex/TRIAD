@@ -1,0 +1,6 @@
+TextModel
+showText
+HideText
+ShowInfo
+drawModel
+paintComponent

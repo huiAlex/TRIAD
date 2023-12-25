@@ -1,0 +1,4 @@
+voltage
+batteryState
+SIMULATOR_BATTERY_DRAIN_VOLTS
+checkPointTime

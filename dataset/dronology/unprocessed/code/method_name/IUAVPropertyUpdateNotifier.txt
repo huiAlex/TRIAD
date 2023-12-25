@@ -1,0 +1,7 @@
+update
+updateCoordinates
+updateDroneState
+updateBatteryLevel
+updateVelocity
+updateCollisionAvoidance
+updateMode

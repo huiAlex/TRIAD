@@ -1,0 +1,3 @@
+button emerg:compound
+set button:nmod
+button info panel:nmod

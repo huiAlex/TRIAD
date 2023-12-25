@@ -1,0 +1,533 @@
+<Class>
+    <Id>82</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFMapComponent</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFMapComponent  /** 
+ * This is the map component for the Active Flights UI
+ * @author Jinghui Cheng
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>leafletMap</FieldName>
+            <FieldType>LMap</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drones</FieldName>
+            <FieldType>Collection</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drones</FieldName>
+            <FieldType>IUAVProxy</FieldType>
+        </Field>
+        <Field>
+            <FieldName>currentFlights</FieldName>
+            <FieldType>Collection</FieldType>
+        </Field>
+        <Field>
+            <FieldName>currentFlights</FieldName>
+            <FieldType>FlightPlanInfo</FieldType>
+        </Field>
+        <Field>
+            <FieldName>service</FieldName>
+            <FieldType>IDroneSetupRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightManagerService</FieldName>
+            <FieldType>IFlightManagerRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>provider</FieldName>
+            <FieldType>BaseServiceProvider</FieldType>
+        </Field>
+        <Field>
+            <FieldName>follow</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>followZoom</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>content</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>followLayout</FieldName>
+            <FieldType>AbsoluteLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>followBar</FieldName>
+            <FieldType>AFFollowBar</FieldType>
+        </Field>
+        <Field>
+            <FieldName>layout</FieldName>
+            <FieldType>AbsoluteLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>popup</FieldName>
+            <FieldType>PopupView</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dronePopup</FieldName>
+            <FieldType>PopupView</FieldType>
+        </Field>
+        <Field>
+            <FieldName>panel</FieldName>
+            <FieldType>AFInfoPanel</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drawingutil</FieldName>
+            <FieldType>MapDrawingUtil</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFMapComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>AFInfoPanel panel</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>List&lt;String&gt; [temp=new ArrayList&lt;&gt;()]</InnerVar>
+                <InnerVar>double [screenHeight=UI.getCurrent().getPage().getBrowserWindowHeight()]</InnerVar>
+                <InnerVar>int [layoutHeight=(int)Math.rint(screenHeight * 0.9)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>this;setWidth;["100%"]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addStyleName;["map_component"]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addStyleName;["af_map_component"]</InnerMethodInvoke>
+                <InnerMethodInvoke>drawingutil;addDroneMarkers;["", temp]</InnerMethodInvoke>
+                <InnerMethodInvoke>drawingutil;addActiveFlightRoutes;["", temp]</InnerMethodInvoke>
+                <InnerMethodInvoke>this;setAverageCenter;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;setHeight;[Integer.toString(layoutHeight) + "px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponent;[leafletMap]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponents;[popup, dronePopup]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponent;[layout]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[content]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setCenter</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>double centerLat</ParameterType>
+                <ParameterType>double centerLon</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>leafletMap;setCenter;[centerLat, centerLon]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setZoomLevel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>double zoomLevel</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>leafletMap;setZoomLevel;[zoomLevel]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCenterLat</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCenterLon</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getZoomLevel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getMapInstance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>LMap</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setAverageCenter</MethodName>
+            <MethodComment>/** 
+ * This function sets the center and zoom of the map to include all drones and their flight routes. It finds the average latitude and longitude first. It then finds the point farthest from the center and bases the zoom level off of that point.
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Configuration [configuration=Configuration.getInstance()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFollow</MethodName>
+            <MethodComment>/** 
+ * @return follow is a boolean variable that is true when the map is following drones
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setFollow</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean follow</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFollowZoom</MethodName>
+            <MethodComment>/** 
+ * @return followZoom determines whether the map should zoom in on the drones in follow mode. Only happens once initially when the user clicks the button to follow the drones on the map.
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setFollowZoom</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean followZoom</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>followDrones</MethodName>
+            <MethodComment>/** 
+ * This function sets the center of the map as an average of the drones that it is following. This will constantly change as each drone flies.
+ * @param names The list of drone names that the map should be following
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String names</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>onMouseOver</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>LeafletMouseOverEvent event</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>LMarker [leafletMarker=(LMarker)event.getSource()]</InnerVar>
+                <InnerVar>VerticalLayout [popupContent=(VerticalLayout)dronePopup.getContent().getPopupComponent()]</InnerVar>
+                <InnerVar>double [mapWidth=UI.getCurrent().getPage().getBrowserWindowWidth() - 366.0]</InnerVar>
+                <InnerVar>double [mapHeight=UI.getCurrent().getPage().getBrowserWindowHeight() * 0.9]</InnerVar>
+                <InnerVar>double [xDegreeDifference=-(leafletMap.getCenter().getLon() - leafletMarker.getPoint().getLon())]</InnerVar>
+                <InnerVar>double [yDegreeDifference=leafletMap.getCenter().getLat() - leafletMarker.getPoint().getLat()]</InnerVar>
+                <InnerVar>double [degreePerZoom=(360.0 / (Math.pow(2,leafletMap.getZoomLevel())))]</InnerVar>
+                <InnerVar>double [degreePerPixel=degreePerZoom / mapWidth]</InnerVar>
+                <InnerVar>double [xPixelDifference=(xDegreeDifference / degreePerPixel) / 3.0]</InnerVar>
+                <InnerVar>double [yPixelDifference=(yDegreeDifference / degreePerPixel) / 3.0]</InnerVar>
+                <InnerVar>double [pixelsToLeftBorder=(mapWidth / 2.0) + xPixelDifference]</InnerVar>
+                <InnerVar>double [pixelsToTopBorder=(mapHeight / 2.0) + yPixelDifference]</InnerVar>
+                <InnerVar>double [mouseX=MouseInfo.getPointerInfo().getLocation().getX()]</InnerVar>
+                <InnerVar>double [mouseY=MouseInfo.getPointerInfo().getLocation().getY()]</InnerVar>
+                <InnerVar>double [mapTopLeftX=mouseX - pixelsToLeftBorder]</InnerVar>
+                <InnerVar>double [mapTopLeftY=mouseY - pixelsToTopBorder]</InnerVar>
+                <InnerVar>double [adjustedXLocation=mouseX - mapTopLeftX]</InnerVar>
+                <InnerVar>double [adjustedYLocation=mouseY - mapTopLeftY]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>dronePopup;setVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>dronePopup;setPopupVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;removeAllComponents;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponent;[dronePopup, "top:" + String.valueOf((int)adjustedYLocation) + "px;left:"+ String.valueOf((int)adjustedXLocation)+ "px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>dronePopup;setVisible;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>dronePopup;setPopupVisible;[true]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createWayPointPopupView</MethodName>
+            <MethodComment>/** 
+ * @return returns the waypoint popup
+ */
+</MethodComment>
+            <ReturnType>PopupView</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [popupContent=new VerticalLayout()]</InnerVar>
+                <InnerVar>Label [latitudeLabel=new Label()]</InnerVar>
+                <InnerVar>Label [longitudeLabel=new Label()]</InnerVar>
+                <InnerVar>Label [altitudeLabel=new Label()]</InnerVar>
+                <InnerVar>Label [transitSpeedLabel=new Label()]</InnerVar>
+                <InnerVar>PopupView [popup=new PopupView(null,popupContent)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>popupContent;removeAllComponents;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>latitudeLabel;setId;["latitude"]</InnerMethodInvoke>
+                <InnerMethodInvoke>longitudeLabel;setId;["longitude"]</InnerMethodInvoke>
+                <InnerMethodInvoke>altitudeLabel;setId;["altitude"]</InnerMethodInvoke>
+                <InnerMethodInvoke>transitSpeedLabel;setId;["transitSpeed"]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;addComponent;[latitudeLabel]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;addComponent;[longitudeLabel]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;addComponent;[altitudeLabel]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;addComponent;[transitSpeedLabel]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;addStyleName;["bring_front"]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setPopupVisible;[false]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createDronePopupView</MethodName>
+            <MethodComment>/** 
+ * @return returns the drone popup
+ */
+</MethodComment>
+            <ReturnType>PopupView</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [popupContent=new VerticalLayout()]</InnerVar>
+                <InnerVar>PopupView [popup=new PopupView(null,popupContent)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>popupContent;removeAllComponents;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>popupContent;addComponent;[new Label("Drone Information")]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;addStyleName;["bring_front"]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setPopupVisible;[false]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>onMouseOver</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>LeafletMouseOverEvent event</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>LMarker [leafletMarker=(LMarker)event.getSource()]</InnerVar>
+                <InnerVar>VerticalLayout [popupContent=(VerticalLayout)popup.getContent().getPopupComponent()]</InnerVar>
+                <InnerVar>Iterator&lt;Component&gt; [it=popupContent.iterator()]</InnerVar>
+                <InnerVar>double [mapWidth=UI.getCurrent().getPage().getBrowserWindowWidth() - 366.0]</InnerVar>
+                <InnerVar>double [mapHeight=UI.getCurrent().getPage().getBrowserWindowHeight() * 0.9]</InnerVar>
+                <InnerVar>double [xDegreeDifference=-(leafletMap.getCenter().getLon() - leafletMarker.getPoint().getLon())]</InnerVar>
+                <InnerVar>double [yDegreeDifference=leafletMap.getCenter().getLat() - leafletMarker.getPoint().getLat()]</InnerVar>
+                <InnerVar>double [degreePerZoom=(360.0 / (Math.pow(2,leafletMap.getZoomLevel())))]</InnerVar>
+                <InnerVar>double [degreePerPixel=degreePerZoom / mapWidth]</InnerVar>
+                <InnerVar>double [xPixelDifference=(xDegreeDifference / degreePerPixel) / 3.0]</InnerVar>
+                <InnerVar>double [yPixelDifference=(yDegreeDifference / degreePerPixel) / 3.0]</InnerVar>
+                <InnerVar>double [pixelsToLeftBorder=(mapWidth / 2.0) + xPixelDifference]</InnerVar>
+                <InnerVar>double [pixelsToTopBorder=(mapHeight / 2.0) + yPixelDifference]</InnerVar>
+                <InnerVar>double [mouseX=MouseInfo.getPointerInfo().getLocation().getX()]</InnerVar>
+                <InnerVar>double [mouseY=MouseInfo.getPointerInfo().getLocation().getY()]</InnerVar>
+                <InnerVar>double [mapTopLeftX=mouseX - pixelsToLeftBorder]</InnerVar>
+                <InnerVar>double [mapTopLeftY=mouseY - pixelsToTopBorder]</InnerVar>
+                <InnerVar>double [adjustedXLocation=mouseX - mapTopLeftX]</InnerVar>
+                <InnerVar>double [adjustedYLocation=mouseY - mapTopLeftY]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>popup;setVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setPopupVisible;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponent;[popup, "top:" + String.valueOf((int)adjustedYLocation) + "px;left:"+ String.valueOf((int)adjustedXLocation)+ "px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setVisible;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>popup;setPopupVisible;[true]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getWaypointListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>LeafletMouseOverListener</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getDroneListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>LeafletMouseOverListener</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>refresh</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String focused</ParameterType>
+                <ParameterType>String checkedNames</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>drawingutil;updateDroneMarkers;[focused, checkedNames]</InnerMethodInvoke>
+                <InnerMethodInvoke>drawingutil;updateActiveFlightRoutes;[focused, checkedNames]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

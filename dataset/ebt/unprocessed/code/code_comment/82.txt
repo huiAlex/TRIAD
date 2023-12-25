@@ -1,0 +1,13 @@
+Constructor.
+Gets current line number.
+Gets error count.
+Get the next opening or closing symbol.
+Return true if ch can be part of a Java identifier
+Return an identifier read from input stream
+Return next identifier, skipping comments
+nextChar sets ch based on the next character in the input stream.
+Precondition: We are about to process a comment; have already seen
+Precondition: We are about to process a quote; have already seen
+After the opening slash is seen deal with next character.
+If it is a comment starter, process it; otherwise put back
+the next character if it is not a new line.

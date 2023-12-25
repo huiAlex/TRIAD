@@ -1,0 +1,3 @@
+logSend:1
+sendCommand:1
+commandSend:1

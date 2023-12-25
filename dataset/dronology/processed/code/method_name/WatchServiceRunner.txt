@@ -1,0 +1,9 @@
+watch servic runner 
+run 
+chang 
+run 
+regist 
+pre visit directori 
+visit file fail 
+regist 
+stop 

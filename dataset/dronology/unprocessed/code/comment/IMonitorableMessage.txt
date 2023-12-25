@@ -1,0 +1,7 @@
+/**
+ *  Interface for all messages that shall be subscribeable via the monitoring API.
+ * 
+ * 
+ *  *
+ */
+

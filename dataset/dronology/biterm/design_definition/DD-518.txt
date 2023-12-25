@@ -1,0 +1,3 @@
+computCoordin:1
+distancMeter:1
+distancComput:1

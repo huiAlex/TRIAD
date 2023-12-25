@@ -1,0 +1,15 @@
+uav state messag 
+get locat 
+get attitud 
+get veloc 
+armabl 
+get groundspe 
+get status 
+arm 
+get mode 
+get batterystatus 
+string 
+batteri status 
+get batteri level 
+get batteri current 
+get batteri voltag 

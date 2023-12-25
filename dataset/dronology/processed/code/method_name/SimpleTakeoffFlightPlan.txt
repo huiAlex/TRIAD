@@ -1,0 +1,18 @@
+string 
+simpl takeoff flight plan 
+get flight id 
+get start locat 
+get end locat 
+get assign drone 
+clear assign drone 
+set status fli 
+set status complet 
+get status 
+string 
+get way point 
+get start time 
+get end time 
+get design drone id 
+complet 
+get takeoff altitud 
+set design drone id 

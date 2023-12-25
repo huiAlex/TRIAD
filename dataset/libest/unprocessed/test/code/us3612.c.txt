@@ -1,0 +1,197 @@
+us3612.c
+us3612_logger_stderr
+BIO_copy_data
+generate_private_RSA_key
+generate_private_EC_key
+string_password_cb
+us3612_clean
+us3612_start_server
+us3612_init_suite
+us3612_destroy_suite
+client_manual_cert_verify
+us3612_test1
+us3612_test2
+us3612_test3
+us3612_test4
+us3612_add_suite
+EnterCriticalSection
+vfprintf
+fflush
+LeaveCriticalSection
+BIO_get_mem_data
+malloc
+BN_set_word
+RSA_generate_key_ex
+RSA_free
+BN_free
+EC_KEY_new
+EC_GROUP_new_by_curve_name
+EC_GROUP_set_asn1_flag
+EC_GROUP_set_point_conversion_form
+EC_KEY_set_group
+EC_KEY_free
+strncpy
+st_start
+InitializeCriticalSection
+est_init_logger
+read_binary_file
+us3612_clean
+us3612_start_server
+st_stop
+free
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_protected_private_key
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_protected_private_key
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_protected_private_key
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+generate_private_RSA_key
+CU_ASSERT
+printf
+free
+generate_private_RSA_key
+CU_ASSERT
+printf
+free
+generate_private_EC_key
+CU_ASSERT
+printf
+free
+generate_private_EC_key
+CU_ASSERT
+printf
+free
+CU_add_suite
+format
+l
+out
+data_lenp
+key_size
+cb
+curve_nid
+cb
+buf
+size
+wflag
+data
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+char
+va_list
+BIO
+int
+int
+pem_password_cb
+int
+pem_password_cb
+char
+int
+int
+void
+int
+int
+X509
+int
+US3612_SERVER_PORT
+US3612_SERVER_IP
+US3612_UID
+US3612_PWD
+US3612_GOOD_PWD
+US3612_BAD_PWD
+RSA_KEYSIZE
+EST_PRIVATE_KEY_ENC
+US3612_CACERTS
+US3612_TRUST_CERTS
+US3612_SERVER_CERTKEY
+US3612_PRIVATE_KEY_FILE
+US3612_CACERTS
+US3612_TRUST_CERTS
+US3612_SERVER_CERTKEY
+US3612_PRIVATE_KEY_FILE
+------------------------------------------------------------------   us3612.c - Unit Tests for User Story US3612 - Encrypted Private Key Support         July, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------ /
+   Key wrap algorithm optionally used to protect private keys  /
+   The following certs are used for FQDN testing  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Simple Enroll b- client   Load in a password prortected private key with   the correct passphrase and attempt to enroll for a certificate  /
+   Simple enroll CSR     Load in a password protected private key with the incorrect password   and attempt to enroll for a certificate. This will fail.  /
+   Simple enroll CSR     Change the password used by the callback after reading   in the protected private key file.  /
+   Test key generation utility functions   and associated password callbacks  /
+       Generate an EC key      /
+       Hard code a password for this suite      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in our test private key       generated via the command below:             openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+        Create a client context       /
+        Set the authentication mode to use a user id/password       /
+        Set the EST server address/port       /
+        Read in our test private key        generated via the command below:               openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096       /
+        Get the latest CSR attributes       /
+        Use the simplified API to enroll a CSR       /
+        Cleanup       /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in our test private key       generated via the command below:             openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096      /
+       Change out the password, EVP_PKEY should remain unaffected      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Generate an RSA key without a password      /
+       Generate an RSA key with password      /
+       Generate an EC key without a password      /
+       Generate an EC key with a password      /
+ add a suite to the registry /
+      Add the tests to the suite     /

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/CommandExecutor.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:59">package <name pos:start="1:9" pos:end="1:58"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name><operator pos:start="1:38" pos:end="1:38">.</operator><name pos:start="1:39" pos:end="1:58">manageddroneinternal</name></name>;</package>
+
+<interface pos:start="3:1" pos:end="6:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> interface <name pos:start="3:18" pos:end="3:32">CommandExecutor</name> <block pos:start="3:34" pos:end="6:1">{
+    <function_decl pos:start="4:5" pos:end="4:19"><type pos:start="4:5" pos:end="4:8"><name pos:start="4:5" pos:end="4:8">void</name></type> <name pos:start="4:10" pos:end="4:16">process</name><parameter_list pos:start="4:17" pos:end="4:18">()</parameter_list>;</function_decl>
+    <function_decl pos:start="5:5" pos:end="5:25"><type pos:start="5:5" pos:end="5:11"><name pos:start="5:5" pos:end="5:11">boolean</name></type> <name pos:start="5:13" pos:end="5:22">isFinished</name><parameter_list pos:start="5:23" pos:end="5:24">()</parameter_list>;</function_decl>
+}</block></interface>
+</unit>

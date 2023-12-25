@@ -1,0 +1,14 @@
+drone command handler 
+
+
+command 
+id 
+listen 
+
+drone command 
+iuav properti updat notifi 
+
+send command 
+set status callback notifi 
+get handler id 
+

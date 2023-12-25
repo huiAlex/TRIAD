@@ -1,0 +1,23 @@
+af info box 
+creat content 
+creat compon 
+creat compon 
+add listen 
+take 
+af info box 
+set check 
+get check 
+get check box 
+set hover place 
+get hover place 
+get hover switch 
+set box visibl 
+get box visibl 
+get home button 
+get rout button 
+get check click 
+set check click 
+updat 
+get 
+get status 
+get health color 

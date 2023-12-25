@@ -1,0 +1,35 @@
+<Class>
+    <Id>27</Id>
+    <Package>edu.nd.dronology.core.vehicle.commands</Package>
+    <ClassName>EmergencyStopCommand</ClassName>
+    <SuperClass>AbstractDroneCommand</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IDroneCommand</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>EmergencyStopCommand</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String droneId</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

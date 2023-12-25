@@ -1,0 +1,37 @@
+flight manag servic 
+instanc 
+
+flight manag servic 
+
+uav id 
+uavid 
+plan 
+waypoint 
+plan 
+waypoint 
+uavid 
+uavid 
+uavid 
+uavid 
+altitud 
+uavid 
+
+waypoint 
+waypoint 
+
+flight manag servic 
+get instanc 
+init servic instanc 
+get flight info 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get current flight 
+cancel pend flight 
+takeoff 
+emerg stop 
+
+servic handl uav flight allow assign flight plan uav allow send flight relat command uav take return home 
+ 
+ 

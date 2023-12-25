@@ -1,0 +1,3 @@
+voltag simul 
+everi minut flight batteri decreas volt 
+ 

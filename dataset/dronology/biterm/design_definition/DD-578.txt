@@ -1,0 +1,4 @@
+planExecut:1
+assignUav:1
+assignPlan:1
+planFlight:1

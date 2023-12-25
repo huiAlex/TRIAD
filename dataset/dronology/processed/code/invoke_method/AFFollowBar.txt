@@ -1,0 +1,6 @@
+get 
+get 
+get 
+get 
+set averag center 
+set follow 

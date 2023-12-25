@@ -1,0 +1,24 @@
+<Class>
+    <Id>133</Id>
+    <Package>edu.nd.dronology.monitoring</Package>
+    <ClassName>IRemoteMonitoringMessageHandler</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>Remote</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>notifyMonitoringMessage</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IMonitorableMessage message</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

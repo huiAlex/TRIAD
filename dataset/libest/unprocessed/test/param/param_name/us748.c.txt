@@ -1,0 +1,8 @@
+cur_cert
+openssl_cert_error
+ptr
+size
+nmemb
+userdata
+manual_enroll
+nid

@@ -1,0 +1,5 @@
+listen incomm groundstat connect server:nsubj
+port predefin:amod
+listen port:obl
+connect new:amod
+port connect:nmod

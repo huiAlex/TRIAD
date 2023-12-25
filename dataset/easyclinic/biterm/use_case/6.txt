@@ -1,0 +1,16 @@
+confirmSelect:1
+operActiv:1
+selectDoctor:1
+anagraficaDoctor:6
+activOper:1
+selectConfirm:1
+doctorDelet:1
+datumAnagrafica:1
+changSelect:1
+doctorAnagrafica:6
+deletDoctor:1
+anagraficaDatum:1
+changAnagrafica:1
+anagraficaChang:1
+selectChang:1
+doctorSelect:1

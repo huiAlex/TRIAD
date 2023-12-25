@@ -1,0 +1,5 @@
+constraint inner panel 
+set goal label valu 
+get valu data base 
+set impact label valu 
+get panel 

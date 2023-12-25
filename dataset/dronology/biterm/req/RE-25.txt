@@ -1,0 +1,2 @@
+activUav:1
+uavActiv:1

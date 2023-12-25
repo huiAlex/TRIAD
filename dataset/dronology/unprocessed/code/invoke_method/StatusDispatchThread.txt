@@ -1,0 +1,14 @@
+get
+update
+updateMode
+getLocation
+getBatterystatus
+getBatteryLevel
+getGroundspeed
+getMode
+equals
+getVelocity
+getAttitude
+getMode
+getInstance
+getUavid

@@ -1,0 +1,13 @@
+serialVersionUID
+LOGGER
+flightNumber
+flightID
+wayPoints
+wayPoints
+startLocation
+endLocation
+status
+drone
+startTime
+endTime
+uavid

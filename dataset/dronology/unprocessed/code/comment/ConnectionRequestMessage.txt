@@ -1,0 +1,6 @@
+/**
+ * When a new GCS connects to Dronology it sends a {@link ConnectionRequestMessage}.
+ * 
+ *  *
+ */
+

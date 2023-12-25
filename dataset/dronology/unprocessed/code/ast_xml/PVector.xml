@@ -1,0 +1,242 @@
+<Class>
+    <Id>36</Id>
+    <Package>edu.nd.dronology.core.coordinate</Package>
+    <ClassName>PVector</ClassName>
+    <SuperClass>AbstractPosition</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>PVector  /** 
+ * A position on Earth, represented as an X, Y and Z coordinate in an Earth centered Earth fixed reference frame. The origin of this frame is at the center of mass of the Earth. The X-axis points towards where the equator meets the prime meridean (latitude 0, longitude 0). The Z-axis points towards the geographic north pole (latitude 90, longitude undefined). The Y-axis can be derived using right hand rule and points towards latitude 0, longitude 90. All units are in meters.
+ * @author Michael Murphy 
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>x</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>y</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>z</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>PVector</MethodName>
+            <MethodComment>/** 
+ * @param x the distance in meters along the axis that points from the center of mass of the Earth towards where the equator meets the prime meridean (latitude 0, longitude 0)
+ * @param y the distance in meters along the axis that points from the center of mass of the Earth towards latitude 0, longitude 90
+ * @param z the distance in meters along the axis that points from the center of mass of the Earth towards the geographic north pole (latitude 90, longitude undefined)
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>double x</ParameterType>
+                <ParameterType>double y</ParameterType>
+                <ParameterType>double z</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getX</MethodName>
+            <MethodComment>/** 
+ * @return the x
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getY</MethodName>
+            <MethodComment>/** 
+ * @return the y
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getZ</MethodName>
+            <MethodComment>/** 
+ * @return the z
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toNVector</MethodName>
+            <MethodComment>/** 
+ * @return the n-vector plus altitude for this position
+ */
+</MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [a=NVector.SEMI_MAJOR]</InnerVar>
+                <InnerVar>double [b=NVector.SEMI_MINOR]</InnerVar>
+                <InnerVar>double [e=Math.sqrt(1 - (b * b) / (a * a))]</InnerVar>
+                <InnerVar>double [q=(1.0 - e * e) / (a * a) * this.z * this.z]</InnerVar>
+                <InnerVar>double [p=(this.y * this.y + this.x * this.x) / (a * a)]</InnerVar>
+                <InnerVar>double [r=(p + q - Math.pow(e,4.0)) / 6.0]</InnerVar>
+                <InnerVar>double [s=(Math.pow(e,4) * p * q) / (4 * Math.pow(r,3))]</InnerVar>
+                <InnerVar>double [t=Math.pow((1.0 + s + Math.sqrt(s * (2.0 + s))),1.0 / 3.0)]</InnerVar>
+                <InnerVar>double [u=r * (1.0 + t + 1.0 / t)]</InnerVar>
+                <InnerVar>double [v=Math.sqrt(u * u + Math.pow(e,4.0) * q)]</InnerVar>
+                <InnerVar>double [w=e * e * (u + v - q) / (2 * v)]</InnerVar>
+                <InnerVar>double [k=Math.sqrt(u + v + w * w) - w]</InnerVar>
+                <InnerVar>double [d=(k * Math.sqrt(this.y * this.y + this.x * this.x)) / (k + e * e)]</InnerVar>
+                <InnerVar>double [f=1.0 / (Math.sqrt(d * d + this.z * this.z))]</InnerVar>
+                <InnerVar>double [f2=k / (k + e * e)]</InnerVar>
+                <InnerVar>double [x=f * f2 * this.x]</InnerVar>
+                <InnerVar>double [y=f * f2 * this.y]</InnerVar>
+                <InnerVar>double [z=f * this.z]</InnerVar>
+                <InnerVar>double [alt=(k + e * e - 1) / k * Math.sqrt(d * d + this.z * this.z)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toLlaCoordinate</MethodName>
+            <MethodComment>/** 
+ * @return the latitude, longitude, and altitude for this position
+ */
+</MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hashCode</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>int</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>int [prime=31]</InnerVar>
+                <InnerVar>int [result=1]</InnerVar>
+                <InnerVar>long [temp]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toString</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>equals</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>Object obj</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>PVector [other=(PVector)obj]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toPVector</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>PVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,21 @@
+uav proxi 
+get id 
+get groundstat id 
+set status 
+get status 
+updat coordin 
+updat batteri level 
+updat veloc 
+string 
+hash code 
+get longitud 
+get latitud 
+get altitud 
+get batteri level 
+get veloc 
+get info 
+get coordin 
+set veloc 
+set groundstat id 
+get home locat 
+set home locat 

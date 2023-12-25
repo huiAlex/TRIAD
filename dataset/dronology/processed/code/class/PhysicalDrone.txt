@@ -1,0 +1,71 @@
+physic drone 
+logger 
+base station 
+drone id 
+current target 
+command 
+latest drone snapshot 
+ 
+
+lla coordin 
+abstract drone command 
+
+drn 
+base station 
+target coordin 
+speed 
+altitud 
+ 
+ 
+locat 
+batteri level 
+speed 
+veloc 
+attitud 
+locat 
+status 
+speed 
+ 
+ 
+ 
+batteri level 
+veloc 
+posit 
+veloc 
+attitud 
+mode 
+command 
+
+lla coordin 
+lla coordin 
+lla coordin 
+lla coordin 
+abstract drone command 
+
+physic drone 
+get latitud 
+get longitud 
+get altitud 
+fli 
+get coordin 
+land 
+take 
+get batteri status 
+
+set voltag check point 
+destin reach 
+updat 
+updat coordin 
+updat drone state 
+set ground speed 
+set veloc 
+updat batteri level 
+updat veloc 
+updat collis avoid 
+get latest drone snapshot 
+updat mode 
+send command 
+resend command 
+
+represent physic uav interact real hardwar sitl simul uav 
+ 

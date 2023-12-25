@@ -1,0 +1,26 @@
+flight zone manag 
+run 
+tri assign uav 
+drone ad 
+drone remov 
+run 
+run 
+check take readi 
+check pend fli 
+check pend fli takeoff 
+check schedul 
+check schedul takeoff 
+check land readi 
+await land 
+get await take flight 
+check complet plan 
+await take 
+plan flight 
+plan flight 
+notifi plan chang 
+return home 
+cancel pend flight 
+paus flight 
+resum flight 
+takeoff 
+emerg stop 

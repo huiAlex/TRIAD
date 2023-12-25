@@ -1,0 +1,6 @@
+id
+file
+waypoints
+changed
+name
+routeName

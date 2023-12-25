@@ -1,0 +1,4 @@
+dynamMemori:1
+memoriManag:1
+managMemori:1
+memoriDynam:1

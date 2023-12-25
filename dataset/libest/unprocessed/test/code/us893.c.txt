@@ -1,0 +1,395 @@
+us893.c
+us893_clean
+us893_start_server
+us893_init_suite
+us893_destory_suite
+us893_test1
+us893_test2
+us893_test3
+us893_test4
+us893_test5
+us893_test6
+us893_test7
+us893_test8
+us893_test9
+us893_test10
+us893_test11
+us893_test12
+us893_add_suite
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+st_start
+st_proxy_start
+est_init_logger
+read_binary_file
+us893_clean
+us893_start_server
+st_stop
+st_proxy_stop
+free
+curl_http_post
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+write_binary_file
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+est_destroy
+curl_http_post
+CU_ASSERT
+st_stop
+st_proxy_stop
+us893_start_server
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_client_copy_retry_after
+CU_ASSERT
+CU_ASSERT
+est_destroy
+st_stop
+st_proxy_stop
+us893_start_server
+CU_ASSERT
+st_enable_pop
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+curl_http_post
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+st_disable_pop
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+curl_http_post
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+st_enable_pop
+st_disable_pop
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+st_enable_pop
+est_destroy
+st_disable_pop
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+st_enable_pop
+st_disable_pop
+curl_http_post
+CU_ASSERT
+st_enable_pop
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+curl_http_post
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+curl_slist_append
+curl_easy_init
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_setopt
+curl_easy_perform
+curl_easy_getinfo
+curl_easy_cleanup
+curl_slist_free_all
+CU_ASSERT
+st_proxy_stop
+st_proxy_start
+CU_ASSERT
+st_proxy_enable_pop
+curl_http_post
+CU_ASSERT
+st_proxy_disable_pop
+CU_add_suite
+manual_enroll
+nid
+int
+int
+US893_TCP_SERVER_PORT
+US893_TCP_PROXY_PORT
+US893_PKCS10_RSA2048
+US893_PKCS10_CORRUPT
+US893_SERVER_IP
+US893_REENROLL_URL_BA
+US893_PKCS10_CT
+US893_UIDPWD_GOOD
+US893_UID
+US893_PWD
+US893_CACERTS
+US893_TRUSTED_CERTS
+US893_SERVER_CERTKEY
+US893_PROXY_CERT
+US893_PROXY_KEY
+US893_UNTRUSTED_CERT
+US893_UNTRUSTED_KEY
+US893_EXPIRED_KEY
+US893_EXPIRED_CERT
+US893_TC2_CERT_TXT
+US893_TC2_CERT_B64
+US893_TC2_CERT_PK7
+US893_TC2_CERT_PEM
+US893_CACERTS
+US893_TRUSTED_CERTS
+US893_SERVER_CERTKEY
+US893_PROXY_CERT
+US893_PROXY_KEY
+US893_UNTRUSTED_CERT
+US893_UNTRUSTED_KEY
+US893_EXPIRED_KEY
+US893_EXPIRED_CERT
+US893_TC2_CERT_TXT
+US893_TC2_CERT_B64
+US893_TC2_CERT_PK7
+US893_TC2_CERT_PEM
+------------------------------------------------------------------   us893.c - Unit Tests for User Story 893 - proxy reenroll     October, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   The following CSR was generated using the following openssl command and then   using cat on the rsa.req file:     openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Simple reenroll - RSA 2048     This test case uses libcurl to test simple   reenroll of a 2048 bit RSA CSR.  HTTP Basic   authentication is used.  /
+   This test case uses an existing expired cert and   attempts to re-enroll it.  The expired certs contains   several X509 extensions. We verify the new issued   cert preserves these extensions using grep.  Note,   preserving these extensions requires the OpenSSL CA   to enable the "copy_extensions" knob in the OpenSSL   config file.  This is why this test suite uses a   unique copy of estExampleCA.cnf.  /
+   Simple reenroll - Corrupt CSR     Use libcurl to send a reenroll request containing   a corrupted CSR.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured for manual   approval.  The server will send back a retry-after   response.  This verifies the proxy propagates the   retry-after response to the client.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured with PoP   enabled, but the proxy server is using a cert   that doesn't contain id-kp-cmcRA.  This should   result in a failure.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured with PoP   disabled, but the proxy server is using a cert   that doesn't contain id-kp-cmcRA.  This should   result in a successful reenroll.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured with PoP   disabled, but the proxy server is using a cert   that doesn't contain id-kp-cmcRA.  The CSR will   contain the PoP, which forces it to be checked.   This should result in a failure since the RA   cert doesn't contain id-kp-cmcRA.  /
+   This test case uses an existing expired cert and   attempts to re-enroll it.  PoP is disabled on   the EST server.  /
+   This test case uses an existing expired cert and   attempts to re-enroll it.  PoP is disabled on   the EST server.  The CSR does not contain a PoP.  /
+   This test case uses a bad password configured on   the EST proxy context.  This should cause the EST   server to reject the reenroll request.  /
+   Simple reenroll - RSA 2048     This test case uses libcurl to test simple   reenroll of a 2048 bit RSA CSR.  HTTP Basic   authentication is used.  However, PoP is now   enabled on the proxy, which should cause a   failure since libcurl doesn't include the PoP.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       These are all temporary files created       by the various test cases.      /
+       First we start an EST server acting as the CA      /
+       Next we start an EST proxy actging as an RA      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Retrieve the cert that was given to us by the EST server      /
+       Save the cert to a local file      /
+       Base 64 decode the cert response      /
+       Convert the pkcs7 cert to a PEM cert      /
+       Convert PEM cert to a textual representation of the cert      /
+       Verify the jimbob DNS extension was preserved      /
+       Verify the bobcat DNS extension was preserved      /
+       Verify the IP address extension was preserved      /
+       Verify the Repudiation key usage extension was preserved      /
+       Verify the public key was preserved      /
+       Clean up      /
+       Since we passed in a bad CSR,       we expect the server to respond with 400      /
+       Stop the server.      /
+       Restart the server with manual approval enabled      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       The server should be configured with a retry-after       value of 3600 seconds, which is the default.      /
+       Clean up      /
+       Stop the server.      /
+       Restart the server with manual approval disabled      /
+       Make sure PoP is enabled on the server      /
+       Stop the proxy server so we can restart       it using a different identity cert.      /
+       Restart the proxy server using the other cert      /
+       Use libcurl to send an enroll request.  We use libcurl       because it will not include the PoP.      /
+       The PoP check should fail      /
+       Stop the proxy server      /
+       Restart the proxy server using the other cert      /
+       Make sure PoP is disabled on the server      /
+       Stop the proxy server so we can restart       it using a different identity cert.      /
+       Restart the proxy server using the other cert      /
+       Use libcurl to send an enroll request.  We use libcurl       because it will not include the PoP.      /
+       The reenroll should work since PoP is not enabled anywhere.      /
+       Stop the proxy server      /
+       Restart the proxy server using the other cert      /
+       Re-enable PoP on the server for the forthcoming test cases.      /
+       Make sure PoP is disabled on the server      /
+       Stop the proxy server so we can restart       it using a different identity cert.      /
+       Restart the proxy server using the other cert      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Stop the proxy server      /
+       Restart the proxy server using the other cert      /
+       Re-enable PoP on the server for the forthcoming test cases.      /
+       Make sure PoP is disabled on the server      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Re-enable PoP on the server for the forthcoming test cases.      /
+       Make sure PoP is disabled on the server      /
+       Use libcurl to send an enroll request.  We use libcurl       because it will not include the PoP.      /
+       The reenroll should work since PoP is not enabled anywhere.      /
+       Re-enable PoP on the server for the forthcoming test cases.      /
+       Stop the proxy server so we can restart       it using a different identity cert.      /
+       Restart the proxy server using the other cert      /
+       Stop the proxy server      /
+       Restart the proxy server using the other cert      /
+       Stop the proxy server so we can restart       it using a different identity cert.      /
+       Restart the proxy server using an untrusted cert      /
+       We don't use the normal curl util API here because       we need to disable TLS peer verification for this       special test case.      /
+       Set the Content-Type header in the HTTP request      /
+       Setup all the other fields that CURL requires      /
+       Issue the HTTP request      /
+       Get the HTTP reponse status code from the server      /
+       Stop the proxy server      /
+       Restart the proxy server using the other cert      /
+       Should fail since the proxy will fail the PoP check      /
+ add a suite to the registry /
+ add the tests to the suite /

@@ -1,0 +1,5 @@
+includCoordin:1
+longitudLatitud:1
+altitudLatitud:1
+specifiWaypoint:1
+specifiUse:1

@@ -1,0 +1,6 @@
+function generat circular ellips imag waypoint 
+rout aperatur width vector circular ellips doubl 
+function generat pseudorandom point 
+min point max point point doubl pseudorandom point 
+function calcul coverag statist chosen rout primit object 
+rout coverag point aperatur width coverag statist 

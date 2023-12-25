@@ -1,0 +1,5 @@
+class abstract:compound
+class factori:compound
+factori class:compound
+fleet drone:dep
+class fleet:nmod

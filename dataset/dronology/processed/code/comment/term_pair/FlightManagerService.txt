@@ -1,0 +1,17 @@
+allow servic:nsubj
+servic handl:acl
+flight uav:compound
+allow flight:nsubj
+handl allow:ccomp
+allow assign:xcomp
+plan flight:compound
+assign plan:obj
+assign uav:obl
+allow send:xcomp
+relat flight:dep
+command relat:amod
+send command:obj
+send uav:obl
+uav take:amod
+allow return:ccomp
+return home:obl

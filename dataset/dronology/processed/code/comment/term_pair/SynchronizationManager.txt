@@ -1,0 +1,10 @@
+hold synchron manag:nsubj
+ensur synchron manag:nsubj
+hold ensur:conj
+sync point:nsubj
+ensur sync:ccomp
+sync allow:advcl
+allow uav:obj
+allow proceed:xcomp
+task next:amod
+proceed task:obl

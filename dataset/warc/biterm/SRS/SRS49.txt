@@ -1,0 +1,10 @@
+toolLine:1
+toolCommand:1
+recordWarc:1
+recordValid:1
+commandTool:1
+fileHtml:1
+lineTool:1
+htmlFile:1
+warcRecord:1
+validRecord:1

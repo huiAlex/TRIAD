@@ -1,0 +1,30 @@
+vector 
+lla coordin 
+distanc 
+travel distanc 
+distanc 
+vector 
+vector 
+get 
+get 
+get 
+get 
+get 
+get 
+vector 
+vector 
+get 
+get 
+get 
+get 
+get 
+get 
+
+get altitud 
+get 
+get 
+get 
+get 
+get 
+get 
+get 

@@ -1,0 +1,29 @@
+plan mission:compound
+uav individu:amod
+plan uav:nmod
+part execut mission plan:nmod
+check task:obl
+check finish:advcl
+need activ:xcomp
+rout flight:compound
+activ rout:obj
+need note:nsubj
+need handl:xcomp
+handl rout:obj
+handl waypoint:obj
+rout waypoint:conj
+handl takeoff:obj
+rout takeoff:conj
+handl land:obj
+rout land:conj
+need synch:nsubj
+handl need:parataxis
+coordin extra:amod
+need coordin:obj
+pattern differ:amod
+support pattern:obj
+synchron land synchron takeoff:dep
+sumption synchron land:compound
+rout defini:acl
+rout defin:acl
+defin prior:advcl

@@ -1,0 +1,115 @@
+creat 
+drone flight state manag 
+get drone status 
+set status 
+add state chang listen 
+set mode take 
+take 
+fli 
+get coordin 
+get instanc 
+remov drone 
+get drone 
+get base coordin 
+send command 
+send command 
+resend command 
+set 
+updat guidanc 
+assign flight 
+unassign flight 
+updat goal 
+get drone status 
+set status 
+clear goal 
+clear goal 
+add 
+complet 
+get instanc 
+get regist drone 
+land 
+ground 
+ground 
+get latest drone snapshot 
+readi land 
+land 
+ground 
+air 
+get 
+finish 
+get flight safeti mode state 
+add 
+add 
+add goal 
+land 
+get status 
+get drone 
+get 
+get drone 
+get drone 
+set mode land 
+land 
+set mode ground 
+unassign flight 
+get drone 
+emerg stop command 
+get drone 
+get status 
+add 
+process get snapshot messag 
+process updat guidanc messag 
+process assign flight messag 
+process unassign flight messag 
+process goal updat messag 
+get status 
+get way point 
+get way point 
+start 
+get 
+get drone 
+add 
+get 
+add 
+add 
+equal 
+get flight mode state 
+fli 
+get flight mode state 
+air 
+get 
+get 
+process messag 
+process messag 
+get coordin 
+distanc 
+set mode fli 
+add 
+notifi state chang 
+set mode fli 
+fli 
+take 
+get drone 
+get status 
+get drone 
+get drone 
+get drone 
+get drone 
+string 
+get 
+get 
+fli drone 
+check end flight 
+set mode air 
+get coordin 
+get snapshot 
+get drone 
+get altitud 
+reach 
+get instanc 
+publish 
+set mode fli 
+get 
+creat messag 
+set mode air 
+get drone 
+get coordin 

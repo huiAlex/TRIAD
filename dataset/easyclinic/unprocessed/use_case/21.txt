@@ -1,0 +1,32 @@
+Use case:
+Show clinic folder
+
+Description:
+Allows a patient to view clinic folder own folder using the specific locations displaced of the outpatient
+
+Preconditions:
+He has an interest in access to your clinic folder
+The patient has been recognized by system (See UcAccTB)
+
+Postconditions:
+The patient obtains display information contained in their clinic folder
+
+Sub-flows:
+The patient activates the execution of service display clinic folder
+1 Access to the database and retrieves information in patient clinic folder
+2 View details of patient and the list of visits in chronological order and pathology
+
+Alternative flows:
+Patient displays details of visit
+   2 1 Select a visit from the list and requires viewing details
+   2 2 Access to the database and retrieves the details of the visit selected
+   2 3 Display the mask containing the details of the visit
+Patient decides to print the clinic folder
+   2 1 Start printing the clinic folder
+   2 2 generates the report and sends it to printer
+Patient decides to print details of a visit
+  2 3 1 Start printing the details of visit
+  2 3 2 generates the report and sends it to printer
+   2 1 For each visit, lists the date, the name of the doctor who carried out the survey, and reason for the visit
+   2 3 for each visit, lists the date the name of the doctor who made the visit, reason for the visit, and accused by illnesses patient history made by the doctor, the diagnostic tests prescribed, the therapy (giving medicines and time of recruitment) ,the reported values,any observations made instrumental during the visit (e.g. heartbeat, blood pressure values, number of dioptres found etc.)
+      For biological and/or instrumental examinations, once they have been made,  provides information relating to the laboratory that performed them and the values of the results of each examination and diagnostic evaluation made by the doctor.

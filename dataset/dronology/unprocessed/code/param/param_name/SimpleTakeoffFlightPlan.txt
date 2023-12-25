@@ -1,0 +1,5 @@
+drone
+planName
+altitude
+drone
+uavid

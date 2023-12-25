@@ -1,0 +1,8 @@
+command tell uav fli specif place 
+ 
+creat command tell uav fli given coordin earth 
+exampl command uav fli notr dame stadium abov middl yard line destin coordin uav fli 
+ 
+destin coordin 
+place uav 
+ 

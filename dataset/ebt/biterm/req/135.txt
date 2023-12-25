@@ -1,0 +1,3 @@
+eventSpecul:1
+messagSpecul:1
+messagComposit:1

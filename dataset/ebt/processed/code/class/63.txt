@@ -1,0 +1,1 @@
+door thread static privat int count privat int task number protect server socket server privat connect conn privat statement stmt privat result set rs door thread server socket ss server ss count task number count public void run true tri socket client server accept buffer reader input new buffer reader new input stream reader client input stream print writer output new p

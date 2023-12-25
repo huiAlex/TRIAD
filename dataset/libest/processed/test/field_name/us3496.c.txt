@@ -1,0 +1,20 @@
+est ut max cmd len 
+client ut cacert 
+client ut pubkey 
+us server port 
+us server ip 
+us uidpwd good 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us cacert 
+us trust cert 
+us server certkey 
+us enrol url ba 
+us pkcs ct 
+us pkcs rsa 
+path seg valid char 
+path segment long 
+path segment max 

@@ -1,0 +1,8 @@
+SimpleSimulator
+startBatteryDrain
+getVoltage
+setFlightPath
+checkPoint
+isDestinationReached
+stopBatteryDrain
+move

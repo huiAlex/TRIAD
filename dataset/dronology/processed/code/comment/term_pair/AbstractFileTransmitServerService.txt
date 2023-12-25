@@ -1,0 +1,8 @@
+class abstract:compound
+class base:compound
+class servic:obl
+servic handl:acl
+handl file:obj
+instanc servic:compound
+type file:nmod
+file support:acl

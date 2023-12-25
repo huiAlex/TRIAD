@@ -1,0 +1,4 @@
+[SUMMARY]
+UAV Flight Plan Management
+[DESCRIPTION]
+Each UAV has zero or more pending flight plans.

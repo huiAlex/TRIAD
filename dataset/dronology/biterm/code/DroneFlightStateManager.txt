@@ -1,0 +1,6 @@
+uavAssign:1
+setState:1
+setUav:1
+changMode:5
+uavState:1
+transitState:5

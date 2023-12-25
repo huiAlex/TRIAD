@@ -1,0 +1,5 @@
+pattern predefin:amod
+pattern expand:acl
+expand part:obl
+part pattern task:nmod
+expand mission plan:obl

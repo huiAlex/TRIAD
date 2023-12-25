@@ -1,0 +1,5 @@
+execut mission plan 
+cancel mission 
+remov uav 
+execut mission plan 
+execut mission plan 

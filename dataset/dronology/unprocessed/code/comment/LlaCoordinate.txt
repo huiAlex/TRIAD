@@ -1,0 +1,40 @@
+/**
+ * 
+ */
+
+/**
+ * A terrestrial position defined by latitude, longitude, and altitude (LLA)
+ *  
+ *  *
+ */
+
+/**
+	 * A terrestrial position defined by latitude, longitude, and altitude (LLA).
+	 * 
+	 * 	 *          the angle north of the equator in degrees (negative angles define latitudes in the southern hemisphere). Must be a value within this interval: -90 <= latitude <= 90
+	 * 	 *          the angle east of the prime meridian in degrees (negative angles define longitudes in the western hemisphere). Must be a value within this interval: -180 < longitude <= 180
+	 * 	 *          the distance above sea level in meters or more precisely the distance above the surface of the WGS-84 reference ellipsoid.
+	 * 	 *           when the latitude or longitude is outside the specified range
+	 */
+
+/**
+	 * The altitude
+	 * 
+	 * 	 */
+
+/**
+	 * The latitude angle.
+	 * 
+	 * 	 */
+
+/**
+	 * The longitude angle
+	 * 
+	 * 	 */
+
+/**
+	 * 	 */
+
+/**
+	 * 	 */
+

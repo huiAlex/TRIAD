@@ -1,0 +1,46 @@
+Use case:
+Changing visit
+
+Description:
+It allows the operator to change a visit previously recorded
+
+Preconditions:
+The Operator has an interest in a change visit previously recorded
+The Operator has been recognized by system (See UcValOp)
+The Operator has received the data of for visit
+The visit is registered in the SIO
+
+Postconditions:
+The clinic folder of patient who was subjected to visit is not changed
+Information of Visit in  clinic folder of patient are updated
+
+Sub-flows:
+The operator activates the execution of service editing a visit
+1 View the list of visits in chronological order
+2 Select the visit by change
+3 Confirm your selection 
+4 View the mask for the modification of a visit
+5 Changing data of the visit
+6 Confirm Changes 
+7 Verify the data insert by operator
+8 Remember the updates
+9 Notify to the operator that the operation was concluded successfully
+
+Alternative flows:
+Input of Data about to a new examination
+   5 1 Inserting new examination.  The Operator is interest to input data of an examination of the visit in object
+   5 2 Return to step 5 
+Changing data of an examination
+   5 1 Change examination data. The Operator is interest to modify the data an examination of the visit edit review
+   5 2 Return to step 5 
+Deleting data of an examination
+   5 1 Deleting data examination. The Operator's interest to delete data an examination of the visit
+   5 2 Return to step 5 
+Invalid data set 
+   7 1 Show an appropriate message 
+   7 2 take back running from 4 step, underpinned the fields of the form with data inserted by operator
+Operator cancels the change operation
+  3 1 ends the use case with failure
+   4 1 The data required for registration of visit are: the date, the name of the doctor who carried out the survey, the reason for the visit, illnesses accused by the patient, history made by medical diagnosis, tests prescribed therapy prescribed (indicating medicines and time of recruitment) and necessary
+              Furthermore, the inclusion of possible values instrumental observations made during the visit (eg heart beat, the pressure number of blood, found dioptres etc)
+              For biological testing and instrumental is must enter information on the laboratory that has made them the values of results of each examination and evaluation diagnosis made by medical

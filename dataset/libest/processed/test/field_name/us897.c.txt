@@ -1,0 +1,23 @@
+est ut max cmd len 
+est ca max 
+us server port 
+client ut pubkey 
+us server ip 
+us uid 
+us pwd 
+client ut cacert 
+us cacert 
+us trust cert 
+us server certkey 
+us cacert singl chain mult cert 
+us cacert singl chain mult cert miss 
+us cacert singl chain expir 
+us cacert multi chain crls 
+client ut cacert 
+us cacert 
+us trust cert 
+us server certkey 
+us cacert singl chain mult cert 
+us cacert singl chain mult cert miss 
+us cacert singl chain expir 
+us cacert multi chain crls 

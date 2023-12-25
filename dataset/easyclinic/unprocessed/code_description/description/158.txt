@@ -1,0 +1,18 @@
+Class: LaboratoryData
+Date: 15/09/2003
+Version: 0 01 000
+Description: contains data from a laboratory where are the examination outpatient been laid in
+Attributes:
+ZIP; Private; Post Code
+City;Private; city where it is located on laboratory
+Address;Private; address where the laboratory located in
+partyVAT;Private; party VAT of Laboratory
+province;Private; Province where the laboratory located in
+ragioneSociale;Private ;name of the laboratory
+details;Private;details of the laboratory Addresses
+Methods:
+create;Public;Create a new object of Laboratory type
+delete;Public;Provides elimination of laboratory data
+save;Public;Provides storage of laboratory data in the SIO
+GetAttributes;Public;retrieval of all information relating to a laboratory
+setAttributes;Public;Set the attributes of a laboratory

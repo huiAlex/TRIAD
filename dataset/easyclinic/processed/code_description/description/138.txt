@@ -1,0 +1,1 @@
+gui elimina prenotazion make mask use manag reserv btn annulla button use cancel delet visit grid elenco prenotaz activ reserv patient visualizza elenco prenotazioni reserv patient elimina prenotazion task find necessari inform realiz gui elimina prenotazion 

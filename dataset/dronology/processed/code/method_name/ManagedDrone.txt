@@ -1,0 +1,44 @@
+manag drone 
+run 
+get messeng 
+await start 
+return home 
+set target altitud 
+take 
+fli 
+get coordin 
+start 
+start 
+run 
+permiss takeoff 
+get drone 
+land 
+halt place 
+resum flight 
+get flight mode state 
+get base coordin 
+send command 
+stop 
+emerg stop 
+resend command 
+get snapshot 
+updat 
+updat goal 
+process messag 
+process messag 
+process get snapshot messag 
+process updat guidanc messag 
+process assign flight messag 
+process unassign flight messag 
+process goal updat messag 
+notifi state chang 
+assign flight 
+run 
+unassign flight 
+check end flight 
+get flight safeti mode state 
+fli drone 
+complet 
+updat guidanc 
+clear goal 
+add goal 

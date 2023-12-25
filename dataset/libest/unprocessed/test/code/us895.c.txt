@@ -1,0 +1,329 @@
+us895.c
+us895_clean
+us895_start_server
+us895_init_suite
+us895_destroy_suite
+handle_short_csrattrs_request
+handle_corrupt_csrattrs_request
+handle_long_csrattrs_request
+handle_correct_csrattrs_request
+handle_nopop_csrattrs_request
+handle_empty_csrattrs_request
+proxy_manual_cert_verify
+us895_test1
+us895_add_suite
+st_start
+st_proxy_start
+SLEEP
+printf
+snprintf
+printf
+system
+read_binary_file
+us895_clean
+us895_start_server
+st_stop
+st_proxy_stop
+SLEEP
+strlen
+malloc
+strncpy
+strlen
+malloc
+strncpy
+strlen
+malloc
+strncpy
+strlen
+malloc
+strncpy
+strlen
+malloc
+strncpy
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+SLEEP
+read_binary_file
+CU_ASSERT
+read_private_key
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+st_enable_pop
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+st_disable_pop
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+CU_add_suite
+manual_enroll
+nid
+csr_len
+path_seg
+app_data
+csr_len
+path_seg
+app_data
+csr_len
+path_seg
+app_data
+csr_len
+path_seg
+app_data
+csr_len
+path_seg
+app_data
+csr_len
+path_seg
+app_data
+cur_cert
+openssl_cert_error
+int
+int
+int
+char
+void
+int
+char
+void
+int
+char
+void
+int
+char
+void
+int
+char
+void
+int
+char
+void
+X509
+int
+US895_SERVER_PORT
+US895_PROXY_PORT
+US895_CACERT
+US895_TRUSTED_CERT
+SERVER_UT_CACERT
+SERVER_UT_PUBKEY
+US895_SERVER_IP
+US895_CACERTS
+US895_TRUST_CERTS
+US895_SERVER_CERTKEY
+US895_CACERT
+US895_TRUSTED_CERT
+SERVER_UT_CACERT
+SERVER_UT_PUBKEY
+US895_SERVER_IP
+US895_CACERTS
+US895_TRUST_CERTS
+US895_SERVER_CERTKEY
+TEST_ATTR_POP
+TEST_ATTR_NOPOP
+TEST_ATTR_NOPOPPOP
+TEST_ATTR_POPADDED
+TEST_ATTR1
+TEST_ATTR2
+TEST_ATTR7
+TEST_ATTR2_POP
+TEST_ATTR8
+TEST_ATTR3
+TEST_ATTR4_122
+TEST_ATTR4_122POP
+TEST_ATTR5_117
+TEST_ATTR5_117POP
+TEST_ATTR6_116
+TEST_ATTR_244
+TEST_ATTR_245
+TEST_ATTR_250
+TEST_ATTR_250POP
+TEST_ALL_ATTR
+TEST_1024_NOPOP
+TEST_1025_NOPOP
+TEST_1024_POP
+TEST_LONG_ATTR
+EST_UT_MAX_CMD_LEN
+------------------------------------------------------------------   us895.c - Unit Tests for User Story 895 - Proxy CSR Attributes     November, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_proxy_init()  /
+   Test1 - exercise the server side variations triggered           by est_client_get_csrattrs()  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Next we start an EST proxy acting as an RA      /
+       gen the keypair to be used for EST Proxy testing      /
+       Read in the CA certificates      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+ clear callback /
+ clear csrattrs /
+ should get 204 with no data /
+ Real base64 string - should pass /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ clear csrattrs /
+ clear callback /
+ Setting the smallest base64 size /
+ clear csrattrs /
+ Enable PoP and test responses with PoP added /
+ Setting the size 122 /
+ Setting the size 117 /
+ Real base64 string needs PoP added - should pass /
+ Not a real base64 string - should fail /
+ Setting the smallest size /
+ Setting the size 116 /
+ Setting the size 244 /
+ Setting the size 245 /
+ Setting the size 250 /
+ disable PoP /
+ clear callback /
+ Real base64 string PoP should not be added - should pass /
+ All ASN.1 types supported by CiscoSSL /
+ add a suite to the registry /
+ add the tests to the suite /

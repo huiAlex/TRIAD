@@ -1,0 +1,4 @@
+[SUMMARY]
+Assign routes to UAV
+[DESCRIPTION]
+The user shall select a UAV and then assign routes to it from an available route list.

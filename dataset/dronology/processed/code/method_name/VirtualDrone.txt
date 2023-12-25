@@ -1,0 +1,13 @@
+virtual drone 
+take 
+fli 
+land 
+get batteri status 
+
+set voltag check point 
+destin reach 
+set ground speed 
+set veloc 
+send command 
+resend command 
+get latest drone snapshot 

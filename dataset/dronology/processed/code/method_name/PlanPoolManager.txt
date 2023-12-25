@@ -1,0 +1,18 @@
+get instanc 
+add new plan 
+assign plan 
+assign pool 
+pend flight 
+get next pend plan 
+activ plan 
+check form complet plan 
+notifi plan chang 
+get current flight 
+assign plan 
+add plan status chang listen 
+get current plan 
+get pend plan 
+get complet plan 
+overrid plan 
+cancel pend plan 
+get pend plan 

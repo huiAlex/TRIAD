@@ -1,0 +1,6 @@
+boolean track first thread start prevent objec 
+method call block current thread thread pool 
+call wait first thread start method return process begun 
+call worker object indic begun work workload 
+call worker object indic complet workload 
+call reset object initi state 

@@ -1,0 +1,13 @@
+location
+batteryLevel
+speed
+velocity
+attitude
+location
+status
+batteryLevel
+velocity
+position
+velocity
+attitude
+mode

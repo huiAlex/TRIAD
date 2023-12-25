@@ -1,0 +1,3 @@
+constructor object creat main method class 
+onstructor object creat main method class 
+run method execut main method say thread start main 

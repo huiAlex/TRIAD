@@ -1,0 +1,10 @@
+mission task 
+
+
+
+
+get uav id 
+get task 
+get waypoint 
+
+ 

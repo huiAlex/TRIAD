@@ -1,0 +1,5 @@
+droneName
+latitude
+longitude
+altitude
+obj

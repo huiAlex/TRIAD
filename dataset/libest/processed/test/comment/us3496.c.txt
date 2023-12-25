@@ -1,0 +1,52 @@
+us unit test uri path segment extens support march copyright cisco system right reserv 
+max command line length generat system command 
+ca certif use verifi est server grab server directori 
+defin client ut cacert exampl server estca cacert crt 
+routin call cunit initi test suit generat keypair use est client ut suit 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+test case test set server valid paramet path segment 
+pass path segment valid 
+pass path segment contain segment fail 
+valid charact 
+pass path segment invalid invalid charact 
+pass path segment long 
+pass path segment equal oper cacert 
+pass path segment contain oper cacert case string 
+pass path segment empti string fail 
+pass path segment contain pass 
+pass path segment long 
+main function set run test return cue success success run anoth cunit error code failur 
+read ca certif 
+check see path segment support compil 
+gen keypair use est client test 
+start server test need talk server 
+start instanc est server 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+add suit registri 
+check see path segment support compil 
+add test suit 
+note order import test fread fprintf 

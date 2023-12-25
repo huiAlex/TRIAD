@@ -1,0 +1,10 @@
+Class: OperatoreManager
+Date:16/09/2003
+Version: 0 01 000
+Description: managing the operations access Easy Clinch software system by operator
+
+Attributes:
+
+Methods:
+Login ; Public;Its task is to manage the Login operation  of operator
+logout ;Public;Its task is to manage the logout operation  of operator

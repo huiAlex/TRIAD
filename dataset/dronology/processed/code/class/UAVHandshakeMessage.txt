@@ -1,0 +1,18 @@
+uav handshak messag 
+serial version uid 
+messag type 
+home 
+safeti case 
+
+
+groundstationid 
+uavid 
+coordin 
+
+lla coordin 
+
+uav handshak messag 
+get home 
+get safeti case 
+set home 
+

@@ -1,0 +1,8 @@
+serialVersionUID
+receiveTimestamp
+sendtimestamp
+type
+data
+data
+uavid
+groundstationid

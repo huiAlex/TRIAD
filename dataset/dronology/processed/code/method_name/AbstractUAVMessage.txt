@@ -1,0 +1,15 @@
+abstract uav messag 
+timestamp 
+get timestamp 
+get sendtimestamp 
+string 
+get uavid 
+set uavid 
+add properi 
+get properti 
+get properti 
+set type 
+get gcs id 
+get identifi 
+get data 
+get type 

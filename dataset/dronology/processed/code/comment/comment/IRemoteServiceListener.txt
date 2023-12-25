@@ -1,0 +1,2 @@
+listen notifi client status chang regist servic 
+ 

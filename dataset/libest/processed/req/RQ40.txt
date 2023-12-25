@@ -1,0 +1,1 @@
+ requir cmc request http post fullcmc valid pki request server reject messag http content type use `` applic pkcs mime smime type paramet `` cmc request specifi  rfc  bodi messag binari valu encod pki request content transfer encod `` base  rfc 

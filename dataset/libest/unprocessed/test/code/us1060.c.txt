@@ -1,0 +1,109 @@
+us1060.c
+us1060_logger_stderr
+us1060_start_server
+us1060_init_suite
+us1060_destroy_suite
+us1060_test_matrix_item
+us1060_test0
+us1060_test200
+us1060_test201
+us1060_test202
+us1060_test203
+us1060_add_suite
+flockfile
+EnterCriticalSection
+fflush
+funlockfile
+LeaveCriticalSection
+InitializeCriticalSection
+est_init_logger
+us1060_start_server
+st_proxy_start_srp
+read_binary_file
+SRP_VBASE_new
+st_stop
+st_proxy_stop
+free
+printf
+st_stop
+SLEEP
+CU_ASSERT
+CU_ASSERT
+st_stop
+SLEEP
+us1060_start_server
+CU_ASSERT
+curl_http_post_srp
+CU_ASSERT
+curl_http_post_srp
+CU_ASSERT
+curl_http_post_srp
+CU_ASSERT
+st_proxy_http_disable
+curl_http_post_srp
+CU_ASSERT
+CU_add_suite
+format
+l
+cert
+key
+no_http_auth
+enable_pop
+enable_srp
+i
+char
+va_list
+char
+char
+int
+int
+int
+int
+US1060_SERVER_PORT
+US1060_SERVER_IP
+US1060_UID
+US1060_PWD
+US1060_CACERTS
+US1060_TRUST_CERTS
+US1060_SERVER_CERTKEY
+US1060_VFILE
+US1060_EXPLICIT_CERT
+US1060_EXPLICIT_KEY
+US1060_SELFSIGN_CERT
+US1060_SELFSIGN_KEY
+US1060_CACERTS
+US1060_TRUST_CERTS
+US1060_SERVER_CERTKEY
+US1060_VFILE
+US1060_EXPLICIT_CERT
+US1060_EXPLICIT_KEY
+US1060_SELFSIGN_CERT
+US1060_SELFSIGN_KEY
+US1060_ENROLL_URL
+US1060_UIDPWD_GOOD
+US1060_UIDPWD_BAD
+US1060_PKCS10_CT
+US1060_PROXY_ENROLL_URL
+US1060_PROXY_PORT
+US1060_PKCS10_REQ
+------------------------------------------------------------------   us1060.c - Unit Tests for User Story 1060 - TLS SRP support (Server/Proxy)     May, 2014     Copyright (c) 2014-2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This is a simple callback used to override the default   logging facility in libest.  We'll use this to look   for specific debug output.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   This is our worker for each entry in the test matrix above.   We read the configuration from the entry, configure the   server and client as needed, and attempt a simple enroll   using Curl as the client.   The argument i is the index of the entry in the table above.  /
+   This test case runs all the tests in the matrix  /
+   This test case is verifies the happy path when EST   proxy is configured in SRP mode.  The client will attempt   to use SRP.  The connection between the proxy and   server does not use SRP.  We perform a simple enroll   operation.  /
+   This test case is verifies the simple enroll fails   when the EST client provides a bad SRP password.   The connection between the proxy and server does not   use SRP.  /
+   This test case is verifies the simple enroll fails   when the EST client provides a bad HTTP password   and SRP is used.  The connection between the proxy   and server does not use SRP.  /
+   This test case is verifies the simple enroll works   when the EST client provides no HTTP password   and SRP is used.  The connection between the proxy   and server does not use SRP.  HTTP auth is disabled   on the proxy.  /
+ Initialize critical section on Windows/
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Start an instance of the proxy with SRP enabled      /
+       Read in the CA certificates       Used for client-side API testing      /
+       Stop the server and restart it to make sure       it's in the correct mode.      /
+       Set the server HTTP auth configuration      /
+       Restart the EST server with SRP disabled      /
+       Since we passed in a valid SRP userID/password,       we expect the server to respond with success      /
+ add a suite to the registry /
+       Add the tests to the suite             IMPORTANT       Do not change the order of these tests.       Some of the tests stop the EST server and restart       it using different certs.  If you change the order       then false negatives may occur.                   /
+           Some of the SRP disabled test cases use a client           certificate.          /

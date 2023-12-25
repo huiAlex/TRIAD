@@ -1,0 +1,1 @@
+gui login make mask guid oper valid btn annulla button use end implement easi clinic oper btn esegui button use confirm data panel dati panel contain text box oper enter login show login error show error messag process valid success login manag event generat patient start process valid logout manag event oper leav system 

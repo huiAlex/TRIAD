@@ -1,0 +1,37 @@
+us server port 
+us server ip 
+client ut cacert 
+client ut pubkey 
+us cacert 
+us trust cert 
+us server certkey 
+client ut cacert 
+client ut pubkey 
+us cacert 
+us trust cert 
+us server certkey 
+test attr pop 
+test attr nopop 
+test attr nopoppop 
+test attr popad 
+test attr 
+test attr 
+test attr 
+test attr pop 
+test attr 
+test attr 
+test attr 
+test attr pop 
+test attr 
+test attr pop 
+test attr 
+test attr 
+test attr 
+test attr 
+test attr pop 
+test attr 
+test nopop 
+test nopop 
+test pop 
+test long attr 
+est ut max cmd len 

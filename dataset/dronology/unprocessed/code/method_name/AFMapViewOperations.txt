@@ -1,0 +1,4 @@
+AFMapViewOperations
+getFollowButton
+getViewButton
+addOnClickListener

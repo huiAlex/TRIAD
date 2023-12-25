@@ -1,0 +1,2 @@
+command sent gcs stop immedi remain hover place 
+ 

@@ -1,0 +1,2 @@
+control compon show info panel map contain main layout 
+ 

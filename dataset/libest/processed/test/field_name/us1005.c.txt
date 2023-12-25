@@ -1,0 +1,15 @@
+us server port 
+us server ip 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us client key 
+us client cert 
+us cacert 
+us trust cert 
+us server certkey 
+us client key 
+us client cert 
+us csr nopop 

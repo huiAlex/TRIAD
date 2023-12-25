@@ -1,0 +1,16 @@
+target coordin 
+speed 
+altitud 
+lat 
+lon 
+alt 
+ 
+distanc time step 
+base posit 
+speed 
+ 
+ 
+ 
+coordin 
+command 
+manag drone 

@@ -1,0 +1,7 @@
+pattern predefin:amod
+land coordin:amod
+pattern land:nmod
+pattern expand:acl
+expand part:obl
+part pattern task:nmod
+expand mission plan:obl

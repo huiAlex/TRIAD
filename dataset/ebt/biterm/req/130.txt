@@ -1,0 +1,2 @@
+eventSpecul:1
+eventEvolutionari:1

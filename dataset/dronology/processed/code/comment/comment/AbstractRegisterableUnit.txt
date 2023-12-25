@@ -1,0 +1,20 @@
+abstract class register unit regist server 
+ 
+timestamp unit creat 
+address sender 
+design command port unit 
+unregist flag 
+current state unit 
+unit 
+ 
+hostnam unit 
+ 
+map key valu attribut 
+ 
+add new attribut unit 
+key valu 
+key attribut associ key 
+retunr null attribut exist give key 
+ 
+type unit human readabl string represent 
+ 

@@ -1,0 +1,2 @@
+missionPlan:1
+flightPattern:4

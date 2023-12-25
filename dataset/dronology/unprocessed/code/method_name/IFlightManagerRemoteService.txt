@@ -1,0 +1,8 @@
+planFlight
+planFlight
+returnToHome
+takeoff
+pauseFlight
+getFlightInfo
+getCurrentFlights
+cancelPendingFlights

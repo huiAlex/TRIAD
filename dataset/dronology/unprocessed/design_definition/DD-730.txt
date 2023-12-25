@@ -1,0 +1,4 @@
+[SUMMARY]
+UAV Command ID
+[DESCRIPTION]
+Each command shall include a unique {{UAV_ID}}

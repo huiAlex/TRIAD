@@ -1,0 +1,32 @@
+reload item 
+regist listen 
+get instanc 
+add listen 
+unregist listen 
+get instanc 
+get instanc 
+remov uav 
+set 
+set date creat 
+set date modifi 
+set descript 
+execut mission plan 
+get instanc 
+get instanc 
+get mission plan locat 
+get instanc 
+get instanc 
+execut mission 
+get instanc 
+cancel mission 
+get instanc 
+execut mission 
+get 
+get id 
+get descript 
+get file 
+get instanc 
+get id 
+get 
+get 
+get id 

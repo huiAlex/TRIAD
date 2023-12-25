@@ -1,0 +1,24 @@
+constraint descript 
+get descript 
+get logic 
+get modul path 
+get project 
+get requir id 
+get unit 
+get valu 
+set descript 
+set logic 
+set modul path 
+set project 
+set requir id 
+set unit 
+set valu 
+get impact constraint 
+set impact constraint 
+get attribut 
+set attribut 
+get perform model 
+set perform model 
+string 
+equal 
+hash code 

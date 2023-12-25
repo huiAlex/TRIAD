@@ -1,0 +1,10 @@
+char
+va_list
+int
+int
+int
+int
+char
+char
+int
+int

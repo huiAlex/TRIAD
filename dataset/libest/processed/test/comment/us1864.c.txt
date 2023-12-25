@@ -1,0 +1,21 @@
+us unit test user stori enabl token auth mode server march copyright cisco system right reserv 
+follow csr generat use follow openssl command theng use cat rsa req file openssl req newkey rsa keyout rsakey pem keyform pem rsa req outform pem 
+curl data cb pass curl call curl whenev data receiv function specifi retriev http header test use retriev http header look bearer token author challeng 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+est server set auth mode unit test first test paramet est server set auth mode 
+simpl enrol token auth mode goal test verifi est server respond correct auth challeng configur token auth mode first perform saniti check perform http basic request server default mode http basic auth test configur server token auth mode issu request doe contain ani auth header forc server respond token auth challeng header 
+main function set run test return cue success success run anoth cunit error code failur 
+read ca certif 
+start instanc est server automat enrol enabl 
+read ca certif 
+read server cert 
+read server key 
+init est server mode 
+make sure don allow digest mode fip mode 
+sinc specifi basic server basic expect server respond 
+switch server token mode note see numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+sinc chang auth mode server expect fail captur actual auth challeng expect server respond 
+add suit registri 
+add test suit 
+warn strstr danger becaus assum null termin string case http header came est server know null termin 

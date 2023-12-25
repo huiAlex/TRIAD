@@ -1,0 +1,6 @@
+m_SubscriberName
+m_EventID
+m_Message
+m_EventType
+m_NumberOfRequirements
+m_EventTim

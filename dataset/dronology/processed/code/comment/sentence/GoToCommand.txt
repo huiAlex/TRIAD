@@ -1,0 +1,3 @@
+Command sent to the GCS for sending a new waypoint.
+/
+/

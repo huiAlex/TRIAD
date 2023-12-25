@@ -1,0 +1,11 @@
+type 
+uavid 
+tasknam 
+param 
+type 
+uavid 
+tasknam 
+param 
+type 
+uavid 
+coordin 

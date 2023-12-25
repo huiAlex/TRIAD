@@ -1,0 +1,4 @@
+[SUMMARY]
+Follow mode should zoom in once when follow mode initiated
+[DESCRIPTION]
+After clicking the follow mode button  the screen should zoom in to the drones. Then the user should be able to zoom in and out to their choosing afterwards.

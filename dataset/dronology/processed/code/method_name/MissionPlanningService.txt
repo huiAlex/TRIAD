@@ -1,0 +1,8 @@
+mission plan servic 
+get instanc 
+init servic instanc 
+execut mission plan 
+cancel mission 
+remov uav 
+execut mission plan 
+execut mission plan 

@@ -1,0 +1,20 @@
+drone setup remot servic 
+
+
+info 
+listen 
+listen 
+uavid 
+
+drone initi info 
+
+get activ uav 
+initi drone 
+add drone status chang listen 
+remov drone status chang listen 
+resend command 
+
+remot interfac handl uav 
+allow initi new uav 
+allow retriev activ uav return proxi iuav proxi actual physic virtual uav 
+ 

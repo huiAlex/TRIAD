@@ -1,0 +1,10 @@
+patientMake:2
+useManag:1
+reservManag:1
+makePatient:2
+findInform:1
+managReserv:1
+reservMake:1
+informFind:1
+makeReserv:1
+managUse:1

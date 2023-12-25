@@ -1,0 +1,32 @@
+get instanc 
+mission execut except 
+load mission 
+expand task 
+build synch point 
+activ synch point 
+run pre check 
+json mission plan reader 
+uav mission plan 
+get start rout waypoint 
+get coordin 
+distanc 
+pars mission 
+expand task 
+check distanc 
+get instanc 
+get activ uav 
+stop uav 
+mission execut except 
+mission execut except 
+mission execut except 
+mission execut except 
+mission execut except 
+get uav id 
+equal 
+task 
+activ task 
+get uav id 
+add task 
+activ next task 
+build synch point 
+get task 

@@ -1,0 +1,13 @@
+Class: GUIResoconto
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: abstract class used to define the Classes GUIResocontoVisite, GUIResocontoEsami, and GUIResocontoPrenotazioni
+
+Attributes:
+gridRisultati;Private; Grid within which the results of the report will be shown
+btnRicerca; Private; Button to start the search for visits, examinations, or reservations in outpatient
+btnUscita; Private; Button that allows you to return to the mask represented by GUIPrincipale
+
+Methods:
+visualizzaRisultati; Public; View search results that are conducted by the operator for reports on activities held in outpatient.

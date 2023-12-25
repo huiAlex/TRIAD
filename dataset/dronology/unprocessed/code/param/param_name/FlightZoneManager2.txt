@@ -1,0 +1,17 @@
+drone
+drone
+pendingPlan
+pendingPlan
+uavid
+planName
+waypoints
+planName
+waypoints
+changedPlan
+uavid
+uavid
+uavid
+uavid
+uavid
+altitude
+uavid

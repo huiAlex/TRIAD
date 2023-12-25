@@ -1,0 +1,11 @@
+/**
+ * Writer Thread takes items from the outbound queue and writes it to the
+ * socket.
+ * 
+ *  *
+ */
+
+/**
+		 * 
+		 */
+

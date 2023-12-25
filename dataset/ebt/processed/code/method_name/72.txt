@@ -1,0 +1,6 @@
+symbol 
+symbo 
+balanc 
+check balanc 
+check match 
+main 

@@ -1,0 +1,57 @@
+af drag layout 
+creat status pannel 
+get pend flight 
+creat side pannel 
+get sortabl layout 
+get vertic layout 
+get control 
+get sortabl layout 
+get vertic layout 
+add new compon 
+remov compon 
+get health color 
+equal 
+get health color 
+equal 
+get health color 
+equal 
+get compon count 
+get servic 
+get flight info 
+get servic 
+get item 
+get 
+get 
+get status 
+get health color 
+set descript 
+set descript 
+set descript 
+get latitud 
+get longitud 
+get altitud 
+string 
+get compon 
+get compon 
+get 
+get 
+equal 
+get compon index 
+add 
+get control 
+get content 
+get compon index 
+get compon count 
+get 
+remov rout 
+get control 
+get waypoint 
+get control 
+get compon 
+add rout 
+remov rout 
+get control 
+get waypoint 
+get 
+add rout 
+get 

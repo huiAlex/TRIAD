@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/WaypointCommand.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:66">package <name pos:start="1:9" pos:end="1:65"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:48">collisionavoidance</name><operator pos:start="1:49" pos:end="1:49">.</operator><name pos:start="1:50" pos:end="1:65">guidancecommands</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:54">import <name pos:start="3:8" pos:end="3:53"><name pos:start="3:8" pos:end="3:10">edu</name><operator pos:start="3:11" pos:end="3:11">.</operator><name pos:start="3:12" pos:end="3:13">nd</name><operator pos:start="3:14" pos:end="3:14">.</operator><name pos:start="3:15" pos:end="3:23">dronology</name><operator pos:start="3:24" pos:end="3:24">.</operator><name pos:start="3:25" pos:end="3:28">core</name><operator pos:start="3:29" pos:end="3:29">.</operator><name pos:start="3:30" pos:end="3:39">coordinate</name><operator pos:start="3:40" pos:end="3:40">.</operator><name pos:start="3:41" pos:end="3:53">LlaCoordinate</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="5:1" pos:end="7:3">/**
+ * A command that tells a UAV to fly to a specific place.
+ */</comment>
+<class pos:start="8:1" pos:end="49:1"><specifier pos:start="8:1" pos:end="8:6">public</specifier> class <name pos:start="8:14" pos:end="8:28">WaypointCommand</name> <super_list pos:start="8:30" pos:end="8:44"><extends pos:start="8:30" pos:end="8:44">extends <super pos:start="8:38" pos:end="8:44"><name pos:start="8:38" pos:end="8:44">Command</name></super></extends></super_list> <block pos:start="8:46" pos:end="49:1">{
+
+    <decl_stmt pos:start="10:5" pos:end="10:44"><decl pos:start="10:5" pos:end="10:43"><type pos:start="10:5" pos:end="10:31"><specifier pos:start="10:5" pos:end="10:11">private</specifier> <specifier pos:start="10:13" pos:end="10:17">final</specifier> <name pos:start="10:19" pos:end="10:31">LlaCoordinate</name></type> <name pos:start="10:33" pos:end="10:43">destination</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="11:5" pos:end="11:31"><decl pos:start="11:5" pos:end="11:30"><type pos:start="11:5" pos:end="11:24"><specifier pos:start="11:5" pos:end="11:11">private</specifier> <specifier pos:start="11:13" pos:end="11:17">final</specifier> <name pos:start="11:19" pos:end="11:24">double</name></type> <name pos:start="11:26" pos:end="11:30">speed</name></decl>;</decl_stmt>
+
+    <comment type="block" format="javadoc" pos:start="13:5" pos:end="27:7">/**
+     * &lt;p&gt;
+     * Creates a command that tells the UAV to fly to the given coordinates on Earth.
+     * &lt;/p&gt;
+     * &lt;p&gt;
+     * For example, to command a UAV to fly to the Notre Dame Stadium (10m above the middle of the 50-yard line)
+     * &lt;pre&gt;
+     *         {@code
+     *         WaypointCommand nd = new WaypointCommand(new LlaCoordinate(41.698394, -86.233923, 236.0))
+     *         }
+     *     &lt;/pre&gt;
+     * &lt;/p&gt;
+     *
+     * @param destination the coordinates where the UAV should fly.
+     */</comment>
+    <constructor pos:start="28:5" pos:end="31:5"><specifier pos:start="28:5" pos:end="28:10">public</specifier> <name pos:start="28:12" pos:end="28:26">WaypointCommand</name><parameter_list pos:start="28:27" pos:end="28:67">(<parameter pos:start="28:28" pos:end="28:52"><decl pos:start="28:28" pos:end="28:52"><type pos:start="28:28" pos:end="28:52"><name pos:start="28:28" pos:end="28:40">LlaCoordinate</name></type> <name pos:start="28:42" pos:end="28:52">destination</name></decl></parameter>, <parameter pos:start="28:55" pos:end="28:66"><decl pos:start="28:55" pos:end="28:66"><type pos:start="28:55" pos:end="28:66"><name pos:start="28:55" pos:end="28:60">double</name></type> <name pos:start="28:62" pos:end="28:66">speed</name></decl></parameter>)</parameter_list> <block pos:start="28:69" pos:end="31:5">{<block_content pos:start="29:9" pos:end="30:27">
+        <expr_stmt pos:start="29:9" pos:end="29:39"><expr pos:start="29:9" pos:end="29:38"><name pos:start="29:9" pos:end="29:24"><name pos:start="29:9" pos:end="29:12">this</name><operator pos:start="29:13" pos:end="29:13">.</operator><name pos:start="29:14" pos:end="29:24">destination</name></name> <operator pos:start="29:26" pos:end="29:26">=</operator> <name pos:start="29:28" pos:end="29:38">destination</name></expr>;</expr_stmt>
+        <expr_stmt pos:start="30:9" pos:end="30:27"><expr pos:start="30:9" pos:end="30:26"><name pos:start="30:9" pos:end="30:18"><name pos:start="30:9" pos:end="30:12">this</name><operator pos:start="30:13" pos:end="30:13">.</operator><name pos:start="30:14" pos:end="30:18">speed</name></name> <operator pos:start="30:20" pos:end="30:20">=</operator> <name pos:start="30:22" pos:end="30:26">speed</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <comment type="block" format="javadoc" pos:start="33:5" pos:end="35:7">/**
+     * @return destination coordinates. The place where the UAV should go.
+     */</comment>
+    <function pos:start="36:5" pos:end="38:5"><type pos:start="36:5" pos:end="36:24"><specifier pos:start="36:5" pos:end="36:10">public</specifier> <name pos:start="36:12" pos:end="36:24">LlaCoordinate</name></type> <name pos:start="36:26" pos:end="36:39">getDestination</name><parameter_list pos:start="36:40" pos:end="36:41">()</parameter_list> <block pos:start="36:43" pos:end="38:5">{<block_content pos:start="37:9" pos:end="37:27">
+        <return pos:start="37:9" pos:end="37:27">return <expr pos:start="37:16" pos:end="37:26"><name pos:start="37:16" pos:end="37:26">destination</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function pos:start="40:5" pos:end="42:5"><type pos:start="40:5" pos:end="40:17"><specifier pos:start="40:5" pos:end="40:10">public</specifier> <name pos:start="40:12" pos:end="40:17">double</name></type> <name pos:start="40:19" pos:end="40:26">getSpeed</name><parameter_list pos:start="40:27" pos:end="40:28">()</parameter_list> <block pos:start="40:30" pos:end="42:5">{<block_content pos:start="41:9" pos:end="41:21">
+        <return pos:start="41:9" pos:end="41:21">return <expr pos:start="41:16" pos:end="41:20"><name pos:start="41:16" pos:end="41:20">speed</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function pos:start="44:5" pos:end="48:5"><annotation pos:start="44:5" pos:end="44:13">@<name pos:start="44:6" pos:end="44:13">Override</name></annotation>
+    <type pos:start="45:5" pos:end="45:17"><specifier pos:start="45:5" pos:end="45:10">public</specifier> <name pos:start="45:12" pos:end="45:17">String</name></type> <name pos:start="45:19" pos:end="45:26">toString</name><parameter_list pos:start="45:27" pos:end="45:28">()</parameter_list> <block pos:start="45:30" pos:end="48:5">{<block_content pos:start="46:9" pos:end="47:69">
+        <return pos:start="46:9" pos:end="47:69">return <expr pos:start="46:16" pos:end="47:68"><literal type="string" pos:start="46:16" pos:end="46:37">"WaypointCommand(lat:"</literal> <operator pos:start="46:39" pos:end="46:39">+</operator> <call pos:start="46:41" pos:end="46:65"><name pos:start="46:41" pos:end="46:63"><name pos:start="46:41" pos:end="46:51">destination</name><operator pos:start="46:52" pos:end="46:52">.</operator><name pos:start="46:53" pos:end="46:63">getLatitude</name></name><argument_list pos:start="46:64" pos:end="46:65">()</argument_list></call> <operator pos:start="46:67" pos:end="46:67">+</operator> <literal type="string" pos:start="46:69" pos:end="46:77">", long:"</literal> <operator pos:start="46:79" pos:end="46:79">+</operator> <call pos:start="46:81" pos:end="46:106"><name pos:start="46:81" pos:end="46:104"><name pos:start="46:81" pos:end="46:91">destination</name><operator pos:start="46:92" pos:end="46:92">.</operator><name pos:start="46:93" pos:end="46:104">getLongitude</name></name><argument_list pos:start="46:105" pos:end="46:106">()</argument_list></call> <operator pos:start="46:108" pos:end="46:108">+</operator> <literal type="string" pos:start="46:110" pos:end="46:117">", alt:"</literal> <operator pos:start="46:119" pos:end="46:119">+</operator>
+                <call pos:start="47:17" pos:end="47:41"><name pos:start="47:17" pos:end="47:39"><name pos:start="47:17" pos:end="47:27">destination</name><operator pos:start="47:28" pos:end="47:28">.</operator><name pos:start="47:29" pos:end="47:39">getAltitude</name></name><argument_list pos:start="47:40" pos:end="47:41">()</argument_list></call> <operator pos:start="47:43" pos:end="47:43">+</operator> <literal type="string" pos:start="47:45" pos:end="47:54">", speed:"</literal> <operator pos:start="47:56" pos:end="47:56">+</operator> <name pos:start="47:58" pos:end="47:62">speed</name> <operator pos:start="47:64" pos:end="47:64">+</operator> <literal type="string" pos:start="47:66" pos:end="47:68">")"</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class>
+</unit>

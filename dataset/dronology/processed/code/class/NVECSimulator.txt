@@ -1,0 +1,30 @@
+nvec simul 
+logger 
+drone 
+current posit 
+target posit 
+voltag simul 
+
+virtual drone 
+vector 
+vector 
+
+drone 
+distanc time step 
+ 
+current posit 
+target coordin 
+
+virtual drone 
+lla coordin 
+lla coordin 
+
+nvec simul 
+destin reach 
+
+set flight path 
+start batteri drain 
+stop batteri drain 
+get voltag 
+check point 
+

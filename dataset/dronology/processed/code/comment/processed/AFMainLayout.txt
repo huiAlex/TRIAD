@@ -1,0 +1,2 @@
+main layout activ flight ui 
+determin map continu follow mode 

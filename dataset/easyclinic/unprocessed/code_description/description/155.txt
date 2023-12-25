@@ -1,0 +1,20 @@
+Class: Visit
+Date: 15/09/2003
+Version: 0.01.000
+
+Description: Contains data related to a visit held in the outpatient
+
+Attributes:
+history;private; history made by the doctor
+data;private;on which date the patient has supported the visit
+diagnosis;private; medical diagnosis made by the doctor
+reason;private; reason for the visit
+observations;private;instrumental observations made during the visit
+therapy;private; treatment prescribed by the doctor
+
+Methods:
+create;public;creates a new object of type Visit
+delete;public;deletes a visit description
+save;public; stores data related to a visit in the SIO
+getAttributes;public; retrieves all information related to a visit
+setAttributes;public; sets the attributes of a visit

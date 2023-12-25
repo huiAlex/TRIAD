@@ -1,0 +1,9 @@
+artifact identifi 
+regist monitor messag handler 
+attach item 
+add 
+remov attach item 
+remov attach item 
+artifact identifi 
+string 
+get attach item 

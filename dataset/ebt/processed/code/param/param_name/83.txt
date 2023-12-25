@@ -1,0 +1,24 @@
+id 
+type 
+
+valu 
+specul valu 
+logic 
+project path 
+id 
+type 
+
+valu 
+specul valu 
+id 
+type 
+
+valu 
+logic 
+id 
+logic 
+
+valu 
+specul valu 
+type 
+project path 

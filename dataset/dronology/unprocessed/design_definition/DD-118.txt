@@ -1,0 +1,4 @@
+[SUMMARY]
+Load saved map scale
+[DESCRIPTION]
+When loading the map  it shall be scaled as specified in the configuration.

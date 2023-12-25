@@ -1,0 +1,5 @@
+SimpleCheckerMessageHandler
+notifyMonitoringMessage
+checkAlt
+checkLong
+checkLat

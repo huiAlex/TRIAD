@@ -1,0 +1,9 @@
+ArtifactIdentifier
+registerMonitoringMessageHandler
+attachItem
+add
+removeAttachedItem
+removeAttachedItem
+ArtifactIdentifier
+toString
+getAttachedItems

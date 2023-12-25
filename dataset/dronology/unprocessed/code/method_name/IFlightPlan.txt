@@ -1,0 +1,14 @@
+getAssignedDrone
+setStatusToCompleted
+getStartLocation
+getEndLocation
+clearAssignedDrone
+getFlightID
+setStatusToFlying
+getWayPoints
+getStartTime
+getEndTime
+getDesignatedDroneId
+isCompleted
+getTakeoffAltitude
+setDesignatedDroneId

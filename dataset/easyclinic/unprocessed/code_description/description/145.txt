@@ -1,0 +1,11 @@
+Class: PazienteManager
+Date: 14/09/2003
+Version: 0 01 000
+Description: manage operations require access to personal data of patients
+Attributes:
+
+Methods:
+editPaziente;Public;Manages updating data of a patient
+findPaziente;Public ;Checks for a particular patient in the SIO
+getDatiPaziente;Public;Find all the information relating to personal data of a given patient
+newPaziente;Public;create a new patient

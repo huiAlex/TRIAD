@@ -1,0 +1,50 @@
+<Class>
+    <Id>33</Id>
+    <Package>edu.nd.dronology.services.core.persistence</Package>
+    <ClassName>DronologyPersistenceUtil</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>ROUTE_ALIAS</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>COORDINATE_ALIAS</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SPEC_ALIAS</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>WAYPOINT_ALIAS</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>preprocessStream</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>XStream xstream</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>xstream;alias;[ROUTE_ALIAS, FlightRoute.class]</InnerMethodInvoke>
+                <InnerMethodInvoke>xstream;alias;[COORDINATE_ALIAS, LlaCoordinate.class]</InnerMethodInvoke>
+                <InnerMethodInvoke>xstream;alias;[WAYPOINT_ALIAS, Waypoint.class]</InnerMethodInvoke>
+                <InnerMethodInvoke>xstream;alias;[SPEC_ALIAS, UAVRegistration.class]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

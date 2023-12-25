@@ -1,0 +1,8 @@
+central manag class uav relat action 
+includ take land check assign flight plan uav 
+ 
+construct new flight zone manag 
+ 
+check next pend flight abl takeoff 
+current takeoff occur order pend 
+ 

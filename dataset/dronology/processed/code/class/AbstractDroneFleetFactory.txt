@@ -1,0 +1,22 @@
+abstract drone fleet factori 
+
+
+drone id 
+drone id 
+drone type 
+latitud 
+longitud 
+altitud 
+id 
+type 
+initi locat 
+
+lla coordin 
+
+abstract drone fleet factori 
+creat drone id 
+initi drone 
+initi drone 
+
+abstract factori class drone fleet factori 
+return drone 

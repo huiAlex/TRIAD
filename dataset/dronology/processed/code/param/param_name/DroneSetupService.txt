@@ -1,0 +1,6 @@
+info 
+listen 
+listen 
+status 
+uav id 
+uavid 

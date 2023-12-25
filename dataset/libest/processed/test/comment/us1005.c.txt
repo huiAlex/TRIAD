@@ -1,0 +1,73 @@
+us unit test user stori client easi provis novemb copyright cisco system right reserv 
+simpl callback use overrid default log facil libest ll use look specif debug output 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+function perform easi provis oper use uid pwd identifi client server use varieti test case modul 
+easi provis http basic auth client cert basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+easi provis http basic auth hint enabl client cert basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+easi provis client cert http basic auth enabl basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+easi provis client cert http basic auth hint enabl basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+null pointer test 
+enabl pop server enabl csr attribut server challengepassword oid 
+disabl pop server enabl csr attribut server challengepassword oid 
+enabl pop server enabl csr attribut server challengepassword oid 
+disabl pop server enabl csr attribut server challengepassword oid 
+enabl pop server disabl csr attribut server 
+disabl pop server disabl csr attribut server 
+easi provis client cert http basic auth disabl basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+easi provis client cert http basic auth hint enabl basic test perform trust enrol sequenc cacert csrattr simpleenrol use user id password identifi client server ident certif use client 
+initi critic section window 
+read ca certif 
+start instanc est server automat enrol enabl 
+creat rsa keypair assign pkey return 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat new privat key 
+attempt provis new cert 
+retriev cert given us est server 
+retriev copi new ca cert 
+cleanup 
+creat valid context 
+set authent mode use user id password 
+set est server address port 
+creat valid key pair 
+tri null context 
+tri null length 
+tri null cacert length 
+tri null key 
+restart server pop enabl 
+set csr attribut valu doesn includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server pop disabl 
+set csr attribut valu doesn includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server pop enabl 
+set csr attribut default valu includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server pop disabl 
+set csr attribut default valu includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server pop enabl 
+set csr attribut default valu includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server pop disabl 
+set csr attribut default valu includ challengepassword oid 
+search debug appropri output confirm pop behavior work desir 
+provis new cert 
+set csr attribut default valu 
+restart server http auth disabl 
+add suit registri 
+add test suit import chang order test test stop est server restart use differ cert chang order fals negat occur 
+read privat key 
+read old cert 

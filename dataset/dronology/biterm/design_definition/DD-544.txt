@@ -1,0 +1,6 @@
+waypointFinal:1
+longitudLatitud:1
+flightPattern:1
+directFlight:1
+coordinHome:1
+waypointRout:1

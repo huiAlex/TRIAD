@@ -1,0 +1,6 @@
+repres pattern task:nsubj
+pattern predefin:amod
+repres pattern:obj
+pattern expand:acl
+creat mission:nsubj
+expand creat:advcl

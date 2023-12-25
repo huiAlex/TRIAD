@@ -1,0 +1,12 @@
+serial version uid 
+latitud 
+longitud 
+altitud 
+id 
+batteri level 
+veloc 
+info 
+info 
+status 
+groundstat id 
+home 

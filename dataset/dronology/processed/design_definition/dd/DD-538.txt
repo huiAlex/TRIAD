@@ -1,0 +1,1 @@
+wait synchron point uav execut flight plan reach synchron point wait proceed uav share same synchron point reach point 

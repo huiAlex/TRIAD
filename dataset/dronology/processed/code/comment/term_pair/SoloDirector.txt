@@ -1,0 +1,4 @@
+contain flight:dep
+waypoint contain:amod
+waypoint multipl:amod
+direct waypoint:nmod

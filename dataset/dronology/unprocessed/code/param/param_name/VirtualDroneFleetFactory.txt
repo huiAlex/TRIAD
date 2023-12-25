@@ -1,0 +1,5 @@
+droneID
+droneType
+latitude
+longitude
+altitude

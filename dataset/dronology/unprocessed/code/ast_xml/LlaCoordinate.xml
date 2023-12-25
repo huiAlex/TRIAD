@@ -1,0 +1,289 @@
+<Class>
+    <Id>14</Id>
+    <Package>edu.nd.dronology.core.coordinate</Package>
+    <ClassName>LlaCoordinate</ClassName>
+    <SuperClass>AbstractPosition</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>Serializable</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>LlaCoordinate  /** 
+ * A terrestrial position defined by latitude, longitude, and altitude (LLA)
+ * @author Michael Murphy
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>latitude</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>longitude</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>altitude</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>LlaCoordinate</MethodName>
+            <MethodComment>/** 
+ * A terrestrial position defined by latitude, longitude, and altitude (LLA).
+ * @param latitude the angle north of the equator in degrees (negative angles define latitudes in the southern hemisphere). Must be a value within this interval: -90 &lt;= latitude &lt;= 90
+ * @param longitude the angle east of the prime meridian in degrees (negative angles define longitudes in the western hemisphere). Must be a value within this interval: -180 &lt; longitude &lt;= 180
+ * @param altitude the distance above sea level in meters or more precisely the distance above the surface of the WGS-84 reference ellipsoid.
+ * @throws IllegalArgumentException when the latitude or longitude is outside the specified range
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>double latitude</ParameterType>
+                <ParameterType>double longitude</ParameterType>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>equals</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>Object obj</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>LlaCoordinate [other=(LlaCoordinate)obj]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAltitude</MethodName>
+            <MethodComment>/** 
+ * The altitude
+ * @return the distance above sea level or more precisely the distance above the surface of the WGS-84 reference ellipsoid. For this project we need this distance in meters
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toString</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getLatitude</MethodName>
+            <MethodComment>/** 
+ * The latitude angle.
+ * @return the angle north of the equator in degrees (negative angles define latitudes in the southern hemisphere).
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getLongitude</MethodName>
+            <MethodComment>/** 
+ * The longitude angle
+ * @return the angle east of the prime meridian in degrees (negative angles define longitudes in the western hemisphere)
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hashCode</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>int</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>int [prime=31]</InnerVar>
+                <InnerVar>int [result=1]</InnerVar>
+                <InnerVar>long [temp]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toNVector</MethodName>
+            <MethodComment>/** 
+ * @return a terrestrial position defined by an N-vector plus altitude
+ */
+</MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [lat=Math.toRadians(latitude)]</InnerVar>
+                <InnerVar>double [lon=Math.toRadians(longitude)]</InnerVar>
+                <InnerVar>double [cosLat=Math.cos(lat)]</InnerVar>
+                <InnerVar>double [x=Math.cos(lon) * cosLat]</InnerVar>
+                <InnerVar>double [y=Math.sin(lon) * cosLat]</InnerVar>
+                <InnerVar>double [z=Math.sin(lat)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toPVector</MethodName>
+            <MethodComment>/** 
+ * @return a terrestrial position defined by an x, y, and z coordinate in an Earth centered Earth fixed reference frame.
+ */
+</MethodComment>
+            <ReturnType>PVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkAltitudeRange</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkLatitudeRange</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>double latitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkLongitudeRange</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>double longitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toLlaCoordinate</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

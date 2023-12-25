@@ -1,0 +1,3 @@
+send connect:advcl
+connect dronolog:obl
+send connect request messag:obj

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IFlightDirector.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:37">package <name pos:start="1:9" pos:end="1:36"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:36">flight</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:22">import <name pos:start="3:8" pos:end="3:21"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:21">List</name></name>;</import>
+
+<import pos:start="5:1" pos:end="5:54">import <name pos:start="5:8" pos:end="5:53"><name pos:start="5:8" pos:end="5:10">edu</name><operator pos:start="5:11" pos:end="5:11">.</operator><name pos:start="5:12" pos:end="5:13">nd</name><operator pos:start="5:14" pos:end="5:14">.</operator><name pos:start="5:15" pos:end="5:23">dronology</name><operator pos:start="5:24" pos:end="5:24">.</operator><name pos:start="5:25" pos:end="5:28">core</name><operator pos:start="5:29" pos:end="5:29">.</operator><name pos:start="5:30" pos:end="5:39">coordinate</name><operator pos:start="5:40" pos:end="5:40">.</operator><name pos:start="5:41" pos:end="5:53">LlaCoordinate</name></name>;</import>
+<import pos:start="6:1" pos:end="6:43">import <name pos:start="6:8" pos:end="6:42"><name pos:start="6:8" pos:end="6:10">edu</name><operator pos:start="6:11" pos:end="6:11">.</operator><name pos:start="6:12" pos:end="6:13">nd</name><operator pos:start="6:14" pos:end="6:14">.</operator><name pos:start="6:15" pos:end="6:23">dronology</name><operator pos:start="6:24" pos:end="6:24">.</operator><name pos:start="6:25" pos:end="6:28">core</name><operator pos:start="6:29" pos:end="6:29">.</operator><name pos:start="6:30" pos:end="6:33">util</name><operator pos:start="6:34" pos:end="6:34">.</operator><name pos:start="6:35" pos:end="6:42">Waypoint</name></name>;</import>
+
+<interface pos:start="8:1" pos:end="64:1"><specifier pos:start="8:1" pos:end="8:6">public</specifier> interface <name pos:start="8:18" pos:end="8:32">IFlightDirector</name> <block pos:start="8:34" pos:end="64:1">{
+	
+	<comment type="line" pos:start="10:9" pos:end="10:53">//public void returnHome(LlaCoordinate home);</comment>
+	
+		
+	<function_decl pos:start="13:9" pos:end="13:46"><type pos:start="13:9" pos:end="13:28"><specifier pos:start="13:9" pos:end="13:14">public</specifier> <name pos:start="13:16" pos:end="13:28">LlaCoordinate</name></type> <name pos:start="13:30" pos:end="13:43">flyToNextPoint</name><parameter_list pos:start="13:44" pos:end="13:45">()</parameter_list>;</function_decl>
+
+
+	<comment type="block" format="javadoc" pos:start="16:9" pos:end="18:11">/**
+	 * Clear all waypoints
+	 */</comment>
+	<function_decl pos:start="19:9" pos:end="19:30"><type pos:start="19:9" pos:end="19:12"><name pos:start="19:9" pos:end="19:12">void</name></type> <name pos:start="19:14" pos:end="19:27">clearWayPoints</name><parameter_list pos:start="19:28" pos:end="19:29">()</parameter_list>;</function_decl>
+
+
+	
+	<comment type="block" format="javadoc" pos:start="23:9" pos:end="26:11">/** 
+	 * Check if more waypoints exist
+	 * @return boolean
+	 */</comment>
+	<function_decl pos:start="27:9" pos:end="27:35"><type pos:start="27:9" pos:end="27:15"><name pos:start="27:9" pos:end="27:15">boolean</name></type> <name pos:start="27:17" pos:end="27:32">hasMoreWayPoints</name><parameter_list pos:start="27:33" pos:end="27:34">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="29:9" pos:end="32:11">/**
+	 * Specifies if flight is currently under a safety directive.
+	 * @return isUnderSafetyDirectives
+	 */</comment>
+	<function_decl pos:start="33:9" pos:end="33:42"><type pos:start="33:9" pos:end="33:15"><name pos:start="33:9" pos:end="33:15">boolean</name></type> <name pos:start="33:17" pos:end="33:39">isUnderSafetyDirectives</name><parameter_list pos:start="33:40" pos:end="33:41">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="35:9" pos:end="38:11">/**
+	 * Removes one wayPoint -- typically when a drone reaches a waypoint.
+	 * @param wayPoint
+	 */</comment>
+	<function_decl pos:start="39:9" pos:end="39:36"><type pos:start="39:9" pos:end="39:12"><name pos:start="39:9" pos:end="39:12">void</name></type> <name pos:start="39:14" pos:end="39:33">clearCurrentWayPoint</name><parameter_list pos:start="39:34" pos:end="39:35">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="41:9" pos:end="44:11">/**
+	 * Add a waypoint to the flight directive.
+	 * @param wayPoint
+	 */</comment>
+<comment type="line" pos:start="45:1" pos:end="45:49">//	void addWayPoint(LlaCoordinate wayPoint);</comment>
+
+	<function_decl pos:start="47:9" pos:end="47:23"><type pos:start="47:9" pos:end="47:12"><name pos:start="47:9" pos:end="47:12">void</name></type> <name pos:start="47:14" pos:end="47:20">flyHome</name><parameter_list pos:start="47:21" pos:end="47:22">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="49:9" pos:end="49:30"><type pos:start="49:9" pos:end="49:15"><name pos:start="49:9" pos:end="49:15">boolean</name></type> <name pos:start="49:17" pos:end="49:27">readyToLand</name><parameter_list pos:start="49:28" pos:end="49:29">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="51:9" pos:end="51:33"><type pos:start="51:9" pos:end="51:15"><name pos:start="51:9" pos:end="51:15">boolean</name></type> <name pos:start="51:17" pos:end="51:30">readyToTakeOff</name><parameter_list pos:start="51:31" pos:end="51:32">()</parameter_list>;</function_decl>
+
+
+	<function_decl pos:start="54:9" pos:end="54:52"><type pos:start="54:9" pos:end="54:12"><name pos:start="54:9" pos:end="54:12">void</name></type> <name pos:start="54:14" pos:end="54:25">setWayPoints</name><parameter_list pos:start="54:26" pos:end="54:51">(<parameter pos:start="54:27" pos:end="54:50"><decl pos:start="54:27" pos:end="54:50"><type pos:start="54:27" pos:end="54:40"><name pos:start="54:27" pos:end="54:40"><name pos:start="54:27" pos:end="54:30">List</name><argument_list type="generic" pos:start="54:31" pos:end="54:40">&lt;<argument pos:start="54:32" pos:end="54:39"><name pos:start="54:32" pos:end="54:39">Waypoint</name></argument>&gt;</argument_list></name></type> <name pos:start="54:42" pos:end="54:50">wayPoints</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="56:9" pos:end="56:38"><type pos:start="56:9" pos:end="56:22"><name pos:start="56:9" pos:end="56:22"><name pos:start="56:9" pos:end="56:12">List</name><argument_list type="generic" pos:start="56:13" pos:end="56:22">&lt;<argument pos:start="56:14" pos:end="56:21"><name pos:start="56:14" pos:end="56:21">Waypoint</name></argument>&gt;</argument_list></name></type> <name pos:start="56:24" pos:end="56:35">getWayPoints</name><parameter_list pos:start="56:36" pos:end="56:37">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="58:9" pos:end="58:44"><type pos:start="58:9" pos:end="58:12"><name pos:start="58:9" pos:end="58:12">void</name></type> <name pos:start="58:14" pos:end="58:24">addWayPoint</name><parameter_list pos:start="58:25" pos:end="58:43">(<parameter pos:start="58:26" pos:end="58:42"><decl pos:start="58:26" pos:end="58:42"><type pos:start="58:26" pos:end="58:33"><name pos:start="58:26" pos:end="58:33">Waypoint</name></type> <name pos:start="58:35" pos:end="58:42">wayPoint</name></decl></parameter>)</parameter_list>;</function_decl>
+
+
+	<function_decl pos:start="61:9" pos:end="61:39"><type pos:start="61:9" pos:end="61:12"><name pos:start="61:9" pos:end="61:12">void</name></type> <name pos:start="61:14" pos:end="61:23">returnHome</name><parameter_list pos:start="61:24" pos:end="61:38">(<parameter pos:start="61:25" pos:end="61:37"><decl pos:start="61:25" pos:end="61:37"><type pos:start="61:25" pos:end="61:32"><name pos:start="61:25" pos:end="61:32">Waypoint</name></type> <name pos:start="61:34" pos:end="61:37">home</name></decl></parameter>)</parameter_list>;</function_decl>
+
+
+}</block></interface></unit>

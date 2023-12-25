@@ -1,0 +1,8 @@
+Class: GUIResocontoPrenotazioni
+Date: 16/09/2003
+ersion: 0 01 000
+Description: Make the mask on the management of report of reservation in outpatient
+Attributes:
+panelParametri;Private; panel containing all the parameters necessary to set criteria creation of Reservations reports
+Methods:
+resocontoPrenotazioni ; Public;It description to find all the informatio necessary to generate the report in compliance with the criteria specified

@@ -1,0 +1,5 @@
+m_RequirementID
+m_Project
+m_ModulePath
+m_Content
+m_RegFlag

@@ -1,0 +1,3 @@
+uavMission
+currentLocation
+targetLocation

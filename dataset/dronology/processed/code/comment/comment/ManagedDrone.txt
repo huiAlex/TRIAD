@@ -1,0 +1,24 @@
+handler class virtual drone physic drone 
+handl basic function independ virtual physic endpoint 
+contain inform coordin state flight instruct 
+ 
+construct drone drone 
+get messeng associ drone 
+client code need access drone function messeng 
+messeng command manag drone carri oper 
+ 
+block manag drone run method call 
+ 
+target altitud set target altitud takeoff 
+control takeoff drone 
+deleg flyto behavior virtual physic drone target coordin speed 
+get current coordin virtual physic drone current coordin 
+uniqu drone 
+land drone 
+deleg land function virtual physic drone 
+temporarili halt haltinm 
+temporarili halt haltinm 
+return current flight mode state drone state 
+sign flight direct manag drone flight direct 
+remov assign flight 
+current safeti mode state 

@@ -1,0 +1,12 @@
+land command 
+serial version uid 
+mode land 
+
+
+uavid 
+mode 
+
+
+land command 
+
+ 

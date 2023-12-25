@@ -1,0 +1,5 @@
+getActiveUAVs
+initializeDrones
+addDroneStatusChangeListener
+removeDroneStatusChangeListener
+resendCommand

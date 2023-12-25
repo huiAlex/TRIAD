@@ -1,0 +1,9 @@
+accessSection:3
+datumPerson:1
+sectionAccess:3
+mainForm:1
+formMain:1
+personDatum:1
+folderClinic:3
+guiPrincipal:2
+clinicFolder:3

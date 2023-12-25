@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/Command.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:66">package <name pos:start="1:9" pos:end="1:65"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:48">collisionavoidance</name><operator pos:start="1:49" pos:end="1:49">.</operator><name pos:start="1:50" pos:end="1:65">guidancecommands</name></name>;</package>
+
+<class pos:start="3:1" pos:end="4:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> <specifier pos:start="3:8" pos:end="3:15">abstract</specifier> class <name pos:start="3:23" pos:end="3:29">Command</name> <block pos:start="3:31" pos:end="4:1">{
+}</block></class>
+</unit>

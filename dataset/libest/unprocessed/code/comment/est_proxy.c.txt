@@ -1,0 +1,79 @@
+   Since we hijack the OpenSSL BUF_MEM with our   own data, this utility function allows us   to free the BUF_MEM without freeing the   underlying data.  /
+   bsearch_compare is used by the bsearch function to perform the   comparison of the nodes within the client context array.  /
+   get_client_ctx() performs a search through a ordered array.   The key for the search is the current thread id and the value returned   is the client context that's been created for this thread.  If no   entry exists in the array for this thread id, a new one is created.  /
+   proxy_cleanup() is invoked from est_destroy when the   current context is for proxy mode.  /
+   This routine will check the result code from an enroll   attempt and propagate the retry-after message to the    client if needed.  /
+   This routine will send a PKCS7 encoded certificate to   the EST client via HTTP.   /
+   est_proxy_retrieve_cacerts() issues a request to the server to obtain the   CA Certs chain to be used for Get CA Certs requests from clients.   The CA Cert chain returned from the server are passed back to the caller.     It's the responsibility of the caller to free up this buffer.  /
+   This routine will connect to the EST server and attempt   to enroll the CSR in the pkcs10 buffer. Upon success   it will return the X509 cert in the pkcs7 buffer.  The   length of the returned cert will be in pkcs7_len.     The pkcs7 buffer should be allocated by the caller.  /
+   This routine will connect to the EST server and attempt   to enroll the CSR in the pkcs10 buffer. Upon success   it will return the X509 cert in the pkcs7 buffer.  The   length of the returned cert will be in pkcs7_len.     The pkcs7 buffer should be allocated by the caller.  /
+   This function is used by the server side of the EST proxy to respond to an   incoming Simple Enroll request.  This function is similar to the Client API   function, est_client_enroll_req(), except it bypasses some things that are   not done when functioning as a proxy, such as signing the CSR, not   inserting the TLS unique id and instead including the id-kp-cmcRA usage   extension.  /
+   This function is used by the server side of the EST proxy to respond to an   incoming cacerts request.  If the CA certs response has been set locally   then respond with this locally set buffer.  If not set, then issue a   request to the upstream server.  /
+   This function is used by the server side of the EST proxy to respond to an   incoming CSR Attributes request.  This function is similar to the Client API   function, est_client_get_csrattrs().   /
+   This function should be called by the web server layer when   a HTTP request arrives on the listening port of the EST proxy.   It will determine the EST request type and dispatch the request   to the appropriate handler.     Paramters:        ctx:	    Pointer to EST_CTX        http_ctx:   Context pointer from web server        method:     The HTML method in the request, should be either "GET" or "POST"  	uri:	    pointer to HTTP URI  	body:	    pointer to full HTML body contents  	body_len:   length of HTML body  	ct:         HTML content type header  /
+!  est_proxy_start() is used by an application to start the EST proxy     after est_proxy_init() and est_proxy_set_server() have been called and all     the required callback functions have been provided by the application.       ctx Pointer to the EST context      libEST uses HTTP code from the Mongoose HTTP server.     This function allows the application to start the HTTP     services layer, which is required by EST.        EST_ERROR.      /
+!  est_proxy_stop() is used by an application to stop     the EST proxy.  This should be called prior to est_destroy().        ctx Pointer to the EST context      libEST uses HTTP code from the Mongoose HTTP server.     This function allows the application to stop the HTTP     services layer.        EST_ERROR.  /
+!  est_proxy_set_auth_mode() is used by an application layer to     configure the HTTP authentication method to use for validating the     identity of an EST client.        ctx Pointer to the EST proxy context.  This was returned from     est_proxy_init().      amode Should be either AUTH_BASIC or AUTH_DIGEST      This function can optionally be invoked by the application layer to change     the default HTTP authentication mode.  The default mode is HTTP Basic     authentication.  An application may desire to use Digest authentication     instead, in which case this function can be used to set that mode.  This     function should be invoked prior to starting the EST proxy.       EST_ERROR.  /
+!  est_proxy_set_read_timeout() is used by an application to set     timeout value of read operations.  After the EST proxy sends a request to     the EST server it will attempt to read the response from the server.  This     timeout value limits the amount of time the proxy will wait for the     response.       ctx Pointer to the EST context      timeout Integer value representing the read timeout in seconds.     The minimum value is EST_SSL_READ_TIMEOUT_MIN and the maximum value is     EST_SSL_READ_TIMEOUT_MAX.        EST_ERROR.  /
+!  est_proxy_set_server() is called by the application layer to      specify the address/port of the EST server. It must be called after      est_proxy_init() and prior to issuing any EST commands.        ctx Pointer to EST context for a client session      server Name of the EST server to connect to.  The ASCII string     representing the name of the server is limited to 254 characters      port TCP port on the EST server to connect        EST_ERROR     EST_ERR_NONE - Success.     EST_ERR_NO_CTX - NULL value passed for EST context     EST_ERR_INVALID_SERVER_NAME - NULL value passed for EST server name, or     server name string too long     EST_ERR_INVALID_PORT_NUM - Invalid port number input, less than zero or     greater than 65535      est_proxy_set_server error checks its input parameters and then stores     both the hostname and port number into the EST context.  /
+       Windows TODO: This will likely need to be replaced with       GetCurrentThreadId()       In addition, this is really returning a pointer to an opaque value, so       what's being used here is typically a pointer in pthread based       environments and not the actual pthread id.  The only helper API to       access the actual id is pthread_equal().  If this must be used, then       the array search would best be changed to a linear search.       We mix in the PID of the current process with the thread ID in       case the application is forking new processes (e.g. NGINX).        /
+       The CA did not sign the request and has asked the       client to retry in the future.  This may occur if       the CA is not configured for automatic enrollment.       Send the HTTP retry response to the client.       We need to propagate the retry-after response to       the client.      /
+       Send HTTP header      /
+       Send the signed PKCS7 certificate in the body      /
+       Get the client context for this thread      /
+       Allocate a buffer to retrieve the CA certs       and get them copied in      /
+       The retrieving of the CA certs through the normal client       interface causes the client to go back into an uninitialized state.       In this case though, we're getting it just for passing it back       to the downstream clients, so we're going to put this client       context back into the initialized state      /
+       Connect to the server      /
+       Send the enroll request      /
+       Disconnect from the server      /
+       Make sure the client has sent us a PKCS10 CSR request      /
+       Authenticate the client      /
+       Parse the PKCS10 CSR from the client      /
+       Perform a sanity check on the CSR      /
+       Do the PoP check (Proof of Possession).  The challenge password       in the pkcs10 request should match the TLS unique ID.      /
+       body now points to the pkcs10 data, pass       this to the enrollment routine.  Need to hi-jack       a BUF_MEM.  Attach the body to a new BUF_MEM      /
+       get the client context for this thread      /
+       path_segment.  The path seg value is coming in from the       downstream client on this request.  It's already been validated,       place it in ctx for use by client code.      /
+       Allocate some space to hold the cert that we       expect to receive from the EST server.      /
+       Attempt to enroll the CSR from the client      /
+       Handle any errors that likely occurred      /
+       Prevent OpenSSL from freeing our data      /
+       If we have a cert response from the EST server, let's forward       it back to the EST client      /
+       get the client context for this thread      /
+       path_segment.  The path seg value is coming in from the       downstream client on this request.  It's already been validated,       place it in ctx for use by client code.      /
+       Invoke client code to retrieve the CSR attributes.       Note: there is no need to authenticate the client (see sec 4.5)      /
+       csr_data points to the memory allocated to hold the csr attributes,       which will be freed in this call stack.  To prevent a double-free       we null the to pointer on the client context.      /
+       Verify the context is for a proxy, not a client or server      /
+       See if this is a cacerts request      /
+       Sanity check the input      /
+       Verify the lengths of the cert chains       /
+       Allocate and set up the Proxy based EST Context.  This context will be       use when operating as the Server to the downstream clients.  EST Proxy mode       is basically a server function that requires client capabilities to       communicate to the upstream server when needed.       /
+       Load the CA certificates into local memory and retain       for future use.  This will be used for /cacerts requests.      /
+       Load the CA certificate chain into an X509 store structure       This will be used in verifying incoming certs during TLS       establishement.       Also save a way a raw copy of the ca_chain buffer so that       it can be used when creating client contexts used to communincate       to the upstream server.      /
+       See if this is a simple enrollment request      /
+       See if this is a re-enrollment request      /
+       See if this is a keygen request       FIXME: this is currently not implemented      /
+ Only POST is allowed /
+       See if this is a CSR attributes request      /
+       Send a 404 error if the URI didn't match       /
+ Try one more time if we're doing Digest auth /
+           need to allocate a context and get it ready to be used.          /
+           The name is a bit misleading.  The identity cert and private           key used for proxy mode are the ones stored in the server_cert and           server_priv_key, however they are used in both directions, so here           when setting up the client side, it looks mixed up.  Might want to           change the name in context to hold these.          /
+           wrt path segment, unlike true client mode, the path segment will           be changing on every request going upstream, so no need to           obtain it locally at a proxy and set it one time, so it           should be left NULL.          /
+           make sure there's room for another entry          /
+           add to the array and sort it into its proper place          /
+           the entry was found in the tree, return the client context for this           pid          /
+           get the client context for this thread          /
+           path_segment.  The path seg value is coming in from the           downstream client on this request.  It's already been validated,           place it in ctx for use by client code.          /
+           Invoke client code to retrieve the cacerts.           Note: there is no need to authenticate the client (see sec 4.5)          /
+           If the upstream request was successful, the retrieved CA certs will be           in the context          /
+ Only GET is allowed /
+ Only POST is allowed /
+           In this case body is indicating that no content was passed in, and           this is a enroll request.  This cannot be correct because a CSR is           required.  If this continues, and we're in proxy mode, we'll try to           forward this non-existent CSR          /
+           Get the SSL context, which is required for authenticating           the client.          /
+ Only POST is allowed /
+           In this case body is indicating that no content was passed in, and           this is a enroll request.  This cannot be correct because a CSR is           required.  If this continues, and we're in proxy mode, we'll try to           forward this non-existent CSR          /
+           Get the SSL context, which is required for authenticating           the client.          /
+ Only GET is allowed /
+               we're out of space.  allocate a new array and copy over what's               already there.  Double the size of the current one.              /
+               Something went wrong with the upstream request to the               server.  Treat this as a not found condition.              /

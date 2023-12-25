@@ -1,0 +1,34 @@
+remot manag 
+serial version uid 
+logger 
+instanc 
+extern servic 
+extern servic 
+
+remot manag 
+
+servic 
+process listen 
+process listen 
+servic 
+servic instanc 
+info 
+info 
+
+
+get instanc 
+get servic 
+add servic listen 
+remov servic listen 
+get servic 
+get core servic 
+get servic 
+get file servic 
+contribut servic 
+regist 
+unregist 
+initi 
+tear 
+
+ 
+ 

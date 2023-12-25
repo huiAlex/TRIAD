@@ -1,0 +1,5 @@
+send command:nsubj
+send adjust:advcl
+frequenc monitor:compound
+adjust frequenc:obj
+send frequenc:nsubj

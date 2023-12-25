@@ -1,0 +1,1 @@
+srs libwarc provid interfac swig wrapper allow dynam languag bind python rubi perl lua 

@@ -1,0 +1,12 @@
+confirmSelect:1
+typeVisit:1
+operAccess:1
+operActiv:1
+viewMask:1
+maskView:1
+accessOper:1
+selectType:1
+typeSelect:1
+activOper:1
+selectConfirm:1
+visitType:1

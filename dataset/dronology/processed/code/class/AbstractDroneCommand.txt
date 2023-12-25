@@ -1,0 +1,25 @@
+abstract drone command 
+serial version uid 
+gson 
+data 
+data 
+uavid 
+command 
+sendtimestamp 
+commandid 
+
+
+uavid 
+command 
+
+
+abstract drone command 
+string 
+json string 
+timestamp 
+get uav id 
+
+abstract base class command sent gcs 
+contain id uav uniqu command id 
+ 
+ 

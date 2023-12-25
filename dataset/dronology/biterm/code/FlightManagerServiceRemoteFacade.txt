@@ -1,0 +1,6 @@
+sendUav:1
+returnHome:4
+sendCommand:1
+assignPlan:1
+assignUav:1
+planFlight:6

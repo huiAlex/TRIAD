@@ -1,0 +1,19 @@
+implement waypoint:compound
+use implement:nsubj
+use flight plan:obl
+use fight:obl
+flight plan fight:conj
+fight rout:obj
+fight repres:xcomp
+repres coordin:obj
+repres lla coordin:obl
+speed approach:amod
+use speed:obl
+flight plan speed:conj
+waypoint respect:amod
+speed waypoint:nmod
+field constitu:amod
+pass class:nsubj
+serializ pass:dep
+interfac remot:compound
+pass interfac:obl

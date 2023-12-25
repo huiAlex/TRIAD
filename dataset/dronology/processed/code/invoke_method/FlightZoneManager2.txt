@@ -1,0 +1,164 @@
+get instanc 
+get instanc 
+add plan status chang listen 
+start 
+activ plan 
+set way point 
+get messeng 
+assign flight 
+set status fli 
+activ plan 
+set way point 
+get messeng 
+assign flight 
+set status fli 
+check form complet plan 
+get instanc 
+add new plan 
+get instanc 
+add new plan 
+add 
+add 
+get instanc 
+cancel pend plan 
+halt place 
+resum flight 
+get instanc 
+add new plan 
+emerg stop 
+get next pend plan 
+get design drone id 
+get current plan 
+get design drone id 
+get flight mode state 
+air 
+get current plan 
+solo director 
+get flight mode state 
+air 
+get design drone id 
+get current plan 
+solo director 
+get flight mode state 
+air 
+get flight mode state 
+ground 
+get 
+complet 
+creat 
+creat 
+complet 
+get regist drone 
+get base coordin 
+get coordin 
+get altitud 
+lla coordin 
+lla coordin 
+waypoint 
+waypoint 
+creat 
+get regist drone 
+get flight safeti mode state 
+get regist drone 
+get regist drone 
+get regist drone 
+overrid plan 
+set way point 
+get messeng 
+assign flight 
+add 
+get flight mode state 
+set mode fli 
+return home 
+set status fli 
+get avail drone 
+get avail drone 
+activ plan 
+set way point 
+get messeng 
+assign flight 
+set status fli 
+get pend plan 
+get pend plan 
+get avail drone 
+get avail drone 
+get drone 
+get way point 
+get flight mode state 
+set mode fli 
+get avail drone 
+get avail drone 
+get drone 
+get way point 
+get flight mode state 
+set mode fli 
+add 
+get flight mode state 
+set mode await take clearanc 
+simpl takeoff flight plan 
+get flight mode state 
+fli 
+solo director 
+get drone 
+get flight mode state 
+ground 
+solo director 
+get flight mode state 
+air 
+get 
+get assign drone 
+permiss takeoff 
+check schedul 
+check schedul takeoff 
+get drone 
+get drone 
+get assign drone 
+get latitud 
+get longitud 
+get latitud 
+get longitud 
+get 
+pend flight 
+await take 
+get 
+await land 
+land 
+get flight mode state 
+set mode air 
+get way point 
+assign plan 
+get design drone id 
+get drone 
+add 
+get way point 
+get flight mode state 
+set mode fli 
+get flight mode state 
+set mode await take clearanc 
+check complet plan 
+set target altitud 
+take 
+assign plan 
+get design drone id 
+return drone avail pool 
+assign plan 
+get design drone id 
+return drone avail pool 
+check pend fli 
+check land readi 
+get 
+get regist drone 
+get drone 
+get drone 
+tri assign uav 
+check pend fli takeoff 
+check take readi 
+get drone 
+get drone 
+get await take flight 
+get 
+get flight id 
+get design drone id 
+creat 
+get drone 
+run 

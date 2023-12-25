@@ -1,0 +1,10 @@
+datumPatient:1
+datumFind:1
+patientDatum:1
+makeDatum:1
+datumMake:1
+findInform:1
+folderClinic:1
+findDatum:1
+clinicFolder:1
+informFind:1

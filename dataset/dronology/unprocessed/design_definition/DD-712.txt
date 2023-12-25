@@ -1,0 +1,4 @@
+[SUMMARY]
+Only accept one connection per GCS
+[DESCRIPTION]
+The _GCSMiddleware_ shall only accept one connection for each _GCS_.

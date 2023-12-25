@@ -1,0 +1,20 @@
+drone monitor servic instanc 
+
+
+handler 
+identifi 
+handler 
+identifi 
+handler 
+
+remot monitor messag handler 
+artifact identifi 
+remot monitor messag handler 
+remot monitor messag handler 
+remot monitor messag handler 
+
+regist monitor messag handler 
+get subscrib handler 
+regist monitor messag handler 
+unsubscrib handler 
+

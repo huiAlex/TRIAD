@@ -1,0 +1,9 @@
+activUav:1
+returnHome:3
+cancelPlan:1
+setPoint:1
+assignPlan:2
+assignUav:3
+completPlan:3
+planUav:1
+planFlight:5

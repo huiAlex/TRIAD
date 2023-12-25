@@ -1,0 +1,9 @@
+RuntimeDroneTypes
+getInstance
+setVirtualEnvironment
+setPhysicalEnvironment
+isSimulation
+isPhysical
+registerCommandHandler
+getCommandHandler
+unregisterCommandHandler

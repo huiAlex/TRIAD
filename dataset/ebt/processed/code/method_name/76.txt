@@ -1,0 +1,14 @@
+preced 
+preced 
+token 
+eval token 
+eval token 
+get token 
+evalu 
+post fix pop 
+op stack 
+process token 
+get 
+pow 
+binari op 
+main 

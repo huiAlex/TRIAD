@@ -1,0 +1,6 @@
+operAccess:1
+loginOper:1
+systemManag:1
+accessOper:1
+operLogin:1
+managSystem:1

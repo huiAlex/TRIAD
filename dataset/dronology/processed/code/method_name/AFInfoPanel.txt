@@ -1,0 +1,18 @@
+af info panel 
+get map 
+get focus 
+add box 
+add box 
+remov box 
+select 
+get check 
+get check 
+get check 
+set visibl 
+get visibl 
+get visibl 
+set hover 
+get box 
+get num uav 
+refresh drone 
+creat content 

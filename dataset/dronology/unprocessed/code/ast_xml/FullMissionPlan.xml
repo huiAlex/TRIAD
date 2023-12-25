@@ -1,0 +1,304 @@
+<Class>
+    <Id>0</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.v1</Package>
+    <ClassName>FullMissionPlan</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IExecuteableMissionPlan</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>FullMissionPlan  /** 
+ * Manages a mission plan. Each Mission plan has one &lt;code&gt;FullMissionPlan&lt;/code&gt; instance, and one &lt;code&gt;UAVMissionPlan&lt;/code&gt; instance for each UAV in the Mission plan. &lt;br&gt; Each of the UAV's individual mission plans are composed of MissionTasks. &lt;br&gt; Once the entire mission plan is loaded, a thread is created which checks each of the individual UAVMissionPlans to determine if they can start the next task.
+ * @author Jane Cleland-Huang
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>uavMissionPlans</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>uavMissionPlans</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>synchPointMgr</FieldName>
+            <FieldType>SynchronizationManager</FieldType>
+        </Field>
+        <Field>
+            <FieldName>mission</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>FullMissionPlan</MethodName>
+            <MethodComment>/** 
+ * Constructs the CoordinatedMission instance. A mission consists of one or more UAVs, each of which has a set of assigned tasks and synchronization points.
+ * @param mission
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String mission</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>loadMission</MethodName>
+            <MethodComment>/** 
+ * Loads mission from JSON file. Currently hard coded. 
+ * @param mission
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String mission</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JSONMissionPlanReader [jsonReader=new JSONMissionPlanReader(this)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addUAV</MethodName>
+            <MethodComment>/** 
+ * Adds an additional UAV to the mission plan. Creates the &lt;code&gt;UAVMissionTasks&lt;/code&gt; instance and passes it a reference to the &lt;code&gt;synchPointMgr&lt;/code&gt;
+ * @param uavID the ID of the UAV
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavID</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>UAVMissionPlan [plan=new UAVMissionPlan(uavID,synchPointMgr)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>uavMissionPlans;put;[uavID, plan]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>removeUAV</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavID</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>uavMissionPlans;remove;[uavID]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addTask</MethodName>
+            <MethodComment>/** 
+ * Assigns a task to a specific UAV
+ * @param uavID UAV Identifier
+ * @param task Task to perform (e.g., Route, Waypoint, Synchronize, FlightPattern)
+ * @param taskID Task specifics (e.g., specific waypoint, route name etc)
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavID</ParameterType>
+                <ParameterType>String task</ParameterType>
+                <ParameterType>String taskID</ParameterType>
+                <ParameterType>Object params</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>isMissionActive</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>buildAllSynchPoints</MethodName>
+            <MethodComment>/** 
+ * Build all synch points
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>uavMissionPlans;forEach;[(uavId,plan) -&gt; {
+  plan.buildSynchPoints();
+}
+]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkAndActivateTask</MethodName>
+            <MethodComment>/** 
+ * Activates next task in each UAV mission, if there is no unfinished active task
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>expandAllTasks</MethodName>
+            <MethodComment>/** 
+ * Expands flight pattern tasks (e.g., coordinatedTakeOff or coordinatedLanding)
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>build</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;loadMission;[mission]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;expandAllTasks;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;buildAllSynchPoints;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>synchPointMgr;activateAllSynchPoints;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;runPreChecks;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>runPreChecks</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>checkDistance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>UAVMissionPlan plan</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>LlaCoordinate [coordinate=plan.getStartingRouteWaypoint()]</InnerVar>
+                <InnerVar>IUAVProxy [uav=null]</InnerVar>
+                <InnerVar>double [distanceToFirstWaypoint=uav.getCoordinates().distance(coordinate)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["Precheck passed -- Distance to first waypoint: " + distanceToFirstWaypoint]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>cancelMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;missionError;["Mission cancelled!"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

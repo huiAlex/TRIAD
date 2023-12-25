@@ -1,0 +1,17 @@
+command id 
+set mode command 
+goto locat command 
+ping pong command 
+takeoff command 
+stop command 
+set ground speed command 
+set veloc command 
+set monitor frequenc command 
+set state frequenc command 
+connect respons 
+
+
+
+
+
+id valid uav command 

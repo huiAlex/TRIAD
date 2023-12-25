@@ -1,0 +1,6 @@
+libwarcBase:1
+headerFile:1
+singlFile:1
+baseLibwarc:1
+fileHeader:1
+fileSingl:1

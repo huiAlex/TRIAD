@@ -1,0 +1,13 @@
+takeoff task 
+coordin 
+
+lla coordin 
+
+uav id 
+coordin 
+
+lla coordin 
+
+takeoff task 
+get waypoint 
+

@@ -1,0 +1,12 @@
+set monitor frequenc command 
+serial version uid 
+
+
+drone id 
+frequenc 
+
+
+set monitor frequenc command 
+
+command sent gcs adjust monitor frequenc 
+frequenc sent ms 

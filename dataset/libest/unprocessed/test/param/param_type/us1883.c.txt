@@ -1,0 +1,17 @@
+char
+va_list
+int
+int
+X509
+int
+EST_HTTP_AUTH_HDR
+EST_HTTP_AUTH_HDR
+EST_HTTP_AUTH_HDR
+char
+char
+EST_ERROR
+auth_credentials_cb
+char
+char
+EST_ERROR
+auth_credentials_cb

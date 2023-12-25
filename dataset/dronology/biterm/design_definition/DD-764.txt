@@ -1,0 +1,5 @@
+resendCommand:1
+commandWaypoint:1
+forwardMiddlewar:1
+clientDronolog:1
+acceptMiddlewar:1

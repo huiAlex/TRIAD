@@ -1,0 +1,16 @@
+FlightRouteplanningServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+getServiceInfo
+createItem
+getPath
+fromFile
+calculateDistance
+hasProperties
+notifyFileChange
+getFlightPathCategories
+getItem
+getRouteByName

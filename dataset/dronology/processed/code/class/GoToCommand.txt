@@ -1,0 +1,14 @@
+command 
+serial version uid 
+
+
+uavid 
+coord 
+
+lla coordin 
+
+command 
+
+command sent gcs send new waypoint 
+ 
+ 

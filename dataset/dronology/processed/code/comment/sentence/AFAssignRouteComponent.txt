@@ -1,0 +1,4 @@
+This is the UI for assigning new routes to a UAV        /
+/
+/
+removes a route from the AFDragLayout	  	  	 /

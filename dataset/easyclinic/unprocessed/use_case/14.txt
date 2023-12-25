@@ -1,0 +1,37 @@
+Use case:
+Book visit
+
+Description:
+It allows the operator to meet request for a booking service made by an ambulatory patient
+The Operator has an interest in the record renting an outpatient service requested by a patient
+
+Preconditions:
+The Operator has been recognized by System (See UcValOp)
+The patient is been recognized by the system (See UcValPaz) and has issued to The module RSA properly completed
+
+Postconditions:
+The data in the SIO not be modified
+The outpatient service required is properly booked
+
+Sub-flows:
+The operator activates the execution of service booking service
+1 The Operator has received a request for a first visit
+2 View the mask for booking of outpatient service
+3 Select the type of visit that the patient wants to make
+4 Inserts motivation of the request
+5 Confirm data inserted
+6 Verify that the sequence of reservations are valid (See BrValSeq)
+7 Select available dates
+8 Confirm your reservation 
+9 Stores data 
+10 Notify the operator that the operation was concluded successfully
+
+Alternative flows:
+Sequence reservations invalid
+   6 1 Show an appropriate message 
+   6 2 Reinserts execution from step 2
+
+Operator cancels the operation 
+Reservations 
+  5 1 ends the use case with failure
+  9 1 For a first visit, the patient's personal data will be saved at this point.In addition, before the visit, the patient can view and print the hospital patient card.

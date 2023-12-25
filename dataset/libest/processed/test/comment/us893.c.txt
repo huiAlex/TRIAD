@@ -1,0 +1,111 @@
+us unit test user stori proxi reenrol octob copyright cisco system right reserv 
+follow csr generat use follow openssl command use cat rsa req file openssl req newkey rsa keyout rsakey pem keyform pem rsa req outform pem 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+simpl reenrol rsa test case use libcurl test simpl reenrol bit rsa csr http basic authent use 
+test case use exist expir cert attempt enrol expir cert contain sever extens verifi new issu cert preserv extens use grep note preserv extens requir openssl ca enabl copi extens knob openssl config file whi test suit use uniqu copi estexampleca cnf 
+simpl reenrol corrupt csr use libcurl send reenrol request contain corrupt csr 
+test attempt enrol expir cert est server configur manual approv server send retri respons verifi proxi propag retri respons client 
+test attempt enrol expir cert est server configur pop enabl proxi server use cert doesn contain id kp cmcra result failur 
+test attempt enrol expir cert est server configur pop disabl proxi server use cert doesn contain id kp cmcra result success reenrol 
+test attempt enrol expir cert est server configur pop disabl proxi server use cert doesn contain id kp cmcra csr contain pop forc check result failur sinc ra cert doesn contain id kp cmcra 
+test case use exist expir cert attempt enrol pop disabl est server 
+test case use exist expir cert attempt enrol pop disabl est server csr doe contain pop 
+test case use bad password configur est proxi context caus est server reject reenrol request 
+simpl reenrol rsa test case use libcurl test simpl reenrol bit rsa csr http basic authent use howev pop enabl proxi caus failur sinc libcurl doesn includ pop 
+main function set run test return cue success success run anoth cunit error code failur 
+temporari file creat various test case 
+first start est server act ca 
+next start est proxi actg ra 
+read ca certif 
+start instanc est server automat enrol enabl 
+sinc pass valid userid password expect server respond 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+retriev cert given us est server 
+save cert local file 
+base decod cert respons 
+convert pkcs cert pem cert 
+convert pem cert textual represent cert 
+verifi jimbob dns extens preserv 
+verifi bobcat dns extens preserv 
+verifi ip address extens preserv 
+verifi repudi key usag extens preserv 
+verifi public key preserv 
+clean 
+sinc pass bad csr expect server respond 
+stop server 
+restart server manual approv enabl 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+server configur retri valu second default 
+clean 
+stop server 
+restart server manual approv disabl 
+make sure pop enabl server 
+stop proxi server restart use differ ident cert 
+restart proxi server use cert 
+use libcurl send enrol request use libcurl becaus includ pop 
+pop check fail 
+stop proxi server 
+restart proxi server use cert 
+make sure pop disabl server 
+stop proxi server restart use differ ident cert 
+restart proxi server use cert 
+use libcurl send enrol request use libcurl becaus includ pop 
+reenrol work sinc pop enabl anywher 
+stop proxi server 
+restart proxi server use cert 
+enabl pop server forthcom test case 
+make sure pop disabl server 
+stop proxi server restart use differ ident cert 
+restart proxi server use cert 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+stop proxi server 
+restart proxi server use cert 
+enabl pop server forthcom test case 
+make sure pop disabl server 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+enabl pop server forthcom test case 
+make sure pop disabl server 
+use libcurl send enrol request use libcurl becaus includ pop 
+reenrol work sinc pop enabl anywher 
+enabl pop server forthcom test case 
+stop proxi server restart use differ ident cert 
+restart proxi server use cert 
+stop proxi server 
+restart proxi server use cert 
+stop proxi server restart use differ ident cert 
+restart proxi server use untrust cert 
+don use normal curl util api becaus need disabl tls peer verif special test case 
+set content type header http request 
+setup field curl requir 
+issu http request 
+get http repons status code server 
+stop proxi server 
+restart proxi server use cert 
+fail sinc proxi fail pop check 
+add suit registri 
+add test suit 

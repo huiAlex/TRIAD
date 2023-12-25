@@ -1,0 +1,13 @@
+Class: GUIAnagraficaMedico
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: Make the mask on the management of the anagrafica of doctors
+
+Attributes:
+gridElencoMedici;Private;list containing the main information of doctors registered in ISO
+
+Methods:
+visualizzaDatiMedico  ;Public ; View details of the doctor selected in the panelDati
+visualizzaElencoMedicii ;Public; View list of doctors registered in ISO
+gestioneAnagrafica ;Public;It retrieves all necessary information for the organization of the mask implemented by GUIAnagraficaMedico

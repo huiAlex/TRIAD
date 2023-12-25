@@ -1,0 +1,1 @@
+This is the bar that indicates when the active flights UI is in follow mode       /

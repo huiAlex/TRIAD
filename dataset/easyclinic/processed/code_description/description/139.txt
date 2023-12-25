@@ -1,0 +1,1 @@
+gui elenco prenotazioni abstract class use defin gui elimina prenotazion gui seleziona prenotazion btn annulla button allow cancel current oper grid prenotazioni grid contain reserv activ set patient notifica successo task notifi success 

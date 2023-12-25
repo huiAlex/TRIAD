@@ -1,0 +1,11 @@
+mission plan individu uav 
+part execut mission plan 
+ 
+check task finish 
+need actual activ flight rout 
+note need handl rout waypoint takeoff land synch intern shouldn need ani extra coordin 
+ 
+expand task pattern 
+current support differ pattern synchron takeoff synchron land sumption synchron takeoff rout defini immedi 
+synchron land rout defin immedi prior 
+ 

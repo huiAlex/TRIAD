@@ -1,0 +1,10 @@
+Show details visit 
+
+The service is launched following the explicit request by the patient.
+The patient accesses the clinic folder management screen (instance of GUICartellaClinica) and selects a visit from the list of visits.
+Control is then passed to the GUICartellaClinicaHandler instance, which delegates the task of managing the service to the instance of GUIVisitaHandler.
+The first step is to gather information about the selected visit. Therefore, control passes to the instance of VisiteManager, which primarily retrieves this information.
+The instance of VisiteManager delegates the task of finding the information associated with all examinations related to the visit to the instance of EsamiManager.
+The selected object retrieves information through the consideration of instances, provides the results of the VisiteManager application, which in turn returns all the information found backwards up to the instance of GUIVisitaHandler.
+Finally, GUIVisitaHandler displays the received information on the screen for detailed visit display (instance of GUIVisita).
+This feature is described by the collaboration diagram of Fig 3.12.

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/MissionHandler.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:49">package <name pos:start="1:9" pos:end="1:48"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:27">ui</name><operator pos:start="1:28" pos:end="1:28">.</operator><name pos:start="1:29" pos:end="1:34">vaadin</name><operator pos:start="1:35" pos:end="1:35">.</operator><name pos:start="1:36" pos:end="1:48">activeflights</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:30">import <name pos:start="3:8" pos:end="3:29"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:14">io</name><operator pos:start="3:15" pos:end="3:15">.</operator><name pos:start="3:16" pos:end="3:29">BufferedReader</name></name>;</import>
+<import pos:start="4:1" pos:end="4:20">import <name pos:start="4:8" pos:end="4:19"><name pos:start="4:8" pos:end="4:11">java</name><operator pos:start="4:12" pos:end="4:12">.</operator><name pos:start="4:13" pos:end="4:14">io</name><operator pos:start="4:15" pos:end="4:15">.</operator><name pos:start="4:16" pos:end="4:19">File</name></name>;</import>
+<import pos:start="5:1" pos:end="5:37">import <name pos:start="5:8" pos:end="5:36"><name pos:start="5:8" pos:end="5:11">java</name><operator pos:start="5:12" pos:end="5:12">.</operator><name pos:start="5:13" pos:end="5:14">io</name><operator pos:start="5:15" pos:end="5:15">.</operator><name pos:start="5:16" pos:end="5:36">FileNotFoundException</name></name>;</import>
+<import pos:start="6:1" pos:end="6:32">import <name pos:start="6:8" pos:end="6:31"><name pos:start="6:8" pos:end="6:11">java</name><operator pos:start="6:12" pos:end="6:12">.</operator><name pos:start="6:13" pos:end="6:14">io</name><operator pos:start="6:15" pos:end="6:15">.</operator><name pos:start="6:16" pos:end="6:31">FileOutputStream</name></name>;</import>
+<import pos:start="7:1" pos:end="7:26">import <name pos:start="7:8" pos:end="7:25"><name pos:start="7:8" pos:end="7:11">java</name><operator pos:start="7:12" pos:end="7:12">.</operator><name pos:start="7:13" pos:end="7:14">io</name><operator pos:start="7:15" pos:end="7:15">.</operator><name pos:start="7:16" pos:end="7:25">FileReader</name></name>;</import>
+<import pos:start="8:1" pos:end="8:27">import <name pos:start="8:8" pos:end="8:26"><name pos:start="8:8" pos:end="8:11">java</name><operator pos:start="8:12" pos:end="8:12">.</operator><name pos:start="8:13" pos:end="8:14">io</name><operator pos:start="8:15" pos:end="8:15">.</operator><name pos:start="8:16" pos:end="8:26">IOException</name></name>;</import>
+<import pos:start="9:1" pos:end="9:28">import <name pos:start="9:8" pos:end="9:27"><name pos:start="9:8" pos:end="9:11">java</name><operator pos:start="9:12" pos:end="9:12">.</operator><name pos:start="9:13" pos:end="9:14">io</name><operator pos:start="9:15" pos:end="9:15">.</operator><name pos:start="9:16" pos:end="9:27">OutputStream</name></name>;</import>
+
+<import pos:start="11:1" pos:end="11:37">import <name pos:start="11:8" pos:end="11:36"><name pos:start="11:8" pos:end="11:10">com</name><operator pos:start="11:11" pos:end="11:11">.</operator><name pos:start="11:12" pos:end="11:17">vaadin</name><operator pos:start="11:18" pos:end="11:18">.</operator><name pos:start="11:19" pos:end="11:20">ui</name><operator pos:start="11:21" pos:end="11:21">.</operator><name pos:start="11:22" pos:end="11:27">Upload</name><operator pos:start="11:28" pos:end="11:28">.</operator><name pos:start="11:29" pos:end="11:36">Receiver</name></name>;</import>
+<import pos:start="12:1" pos:end="12:43">import <name pos:start="12:8" pos:end="12:42"><name pos:start="12:8" pos:end="12:10">com</name><operator pos:start="12:11" pos:end="12:11">.</operator><name pos:start="12:12" pos:end="12:17">vaadin</name><operator pos:start="12:18" pos:end="12:18">.</operator><name pos:start="12:19" pos:end="12:20">ui</name><operator pos:start="12:21" pos:end="12:21">.</operator><name pos:start="12:22" pos:end="12:27">Upload</name><operator pos:start="12:28" pos:end="12:28">.</operator><name pos:start="12:29" pos:end="12:42">SucceededEvent</name></name>;</import>
+<import pos:start="13:1" pos:end="13:46">import <name pos:start="13:8" pos:end="13:45"><name pos:start="13:8" pos:end="13:10">com</name><operator pos:start="13:11" pos:end="13:11">.</operator><name pos:start="13:12" pos:end="13:17">vaadin</name><operator pos:start="13:18" pos:end="13:18">.</operator><name pos:start="13:19" pos:end="13:20">ui</name><operator pos:start="13:21" pos:end="13:21">.</operator><name pos:start="13:22" pos:end="13:27">Upload</name><operator pos:start="13:28" pos:end="13:28">.</operator><name pos:start="13:29" pos:end="13:45">SucceededListener</name></name>;</import>
+
+<import pos:start="15:1" pos:end="15:55">import <name pos:start="15:8" pos:end="15:54"><name pos:start="15:8" pos:end="15:10">edu</name><operator pos:start="15:11" pos:end="15:11">.</operator><name pos:start="15:12" pos:end="15:13">nd</name><operator pos:start="15:14" pos:end="15:14">.</operator><name pos:start="15:15" pos:end="15:23">dronology</name><operator pos:start="15:24" pos:end="15:24">.</operator><name pos:start="15:25" pos:end="15:32">services</name><operator pos:start="15:33" pos:end="15:33">.</operator><name pos:start="15:34" pos:end="15:37">core</name><operator pos:start="15:38" pos:end="15:38">.</operator><name pos:start="15:39" pos:end="15:42">info</name><operator pos:start="15:43" pos:end="15:43">.</operator><name pos:start="15:44" pos:end="15:54">MissionInfo</name></name>;</import>
+<import pos:start="16:1" pos:end="16:75">import <name pos:start="16:8" pos:end="16:74"><name pos:start="16:8" pos:end="16:10">edu</name><operator pos:start="16:11" pos:end="16:11">.</operator><name pos:start="16:12" pos:end="16:13">nd</name><operator pos:start="16:14" pos:end="16:14">.</operator><name pos:start="16:15" pos:end="16:23">dronology</name><operator pos:start="16:24" pos:end="16:24">.</operator><name pos:start="16:25" pos:end="16:32">services</name><operator pos:start="16:33" pos:end="16:33">.</operator><name pos:start="16:34" pos:end="16:37">core</name><operator pos:start="16:38" pos:end="16:38">.</operator><name pos:start="16:39" pos:end="16:44">remote</name><operator pos:start="16:45" pos:end="16:45">.</operator><name pos:start="16:46" pos:end="16:74">IMissionPlanningRemoteService</name></name>;</import>
+<import pos:start="17:1" pos:end="17:45">import <name pos:start="17:8" pos:end="17:44"><name pos:start="17:8" pos:end="17:10">edu</name><operator pos:start="17:11" pos:end="17:11">.</operator><name pos:start="17:12" pos:end="17:13">nd</name><operator pos:start="17:14" pos:end="17:14">.</operator><name pos:start="17:15" pos:end="17:23">dronology</name><operator pos:start="17:24" pos:end="17:24">.</operator><name pos:start="17:25" pos:end="17:26">ui</name><operator pos:start="17:27" pos:end="17:27">.</operator><name pos:start="17:28" pos:end="17:33">vaadin</name><operator pos:start="17:34" pos:end="17:34">.</operator><name pos:start="17:35" pos:end="17:39">start</name><operator pos:start="17:40" pos:end="17:40">.</operator><name pos:start="17:41" pos:end="17:44">MyUI</name></name>;</import>
+
+<class pos:start="19:1" pos:end="130:1"><specifier pos:start="19:1" pos:end="19:6">public</specifier> class <name pos:start="19:14" pos:end="19:27">MissionHandler</name> <block pos:start="19:29" pos:end="130:1">{
+
+	<comment type="line" pos:start="21:9" pos:end="21:43">//private MissionUploader receiver;</comment>
+
+	<constructor pos:start="23:9" pos:end="25:9"><specifier pos:start="23:9" pos:end="23:14">public</specifier> <name pos:start="23:16" pos:end="23:29">MissionHandler</name><parameter_list pos:start="23:30" pos:end="23:31">()</parameter_list> <block pos:start="23:33" pos:end="25:9">{<block_content>
+		<comment type="line" pos:start="24:17" pos:end="24:51">//receiver = new MissionUploader();</comment>
+	</block_content>}</block></constructor>
+
+	<function pos:start="27:9" pos:end="42:9"><type pos:start="27:9" pos:end="27:19"><specifier pos:start="27:9" pos:end="27:14">public</specifier> <name pos:start="27:16" pos:end="27:19">void</name></type> <name pos:start="27:21" pos:end="27:34">executeMission</name><parameter_list pos:start="27:35" pos:end="27:36">()</parameter_list> <block pos:start="27:38" pos:end="42:9">{<block_content pos:start="29:17" pos:end="40:17">
+		<comment type="line" pos:start="28:17" pos:end="28:50">// System.out.println("UPLOAD!!");</comment>
+		<try pos:start="29:17" pos:end="40:17">try <block pos:start="29:21" pos:end="37:17">{<block_content pos:start="33:25" pos:end="36:74">
+			<comment type="line" pos:start="30:25" pos:end="30:85">// Upload upload = new Upload("Upload Image Here", receiver);</comment>
+			<comment type="line" pos:start="31:25" pos:end="31:61">// upload.setButtonCaption("Select");</comment>
+			<comment type="line" pos:start="32:25" pos:end="32:73">//System.out.println("STRING:" + missionContent);</comment>
+			<decl_stmt pos:start="33:25" pos:end="34:108"><decl pos:start="33:25" pos:end="34:107"><type pos:start="33:25" pos:end="33:53"><name pos:start="33:25" pos:end="33:53">IMissionPlanningRemoteService</name></type> <name pos:start="33:55" pos:end="33:68">missionService</name> <init pos:start="33:70" pos:end="34:107">= <expr pos:start="33:72" pos:end="34:107"><operator pos:start="33:72" pos:end="33:72">(</operator><name pos:start="33:73" pos:end="33:101">IMissionPlanningRemoteService</name><operator pos:start="33:102" pos:end="33:102">)</operator> <call pos:start="33:104" pos:end="33:121"><name pos:start="33:104" pos:end="33:119"><name pos:start="33:104" pos:end="33:107">MyUI</name><operator pos:start="33:108" pos:end="33:108">.</operator><name pos:start="33:109" pos:end="33:119">getProvider</name></name><argument_list pos:start="33:120" pos:end="33:121">()</argument_list></call>
+					<operator pos:start="34:41" pos:end="34:41">.</operator><call pos:start="34:42" pos:end="34:59"><name pos:start="34:42" pos:end="34:57">getRemoteManager</name><argument_list pos:start="34:58" pos:end="34:59">()</argument_list></call><operator pos:start="34:60" pos:end="34:60">.</operator><call pos:start="34:61" pos:end="34:107"><name pos:start="34:61" pos:end="34:70">getService</name><argument_list pos:start="34:71" pos:end="34:107">(<argument pos:start="34:72" pos:end="34:106"><expr pos:start="34:72" pos:end="34:106"><name pos:start="34:72" pos:end="34:106"><name pos:start="34:72" pos:end="34:100">IMissionPlanningRemoteService</name><operator pos:start="34:101" pos:end="34:101">.</operator><name pos:start="34:102" pos:end="34:106">class</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<expr_stmt pos:start="36:25" pos:end="36:74"><expr pos:start="36:25" pos:end="36:73"><call pos:start="36:25" pos:end="36:73"><name pos:start="36:25" pos:end="36:57"><name pos:start="36:25" pos:end="36:38">missionService</name><operator pos:start="36:39" pos:end="36:39">.</operator><name pos:start="36:40" pos:end="36:57">executeMissionPlan</name></name><argument_list pos:start="36:58" pos:end="36:73">(<argument pos:start="36:59" pos:end="36:72"><expr pos:start="36:59" pos:end="36:72"><name pos:start="36:59" pos:end="36:72">missionContent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch pos:start="37:19" pos:end="40:17">catch <parameter_list pos:start="37:25" pos:end="37:37">(<parameter pos:start="37:26" pos:end="37:36"><decl pos:start="37:26" pos:end="37:36"><type pos:start="37:26" pos:end="37:36"><name pos:start="37:26" pos:end="37:34">Exception</name></type> <name pos:start="37:36" pos:end="37:36">e</name></decl></parameter>)</parameter_list> <block pos:start="37:39" pos:end="40:17">{<block_content pos:start="38:25" pos:end="39:44">
+			<expr_stmt pos:start="38:25" pos:end="38:49"><expr pos:start="38:25" pos:end="38:48"><call pos:start="38:25" pos:end="38:48"><name pos:start="38:25" pos:end="38:41"><name pos:start="38:25" pos:end="38:28">MyUI</name><operator pos:start="38:29" pos:end="38:29">.</operator><name pos:start="38:30" pos:end="38:41">setConnected</name></name><argument_list pos:start="38:42" pos:end="38:48">(<argument pos:start="38:43" pos:end="38:47"><expr pos:start="38:43" pos:end="38:47"><literal type="boolean" pos:start="38:43" pos:end="38:47">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt pos:start="39:25" pos:end="39:44"><expr pos:start="39:25" pos:end="39:43"><call pos:start="39:25" pos:end="39:43"><name pos:start="39:25" pos:end="39:41"><name pos:start="39:25" pos:end="39:25">e</name><operator pos:start="39:26" pos:end="39:26">.</operator><name pos:start="39:27" pos:end="39:41">printStackTrace</name></name><argument_list pos:start="39:42" pos:end="39:43">()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+
+	</block_content>}</block></function>
+<comment type="block" pos:start="43:1" pos:end="47:2">/*
+	public MissionUploader getReceiver() {
+		return receiver;
+	}
+*/</comment>	
+	<function pos:start="48:9" pos:end="50:9"><type pos:start="48:9" pos:end="48:19"><specifier pos:start="48:9" pos:end="48:14">public</specifier> <name pos:start="48:16" pos:end="48:19">void</name></type> <name pos:start="48:21" pos:end="48:37">setMissionContent</name><parameter_list pos:start="48:38" pos:end="48:55">(<parameter pos:start="48:39" pos:end="48:54"><decl pos:start="48:39" pos:end="48:54"><type pos:start="48:39" pos:end="48:49"><name pos:start="48:39" pos:end="48:49">MissionInfo</name></type> <name pos:start="48:51" pos:end="48:54">info</name></decl></parameter>)</parameter_list> <block pos:start="48:57" pos:end="50:9">{<block_content pos:start="49:17" pos:end="49:38">
+		<expr_stmt pos:start="49:17" pos:end="49:38"><expr pos:start="49:17" pos:end="49:37"><name pos:start="49:17" pos:end="49:30">missionContent</name> <operator pos:start="49:32" pos:end="49:32">=</operator> <name pos:start="49:34" pos:end="49:37">info</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+	
+
+	<comment type="line" pos:start="53:9" pos:end="53:49">// Show uploaded file in this placeholder</comment>
+	<decl_stmt pos:start="54:9" pos:end="54:35"><decl pos:start="54:9" pos:end="54:34"><type pos:start="54:9" pos:end="54:19"><name pos:start="54:9" pos:end="54:19">MissionInfo</name></type> <name pos:start="54:21" pos:end="54:34">missionContent</name></decl>;</decl_stmt>
+
+	<comment type="line" pos:start="56:9" pos:end="56:66">// Implement both receiver that saves upload in a file and</comment>
+	<comment type="line" pos:start="57:9" pos:end="57:41">// listener for successful upload</comment>
+	
+	<comment type="line" pos:start="59:9" pos:end="59:72">//class MissionUploader implements Receiver, SucceededListener {</comment>
+		<comment type="block" format="javadoc" pos:start="60:17" pos:end="62:19">/**
+		 * 
+		 */</comment>
+	<comment type="block" pos:start="63:9" pos:end="129:10">/*
+		private static final long serialVersionUID = -533969977302422170L;
+		public File file;
+
+		@Override
+		public OutputStream receiveUpload(String filename, String mimeType) {
+			System.out.println("UPLOAD!!!!");
+			FileOutputStream fos = null; // Output stream to write to
+			try {
+				System.out.println(filename);
+
+				// file = new File("c:\\tmp\\uploads\\" + filename);
+				file = File.createTempFile("abc", "tmp");
+				file.createNewFile();
+				fos = new FileOutputStream(file);
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+			// ...
+			return fos;
+		}
+
+		
+		@Override
+		public void uploadSucceeded(SucceededEvent event) {
+			try {
+				missionContent = readFile(file.getAbsolutePath());
+				executeMission();
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		public String readFile(String absolutePath) {
+			StringBuilder contents = new StringBuilder();
+			BufferedReader buf = getBufferedFileReader(absolutePath);
+			String line;
+			try {
+				while (buf != null &amp;&amp; (line = buf.readLine()) != null) {
+					contents.append(line + System.lineSeparator());
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return contents.toString();
+		}
+
+		public BufferedReader getBufferedFileReader(String absolutePath) {
+			FileReader fr = null;
+			BufferedReader buf = null;
+			try {
+				String path = absolutePath;
+				fr = new FileReader(path);
+				buf = new BufferedReader(fr);
+			} catch (FileNotFoundException e) {
+				// OGGER.Lwarn("Could not read file: " + absolutePath);
+				e.printStackTrace();
+
+			}
+			return buf;
+		}
+		
+	};
+	*/</comment>
+}</block></class>
+
+</unit>

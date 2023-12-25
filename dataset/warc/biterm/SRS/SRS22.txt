@@ -1,0 +1,4 @@
+useLibwarc:1
+useMemori:1
+memoriUse:1
+libwarcUse:1

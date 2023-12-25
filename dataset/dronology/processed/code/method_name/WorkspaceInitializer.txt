@@ -1,0 +1,18 @@
+prepar root 
+get default root folder 
+prepar server workspac 
+format path 
+prepar flight path workspac 
+prepar specif workspac 
+prepar mission plan workspac 
+prepar area map workspac 
+get workspac locat 
+get flight rout locat 
+get sim scenario locat 
+get drone specif locat 
+get area map locat 
+get mission plan locat 
+get instanc 
+import item 
+import flight path 
+import file 

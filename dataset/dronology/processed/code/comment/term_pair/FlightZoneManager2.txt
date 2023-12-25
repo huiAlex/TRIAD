@@ -1,0 +1,23 @@
+class central:amod
+class manag:compound
+relat class:nsubj
+class uav:nmod
+relat action:obj
+check take:amod
+take land:conj
+check land:amod
+includ check:obj
+includ assign:obj
+check assign:conj
+plan flight:compound
+assign plan:nmod
+plan uav:dep
+flight zone manag new:amod
+construct flight zone manag:dep
+flight next:amod
+flight pend:amod
+abl flight:nsubj
+check abl:dep
+abl takeoff:obl
+occur takeoff:nsubj
+occur order:obl

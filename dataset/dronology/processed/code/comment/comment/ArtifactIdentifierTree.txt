@@ -1,0 +1,21 @@
+base structur artifact identifi build tree part 
+ 
+add tree creat appropri child element enabl get relat identifi artifact identifi 
+ 
+step wise creat child element base part id current 
+parent node exist alreadi 
+sourc origin identifi 
+current current remain part map tree 
+next step child node 
+ 
+artifact identifi current tree children given 
+ 
+artifact identifi current tree children given 
+ 
+match unmodifi set copi identifi tree node get element child treenod match 
+ 
+multi step lookup find child grandchild exact match 
+parent node correspond 
+ 
+log diagnost output 
+ 

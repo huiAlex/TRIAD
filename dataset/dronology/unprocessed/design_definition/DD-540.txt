@@ -1,0 +1,4 @@
+[SUMMARY]
+Store mission plan as JSON
+[DESCRIPTION]
+The MissionPlan shall be specified as a JSON file (see attached example).

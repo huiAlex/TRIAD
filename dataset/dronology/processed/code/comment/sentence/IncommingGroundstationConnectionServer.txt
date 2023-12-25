@@ -1,0 +1,2 @@
+The { IncommingGroundstationConnectionServer} listens on a predefined port for new connections from GCS.
+/

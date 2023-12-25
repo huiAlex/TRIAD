@@ -1,0 +1,7 @@
+/**
+ * Interface for handling communication between server UI and server services.
+ * 
+ * 
+ *  * 
+ */
+

@@ -1,0 +1,5 @@
+getIdentifier
+getUavid
+getData
+getTimestamp
+getType

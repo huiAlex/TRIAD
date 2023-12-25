@@ -1,0 +1,2 @@
+drone command 
+iuav properti updat notifi 

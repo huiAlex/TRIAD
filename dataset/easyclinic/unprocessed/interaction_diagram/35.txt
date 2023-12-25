@@ -1,0 +1,14 @@
+Delete anagrafica doctor 
+
+The operator logs on to the main form (for instance GUIPrincipale) and selects the function of anagrafica doctor management control.
+GUIPrincipaleHandler delegates the task to the instance of the application, GUIAnagraficaMedicoHandler, responsible for managing the service.
+The first step is to obtain a list of all doctors. Therefore, control passes to the instance of MedicoManager through which instances of Doctor retrieves the list and returns it backward up to the instance of GUIAnagraficaMedicoHandler.
+Now, the object displays the list of doctors obtained on the mask on the management of the registration of doctors (instance of GUIAnagraficaMedico).
+The operator selects the doctor to be eliminated and activates the function of disposal of medical data of their monitoring.
+GUIAnagraficaMedicoHandler delegates the task of finding data for the selected doctor to the instance of MedicoManager.
+The application of MedicoManager by the panel Doctor provides for the recovery of such data and will provide the application of GUIAnagraficaMedicoHandler.
+GUIAnagraficaMedicoHandler displays the data on the mask GUIAnagraficaMedico.
+At this point, the operator confirms the changes made, and control passes to the instance of GUIAnagraficaMedicoHandler.
+The delegation eliminates the selected doctor by delegating the task to the instance of MedicoManager through the application of Doctor to provide.
+Control passes to the instance of GUIAnagraficaMedicoHandler, which in turn deals with notifying success by displaying a special message on the screen on the management of the register of doctors (for instance GUIAnagraficaMedico).
+This feature is described by the collaboration diagram in Fig 3.6.

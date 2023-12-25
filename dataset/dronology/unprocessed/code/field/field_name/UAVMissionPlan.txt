@@ -1,0 +1,9 @@
+LOGGER
+activeTask
+uavid
+taskList
+taskList
+homeLocation
+firstWaypointLocation
+coordinationAltitude
+synchMgr

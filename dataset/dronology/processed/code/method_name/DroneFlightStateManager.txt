@@ -1,0 +1,18 @@
+drone flight state manag 
+build state machin 
+set mode ground 
+set mode user control 
+set mode await take clearanc 
+set mode take 
+set mode fli 
+set mode land 
+ground 
+await takeoff clearanc 
+take 
+fli 
+land 
+get status 
+notifi state chang 
+air 
+set mode air 
+add state chang listen 

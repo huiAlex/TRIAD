@@ -1,0 +1,36 @@
+runtim drone type 
+logger 
+current mode 
+command handler 
+command handler 
+instanc 
+
+runtim drone type 
+
+command handler 
+handler id 
+handler id 
+
+
+runtim drone type 
+get instanc 
+set virtual environ 
+set physic environ 
+simul 
+physic 
+regist command handler 
+get command handler 
+unregist command handler 
+
+singleton class 
+get instanc call get instanc set runtim mode flight zone simul physic mode onli set time dure execut 
+simul use soft drone object 
+physic use real drone control use dronekit api 
+ 
+set flightmod simul 
+doe allow flight mode reset initi set 
+ 
+set flightmod physic doe allow flight mode reset initi set 
+ 
+ 
+ 

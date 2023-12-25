@@ -1,0 +1,11 @@
+simulTakeoff:1
+altitudTakeoff:1
+commandIntern:1
+altitudCorrespond:1
+commandTakeoff:1
+longitudLatitud:1
+longitudCurrent:1
+correspondLatitud:1
+correspondLongitud:1
+commandGive:1
+simulIntern:1

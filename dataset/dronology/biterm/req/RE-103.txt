@@ -1,0 +1,11 @@
+returnHome:1
+planSchedul:1
+schedulPlan:1
+cancelPlan:1
+homeReturn:1
+removReturn:1
+returnPend:1
+returnPlan:1
+flightUav:1
+planUav:1
+planFlight:1

@@ -1,0 +1,13 @@
+takeoff command 
+serial version uid 
+
+
+drone id 
+altitud 
+
+
+takeoff command 
+
+command sent gcs take given alitud 
+altitud specifi meter 
+ 

@@ -1,0 +1,73 @@
+plan mission:compound
+manag plan:obj
+plan mission:compound
+instanc mission plan:compound
+instanc uav mission plan:compound
+instanc uav:nmod
+plan mission:compound
+uav plan:nmod
+plan uav:nmod
+plan individu:amod
+plan mission:compound
+compos mission task:obl
+plan entir:amod
+plan mission:compound
+load plan:nsubj
+creat load:advcl
+creat thread:nsubj
+creat check:ccomp
+uav mission plan individu:amod
+check determin:advcl
+determin start:advcl
+task next:amod
+start task:obj
+instanc coordin mission:compound
+construct instanc:dep
+consist mission:nsubj
+consist uav:obl
+task assign:amod
+set task:nmod
+point synchron:compound
+set point:nmod
+task point:conj
+load mission:dep
+file json:compound
+mission file:nmod
+hard code:dep
+uav addit:amod
+add uav:obj
+plan mission:compound
+add plan:obl
+instanc uav mission task:compound
+creat instanc:obj
+creat pass:conj
+pass refer:xcomp
+refer synch point mgr:nmod
+sign task:obj
+task specif:amod
+task uav:compound
+task uav:compound
+task identifi:compound
+sign task:obl
+sign perform:advcl
+task rout:compound
+task waypoint:dep
+task synchron:dep
+task flight pattern:dep
+specif task:compound
+sign specif:dep
+waypoint specif:amod
+specif waypoint:dep
+build synch:iobj
+build point:obj
+task next:amod
+activ task:obj
+mission uav:compound
+task mission:nmod
+task unfinish:amod
+task activ:amod
+task flight:compound
+task pattern:compound
+expand task:obj
+expand coordin take:dep
+expand coordin land:dep

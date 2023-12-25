@@ -1,0 +1,74 @@
+est_ossl_util.c
+ossl_verify_cb
+ossl_init_cert_store_from_raw
+ossl_init_cert_store
+ossl_dump_ssl_errors
+est_convert_p7b64_to_pem
+EST_LOG_INFO
+STACK_OF
+BIO_new_mem_buf
+PEM_X509_INFO_read_bio
+BIO_free
+X509_STORE_set_flags
+BIO_new
+ERR_print_errors
+BIO_flush
+BIO_get_mem_ptr
+EST_LOG_WARN
+BIO_free_all
+STACK_OF
+BIO_new
+BIO_new_mem_buf
+BIO_push
+malloc
+BIO_read
+BIO_free_all
+BIO_new_mem_buf
+d2i_PKCS7_bio
+BIO_free_all
+free
+OBJ_obj2nid
+BIO_new
+BIO_flush
+BIO_get_mem_data
+malloc
+memcpy_s
+BIO_free_all
+PKCS7_free
+ok
+ctx
+store
+raw
+size
+store
+raw1
+size1
+certs_p7
+certs_len
+pem
+int
+X509_STORE_CTX
+X509_STORE
+unsigned
+int
+X509_STORE
+unsigned
+int
+unsigned
+int
+unsigned
+  Authorization routines /
+   This function is used to load an X509_STORE using raw   data from a buffer.  The data is expected to be PEM   encoded.     Returns the number of certs added to the store  /
+   This function is used to populate an X509_STORE structure,   which can be used by the OpenSSL TLS stack to verifying   a TLS peer.  The X509_STORE should already have been allocated.     Parameters:    store   - Pointer to X509_STORE structure to hold the certs    raw1    - char array containing PEM encoded certs to put              into the store.    size1   - Length of the raw1 char array  /
+   This function can be used to output the OpenSSL   error buffer.  This is useful when an OpenSSL   API call fails and you'd like to provide some   detail to the user regarding the cause of the   failure.  /
+!  est_convert_p7b64_to_pem() converts the base64 encoded     PKCS7 response from the EST server into PEM format.           certs_p7 Points to a buffer containing the base64 encoded pkcs7 data.      certs_len Indicates the size of the certs_p7 buffer.      pem Double pointer that will receive the PEM encoded data.        Several of the EST message return data that contains base64 encoded PKCS7     certificates.  This function is used to convert the data to PEM format.     This function will allocate memory pointed to by the pem argument.     The caller is responsible for releasing this memory.  The return value     is the length of the PEM buffer, or -1 on error.        int.  /
+ This loads from a file, a stack of x509/crl/pkey sets /
+ scan over it and pull out the CRL's /
+       Base64 decode the incoming ca certs buffer.  Decoding will       always take up no more than the original buffer.      /
+       Now get the PKCS7 formatted buffer of certificates read into a stack of       X509 certs      /
+       Now that we've decoded the certs, get a reference       the the stack of certs      /
+       Output the certs to a new BIO using the PEM format       /
+       Now convert the BIO to char      /
+               We've enabled CRL checking in the TLS stack.  If               the application hasn't loaded a CRL, then this               verify error can occur.  The peer's cert is valid,               but we can't confirm if it was revoked.  We'll               warn the application.              /
+ since we are just checking the certificates, it is           ok if they are self signed. But we should still warn           the user.          /
+ Continue after extension errors too /

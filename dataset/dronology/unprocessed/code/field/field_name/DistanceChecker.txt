@@ -1,0 +1,7 @@
+LOGGER
+MIN_DIST
+INSTANCE
+messageQueue
+messageQueue
+dataMap
+dataMap

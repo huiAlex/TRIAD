@@ -1,0 +1,3 @@
+messagetyp 
+groundstationid 
+uavid 

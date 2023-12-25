@@ -1,0 +1,21 @@
+Class:GUIPrincipale
+Date: 18/09/2003
+Version: 0 01 000
+
+Description:Make the main form of Easy Clinic2003 Box Tower. This form is responsible for guiding the patient in the choice of information to be displayed.
+
+Attributes:
+btnAnagrafica; Private; Button used to access the Anagrafica section
+btnCartellaClin; Private; Button used to access the Cartella Clinica section
+btnPrenotazioni; Private; Button used to access the Prenotazioni section
+btnUscita; Private; Button used to exit the application
+
+Methods:
+show; Public; View mask
+abilitaAccesso; Public; Manages the event generated when the procedure validation goes well
+laboratories; Public; Manages the event generated when the Operator access to the section devoted to the laboratories
+management; Public; Manages the event generated when the Operator access to the section on the management of the outpatient
+doctors ;Public; Manages the event generated when the Operator access to the section on management data on doctors who are outpatient
+primaVisita ;Public; Manages the event generated when the Operator start the procedure of reservation a first visit
+Tours; Public; Manages the event generated when the Operator access to the section on management visits
+Reservations; Public; Manages the event generated when the Operator access to the section to make a report on them.

@@ -1,0 +1,75 @@
+flight zone manag 
+logger 
+plan pool manag 
+drone fleet 
+ca 
+activ uav 
+await take flight 
+await take flight 
+await land flight 
+await land flight 
+timer 
+
+plan pool manag 
+flight plan 
+flight plan 
+
+drone 
+drone 
+pend plan 
+pend plan 
+uavid 
+plan 
+waypoint 
+plan 
+waypoint 
+chang plan 
+uavid 
+uavid 
+uavid 
+uavid 
+uavid 
+altitud 
+uavid 
+
+flight plan 
+flight plan 
+waypoint 
+waypoint 
+flight plan 
+
+flight zone manag 
+run 
+tri assign uav 
+drone ad 
+drone remov 
+run 
+run 
+check take readi 
+check pend fli 
+check pend fli takeoff 
+check schedul 
+check schedul takeoff 
+check land readi 
+await land 
+get await take flight 
+check complet plan 
+await take 
+plan flight 
+plan flight 
+notifi plan chang 
+return home 
+cancel pend flight 
+paus flight 
+resum flight 
+takeoff 
+emerg stop 
+
+central manag class uav relat action 
+includ take land check assign flight plan uav 
+ 
+construct new flight zone manag 
+ 
+check next pend flight abl takeoff 
+current takeoff occur order pend 
+ 

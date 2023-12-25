@@ -1,0 +1,28 @@
+us server port 
+us server ip 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us tc cert txt 
+us tc cert 
+us tc cert pk 
+us tc cert pem 
+us tc csr 
+us tc key 
+us tc cert 
+us tc key 
+us tc cert 
+us cacert 
+us trust cert 
+us server certkey 
+us tc cert txt 
+us tc cert 
+us tc cert pk 
+us tc cert pem 
+us tc csr 
+us tc key 
+us tc cert 
+us tc key 
+us tc cert 

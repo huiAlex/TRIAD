@@ -1,0 +1,1 @@
+ requir http base client authent est server option request est client submit usernam password use http basic digest authent method section approach desir est client authent tls handshak section est server polici requir addit authent inform section case http base client authent perform tls protect transport section

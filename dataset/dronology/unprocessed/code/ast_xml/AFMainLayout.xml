@@ -1,0 +1,116 @@
+<Class>
+    <Id>139</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFMainLayout</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFMainLayout  /** 
+ * This is the main layout for the Active Flights UI
+ * @author Jinghui Cheng
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>controls</FieldName>
+            <FieldType>AFControlsComponent</FieldType>
+        </Field>
+        <Field>
+            <FieldName>map</FieldName>
+            <FieldType>AFMapComponent</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFMainLayout</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>CssLayout [content=new CssLayout()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;addStyleName;["main_layout"]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;setSizeFull;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>controls.getPanel().getMapView().getViewButton();addClickListener;[e -&gt; {
+  map.setFollow(false);
+  map.setAverageCenter();
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>controls.getPanel().getMapView().getFollowButton();addClickListener;[e -&gt; {
+  map.setFollow(true);
+  map.setFollowZoom(true);
+  List&lt;String&gt; names=controls.getPanel().getChecked();
+  map.followDrones(names);
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponents;[controls, map]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[content]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>continueFollowing</MethodName>
+            <MethodComment>/** 
+ * determines if the map should continue in follow mode
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getControls</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>AFControlsComponent</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAFMap</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>AFMapComponent</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

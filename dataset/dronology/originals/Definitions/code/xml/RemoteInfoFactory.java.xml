@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/RemoteInfoFactory.java" pos:tabs="8"><comment type="line" pos:start="1:1" pos:end="1:41">//package edu.nd.dronology.services.info;</comment>
+<comment type="line" pos:start="2:1" pos:end="2:2">//</comment>
+<comment type="line" pos:start="3:1" pos:end="3:24">//import java.icse.model.util.List;</comment>
+<comment type="line" pos:start="4:1" pos:end="4:2">//</comment>
+<comment type="line" pos:start="5:1" pos:end="5:46">//import edu.nd.dronology.core.flight.Flights;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:50">//import edu.nd.dronology.core.flight.IFlightPlan;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:50">//import edu.nd.dronology.core.icse.model.util.LlaCoordinate;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:45">//import edu.nd.dronology.core.icse.model.util.Waypoint;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:56">//import edu.nd.dronology.services.core.info.FlightInfo;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:60">//import edu.nd.dronology.services.core.info.FlightPlanInfo;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:2">//</comment>
+<comment type="line" pos:start="12:1" pos:end="12:34">//public class RemoteInfoFactory {</comment>
+<comment type="line" pos:start="13:1" pos:end="13:2">//</comment>
+<comment type="line" pos:start="14:1" pos:end="14:68">//	public static FlightInfo createFlightInfo(Flights flights) {</comment>
+<comment type="line" pos:start="15:1" pos:end="15:2">//</comment>
+<comment type="line" pos:start="16:1" pos:end="16:77">//		FlightInfo info = new FlightInfo("FlightInfo", "FlightInfo");</comment>
+<comment type="line" pos:start="17:1" pos:end="17:2">//</comment>
+<comment type="line" pos:start="18:1" pos:end="18:69">//		for (IFlightPlan flt : flights.getCurrentFlights()) {</comment>
+<comment type="line" pos:start="19:1" pos:end="19:65">//			FlightPlanInfo fpl = createPlanInfo(flt);</comment>
+<comment type="line" pos:start="20:1" pos:end="20:51">//			info.addCurrentFlight(fpl);</comment>
+<comment type="line" pos:start="21:1" pos:end="21:2">//</comment>
+<comment type="line" pos:start="22:1" pos:end="22:22">//		}asdsa</comment>
+<comment type="line" pos:start="23:1" pos:end="23:2">//</comment>
+<comment type="line" pos:start="24:1" pos:end="24:77">//		for (IFlightPlan flt : flights.getAwaitingTakeOffFlights()) {</comment>
+<comment type="line" pos:start="25:1" pos:end="25:65">//			FlightPlanInfo fpl = createPlanInfo(flt);</comment>
+<comment type="line" pos:start="26:1" pos:end="26:53">//			info.addAwaitingTakeoff(fpl);</comment>
+<comment type="line" pos:start="27:1" pos:end="27:17">//		}</comment>
+<comment type="line" pos:start="28:1" pos:end="28:2">//</comment>
+<comment type="line" pos:start="29:1" pos:end="29:71">//		for (IFlightPlan flt : flights.getCompletedFlights()) {</comment>
+<comment type="line" pos:start="30:1" pos:end="30:65">//			FlightPlanInfo fpl = createPlanInfo(flt);</comment>
+<comment type="line" pos:start="31:1" pos:end="31:47">//			info.addCompleted(fpl);</comment>
+<comment type="line" pos:start="32:1" pos:end="32:17">//		}</comment>
+<comment type="line" pos:start="33:1" pos:end="33:2">//</comment>
+<comment type="line" pos:start="34:1" pos:end="34:69">//		for (IFlightPlan flt : flights.getPendingFlights()) {</comment>
+<comment type="line" pos:start="35:1" pos:end="35:65">//			FlightPlanInfo fpl = createPlanInfo(flt);</comment>
+<comment type="line" pos:start="36:1" pos:end="36:45">//			info.addPending(fpl);</comment>
+<comment type="line" pos:start="37:1" pos:end="37:17">//		}</comment>
+<comment type="line" pos:start="38:1" pos:end="38:2">//</comment>
+<comment type="line" pos:start="39:1" pos:end="39:28">//		return info;</comment>
+<comment type="line" pos:start="40:1" pos:end="40:2">//</comment>
+<comment type="line" pos:start="41:1" pos:end="41:9">//	}</comment>
+<comment type="line" pos:start="42:1" pos:end="42:2">//</comment>
+<comment type="line" pos:start="43:1" pos:end="43:71">//	private static FlightPlanInfo createPlanInfo(IFlightPlan flt) {</comment>
+<comment type="line" pos:start="44:1" pos:end="44:105">//		FlightPlanInfo flightPlanInfo = new FlightPlanInfo(flt.getFlightID(), flt.getFlightID());</comment>
+<comment type="line" pos:start="45:1" pos:end="45:111">//		String droneId = flt.getAssignedDrone() != null ? flt.getAssignedDrone().getDroneName() : "--";</comment>
+<comment type="line" pos:start="46:1" pos:end="46:16">//		</comment>
+<comment type="line" pos:start="47:1" pos:end="47:8">//	</comment>
+<comment type="line" pos:start="48:1" pos:end="48:16">//		</comment>
+<comment type="line" pos:start="49:1" pos:end="49:62">//		List&lt;Waypoint&gt; waypoints = flt.getWayPoints();</comment>
+<comment type="line" pos:start="50:1" pos:end="50:61">//		LlaCoordinate start = flt.getStartLocation();</comment>
+<comment type="line" pos:start="51:1" pos:end="51:52">//		long startTime = flt.getStartTime();</comment>
+<comment type="line" pos:start="52:1" pos:end="52:48">//		long endTime = flt.getEndTime();</comment>
+<comment type="line" pos:start="53:1" pos:end="53:2">//</comment>
+<comment type="line" pos:start="54:1" pos:end="54:51">//		flightPlanInfo.setDroneId(droneId);</comment>
+<comment type="line" pos:start="55:1" pos:end="55:55">//		flightPlanInfo.setWaypoints(waypoints);</comment>
+<comment type="line" pos:start="56:1" pos:end="56:55">//		flightPlanInfo.setStartLocation(start);</comment>
+<comment type="line" pos:start="57:1" pos:end="57:55">//		flightPlanInfo.setStartTime(startTime);</comment>
+<comment type="line" pos:start="58:1" pos:end="58:51">//		flightPlanInfo.setEndTime(endTime);</comment>
+<comment type="line" pos:start="59:1" pos:end="59:2">//</comment>
+<comment type="line" pos:start="60:1" pos:end="60:38">//		return flightPlanInfo;</comment>
+<comment type="line" pos:start="61:1" pos:end="61:9">//	}</comment>
+<comment type="line" pos:start="62:1" pos:end="62:2">//</comment>
+<comment type="line" pos:start="63:1" pos:end="63:3">//}</comment>
+</unit>

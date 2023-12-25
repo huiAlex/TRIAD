@@ -1,0 +1,11 @@
+laboratoriAnagrafica:1
+laboratoriRegist:1
+informRetriev:1
+containInform:1
+guiAnagrafica:2
+anagraficaLaboratori:1
+informContain:1
+retrievInform:1
+selectLaboratori:1
+laboratoriSelect:1
+registLaboratori:1

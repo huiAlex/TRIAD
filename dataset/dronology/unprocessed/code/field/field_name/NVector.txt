@@ -1,0 +1,6 @@
+SEMI_MAJOR
+SEMI_MINOR
+x
+y
+z
+altitude

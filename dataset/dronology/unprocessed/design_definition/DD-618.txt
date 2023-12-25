@@ -1,0 +1,4 @@
+[SUMMARY]
+Log all connection related events
+[DESCRIPTION]
+Each connection request  handshake and mode change message shall be logged

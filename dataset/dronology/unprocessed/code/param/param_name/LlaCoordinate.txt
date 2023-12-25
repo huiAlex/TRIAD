@@ -1,0 +1,7 @@
+latitude
+longitude
+altitude
+obj
+altitude
+latitude
+longitude

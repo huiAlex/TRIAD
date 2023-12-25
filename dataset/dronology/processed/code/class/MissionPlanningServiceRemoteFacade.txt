@@ -1,0 +1,37 @@
+mission plan servic remot facad 
+serial version uid 
+logger 
+instanc 
+
+mission plan servic remot facad 
+
+mission 
+info 
+id 
+id 
+content 
+listen 
+listen 
+itemid 
+mission 
+map 
+
+
+mission plan servic remot facad 
+get instanc 
+execut mission plan 
+execut mission plan 
+cancel mission 
+request server 
+transmit server 
+add item chang listen 
+remov item chang listen 
+get item 
+creat item 
+delet item 
+execut mission plan 
+
+remot facad handl mission plan initi implement mission plan capabl 
+allow retriev send mission plan json string dronolog 
+ 
+ 

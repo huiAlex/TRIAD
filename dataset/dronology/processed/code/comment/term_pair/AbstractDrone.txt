@@ -1,0 +1,11 @@
+class abstract:compound
+class base:compound
+drone virtual:amod
+virtual physic:conj
+drone physic:amod
+class drone:obl
+coordin base:compound
+set coordin:xcomp
+base uniqu:amod
+coordin base:nsubj
+get coordin:ccomp

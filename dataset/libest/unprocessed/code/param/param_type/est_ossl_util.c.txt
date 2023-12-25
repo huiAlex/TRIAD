@@ -1,0 +1,11 @@
+int
+X509_STORE_CTX
+X509_STORE
+unsigned
+int
+X509_STORE
+unsigned
+int
+unsigned
+int
+unsigned

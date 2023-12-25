@@ -1,0 +1,17 @@
+identifi structur:amod
+hold object:nsubj
+refer object:nsubj
+hold part:obj
+hold refer:conj
+hold turn:obl
+hold part:obj
+part form:ccomp
+form identifi:obj
+artifact identifi root:compound
+root child:conj
+artifact identifi child:compound
+map artifact identifi:obl
+identifi artifact:compound
+return identifi:dep
+return concaten:acl
+return separ:dep

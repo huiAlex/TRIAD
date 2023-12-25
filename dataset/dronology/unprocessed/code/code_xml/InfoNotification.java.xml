@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="src/InfoNotification.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:47">package <name pos:start="1:9" pos:end="1:46"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:46">message</name></name>;</package>
+
+<class pos:start="3:1" pos:end="10:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> class <name pos:start="3:14" pos:end="3:29">InfoNotification</name> <block pos:start="3:31" pos:end="10:1">{
+
+	
+	<comment type="line" pos:start="6:9" pos:end="6:17">//message</comment>
+	<comment type="line" pos:start="7:9" pos:end="7:37">//severity warning/info/error</comment>
+	<comment type="line" pos:start="8:9" pos:end="8:24">//type "battery"</comment>
+	<comment type="line" pos:start="9:9" pos:end="9:30">// infrastrucuture... </comment>
+}</block></class>
+</unit>

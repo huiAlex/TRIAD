@@ -1,0 +1,3 @@
+longitudLatitud:1
+specifiWaypoint:1
+specifiUse:1

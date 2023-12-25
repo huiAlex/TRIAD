@@ -1,0 +1,1 @@
+sign new flight plan complet previous flight uav pend flight plan reach final waypoint current flight plan singl uav flight plan schedul execut next assign flight plan 

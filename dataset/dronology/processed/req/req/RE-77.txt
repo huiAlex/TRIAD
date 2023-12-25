@@ -1,0 +1,1 @@
+waypoint definit waypoint specifi use coordin includ longitud latitud altitud 

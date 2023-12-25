@@ -1,0 +1,1 @@
+uav state messag format json object contain mandatori option element 

@@ -1,0 +1,46 @@
+function calcul averag latitud 
+averag latitud 
+split node json input vector bank river vector 
+river vector point doubl repres bank river 
+function convert river bank vector contain gps coordin vector cartesian coordin calcul dure dynam rout generat algorithm 
+avg latitud gps bank river bank cartesian coordin 
+function convert riverbank node cartesian coordin gps coordin 
+avg latitud cartesian bank river bank gps coordin 
+function convert rout primit cartesian coordin gps coordin 
+avg latitud rout primit cartesian coordin 
+function convert rout primit gps coordin cartesian coordin 
+rout primit gps coordin 
+function verifi input order node json file ensur expect order 
+transform expect form necessari 
+ 
+function take river bank creat json file make sure necessari order 
+gps bank gps bank 
+function split riverbank node section drone search return vector vector 
+correspond segment drone search vector corresond bank river 
+vector correspond section drone search 
+function helper function make river vector 
+form vector node bank river except veri vector side 
+counter bank 
+function helper function make river vector 
+form vector node bank river except vector side 
+counter bank 
+function helper function make river vector 
+make vector node bank river 
+counter counter river segment bank bank 
+function make polygon entir river segment 
+allow check point contain river segment 
+bank path doubl polygon river segment 
+function creat path doubl shape repres subseg riverseg 
+use check point insid shape determin stop point search rout 
+vector path doubl shape repres subseg riverseg 
+function helper function make river segment 
+add node first bank river shape 
+counter river segment 
+function helper function make river segment 
+add node second bank river shape 
+counter river segment 
+function helper function make river segment 
+add remain node side river make subseg riverseg 
+counter counter river segment 
+function generat imag waypoint specifi distanc rout primit rout aperatur height overlap factor 
+function print inform python visual river vector rout 

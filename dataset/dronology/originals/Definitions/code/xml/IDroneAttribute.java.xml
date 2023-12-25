@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IDroneAttribute.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:38">package <name pos:start="1:9" pos:end="1:37"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name></name>;</package>
+
+<interface pos:start="3:1" pos:end="14:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> interface <name pos:start="3:18" pos:end="3:35"><name pos:start="3:18" pos:end="3:32">IDroneAttribute</name><parameter_list pos:start="3:33" pos:end="3:35">&lt;<parameter pos:start="3:34" pos:end="3:34"><name pos:start="3:34" pos:end="3:34">T</name></parameter>&gt;</parameter_list></name> <block pos:start="3:37" pos:end="14:1">{
+	
+	
+	<decl_stmt pos:start="6:9" pos:end="6:73"><decl pos:start="6:9" pos:end="6:72"><type pos:start="6:9" pos:end="6:27"><specifier pos:start="6:9" pos:end="6:14">public</specifier> <specifier pos:start="6:16" pos:end="6:20">final</specifier> <name pos:start="6:22" pos:end="6:27">String</name></type> <name pos:start="6:29" pos:end="6:53">ATTRIBUTE_BATTERY_VOLTAGE</name> <init pos:start="6:55" pos:end="6:72">= <expr pos:start="6:57" pos:end="6:72"><literal type="string" pos:start="6:57" pos:end="6:72">"batteryVoltage"</literal></expr></init></decl>;</decl_stmt>
+	
+	<decl_stmt pos:start="8:9" pos:end="8:60"><decl pos:start="8:9" pos:end="8:59"><type pos:start="8:9" pos:end="8:27"><specifier pos:start="8:9" pos:end="8:14">public</specifier> <specifier pos:start="8:16" pos:end="8:20">final</specifier> <name pos:start="8:22" pos:end="8:27">String</name></type> <name pos:start="8:29" pos:end="8:46">ATTRIBUTE_LOCATION</name> <init pos:start="8:48" pos:end="8:59">= <expr pos:start="8:50" pos:end="8:59"><literal type="string" pos:start="8:50" pos:end="8:59">"location"</literal></expr></init></decl>;</decl_stmt>
+
+	<function_decl pos:start="10:9" pos:end="10:24"><type pos:start="10:9" pos:end="10:14"><name pos:start="10:9" pos:end="10:14">String</name></type> <name pos:start="10:16" pos:end="10:21">getKey</name><parameter_list pos:start="10:22" pos:end="10:23">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="12:9" pos:end="12:21"><type pos:start="12:9" pos:end="12:9"><name pos:start="12:9" pos:end="12:9">T</name></type> <name pos:start="12:11" pos:end="12:18">getValue</name><parameter_list pos:start="12:19" pos:end="12:20">()</parameter_list>;</function_decl>
+
+}</block></interface>
+</unit>

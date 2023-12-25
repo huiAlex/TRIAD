@@ -1,0 +1,223 @@
+us3496.c
+us3496_logger_stderr
+us3496_clean
+us3496_start_server
+path_seg_supported
+us3496_init_suite
+us3496_destroy_suite
+client_manual_cert_verify
+us3496_test1
+us3496_test2
+us3496_test3
+us3496_test4
+us3496_test5
+us3496_test6
+us3496_test7
+us3496_test8
+us3496_test9
+us3496_test10
+us3496_test11
+us3496_add_suite
+EnterCriticalSection
+vfprintf
+fflush
+LeaveCriticalSection
+st_start
+SLEEP
+SLEEP
+read_binary_file
+est_client_init
+est_client_set_server
+printf
+snprintf
+printf
+system
+us3496_clean
+us3496_start_server
+SLEEP
+st_stop
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+SLEEP
+read_binary_file
+read_private_key
+est_client_init
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+CU_ASSERT
+CU_add_suite
+InitializeCriticalSection
+est_init_logger
+format
+l
+cur_cert
+openssl_cert_error
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+char
+va_list
+X509
+int
+int
+int
+X509
+int
+EST_UT_MAX_CMD_LEN
+CLIENT_UT_CACERT
+CLIENT_UT_PUBKEY
+US3496_SERVER_PORT
+US3496_SERVER_IP
+US3496_UIDPWD_GOOD
+US3496_UID
+US3496_PWD
+US3496_CACERTS
+US3496_TRUST_CERTS
+US3496_SERVER_CERTKEY
+US3496_CACERTS
+US3496_TRUST_CERTS
+US3496_SERVER_CERTKEY
+US3496_ENROLL_URL_BA
+US3496_PKCS10_CT
+US3496_PKCS10_RSA2048
+PATH_SEG_ALL_VALID_CHARS
+path_segment_too_long
+path_segment_max
+------------------------------------------------------------------   us3496.c - Unit Tests URI path segment extension support      March, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   max command line length when generating system commands  /
+   The CA certificate used to verify the EST server.  Grab it from the server's directory  /
+ #define CLIENT_UT_CACERT "../../example/server/estCA/cacert.crt" /
+   This routine is called when CUnit initializes this test   suite.    1. Generate the keypair to be used for this EST Client UT suite  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   This test case tests the set server with valid parameters,   NO path segment  /
+   pass down path segment that is valid  /
+   pass down path segment that contains 2 segments, should fail  /
+   all valid characters  /
+   pass down path segment that is invalid. invalid character.  /
+   pass down path segment that is too long (129)  /
+   pass down a path segment that is equal to an operation (cacerts)  /
+   pass down a path segment that contains an operation (cacerts),   in this case it's at the front of the string  /
+   pass down a path segment that is the empty string.   This should fail.  /
+   pass down a path segment that contains a ':'.   This should pass.  /
+   pass down path segment that is too long (129)  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Read in the CA certificates      /
+       check to see if path segment support has been compiled in      /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+ add a suite to the registry /
+      check to see if path segment support has been compiled in     /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /

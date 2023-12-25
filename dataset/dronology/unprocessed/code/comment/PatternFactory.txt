@@ -1,0 +1,12 @@
+/**
+ * Factory class for predefined {@link IFlightPattern}.
+ * 
+ *  *
+ */
+
+/**
+	 * 
+	 * 	 *          The {@link PatternType} of the flight pattern to create.
+	 * 	 * 	 * @{@link IllegalArgumentException} in case the pattern is not supported.
+	 */
+

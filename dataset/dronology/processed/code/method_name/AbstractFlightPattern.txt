@@ -1,0 +1,5 @@
+initi 
+creat sync point 
+add sync point 
+add task 
+get task 

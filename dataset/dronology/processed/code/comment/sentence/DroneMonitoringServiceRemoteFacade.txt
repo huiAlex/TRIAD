@@ -1,0 +1,2 @@
+Remote facade for monitoring UAVs  Allows registering { IRemoteMonitoringMessageHandler} to subscribe to certain message types or topics        /
+/

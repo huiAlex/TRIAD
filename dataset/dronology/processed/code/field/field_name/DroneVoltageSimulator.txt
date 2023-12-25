@@ -1,0 +1,4 @@
+voltag 
+batteri state 
+simul batteri drain volt 
+check point time 

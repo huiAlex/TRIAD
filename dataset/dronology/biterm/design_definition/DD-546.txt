@@ -1,0 +1,9 @@
+pointSynchron:1
+planExecut:1
+executMission:1
+cancelPlan:1
+cancelRequest:1
+planPend:1
+removPlan:1
+cancelMission:1
+planFlight:1

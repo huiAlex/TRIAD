@@ -1,0 +1,4 @@
+synch mgr 
+uav mission 
+current locat 
+target locat 

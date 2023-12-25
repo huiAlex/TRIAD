@@ -1,0 +1,4 @@
+deserialize
+deserializeBatteryStatus
+deserializeLLACoordinate
+deserializeVector3D

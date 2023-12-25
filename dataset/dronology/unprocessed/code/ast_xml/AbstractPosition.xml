@@ -1,0 +1,200 @@
+<Class>
+    <Id>146</Id>
+    <Package>edu.nd.dronology.core.coordinate</Package>
+    <ClassName>AbstractPosition</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AbstractPosition  /** 
+ * A terrestrial position in WGS-84. this class implements utility methods for subclasses.
+ * @author Michael Murphy
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>toNVector</MethodName>
+            <MethodComment>/** 
+ * Convert this position if necessary to an NVector.
+ * @return a terrestrial position defined an NVector and an altitude.
+ */
+</MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toPVector</MethodName>
+            <MethodComment>/** 
+ * Convert this position if necessary to a PVector.
+ * @return a terrestrial position defined an X, Y and Z coordinate.
+ */
+</MethodComment>
+            <ReturnType>PVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toLlaCoordinate</MethodName>
+            <MethodComment>/** 
+ * Convert this position if necessary to an LlaCoordinate.
+ * @return a terrestrial position defined by a latitude, longitude, andaltitude.
+ */
+</MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>distance</MethodName>
+            <MethodComment>/** 
+ * Calculates the distance from this position to other position. This is the distance a laser bean would travel to reach the other point.
+ * @param other the position of the point to calculate the distance to.
+ * @return the distance to the other position in meters
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>AbstractPosition other</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>travelDistance</MethodName>
+            <MethodComment>/** 
+ * Calculates the distance a drone would realistically travel to get from this position to the other position. Warning! this code is slow. The time it takes to run is proportional to the distance from this to other.
+ * @param other the position of the point to calculate the distance to.
+ * @return the distance a drone would need to travel to get to the otherposition in meters
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>AbstractPosition other</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toRotMatrix</MethodName>
+            <MethodComment>/** 
+ * Calculate the rotation matrix representation of this position. This rotation matrix can take displacement vectors in ECEF coordinates and rotate them into NED coordinates at this position. This position cannot be at the poles as north and east directions don't make sense there. This is the matrix inverse of equation 11 in &lt;a href= "http://www.navlab.net/Publications/A_Nonsingular_Horizontal_Position_Representation.pdf"&gt;this paper.&lt;/a&gt;
+ * @return a 3x3 rotation matrix where the rows can be interpreted asunit vectors pointing in the north, east and down directions respectively.
+ */
+</MethodComment>
+            <ReturnType>RealMatrix</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>NVector [n=this.toNVector()]</InnerVar>
+                <InnerVar>Vector3D [nvec=new Vector3D(n.getX(),n.getY(),n.getZ())]</InnerVar>
+                <InnerVar>Vector3D [z=new Vector3D(0,0,1)]</InnerVar>
+                <InnerVar>Vector3D [east=z.crossProduct(nvec).normalize()]</InnerVar>
+                <InnerVar>Vector3D [north=nvec.crossProduct(east).normalize()]</InnerVar>
+                <InnerVar>Vector3D [down=nvec.negate()]</InnerVar>
+                <InnerVar>double[][] [data={north.toArray(),east.toArray(),down.toArray()}]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>findNed</MethodName>
+            <MethodComment>/** 
+ * Calculates the number of meters North, East and down (NED coordinates) from this position to another global position.
+ * @param other the terrestrial position to transform into NED coordinates using this position as the origin
+ * @return the NED coordinates as a vector with 3 elements where the first(0th) element is the number of meters north, the second element is the number of meters east and the third element is the number of meters down.
+ */
+</MethodComment>
+            <ReturnType>Vector3D</ReturnType>
+            <ParameterList>
+                <ParameterType>AbstractPosition other</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Vector3D [self=makeVector3D(this)]</InnerVar>
+                <InnerVar>Vector3D [otherVec=makeVector3D(other)]</InnerVar>
+                <InnerVar>Vector3D [displacement=otherVec.subtract(self)]</InnerVar>
+                <InnerVar>RealMatrix [tmp=new Array2DRowRealMatrix(displacement.toArray())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>findLla</MethodName>
+            <MethodComment>/** 
+ * Calculates the latitude, longitude and altitude of a relative position given as the number of meters North, East, and down from this position.
+ * @param ned a vector with three elements where the first is the number of meters north, the second is the number of meters east, and the third is the number of meters down.
+ * @return the latitude longitude and altitude of the other position
+ */
+</MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType>Vector3D ned</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Vector3D [self=makeVector3D(this)]</InnerVar>
+                <InnerVar>RealMatrix [tmp=new Array2DRowRealMatrix(ned.toArray())]</InnerVar>
+                <InnerVar>Vector3D [d=new Vector3D(this.toRotMatrix().transpose().multiply(tmp).getColumn(0))]</InnerVar>
+                <InnerVar>Vector3D [p=self.add(d)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>makeVector3D</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Vector3D</ReturnType>
+            <ParameterList>
+                <ParameterType>AbstractPosition pos</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>PVector [p=pos.toPVector()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

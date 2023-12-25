@@ -1,0 +1,31 @@
+est log info 
+stack 
+bio new mem buf 
+pem info read bio 
+bio free 
+store set flag 
+bio new 
+err print error 
+bio flush 
+bio get mem ptr 
+est log warn 
+bio free 
+stack 
+bio new 
+bio new mem buf 
+bio push 
+malloc 
+bio read 
+bio free 
+bio new mem buf 
+pkcs bio 
+bio free 
+free 
+obj obj nid 
+bio new 
+bio flush 
+bio get mem data 
+malloc 
+memcpi 
+bio free 
+pkcs free 

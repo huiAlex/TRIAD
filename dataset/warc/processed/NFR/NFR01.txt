@@ -1,0 +1,1 @@
+nfr core function warc tool specif warc writer reader implement comprehens standalon general purpos softwar librari libwarc 

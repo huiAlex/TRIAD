@@ -1,0 +1,4 @@
+serialVersionUID
+coordinate
+destinationReached
+approachingspeed

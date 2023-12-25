@@ -1,0 +1,71 @@
+flight plan 
+serial version uid 
+logger 
+flight number 
+flight id 
+way point 
+way point 
+start locat 
+end locat 
+status 
+drone 
+start time 
+end time 
+uavid 
+
+waypoint 
+lla coordin 
+lla coordin 
+manag drone 
+
+plan 
+way point 
+uavid 
+plan 
+way point add 
+drone 
+uavid 
+
+waypoint 
+waypoint 
+manag drone 
+
+string 
+flight plan 
+flight plan 
+get flight id 
+get start locat 
+get end locat 
+get assign drone 
+clear assign drone 
+set status fli 
+set status complet 
+get status 
+string 
+get way point 
+get start time 
+get end time 
+get design drone id 
+complet 
+get takeoff altitud 
+waypoint reach 
+set design drone id 
+
+store flight inform includ waypoint current status 
+ 
+ 
+ 
+ 
+ 
+return drone assign flight plan 
+return null drone assign 
+ 
+ 
+set flightplan status complet call 
+ 
+return current flightplan status plan fli complet 
+return way point 
+return start time flight 
+ 
+eturn end time flight 
+ 

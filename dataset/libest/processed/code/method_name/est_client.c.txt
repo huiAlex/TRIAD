@@ -1,0 +1,58 @@
+est client set cert key 
+est client req sign 
+popul request 
+est generat pkcs 
+est client cacert verifi cb 
+est client remov crls 
+decod cacert 
+creat pkcs 
+verifi cacert resp 
+cert verifi cb 
+est client init ssl ctx 
+est client generat auth digest 
+est client retriev credenti 
+est client add auth hdr 
+est client build cacert header 
+est client build csr header 
+est client send csrattr request 
+est client build enrol header 
+est client build reenrol header 
+est client send enrol request 
+est client check 
+est client clear csr pop 
+est client enrol req 
+est client enrol pkcs 
+est client enrol cn 
+est client curl raw toupper 
+est client curl raw equal 
+est client curl raw nequal 
+est client hostmatch 
+est client cert hostcheck 
+est client verifyhost 
+est client check fqdn 
+est client connect 
+est client disconnect 
+est client send cacert request 
+est client set uid pw 
+est client enrol csr 
+est client enrol 
+est client provis cert 
+est client reenrol 
+est client copi enrol cert 
+est client get cacert 
+est client copi cacert 
+est client get csrattr 
+est client enabl srp 
+est client set auth 
+est client set auth cred cb 
+est client enabl basic auth hint 
+est client init 
+est client pars path seg 
+est client set server 
+est client set proxi 
+est client set sign digest 
+est client copi retri 
+est client forc pop 
+est client unforc pop 
+est client set read timeout 
+est client get http status 

@@ -1,0 +1,4 @@
+[SUMMARY]
+Simulate land in internal simulator
+[DESCRIPTION]
+When given a land command the _InternalSimulator_ shall immediately change the UAV's current altitude to the ground altitude.

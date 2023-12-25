@@ -1,0 +1,1 @@
+gui resoconto abstract class use defin class gui resoconto visit gui resoconto esami gui resoconto prenotazioni grid risultati grid result report shown btn ricerca button start search visit examin reserv outpati btn uscita button allow return mask repres gui principal visualizza risultati search result conduct oper report activ held outpati 

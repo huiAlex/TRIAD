@@ -1,0 +1,12 @@
+servic uav:obl
+messag monitor:amod
+allow messag:nsubj
+servic allow:parataxis
+allow regist:xcomp
+regist remot monitor messag handler:obj
+regist subscrib:xcomp
+type certain:amod
+type messag:compound
+subscrib type:obl
+subscrib topic:obl
+type topic:conj

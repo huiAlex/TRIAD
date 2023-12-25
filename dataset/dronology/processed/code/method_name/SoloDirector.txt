@@ -1,0 +1,14 @@
+fli next point 
+get way point 
+solo director 
+set way point 
+clear way point 
+way point 
+fli next way point 
+safeti direct 
+clear current way point 
+add way point 
+fli home 
+return home 
+readi land 
+readi take 

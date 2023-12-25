@@ -1,0 +1,26 @@
+function calcul angl point 
+angl point 
+function find midpoint point 
+midpoint point 
+ 
+function take point gps coordin translat cartesian coordin 
+latitud longitud central latitud latitud point river 
+gps point central latitud point doubl cartesian coordin 
+function perform revers oper gps cartesian 
+take point cartesian coordin translat gps coordin 
+cartesian point central latitud point doubl gps coordin 
+function find intersect point line segment line line intersect point line segment 
+function find cartesian distanc point point point cartesian distanc 
+function use distanc ratio calcul point given distanc path point anoth point point distanc ratio desir distanc distanc point 
+function calcul total cartesian distanc rout primit rout cartesian distanc 
+function calcul total cartesian distanc river bank bank cartesian distanc 
+function calcul area irregular polygon shape river segment segment area 
+function calcul maximum minimum coordin point simpl bound rectangl river segment bank vector contain maximum minimum coordin point 
+function find minimum maximum point river bank min point max point point 
+function find closest point opposit rout primit point oppos side closest oppos point 
+function insert addit node river bank node everi aperatur widthoverlap factor 
+bank new point aperatur width overlap factor river segment adjust river bank 
+function project point river bank river segment make point rout primit 
+bank new point aperatur width overlap factor river segment rout primit 
+function creat rout primit parallel riverbank insid river segment 
+aperatur width overlap factor bank rout primit object riverbank 

@@ -1,0 +1,113 @@
+------------------------------------------------------------------   us897.c - Unit Tests for User Story 897 - Client CACerts      June, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   max command line length when generating system commands  /
+   The CA certificate used to verify the EST server.  Grab it from the server's directory  /
+ #define CLIENT_UT_CACERT "../../example/server/estCA/cacert.crt" /
+   This routine is called when CUnit initializes this test   suite.    1. Generate the keypair to be used for this EST Client UT suite  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   This test case initializes an EST client context   using local CA certs, no client cert, and a valid public key,   no userid and password.  /
+   This test case initializes an EST client context   using no local CA certs.  This is expected to be a successful initialization   since the local CA trust anchor certs are not mandatory.  /
+   This test case initializes an EST client context   using a local CA cert, no client cert,   and a valid public key, no userid and password.  /
+   This test case initializes an EST client context   using explict CA certs, no client cert, and a valid public key,   no userid and password.  /
+       Read in the CA certificates      /
+       Read in the private key file      /
+   This test case initializes an EST client context   using explict CA certs, no client cert, a public key,   and a userid and password.  /
+   This test case initializes an EST client context   using explict CA certs, no client cert, a public key,   and a userid and NO password.  /
+   This test case tests the set server with valid parameters  /
+   This test case tests the set server with invalid parameters  /
+   This test case tests the Get CACerts request    /
+   This test case tests the Get CACerts request with invalid input parameters    /
+   This test case tests the CA cert response verification function.  It will   verify a CAcert response containing a single certificate  /
+   This test case tests the CA cert response verification function.  It will   verify a CAcert response containing a single chain with multiple certs  /
+   This test case tests the CA cert response verification function.  It will   verify a CAcert response containing a single chain with multiple certs and   a missing cert in the chain.    /
+   This test case tests the CA cert response verification function.  It will   verify a CAcert response containing a single chain with multiple certs    with the intermediate cert expired.  /
+   This test case tests the CA cert response verification function.  It will   verify a CAcert response containing a multiple chains with multiple certs and   a CRL block.  The CRLs should be ignored.    /
+   This test case tests the SSL read set timeout API.   The setting of the min, the max, a value in between, and a value   beyond the max.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Null server name      /
+       server too long      /
+        port num less than 0      /
+       port num greater than max      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       output the retrieved ca certs and compare to what they should be      /
+       make sure that the context is no longer valid and the EST client is       back to the uninitialized state      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       Stop the existing server.  Need to ensure that the server       is using a specific CA cert chain.      /
+       Spin up a new instance of the EST server       using a CA cert chain that contains just one cert      /
+       Read in thestartup  CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Stop the existing server.  Need to ensure that the server       is using a specific CA cert chain.      /
+       Spin up a new instance of the EST server       using a CA cert chain that contains just one cert      /
+       Read in thestartup  CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Stop the existing server.  Need to ensure that the server       is using a specific CA cert chain.      /
+       Spin up a new instance of the EST server       using a CA cert chain that contains just one cert      /
+       Read in thestartup  CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Stop the existing server.  Need to ensure that the server       is using a specific CA cert chain.      /
+       Spin up a new instance of the EST server       using a CA cert chain that contains just one cert      /
+       Read in thestartup  CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Stop the existing server.  Need to ensure that the server       is using a specific CA cert chain.      /
+       Spin up a new instance of the EST server       using a CA cert chain that contains just one cert      /
+       Read in the startup CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+       Read in the startup CA certificates      /
+       Read in the private key file      /
+ Now proceed on with a GET /cacerts to verify that nothing gets broken /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid length       for the size of the CA certs buffer      /
+       output the retrieved ca certs and compare to what they should be      /
+ add a suite to the registry /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /
+           Shouldn't be in here, but if we are, malloc and call          /
+           est should fail indicating that there's no cert to provide          /
+           Shouldn't be in here, but if we are, malloc and call          /
+           est should fail indicating that there's no cert to provide          /
+           Shouldn't be in here, but if we are, malloc and call          /
+           est should fail indicating that there's no cert to provide          /
+           Shouldn't be in here, but if we are, malloc and call          /
+           est should fail indicating that there's no cert to provide          /
+        (NULL == CU_add_test(pSuite, "EST Client Init: local CA, explicit CA, client CA, private key", us897_test4)) || /
+        (NULL == CU_add_test(pSuite, "EST Client Init: local CA, no userid/password", us897_test8)) || /

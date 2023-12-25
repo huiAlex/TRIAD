@@ -1,0 +1,10 @@
+relatVisit:3
+storeDatum:1
+relatInform:1
+informRetriev:1
+datumStore:1
+visitRelat:3
+retrievInform:1
+holdVisit:1
+visitHold:1
+informRelat:1

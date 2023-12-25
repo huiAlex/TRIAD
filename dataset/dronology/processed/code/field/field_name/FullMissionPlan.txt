@@ -1,0 +1,5 @@
+logger 
+uav mission plan 
+uav mission plan 
+synch point mgr 
+mission 

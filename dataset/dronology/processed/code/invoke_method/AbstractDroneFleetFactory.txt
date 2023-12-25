@@ -1,0 +1,4 @@
+initi drone 
+get latitud 
+get longitud 
+get altitud 

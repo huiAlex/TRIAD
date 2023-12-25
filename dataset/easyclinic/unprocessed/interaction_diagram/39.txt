@@ -1,0 +1,9 @@
+Access section patient failed (by code of Hospital Card)
+
+The operator logs on to the form on the management section of the patient (body of GUILoginPaziente).
+The operator inserts the code from the Hospital Card of the patient who has made a request and selects the function validation.
+Control then passes to the application of GUILoginPazienteHandler, which delegates to the instance of HospitalCardManager the task of managing the service.
+The latter is responsible for validating the data entered by the operator through the application of the Hospital Card.
+If the validation fails, the transaction is notified backward up to the instance of GUILoginPazienteHandler.
+GUILoginPazienteHandler shall display an error message on screen access (application of GUILoginPaziente).
+This feature has been described by the sequence diagram of Fig 3.14.

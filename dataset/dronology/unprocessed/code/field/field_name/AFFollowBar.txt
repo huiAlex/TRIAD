@@ -1,0 +1,6 @@
+serialVersionUID
+totalLayout
+stopFollowingButton
+textLabel
+smallText
+UAVNames

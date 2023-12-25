@@ -1,0 +1,17 @@
+coordin takeoff pattern 
+
+
+uav mission 
+current locat 
+target locat 
+
+uav mission plan 
+lla coordin 
+lla coordin 
+
+coordin takeoff pattern 
+expand flight pattern 
+creat sync point 
+
+predefin pattern coordin take expand part pattern task mission plan 
+ 

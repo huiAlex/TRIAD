@@ -1,0 +1,10 @@
+/**
+	 * Given a routename extract the first way point
+	 * 
+	 * 	 * 	 */
+
+/**
+	 * Get the home coordinates of *this* UAV i.e., uavID (class variable)
+	 * 
+	 * 	 * 	 * 	 */
+

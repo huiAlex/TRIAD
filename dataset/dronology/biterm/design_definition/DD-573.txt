@@ -1,0 +1,3 @@
+uavSimul:2
+uavActiv:1
+uavAssign:1

@@ -1,0 +1,1 @@
+goto waypoint command includ target latitud longitud altitud coordin 

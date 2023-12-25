@@ -1,0 +1,2 @@
+Provider implementation for { IFlightRoute}.
+Details see { AbstractItemPersistenceProvider}        /

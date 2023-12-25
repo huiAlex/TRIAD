@@ -1,0 +1,9 @@
+uav physic:amod
+represent uav:nmod
+uav interact:acl
+hardwar real:amod
+interact hardwar:obl
+interact sitl:obl
+hardwar sitl:conj
+interact simul:iobj
+simul uav:appos

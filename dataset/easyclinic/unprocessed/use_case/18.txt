@@ -1,0 +1,32 @@
+Use case:
+input anagrafica of patient
+
+Description:
+It allows the operator to enter the anagrafica of a patient who contact the outpatient for the first time.
+
+Preconditions:
+The Operator has an interest in record the anagrafica of a new patient after the surgery and before booking for a Visit
+The Operator has been recognized by system (See UcValOp)
+The Patient issued to the form S A R  with the section about anagrafica successfully completed
+
+Postconditions:
+The data in the SIO not be modified
+The anagrafica of the patient is correctly maintained in memory and stored in the SIO only end of the reservation of the first visit
+
+Sub-flows:
+1 View the mask for input of necessary information
+2 Inserts data about anagrafica of Patient
+3 Confirm input
+4 Verify the data inserted by operator
+5 Build and assigns Hospital Card (See BrCreCar)
+10 First visit
+
+Alternative flows:
+Invalid data set 
+   4 1 Display a message showing the data deemed invalid
+   4 2 Reinserts running from 1 step, underpinned the fields of the form with data inserted by operator
+Operator cancels function 
+insertion 
+   3 1 ends the execution of use case with failure
+    2 1 The anagrafica of a patient is characterized by following data: name, surname, sex, code, tax, date of birth, place of birth, province of birth, place of home address, province of residence address, ZIP code, additional telephone and Notes.
+      NB: In italics are highlighted data, Optional whose inclusion does not affect on the correct completion of the operation

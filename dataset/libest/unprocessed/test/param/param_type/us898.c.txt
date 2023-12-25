@@ -1,0 +1,6 @@
+char
+va_list
+int
+int
+X509
+int

@@ -1,0 +1,4 @@
+groundstationid 
+uavid 
+mode 
+type 

@@ -1,0 +1,15 @@
+ID
+latitude
+longitude
+altitude
+batteryLevel
+velocity
+status
+latitude
+longitude
+altitude
+batteryLevel
+velocity
+velocity
+groundstationId
+home

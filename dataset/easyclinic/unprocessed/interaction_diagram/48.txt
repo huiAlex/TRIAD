@@ -1,0 +1,8 @@
+View reservations list
+The service is launched following the explicit request by the patient.
+The actor patient accesses the main screen (for instance, GUIPrincipale) for the management of all services provided by the system to the requests of patients.
+The patient selects the display of reservations.
+Control is then passed to the instance of GUIPrincipaleHandler, which delegates to the instance of GUIPrenotazioniHandler the task of managing the service.
+At this point, control is passed to the instance of PrenotazioniManager, which deals with finding through reservation requests for all reservations made by the patient requesting.
+Results are sent backlinks up to the instance of GUIPrenotazioniHandler, which in turn deals with their display on the screen on the management of the booking of patients (for instance, GUIPrenotazioni).
+This feature is described by the collaboration diagram of Fig 3 of 10.

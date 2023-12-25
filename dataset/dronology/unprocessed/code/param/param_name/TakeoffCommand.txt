@@ -1,0 +1,2 @@
+droneId
+altitude

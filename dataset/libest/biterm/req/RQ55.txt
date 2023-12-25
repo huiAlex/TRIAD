@@ -1,0 +1,6 @@
+initiHandshak:1
+typeContent:1
+requestGet:1
+requestCertif:1
+obtainCertif:1
+cacertValid:1

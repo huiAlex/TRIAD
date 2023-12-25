@@ -1,0 +1,8 @@
+coordinFlight:1
+resendCommand:3
+returnHome:2
+sendCommand:3
+coordinCurrent:1
+containInform:1
+directFlight:1
+targetCoordin:1

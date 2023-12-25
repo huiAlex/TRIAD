@@ -1,0 +1,46 @@
+abstract drone 
+logger 
+base posit 
+current posit 
+drone 
+drone status 
+mgd drone 
+
+lla coordin 
+lla coordin 
+uav proxi 
+manag drone 
+
+drn 
+lat 
+lon 
+alt 
+coordin 
+base posit 
+veloc 
+batteri level 
+mgd drone 
+
+lla coordin 
+lla coordin 
+manag drone 
+
+abstract drone 
+set coordin 
+set coordin 
+get latitud 
+get longitud 
+get altitud 
+get coordin 
+get drone 
+get drone status 
+set base coordin 
+get base coordin 
+set veloc 
+updat batteri level 
+set user control 
+set manag drone 
+
+abstract base class virtual physic drone 
+set base coordin drone 
+get uniqu base coordin drone 

@@ -1,0 +1,3 @@
+virtual drone 
+lla coordin 
+lla coordin 

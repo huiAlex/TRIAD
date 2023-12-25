@@ -1,0 +1,14 @@
+keyGenerat:1
+estClient:1
+useAuthent:1
+estServer:3
+authentUse:1
+initiHandshak:1
+typeContent:3
+includRequest:1
+useCertif:1
+authentClient:1
+generatKey:1
+serverEst:3
+clientEst:1
+certifUse:1

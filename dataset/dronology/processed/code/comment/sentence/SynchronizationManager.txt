@@ -1,0 +1,2 @@
+The { SynchronizationManager} holds a list of { SynchronizationPoint} and ensures that a point is fully synced  before allowing UAVs to proceed with the next task.
+/

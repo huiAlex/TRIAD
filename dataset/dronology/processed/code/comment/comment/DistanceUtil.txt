@@ -1,0 +1,4 @@
+calcul distanc point latitud longitud take account height differ 
+height differ pass 
+haversin method base 
+lat lon start point lat lon end point start altitud meter end altitud meter distanc meter 

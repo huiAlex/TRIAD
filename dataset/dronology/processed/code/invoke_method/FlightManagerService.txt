@@ -1,0 +1,11 @@
+flight manag servic instanc 
+get flight info 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get current flight 
+cancel pend flight 
+takeoff 
+emerg stop 
+flight manag servic 

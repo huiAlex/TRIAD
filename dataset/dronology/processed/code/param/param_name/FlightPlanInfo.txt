@@ -1,0 +1,7 @@
+
+id 
+drone id 
+waypoint 
+start locat 
+start time 
+end time 

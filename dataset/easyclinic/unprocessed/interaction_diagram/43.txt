@@ -1,0 +1,32 @@
+Slipping on a visit to a later date 
+The Operator logs on to the patient section form (for instance GUIPaziente) and checks the function of changing a reservation.
+Control is passed to the instance of GUIPazienteHandler.
+GUIPazienteHandler delegates the task of managing the service to the instance of GUIPrenotaVisitaHandler.
+     
+Uploading reservations
+The instance of GUIPrenotaVisitaHandler is requested to obtain a list of all reservations made by the patient through the instance of GUISelezionaPrenotazioniHandler.
+This object is passed for monitoring to the application of PrenotazioniManager through instances of reservation.
+PrenotazioniManager finds that list and returns it to the instance of GUISelezionaPrenotazioniHandler.
+
+
+Selecting the reservation to be change
+The operator selects the reservation to edit from the list.
+Control is passed backward up to GUIPrenotaVisitaHandler to delegate the task of transferring all information on the selected reservation to the instance of PrenotazioniManager.
+The request is made to PrenotazioniManager through the application of Reservation to perform this task.
+PrenotazioniManager returns the data obtained to the instance of GUIPrenotaVisitaHandler.
+GUIPrenotaVisitaHandler gives the data obtained from PrenotazioniManager and displays it on the screen for reservation management (for instance, GUIPrenotaVisita).
+
+     Request new date 
+The operator requires a new date when the visit can be held.
+Control passes to the instance of GUIPrenotaVisitaHandler.
+The next available day is obtained by the appropriate body to ensure PrenotazioniManager.
+The date is viewed in the mask on the management of reservations (for instance GUIPrenotaVisita).
+The operator confirms the date proposed by the system.
+Control is returned to the instance of GUIPrenotaVisitaHandler.
+
+     Saving Reservation 
+The application of class GUIPrenotaVisitaHandler proceeds with the reservation by delegating the task to the instance of PrenotazioniManager through the application for reservation.
+PrenotazioniManager begins to validate the reservation, and only if the validation is successful, the data on the reservation is saved.
+Once the operation is completed, control is returned backward to GUIPrenotaVisitaHandler.
+The instance of GUIPrenotaVisitaHandler reports success with a message on the mask on the management of reservations (for instance GUIPrenotaVisita).
+This feature is described by the collaboration diagram of Fig 3.19.

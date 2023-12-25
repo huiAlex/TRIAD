@@ -1,0 +1,12 @@
+<Class>
+    <Id>60</Id>
+    <Package>edu.nd.dronology.core.vehicle.uav</Package>
+    <ClassName>IStartstrategy</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList/>
+</Class>

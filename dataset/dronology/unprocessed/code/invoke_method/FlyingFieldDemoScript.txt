@@ -1,0 +1,14 @@
+get
+initializeDrones
+initializeDrones
+initializeDrones
+LlaCoordinate
+LlaCoordinate
+LlaCoordinate
+getService
+getService
+getService
+DroneInitializationInfo
+DroneInitializationInfo
+DroneInitializationInfo
+getItems

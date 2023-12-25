@@ -1,0 +1,9 @@
+flight simul 
+drone voltag simul 
+start batteri drain 
+get voltag 
+set flight path 
+check point 
+destin reach 
+start batteri drain 
+

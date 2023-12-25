@@ -1,0 +1,19 @@
+store flight inform includ waypoint current status 
+ 
+ 
+flight 
+start coordin 
+end coordin 
+return drone assign flight plan 
+return null drone assign 
+drone 
+drone true drone current fli fals otherwis 
+ 
+set flightplan status complet call 
+true 
+return current flightplan status plan fli complet status 
+return way point 
+return start time flight 
+date object 
+eturn end time flight 
+date object 

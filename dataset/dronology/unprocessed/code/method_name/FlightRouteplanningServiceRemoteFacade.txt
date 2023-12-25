@@ -1,0 +1,10 @@
+FlightRouteplanningServiceRemoteFacade
+getInstance
+requestFromServer
+transmitToServer
+addItemChangeListener
+removeItemChangeListener
+getItems
+createItem
+deleteItem
+getFlightPathCategories

@@ -1,0 +1,22 @@
+Use case:
+Access Box Tower
+
+Description:
+Allows the patient to access a locations of internally displaced of the outpatient
+
+Preconditions:
+He's Interest to log on to see your information
+The patient must be in possession of Hospital Card
+
+Postconditions:
+The patient is not recognized system
+The patient is recognized by system and is authorized to have access to his section
+
+Sub-flows:
+Patient access to one of the locations displaced of the outpatient
+1 valid patient
+2 find patients information
+3 Transfer patient data in the memory
+4 View the root mask of a box tower
+
+Alternative flows:

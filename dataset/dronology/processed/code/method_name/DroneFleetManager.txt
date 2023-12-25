@@ -1,0 +1,13 @@
+get instanc 
+drone fleet manag 
+avail drone 
+get avail drone 
+get avail drone 
+notifi listen 
+return drone avail pool 
+add drone 
+remov drone 
+get regist drone 
+get regist drone 
+unregist droe 
+add drone fleet listen 

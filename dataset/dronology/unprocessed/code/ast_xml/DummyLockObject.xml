@@ -1,0 +1,16 @@
+<Class>
+    <Id>166</Id>
+    <Package>edu.nd.dronology.core.util</Package>
+    <ClassName>DummyLockObject</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>DummyLockObject  /** 
+ * Use as dummy object handy for "synchronized(dummy)" blocks.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList/>
+</Class>

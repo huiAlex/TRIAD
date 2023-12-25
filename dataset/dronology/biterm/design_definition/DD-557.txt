@@ -1,0 +1,3 @@
+executPlan:1
+planUav:1
+planFlight:1

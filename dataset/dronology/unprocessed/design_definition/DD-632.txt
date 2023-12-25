@@ -1,0 +1,4 @@
+[SUMMARY]
+UI middleware forwards takeoff commands from clients to dronology
+[DESCRIPTION]
+The _UIMiddleware_ accepts takeoff commands associated with a unique {{UAV_ID}} and forwards to Dronology

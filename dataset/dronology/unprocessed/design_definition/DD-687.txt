@@ -1,0 +1,4 @@
+[SUMMARY]
+UAV information and operations
+[DESCRIPTION]
+For each activated UAV  the UI shall display information about that UAV (i.e. longitude  latitude  altitude  groud speed  battery level  etc.) 

@@ -1,0 +1,11 @@
+Class:Operator
+Date: 20/09/03
+Version: 0 01 000
+Description: A class that contains descriptions for employees of the outpatient
+
+Attributes:
+login;Private; Operator login
+password;Private;Password associated with the login
+
+Methods:
+validaOperatore;Public; Procedure for validating an operator

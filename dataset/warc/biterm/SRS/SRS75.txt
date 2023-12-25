@@ -1,0 +1,16 @@
+communitiSourc:1
+providTerm:1
+termProvid:1
+providCommunic:1
+communicSupport:1
+openCommuniti:1
+supportProvid:2
+communitiOpen:1
+providSupport:2
+communicProvid:1
+termProject:1
+communitiProvid:1
+sourcCommuniti:1
+supportCommunic:1
+providCommuniti:1
+projectTerm:1

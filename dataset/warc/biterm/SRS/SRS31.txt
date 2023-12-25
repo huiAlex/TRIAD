@@ -1,0 +1,6 @@
+toolLine:1
+toolCommand:1
+recordWarc:1
+commandTool:1
+lineTool:1
+warcRecord:1

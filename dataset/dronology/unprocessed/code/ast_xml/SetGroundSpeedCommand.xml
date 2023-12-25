@@ -1,0 +1,36 @@
+<Class>
+    <Id>179</Id>
+    <Package>edu.nd.dronology.core.vehicle.commands</Package>
+    <ClassName>SetGroundSpeedCommand</ClassName>
+    <SuperClass>AbstractDroneCommand</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IDroneCommand</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>SetGroundSpeedCommand</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>double speed</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>data;put;[ATTRIBUTE_SPEED, speed]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

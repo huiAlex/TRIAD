@@ -1,0 +1,21 @@
+------------------------------------------------------------------   us1864.c - Unit Tests for User Story 1864 - Enable Token Auth mode in server     March, 2015     Copyright (c) 2015, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   The following CSR was generated using the following openssl command and theng   using cat on the rsa.req file:     openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM  /
+   curl_data_cb is passed to Curl and will be called from Curl whenever data   has been received, or if this function has been specified to retrieve the   http headers.  In this test it's used to retrieve the http headers and   look for the "bearer" token Authorization challenge.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   est_server_set_auth_mode() - unit test     First, Test the parameters of est_server_set_auth_mode()  /
+   Simple enroll - Token Auth Mode     The goal of this test is to verify that the EST server responds with the   correct auth challenge when it's configured for Token Auth mode.  It will   first perform a sanity check by performing an HTTP Basic request while the   server is still in its default mode of HTTP Basic auth.  The test will then   configure the server for Token Auth mode and issue a request that does not   contain any auth header.  This should force the server to respond with a   token auth challenge header.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Read in the CA certificates      /
+       Read the server cert      /
+       Read the server key      /
+       init EST in server mode      /
+       Make sure we don't allow DIGEST mode when in FIPS mode      /
+       Since we specify BASIC and the server is still in BASIC       we expect the server to respond with 200      /
+       Switch the server over to Token mode.             NOTE: I see this being done in numerous places, and it's probably safe       in a test setting, but it is dangerous to change this on the fly in an       operational setting.  Also note, no return code for any of these       set/enable functions.      /
+       Since we changed auth modes on the server we expect this to now       fail.  We're not capturing the actual auth challenge we       we expect the server to respond with 200      /
+ add a suite to the registry /
+ add the tests to the suite /
+           WARNING: strstr can be dangerous because it assumes null terminated           strings.  In this case the http headers came from EST server and we           know they are null terminated          /

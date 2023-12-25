@@ -1,0 +1,23 @@
+Use case:
+Show anagrafica
+
+Description:
+Allows a patient of view their anagrafica data using the specific locations displaced of the outpatient
+
+Preconditions:
+He has an interest in access to your anagrafica information
+The patient has been recognized by system(See UcAccTB)
+
+Postconditions:
+The patient obtains display of their anagrafica data
+
+Sub-flows:
+The patient activates the execution of service display their anagrafica data
+1 Access to the database and retrieves information about patient anagrafica
+2 View information patient anagrafiche
+
+Alternative flows:
+Patient decides to print information displayed
+   2 1 Start printing the list of reservations
+   2 2 generates the report and sends it to printer
+   2 1 The age of a patient is characterized by following data: name, surname, sex, tax code, date of birth, province of birth place, address of home, province of residence, ZIP code, telephone and Notes

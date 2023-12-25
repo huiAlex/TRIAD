@@ -1,0 +1,14 @@
+get 
+updat 
+updat mode 
+get locat 
+get batterystatus 
+get batteri level 
+get groundspe 
+get mode 
+equal 
+get veloc 
+get attitud 
+get mode 
+get instanc 
+get uavid 

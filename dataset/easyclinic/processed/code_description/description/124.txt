@@ -1,0 +1,1 @@
+gui anagrafica medico make mask manag anagrafica doctor grid elenco medici contain main inform doctor regist iso visualizza dati medico doctor select panel dati visualizza elenco medicii doctor regist iso gestion anagrafica retriev necessari inform organ mask implement gui anagrafica medico 

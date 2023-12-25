@@ -1,0 +1,58 @@
+perform pars http authent header client basic authent use 
+perform pars http authent header client digest authent use 
+perform pars http authent header client token bearer authent use 
+function pars http authent header client fill field est http auth hdr struct use later verifi user credenti use http basic http digest authent ah paramet alreadi alloc call function return good bad miss 
+function pars http authent header client fill field est http auth hdr struct use later verifi user credenti use http basic http digest authent ah paramet alreadi alloc call function return good bad miss 
+function call mongoos code incom http request process return success non zero request wasn handl 
+slight deviat mongoos behavior close connect send accept respons close connect ani xx respons mongoos onli close unauthor 
+contain uid pwd 
+make sure string 
+did start colon mean userid 
+get auth header http client 
+digest auth make sure valu pars 
+abl pars user id token auth mode make sure fail authent 
+est onli allow get post 
+content length html header 
+content type html header 
+process request 
+set session id context enabl openssl session reus improv perform set id estxxxxxxxx valu random number 
+note disabl tls ticket anoth way reus tls session avoid key exchang overhead tls handshak ve enabl session reus abov session reus work ticket support enabl server want look enabl ticket futur session reus abov give us perform boost option set improv forward secrecti compli est draft 
+set ecdh singl use parm use configur curv use prime default 
+setup addit cert check includ crl depth purpos 
+enabl crl check 
+note purpos onli check keyusag valu present client cert 
+set singl use dh paramet applic request capabl 
+need includ cert chain server certif tls certif messag server reason est draft specifi subordin ca cert includ cacert messag flow henc client alreadi cert chain therfor tls handshak onli contain server cert chain ssl ctx use certif chain file ctx ssl ctx ctx est ctx http cert file 
+accuml total time wait 
+check see time give set thing accord close session 
+continu wait noth read socket poll interrupt signal master process indic stop wait read timeout occur 
+mode valid point noth 
+start userid pars usernam password separ 
+copi token auth header structur 
+make sure server configur digest auth 
+make sure server configur basic auth 
+make sure server configur bearer token auth 
+onli basic digest bearer token authent support 
+save user id connect context want pass ca later 
+point content length valu alreadi error check guarante correct rang obtain length alloc buffer bodi read 
+make sure buffer null termin 
+setup user select curv 
+default prime curv 
+set applic specif handler provid srp paramet dure user authent 
+set tls cipher suit allow disabl anonym null cipher 
+happen sure caus 
+est requir tls setup tls tunnel 
+send http header 
+send csr bodi 
+send respons indic server doesn csr 
+noth grace shutdown 
+data come chang nread zero mongoos attempt read data peer occur peer initi ssl renegot 
+error simpli log error make sure nread indic error function abov us 
+ensur content length valu size est code accept 
+just password 
+got userid password 
+retri 
+openssl doc say call shutdown case 
+noth shutdown work 
+log error 
+unknown openssl error dump openssl error log learn 

@@ -1,0 +1,11 @@
+activUav:1
+fileJson:1
+pointSynchron:1
+planMission:6
+managPlan:1
+setPoint:1
+missionPlan:7
+uavAddit:1
+removUav:2
+planUav:1
+cancelMission:2

@@ -1,0 +1,14 @@
+Class:LaboratoriManager
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: Manage operations require access to data for Laboratories
+
+Attributes:
+
+Methods:
+delLaboratorio;Public;Its task description control deletion of laboratory data
+editLaboratorio;Public ;Manage the change data a laboratory
+getElencoLaboratori;Public; Obtain a list of all Laboratories
+getLaboratorioAt;Public;Find all the information on a laboratory
+newLaboratorio;Public; Manage the insertion of a new laboratory

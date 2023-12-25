@@ -1,0 +1,36 @@
+<Class>
+    <Id>74</Id>
+    <Package>edu.nd.dronology.services.instances.flightroute</Package>
+    <ClassName>IFlightRouteplanningServiceInstance</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IFileTransmitServiceInstance</SuperInterface>
+        <SuperInterface>FlightRouteInfo</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>getFlightPathCategories</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FlightRouteCategoryInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRouteByName</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FlightRouteInfo</ReturnType>
+            <ParameterList>
+                <ParameterType>String routeName</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

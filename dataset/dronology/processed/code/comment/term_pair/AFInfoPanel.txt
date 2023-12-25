@@ -1,0 +1,25 @@
+panel side:compound
+panel contain:acl
+contain info box:obj
+inform uav:compound
+contain inform:obl
+add box:obj
+add panel:obl
+remov box:obj
+box panel:nmod
+expand collaps:conj
+expand box:obj
+inform updat:amod
+get inform:obj
+inform dronolog:nmod
+inform uav:nmod
+inform locat:compound
+dronolog inform:nmod
+dronolog status:nmod
+inform status:conj
+drone new:amod
+add drone:obj
+add panel:obl
+add remov:conj
+remov drone:obj
+drone deactiv:acl

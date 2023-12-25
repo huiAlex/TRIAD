@@ -1,0 +1,28 @@
+Use case:
+Validation patient
+
+Description:
+He works to perform the functions necessary to authenticate an patient
+
+Preconditions:
+He has nterest to log on to see your information
+The patient must be in possession of Hospital Card
+
+Postconditions:
+The patient is not recognized system
+The patient is recognized by system and access to its section
+
+Sub-flows:
+Patient access to Box Tower 
+1 View the mask for the login operation
+2 input the code of Hospital Card PIN
+3 Confirm validation 
+4 Verify that the couple (Hospital Card PIN)
+5 identifies a patient within SIO
+
+Alternative flows:
+Patient cancels validation function
+   3 1 ends the execution of use case with failure
+Validation Failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts running from 1 step

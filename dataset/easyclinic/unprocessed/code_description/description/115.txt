@@ -1,0 +1,18 @@
+Class: GUIPrincipale
+Date: 18/09/2003
+Version: 0.01.000
+
+Description:Make the main form of Easy Clinic2003 Box Tower. This form is task of guiding the patient in the choice of information to be displayed
+
+Attributes:
+btnAnagrafica; Private; Button used to access the Personal Details section
+btnCartellaClin;Private; Button used to access the Clinic Folder section
+btnPrenotazioni;Private; Button used to access the Reservations section
+btnUscita;Private;Button used to exit the application
+
+Methods:
+show;Public; View mask
+abilitaAccesso;Public; Manages the event generated when the validation procedure ends with the succes, and patient is then enabled
+cartellaClinica; Public;Manages the event generated when the patient clicks on the Folder Clinic button to access their clinic folder
+datiPaziente;Public; Manages the event generated when the patient clicks on the Data Details button to view their personal data
+reservations;Public;Manages the event generated when the patient clicks on the Reservations button to view their reservations.

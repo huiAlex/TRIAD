@@ -1,0 +1,6 @@
+activUav:1
+informUav:2
+returnHome:1
+uavStatus:1
+containInform:1
+hoverPlace:2

@@ -1,0 +1,1 @@
+visit waypoint flight plan uav reach target waypoint addit waypoint specifi flight plan vehicl core send next waypoint uav gcs 

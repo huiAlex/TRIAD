@@ -1,0 +1,31 @@
+drone connector servic instanc 
+connect executor 
+logger 
+gson 
+server 
+activ connect 
+activ connect 
+
+incom groundstat connect server 
+
+connect id 
+groundstationid 
+connect handler 
+connector 
+msg 
+
+groundstat connector 
+groundstat connector 
+connect request messag 
+
+drone connector servic instanc 
+get servic class 
+get order 
+get properti path 
+start servic 
+stop servic 
+unregist connect 
+unregist drone 
+handl connect 
+regist connect 
+

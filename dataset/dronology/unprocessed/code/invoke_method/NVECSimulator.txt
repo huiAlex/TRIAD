@@ -1,0 +1,14 @@
+DroneVoltageSimulator
+move
+equals
+move
+setCoordinates
+equals
+toNVector
+toNVector
+startBatteryDrain
+startBatteryDrain
+getVoltage
+checkPoint
+toLlaCoordinate
+travelDistance

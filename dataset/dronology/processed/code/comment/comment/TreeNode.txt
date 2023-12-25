@@ -1,0 +1,9 @@
+tree node hold element node set artifact identifi children identifi artifact identifi 
+ 
+return exist child creat new present 
+child given identifi 
+ 
+remov children element 
+ 
+debug onli diagnost output 
+ 

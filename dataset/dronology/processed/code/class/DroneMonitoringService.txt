@@ -1,0 +1,30 @@
+drone monitor servic 
+instanc 
+
+drone monitor servic 
+
+handler 
+handler 
+identifi 
+uavid 
+frequenc 
+identifi 
+handler 
+
+remot monitor messag handler 
+remot monitor messag handler 
+artifact identifi 
+artifact identifi 
+remot monitor messag handler 
+
+drone monitor servic 
+get instanc 
+init servic instanc 
+regist monitor messag handler 
+regist monitor messag handler 
+set monitor frequenc 
+get subscrib handler 
+unsubscrib handler 
+
+servic uav monitor messag allow regist remot monitor messag handler subscrib certain messag type topic 
+ 

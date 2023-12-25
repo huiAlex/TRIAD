@@ -1,0 +1,4 @@
+[SUMMARY]
+Display active route details
+[DESCRIPTION]
+The UI shall display the waypoints and their connections.

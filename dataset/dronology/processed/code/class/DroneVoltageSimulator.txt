@@ -1,0 +1,19 @@
+drone voltag simul 
+voltag 
+batteri state 
+simul batteri drain volt 
+check point time 
+
+
+
+
+drone voltag simul 
+recharg batteri 
+start batteri drain 
+stop batteri drain 
+check point 
+get voltag 
+
+voltag simul 
+everi minut flight batteri decreas volt 
+ 

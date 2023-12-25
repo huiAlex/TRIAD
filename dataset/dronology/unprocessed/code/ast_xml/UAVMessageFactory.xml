@@ -1,0 +1,66 @@
+<Class>
+    <Id>92</Id>
+    <Package>edu.nd.dronology.gstation.connector.messages</Package>
+    <ClassName>UAVMessageFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>UAVMessageFactory  /** 
+ * Factory class for creating  {@link AbstractUAVMessage} from JSON strings.
+ * @author Michael Vierhauser  
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>MESSAGE_TYPE</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>GSON</FieldName>
+            <FieldType>Gson</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TYPE_GSON</FieldName>
+            <FieldType>Gson</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>create</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>?</ReturnType>
+            <ParameterList>
+                <ParameterType>String messagestring</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>JSONObject [messageObject=new JSONObject(messagestring)]</InnerVar>
+                <InnerVar>String [messagetype=messageObject.optString(MESSAGE_TYPE)]</InnerVar>
+                <InnerVar>AbstractUAVMessage&lt;?&gt; [message=null]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>Exception</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toJson</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType>? message</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

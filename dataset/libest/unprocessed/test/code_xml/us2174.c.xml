@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:cpp="http://www.srcML.org/srcML/cpp" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="C" filename="test_code/us2174.c" pos:tabs="8"><comment type="block" pos:start="1:1" pos:end="9:3">/*------------------------------------------------------------------
+ * us2174.c - Unit Tests for User Story 2174 - Proxy simple enroll
+ *
+ * August, 2013
+ *
+ * Copyright (c) 2013, 2016 by cisco Systems, Inc.
+ * All rights reserved.
+ *------------------------------------------------------------------
+ */</comment>
+<cpp:include pos:start="10:1" pos:end="10:18">#<cpp:directive pos:start="10:2" pos:end="10:8">include</cpp:directive> <cpp:file pos:start="10:10" pos:end="10:18">&lt;stdio.h&gt;</cpp:file></cpp:include>
+<cpp:ifndef pos:start="11:1" pos:end="11:13">#<cpp:directive pos:start="11:2" pos:end="11:7">ifndef</cpp:directive> <name pos:start="11:9" pos:end="11:13">WIN32</name></cpp:ifndef>
+<cpp:include pos:start="12:1" pos:end="12:19">#<cpp:directive pos:start="12:2" pos:end="12:8">include</cpp:directive> <cpp:file pos:start="12:10" pos:end="12:19">&lt;unistd.h&gt;</cpp:file></cpp:include>
+<cpp:endif pos:start="13:1" pos:end="13:6">#<cpp:directive pos:start="13:2" pos:end="13:6">endif</cpp:directive></cpp:endif>
+<cpp:include pos:start="14:1" pos:end="14:16">#<cpp:directive pos:start="14:2" pos:end="14:8">include</cpp:directive> <cpp:file pos:start="14:10" pos:end="14:16">&lt;est.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:start="15:1" pos:end="15:22">#<cpp:directive pos:start="15:2" pos:end="15:8">include</cpp:directive> <cpp:file pos:start="15:10" pos:end="15:22">&lt;curl/curl.h&gt;</cpp:file></cpp:include>
+<cpp:include pos:start="16:1" pos:end="16:23">#<cpp:directive pos:start="16:2" pos:end="16:8">include</cpp:directive> <cpp:file pos:start="16:10" pos:end="16:23">"curl_utils.h"</cpp:file></cpp:include>
+<cpp:include pos:start="17:1" pos:end="17:23">#<cpp:directive pos:start="17:2" pos:end="17:8">include</cpp:directive> <cpp:file pos:start="17:10" pos:end="17:23">"test_utils.h"</cpp:file></cpp:include>
+<cpp:include pos:start="18:1" pos:end="18:22">#<cpp:directive pos:start="18:2" pos:end="18:8">include</cpp:directive> <cpp:file pos:start="18:10" pos:end="18:22">"st_server.h"</cpp:file></cpp:include>
+<cpp:include pos:start="19:1" pos:end="19:21">#<cpp:directive pos:start="19:2" pos:end="19:8">include</cpp:directive> <cpp:file pos:start="19:10" pos:end="19:21">"st_proxy.h"</cpp:file></cpp:include>
+<cpp:include pos:start="20:1" pos:end="20:24">#<cpp:directive pos:start="20:2" pos:end="20:8">include</cpp:directive> <cpp:file pos:start="20:10" pos:end="20:24">&lt;openssl/ssl.h&gt;</cpp:file></cpp:include>
+
+<cpp:ifdef pos:start="22:1" pos:end="22:17">#<cpp:directive pos:start="22:2" pos:end="22:6">ifdef</cpp:directive> <name pos:start="22:8" pos:end="22:17">HAVE_CUNIT</name></cpp:ifdef>
+<cpp:include pos:start="23:1" pos:end="23:24">#<cpp:directive pos:start="23:2" pos:end="23:8">include</cpp:directive> <cpp:file pos:start="23:10" pos:end="23:24">"CUnit/Basic.h"</cpp:file></cpp:include>
+<cpp:include pos:start="24:1" pos:end="24:28">#<cpp:directive pos:start="24:2" pos:end="24:8">include</cpp:directive> <cpp:file pos:start="24:10" pos:end="24:28">"CUnit/Automated.h"</cpp:file></cpp:include>
+<cpp:endif pos:start="25:1" pos:end="25:6">#<cpp:directive pos:start="25:2" pos:end="25:6">endif</cpp:directive></cpp:endif>
+
+<decl_stmt pos:start="27:1" pos:end="27:37"><decl pos:start="27:1" pos:end="27:36"><type pos:start="27:1" pos:end="27:22"><specifier pos:start="27:1" pos:end="27:6">static</specifier> <name pos:start="27:8" pos:end="27:15">unsigned</name> <name pos:start="27:17" pos:end="27:20">char</name> <modifier pos:start="27:22" pos:end="27:22">*</modifier></type><name pos:start="27:23" pos:end="27:29">cacerts</name> <init pos:start="27:31" pos:end="27:36">= <expr pos:start="27:33" pos:end="27:36"><name pos:start="27:33" pos:end="27:36">NULL</name></expr></init></decl>;</decl_stmt>
+<decl_stmt pos:start="28:1" pos:end="103:0"><decl pos:start="28:1" pos:end="28:26"><type pos:start="28:1" pos:end="28:10"><specifier pos:start="28:1" pos:end="28:6">static</specifier> <name pos:start="28:8" pos:end="28:10">int</name></type> <name pos:start="28:12" pos:end="28:22">cacerts_len</name> <init pos:start="28:24" pos:end="28:26">= <expr pos:start="28:26" pos:end="28:26"><literal type="number" pos:start="28:26" pos:end="28:26">0</literal></expr></init></decl>;</decl_stmt>
+
+<cpp:define pos:start="30:1" pos:end="30:36">#<cpp:directive pos:start="30:2" pos:end="30:7">define</cpp:directive> <cpp:macro pos:start="30:9" pos:end="30:29"><name pos:start="30:9" pos:end="30:29">US2174_RETRY_INTERVAL</name></cpp:macro>   <cpp:value pos:start="30:33" pos:end="30:36">3600</cpp:value></cpp:define>
+<comment type="line" pos:start="31:1" pos:end="31:37">//#define US2174_TCP_PORT       29001</comment>
+
+<cpp:define pos:start="33:1" pos:end="33:41">#<cpp:directive pos:start="33:2" pos:end="33:7">define</cpp:directive> <cpp:macro pos:start="33:9" pos:end="33:30"><name pos:start="33:9" pos:end="33:30">US2174_TCP_SERVER_PORT</name></cpp:macro>      <cpp:value pos:start="33:37" pos:end="33:41">52174</cpp:value></cpp:define>
+<cpp:define pos:start="34:1" pos:end="34:41">#<cpp:directive pos:start="34:2" pos:end="34:7">define</cpp:directive> <cpp:macro pos:start="34:9" pos:end="34:29"><name pos:start="34:9" pos:end="34:29">US2174_TCP_PROXY_PORT</name></cpp:macro>       <cpp:value pos:start="34:37" pos:end="34:41">62174</cpp:value></cpp:define>
+
+<cpp:ifndef pos:start="36:1" pos:end="36:13">#<cpp:directive pos:start="36:2" pos:end="36:7">ifndef</cpp:directive> <name pos:start="36:9" pos:end="36:13">WIN32</name></cpp:ifndef>
+<cpp:define pos:start="37:1" pos:end="37:74">#<cpp:directive pos:start="37:2" pos:end="37:7">define</cpp:directive> <cpp:macro pos:start="37:9" pos:end="37:26"><name pos:start="37:9" pos:end="37:26">US2174_SERVER_CERT</name></cpp:macro>      <cpp:value pos:start="37:33" pos:end="37:74">"CA/estCA/private/estservercertandkey.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="38:1" pos:end="38:74">#<cpp:directive pos:start="38:2" pos:end="38:7">define</cpp:directive> <cpp:macro pos:start="38:9" pos:end="38:25"><name pos:start="38:9" pos:end="38:25">US2174_SERVER_KEY</name></cpp:macro>       <cpp:value pos:start="38:33" pos:end="38:74">"CA/estCA/private/estservercertandkey.pem"</cpp:value></cpp:define>
+<comment type="block" pos:start="39:1" pos:end="39:76">/* #define US2174_PROXY_CERT "CA/estCA/private/estservercertandkey.pem"   */</comment>
+<comment type="block" pos:start="40:1" pos:end="40:73">/* #define US2174_PROXY_KEY "CA/estCA/private/estservercertandkey.pem" */</comment>
+<cpp:define pos:start="41:1" pos:end="41:49">#<cpp:directive pos:start="41:2" pos:end="41:7">define</cpp:directive> <cpp:macro pos:start="41:9" pos:end="41:25"><name pos:start="41:9" pos:end="41:25">US2174_PROXY_CERT</name></cpp:macro>       <cpp:value pos:start="41:33" pos:end="41:49">"US2174/cert.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="42:1" pos:end="42:48">#<cpp:directive pos:start="42:2" pos:end="42:7">define</cpp:directive> <cpp:macro pos:start="42:9" pos:end="42:24"><name pos:start="42:9" pos:end="42:24">US2174_PROXY_KEY</name></cpp:macro>        <cpp:value pos:start="42:33" pos:end="42:48">"US2174/key.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="43:1" pos:end="43:53">#<cpp:directive pos:start="43:2" pos:end="43:7">define</cpp:directive> <cpp:macro pos:start="43:9" pos:end="43:21"><name pos:start="43:9" pos:end="43:21">US2174_CACERT</name></cpp:macro>           <cpp:value pos:start="43:33" pos:end="43:53">"CA/estCA/cacert.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="44:1" pos:end="44:53">#<cpp:directive pos:start="44:2" pos:end="44:7">define</cpp:directive> <cpp:macro pos:start="44:9" pos:end="44:22"><name pos:start="44:9" pos:end="44:22">US2174_CACERTS</name></cpp:macro>          <cpp:value pos:start="44:33" pos:end="44:53">"CA/estCA/cacert.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="45:1" pos:end="45:53">#<cpp:directive pos:start="45:2" pos:end="45:7">define</cpp:directive> <cpp:macro pos:start="45:9" pos:end="45:28"><name pos:start="45:9" pos:end="45:28">US2174_TRUSTED_CERTS</name></cpp:macro>    <cpp:value pos:start="45:33" pos:end="45:53">"CA/trustedcerts.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="46:1" pos:end="46:52">#<cpp:directive pos:start="46:2" pos:end="46:7">define</cpp:directive> <cpp:macro pos:start="46:9" pos:end="46:28"><name pos:start="46:9" pos:end="46:28">US2174_EXPLICIT_CERT</name></cpp:macro>    <cpp:value pos:start="46:33" pos:end="46:52">"US2174/cert-RA.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="47:1" pos:end="47:51">#<cpp:directive pos:start="47:2" pos:end="47:7">define</cpp:directive> <cpp:macro pos:start="47:9" pos:end="47:27"><name pos:start="47:9" pos:end="47:27">US2174_EXPLICIT_KEY</name></cpp:macro>     <cpp:value pos:start="47:33" pos:end="47:51">"US2174/key-RA.pem"</cpp:value></cpp:define>
+
+<cpp:else pos:start="49:1" pos:end="49:5">#<cpp:directive pos:start="49:2" pos:end="49:5">else</cpp:directive></cpp:else>
+<cpp:define pos:start="50:1" pos:end="50:77">#<cpp:directive pos:start="50:2" pos:end="50:7">define</cpp:directive> <cpp:macro pos:start="50:9" pos:end="50:26"><name pos:start="50:9" pos:end="50:26">US2174_SERVER_CERT</name></cpp:macro>      <cpp:value pos:start="50:33" pos:end="50:77">"CA\\estCA\\private\\estservercertandkey.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="51:1" pos:end="51:76">#<cpp:directive pos:start="51:2" pos:end="51:7">define</cpp:directive> <cpp:macro pos:start="51:9" pos:end="51:25"><name pos:start="51:9" pos:end="51:25">US2174_SERVER_KEY</name></cpp:macro>       <cpp:value pos:start="51:33" pos:end="51:76">"CA\\estCA\\private/estservercertandkey.pem"</cpp:value></cpp:define>
+<comment type="block" pos:start="52:1" pos:end="52:76">/* #define US2174_PROXY_CERT "CA/estCA/private/estservercertandkey.pem"   */</comment>
+<comment type="block" pos:start="53:1" pos:end="53:73">/* #define US2174_PROXY_KEY "CA/estCA/private/estservercertandkey.pem" */</comment>
+<cpp:define pos:start="54:1" pos:end="54:50">#<cpp:directive pos:start="54:2" pos:end="54:7">define</cpp:directive> <cpp:macro pos:start="54:9" pos:end="54:25"><name pos:start="54:9" pos:end="54:25">US2174_PROXY_CERT</name></cpp:macro>       <cpp:value pos:start="54:33" pos:end="54:50">"US2174\\cert.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="55:1" pos:end="55:49">#<cpp:directive pos:start="55:2" pos:end="55:7">define</cpp:directive> <cpp:macro pos:start="55:9" pos:end="55:24"><name pos:start="55:9" pos:end="55:24">US2174_PROXY_KEY</name></cpp:macro>        <cpp:value pos:start="55:33" pos:end="55:49">"US2174\\key.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="56:1" pos:end="56:55">#<cpp:directive pos:start="56:2" pos:end="56:7">define</cpp:directive> <cpp:macro pos:start="56:9" pos:end="56:21"><name pos:start="56:9" pos:end="56:21">US2174_CACERT</name></cpp:macro>           <cpp:value pos:start="56:33" pos:end="56:55">"CA\\estCA\\cacert.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="57:1" pos:end="57:55">#<cpp:directive pos:start="57:2" pos:end="57:7">define</cpp:directive> <cpp:macro pos:start="57:9" pos:end="57:22"><name pos:start="57:9" pos:end="57:22">US2174_CACERTS</name></cpp:macro>          <cpp:value pos:start="57:33" pos:end="57:55">"CA\\estCA\\cacert.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="58:1" pos:end="58:54">#<cpp:directive pos:start="58:2" pos:end="58:7">define</cpp:directive> <cpp:macro pos:start="58:9" pos:end="58:28"><name pos:start="58:9" pos:end="58:28">US2174_TRUSTED_CERTS</name></cpp:macro>    <cpp:value pos:start="58:33" pos:end="58:54">"CA\\trustedcerts.crt"</cpp:value></cpp:define>
+<cpp:define pos:start="59:1" pos:end="59:53">#<cpp:directive pos:start="59:2" pos:end="59:7">define</cpp:directive> <cpp:macro pos:start="59:9" pos:end="59:28"><name pos:start="59:9" pos:end="59:28">US2174_EXPLICIT_CERT</name></cpp:macro>    <cpp:value pos:start="59:33" pos:end="59:53">"US2174\\cert-RA.pem"</cpp:value></cpp:define>
+<cpp:define pos:start="60:1" pos:end="60:52">#<cpp:directive pos:start="60:2" pos:end="60:7">define</cpp:directive> <cpp:macro pos:start="60:9" pos:end="60:27"><name pos:start="60:9" pos:end="60:27">US2174_EXPLICIT_KEY</name></cpp:macro>     <cpp:value pos:start="60:33" pos:end="60:52">"US2174\\key-RA.pem"</cpp:value></cpp:define>
+<cpp:endif pos:start="61:1" pos:end="61:6">#<cpp:directive pos:start="61:2" pos:end="61:6">endif</cpp:directive></cpp:endif>
+
+<cpp:define pos:start="63:1" pos:end="63:43">#<cpp:directive pos:start="63:2" pos:end="63:7">define</cpp:directive> <cpp:macro pos:start="63:9" pos:end="63:24"><name pos:start="63:9" pos:end="63:24">US2174_SERVER_IP</name></cpp:macro>        <cpp:value pos:start="63:33" pos:end="63:43">"127.0.0.1"</cpp:value></cpp:define>
+<cpp:define pos:start="64:1" pos:end="64:54">#<cpp:directive pos:start="64:2" pos:end="64:7">define</cpp:directive> <cpp:macro pos:start="64:9" pos:end="64:23"><name pos:start="64:9" pos:end="64:23">US2174_TCP_PORT</name></cpp:macro>         <cpp:value pos:start="64:33" pos:end="64:54">US2174_TCP_SERVER_PORT</cpp:value></cpp:define>
+
+<comment type="block" pos:start="66:1" pos:end="71:3">/*
+ * The following CSR was generated using the following openssl command and then
+ * using cat on the rsa.req file:
+ *
+ * openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM
+ */</comment>
+<cpp:define pos:start="72:1" pos:end="72:1000">#<cpp:directive pos:start="72:2" pos:end="72:7">define</cpp:directive> <cpp:macro pos:start="72:9" pos:end="72:29"><name pos:start="72:9" pos:end="72:29">US2174_PKCS10_RSA2048</name></cpp:macro> <cpp:value pos:start="72:31" pos:end="72:1000">"MIICvTCCAaUCAQAweDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMQwwCgYDVQQH\nDANSVFAxEjAQBgNVBAoMCVJTQWNlcnRjbzEMMAoGA1UECwwDcnNhMRAwDgYDVQQD\nDAdyc2EgZG9lMRowGAYJKoZIhvcNAQkBFgtyc2FAZG9lLmNvbTCCASIwDQYJKoZI\nhvcNAQEBBQADggEPADCCAQoCggEBAN6pCTBrK7T029Bganq0QHXHyNL8opvxc7JY\nXaQz39R3J9BoBE72XZ0QXsBtUEYGNhHOLaISASNzs2ZKWpvMHJWmPYNt39OCi48Y\nFOgLDbAn83mAOKSfcMLbibCcsh4HOlhaaFrWskRTAsew16MUOzFu6vBkw/AhI82J\nKPYws0dYOxuWFIgE1HL+m/gplbzq7FrBIdrqkNL+ddgyXoDd5NuLMJGDAK7vB1Ww\n9/Baw/6Ai9V5psye1v8fWDr6HW2gg9XnVtMwB4pCg1rl1lSYstumTGYbM6cxJywe\nLuMnDjj1ZwDsZ1wIXaBAXZaxEIS/rXOX0HnZMTefxY/gpFk1Kv0CAwEAAaAAMA0G\nCSqGSIb3DQEBBQUAA4IBAQB6rIwNjE8l8jFKR1hQ/qeSvee/bAQa58RufZ4USKuK\nlsih7UCf8bkQvgljnhscQuczIbnJzeqEPqSdnomFW6CvMc/ah+QfX87FGYxJgpwF\nutnUifjDiZhrWgf/jNNbtHrkecw/Zex4sZ/HC127jtE3cyEkDsrA1oBxYRCq93tC\nW2q9PLVmLlyjcZcS1KHVD2nya79kfS0YGMocsw1GelVL2iz/ocayAS5GB9Y2sEBw\nRkCaYZw6vhj5qjpCUzJ3E8Cl3VD4Kpi3j3bZGDJA9mdmd8j5ZyPY56eAuxarWssD\nciUM/h6E99w3tmrUZbLljkjJ7pBXRnontgm5WZmQFH4X"</cpp:value></cpp:define>
+
+<comment type="block" pos:start="74:1" pos:end="79:3">/*
+ * The following CSR was generated using the following openssl command and then
+ * using cat on the ec.req file:
+ *
+ * openssl req -newkey ec:256parms -keyout eckey.pem -keyform PEM -out ec.req -outform PEM
+ */</comment>
+<cpp:define pos:start="80:1" pos:end="80:914">#<cpp:directive pos:start="80:2" pos:end="80:7">define</cpp:directive> <cpp:macro pos:start="80:9" pos:end="80:29"><name pos:start="80:9" pos:end="80:29">US2174_PKCS10_DSA1024</name></cpp:macro> <cpp:value pos:start="80:31" pos:end="80:914">"MIICfjCCAj0CAQAwfDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk5DMQwwCgYDVQQH\nDANSVFAxEzARBgNVBAoMCkRTQUNvbXBhbnkxDzANBgNVBAsMBkRTQW9yZzEQMA4G\nA1UEAwwHZHNhIGRvZTEaMBgGCSqGSIb3DQEJARYLZHNhQGRvZS5jb20wggG2MIIB\nKwYHKoZIzjgEATCCAR4CgYEAqIfbyk7rEAaULIPB1GcHHc0ctx6g0dhBfdUdOPNG\nBSE+TP5UF5lw8Qm6oCXstU3nYEJalmMvkjFwbgvBws8aJBnj09dDDn8spKEGcG0M\nZpqdMys6+b4QJjq5YAxEaATVY/1L/rBgGGm1EFDhc/6Ezm2T3CGeQklwo5aBZQCc\naIsCFQDC1olBFuE+phOhjXAwEE5EPJkRJwKBgD+vZ+tLCTjBzVFNjAO8X/SMamwW\noraNfdyZ+ZCEAmYI/D4838nCGAjVRQyDb1q5akkLyxoJX1YV7gNbaBNUys3waqdu\nso1HtuEur2cbhU5iOeKBWpj6MIWlPdD3uCRu4uiBF9XBiANaRID8CT2kchhwy4Ok\nFfQMuYOz4eBhMQqmA4GEAAKBgDuwR7H3U4CfuQjWeTtrI50M1TxhlVZ3TonRtVIx\nEHpuXxAouxATVkthJtaCBKc0EHii1bE/kgNUgGX/ZdFjBUb/XfpkYsRT3QRLF0+s\nPZGY/0TovO9pKjqiw0C10leNKFbEVdlXYtAkjXUbHmyNog3195/t7oKXHMT1A/5p\nhUCRoAAwCQYHKoZIzjgEAwMwADAtAhUAhPCqQG3gKUUPKdwBNCmZfzWDqjsCFAh0\nzn9HujlXNaTA1OhjmPmcJSxT"</cpp:value></cpp:define>
+
+<comment type="block" pos:start="82:1" pos:end="87:3">/*
+ * The following CSR was generated using the following openssl command and then
+ * using cat on the dsa.req file:
+ *
+ * openssl req -newkey dsa:dsaparms -keyout dsakey.pem -keyform PEM -out dsa.req -outform PEM
+ */</comment>
+<cpp:define pos:start="88:1" pos:end="88:457">#<cpp:directive pos:start="88:2" pos:end="88:7">define</cpp:directive> <cpp:macro pos:start="88:9" pos:end="88:30"><name pos:start="88:9" pos:end="88:30">US2174_PKCS10_ECDSA256</name></cpp:macro> <cpp:value pos:start="88:32" pos:end="88:457">"MIIBMTCB2gIBADB4MQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkMxDDAKBgNVBAcM\nA1JUUDESMBAGA1UECgwJRUNDb21wYW55MQ4wDAYDVQQLDAVFQ29yZzEPMA0GA1UE\nAwwGRUMgZG9lMRkwFwYJKoZIhvcNAQkBFgplY0Bkb2UuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAEO1uszCKdXNFzygNLNeS8azQKod1516GT9qdDddt9iJN4\nLpBTnv+7K7+tji5kts1kWSYyvqLxvnq8Q/TU1iQJ56AAMAkGByqGSM49BAEDRwAw\nRAIgP6qda+0TEKZFPopgUfwFMRsxcNmuQUe2yuz16460/SQCIBfLvmuMeyYOqbbD\nX0Ifde9yzkROVBCEPvK0hcU5KsTO"</cpp:value></cpp:define>
+
+<cpp:define pos:start="90:1" pos:end="90:456">#<cpp:directive pos:start="90:2" pos:end="90:7">define</cpp:directive> <cpp:macro pos:start="90:9" pos:end="90:29"><name pos:start="90:9" pos:end="90:29">US2174_PKCS10_CORRUPT</name></cpp:macro> <cpp:value pos:start="90:31" pos:end="90:456">"MIIBMTCB2gIBADB4MQswCQYDVQQGEwJVUzELMAkGA1UECAwCTkMxDDAKBgNVBAcM\nA1JUUDESMBAGA1UECgwJRUNDb21wYW55MQ4wDAYDVQQLDAVFQ39yZzEPMA0GA1UE\nAwwGRUMgZG9lMRkwFwYJKoZIhvcNAQkBFgplY0Bkb2UuY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAEO1uszCKdXNFzygNLNeS8azQKod1516GT9qdDddt9iJN4\nLpBTnv+7K7+tji5kts1kWSYyvqLxvnq8Q/TU1iQJ56AAMAkGByqGSM49BAEDRwAw\nRAIgP6qda+0TEKZFPopgUfwFMRsxcNmuQUe2yuz16460/SQCIBfLvmuMeyYOqbbD\nX0Ifde9yzkROVBCEPvK0hcU5KsTO"</cpp:value></cpp:define>
+
+<comment type="block" pos:start="92:1" pos:end="97:3">/*
+ * The following is a valid CSR that already contains a PoP
+ * challengePassword.  This was collected using estserver with
+ * the dumpbin() function.  This CSR should never work since
+ * the PoP value in it will be stale.
+ */</comment>
+<cpp:define pos:start="98:1" pos:end="98:548">#<cpp:directive pos:start="98:2" pos:end="98:7">define</cpp:directive> <cpp:macro pos:start="98:9" pos:end="98:31"><name pos:start="98:9" pos:end="98:31">US2174_PKCS10_STALE_POP</name></cpp:macro> <cpp:value pos:start="98:33" pos:end="98:548">"MIIBcjCB3AIBADARMQ8wDQYDVQQDEwZURVNUQ04wgZ8wDQYJKoZIhvcNAQEBBQAD\ngY0AMIGJAoGBAPDHvrkVB3+rFHl+KuIsrZGixldRYRD50S2vFs8mW5wWVxDS3xFR\nzcKtqg7JUyW8NYOFNWX0ozhCe87XP2h7tUpHyHlL/8N/84zuMtAtKTLU3Bjgq1xg\nuu8a1ht10wiy8u2r/uEKMhQwpvt56UY5pHzuqmqlO0qlmE+M58WN49IhAgMBAAGg\nIjAgBgkqhkiG9w0BCQcxExYRUjdGN1ZUNUwyd2VueWtMcAowDQYJKoZIhvcNAQEF\nBQADgYEAyenrskmfRIXcpeKBvL3VnW5N4HcLTwI9Hcbr744SWFQaw/R+ru+UXd2j\n99AGBr/GvTkTghINWg2C7vzGF/zhIuG6Ok9FtiMnNr9hZ+5SLYhfSFJbuIv65rWH\nvfLR9N9M2Q9jlf7p4AYfWXD2qD2XOTZw2t4trGZGKA2JR/OiB40="</cpp:value></cpp:define>
+
+<cpp:define pos:start="100:1" pos:end="100:86">#<cpp:directive pos:start="100:2" pos:end="100:7">define</cpp:directive> <cpp:macro pos:start="100:9" pos:end="100:28"><name pos:start="100:9" pos:end="100:28">US2174_ENROLL_URL_BA</name></cpp:macro>    <cpp:value pos:start="100:33" pos:end="100:86">"https://127.0.0.1:62175/.well-known/est/simpleenroll"</cpp:value></cpp:define>
+<cpp:define pos:start="101:1" pos:end="101:66">#<cpp:directive pos:start="101:2" pos:end="101:7">define</cpp:directive> <cpp:macro pos:start="101:9" pos:end="101:24"><name pos:start="101:9" pos:end="101:24">US2174_PKCS10_CT</name></cpp:macro>        <cpp:value pos:start="101:33" pos:end="101:66">"Content-Type: application/pkcs10"</cpp:value></cpp:define> 
+<cpp:define pos:start="102:1" pos:end="102:48">#<cpp:directive pos:start="102:2" pos:end="102:7">define</cpp:directive> <cpp:macro pos:start="102:9" pos:end="102:26"><name pos:start="102:9" pos:end="102:26">US2174_UIDPWD_GOOD</name></cpp:macro>      <cpp:value pos:start="102:33" pos:end="102:48">"estuser:estpwd"</cpp:value></cpp:define>
+
+<function pos:start="104:1" pos:end="136:0"><type pos:start="104:1" pos:end="104:17"><specifier pos:start="104:1" pos:end="104:6">static</specifier> <name pos:start="104:8" pos:end="104:15">EVP_PKEY</name> <modifier pos:start="104:17" pos:end="104:17">*</modifier></type> <name pos:start="104:19" pos:end="104:38">generate_private_key</name> <parameter_list pos:start="104:40" pos:end="104:45">(<parameter pos:start="104:41" pos:end="104:44"><decl pos:start="104:41" pos:end="104:44"><type pos:start="104:41" pos:end="104:44"><name pos:start="104:41" pos:end="104:44">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="105:1" pos:end="136:0">{<block_content pos:start="106:5" pos:end="129:18">
+    <decl_stmt pos:start="106:5" pos:end="106:25"><decl pos:start="106:5" pos:end="106:24"><type pos:start="106:5" pos:end="106:9"><name pos:start="106:5" pos:end="106:7">RSA</name> <modifier pos:start="106:9" pos:end="106:9">*</modifier></type><name pos:start="106:10" pos:end="106:12">rsa</name> <init pos:start="106:14" pos:end="106:24">= <expr pos:start="106:16" pos:end="106:24"><call pos:start="106:16" pos:end="106:24"><name pos:start="106:16" pos:end="106:22">RSA_new</name><argument_list pos:start="106:23" pos:end="106:24">()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="107:5" pos:end="107:26"><decl pos:start="107:5" pos:end="107:25"><type pos:start="107:5" pos:end="107:12"><name pos:start="107:5" pos:end="107:10">BIGNUM</name> <modifier pos:start="107:12" pos:end="107:12">*</modifier></type><name pos:start="107:13" pos:end="107:14">bn</name> <init pos:start="107:16" pos:end="107:25">= <expr pos:start="107:18" pos:end="107:25"><call pos:start="107:18" pos:end="107:25"><name pos:start="107:18" pos:end="107:23">BN_new</name><argument_list pos:start="107:24" pos:end="107:25">()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="108:5" pos:end="108:19"><decl pos:start="108:5" pos:end="108:18"><type pos:start="108:5" pos:end="108:14"><name pos:start="108:5" pos:end="108:12">EVP_PKEY</name> <modifier pos:start="108:14" pos:end="108:14">*</modifier></type><name pos:start="108:15" pos:end="108:18">pkey</name></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="110:5" pos:end="112:7">/*
+     * create an RSA keypair and assign them to a PKEY and return it.
+     */</comment>
+    <expr_stmt pos:start="113:5" pos:end="113:29"><expr pos:start="113:5" pos:end="113:28"><call pos:start="113:5" pos:end="113:28"><name pos:start="113:5" pos:end="113:15">BN_set_word</name><argument_list pos:start="113:16" pos:end="113:28">(<argument pos:start="113:17" pos:end="113:18"><expr pos:start="113:17" pos:end="113:18"><name pos:start="113:17" pos:end="113:18">bn</name></expr></argument>, <argument pos:start="113:21" pos:end="113:27"><expr pos:start="113:21" pos:end="113:27"><literal type="number" pos:start="113:21" pos:end="113:27">0x10001</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="114:5" pos:end="114:45"><expr pos:start="114:5" pos:end="114:44"><call pos:start="114:5" pos:end="114:44"><name pos:start="114:5" pos:end="114:23">RSA_generate_key_ex</name><argument_list pos:start="114:24" pos:end="114:44">(<argument pos:start="114:25" pos:end="114:27"><expr pos:start="114:25" pos:end="114:27"><name pos:start="114:25" pos:end="114:27">rsa</name></expr></argument>, <argument pos:start="114:30" pos:end="114:33"><expr pos:start="114:30" pos:end="114:33"><literal type="number" pos:start="114:30" pos:end="114:33">1024</literal></expr></argument>, <argument pos:start="114:36" pos:end="114:37"><expr pos:start="114:36" pos:end="114:37"><name pos:start="114:36" pos:end="114:37">bn</name></expr></argument>, <argument pos:start="114:40" pos:end="114:43"><expr pos:start="114:40" pos:end="114:43"><name pos:start="114:40" pos:end="114:43">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt pos:start="116:5" pos:end="116:26"><expr pos:start="116:5" pos:end="116:25"><name pos:start="116:5" pos:end="116:8">pkey</name> <operator pos:start="116:10" pos:end="116:10">=</operator> <call pos:start="116:12" pos:end="116:25"><name pos:start="116:12" pos:end="116:23">EVP_PKEY_new</name><argument_list pos:start="116:24" pos:end="116:25">()</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="117:5" pos:end="120:5"><if pos:start="117:5" pos:end="120:5">if <condition pos:start="117:8" pos:end="117:21">(<expr pos:start="117:9" pos:end="117:20"><name pos:start="117:9" pos:end="117:12">pkey</name> <operator pos:start="117:14" pos:end="117:15">==</operator> <name pos:start="117:17" pos:end="117:20">NULL</name></expr>)</condition> <block pos:start="117:23" pos:end="120:5">{<block_content pos:start="118:9" pos:end="119:20">
+        <expr_stmt pos:start="118:9" pos:end="118:71"><expr pos:start="118:9" pos:end="118:70"><call pos:start="118:9" pos:end="118:70"><name pos:start="118:9" pos:end="118:14">printf</name><argument_list pos:start="118:15" pos:end="118:70">(<argument pos:start="118:16" pos:end="118:69"><expr pos:start="118:16" pos:end="118:69"><literal type="string" pos:start="118:16" pos:end="118:69">"\nError allocating PKEY structure for new key pair\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:start="119:9" pos:end="119:20">return <expr pos:start="119:16" pos:end="119:19"><name pos:start="119:16" pos:end="119:19">NULL</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <if_stmt pos:start="121:5" pos:end="124:5"><if pos:start="121:5" pos:end="124:5">if <condition pos:start="121:8" pos:end="121:38">(<expr pos:start="121:9" pos:end="121:37"><operator pos:start="121:9" pos:end="121:9">!</operator><call pos:start="121:10" pos:end="121:37"><name pos:start="121:10" pos:end="121:26">EVP_PKEY_set1_RSA</name><argument_list pos:start="121:27" pos:end="121:37">(<argument pos:start="121:28" pos:end="121:31"><expr pos:start="121:28" pos:end="121:31"><name pos:start="121:28" pos:end="121:31">pkey</name></expr></argument>, <argument pos:start="121:34" pos:end="121:36"><expr pos:start="121:34" pos:end="121:36"><name pos:start="121:34" pos:end="121:36">rsa</name></expr></argument>)</argument_list></call></expr>)</condition> <block pos:start="121:40" pos:end="124:5">{<block_content pos:start="122:9" pos:end="123:20">
+        <expr_stmt pos:start="122:9" pos:end="122:69"><expr pos:start="122:9" pos:end="122:68"><call pos:start="122:9" pos:end="122:68"><name pos:start="122:9" pos:end="122:14">printf</name><argument_list pos:start="122:15" pos:end="122:68">(<argument pos:start="122:16" pos:end="122:67"><expr pos:start="122:16" pos:end="122:67"><literal type="string" pos:start="122:16" pos:end="122:67">"\nError assigning RSA key pair to PKEY structure\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return pos:start="123:9" pos:end="123:20">return <expr pos:start="123:16" pos:end="123:19"><name pos:start="123:16" pos:end="123:19">NULL</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <expr_stmt pos:start="126:5" pos:end="126:18"><expr pos:start="126:5" pos:end="126:17"><call pos:start="126:5" pos:end="126:17"><name pos:start="126:5" pos:end="126:12">RSA_free</name><argument_list pos:start="126:13" pos:end="126:17">(<argument pos:start="126:14" pos:end="126:16"><expr pos:start="126:14" pos:end="126:16"><name pos:start="126:14" pos:end="126:16">rsa</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="127:5" pos:end="127:16"><expr pos:start="127:5" pos:end="127:15"><call pos:start="127:5" pos:end="127:15"><name pos:start="127:5" pos:end="127:11">BN_free</name><argument_list pos:start="127:12" pos:end="127:15">(<argument pos:start="127:13" pos:end="127:14"><expr pos:start="127:13" pos:end="127:14"><name pos:start="127:13" pos:end="127:14">bn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return pos:start="129:5" pos:end="129:18">return <expr pos:start="129:12" pos:end="129:17"><operator pos:start="129:12" pos:end="129:12">(</operator><name pos:start="129:13" pos:end="129:16">pkey</name><operator pos:start="129:17" pos:end="129:17">)</operator></expr>;</return>
+</block_content>}</block></function>
+
+<cpp:define pos:start="132:1" pos:end="132:69">#<cpp:directive pos:start="132:2" pos:end="132:7">define</cpp:directive> <cpp:macro pos:start="132:9" pos:end="132:18"><name pos:start="132:9" pos:end="132:18">GOOD_TOKEN</name></cpp:macro> <cpp:value pos:start="132:20" pos:end="132:69">"WW91IGRvbid0IGhhdmUgdG8gaG9sbGVyIEkgaGVhciB5b3U="</cpp:value></cpp:define>
+<cpp:define pos:start="133:1" pos:end="133:286">#<cpp:directive pos:start="133:2" pos:end="133:7">define</cpp:directive> <cpp:macro pos:start="133:9" pos:end="133:23"><name pos:start="133:9" pos:end="133:23">DIFFERENT_TOKEN</name></cpp:macro> <cpp:value pos:start="133:25" pos:end="133:286">"V2VsbCwgSSd2ZSBnb3QgdG8gcnVuIHRvIGtlZXAgZnJvbSBoaWRpbicNCkFuZCBJJ20gYm91bmQgdG8ga2VlcCBvbiByaWRpbicNCkFuZCBJJ3ZlIGdvdCBvbmUgbW9yZSBzaWx2ZXIgZG9sbGFyDQpCdXQgSSdtIG5vdCBnb25uYSBsZXQgJ2VtIGNhdGNoIG1lLCBubw0KTm90IGdvbm5hIGxldCAnZW0gY2F0Y2ggdGhlIG1pZG5pZ2h0IHJpZGVy"</cpp:value></cpp:define>
+<cpp:define pos:start="134:1" pos:end="134:24">#<cpp:directive pos:start="134:2" pos:end="134:7">define</cpp:directive> <cpp:macro pos:start="134:9" pos:end="134:18"><name pos:start="134:9" pos:end="134:18">NULL_TOKEN</name></cpp:macro> <cpp:value pos:start="134:20" pos:end="134:24">NULL;</cpp:value></cpp:define>
+<cpp:define pos:start="135:1" pos:end="135:2069">#<cpp:directive pos:start="135:2" pos:end="135:7">define</cpp:directive> <cpp:macro pos:start="135:9" pos:end="135:18"><name pos:start="135:9" pos:end="135:18">LONG_TOKEN</name></cpp:macro> <cpp:value pos:start="135:20" pos:end="135:2069">"SSBjYW4ndCBhZ3JlZSB0byBkaXNhZ3JlZSANCkZpZ2h0aW5nIGxpa2UgSSdtIGZpZ2h0aW5nIGZvciBsaWZlIA0KVGhleSdyZSBvbmx5IHdvcmRzIGJ1dCB0aGV5IGN1dCBsaWtlIGEgYmxhZGUgDQpTd2luZ2luZyB3aWRlIHdpdGggYWxsIG9mIG15IG1pZ2h0IA0KDQpBaCB5ZWFoLCBJIGd1ZXNzIGl0J3MgYWxsIG9mIHRoYXQgY29mZmVlLCB0aGF0J3MgZ290IG15IG1pbmQgaW4gYSB3aGlybCANCkknbSBzdGlsbCBjdXNzaW5nIGFuZCBiaXRjaGluZyBhbmQgdGhlcmUgYWluJ3Qgbm9ib2R5IGhlcmUgDQoNCk9oIHllYWgsIHlvdSBkb24ndCBoYXZlIHRvIGhvbGxlciBJIGhlYXIgeW91IA0KSSdtIHN0YW5kaW5nIHJpZ2h0IGhlcmUgYmVzaWRlIHlvdSANCk9oLCA5OSBzaGFkZXMgb2YgY3JhenksIEknbSA5OSBzaGFkZXMgb2YgY3JhenkgDQpDcmF6eSwgY3JhenksIGNyYXp5LCBjcmF6eSANCg0KUG91ciBhbm90aGVyIGRyaW5rLCBtYWtlIGl0IGEgZG91YmxlIGZvciBtZSANCk1heWJlIEkgY2FuIGRyaW5rIHRoaXMgYXdheSANCkl0J3MgbmV2ZXIgZnVuIHdoZW4gdGhleSBwdWxsIG91dCB0aGUgZ3VuIA0KQmVhdCB5b3UgYmxhY2sgYW5kIGJsdWUsIGJveSANCllvdSBnb3R0YSBwYXksIHlvdSBnb3R0YSBwYXkgDQoNCk9oLCB3aGVyZSB0aGUgaGVsbCBhbSBJPyBJIGhvcGUgYXQgbGVhc3QgSSBoYWQgZnVuIA0KSSdtIHN0dW1ibGluZyB0aHJvdWdoIE5ldyBPcmxlYW5zIG9oLCB0byB0aGUgcmlzaW5nIHN1biANCg0KT2ggeWVhaCwgeW91IGRvbid0IGhhdmUgdG8gaG9sbGVyIEkgaGVhciB5b3UgDQpJJ20gc3RhbmRpbmcgcmlnaHQgaGVyZSBiZXNpZGUgeW91IA0KT2gsIDk5IHNoYWRlcyBvZiBjcmF6eSwgSSdtIDk5IHNoYWRlcyBvZiBjcmF6eSANCkNyYXp5LCBjcmF6eSwgY3JhenksIGNyYXp5IA0KDQpMb3JkIGhhdmUgbWVyY3kgb24gbWUgDQpOb3ZlbnRhIG51ZXZhIHRvbm9zIGRlIGxvY28gDQoNCkkgbmVlZCBzb21lIHBlYWNlLCBqdXN0IHNvbWUgcmVsaWVmIA0KRnJvbSB0aGlzIHZvaWNlLCBraWxsaW5nIG1lIA0KWW91IHN0YXJlIGF0IG1lLCBhbmQgeW91IGdsYXJlIGF0IG1lIA0KQWxsIHRoaXMgcGFpbiBpdCdzIGFsbCB0aGUgc2FtZSwgaXQncyBhbGwgaW5zYW5lIA0KKHlvdSBzZWUpIA0KDQpJcyB0aGlzIHJlYWxseSBoYXBwZW5pbmcgb3IgZGlkIEkgbWFrZSBpdCBhbGwgdXA/IA0KSSdtIGJvdW5kIGZvciBDaGF0dGFob29jaGVlIG9uIGEgdHVybmlwIHRydWNrIA0KDQpPaCB5ZWFoLCB5b3UgZG9uJ3QgaGF2ZSB0byBob2xsZXIgSSBoZWFyIHlvdSANCkknbSBzdGFuZGluZyByaWdodCBoZXJlIGJlc2lkZSB5b3UgDQpPaCwgOTkgc2hhZGVzIG9mIGNyYXp5LCBJJ20gOTkgc2hhZGVzIG9mIGNyYXp5IA0KQ3JhenksIGNyYXp5LCBjcmF6eSwgY3JhenkgDQoNCkFoIHlvdSdyZSBjcmF6eSB5b3UncmUgY3JhenkgDQpIb2xkIG15IGZlZXQsIGZlZXQgdG8gdGhlIGZpcmUgDQpZb3UgaG9sZCBteSBmZWV0IHRvIHRoZSBmaXJlIA0KSSBuZXZlciBzYWlkIEkgd2FzIGRvd24gd2l0aCB5b3U="</cpp:value></cpp:define>
+<decl_stmt pos:start="136:1" pos:end="136:77"><decl pos:start="136:1" pos:end="136:76"><type pos:start="136:1" pos:end="136:13"><specifier pos:start="136:1" pos:end="136:6">static</specifier> <name pos:start="136:8" pos:end="136:11">char</name> <modifier pos:start="136:13" pos:end="136:13">*</modifier></type><name pos:start="136:14" pos:end="136:23">test_token</name> <init pos:start="136:25" pos:end="136:76">= <expr pos:start="136:27" pos:end="136:76"><literal type="string" pos:start="136:27" pos:end="136:76">"WW91IGRvbid0IGhhdmUgdG8gaG9sbGVyIEkgaGVhciB5b3U="</literal></expr></init></decl>;</decl_stmt>
+
+<decl_stmt pos:start="138:1" pos:end="138:41"><decl pos:start="138:1" pos:end="138:40"><type pos:start="138:1" pos:end="138:10"><specifier pos:start="138:1" pos:end="138:6">static</specifier> <name pos:start="138:8" pos:end="138:10">int</name></type> <name pos:start="138:12" pos:end="138:36">auth_cred_callback_called</name> <init pos:start="138:38" pos:end="138:40">= <expr pos:start="138:40" pos:end="138:40"><literal type="number" pos:start="138:40" pos:end="138:40">0</literal></expr></init></decl>;</decl_stmt>
+<decl_stmt pos:start="139:1" pos:end="139:37"><decl pos:start="139:1" pos:end="139:36"><type pos:start="139:1" pos:end="139:10"><specifier pos:start="139:1" pos:end="139:6">static</specifier> <name pos:start="139:8" pos:end="139:10">int</name></type> <name pos:start="139:12" pos:end="139:32">auth_cred_force_error</name> <init pos:start="139:34" pos:end="139:36">= <expr pos:start="139:36" pos:end="139:36"><literal type="number" pos:start="139:36" pos:end="139:36">0</literal></expr></init></decl>;</decl_stmt>
+
+<comment type="block" pos:start="141:1" pos:end="153:3">/*
+ * auth_credentials_token_cb() is the application layer callback function that will
+ * return a token based authentication credential when called.  It's registered
+ * with the EST Client using the est_client_set_auth_cred_cb().
+ * The test function is required to set some global values in order to make this
+ * callback operate the way that the test case wants.
+ * - auth_cred_force_error = tell this function to force a response code error
+ * - test_token = pointer to a hard coded string that is the token string to return
+ *
+ * This callback must provide the token credentials in a heap based buffer, and
+ * ownership of that buffer is implicitly transferred to the ET client library upon
+ * return.
+ */</comment>
+<function pos:start="154:1" pos:end="207:1"><type pos:start="154:1" pos:end="154:28"><specifier pos:start="154:1" pos:end="154:6">static</specifier> <name pos:start="154:8" pos:end="154:28">EST_HTTP_AUTH_CRED_RC</name></type> <name pos:start="154:30" pos:end="154:54">auth_credentials_token_cb</name> <parameter_list pos:start="154:56" pos:end="155:44">(
+        <parameter pos:start="155:9" pos:end="155:43"><decl pos:start="155:9" pos:end="155:43"><type pos:start="155:9" pos:end="155:27"><name pos:start="155:9" pos:end="155:25">EST_HTTP_AUTH_HDR</name> <modifier pos:start="155:27" pos:end="155:27">*</modifier></type><name pos:start="155:28" pos:end="155:43">auth_credentials</name></decl></parameter>)</parameter_list>
+<block pos:start="156:1" pos:end="207:1">{<block_content pos:start="157:5" pos:end="206:46">
+    <decl_stmt pos:start="157:5" pos:end="157:27"><decl pos:start="157:5" pos:end="157:26"><type pos:start="157:5" pos:end="157:10"><name pos:start="157:5" pos:end="157:8">char</name> <modifier pos:start="157:10" pos:end="157:10">*</modifier></type><name pos:start="157:11" pos:end="157:19">token_ptr</name> <init pos:start="157:21" pos:end="157:26">= <expr pos:start="157:23" pos:end="157:26"><name pos:start="157:23" pos:end="157:26">NULL</name></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="158:5" pos:end="158:22"><decl pos:start="158:5" pos:end="158:21"><type pos:start="158:5" pos:end="158:7"><name pos:start="158:5" pos:end="158:7">int</name></type> <name pos:start="158:9" pos:end="158:17">token_len</name> <init pos:start="158:19" pos:end="158:21">= <expr pos:start="158:21" pos:end="158:21"><literal type="number" pos:start="158:21" pos:end="158:21">0</literal></expr></init></decl>;</decl_stmt>
+
+    <expr_stmt pos:start="160:5" pos:end="160:52"><expr pos:start="160:5" pos:end="160:51"><call pos:start="160:5" pos:end="160:51"><name pos:start="160:5" pos:end="160:13">CU_ASSERT</name><argument_list pos:start="160:14" pos:end="160:51">(<argument pos:start="160:15" pos:end="160:50"><expr pos:start="160:15" pos:end="160:50"><name pos:start="160:15" pos:end="160:36"><name pos:start="160:15" pos:end="160:30">auth_credentials</name><operator pos:start="160:31" pos:end="160:32">-&gt;</operator><name pos:start="160:33" pos:end="160:36">mode</name></name> <operator pos:start="160:38" pos:end="160:39">==</operator> <name pos:start="160:41" pos:end="160:50">AUTH_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="162:5" pos:end="164:7">/*
+     * report that the callback has been called.
+     */</comment>
+    <expr_stmt pos:start="165:5" pos:end="165:34"><expr pos:start="165:5" pos:end="165:33"><name pos:start="165:5" pos:end="165:29">auth_cred_callback_called</name> <operator pos:start="165:31" pos:end="165:31">=</operator> <literal type="number" pos:start="165:33" pos:end="165:33">1</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="167:5" pos:end="170:7">/*
+     * See if the test is requesting to force an error response code from the
+     * callback
+     */</comment>
+    <if_stmt pos:start="171:5" pos:end="173:5"><if pos:start="171:5" pos:end="173:5">if <condition pos:start="171:8" pos:end="171:30">(<expr pos:start="171:9" pos:end="171:29"><name pos:start="171:9" pos:end="171:29">auth_cred_force_error</name></expr>)</condition> <block pos:start="171:32" pos:end="173:5">{<block_content pos:start="172:9" pos:end="172:50">
+        <return pos:start="172:9" pos:end="172:50">return <expr pos:start="172:16" pos:end="172:49"><operator pos:start="172:16" pos:end="172:16">(</operator><name pos:start="172:17" pos:end="172:48">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name><operator pos:start="172:49" pos:end="172:49">)</operator></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <if_stmt pos:start="175:5" pos:end="204:5"><if pos:start="175:5" pos:end="204:5">if <condition pos:start="175:8" pos:end="175:45">(<expr pos:start="175:9" pos:end="175:44"><name pos:start="175:9" pos:end="175:30"><name pos:start="175:9" pos:end="175:24">auth_credentials</name><operator pos:start="175:25" pos:end="175:26">-&gt;</operator><name pos:start="175:27" pos:end="175:30">mode</name></name> <operator pos:start="175:32" pos:end="175:33">==</operator> <name pos:start="175:35" pos:end="175:44">AUTH_TOKEN</name></expr>)</condition> <block pos:start="175:47" pos:end="204:5">{<block_content pos:start="180:9" pos:end="203:44">
+        <comment type="block" pos:start="176:9" pos:end="179:11">/*
+         * If the test_token is set to anything, then we need to allocate
+         * space from the heap and copy in the value.
+         */</comment>
+        <if_stmt pos:start="180:9" pos:end="196:9"><if pos:start="180:9" pos:end="196:9">if <condition pos:start="180:12" pos:end="180:31">(<expr pos:start="180:13" pos:end="180:30"><name pos:start="180:13" pos:end="180:22">test_token</name> <operator pos:start="180:24" pos:end="180:25">!=</operator> <name pos:start="180:27" pos:end="180:30">NULL</name></expr>)</condition> <block pos:start="180:33" pos:end="196:9">{<block_content pos:start="181:13" pos:end="195:40">
+            <expr_stmt pos:start="181:13" pos:end="181:43"><expr pos:start="181:13" pos:end="181:42"><name pos:start="181:13" pos:end="181:21">token_len</name> <operator pos:start="181:23" pos:end="181:23">=</operator> <call pos:start="181:25" pos:end="181:42"><name pos:start="181:25" pos:end="181:30">strlen</name><argument_list pos:start="181:31" pos:end="181:42">(<argument pos:start="181:32" pos:end="181:41"><expr pos:start="181:32" pos:end="181:41"><name pos:start="181:32" pos:end="181:41">test_token</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="block" pos:start="181:45" pos:end="182:48">/* use strlen() so that the string can be as large
+             as needed to test the EST client */</comment>
+            <if_stmt pos:start="183:13" pos:end="187:13"><if pos:start="183:13" pos:end="187:13">if <condition pos:start="183:16" pos:end="183:31">(<expr pos:start="183:17" pos:end="183:30"><name pos:start="183:17" pos:end="183:25">token_len</name> <operator pos:start="183:27" pos:end="183:28">==</operator> <literal type="number" pos:start="183:30" pos:end="183:30">0</literal></expr>)</condition> <block pos:start="183:33" pos:end="187:13">{<block_content pos:start="184:17" pos:end="186:56">
+                <expr_stmt pos:start="184:17" pos:end="185:89"><expr pos:start="184:17" pos:end="185:88"><call pos:start="184:17" pos:end="185:88"><name pos:start="184:17" pos:end="184:22">printf</name><argument_list pos:start="184:23" pos:end="185:88">(
+                    <argument pos:start="185:21" pos:end="185:87"><expr pos:start="185:21" pos:end="185:87"><literal type="string" pos:start="185:21" pos:end="185:87">"\nError determining length of token string used for credentials\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <return pos:start="186:17" pos:end="186:56">return <expr pos:start="186:24" pos:end="186:55"><name pos:start="186:24" pos:end="186:55">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt pos:start="188:13" pos:end="188:46"><expr pos:start="188:13" pos:end="188:45"><name pos:start="188:13" pos:end="188:21">token_ptr</name> <operator pos:start="188:23" pos:end="188:23">=</operator> <call pos:start="188:25" pos:end="188:45"><name pos:start="188:25" pos:end="188:30">malloc</name><argument_list pos:start="188:31" pos:end="188:45">(<argument pos:start="188:32" pos:end="188:44"><expr pos:start="188:32" pos:end="188:44"><name pos:start="188:32" pos:end="188:40">token_len</name> <operator pos:start="188:42" pos:end="188:42">+</operator> <literal type="number" pos:start="188:44" pos:end="188:44">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <if_stmt pos:start="189:13" pos:end="193:13"><if pos:start="189:13" pos:end="193:13">if <condition pos:start="189:16" pos:end="189:34">(<expr pos:start="189:17" pos:end="189:33"><name pos:start="189:17" pos:end="189:25">token_ptr</name> <operator pos:start="189:27" pos:end="189:28">==</operator> <name pos:start="189:30" pos:end="189:33">NULL</name></expr>)</condition> <block pos:start="189:36" pos:end="193:13">{<block_content pos:start="190:17" pos:end="192:56">
+                <expr_stmt pos:start="190:17" pos:end="191:78"><expr pos:start="190:17" pos:end="191:77"><call pos:start="190:17" pos:end="191:77"><name pos:start="190:17" pos:end="190:22">printf</name><argument_list pos:start="190:23" pos:end="191:77">(
+                    <argument pos:start="191:21" pos:end="191:76"><expr pos:start="191:21" pos:end="191:76"><literal type="string" pos:start="191:21" pos:end="191:76">"\nError allocating token string used for credentials\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <return pos:start="192:17" pos:end="192:56">return <expr pos:start="192:24" pos:end="192:55"><name pos:start="192:24" pos:end="192:55">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt pos:start="194:13" pos:end="194:63"><expr pos:start="194:13" pos:end="194:62"><call pos:start="194:13" pos:end="194:62"><name pos:start="194:13" pos:end="194:19">strncpy</name><argument_list pos:start="194:20" pos:end="194:62">(<argument pos:start="194:21" pos:end="194:29"><expr pos:start="194:21" pos:end="194:29"><name pos:start="194:21" pos:end="194:29">token_ptr</name></expr></argument>, <argument pos:start="194:32" pos:end="194:41"><expr pos:start="194:32" pos:end="194:41"><name pos:start="194:32" pos:end="194:41">test_token</name></expr></argument>, <argument pos:start="194:44" pos:end="194:61"><expr pos:start="194:44" pos:end="194:61"><call pos:start="194:44" pos:end="194:61"><name pos:start="194:44" pos:end="194:49">strlen</name><argument_list pos:start="194:50" pos:end="194:61">(<argument pos:start="194:51" pos:end="194:60"><expr pos:start="194:51" pos:end="194:60"><name pos:start="194:51" pos:end="194:60">test_token</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt pos:start="195:13" pos:end="195:40"><expr pos:start="195:13" pos:end="195:39"><name pos:start="195:13" pos:end="195:32"><name pos:start="195:13" pos:end="195:21">token_ptr</name><index pos:start="195:22" pos:end="195:32">[<expr pos:start="195:23" pos:end="195:31"><name pos:start="195:23" pos:end="195:31">token_len</name></expr>]</index></name> <operator pos:start="195:34" pos:end="195:34">=</operator> <literal type="char" pos:start="195:36" pos:end="195:39">'\0'</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <comment type="block" pos:start="197:9" pos:end="200:11">/*
+         * If we made it this far, token_ptr is pointing to a string
+         * containing the token to be returned. Assign it and return success
+         */</comment>
+        <expr_stmt pos:start="201:9" pos:end="201:49"><expr pos:start="201:9" pos:end="201:48"><name pos:start="201:9" pos:end="201:36"><name pos:start="201:9" pos:end="201:24">auth_credentials</name><operator pos:start="201:25" pos:end="201:26">-&gt;</operator><name pos:start="201:27" pos:end="201:36">auth_token</name></name> <operator pos:start="201:38" pos:end="201:38">=</operator> <name pos:start="201:40" pos:end="201:48">token_ptr</name></expr>;</expr_stmt>
+
+        <return pos:start="203:9" pos:end="203:44">return <expr pos:start="203:16" pos:end="203:43"><operator pos:start="203:16" pos:end="203:16">(</operator><name pos:start="203:17" pos:end="203:42">EST_HTTP_AUTH_CRED_SUCCESS</name><operator pos:start="203:43" pos:end="203:43">)</operator></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <return pos:start="206:5" pos:end="206:46">return <expr pos:start="206:12" pos:end="206:45"><operator pos:start="206:12" pos:end="206:12">(</operator><name pos:start="206:13" pos:end="206:44">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name><operator pos:start="206:45" pos:end="206:45">)</operator></expr>;</return>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="209:1" pos:end="212:3">/*
+ * auth_credentials_basic_cb() is the same as the token based one above, but
+ * instead returns the basic credentials of userid and password
+ */</comment>
+<function pos:start="213:1" pos:end="280:0"><type pos:start="213:1" pos:end="213:28"><specifier pos:start="213:1" pos:end="213:6">static</specifier> <name pos:start="213:8" pos:end="213:28">EST_HTTP_AUTH_CRED_RC</name></type> <name pos:start="213:30" pos:end="213:54">auth_credentials_basic_cb</name> <parameter_list pos:start="213:56" pos:end="214:44">(
+        <parameter pos:start="214:9" pos:end="214:43"><decl pos:start="214:9" pos:end="214:43"><type pos:start="214:9" pos:end="214:27"><name pos:start="214:9" pos:end="214:25">EST_HTTP_AUTH_HDR</name> <modifier pos:start="214:27" pos:end="214:27">*</modifier></type><name pos:start="214:28" pos:end="214:43">auth_credentials</name></decl></parameter>)</parameter_list>
+<block pos:start="215:1" pos:end="280:0">{<block_content pos:start="216:5" pos:end="241:46">
+    <expr_stmt pos:start="216:5" pos:end="216:52"><expr pos:start="216:5" pos:end="216:51"><call pos:start="216:5" pos:end="216:51"><name pos:start="216:5" pos:end="216:13">CU_ASSERT</name><argument_list pos:start="216:14" pos:end="216:51">(<argument pos:start="216:15" pos:end="216:50"><expr pos:start="216:15" pos:end="216:50"><name pos:start="216:15" pos:end="216:36"><name pos:start="216:15" pos:end="216:30">auth_credentials</name><operator pos:start="216:31" pos:end="216:32">-&gt;</operator><name pos:start="216:33" pos:end="216:36">mode</name></name> <operator pos:start="216:38" pos:end="216:39">==</operator> <name pos:start="216:41" pos:end="216:50">AUTH_BASIC</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="218:5" pos:end="220:7">/*
+     * report that the callback has been called.
+     */</comment>
+    <expr_stmt pos:start="221:5" pos:end="221:34"><expr pos:start="221:5" pos:end="221:33"><name pos:start="221:5" pos:end="221:29">auth_cred_callback_called</name> <operator pos:start="221:31" pos:end="221:31">=</operator> <literal type="number" pos:start="221:33" pos:end="221:33">1</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="223:5" pos:end="226:7">/*
+     * See if the test is requesting to force an error response code from the
+     * callback
+     */</comment>
+    <if_stmt pos:start="227:5" pos:end="229:5"><if pos:start="227:5" pos:end="229:5">if <condition pos:start="227:8" pos:end="227:30">(<expr pos:start="227:9" pos:end="227:29"><name pos:start="227:9" pos:end="227:29">auth_cred_force_error</name></expr>)</condition> <block pos:start="227:32" pos:end="229:5">{<block_content pos:start="228:9" pos:end="228:50">
+        <return pos:start="228:9" pos:end="228:50">return <expr pos:start="228:16" pos:end="228:49"><operator pos:start="228:16" pos:end="228:16">(</operator><name pos:start="228:17" pos:end="228:48">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name><operator pos:start="228:49" pos:end="228:49">)</operator></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <if_stmt pos:start="231:5" pos:end="239:5"><if pos:start="231:5" pos:end="239:5">if <condition pos:start="231:8" pos:end="231:45">(<expr pos:start="231:9" pos:end="231:44"><name pos:start="231:9" pos:end="231:30"><name pos:start="231:9" pos:end="231:24">auth_credentials</name><operator pos:start="231:25" pos:end="231:26">-&gt;</operator><name pos:start="231:27" pos:end="231:30">mode</name></name> <operator pos:start="231:32" pos:end="231:33">==</operator> <name pos:start="231:35" pos:end="231:44">AUTH_BASIC</name></expr>)</condition> <block pos:start="231:47" pos:end="239:5">{<block_content pos:start="233:9" pos:end="238:44">
+
+        <expr_stmt pos:start="233:9" pos:end="233:59"><expr pos:start="233:9" pos:end="233:58"><name pos:start="233:9" pos:end="233:30"><name pos:start="233:9" pos:end="233:24">auth_credentials</name><operator pos:start="233:25" pos:end="233:26">-&gt;</operator><name pos:start="233:27" pos:end="233:30">user</name></name> <operator pos:start="233:32" pos:end="233:32">=</operator> <call pos:start="233:34" pos:end="233:58"><name pos:start="233:34" pos:end="233:39">malloc</name><argument_list pos:start="233:40" pos:end="233:58">(<argument pos:start="233:41" pos:end="233:57"><expr pos:start="233:41" pos:end="233:57"><sizeof pos:start="233:41" pos:end="233:57">sizeof<argument_list pos:start="233:47" pos:end="233:57">(<argument pos:start="233:48" pos:end="233:56"><expr pos:start="233:48" pos:end="233:56"><literal type="string" pos:start="233:48" pos:end="233:56">"estuser"</literal></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="234:9" pos:end="234:70"><expr pos:start="234:9" pos:end="234:69"><call pos:start="234:9" pos:end="234:69"><name pos:start="234:9" pos:end="234:15">strncpy</name><argument_list pos:start="234:16" pos:end="234:69">(<argument pos:start="234:17" pos:end="234:38"><expr pos:start="234:17" pos:end="234:38"><name pos:start="234:17" pos:end="234:38"><name pos:start="234:17" pos:end="234:32">auth_credentials</name><operator pos:start="234:33" pos:end="234:34">-&gt;</operator><name pos:start="234:35" pos:end="234:38">user</name></name></expr></argument>, <argument pos:start="234:41" pos:end="234:49"><expr pos:start="234:41" pos:end="234:49"><literal type="string" pos:start="234:41" pos:end="234:49">"estuser"</literal></expr></argument>, <argument pos:start="234:52" pos:end="234:68"><expr pos:start="234:52" pos:end="234:68"><sizeof pos:start="234:52" pos:end="234:68">sizeof<argument_list pos:start="234:58" pos:end="234:68">(<argument pos:start="234:59" pos:end="234:67"><expr pos:start="234:59" pos:end="234:67"><literal type="string" pos:start="234:59" pos:end="234:67">"estuser"</literal></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="235:9" pos:end="235:57"><expr pos:start="235:9" pos:end="235:56"><name pos:start="235:9" pos:end="235:29"><name pos:start="235:9" pos:end="235:24">auth_credentials</name><operator pos:start="235:25" pos:end="235:26">-&gt;</operator><name pos:start="235:27" pos:end="235:29">pwd</name></name> <operator pos:start="235:31" pos:end="235:31">=</operator> <call pos:start="235:33" pos:end="235:56"><name pos:start="235:33" pos:end="235:38">malloc</name><argument_list pos:start="235:39" pos:end="235:56">(<argument pos:start="235:40" pos:end="235:55"><expr pos:start="235:40" pos:end="235:55"><sizeof pos:start="235:40" pos:end="235:55">sizeof<argument_list pos:start="235:46" pos:end="235:55">(<argument pos:start="235:47" pos:end="235:54"><expr pos:start="235:47" pos:end="235:54"><literal type="string" pos:start="235:47" pos:end="235:54">"estpwd"</literal></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="236:9" pos:end="236:67"><expr pos:start="236:9" pos:end="236:66"><call pos:start="236:9" pos:end="236:66"><name pos:start="236:9" pos:end="236:15">strncpy</name><argument_list pos:start="236:16" pos:end="236:66">(<argument pos:start="236:17" pos:end="236:37"><expr pos:start="236:17" pos:end="236:37"><name pos:start="236:17" pos:end="236:37"><name pos:start="236:17" pos:end="236:32">auth_credentials</name><operator pos:start="236:33" pos:end="236:34">-&gt;</operator><name pos:start="236:35" pos:end="236:37">pwd</name></name></expr></argument>, <argument pos:start="236:40" pos:end="236:47"><expr pos:start="236:40" pos:end="236:47"><literal type="string" pos:start="236:40" pos:end="236:47">"estpwd"</literal></expr></argument>, <argument pos:start="236:50" pos:end="236:65"><expr pos:start="236:50" pos:end="236:65"><sizeof pos:start="236:50" pos:end="236:65">sizeof<argument_list pos:start="236:56" pos:end="236:65">(<argument pos:start="236:57" pos:end="236:64"><expr pos:start="236:57" pos:end="236:64"><literal type="string" pos:start="236:57" pos:end="236:64">"estpwd"</literal></expr></argument>)</argument_list></sizeof></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <return pos:start="238:9" pos:end="238:44">return <expr pos:start="238:16" pos:end="238:43"><operator pos:start="238:16" pos:end="238:16">(</operator><name pos:start="238:17" pos:end="238:42">EST_HTTP_AUTH_CRED_SUCCESS</name><operator pos:start="238:43" pos:end="238:43">)</operator></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <return pos:start="241:5" pos:end="241:46">return <expr pos:start="241:12" pos:end="241:45"><operator pos:start="241:12" pos:end="241:12">(</operator><name pos:start="241:13" pos:end="241:44">EST_HTTP_AUTH_CRED_NOT_AVAILABLE</name><operator pos:start="241:45" pos:end="241:45">)</operator></expr>;</return>
+</block_content>}</block></function>
+
+<cpp:if pos:start="244:1" pos:end="244:5">#<cpp:directive pos:start="244:2" pos:end="244:3">if</cpp:directive> <expr pos:start="244:5" pos:end="244:5"><literal type="number" pos:start="244:5" pos:end="244:5">0</literal></expr></cpp:if>
+<comment type="block" pos:start="245:1" pos:end="248:3">/*
+ * auth_credentials_digest_cb() is the same as the basic based one above, but
+ * instead verfies that the auth_mode passed is digest
+ */</comment>
+static
+EST_HTTP_AUTH_CRED_RC auth_credentials_digest_cb(EST_HTTP_AUTH_HDR *auth_credentials)
+{
+    CU_ASSERT(auth_credentials-&gt;mode == AUTH_DIGEST);
+
+    <comment type="block" pos:start="254:5" pos:end="256:7">/*
+     * report that the callback has been called.
+     */</comment>
+    auth_cred_callback_called = 1;
+
+    <comment type="block" pos:start="259:5" pos:end="262:7">/*
+     * See if the test is requesting to force an error response code from the
+     * callback
+     */</comment>
+    if (auth_cred_force_error) {
+        return(EST_HTTP_AUTH_CRED_NOT_AVAILABLE);
+    }
+
+    if (auth_credentials-&gt;mode == AUTH_DIGEST) {
+
+        auth_credentials-&gt;user = malloc(sizeof("estuser"));
+        strncpy(auth_credentials-&gt;user, "estuser", sizeof("estuser"));
+        auth_credentials-&gt;pwd = malloc(sizeof("estpwd"));
+        strncpy(auth_credentials-&gt;pwd, "estpwd", sizeof("estpwd"));
+
+        return (EST_HTTP_AUTH_CRED_SUCCESS);
+    }
+
+    return (EST_HTTP_AUTH_CRED_NOT_AVAILABLE);
+}
+<cpp:endif pos:start="279:1" pos:end="279:6">#<cpp:directive pos:start="279:2" pos:end="279:6">endif</cpp:directive></cpp:endif>
+
+<comment type="block" pos:start="281:1" pos:end="283:3">/*
+ * Callback function passed to est_client_init()
+ */</comment>
+<function pos:start="284:1" pos:end="314:1"><type pos:start="284:1" pos:end="284:10"><specifier pos:start="284:1" pos:end="284:6">static</specifier> <name pos:start="284:8" pos:end="284:10">int</name></type> <name pos:start="284:12" pos:end="284:36">client_manual_cert_verify</name> <parameter_list pos:start="284:38" pos:end="284:77">(<parameter pos:start="284:39" pos:end="284:52"><decl pos:start="284:39" pos:end="284:52"><type pos:start="284:39" pos:end="284:52"><name pos:start="284:39" pos:end="284:42">X509</name> <modifier pos:start="284:44" pos:end="284:44">*</modifier></type><name pos:start="284:45" pos:end="284:52">cur_cert</name></decl></parameter>, <parameter pos:start="284:55" pos:end="284:76"><decl pos:start="284:55" pos:end="284:76"><type pos:start="284:55" pos:end="284:76"><name pos:start="284:55" pos:end="284:57">int</name></type> <name pos:start="284:59" pos:end="284:76">openssl_cert_error</name></decl></parameter>)</parameter_list>
+<block pos:start="285:1" pos:end="314:1">{<block_content pos:start="286:5" pos:end="313:19">
+    <decl_stmt pos:start="286:5" pos:end="286:18"><decl pos:start="286:5" pos:end="286:17"><type pos:start="286:5" pos:end="286:9"><name pos:start="286:5" pos:end="286:7">BIO</name> <modifier pos:start="286:9" pos:end="286:9">*</modifier></type> <name pos:start="286:11" pos:end="286:17">bio_err</name></decl>;</decl_stmt>
+    <expr_stmt pos:start="287:5" pos:end="287:46"><expr pos:start="287:5" pos:end="287:45"><name pos:start="287:5" pos:end="287:11">bio_err</name> <operator pos:start="287:13" pos:end="287:13">=</operator> <call pos:start="287:15" pos:end="287:45"><name pos:start="287:15" pos:end="287:24">BIO_new_fp</name><argument_list pos:start="287:25" pos:end="287:45">(<argument pos:start="287:26" pos:end="287:31"><expr pos:start="287:26" pos:end="287:31"><name pos:start="287:26" pos:end="287:31">stderr</name></expr></argument>, <argument pos:start="287:34" pos:end="287:44"><expr pos:start="287:34" pos:end="287:44"><name pos:start="287:34" pos:end="287:44">BIO_NOCLOSE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt pos:start="288:5" pos:end="288:20"><decl pos:start="288:5" pos:end="288:19"><type pos:start="288:5" pos:end="288:7"><name pos:start="288:5" pos:end="288:7">int</name></type> <name pos:start="288:9" pos:end="288:15">approve</name> <init pos:start="288:17" pos:end="288:19">= <expr pos:start="288:19" pos:end="288:19"><literal type="number" pos:start="288:19" pos:end="288:19">0</literal></expr></init></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="290:5" pos:end="292:7">/*
+     * Print out the specifics of this cert
+     */</comment>
+    <expr_stmt pos:start="293:5" pos:end="296:59"><expr pos:start="293:5" pos:end="296:58"><call pos:start="293:5" pos:end="296:58"><name pos:start="293:5" pos:end="293:10">printf</name><argument_list pos:start="293:11" pos:end="296:58">(
+        <argument pos:start="294:9" pos:end="294:114"><expr pos:start="294:9" pos:end="294:114"><literal type="string" pos:start="294:9" pos:end="294:114">"%s: OpenSSL/EST server cert verification failed with the following error: openssl_cert_error = %d (%s)\n"</literal></expr></argument>,
+        <argument pos:start="295:9" pos:end="295:20"><expr pos:start="295:9" pos:end="295:20"><name pos:start="295:9" pos:end="295:20">__FUNCTION__</name></expr></argument>, <argument pos:start="295:23" pos:end="295:40"><expr pos:start="295:23" pos:end="295:40"><name pos:start="295:23" pos:end="295:40">openssl_cert_error</name></expr></argument>,
+        <argument pos:start="296:9" pos:end="296:57"><expr pos:start="296:9" pos:end="296:57"><call pos:start="296:9" pos:end="296:57"><name pos:start="296:9" pos:end="296:37">X509_verify_cert_error_string</name><argument_list pos:start="296:38" pos:end="296:57">(<argument pos:start="296:39" pos:end="296:56"><expr pos:start="296:39" pos:end="296:56"><name pos:start="296:39" pos:end="296:56">openssl_cert_error</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt pos:start="298:5" pos:end="298:30"><expr pos:start="298:5" pos:end="298:29"><call pos:start="298:5" pos:end="298:29"><name pos:start="298:5" pos:end="298:10">printf</name><argument_list pos:start="298:11" pos:end="298:29">(<argument pos:start="298:12" pos:end="298:28"><expr pos:start="298:12" pos:end="298:28"><literal type="string" pos:start="298:12" pos:end="298:28">"Failing Cert:\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="299:5" pos:end="299:36"><expr pos:start="299:5" pos:end="299:35"><call pos:start="299:5" pos:end="299:35"><name pos:start="299:5" pos:end="299:17">X509_print_fp</name><argument_list pos:start="299:18" pos:end="299:35">(<argument pos:start="299:19" pos:end="299:24"><expr pos:start="299:19" pos:end="299:24"><name pos:start="299:19" pos:end="299:24">stdout</name></expr></argument>, <argument pos:start="299:27" pos:end="299:34"><expr pos:start="299:27" pos:end="299:34"><name pos:start="299:27" pos:end="299:34">cur_cert</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="300:5" pos:end="304:7">/*
+     * Next call prints out the signature which can be used as the fingerprint
+     * This fingerprint can be checked against the anticipated value to determine
+     * whether or not the server's cert should be approved.
+     */</comment>
+    <expr_stmt pos:start="305:5" pos:end="305:74"><expr pos:start="305:5" pos:end="305:73"><call pos:start="305:5" pos:end="305:73"><name pos:start="305:5" pos:end="305:24">X509_signature_print</name><argument_list pos:start="305:25" pos:end="305:73">(<argument pos:start="305:26" pos:end="305:32"><expr pos:start="305:26" pos:end="305:32"><name pos:start="305:26" pos:end="305:32">bio_err</name></expr></argument>, <argument pos:start="305:35" pos:end="305:51"><expr pos:start="305:35" pos:end="305:51"><name pos:start="305:35" pos:end="305:51"><name pos:start="305:35" pos:end="305:42">cur_cert</name><operator pos:start="305:43" pos:end="305:44">-&gt;</operator><name pos:start="305:45" pos:end="305:51">sig_alg</name></name></expr></argument>, <argument pos:start="305:54" pos:end="305:72"><expr pos:start="305:54" pos:end="305:72"><name pos:start="305:54" pos:end="305:72"><name pos:start="305:54" pos:end="305:61">cur_cert</name><operator pos:start="305:62" pos:end="305:63">-&gt;</operator><name pos:start="305:64" pos:end="305:72">signature</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <if_stmt pos:start="307:5" pos:end="309:5"><if pos:start="307:5" pos:end="309:5">if <condition pos:start="307:8" pos:end="307:59">(<expr pos:start="307:9" pos:end="307:58"><name pos:start="307:9" pos:end="307:26">openssl_cert_error</name> <operator pos:start="307:28" pos:end="307:29">==</operator> <name pos:start="307:31" pos:end="307:58">X509_V_ERR_UNABLE_TO_GET_CRL</name></expr>)</condition> <block pos:start="307:61" pos:end="309:5">{<block_content pos:start="308:9" pos:end="308:20">
+        <expr_stmt pos:start="308:9" pos:end="308:20"><expr pos:start="308:9" pos:end="308:19"><name pos:start="308:9" pos:end="308:15">approve</name> <operator pos:start="308:17" pos:end="308:17">=</operator> <literal type="number" pos:start="308:19" pos:end="308:19">1</literal></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+
+    <expr_stmt pos:start="311:5" pos:end="311:22"><expr pos:start="311:5" pos:end="311:21"><call pos:start="311:5" pos:end="311:21"><name pos:start="311:5" pos:end="311:12">BIO_free</name><argument_list pos:start="311:13" pos:end="311:21">(<argument pos:start="311:14" pos:end="311:20"><expr pos:start="311:14" pos:end="311:20"><name pos:start="311:14" pos:end="311:20">bio_err</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return pos:start="313:5" pos:end="313:19">return <expr pos:start="313:12" pos:end="313:18"><name pos:start="313:12" pos:end="313:18">approve</name></expr>;</return>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="316:1" pos:end="318:3">/*
+ * us2174_simple_enroll() is used by test cases to perform a simple enroll.
+ */</comment>
+<function pos:start="319:1" pos:end="364:1"><type pos:start="319:1" pos:end="319:11"><specifier pos:start="319:1" pos:end="319:6">static</specifier> <name pos:start="319:8" pos:end="319:11">void</name></type> <name pos:start="319:13" pos:end="319:32">us2174_simple_enroll</name> <parameter_list pos:start="319:34" pos:end="321:63">(<parameter pos:start="319:35" pos:end="319:42"><decl pos:start="319:35" pos:end="319:42"><type pos:start="319:35" pos:end="319:42"><name pos:start="319:35" pos:end="319:38">char</name> <modifier pos:start="319:40" pos:end="319:40">*</modifier></type><name pos:start="319:41" pos:end="319:42">cn</name></decl></parameter>, <parameter pos:start="319:45" pos:end="319:56"><decl pos:start="319:45" pos:end="319:56"><type pos:start="319:45" pos:end="319:56"><name pos:start="319:45" pos:end="319:48">char</name> <modifier pos:start="319:50" pos:end="319:50">*</modifier></type><name pos:start="319:51" pos:end="319:56">server</name></decl></parameter>,
+                                  <parameter pos:start="320:35" pos:end="320:62"><decl pos:start="320:35" pos:end="320:62"><type pos:start="320:35" pos:end="320:62"><name pos:start="320:35" pos:end="320:43">EST_ERROR</name></type> <name pos:start="320:45" pos:end="320:62">expected_enroll_rv</name></decl></parameter>,
+                                  <parameter pos:start="321:35" pos:end="321:62"><decl pos:start="321:35" pos:end="321:62"><type pos:start="321:35" pos:end="321:62"><name pos:start="321:35" pos:end="321:53">auth_credentials_cb</name></type> <name pos:start="321:55" pos:end="321:62">callback</name></decl></parameter>)</parameter_list>
+<block pos:start="322:1" pos:end="364:1">{<block_content pos:start="323:5" pos:end="363:22">
+    <decl_stmt pos:start="323:5" pos:end="323:18"><decl pos:start="323:5" pos:end="323:17"><type pos:start="323:5" pos:end="323:13"><name pos:start="323:5" pos:end="323:11">EST_CTX</name> <modifier pos:start="323:13" pos:end="323:13">*</modifier></type><name pos:start="323:14" pos:end="323:17">ectx</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="324:5" pos:end="324:18"><decl pos:start="324:5" pos:end="324:17"><type pos:start="324:5" pos:end="324:14"><name pos:start="324:5" pos:end="324:12">EVP_PKEY</name> <modifier pos:start="324:14" pos:end="324:14">*</modifier></type><name pos:start="324:15" pos:end="324:17">key</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="325:5" pos:end="325:17"><decl pos:start="325:5" pos:end="325:16"><type pos:start="325:5" pos:end="325:13"><name pos:start="325:5" pos:end="325:13">EST_ERROR</name></type> <name pos:start="325:15" pos:end="325:16">rv</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="326:5" pos:end="326:22"><decl pos:start="326:5" pos:end="326:21"><type pos:start="326:5" pos:end="326:7"><name pos:start="326:5" pos:end="326:7">int</name></type> <name pos:start="326:9" pos:end="326:17">pkcs7_len</name> <init pos:start="326:19" pos:end="326:21">= <expr pos:start="326:21" pos:end="326:21"><literal type="number" pos:start="326:21" pos:end="326:21">0</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="327:5" pos:end="327:35"><decl pos:start="327:5" pos:end="327:34"><type pos:start="327:5" pos:end="327:19"><name pos:start="327:5" pos:end="327:12">unsigned</name> <name pos:start="327:14" pos:end="327:17">char</name> <modifier pos:start="327:19" pos:end="327:19">*</modifier></type><name pos:start="327:20" pos:end="327:27">new_cert</name> <init pos:start="327:29" pos:end="327:34">= <expr pos:start="327:31" pos:end="327:34"><name pos:start="327:31" pos:end="327:34">NULL</name></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="328:5" pos:end="328:19"><decl pos:start="328:5" pos:end="328:18"><type pos:start="328:5" pos:end="328:13"><name pos:start="328:5" pos:end="328:13">EST_ERROR</name></type> <name pos:start="328:15" pos:end="328:18">e_rc</name></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="330:5" pos:end="332:7">/*
+     * Create a client context
+     */</comment>
+    <expr_stmt pos:start="333:5" pos:end="334:35"><expr pos:start="333:5" pos:end="334:34"><name pos:start="333:5" pos:end="333:8">ectx</name> <operator pos:start="333:10" pos:end="333:10">=</operator> <call pos:start="333:12" pos:end="334:34"><name pos:start="333:12" pos:end="333:26">est_client_init</name><argument_list pos:start="333:27" pos:end="334:34">(<argument pos:start="333:28" pos:end="333:34"><expr pos:start="333:28" pos:end="333:34"><name pos:start="333:28" pos:end="333:34">cacerts</name></expr></argument>, <argument pos:start="333:37" pos:end="333:47"><expr pos:start="333:37" pos:end="333:47"><name pos:start="333:37" pos:end="333:47">cacerts_len</name></expr></argument>, <argument pos:start="333:50" pos:end="333:68"><expr pos:start="333:50" pos:end="333:68"><name pos:start="333:50" pos:end="333:68">EST_CERT_FORMAT_PEM</name></expr></argument>,
+        <argument pos:start="334:9" pos:end="334:33"><expr pos:start="334:9" pos:end="334:33"><name pos:start="334:9" pos:end="334:33">client_manual_cert_verify</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="335:5" pos:end="335:28"><expr pos:start="335:5" pos:end="335:27"><call pos:start="335:5" pos:end="335:27"><name pos:start="335:5" pos:end="335:13">CU_ASSERT</name><argument_list pos:start="335:14" pos:end="335:27">(<argument pos:start="335:15" pos:end="335:26"><expr pos:start="335:15" pos:end="335:26"><name pos:start="335:15" pos:end="335:18">ectx</name> <operator pos:start="335:20" pos:end="335:21">!=</operator> <name pos:start="335:23" pos:end="335:26">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt pos:start="337:5" pos:end="337:55"><expr pos:start="337:5" pos:end="337:54"><name pos:start="337:5" pos:end="337:8">e_rc</name> <operator pos:start="337:10" pos:end="337:10">=</operator> <call pos:start="337:12" pos:end="337:54"><name pos:start="337:12" pos:end="337:38">est_client_set_auth_cred_cb</name><argument_list pos:start="337:39" pos:end="337:54">(<argument pos:start="337:40" pos:end="337:43"><expr pos:start="337:40" pos:end="337:43"><name pos:start="337:40" pos:end="337:43">ectx</name></expr></argument>, <argument pos:start="337:46" pos:end="337:53"><expr pos:start="337:46" pos:end="337:53"><name pos:start="337:46" pos:end="337:53">callback</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="338:5" pos:end="338:36"><expr pos:start="338:5" pos:end="338:35"><call pos:start="338:5" pos:end="338:35"><name pos:start="338:5" pos:end="338:13">CU_ASSERT</name><argument_list pos:start="338:14" pos:end="338:35">(<argument pos:start="338:15" pos:end="338:34"><expr pos:start="338:15" pos:end="338:34"><name pos:start="338:15" pos:end="338:18">e_rc</name> <operator pos:start="338:20" pos:end="338:21">==</operator> <name pos:start="338:23" pos:end="338:34">EST_ERR_NONE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="340:5" pos:end="342:7">/*
+     * Set the EST server address/port
+     */</comment>
+    <expr_stmt pos:start="343:5" pos:end="343:69"><expr pos:start="343:5" pos:end="343:68"><call pos:start="343:5" pos:end="343:68"><name pos:start="343:5" pos:end="343:25">est_client_set_server</name><argument_list pos:start="343:26" pos:end="343:68">(<argument pos:start="343:27" pos:end="343:30"><expr pos:start="343:27" pos:end="343:30"><name pos:start="343:27" pos:end="343:30">ectx</name></expr></argument>, <argument pos:start="343:33" pos:end="343:38"><expr pos:start="343:33" pos:end="343:38"><name pos:start="343:33" pos:end="343:38">server</name></expr></argument>, <argument pos:start="343:41" pos:end="343:61"><expr pos:start="343:41" pos:end="343:61"><name pos:start="343:41" pos:end="343:61">US2174_TCP_PROXY_PORT</name></expr></argument>, <argument pos:start="343:64" pos:end="343:67"><expr pos:start="343:64" pos:end="343:67"><name pos:start="343:64" pos:end="343:67">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="345:5" pos:end="347:7">/*
+     * generate a private key
+     */</comment>
+    <expr_stmt pos:start="348:5" pos:end="348:33"><expr pos:start="348:5" pos:end="348:32"><name pos:start="348:5" pos:end="348:7">key</name> <operator pos:start="348:9" pos:end="348:9">=</operator> <call pos:start="348:11" pos:end="348:32"><name pos:start="348:11" pos:end="348:30">generate_private_key</name><argument_list pos:start="348:31" pos:end="348:32">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="349:5" pos:end="349:27"><expr pos:start="349:5" pos:end="349:26"><call pos:start="349:5" pos:end="349:26"><name pos:start="349:5" pos:end="349:13">CU_ASSERT</name><argument_list pos:start="349:14" pos:end="349:26">(<argument pos:start="349:15" pos:end="349:25"><expr pos:start="349:15" pos:end="349:25"><name pos:start="349:15" pos:end="349:17">key</name> <operator pos:start="349:19" pos:end="349:20">!=</operator> <name pos:start="349:22" pos:end="349:25">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="351:5" pos:end="353:7">/*
+     * Use the simplified API to enroll a CSR
+     */</comment>
+    <expr_stmt pos:start="354:5" pos:end="354:54"><expr pos:start="354:5" pos:end="354:53"><name pos:start="354:5" pos:end="354:6">rv</name> <operator pos:start="354:8" pos:end="354:8">=</operator> <call pos:start="354:10" pos:end="354:53"><name pos:start="354:10" pos:end="354:26">est_client_enroll</name><argument_list pos:start="354:27" pos:end="354:53">(<argument pos:start="354:28" pos:end="354:31"><expr pos:start="354:28" pos:end="354:31"><name pos:start="354:28" pos:end="354:31">ectx</name></expr></argument>, <argument pos:start="354:34" pos:end="354:35"><expr pos:start="354:34" pos:end="354:35"><name pos:start="354:34" pos:end="354:35">cn</name></expr></argument>, <argument pos:start="354:38" pos:end="354:47"><expr pos:start="354:38" pos:end="354:47"><operator pos:start="354:38" pos:end="354:38">&amp;</operator><name pos:start="354:39" pos:end="354:47">pkcs7_len</name></expr></argument>, <argument pos:start="354:50" pos:end="354:52"><expr pos:start="354:50" pos:end="354:52"><name pos:start="354:50" pos:end="354:52">key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="355:5" pos:end="355:40"><expr pos:start="355:5" pos:end="355:39"><call pos:start="355:5" pos:end="355:39"><name pos:start="355:5" pos:end="355:13">CU_ASSERT</name><argument_list pos:start="355:14" pos:end="355:39">(<argument pos:start="355:15" pos:end="355:38"><expr pos:start="355:15" pos:end="355:38"><name pos:start="355:15" pos:end="355:16">rv</name> <operator pos:start="355:18" pos:end="355:19">==</operator> <name pos:start="355:21" pos:end="355:38">expected_enroll_rv</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="357:5" pos:end="359:7">/*
+     * Cleanup
+     */</comment>
+    <expr_stmt pos:start="360:5" pos:end="360:23"><expr pos:start="360:5" pos:end="360:22"><call pos:start="360:5" pos:end="360:22"><name pos:start="360:5" pos:end="360:17">EVP_PKEY_free</name><argument_list pos:start="360:18" pos:end="360:22">(<argument pos:start="360:19" pos:end="360:21"><expr pos:start="360:19" pos:end="360:21"><name pos:start="360:19" pos:end="360:21">key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="361:5" pos:end="362:23"><if pos:start="361:5" pos:end="362:23">if <condition pos:start="361:8" pos:end="361:17">(<expr pos:start="361:9" pos:end="361:16"><name pos:start="361:9" pos:end="361:16">new_cert</name></expr>)</condition><block type="pseudo" pos:start="362:9" pos:end="362:23"><block_content pos:start="362:9" pos:end="362:23">
+        <expr_stmt pos:start="362:9" pos:end="362:23"><expr pos:start="362:9" pos:end="362:22"><call pos:start="362:9" pos:end="362:22"><name pos:start="362:9" pos:end="362:12">free</name><argument_list pos:start="362:13" pos:end="362:22">(<argument pos:start="362:14" pos:end="362:21"><expr pos:start="362:14" pos:end="362:21"><name pos:start="362:14" pos:end="362:21">new_cert</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    <expr_stmt pos:start="363:5" pos:end="363:22"><expr pos:start="363:5" pos:end="363:21"><call pos:start="363:5" pos:end="363:21"><name pos:start="363:5" pos:end="363:15">est_destroy</name><argument_list pos:start="363:16" pos:end="363:21">(<argument pos:start="363:17" pos:end="363:20"><expr pos:start="363:17" pos:end="363:20"><name pos:start="363:17" pos:end="363:20">ectx</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<function pos:start="366:1" pos:end="493:1"><type pos:start="366:1" pos:end="367:4"><specifier pos:start="366:1" pos:end="366:6">static</specifier>
+<name pos:start="367:1" pos:end="367:4">void</name></type> <name pos:start="367:6" pos:end="367:27">us2174_simple_reenroll</name> <parameter_list pos:start="367:29" pos:end="369:58">(<parameter pos:start="367:30" pos:end="367:37"><decl pos:start="367:30" pos:end="367:37"><type pos:start="367:30" pos:end="367:37"><name pos:start="367:30" pos:end="367:33">char</name> <modifier pos:start="367:35" pos:end="367:35">*</modifier></type><name pos:start="367:36" pos:end="367:37">cn</name></decl></parameter>, <parameter pos:start="367:40" pos:end="367:51"><decl pos:start="367:40" pos:end="367:51"><type pos:start="367:40" pos:end="367:51"><name pos:start="367:40" pos:end="367:43">char</name> <modifier pos:start="367:45" pos:end="367:45">*</modifier></type><name pos:start="367:46" pos:end="367:51">server</name></decl></parameter>,
+                             <parameter pos:start="368:30" pos:end="368:57"><decl pos:start="368:30" pos:end="368:57"><type pos:start="368:30" pos:end="368:57"><name pos:start="368:30" pos:end="368:38">EST_ERROR</name></type> <name pos:start="368:40" pos:end="368:57">expected_enroll_rv</name></decl></parameter>,
+                             <parameter pos:start="369:30" pos:end="369:57"><decl pos:start="369:30" pos:end="369:57"><type pos:start="369:30" pos:end="369:57"><name pos:start="369:30" pos:end="369:48">auth_credentials_cb</name></type> <name pos:start="369:50" pos:end="369:57">callback</name></decl></parameter>)</parameter_list>
+<block pos:start="370:1" pos:end="493:1">{<block_content pos:start="371:5" pos:end="492:22">
+    <decl_stmt pos:start="371:5" pos:end="371:18"><decl pos:start="371:5" pos:end="371:17"><type pos:start="371:5" pos:end="371:13"><name pos:start="371:5" pos:end="371:11">EST_CTX</name> <modifier pos:start="371:13" pos:end="371:13">*</modifier></type><name pos:start="371:14" pos:end="371:17">ectx</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="372:5" pos:end="372:18"><decl pos:start="372:5" pos:end="372:17"><type pos:start="372:5" pos:end="372:14"><name pos:start="372:5" pos:end="372:12">EVP_PKEY</name> <modifier pos:start="372:14" pos:end="372:14">*</modifier></type><name pos:start="372:15" pos:end="372:17">key</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="373:5" pos:end="373:17"><decl pos:start="373:5" pos:end="373:16"><type pos:start="373:5" pos:end="373:13"><name pos:start="373:5" pos:end="373:13">EST_ERROR</name></type> <name pos:start="373:15" pos:end="373:16">rv</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="374:5" pos:end="374:22"><decl pos:start="374:5" pos:end="374:21"><type pos:start="374:5" pos:end="374:7"><name pos:start="374:5" pos:end="374:7">int</name></type> <name pos:start="374:9" pos:end="374:17">pkcs7_len</name> <init pos:start="374:19" pos:end="374:21">= <expr pos:start="374:21" pos:end="374:21"><literal type="number" pos:start="374:21" pos:end="374:21">0</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="375:5" pos:end="375:35"><decl pos:start="375:5" pos:end="375:34"><type pos:start="375:5" pos:end="375:19"><name pos:start="375:5" pos:end="375:12">unsigned</name> <name pos:start="375:14" pos:end="375:17">char</name> <modifier pos:start="375:19" pos:end="375:19">*</modifier></type><name pos:start="375:20" pos:end="375:27">new_cert</name> <init pos:start="375:29" pos:end="375:34">= <expr pos:start="375:31" pos:end="375:34"><name pos:start="375:31" pos:end="375:34">NULL</name></expr></init></decl>;</decl_stmt>
+
+    <decl_stmt pos:start="377:5" pos:end="377:21"><decl pos:start="377:5" pos:end="377:20"><type pos:start="377:5" pos:end="377:11"><name pos:start="377:5" pos:end="377:9">PKCS7</name> <modifier pos:start="377:11" pos:end="377:11">*</modifier></type><name pos:start="377:12" pos:end="377:13">p7</name> <init pos:start="377:15" pos:end="377:20">= <expr pos:start="377:17" pos:end="377:20"><name pos:start="377:17" pos:end="377:20">NULL</name></expr></init></decl>;</decl_stmt>
+    <decl_stmt pos:start="378:5" pos:end="378:19"><decl pos:start="378:5" pos:end="378:12"><type pos:start="378:5" pos:end="378:9"><name pos:start="378:5" pos:end="378:7">BIO</name> <modifier pos:start="378:9" pos:end="378:9">*</modifier></type><name pos:start="378:10" pos:end="378:12">b64</name></decl>, <decl pos:start="378:15" pos:end="378:18"><type ref="prev" pos:start="378:5" pos:end="378:9"><modifier pos:start="378:15" pos:end="378:15">*</modifier></type><name pos:start="378:16" pos:end="378:18">out</name></decl>;</decl_stmt>
+    <decl_stmt pos:start="379:5" pos:end="379:22"><decl pos:start="379:5" pos:end="379:21"><type pos:start="379:5" pos:end="379:10"><name pos:start="379:5" pos:end="379:8">X509</name> <modifier pos:start="379:10" pos:end="379:10">*</modifier></type><name pos:start="379:11" pos:end="379:14">cert</name> <init pos:start="379:16" pos:end="379:21">= <expr pos:start="379:18" pos:end="379:21"><name pos:start="379:18" pos:end="379:21">NULL</name></expr></init></decl>;</decl_stmt>
+    <expr_stmt pos:start="380:5" pos:end="380:34"><expr pos:start="380:5" pos:end="380:33"><call pos:start="380:5" pos:end="380:18"><name pos:start="380:5" pos:end="380:12">STACK_OF</name><argument_list pos:start="380:13" pos:end="380:18">(<argument pos:start="380:14" pos:end="380:17"><expr pos:start="380:14" pos:end="380:17"><name pos:start="380:14" pos:end="380:17">X509</name></expr></argument>)</argument_list></call> <operator pos:start="380:20" pos:end="380:20">*</operator> <name pos:start="380:22" pos:end="380:26">certs</name> <operator pos:start="380:28" pos:end="380:28">=</operator> <name pos:start="380:30" pos:end="380:33">NULL</name></expr>;</expr_stmt>
+    <decl_stmt pos:start="381:5" pos:end="381:10"><decl pos:start="381:5" pos:end="381:9"><type pos:start="381:5" pos:end="381:7"><name pos:start="381:5" pos:end="381:7">int</name></type> <name pos:start="381:9" pos:end="381:9">i</name></decl>;</decl_stmt>
+
+    <decl_stmt pos:start="383:5" pos:end="383:19"><decl pos:start="383:5" pos:end="383:18"><type pos:start="383:5" pos:end="383:13"><name pos:start="383:5" pos:end="383:13">EST_ERROR</name></type> <name pos:start="383:15" pos:end="383:18">e_rc</name></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="385:5" pos:end="387:7">/*
+     * Create a client context
+     */</comment>
+    <expr_stmt pos:start="388:5" pos:end="389:35"><expr pos:start="388:5" pos:end="389:34"><name pos:start="388:5" pos:end="388:8">ectx</name> <operator pos:start="388:10" pos:end="388:10">=</operator> <call pos:start="388:12" pos:end="389:34"><name pos:start="388:12" pos:end="388:26">est_client_init</name><argument_list pos:start="388:27" pos:end="389:34">(<argument pos:start="388:28" pos:end="388:34"><expr pos:start="388:28" pos:end="388:34"><name pos:start="388:28" pos:end="388:34">cacerts</name></expr></argument>, <argument pos:start="388:37" pos:end="388:47"><expr pos:start="388:37" pos:end="388:47"><name pos:start="388:37" pos:end="388:47">cacerts_len</name></expr></argument>, <argument pos:start="388:50" pos:end="388:68"><expr pos:start="388:50" pos:end="388:68"><name pos:start="388:50" pos:end="388:68">EST_CERT_FORMAT_PEM</name></expr></argument>,
+        <argument pos:start="389:9" pos:end="389:33"><expr pos:start="389:9" pos:end="389:33"><name pos:start="389:9" pos:end="389:33">client_manual_cert_verify</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="390:5" pos:end="390:28"><expr pos:start="390:5" pos:end="390:27"><call pos:start="390:5" pos:end="390:27"><name pos:start="390:5" pos:end="390:13">CU_ASSERT</name><argument_list pos:start="390:14" pos:end="390:27">(<argument pos:start="390:15" pos:end="390:26"><expr pos:start="390:15" pos:end="390:26"><name pos:start="390:15" pos:end="390:18">ectx</name> <operator pos:start="390:20" pos:end="390:21">!=</operator> <name pos:start="390:23" pos:end="390:26">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt pos:start="392:5" pos:end="392:55"><expr pos:start="392:5" pos:end="392:54"><name pos:start="392:5" pos:end="392:8">e_rc</name> <operator pos:start="392:10" pos:end="392:10">=</operator> <call pos:start="392:12" pos:end="392:54"><name pos:start="392:12" pos:end="392:38">est_client_set_auth_cred_cb</name><argument_list pos:start="392:39" pos:end="392:54">(<argument pos:start="392:40" pos:end="392:43"><expr pos:start="392:40" pos:end="392:43"><name pos:start="392:40" pos:end="392:43">ectx</name></expr></argument>, <argument pos:start="392:46" pos:end="392:53"><expr pos:start="392:46" pos:end="392:53"><name pos:start="392:46" pos:end="392:53">callback</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="393:5" pos:end="393:36"><expr pos:start="393:5" pos:end="393:35"><call pos:start="393:5" pos:end="393:35"><name pos:start="393:5" pos:end="393:13">CU_ASSERT</name><argument_list pos:start="393:14" pos:end="393:35">(<argument pos:start="393:15" pos:end="393:34"><expr pos:start="393:15" pos:end="393:34"><name pos:start="393:15" pos:end="393:18">e_rc</name> <operator pos:start="393:20" pos:end="393:21">==</operator> <name pos:start="393:23" pos:end="393:34">EST_ERR_NONE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="395:5" pos:end="397:7">/*
+     * Set the EST server address/port
+     */</comment>
+    <expr_stmt pos:start="398:5" pos:end="398:69"><expr pos:start="398:5" pos:end="398:68"><call pos:start="398:5" pos:end="398:68"><name pos:start="398:5" pos:end="398:25">est_client_set_server</name><argument_list pos:start="398:26" pos:end="398:68">(<argument pos:start="398:27" pos:end="398:30"><expr pos:start="398:27" pos:end="398:30"><name pos:start="398:27" pos:end="398:30">ectx</name></expr></argument>, <argument pos:start="398:33" pos:end="398:38"><expr pos:start="398:33" pos:end="398:38"><name pos:start="398:33" pos:end="398:38">server</name></expr></argument>, <argument pos:start="398:41" pos:end="398:61"><expr pos:start="398:41" pos:end="398:61"><name pos:start="398:41" pos:end="398:61">US2174_TCP_PROXY_PORT</name></expr></argument>, <argument pos:start="398:64" pos:end="398:67"><expr pos:start="398:64" pos:end="398:67"><name pos:start="398:64" pos:end="398:67">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="400:5" pos:end="402:7">/*
+     * generate a private key
+     */</comment>
+    <expr_stmt pos:start="403:5" pos:end="403:33"><expr pos:start="403:5" pos:end="403:32"><name pos:start="403:5" pos:end="403:7">key</name> <operator pos:start="403:9" pos:end="403:9">=</operator> <call pos:start="403:11" pos:end="403:32"><name pos:start="403:11" pos:end="403:30">generate_private_key</name><argument_list pos:start="403:31" pos:end="403:32">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="404:5" pos:end="404:27"><expr pos:start="404:5" pos:end="404:26"><call pos:start="404:5" pos:end="404:26"><name pos:start="404:5" pos:end="404:13">CU_ASSERT</name><argument_list pos:start="404:14" pos:end="404:26">(<argument pos:start="404:15" pos:end="404:25"><expr pos:start="404:15" pos:end="404:25"><name pos:start="404:15" pos:end="404:17">key</name> <operator pos:start="404:19" pos:end="404:20">!=</operator> <name pos:start="404:22" pos:end="404:25">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="406:5" pos:end="408:7">/*
+     * Use the simplified API to enroll a CSR
+     */</comment>
+    <expr_stmt pos:start="409:5" pos:end="409:54"><expr pos:start="409:5" pos:end="409:53"><name pos:start="409:5" pos:end="409:6">rv</name> <operator pos:start="409:8" pos:end="409:8">=</operator> <call pos:start="409:10" pos:end="409:53"><name pos:start="409:10" pos:end="409:26">est_client_enroll</name><argument_list pos:start="409:27" pos:end="409:53">(<argument pos:start="409:28" pos:end="409:31"><expr pos:start="409:28" pos:end="409:31"><name pos:start="409:28" pos:end="409:31">ectx</name></expr></argument>, <argument pos:start="409:34" pos:end="409:35"><expr pos:start="409:34" pos:end="409:35"><name pos:start="409:34" pos:end="409:35">cn</name></expr></argument>, <argument pos:start="409:38" pos:end="409:47"><expr pos:start="409:38" pos:end="409:47"><operator pos:start="409:38" pos:end="409:38">&amp;</operator><name pos:start="409:39" pos:end="409:47">pkcs7_len</name></expr></argument>, <argument pos:start="409:50" pos:end="409:52"><expr pos:start="409:50" pos:end="409:52"><name pos:start="409:50" pos:end="409:52">key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="410:5" pos:end="410:34"><expr pos:start="410:5" pos:end="410:33"><call pos:start="410:5" pos:end="410:33"><name pos:start="410:5" pos:end="410:13">CU_ASSERT</name><argument_list pos:start="410:14" pos:end="410:33">(<argument pos:start="410:15" pos:end="410:32"><expr pos:start="410:15" pos:end="410:32"><name pos:start="410:15" pos:end="410:16">rv</name> <operator pos:start="410:18" pos:end="410:19">==</operator> <name pos:start="410:21" pos:end="410:32">EST_ERR_NONE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="412:5" pos:end="414:7">/*
+     * Retrieve the cert that was given to us by the EST server
+     */</comment>
+    <if_stmt pos:start="415:5" pos:end="420:5"><if pos:start="415:5" pos:end="420:5">if <condition pos:start="415:8" pos:end="415:27">(<expr pos:start="415:9" pos:end="415:26"><name pos:start="415:9" pos:end="415:10">rv</name> <operator pos:start="415:12" pos:end="415:13">==</operator> <name pos:start="415:15" pos:end="415:26">EST_ERR_NONE</name></expr>)</condition> <block pos:start="415:29" pos:end="420:5">{<block_content pos:start="416:9" pos:end="419:38">
+        <expr_stmt pos:start="416:9" pos:end="416:37"><expr pos:start="416:9" pos:end="416:36"><name pos:start="416:9" pos:end="416:16">new_cert</name> <operator pos:start="416:18" pos:end="416:18">=</operator> <call pos:start="416:20" pos:end="416:36"><name pos:start="416:20" pos:end="416:25">malloc</name><argument_list pos:start="416:26" pos:end="416:36">(<argument pos:start="416:27" pos:end="416:35"><expr pos:start="416:27" pos:end="416:35"><name pos:start="416:27" pos:end="416:35">pkcs7_len</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="417:9" pos:end="417:36"><expr pos:start="417:9" pos:end="417:35"><call pos:start="417:9" pos:end="417:35"><name pos:start="417:9" pos:end="417:17">CU_ASSERT</name><argument_list pos:start="417:18" pos:end="417:35">(<argument pos:start="417:19" pos:end="417:34"><expr pos:start="417:19" pos:end="417:34"><name pos:start="417:19" pos:end="417:26">new_cert</name> <operator pos:start="417:28" pos:end="417:29">!=</operator> <name pos:start="417:31" pos:end="417:34">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="418:9" pos:end="418:59"><expr pos:start="418:9" pos:end="418:58"><name pos:start="418:9" pos:end="418:10">rv</name> <operator pos:start="418:12" pos:end="418:12">=</operator> <call pos:start="418:14" pos:end="418:58"><name pos:start="418:14" pos:end="418:42">est_client_copy_enrolled_cert</name><argument_list pos:start="418:43" pos:end="418:58">(<argument pos:start="418:44" pos:end="418:47"><expr pos:start="418:44" pos:end="418:47"><name pos:start="418:44" pos:end="418:47">ectx</name></expr></argument>, <argument pos:start="418:50" pos:end="418:57"><expr pos:start="418:50" pos:end="418:57"><name pos:start="418:50" pos:end="418:57">new_cert</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt pos:start="419:9" pos:end="419:38"><expr pos:start="419:9" pos:end="419:37"><call pos:start="419:9" pos:end="419:37"><name pos:start="419:9" pos:end="419:17">CU_ASSERT</name><argument_list pos:start="419:18" pos:end="419:37">(<argument pos:start="419:19" pos:end="419:36"><expr pos:start="419:19" pos:end="419:36"><name pos:start="419:19" pos:end="419:20">rv</name> <operator pos:start="419:22" pos:end="419:23">==</operator> <name pos:start="419:25" pos:end="419:36">EST_ERR_NONE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+
+    <expr_stmt pos:start="422:5" pos:end="422:22"><expr pos:start="422:5" pos:end="422:21"><call pos:start="422:5" pos:end="422:21"><name pos:start="422:5" pos:end="422:15">est_destroy</name><argument_list pos:start="422:16" pos:end="422:21">(<argument pos:start="422:17" pos:end="422:20"><expr pos:start="422:17" pos:end="422:20"><name pos:start="422:17" pos:end="422:20">ectx</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="423:5" pos:end="423:16"><expr pos:start="423:5" pos:end="423:15"><name pos:start="423:5" pos:end="423:8">ectx</name> <operator pos:start="423:10" pos:end="423:10">=</operator> <name pos:start="423:12" pos:end="423:15">NULL</name></expr>;</expr_stmt>
+    <comment type="block" pos:start="424:5" pos:end="426:7">/*
+     * Create a client context
+     */</comment>
+    <expr_stmt pos:start="427:5" pos:end="428:35"><expr pos:start="427:5" pos:end="428:34"><name pos:start="427:5" pos:end="427:8">ectx</name> <operator pos:start="427:10" pos:end="427:10">=</operator> <call pos:start="427:12" pos:end="428:34"><name pos:start="427:12" pos:end="427:26">est_client_init</name><argument_list pos:start="427:27" pos:end="428:34">(<argument pos:start="427:28" pos:end="427:34"><expr pos:start="427:28" pos:end="427:34"><name pos:start="427:28" pos:end="427:34">cacerts</name></expr></argument>, <argument pos:start="427:37" pos:end="427:47"><expr pos:start="427:37" pos:end="427:47"><name pos:start="427:37" pos:end="427:47">cacerts_len</name></expr></argument>, <argument pos:start="427:50" pos:end="427:68"><expr pos:start="427:50" pos:end="427:68"><name pos:start="427:50" pos:end="427:68">EST_CERT_FORMAT_PEM</name></expr></argument>,
+        <argument pos:start="428:9" pos:end="428:33"><expr pos:start="428:9" pos:end="428:33"><name pos:start="428:9" pos:end="428:33">client_manual_cert_verify</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="429:5" pos:end="429:28"><expr pos:start="429:5" pos:end="429:27"><call pos:start="429:5" pos:end="429:27"><name pos:start="429:5" pos:end="429:13">CU_ASSERT</name><argument_list pos:start="429:14" pos:end="429:27">(<argument pos:start="429:15" pos:end="429:26"><expr pos:start="429:15" pos:end="429:26"><name pos:start="429:15" pos:end="429:18">ectx</name> <operator pos:start="429:20" pos:end="429:21">!=</operator> <name pos:start="429:23" pos:end="429:26">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="431:5" pos:end="433:7">/*
+     * Now that we have the cert, switch the server over to token mode
+     */</comment>
+    <expr_stmt pos:start="434:5" pos:end="434:32"><expr pos:start="434:5" pos:end="434:31"><call pos:start="434:5" pos:end="434:31"><name pos:start="434:5" pos:end="434:29">st_enable_http_token_auth</name><argument_list pos:start="434:30" pos:end="434:31">()</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt pos:start="436:5" pos:end="436:55"><expr pos:start="436:5" pos:end="436:54"><name pos:start="436:5" pos:end="436:8">e_rc</name> <operator pos:start="436:10" pos:end="436:10">=</operator> <call pos:start="436:12" pos:end="436:54"><name pos:start="436:12" pos:end="436:38">est_client_set_auth_cred_cb</name><argument_list pos:start="436:39" pos:end="436:54">(<argument pos:start="436:40" pos:end="436:43"><expr pos:start="436:40" pos:end="436:43"><name pos:start="436:40" pos:end="436:43">ectx</name></expr></argument>, <argument pos:start="436:46" pos:end="436:53"><expr pos:start="436:46" pos:end="436:53"><name pos:start="436:46" pos:end="436:53">callback</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="437:5" pos:end="437:36"><expr pos:start="437:5" pos:end="437:35"><call pos:start="437:5" pos:end="437:35"><name pos:start="437:5" pos:end="437:13">CU_ASSERT</name><argument_list pos:start="437:14" pos:end="437:35">(<argument pos:start="437:15" pos:end="437:34"><expr pos:start="437:15" pos:end="437:34"><name pos:start="437:15" pos:end="437:18">e_rc</name> <operator pos:start="437:20" pos:end="437:21">==</operator> <name pos:start="437:23" pos:end="437:34">EST_ERR_NONE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="439:5" pos:end="441:7">/*
+     * Set the EST server address/port
+     */</comment>
+    <expr_stmt pos:start="442:5" pos:end="442:63"><expr pos:start="442:5" pos:end="442:62"><call pos:start="442:5" pos:end="442:62"><name pos:start="442:5" pos:end="442:25">est_client_set_server</name><argument_list pos:start="442:26" pos:end="442:62">(<argument pos:start="442:27" pos:end="442:30"><expr pos:start="442:27" pos:end="442:30"><name pos:start="442:27" pos:end="442:30">ectx</name></expr></argument>, <argument pos:start="442:33" pos:end="442:38"><expr pos:start="442:33" pos:end="442:38"><name pos:start="442:33" pos:end="442:38">server</name></expr></argument>, <argument pos:start="442:41" pos:end="442:55"><expr pos:start="442:41" pos:end="442:55"><name pos:start="442:41" pos:end="442:55">US2174_TCP_PORT</name></expr></argument>, <argument pos:start="442:58" pos:end="442:61"><expr pos:start="442:58" pos:end="442:61"><name pos:start="442:58" pos:end="442:61">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="444:5" pos:end="450:7">/*
+     * And attempt a reenroll while in token mode
+     *
+     * Convert the cert to an X509.  Be warned this is
+     * pure hackery.
+     * PDB: This conversion code comes from other test cases.
+     */</comment>
+    <expr_stmt pos:start="451:5" pos:end="451:34"><expr pos:start="451:5" pos:end="451:33"><name pos:start="451:5" pos:end="451:7">b64</name> <operator pos:start="451:9" pos:end="451:9">=</operator> <call pos:start="451:11" pos:end="451:33"><name pos:start="451:11" pos:end="451:17">BIO_new</name><argument_list pos:start="451:18" pos:end="451:33">(<argument pos:start="451:19" pos:end="451:32"><expr pos:start="451:19" pos:end="451:32"><call pos:start="451:19" pos:end="451:32"><name pos:start="451:19" pos:end="451:30">BIO_f_base64</name><argument_list pos:start="451:31" pos:end="451:32">()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="452:5" pos:end="452:47"><expr pos:start="452:5" pos:end="452:46"><name pos:start="452:5" pos:end="452:7">out</name> <operator pos:start="452:9" pos:end="452:9">=</operator> <call pos:start="452:11" pos:end="452:46"><name pos:start="452:11" pos:end="452:25">BIO_new_mem_buf</name><argument_list pos:start="452:26" pos:end="452:46">(<argument pos:start="452:27" pos:end="452:34"><expr pos:start="452:27" pos:end="452:34"><name pos:start="452:27" pos:end="452:34">new_cert</name></expr></argument>, <argument pos:start="452:37" pos:end="452:45"><expr pos:start="452:37" pos:end="452:45"><name pos:start="452:37" pos:end="452:45">pkcs7_len</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="453:5" pos:end="453:29"><expr pos:start="453:5" pos:end="453:28"><name pos:start="453:5" pos:end="453:7">out</name> <operator pos:start="453:9" pos:end="453:9">=</operator> <call pos:start="453:11" pos:end="453:28"><name pos:start="453:11" pos:end="453:18">BIO_push</name><argument_list pos:start="453:19" pos:end="453:28">(<argument pos:start="453:20" pos:end="453:22"><expr pos:start="453:20" pos:end="453:22"><name pos:start="453:20" pos:end="453:22">b64</name></expr></argument>, <argument pos:start="453:25" pos:end="453:27"><expr pos:start="453:25" pos:end="453:27"><name pos:start="453:25" pos:end="453:27">out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="454:5" pos:end="454:34"><expr pos:start="454:5" pos:end="454:33"><name pos:start="454:5" pos:end="454:6">p7</name> <operator pos:start="454:8" pos:end="454:8">=</operator> <call pos:start="454:10" pos:end="454:33"><name pos:start="454:10" pos:end="454:22">d2i_PKCS7_bio</name><argument_list pos:start="454:23" pos:end="454:33">(<argument pos:start="454:24" pos:end="454:26"><expr pos:start="454:24" pos:end="454:26"><name pos:start="454:24" pos:end="454:26">out</name></expr></argument>, <argument pos:start="454:29" pos:end="454:32"><expr pos:start="454:29" pos:end="454:32"><name pos:start="454:29" pos:end="454:32">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="455:5" pos:end="455:26"><expr pos:start="455:5" pos:end="455:25"><call pos:start="455:5" pos:end="455:25"><name pos:start="455:5" pos:end="455:13">CU_ASSERT</name><argument_list pos:start="455:14" pos:end="455:25">(<argument pos:start="455:15" pos:end="455:24"><expr pos:start="455:15" pos:end="455:24"><name pos:start="455:15" pos:end="455:16">p7</name> <operator pos:start="455:18" pos:end="455:19">!=</operator> <name pos:start="455:21" pos:end="455:24">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="456:5" pos:end="456:22"><expr pos:start="456:5" pos:end="456:21"><call pos:start="456:5" pos:end="456:21"><name pos:start="456:5" pos:end="456:16">BIO_free_all</name><argument_list pos:start="456:17" pos:end="456:21">(<argument pos:start="456:18" pos:end="456:20"><expr pos:start="456:18" pos:end="456:20"><name pos:start="456:18" pos:end="456:20">out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="457:5" pos:end="457:30"><expr pos:start="457:5" pos:end="457:29"><name pos:start="457:5" pos:end="457:5">i</name> <operator pos:start="457:7" pos:end="457:7">=</operator> <call pos:start="457:9" pos:end="457:29"><name pos:start="457:9" pos:end="457:19">OBJ_obj2nid</name><argument_list pos:start="457:20" pos:end="457:29">(<argument pos:start="457:21" pos:end="457:28"><expr pos:start="457:21" pos:end="457:28"><name pos:start="457:21" pos:end="457:28"><name pos:start="457:21" pos:end="457:22">p7</name><operator pos:start="457:23" pos:end="457:24">-&gt;</operator><name pos:start="457:25" pos:end="457:28">type</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <switch pos:start="458:5" pos:end="467:5">switch <condition pos:start="458:12" pos:end="458:14">(<expr pos:start="458:13" pos:end="458:13"><name pos:start="458:13" pos:end="458:13">i</name></expr>)</condition> <block pos:start="458:16" pos:end="467:5">{<block_content pos:start="459:5" pos:end="466:14">
+    <case pos:start="459:5" pos:end="459:26">case <expr pos:start="459:10" pos:end="459:25"><name pos:start="459:10" pos:end="459:25">NID_pkcs7_signed</name></expr>:</case>
+        <expr_stmt pos:start="460:9" pos:end="460:33"><expr pos:start="460:9" pos:end="460:32"><name pos:start="460:9" pos:end="460:13">certs</name> <operator pos:start="460:15" pos:end="460:15">=</operator> <name pos:start="460:17" pos:end="460:32"><name pos:start="460:17" pos:end="460:18">p7</name><operator pos:start="460:19" pos:end="460:20">-&gt;</operator><name pos:start="460:21" pos:end="460:21">d</name><operator pos:start="460:22" pos:end="460:22">.</operator><name pos:start="460:23" pos:end="460:26">sign</name><operator pos:start="460:27" pos:end="460:28">-&gt;</operator><name pos:start="460:29" pos:end="460:32">cert</name></name></expr>;</expr_stmt>
+        <break pos:start="461:9" pos:end="461:14">break;</break>
+    <case pos:start="462:5" pos:end="462:38">case <expr pos:start="462:10" pos:end="462:37"><name pos:start="462:10" pos:end="462:37">NID_pkcs7_signedAndEnveloped</name></expr>:</case>
+        <expr_stmt pos:start="463:9" pos:end="463:49"><expr pos:start="463:9" pos:end="463:48"><name pos:start="463:9" pos:end="463:13">certs</name> <operator pos:start="463:15" pos:end="463:15">=</operator> <name pos:start="463:17" pos:end="463:48"><name pos:start="463:17" pos:end="463:18">p7</name><operator pos:start="463:19" pos:end="463:20">-&gt;</operator><name pos:start="463:21" pos:end="463:21">d</name><operator pos:start="463:22" pos:end="463:22">.</operator><name pos:start="463:23" pos:end="463:42">signed_and_enveloped</name><operator pos:start="463:43" pos:end="463:44">-&gt;</operator><name pos:start="463:45" pos:end="463:48">cert</name></name></expr>;</expr_stmt>
+        <break pos:start="464:9" pos:end="464:14">break;</break>
+    <default pos:start="465:5" pos:end="465:12">default:</default>
+        <break pos:start="466:9" pos:end="466:14">break;</break>
+    </block_content>}</block></switch>
+    <expr_stmt pos:start="468:5" pos:end="468:29"><expr pos:start="468:5" pos:end="468:28"><call pos:start="468:5" pos:end="468:28"><name pos:start="468:5" pos:end="468:13">CU_ASSERT</name><argument_list pos:start="468:14" pos:end="468:28">(<argument pos:start="468:15" pos:end="468:27"><expr pos:start="468:15" pos:end="468:27"><name pos:start="468:15" pos:end="468:19">certs</name> <operator pos:start="468:21" pos:end="468:22">!=</operator> <name pos:start="468:24" pos:end="468:27">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="469:5" pos:end="470:15"><if pos:start="469:5" pos:end="470:15">if <condition pos:start="469:8" pos:end="469:15">(<expr pos:start="469:9" pos:end="469:14"><operator pos:start="469:9" pos:end="469:9">!</operator><name pos:start="469:10" pos:end="469:14">certs</name></expr>)</condition><block type="pseudo" pos:start="470:9" pos:end="470:15"><block_content pos:start="470:9" pos:end="470:15">
+        <return pos:start="470:9" pos:end="470:15">return;</return></block_content></block></if></if_stmt>
+    <comment type="block" pos:start="471:5" pos:end="473:51">/* our new cert should be the one and only
+     * cert in the pkcs7 blob.  We shouldn't have to
+     * iterate through the full list to find it. */</comment>
+    <expr_stmt pos:start="474:5" pos:end="474:35"><expr pos:start="474:5" pos:end="474:34"><name pos:start="474:5" pos:end="474:8">cert</name> <operator pos:start="474:10" pos:end="474:10">=</operator> <call pos:start="474:12" pos:end="474:34"><name pos:start="474:12" pos:end="474:24">sk_X509_value</name><argument_list pos:start="474:25" pos:end="474:34">(<argument pos:start="474:26" pos:end="474:30"><expr pos:start="474:26" pos:end="474:30"><name pos:start="474:26" pos:end="474:30">certs</name></expr></argument>, <argument pos:start="474:33" pos:end="474:33"><expr pos:start="474:33" pos:end="474:33"><literal type="number" pos:start="474:33" pos:end="474:33">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="475:5" pos:end="475:28"><expr pos:start="475:5" pos:end="475:27"><call pos:start="475:5" pos:end="475:27"><name pos:start="475:5" pos:end="475:13">CU_ASSERT</name><argument_list pos:start="475:14" pos:end="475:27">(<argument pos:start="475:15" pos:end="475:26"><expr pos:start="475:15" pos:end="475:26"><name pos:start="475:15" pos:end="475:18">cert</name> <operator pos:start="475:20" pos:end="475:21">!=</operator> <name pos:start="475:23" pos:end="475:26">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="477:5" pos:end="482:7">/*
+     * PDB NOTE: At the moment, this is expected to fail since
+     * the server does not yet understand requests with token authentication.
+     * Once 1884 is complete, the below ASSERT will begin to fail and will need
+     * to be changed to a passing response.
+     */</comment>
+    <expr_stmt pos:start="483:5" pos:end="483:58"><expr pos:start="483:5" pos:end="483:57"><name pos:start="483:5" pos:end="483:6">rv</name> <operator pos:start="483:8" pos:end="483:8">=</operator> <call pos:start="483:10" pos:end="483:57"><name pos:start="483:10" pos:end="483:28">est_client_reenroll</name><argument_list pos:start="483:29" pos:end="483:57">(<argument pos:start="483:30" pos:end="483:33"><expr pos:start="483:30" pos:end="483:33"><name pos:start="483:30" pos:end="483:33">ectx</name></expr></argument>, <argument pos:start="483:36" pos:end="483:39"><expr pos:start="483:36" pos:end="483:39"><name pos:start="483:36" pos:end="483:39">cert</name></expr></argument>, <argument pos:start="483:42" pos:end="483:51"><expr pos:start="483:42" pos:end="483:51"><operator pos:start="483:42" pos:end="483:42">&amp;</operator><name pos:start="483:43" pos:end="483:51">pkcs7_len</name></expr></argument>, <argument pos:start="483:54" pos:end="483:56"><expr pos:start="483:54" pos:end="483:56"><name pos:start="483:54" pos:end="483:56">key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="484:5" pos:end="484:40"><expr pos:start="484:5" pos:end="484:39"><call pos:start="484:5" pos:end="484:39"><name pos:start="484:5" pos:end="484:13">CU_ASSERT</name><argument_list pos:start="484:14" pos:end="484:39">(<argument pos:start="484:15" pos:end="484:38"><expr pos:start="484:15" pos:end="484:38"><name pos:start="484:15" pos:end="484:16">rv</name> <operator pos:start="484:18" pos:end="484:19">==</operator> <name pos:start="484:21" pos:end="484:38">expected_enroll_rv</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="486:5" pos:end="488:7">/*
+     * Cleanup
+     */</comment>
+    <expr_stmt pos:start="489:5" pos:end="489:23"><expr pos:start="489:5" pos:end="489:22"><call pos:start="489:5" pos:end="489:22"><name pos:start="489:5" pos:end="489:17">EVP_PKEY_free</name><argument_list pos:start="489:18" pos:end="489:22">(<argument pos:start="489:19" pos:end="489:21"><expr pos:start="489:19" pos:end="489:21"><name pos:start="489:19" pos:end="489:21">key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="490:5" pos:end="491:23"><if pos:start="490:5" pos:end="491:23">if <condition pos:start="490:8" pos:end="490:17">(<expr pos:start="490:9" pos:end="490:16"><name pos:start="490:9" pos:end="490:16">new_cert</name></expr>)</condition><block type="pseudo" pos:start="491:9" pos:end="491:23"><block_content pos:start="491:9" pos:end="491:23">
+        <expr_stmt pos:start="491:9" pos:end="491:23"><expr pos:start="491:9" pos:end="491:22"><call pos:start="491:9" pos:end="491:22"><name pos:start="491:9" pos:end="491:12">free</name><argument_list pos:start="491:13" pos:end="491:22">(<argument pos:start="491:14" pos:end="491:21"><expr pos:start="491:14" pos:end="491:21"><name pos:start="491:14" pos:end="491:21">new_cert</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    <expr_stmt pos:start="492:5" pos:end="492:22"><expr pos:start="492:5" pos:end="492:21"><call pos:start="492:5" pos:end="492:21"><name pos:start="492:5" pos:end="492:15">est_destroy</name><argument_list pos:start="492:16" pos:end="492:21">(<argument pos:start="492:17" pos:end="492:20"><expr pos:start="492:17" pos:end="492:20"><name pos:start="492:17" pos:end="492:20">ectx</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<function pos:start="495:1" pos:end="497:1"><type pos:start="495:1" pos:end="495:11"><specifier pos:start="495:1" pos:end="495:6">static</specifier> <name pos:start="495:8" pos:end="495:11">void</name></type> <name pos:start="495:13" pos:end="495:24">us2174_clean</name> <parameter_list pos:start="495:26" pos:end="495:31">(<parameter pos:start="495:27" pos:end="495:30"><decl pos:start="495:27" pos:end="495:30"><type pos:start="495:27" pos:end="495:30"><name pos:start="495:27" pos:end="495:30">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="496:1" pos:end="497:1">{<block_content>
+</block_content>}</block></function>
+
+<function pos:start="499:1" pos:end="538:1"><type pos:start="499:1" pos:end="499:10"><specifier pos:start="499:1" pos:end="499:6">static</specifier> <name pos:start="499:8" pos:end="499:10">int</name></type> <name pos:start="499:12" pos:end="499:30">us2174_start_server</name> <parameter_list pos:start="499:32" pos:end="499:59">(<parameter pos:start="499:33" pos:end="499:49"><decl pos:start="499:33" pos:end="499:49"><type pos:start="499:33" pos:end="499:49"><name pos:start="499:33" pos:end="499:35">int</name></type> <name pos:start="499:37" pos:end="499:49">manual_enroll</name></decl></parameter>, <parameter pos:start="499:52" pos:end="499:58"><decl pos:start="499:52" pos:end="499:58"><type pos:start="499:52" pos:end="499:58"><name pos:start="499:52" pos:end="499:54">int</name></type> <name pos:start="499:56" pos:end="499:58">nid</name></decl></parameter>)</parameter_list>
+<block pos:start="500:1" pos:end="538:1">{<block_content pos:start="501:5" pos:end="537:14">
+    <decl_stmt pos:start="501:5" pos:end="501:15"><decl pos:start="501:5" pos:end="501:14"><type pos:start="501:5" pos:end="501:7"><name pos:start="501:5" pos:end="501:7">int</name></type> <name pos:start="501:9" pos:end="501:10">rv</name> <init pos:start="501:12" pos:end="501:14">= <expr pos:start="501:14" pos:end="501:14"><literal type="number" pos:start="501:14" pos:end="501:14">0</literal></expr></init></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="503:5" pos:end="505:7">/*
+     * First we start an EST server acting as the CA
+     */</comment>
+    <expr_stmt pos:start="506:5" pos:end="515:23"><expr pos:start="506:5" pos:end="515:22"><name pos:start="506:5" pos:end="506:6">rv</name> <operator pos:start="506:8" pos:end="506:8">=</operator> <call pos:start="506:10" pos:end="515:22"><name pos:start="506:10" pos:end="506:17">st_start</name><argument_list pos:start="506:18" pos:end="515:22">(<argument pos:start="506:19" pos:end="506:40"><expr pos:start="506:19" pos:end="506:40"><name pos:start="506:19" pos:end="506:40">US2174_TCP_SERVER_PORT</name></expr></argument>,
+                  <argument pos:start="507:19" pos:end="507:36"><expr pos:start="507:19" pos:end="507:36"><name pos:start="507:19" pos:end="507:36">US2174_SERVER_CERT</name></expr></argument>,
+                  <argument pos:start="508:19" pos:end="508:35"><expr pos:start="508:19" pos:end="508:35"><name pos:start="508:19" pos:end="508:35">US2174_SERVER_KEY</name></expr></argument>,
+                  <argument pos:start="509:19" pos:end="509:28"><expr pos:start="509:19" pos:end="509:28"><literal type="string" pos:start="509:19" pos:end="509:28">"estrealm"</literal></expr></argument>,
+                  <argument pos:start="510:19" pos:end="510:31"><expr pos:start="510:19" pos:end="510:31"><name pos:start="510:19" pos:end="510:31">US2174_CACERT</name></expr></argument>,
+                  <argument pos:start="511:19" pos:end="511:38"><expr pos:start="511:19" pos:end="511:38"><name pos:start="511:19" pos:end="511:38">US2174_TRUSTED_CERTS</name></expr></argument>,
+                  <argument pos:start="512:19" pos:end="512:43"><expr pos:start="512:19" pos:end="512:43"><literal type="string" pos:start="512:19" pos:end="512:43">"US2174/estExampleCA.cnf"</literal></expr></argument>,
+                  <argument pos:start="513:19" pos:end="513:31"><expr pos:start="513:19" pos:end="513:31"><name pos:start="513:19" pos:end="513:31">manual_enroll</name></expr></argument>, <comment type="line" pos:start="513:34" pos:end="513:49">// manual enroll</comment>
+                  <argument pos:start="514:19" pos:end="514:19"><expr pos:start="514:19" pos:end="514:19"><literal type="number" pos:start="514:19" pos:end="514:19">0</literal></expr></argument>,  <comment type="line" pos:start="514:23" pos:end="514:36">// disable PoP</comment>
+                  <argument pos:start="515:19" pos:end="515:21"><expr pos:start="515:19" pos:end="515:21"><name pos:start="515:19" pos:end="515:21">nid</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line" pos:start="515:25" pos:end="515:41">// ecdhe nid info</comment>
+    <expr_stmt pos:start="516:5" pos:end="516:13"><expr pos:start="516:5" pos:end="516:12"><call pos:start="516:5" pos:end="516:12"><name pos:start="516:5" pos:end="516:9">SLEEP</name><argument_list pos:start="516:10" pos:end="516:12">(<argument pos:start="516:11" pos:end="516:11"><expr pos:start="516:11" pos:end="516:11"><literal type="number" pos:start="516:11" pos:end="516:11">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="517:5" pos:end="518:18"><if pos:start="517:5" pos:end="518:18">if <condition pos:start="517:8" pos:end="517:27">(<expr pos:start="517:9" pos:end="517:26"><name pos:start="517:9" pos:end="517:10">rv</name> <operator pos:start="517:12" pos:end="517:13">!=</operator> <name pos:start="517:15" pos:end="517:26">EST_ERR_NONE</name></expr>)</condition><block type="pseudo" pos:start="518:9" pos:end="518:18"><block_content pos:start="518:9" pos:end="518:18">
+        <return pos:start="518:9" pos:end="518:18">return <expr pos:start="518:16" pos:end="518:17"><name pos:start="518:16" pos:end="518:17">rv</name></expr>;</return></block_content></block></if></if_stmt>
+
+    <comment type="block" pos:start="520:5" pos:end="523:7">/*
+     * Next we start an EST proxy acting as an RA with the server side
+     * operating in token auth mode.
+     */</comment>
+    <expr_stmt pos:start="524:5" pos:end="533:33"><expr pos:start="524:5" pos:end="533:32"><name pos:start="524:5" pos:end="524:6">rv</name> <operator pos:start="524:8" pos:end="524:8">=</operator> <call pos:start="524:10" pos:end="533:32"><name pos:start="524:10" pos:end="524:29">st_proxy_start_token</name><argument_list pos:start="524:30" pos:end="533:32">(<argument pos:start="524:31" pos:end="524:51"><expr pos:start="524:31" pos:end="524:51"><name pos:start="524:31" pos:end="524:51">US2174_TCP_PROXY_PORT</name></expr></argument>,
+                              <argument pos:start="525:31" pos:end="525:47"><expr pos:start="525:31" pos:end="525:47"><name pos:start="525:31" pos:end="525:47">US2174_PROXY_CERT</name></expr></argument>,
+                              <argument pos:start="526:31" pos:end="526:46"><expr pos:start="526:31" pos:end="526:46"><name pos:start="526:31" pos:end="526:46">US2174_PROXY_KEY</name></expr></argument>, <argument pos:start="526:49" pos:end="526:58"><expr pos:start="526:49" pos:end="526:58"><literal type="string" pos:start="526:49" pos:end="526:58">"estrealm"</literal></expr></argument>,
+                              <argument pos:start="527:31" pos:end="527:43"><expr pos:start="527:31" pos:end="527:43"><name pos:start="527:31" pos:end="527:43">US2174_CACERT</name></expr></argument>,
+                              <argument pos:start="528:31" pos:end="528:50"><expr pos:start="528:31" pos:end="528:50"><name pos:start="528:31" pos:end="528:50">US2174_TRUSTED_CERTS</name></expr></argument>,
+                              <argument pos:start="529:31" pos:end="529:39"><expr pos:start="529:31" pos:end="529:39"><literal type="string" pos:start="529:31" pos:end="529:39">"estuser"</literal></expr></argument>,
+                              <argument pos:start="530:31" pos:end="530:38"><expr pos:start="530:31" pos:end="530:38"><literal type="string" pos:start="530:31" pos:end="530:38">"estpwd"</literal></expr></argument>,
+                              <argument pos:start="531:31" pos:end="531:41"><expr pos:start="531:31" pos:end="531:41"><literal type="string" pos:start="531:31" pos:end="531:41">"127.0.0.1"</literal></expr></argument>,
+                              <argument pos:start="532:31" pos:end="532:52"><expr pos:start="532:31" pos:end="532:52"><name pos:start="532:31" pos:end="532:52">US2174_TCP_SERVER_PORT</name></expr></argument>,
+                              <argument pos:start="533:31" pos:end="533:31"><expr pos:start="533:31" pos:end="533:31"><literal type="number" pos:start="533:31" pos:end="533:31">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line" pos:start="533:35" pos:end="533:49">//  disable PoP</comment>
+
+    <expr_stmt pos:start="535:5" pos:end="535:13"><expr pos:start="535:5" pos:end="535:12"><call pos:start="535:5" pos:end="535:12"><name pos:start="535:5" pos:end="535:9">SLEEP</name><argument_list pos:start="535:10" pos:end="535:12">(<argument pos:start="535:11" pos:end="535:11"><expr pos:start="535:11" pos:end="535:11"><literal type="number" pos:start="535:11" pos:end="535:11">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return pos:start="537:5" pos:end="537:14">return <expr pos:start="537:12" pos:end="537:13"><name pos:start="537:12" pos:end="537:13">rv</name></expr>;</return>
+</block_content>}</block></function>
+
+<function pos:start="540:1" pos:end="545:1"><type pos:start="540:1" pos:end="540:4"><name pos:start="540:1" pos:end="540:4">void</name></type> <name pos:start="540:6" pos:end="540:23">us2174_stop_server</name> <parameter_list pos:start="540:25" pos:end="540:26">()</parameter_list>
+<block pos:start="541:1" pos:end="545:1">{<block_content pos:start="542:5" pos:end="544:13">
+    <expr_stmt pos:start="542:5" pos:end="542:14"><expr pos:start="542:5" pos:end="542:13"><call pos:start="542:5" pos:end="542:13"><name pos:start="542:5" pos:end="542:11">st_stop</name><argument_list pos:start="542:12" pos:end="542:13">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="543:5" pos:end="543:20"><expr pos:start="543:5" pos:end="543:19"><call pos:start="543:5" pos:end="543:19"><name pos:start="543:5" pos:end="543:17">st_proxy_stop</name><argument_list pos:start="543:18" pos:end="543:19">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="544:5" pos:end="544:13"><expr pos:start="544:5" pos:end="544:12"><call pos:start="544:5" pos:end="544:12"><name pos:start="544:5" pos:end="544:9">SLEEP</name><argument_list pos:start="544:10" pos:end="544:12">(<argument pos:start="544:11" pos:end="544:11"><expr pos:start="544:11" pos:end="544:11"><literal type="number" pos:start="544:11" pos:end="544:11">2</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="547:1" pos:end="551:3">/*
+ * This routine is called when CUnit initializes this test
+ * suite.  This can be used to allocate data or open any
+ * resources required for all the test cases.
+ */</comment>
+<function pos:start="552:1" pos:end="575:1"><type pos:start="552:1" pos:end="552:10"><specifier pos:start="552:1" pos:end="552:6">static</specifier> <name pos:start="552:8" pos:end="552:10">int</name></type> <name pos:start="552:12" pos:end="552:28">us2174_init_suite</name> <parameter_list pos:start="552:30" pos:end="552:35">(<parameter pos:start="552:31" pos:end="552:34"><decl pos:start="552:31" pos:end="552:34"><type pos:start="552:31" pos:end="552:34"><name pos:start="552:31" pos:end="552:34">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="553:1" pos:end="575:1">{<block_content pos:start="554:5" pos:end="574:14">
+    <decl_stmt pos:start="554:5" pos:end="554:11"><decl pos:start="554:5" pos:end="554:10"><type pos:start="554:5" pos:end="554:7"><name pos:start="554:5" pos:end="554:7">int</name></type> <name pos:start="554:9" pos:end="554:10">rv</name></decl>;</decl_stmt>
+
+    <expr_stmt pos:start="556:5" pos:end="556:44"><expr pos:start="556:5" pos:end="556:43"><call pos:start="556:5" pos:end="556:43"><name pos:start="556:5" pos:end="556:19">est_init_logger</name><argument_list pos:start="556:20" pos:end="556:43">(<argument pos:start="556:21" pos:end="556:36"><expr pos:start="556:21" pos:end="556:36"><name pos:start="556:21" pos:end="556:36">EST_LOG_LVL_INFO</name></expr></argument>, <argument pos:start="556:39" pos:end="556:42"><expr pos:start="556:39" pos:end="556:42"><name pos:start="556:39" pos:end="556:42">NULL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="558:5" pos:end="560:7">/*
+     * Read in the CA certificates
+     */</comment>
+    <expr_stmt pos:start="561:5" pos:end="561:61"><expr pos:start="561:5" pos:end="561:60"><name pos:start="561:5" pos:end="561:15">cacerts_len</name> <operator pos:start="561:17" pos:end="561:17">=</operator> <call pos:start="561:19" pos:end="561:60"><name pos:start="561:19" pos:end="561:34">read_binary_file</name><argument_list pos:start="561:35" pos:end="561:60">(<argument pos:start="561:36" pos:end="561:49"><expr pos:start="561:36" pos:end="561:49"><name pos:start="561:36" pos:end="561:49">US2174_CACERTS</name></expr></argument>, <argument pos:start="561:52" pos:end="561:59"><expr pos:start="561:52" pos:end="561:59"><operator pos:start="561:52" pos:end="561:52">&amp;</operator><name pos:start="561:53" pos:end="561:59">cacerts</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="562:5" pos:end="564:5"><if pos:start="562:5" pos:end="564:5">if <condition pos:start="562:8" pos:end="562:25">(<expr pos:start="562:9" pos:end="562:24"><name pos:start="562:9" pos:end="562:19">cacerts_len</name> <operator pos:start="562:21" pos:end="562:22">&lt;=</operator> <literal type="number" pos:start="562:24" pos:end="562:24">0</literal></expr>)</condition> <block pos:start="562:27" pos:end="564:5">{<block_content pos:start="563:9" pos:end="563:17">
+        <return pos:start="563:9" pos:end="563:17">return <expr pos:start="563:16" pos:end="563:16"><literal type="number" pos:start="563:16" pos:end="563:16">1</literal></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <expr_stmt pos:start="566:5" pos:end="566:19"><expr pos:start="566:5" pos:end="566:18"><call pos:start="566:5" pos:end="566:18"><name pos:start="566:5" pos:end="566:16">us2174_clean</name><argument_list pos:start="566:17" pos:end="566:18">()</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="568:5" pos:end="571:7">/*
+     * Start an instance of the EST server with
+     * automatic enrollment enabled.
+     */</comment>
+    <expr_stmt pos:start="572:5" pos:end="572:35"><expr pos:start="572:5" pos:end="572:34"><name pos:start="572:5" pos:end="572:6">rv</name> <operator pos:start="572:8" pos:end="572:8">=</operator> <call pos:start="572:10" pos:end="572:34"><name pos:start="572:10" pos:end="572:28">us2174_start_server</name><argument_list pos:start="572:29" pos:end="572:34">(<argument pos:start="572:30" pos:end="572:30"><expr pos:start="572:30" pos:end="572:30"><literal type="number" pos:start="572:30" pos:end="572:30">0</literal></expr></argument>, <argument pos:start="572:33" pos:end="572:33"><expr pos:start="572:33" pos:end="572:33"><literal type="number" pos:start="572:33" pos:end="572:33">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return pos:start="574:5" pos:end="574:14">return <expr pos:start="574:12" pos:end="574:13"><name pos:start="574:12" pos:end="574:13">rv</name></expr>;</return>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="577:1" pos:end="581:3">/*
+ * This routine is called when CUnit uninitializes this test
+ * suite.  This can be used to deallocate data or close any
+ * resources that were used for the test cases.
+ */</comment>
+<function pos:start="582:1" pos:end="615:0"><type pos:start="582:1" pos:end="582:10"><specifier pos:start="582:1" pos:end="582:6">static</specifier> <name pos:start="582:8" pos:end="582:10">int</name></type> <name pos:start="582:12" pos:end="582:31">us2174_destroy_suite</name> <parameter_list pos:start="582:33" pos:end="582:38">(<parameter pos:start="582:34" pos:end="582:37"><decl pos:start="582:34" pos:end="582:37"><type pos:start="582:34" pos:end="582:37"><name pos:start="582:34" pos:end="582:37">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="583:1" pos:end="615:0">{<block_content pos:start="584:5" pos:end="586:13">
+    <expr_stmt pos:start="584:5" pos:end="584:25"><expr pos:start="584:5" pos:end="584:24"><call pos:start="584:5" pos:end="584:24"><name pos:start="584:5" pos:end="584:22">us2174_stop_server</name><argument_list pos:start="584:23" pos:end="584:24">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="585:5" pos:end="585:18"><expr pos:start="585:5" pos:end="585:17"><call pos:start="585:5" pos:end="585:17"><name pos:start="585:5" pos:end="585:8">free</name><argument_list pos:start="585:9" pos:end="585:17">(<argument pos:start="585:10" pos:end="585:16"><expr pos:start="585:10" pos:end="585:16"><name pos:start="585:10" pos:end="585:16">cacerts</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return pos:start="586:5" pos:end="586:13">return <expr pos:start="586:12" pos:end="586:12"><literal type="number" pos:start="586:12" pos:end="586:12">0</literal></expr>;</return>
+</block_content>}</block></function>
+
+<cpp:if pos:start="589:1" pos:end="589:5">#<cpp:directive pos:start="589:2" pos:end="589:3">if</cpp:directive> <expr pos:start="589:5" pos:end="589:5"><literal type="number" pos:start="589:5" pos:end="589:5">0</literal></expr></cpp:if>
+<comment type="block" pos:start="590:1" pos:end="597:3">/*
+ * Simple enroll -
+ * proxy - BASIC
+ * server - BASIC
+ *
+ * Make sure token auth mode did not break anything.
+ *
+ */</comment>
+static void us2174_test1(void)
+{
+    long rv;
+
+    LOG_FUNC_NM;
+
+    rv = curl_http_post(US2174_ENROLL_URL_BA, US2174_PKCS10_CT,
+            US2174_PKCS10_RSA2048,
+            US2174_UIDPWD_GOOD, US2174_CACERTS, CURLAUTH_BASIC,
+            NULL, NULL, NULL);
+    <comment type="block" pos:start="608:5" pos:end="611:7">/*
+     * Since we passed in a valid userID/password,
+     * we expect the server to respond with 200
+     */</comment>
+    CU_ASSERT(rv == 200);
+}
+<cpp:endif pos:start="614:1" pos:end="614:6">#<cpp:directive pos:start="614:2" pos:end="614:6">endif</cpp:directive></cpp:endif>
+
+<comment type="block" pos:start="616:1" pos:end="621:3">/*
+ * Simple enroll -
+ * proxy - TOKEN
+ * server - TOKEN
+ *
+ */</comment>
+<function pos:start="622:1" pos:end="660:1"><type pos:start="622:1" pos:end="622:11"><specifier pos:start="622:1" pos:end="622:6">static</specifier> <name pos:start="622:8" pos:end="622:11">void</name></type> <name pos:start="622:13" pos:end="622:24">us2174_test2</name> <parameter_list pos:start="622:26" pos:end="622:31">(<parameter pos:start="622:27" pos:end="622:30"><decl pos:start="622:27" pos:end="622:30"><type pos:start="622:27" pos:end="622:30"><name pos:start="622:27" pos:end="622:30">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="623:1" pos:end="660:1">{<block_content pos:start="624:5" pos:end="659:46">
+    <expr_stmt pos:start="624:5" pos:end="625:5"><expr pos:start="624:5" pos:end="624:15"><name pos:start="624:5" pos:end="624:15">LOG_FUNC_NM</name></expr>
+    ;</expr_stmt>
+
+    <expr_stmt pos:start="627:5" pos:end="627:34"><expr pos:start="627:5" pos:end="627:33"><name pos:start="627:5" pos:end="627:29">auth_cred_callback_called</name> <operator pos:start="627:31" pos:end="627:31">=</operator> <literal type="number" pos:start="627:33" pos:end="627:33">0</literal></expr>;</expr_stmt>
+    <expr_stmt pos:start="628:5" pos:end="628:30"><expr pos:start="628:5" pos:end="628:29"><name pos:start="628:5" pos:end="628:25">auth_cred_force_error</name> <operator pos:start="628:27" pos:end="628:27">=</operator> <literal type="number" pos:start="628:29" pos:end="628:29">0</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="630:5" pos:end="633:7">/*
+     * set server to do token auth challenges
+     * tell the server which tokens to accept
+     */</comment>
+    <expr_stmt pos:start="634:5" pos:end="634:32"><expr pos:start="634:5" pos:end="634:31"><call pos:start="634:5" pos:end="634:31"><name pos:start="634:5" pos:end="634:29">st_enable_http_token_auth</name><argument_list pos:start="634:30" pos:end="634:31">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="635:5" pos:end="635:29"><expr pos:start="635:5" pos:end="635:28"><call pos:start="635:5" pos:end="635:28"><name pos:start="635:5" pos:end="635:16">st_set_token</name><argument_list pos:start="635:17" pos:end="635:28">(<argument pos:start="635:18" pos:end="635:27"><expr pos:start="635:18" pos:end="635:27"><name pos:start="635:18" pos:end="635:27">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="636:5" pos:end="639:7">/*
+     * set the proxy to do token auth challenges and
+     * tell it what tokens to accept.
+     */</comment>
+    <expr_stmt pos:start="640:5" pos:end="640:38"><expr pos:start="640:5" pos:end="640:37"><call pos:start="640:5" pos:end="640:37"><name pos:start="640:5" pos:end="640:35">st_proxy_enable_http_token_auth</name><argument_list pos:start="640:36" pos:end="640:37">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="641:5" pos:end="641:45"><expr pos:start="641:5" pos:end="641:44"><call pos:start="641:5" pos:end="641:44"><name pos:start="641:5" pos:end="641:32">st_proxy_set_srv_valid_token</name><argument_list pos:start="641:33" pos:end="641:44">(<argument pos:start="641:34" pos:end="641:43"><expr pos:start="641:34" pos:end="641:43"><name pos:start="641:34" pos:end="641:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="642:5" pos:end="645:7">/*
+     * tell the client side of proxy which token credential to
+     * use
+     */</comment>
+    <expr_stmt pos:start="646:5" pos:end="646:45"><expr pos:start="646:5" pos:end="646:44"><call pos:start="646:5" pos:end="646:44"><name pos:start="646:5" pos:end="646:32">st_proxy_set_clnt_token_cred</name><argument_list pos:start="646:33" pos:end="646:44">(<argument pos:start="646:34" pos:end="646:43"><expr pos:start="646:34" pos:end="646:43"><name pos:start="646:34" pos:end="646:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="648:5" pos:end="652:7">/*
+     * Set up the EST Client and have it perform a simple enroll.
+     *
+     * Enroll should succeed.
+     */</comment>
+    <expr_stmt pos:start="653:5" pos:end="654:35"><expr pos:start="653:5" pos:end="654:34"><call pos:start="653:5" pos:end="654:34"><name pos:start="653:5" pos:end="653:24">us2174_simple_enroll</name><argument_list pos:start="653:25" pos:end="654:34">(<argument pos:start="653:26" pos:end="653:35"><expr pos:start="653:26" pos:end="653:35"><literal type="string" pos:start="653:26" pos:end="653:35">"TC2174-4"</literal></expr></argument>, <argument pos:start="653:38" pos:end="653:53"><expr pos:start="653:38" pos:end="653:53"><name pos:start="653:38" pos:end="653:53">US2174_SERVER_IP</name></expr></argument>, <argument pos:start="653:56" pos:end="653:67"><expr pos:start="653:56" pos:end="653:67"><name pos:start="653:56" pos:end="653:67">EST_ERR_NONE</name></expr></argument>,
+        <argument pos:start="654:9" pos:end="654:33"><expr pos:start="654:9" pos:end="654:33"><name pos:start="654:9" pos:end="654:33">auth_credentials_token_cb</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="656:5" pos:end="658:7">/*
+     * callback should have been called
+     */</comment>
+    <expr_stmt pos:start="659:5" pos:end="659:46"><expr pos:start="659:5" pos:end="659:45"><call pos:start="659:5" pos:end="659:45"><name pos:start="659:5" pos:end="659:13">CU_ASSERT</name><argument_list pos:start="659:14" pos:end="659:45">(<argument pos:start="659:15" pos:end="659:44"><expr pos:start="659:15" pos:end="659:44"><name pos:start="659:15" pos:end="659:39">auth_cred_callback_called</name> <operator pos:start="659:41" pos:end="659:42">==</operator> <literal type="number" pos:start="659:44" pos:end="659:44">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="662:1" pos:end="666:3">/*
+ * Simple enroll -
+ * proxy - TOKEN
+ * server - BASIC
+ */</comment>
+<function pos:start="667:1" pos:end="703:1"><type pos:start="667:1" pos:end="667:11"><specifier pos:start="667:1" pos:end="667:6">static</specifier> <name pos:start="667:8" pos:end="667:11">void</name></type> <name pos:start="667:13" pos:end="667:24">us2174_test3</name> <parameter_list pos:start="667:26" pos:end="667:31">(<parameter pos:start="667:27" pos:end="667:30"><decl pos:start="667:27" pos:end="667:30"><type pos:start="667:27" pos:end="667:30"><name pos:start="667:27" pos:end="667:30">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="668:1" pos:end="703:1">{<block_content pos:start="669:5" pos:end="702:46">
+    <expr_stmt pos:start="669:5" pos:end="670:5"><expr pos:start="669:5" pos:end="669:15"><name pos:start="669:5" pos:end="669:15">LOG_FUNC_NM</name></expr>
+    ;</expr_stmt>
+
+    <expr_stmt pos:start="672:5" pos:end="672:34"><expr pos:start="672:5" pos:end="672:33"><name pos:start="672:5" pos:end="672:29">auth_cred_callback_called</name> <operator pos:start="672:31" pos:end="672:31">=</operator> <literal type="number" pos:start="672:33" pos:end="672:33">0</literal></expr>;</expr_stmt>
+    <expr_stmt pos:start="673:5" pos:end="673:30"><expr pos:start="673:5" pos:end="673:29"><name pos:start="673:5" pos:end="673:25">auth_cred_force_error</name> <operator pos:start="673:27" pos:end="673:27">=</operator> <literal type="number" pos:start="673:29" pos:end="673:29">0</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="675:5" pos:end="677:7">/*
+     * set server to do BASIC auth challenges
+     */</comment>
+    <expr_stmt pos:start="678:5" pos:end="678:32"><expr pos:start="678:5" pos:end="678:31"><call pos:start="678:5" pos:end="678:31"><name pos:start="678:5" pos:end="678:29">st_enable_http_basic_auth</name><argument_list pos:start="678:30" pos:end="678:31">()</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="679:5" pos:end="682:7">/*
+     * set the proxy to do token auth challenges and
+     * tell it what tokens to accept.
+     */</comment>
+    <expr_stmt pos:start="683:5" pos:end="683:38"><expr pos:start="683:5" pos:end="683:37"><call pos:start="683:5" pos:end="683:37"><name pos:start="683:5" pos:end="683:35">st_proxy_enable_http_token_auth</name><argument_list pos:start="683:36" pos:end="683:37">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="684:5" pos:end="684:45"><expr pos:start="684:5" pos:end="684:44"><call pos:start="684:5" pos:end="684:44"><name pos:start="684:5" pos:end="684:32">st_proxy_set_srv_valid_token</name><argument_list pos:start="684:33" pos:end="684:44">(<argument pos:start="684:34" pos:end="684:43"><expr pos:start="684:34" pos:end="684:43"><name pos:start="684:34" pos:end="684:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="685:5" pos:end="688:7">/*
+     * tell the client side of proxy which token credential to
+     * use
+     */</comment>
+    <expr_stmt pos:start="689:5" pos:end="689:45"><expr pos:start="689:5" pos:end="689:44"><call pos:start="689:5" pos:end="689:44"><name pos:start="689:5" pos:end="689:32">st_proxy_set_clnt_token_cred</name><argument_list pos:start="689:33" pos:end="689:44">(<argument pos:start="689:34" pos:end="689:43"><expr pos:start="689:34" pos:end="689:43"><name pos:start="689:34" pos:end="689:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="691:5" pos:end="695:7">/*
+     * Set up the EST Client and have it perform a simple enroll.
+     *
+     * Enroll should succeed.
+     */</comment>
+    <expr_stmt pos:start="696:5" pos:end="697:35"><expr pos:start="696:5" pos:end="697:34"><call pos:start="696:5" pos:end="697:34"><name pos:start="696:5" pos:end="696:24">us2174_simple_enroll</name><argument_list pos:start="696:25" pos:end="697:34">(<argument pos:start="696:26" pos:end="696:35"><expr pos:start="696:26" pos:end="696:35"><literal type="string" pos:start="696:26" pos:end="696:35">"TC2174-4"</literal></expr></argument>, <argument pos:start="696:38" pos:end="696:53"><expr pos:start="696:38" pos:end="696:53"><name pos:start="696:38" pos:end="696:53">US2174_SERVER_IP</name></expr></argument>, <argument pos:start="696:56" pos:end="696:67"><expr pos:start="696:56" pos:end="696:67"><name pos:start="696:56" pos:end="696:67">EST_ERR_NONE</name></expr></argument>,
+        <argument pos:start="697:9" pos:end="697:33"><expr pos:start="697:9" pos:end="697:33"><name pos:start="697:9" pos:end="697:33">auth_credentials_token_cb</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="699:5" pos:end="701:7">/*
+     * callback should have been called
+     */</comment>
+    <expr_stmt pos:start="702:5" pos:end="702:46"><expr pos:start="702:5" pos:end="702:45"><call pos:start="702:5" pos:end="702:45"><name pos:start="702:5" pos:end="702:13">CU_ASSERT</name><argument_list pos:start="702:14" pos:end="702:45">(<argument pos:start="702:15" pos:end="702:44"><expr pos:start="702:15" pos:end="702:44"><name pos:start="702:15" pos:end="702:39">auth_cred_callback_called</name> <operator pos:start="702:41" pos:end="702:42">==</operator> <literal type="number" pos:start="702:44" pos:end="702:44">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="705:1" pos:end="709:3">/*
+ * Simple enroll -
+ * proxy - BASIC
+ * server - TOKEN
+ */</comment>
+<function pos:start="710:1" pos:end="748:1"><type pos:start="710:1" pos:end="710:11"><specifier pos:start="710:1" pos:end="710:6">static</specifier> <name pos:start="710:8" pos:end="710:11">void</name></type> <name pos:start="710:13" pos:end="710:24">us2174_test4</name> <parameter_list pos:start="710:26" pos:end="710:31">(<parameter pos:start="710:27" pos:end="710:30"><decl pos:start="710:27" pos:end="710:30"><type pos:start="710:27" pos:end="710:30"><name pos:start="710:27" pos:end="710:30">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="711:1" pos:end="748:1">{<block_content pos:start="712:5" pos:end="747:46">
+    <expr_stmt pos:start="712:5" pos:end="713:5"><expr pos:start="712:5" pos:end="712:15"><name pos:start="712:5" pos:end="712:15">LOG_FUNC_NM</name></expr>
+    ;</expr_stmt>
+
+    <expr_stmt pos:start="715:5" pos:end="715:34"><expr pos:start="715:5" pos:end="715:33"><name pos:start="715:5" pos:end="715:29">auth_cred_callback_called</name> <operator pos:start="715:31" pos:end="715:31">=</operator> <literal type="number" pos:start="715:33" pos:end="715:33">0</literal></expr>;</expr_stmt>
+    <expr_stmt pos:start="716:5" pos:end="716:30"><expr pos:start="716:5" pos:end="716:29"><name pos:start="716:5" pos:end="716:25">auth_cred_force_error</name> <operator pos:start="716:27" pos:end="716:27">=</operator> <literal type="number" pos:start="716:29" pos:end="716:29">0</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="718:5" pos:end="721:7">/*
+     * set server to do token auth challenges
+     * tell the server which tokens to accept
+     */</comment>
+    <expr_stmt pos:start="722:5" pos:end="722:32"><expr pos:start="722:5" pos:end="722:31"><call pos:start="722:5" pos:end="722:31"><name pos:start="722:5" pos:end="722:29">st_enable_http_token_auth</name><argument_list pos:start="722:30" pos:end="722:31">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="723:5" pos:end="723:29"><expr pos:start="723:5" pos:end="723:28"><call pos:start="723:5" pos:end="723:28"><name pos:start="723:5" pos:end="723:16">st_set_token</name><argument_list pos:start="723:17" pos:end="723:28">(<argument pos:start="723:18" pos:end="723:27"><expr pos:start="723:18" pos:end="723:27"><name pos:start="723:18" pos:end="723:27">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="724:5" pos:end="727:7">/*
+     * set the proxy to do BASIC auth challenges and
+     * tell it what tokens to accept.
+     */</comment>
+    <expr_stmt pos:start="728:5" pos:end="728:38"><expr pos:start="728:5" pos:end="728:37"><call pos:start="728:5" pos:end="728:37"><name pos:start="728:5" pos:end="728:35">st_proxy_enable_http_basic_auth</name><argument_list pos:start="728:36" pos:end="728:37">()</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="729:5" pos:end="729:55">/*     st_proxy_set_srv_valid_token(GOOD_TOKEN); */</comment>
+    <comment type="block" pos:start="730:5" pos:end="733:7">/*
+     * tell the client side of proxy which token credential to
+     * use
+     */</comment>
+    <expr_stmt pos:start="734:5" pos:end="734:45"><expr pos:start="734:5" pos:end="734:44"><call pos:start="734:5" pos:end="734:44"><name pos:start="734:5" pos:end="734:32">st_proxy_set_clnt_token_cred</name><argument_list pos:start="734:33" pos:end="734:44">(<argument pos:start="734:34" pos:end="734:43"><expr pos:start="734:34" pos:end="734:43"><name pos:start="734:34" pos:end="734:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="736:5" pos:end="740:7">/*
+     * Set up the EST Client and have it perform a simple enroll.
+     *
+     * Enroll should succeed.
+     */</comment>
+    <expr_stmt pos:start="741:5" pos:end="742:35"><expr pos:start="741:5" pos:end="742:34"><call pos:start="741:5" pos:end="742:34"><name pos:start="741:5" pos:end="741:24">us2174_simple_enroll</name><argument_list pos:start="741:25" pos:end="742:34">(<argument pos:start="741:26" pos:end="741:35"><expr pos:start="741:26" pos:end="741:35"><literal type="string" pos:start="741:26" pos:end="741:35">"TC2174-4"</literal></expr></argument>, <argument pos:start="741:38" pos:end="741:53"><expr pos:start="741:38" pos:end="741:53"><name pos:start="741:38" pos:end="741:53">US2174_SERVER_IP</name></expr></argument>, <argument pos:start="741:56" pos:end="741:67"><expr pos:start="741:56" pos:end="741:67"><name pos:start="741:56" pos:end="741:67">EST_ERR_NONE</name></expr></argument>,
+        <argument pos:start="742:9" pos:end="742:33"><expr pos:start="742:9" pos:end="742:33"><name pos:start="742:9" pos:end="742:33">auth_credentials_basic_cb</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="744:5" pos:end="746:7">/*
+     * callback should have been called
+     */</comment>
+    <expr_stmt pos:start="747:5" pos:end="747:46"><expr pos:start="747:5" pos:end="747:45"><call pos:start="747:5" pos:end="747:45"><name pos:start="747:5" pos:end="747:13">CU_ASSERT</name><argument_list pos:start="747:14" pos:end="747:45">(<argument pos:start="747:15" pos:end="747:44"><expr pos:start="747:15" pos:end="747:44"><name pos:start="747:15" pos:end="747:39">auth_cred_callback_called</name> <operator pos:start="747:41" pos:end="747:42">==</operator> <literal type="number" pos:start="747:44" pos:end="747:44">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="750:1" pos:end="755:3">/*
+ * Simple RE-enroll -
+ * proxy - TOKEN
+ * server - TOKEN
+ *
+ */</comment>
+<function pos:start="756:1" pos:end="794:1"><type pos:start="756:1" pos:end="756:11"><specifier pos:start="756:1" pos:end="756:6">static</specifier> <name pos:start="756:8" pos:end="756:11">void</name></type> <name pos:start="756:13" pos:end="756:24">us2174_test5</name> <parameter_list pos:start="756:26" pos:end="756:31">(<parameter pos:start="756:27" pos:end="756:30"><decl pos:start="756:27" pos:end="756:30"><type pos:start="756:27" pos:end="756:30"><name pos:start="756:27" pos:end="756:30">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="757:1" pos:end="794:1">{<block_content pos:start="758:5" pos:end="793:46">
+    <expr_stmt pos:start="758:5" pos:end="759:5"><expr pos:start="758:5" pos:end="758:15"><name pos:start="758:5" pos:end="758:15">LOG_FUNC_NM</name></expr>
+    ;</expr_stmt>
+
+    <expr_stmt pos:start="761:5" pos:end="761:34"><expr pos:start="761:5" pos:end="761:33"><name pos:start="761:5" pos:end="761:29">auth_cred_callback_called</name> <operator pos:start="761:31" pos:end="761:31">=</operator> <literal type="number" pos:start="761:33" pos:end="761:33">0</literal></expr>;</expr_stmt>
+    <expr_stmt pos:start="762:5" pos:end="762:30"><expr pos:start="762:5" pos:end="762:29"><name pos:start="762:5" pos:end="762:25">auth_cred_force_error</name> <operator pos:start="762:27" pos:end="762:27">=</operator> <literal type="number" pos:start="762:29" pos:end="762:29">0</literal></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="764:5" pos:end="767:7">/*
+     * set server to do token auth challenges
+     * tell the server which tokens to accept
+     */</comment>
+    <expr_stmt pos:start="768:5" pos:end="768:32"><expr pos:start="768:5" pos:end="768:31"><call pos:start="768:5" pos:end="768:31"><name pos:start="768:5" pos:end="768:29">st_enable_http_token_auth</name><argument_list pos:start="768:30" pos:end="768:31">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="769:5" pos:end="769:29"><expr pos:start="769:5" pos:end="769:28"><call pos:start="769:5" pos:end="769:28"><name pos:start="769:5" pos:end="769:16">st_set_token</name><argument_list pos:start="769:17" pos:end="769:28">(<argument pos:start="769:18" pos:end="769:27"><expr pos:start="769:18" pos:end="769:27"><name pos:start="769:18" pos:end="769:27">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="770:5" pos:end="773:7">/*
+     * set the proxy to do token auth challenges and
+     * tell it what tokens to accept.
+     */</comment>
+    <expr_stmt pos:start="774:5" pos:end="774:38"><expr pos:start="774:5" pos:end="774:37"><call pos:start="774:5" pos:end="774:37"><name pos:start="774:5" pos:end="774:35">st_proxy_enable_http_token_auth</name><argument_list pos:start="774:36" pos:end="774:37">()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt pos:start="775:5" pos:end="775:45"><expr pos:start="775:5" pos:end="775:44"><call pos:start="775:5" pos:end="775:44"><name pos:start="775:5" pos:end="775:32">st_proxy_set_srv_valid_token</name><argument_list pos:start="775:33" pos:end="775:44">(<argument pos:start="775:34" pos:end="775:43"><expr pos:start="775:34" pos:end="775:43"><name pos:start="775:34" pos:end="775:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="block" pos:start="776:5" pos:end="779:7">/*
+     * tell the client side of proxy which token credential to
+     * use
+     */</comment>
+    <expr_stmt pos:start="780:5" pos:end="780:45"><expr pos:start="780:5" pos:end="780:44"><call pos:start="780:5" pos:end="780:44"><name pos:start="780:5" pos:end="780:32">st_proxy_set_clnt_token_cred</name><argument_list pos:start="780:33" pos:end="780:44">(<argument pos:start="780:34" pos:end="780:43"><expr pos:start="780:34" pos:end="780:43"><name pos:start="780:34" pos:end="780:43">GOOD_TOKEN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="782:5" pos:end="786:7">/*
+     * Set up the EST Client and have it perform a simple RE-enroll.
+     *
+     * RE-enroll should succeed.
+     */</comment>
+    <expr_stmt pos:start="787:5" pos:end="788:35"><expr pos:start="787:5" pos:end="788:34"><call pos:start="787:5" pos:end="788:34"><name pos:start="787:5" pos:end="787:26">us2174_simple_reenroll</name><argument_list pos:start="787:27" pos:end="788:34">(<argument pos:start="787:28" pos:end="787:37"><expr pos:start="787:28" pos:end="787:37"><literal type="string" pos:start="787:28" pos:end="787:37">"TC2174-4"</literal></expr></argument>, <argument pos:start="787:40" pos:end="787:55"><expr pos:start="787:40" pos:end="787:55"><name pos:start="787:40" pos:end="787:55">US2174_SERVER_IP</name></expr></argument>, <argument pos:start="787:58" pos:end="787:69"><expr pos:start="787:58" pos:end="787:69"><name pos:start="787:58" pos:end="787:69">EST_ERR_NONE</name></expr></argument>,
+        <argument pos:start="788:9" pos:end="788:33"><expr pos:start="788:9" pos:end="788:33"><name pos:start="788:9" pos:end="788:33">auth_credentials_token_cb</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="block" pos:start="790:5" pos:end="792:7">/*
+     * callback should have been called
+     */</comment>
+    <expr_stmt pos:start="793:5" pos:end="793:46"><expr pos:start="793:5" pos:end="793:45"><call pos:start="793:5" pos:end="793:45"><name pos:start="793:5" pos:end="793:13">CU_ASSERT</name><argument_list pos:start="793:14" pos:end="793:45">(<argument pos:start="793:15" pos:end="793:44"><expr pos:start="793:15" pos:end="793:44"><name pos:start="793:15" pos:end="793:39">auth_cred_callback_called</name> <operator pos:start="793:41" pos:end="793:42">==</operator> <literal type="number" pos:start="793:44" pos:end="793:44">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+
+<comment type="block" pos:start="796:1" pos:end="799:3">/* The main() function for setting up and running the tests.
+ * Returns a CUE_SUCCESS on successful running, another
+ * CUnit error code on failure.
+ */</comment>
+<function pos:start="800:1" pos:end="828:1"><type pos:start="800:1" pos:end="800:3"><name pos:start="800:1" pos:end="800:3">int</name></type> <name pos:start="800:5" pos:end="800:20">us2174_add_suite</name> <parameter_list pos:start="800:22" pos:end="800:27">(<parameter pos:start="800:23" pos:end="800:26"><decl pos:start="800:23" pos:end="800:26"><type pos:start="800:23" pos:end="800:26"><name pos:start="800:23" pos:end="800:26">void</name></type></decl></parameter>)</parameter_list>
+<block pos:start="801:1" pos:end="828:1">{<block_content pos:start="803:5" pos:end="828:0">
+<cpp:ifdef pos:start="802:1" pos:end="802:17">#<cpp:directive pos:start="802:2" pos:end="802:6">ifdef</cpp:directive> <name pos:start="802:8" pos:end="802:17">HAVE_CUNIT</name></cpp:ifdef>
+    <decl_stmt pos:start="803:5" pos:end="803:28"><decl pos:start="803:5" pos:end="803:27"><type pos:start="803:5" pos:end="803:13"><name pos:start="803:5" pos:end="803:13">CU_pSuite</name></type> <name pos:start="803:15" pos:end="803:20">pSuite</name> <init pos:start="803:22" pos:end="803:27">= <expr pos:start="803:24" pos:end="803:27"><name pos:start="803:24" pos:end="803:27">NULL</name></expr></init></decl>;</decl_stmt>
+
+    <comment type="block" pos:start="805:5" pos:end="805:37">/* add a suite to the registry */</comment>
+    <expr_stmt pos:start="806:5" pos:end="808:34"><expr pos:start="806:5" pos:end="808:33"><name pos:start="806:5" pos:end="806:10">pSuite</name> <operator pos:start="806:12" pos:end="806:12">=</operator> <call pos:start="806:14" pos:end="808:33"><name pos:start="806:14" pos:end="806:25">CU_add_suite</name><argument_list pos:start="806:26" pos:end="808:33">(<argument pos:start="806:27" pos:end="806:46"><expr pos:start="806:27" pos:end="806:46"><literal type="string" pos:start="806:27" pos:end="806:46">"us2174_token_proxy"</literal></expr></argument>,
+            <argument pos:start="807:13" pos:end="807:29"><expr pos:start="807:13" pos:end="807:29"><name pos:start="807:13" pos:end="807:29">us2174_init_suite</name></expr></argument>,
+            <argument pos:start="808:13" pos:end="808:32"><expr pos:start="808:13" pos:end="808:32"><name pos:start="808:13" pos:end="808:32">us2174_destroy_suite</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt pos:start="809:5" pos:end="812:5"><if pos:start="809:5" pos:end="812:5">if <condition pos:start="809:8" pos:end="809:23">(<expr pos:start="809:9" pos:end="809:22"><name pos:start="809:9" pos:end="809:12">NULL</name> <operator pos:start="809:14" pos:end="809:15">==</operator> <name pos:start="809:17" pos:end="809:22">pSuite</name></expr>)</condition> <block pos:start="809:25" pos:end="812:5">{<block_content pos:start="810:9" pos:end="811:30">
+        <expr_stmt pos:start="810:9" pos:end="810:30"><expr pos:start="810:9" pos:end="810:29"><call pos:start="810:9" pos:end="810:29"><name pos:start="810:9" pos:end="810:27">CU_cleanup_registry</name><argument_list pos:start="810:28" pos:end="810:29">()</argument_list></call></expr>;</expr_stmt>
+        <return pos:start="811:9" pos:end="811:30">return <expr pos:start="811:16" pos:end="811:29"><call pos:start="811:16" pos:end="811:29"><name pos:start="811:16" pos:end="811:27">CU_get_error</name><argument_list pos:start="811:28" pos:end="811:29">()</argument_list></call></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <comment type="block" pos:start="814:5" pos:end="814:36">/* add the tests to the suite */</comment>
+    <if_stmt pos:start="815:5" pos:end="824:5"><if pos:start="815:5" pos:end="824:5">if <condition pos:start="815:8" pos:end="820:9">(<comment type="block" pos:start="815:9" pos:end="815:94">/* (NULL == CU_add_test(pSuite, "Proxy Enroll basic sanity test", us2174_test1)) || */</comment>
+        <expr pos:start="816:9" pos:end="819:107"><operator pos:start="816:9" pos:end="816:9">(</operator><name pos:start="816:10" pos:end="816:13">NULL</name> <operator pos:start="816:15" pos:end="816:16">==</operator> <call pos:start="816:18" pos:end="816:100"><name pos:start="816:18" pos:end="816:28">CU_add_test</name><argument_list pos:start="816:29" pos:end="816:100">(<argument pos:start="816:30" pos:end="816:35"><expr pos:start="816:30" pos:end="816:35"><name pos:start="816:30" pos:end="816:35">pSuite</name></expr></argument>, <argument pos:start="816:38" pos:end="816:85"><expr pos:start="816:38" pos:end="816:85"><literal type="string" pos:start="816:38" pos:end="816:85">"Proxy Enroll token auth, both proxy and server"</literal></expr></argument>, <argument pos:start="816:88" pos:end="816:99"><expr pos:start="816:88" pos:end="816:99"><name pos:start="816:88" pos:end="816:99">us2174_test2</name></expr></argument>)</argument_list></call><operator pos:start="816:101" pos:end="816:101">)</operator> <operator pos:start="816:103" pos:end="816:104">||</operator>
+        <operator pos:start="817:9" pos:end="817:9">(</operator><name pos:start="817:10" pos:end="817:13">NULL</name> <operator pos:start="817:15" pos:end="817:16">==</operator> <call pos:start="817:18" pos:end="817:103"><name pos:start="817:18" pos:end="817:28">CU_add_test</name><argument_list pos:start="817:29" pos:end="817:103">(<argument pos:start="817:30" pos:end="817:35"><expr pos:start="817:30" pos:end="817:35"><name pos:start="817:30" pos:end="817:35">pSuite</name></expr></argument>, <argument pos:start="817:38" pos:end="817:88"><expr pos:start="817:38" pos:end="817:88"><literal type="string" pos:start="817:38" pos:end="817:88">"Proxy Enroll token auth, proxy token/server basic"</literal></expr></argument>, <argument pos:start="817:91" pos:end="817:102"><expr pos:start="817:91" pos:end="817:102"><name pos:start="817:91" pos:end="817:102">us2174_test3</name></expr></argument>)</argument_list></call><operator pos:start="817:104" pos:end="817:104">)</operator> <operator pos:start="817:106" pos:end="817:107">||</operator>
+        <operator pos:start="818:9" pos:end="818:9">(</operator><name pos:start="818:10" pos:end="818:13">NULL</name> <operator pos:start="818:15" pos:end="818:16">==</operator> <call pos:start="818:18" pos:end="818:103"><name pos:start="818:18" pos:end="818:28">CU_add_test</name><argument_list pos:start="818:29" pos:end="818:103">(<argument pos:start="818:30" pos:end="818:35"><expr pos:start="818:30" pos:end="818:35"><name pos:start="818:30" pos:end="818:35">pSuite</name></expr></argument>, <argument pos:start="818:38" pos:end="818:88"><expr pos:start="818:38" pos:end="818:88"><literal type="string" pos:start="818:38" pos:end="818:88">"Proxy Enroll token auth, proxy basic/server token"</literal></expr></argument>, <argument pos:start="818:91" pos:end="818:102"><expr pos:start="818:91" pos:end="818:102"><name pos:start="818:91" pos:end="818:102">us2174_test4</name></expr></argument>)</argument_list></call><operator pos:start="818:104" pos:end="818:104">)</operator> <operator pos:start="818:106" pos:end="818:107">||</operator>
+        <operator pos:start="819:9" pos:end="819:9">(</operator><name pos:start="819:10" pos:end="819:13">NULL</name> <operator pos:start="819:15" pos:end="819:16">==</operator> <call pos:start="819:18" pos:end="819:106"><name pos:start="819:18" pos:end="819:28">CU_add_test</name><argument_list pos:start="819:29" pos:end="819:106">(<argument pos:start="819:30" pos:end="819:35"><expr pos:start="819:30" pos:end="819:35"><name pos:start="819:30" pos:end="819:35">pSuite</name></expr></argument>, <argument pos:start="819:38" pos:end="819:91"><expr pos:start="819:38" pos:end="819:91"><literal type="string" pos:start="819:38" pos:end="819:91">"Proxy RE-Enroll token auth, proxy basic/server token"</literal></expr></argument>, <argument pos:start="819:94" pos:end="819:105"><expr pos:start="819:94" pos:end="819:105"><name pos:start="819:94" pos:end="819:105">us2174_test5</name></expr></argument>)</argument_list></call><operator pos:start="819:107" pos:end="819:107">)</operator></expr>
+        )</condition>
+    <block pos:start="821:5" pos:end="824:5">{<block_content pos:start="822:8" pos:end="823:29">
+       <expr_stmt pos:start="822:8" pos:end="822:29"><expr pos:start="822:8" pos:end="822:28"><call pos:start="822:8" pos:end="822:28"><name pos:start="822:8" pos:end="822:26">CU_cleanup_registry</name><argument_list pos:start="822:27" pos:end="822:28">()</argument_list></call></expr>;</expr_stmt>
+       <return pos:start="823:8" pos:end="823:29">return <expr pos:start="823:15" pos:end="823:28"><call pos:start="823:15" pos:end="823:28"><name pos:start="823:15" pos:end="823:26">CU_get_error</name><argument_list pos:start="823:27" pos:end="823:28">()</argument_list></call></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <return pos:start="826:5" pos:end="828:0">return <expr pos:start="826:12" pos:end="826:22"><name pos:start="826:12" pos:end="826:22">CUE_SUCCESS</name></expr>;</return>
+<cpp:endif pos:start="827:1" pos:end="827:6">#<cpp:directive pos:start="827:2" pos:end="827:6">endif</cpp:directive></cpp:endif>
+</block_content>}</block></function>
+
+</unit>

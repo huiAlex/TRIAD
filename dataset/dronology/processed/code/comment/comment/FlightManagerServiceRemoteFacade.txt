@@ -1,0 +1,3 @@
+remot facad handl uav fligth allow assign flight plan uav allow send flight relat command uav take return home 
+ 
+ 

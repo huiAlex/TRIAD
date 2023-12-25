@@ -1,0 +1,10 @@
+estClient:2
+authentClient:1
+serverEst:2
+estServer:2
+providClient:1
+clientEst:2
+requestEnrol:1
+verifiAuthent:1
+clientProvid:1
+certifClient:1

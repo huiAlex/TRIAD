@@ -1,0 +1,7 @@
+synchron point 
+string 
+regist collabor 
+activ synchron point 
+remov collabor 
+count unsynch 
+synch 

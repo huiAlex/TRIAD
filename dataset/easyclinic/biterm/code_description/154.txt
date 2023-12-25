@@ -1,0 +1,8 @@
+datumPatient:2
+storeDatum:1
+patientDatum:2
+relatInform:1
+informRetriev:1
+datumStore:1
+retrievInform:1
+informRelat:1

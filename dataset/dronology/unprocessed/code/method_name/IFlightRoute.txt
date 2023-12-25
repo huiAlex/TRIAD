@@ -1,0 +1,10 @@
+getDescription
+setDescription
+setCategory
+getCategory
+getWaypoints
+addWaypoint
+setTakeoffAltitude
+addWaypoint
+removeWaypoint
+removeWaypoint

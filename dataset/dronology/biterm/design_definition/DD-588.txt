@@ -1,0 +1,4 @@
+deactivUav:2
+uavPhysic:1
+removPlan:1
+flightSchedul:1

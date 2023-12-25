@@ -1,0 +1,7 @@
+point synchron:compound
+assign point:nsubj
+point rout:nmod
+assign uav:obl
+regist uav:obj
+point sync:compound
+reach point:obj

@@ -1,0 +1,11 @@
+getDroneId
+getWaypoints
+getStartLocation
+getStartTime
+getEndTime
+FlightPlanInfo
+setDroneId
+setWaypoints
+setStartLocation
+setStartTime
+setEndTime

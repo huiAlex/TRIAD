@@ -1,0 +1,13 @@
+x
+y
+z
+altitude
+obj
+other
+a
+b
+a
+b
+stepDistance
+a
+b

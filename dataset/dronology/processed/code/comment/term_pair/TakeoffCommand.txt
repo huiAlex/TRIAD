@@ -1,0 +1,6 @@
+send command:nsubj
+send take:advcl
+alitud give:amod
+take alitud:obl
+specifi altitud:nsubj
+specifi meter:obl

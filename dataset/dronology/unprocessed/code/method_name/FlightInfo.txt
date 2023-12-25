@@ -1,0 +1,7 @@
+FlightInfo
+setCurrentFlight
+getCurrentFlights
+getPendingFlights
+getCompletedFlights
+addPending
+addCompleted

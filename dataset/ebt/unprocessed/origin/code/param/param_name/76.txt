@@ -1,0 +1,8 @@
+inSymbol
+is
+s
+lastToken
+x
+n
+topOp
+args

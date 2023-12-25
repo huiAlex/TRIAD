@@ -1,0 +1,62 @@
+<Class>
+    <Id>67</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.patterns</Package>
+    <ClassName>IFlightPattern</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>IFlightPattern  /** 
+ * Interface for all flight pattern implementations that can be expanded into several different  {@link IMissionTask}.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>initialize</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>SynchronizationManager synchMgr</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>expandFlightPattern</MethodName>
+            <MethodComment>/** 
+ * Coordinates the flight of multiple UAVs across a potentially overlapping space consisting of a currentLocation and a targetLocation for each UAV. FOR NOW: We assume that currentCoordinates and targetWayPoints for all UAVs are unique and sufficiently separated from each other. Paths to move from current to target positions may overlap. We should add this check in later on.
+ * @param uavMission The mission plan the pattern belongs to.
+ * @param currentLocation The current location from which the pattern starts.
+ * @param targetLocation The target location when the pattern is completed.
+ * @throws MissionExecutionException
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMissionPlan uavMission</ParameterType>
+                <ParameterType>LlaCoordinate currentLocation</ParameterType>
+                <ParameterType>LlaCoordinate targetLocation</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getTaskList</MethodName>
+            <MethodComment>/** 
+ * @return A {@link TaskList } containing the tasks part of that pattern.
+ */
+</MethodComment>
+            <ReturnType>TaskList</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

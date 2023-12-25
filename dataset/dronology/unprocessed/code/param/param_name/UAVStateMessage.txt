@@ -1,0 +1,6 @@
+message
+groundstationid
+uavid
+current
+voltage
+level

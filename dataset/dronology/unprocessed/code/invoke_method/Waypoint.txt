@@ -1,0 +1,4 @@
+LlaCoordinate
+equals
+hashCode
+getCoordinate

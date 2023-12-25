@@ -1,0 +1,6 @@
+unassignPlan:1
+uavAssign:1
+assignPlan:1
+assignUav:1
+planAssign:1
+planFlight:2

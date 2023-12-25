@@ -1,0 +1,40 @@
+add 
+add 
+add 
+reload item 
+tear 
+set 
+flight rout info 
+set categori 
+set date creat 
+set date modifi 
+set descript 
+notifi file chang 
+get servic info 
+get instanc 
+get instanc 
+get instanc 
+flight rout info 
+get waypoint 
+add waypoint 
+get 
+get id 
+get categori 
+get waypoint 
+set rout length 
+set rout length 
+get descript 
+get id 
+equal 
+get 
+equal 
+get id 
+get 
+get 
+calcul distanc 
+get coordin 
+distanc 
+get waypoint 
+get coordin 
+get id 
+equal 

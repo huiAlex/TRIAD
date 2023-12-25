@@ -1,0 +1,524 @@
+us898.c
+us898_logger_stderr
+us898_clean
+us898_start_server
+us898_init_suite
+us898_destroy_suite
+generate_private_key
+client_manual_cert_verify
+us898_test1
+us898_test2
+us898_test3
+us898_test4
+us898_test5
+us898_test6
+us898_test7
+us898_test8
+us898_test9
+us898_test10
+us898_test11
+us898_add_suite
+EnterCriticalSection
+vfprintf
+fflush
+LeaveCriticalSection
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+sprintf
+system
+st_start
+InitializeCriticalSection
+est_init_logger
+read_binary_file
+us898_clean
+us898_start_server
+st_stop
+free
+BN_set_word
+RSA_generate_key_ex
+EVP_PKEY_new
+RSA_free
+BN_free
+BIO_new_fp
+printf
+printf
+X509_print_fp
+BIO_free
+STACK_OF
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+BIO_new
+BIO_new_mem_buf
+BIO_push
+d2i_PKCS7_bio
+CU_ASSERT
+BIO_free_all
+OBJ_obj2nid
+CU_ASSERT
+sk_X509_value
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+write_binary_file
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+grep
+CU_ASSERT
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+X509_free
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+st_stop
+us898_start_server
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+st_stop
+us898_start_server
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+st_enable_http_digest_auth
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+st_enable_http_basic_auth
+st_enable_http_digest_auth
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_client_get_last_http_status
+CU_ASSERT
+est_destroy
+st_enable_http_basic_auth
+sprintf
+system
+CU_ASSERT
+sprintf
+system
+CU_ASSERT
+est_client_init
+CU_ASSERT
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+est_client_get_csrattrs
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+est_client_init
+CU_ASSERT
+read_binary_file
+CU_ASSERT
+est_load_key
+CU_ASSERT
+free
+read_binary_file
+CU_ASSERT
+BIO_new_mem_buf
+CU_ASSERT
+PEM_read_bio_X509_AUX
+CU_ASSERT
+BIO_free_all
+free
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+est_client_get_csrattrs
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+est_destroy
+CU_add_suite
+format
+l
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+char
+va_list
+int
+int
+X509
+int
+US898_SERVER_PORT
+US898_SERVER_IP
+US898_UID
+US898_PWD
+US898_CACERTS
+US898_TRUST_CERTS
+US898_SERVER_CERTKEY
+US898_TC2_CERT_TXT
+US898_TC2_CERT_B64
+US898_TC2_CERT_PK7
+US898_TC2_CERT_PEM
+US898_TC10_CSR
+US898_TC10_KEY
+US898_TC10_CERT
+US898_TC11_KEY
+US898_TC11_CERT
+US898_CACERTS
+US898_TRUST_CERTS
+US898_SERVER_CERTKEY
+US898_TC2_CERT_TXT
+US898_TC2_CERT_B64
+US898_TC2_CERT_PK7
+US898_TC2_CERT_PEM
+US898_TC10_CSR
+US898_TC10_KEY
+US898_TC10_CERT
+US898_TC11_KEY
+US898_TC11_CERT
+------------------------------------------------------------------   us898.c - Unit Tests for User Story 898 - Client re-enroll      October, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This starts an instance of the EST server running on   a separate thread.  We use this to test the   client side API in this module.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   This function performs a basic simple enroll using   a UID/PWD to identify the client to the server.  This   is used for a variet of test cases in this module.  /
+   This test case uses an existing expired cert and   attempts to re-enroll it.  The expired certs contains   several X509 extensions. We verify the new issued   cert preserves these extensions using grep.  Note,    preserving these extensions requires the OpenSSL CA   to enable the "copy_extensions" knob in the OpenSSL   config file.  This is why this test suite uses a   unique copy of estExampleCA.cnf.  /
+   Test the re-enroll API to ensure it gracefully   handles a null X509 cert pointer.  /
+   Test the re-enroll API to ensure it gracefully   handles a null EVP_PKEY pointer.  /
+   This test attempts to re-enroll a corrupted cert   The public key in the cert is has been corrupted.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured for manual   approval.  The server will send back a retry-after   response.  /
+   Verify that a bogus user ID/password fails when   using HTTP basic auth.  /
+   Verify that a good user ID/password passes when   using HTTP digest auth.  /
+   Verify that a bogus user ID/password fails when   using HTTP digest auth.  /
+   Verify the server fails authentication when the   client sends a valid identity cert but doesn't    provide HTTP auth credentials.  /
+   Verify the server fails authentication when the   client sends an expired identy cert and uses    valid HTTP auth credentials.  /
+       These are all temporary files created        by the various test cases.      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with        automatic enrollment enabled.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Convert the cert to an X509.  Be warned this is       pure hackery.        /
+ our new cert should be the one and only       cert in the pkcs7 blob.  We shouldn't have to       iterate through the full list to find it. /
+        Wow, that's a lot of work, but we finally have the X509.       (don't you just love OpenSSL!!!)       Now that we have an X509 representation of the cert,       let's try to re-enroll this cert with the CA      /
+       Cleanup      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Retrieve the cert that was given to us by the EST server      /
+       Save the cert to a local file      /
+       Base 64 decode the cert response      /
+       Convert the pkcs7 cert to a PEM cert      /
+       Convert PEM cert to a textual representation of the cert      /
+       Verify the jimbob DNS extension was preserved      /
+       Verify the bobcat DNS extension was preserved      /
+       Verify the IP address extension was preserved      /
+       Verify the Repudiation key usage extension was preserved      /
+       Verify the public key was preserved      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Generate a private key      /
+       Get the latest CSR attributes      /
+       re-enroll using a null x509 pointer.      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in an old cert that we can use for re-enroll      /
+       Get the latest CSR attributes      /
+       re-enroll using a null EVP_KEY pointer.      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Clean up      /
+       Stop the server.      /
+       Restart the server with manual approval enabled      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Clean up      /
+       Stop the server.      /
+       Restart the server with manual approval disabled      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Enable HTTP digest authentication      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Re-enable HTTP basic authentication      /
+       Enable HTTP digest authentication      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Check the HTTP status code from the reenroll operation      /
+       Re-enable HTTP basic authentication      /
+       Create a CSR      /
+       Sign the CSR using our local CA      /
+       Create a client context       /
+       Read in the private key      /
+       Read in the old cert      /
+       Set the authentication mode to use the certificate        No HTTP auth credentials are provided.      /
+       Set the EST server address/port      /
+       Get the latest CSR attributes      /
+       Enroll a cert, should fail because we        didn't provide valid HTTP auth credentials      /
+       Re-Enroll the cert, should work since       we provide a valid cert to identify ourselves       and HTTP auth isn't required for re-enroll even when       the server has enabled HTTP auth.      /
+       Create a client context       /
+       Read in the private key      /
+       Read in the old cert      /
+       Set the authentication mode to use the expired certificate        and valid HTTP auth credentials.      /
+       Set the EST server address/port      /
+       Get the latest CSR attributes      /
+       Re-Enroll the cert       /
+ add a suite to the registry /
+       Add the tests to the suite      /

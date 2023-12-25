@@ -1,0 +1,8 @@
+plan pend:amod
+manag plan:nmod
+uav individu:amod
+plan uav:nmod
+uav activ:amod
+track pend:dep
+plan flight:compound
+track plan:dep

@@ -1,0 +1,4 @@
+manual_enroll
+nid
+cur_cert
+openssl_cert_error

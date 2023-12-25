@@ -1,0 +1,58 @@
+<Class>
+    <Id>17</Id>
+    <Package>edu.nd.dronology.monitoring.service</Package>
+    <ClassName>IDroneMonitoringServiceInstance</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IServiceInstance</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>registerMonitoringMessageHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteMonitoringMessageHandler handler</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getSubscribedHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IRemoteMonitoringMessageHandler</ReturnType>
+            <ParameterList>
+                <ParameterType>ArtifactIdentifier identifier</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerMonitoringMessageHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteMonitoringMessageHandler handler</ParameterType>
+                <ParameterType>IRemoteMonitoringMessageHandler identifier</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>unsubscribeHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteMonitoringMessageHandler handler</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,7 @@
+/**
+	 * 
+	 * Command sent to the GCS for stopping immediately and remain hovering in place.
+	 * 
+	 * 
+	 * 	 */
+

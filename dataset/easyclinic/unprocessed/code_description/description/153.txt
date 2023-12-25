@@ -1,0 +1,12 @@
+Class: Medical
+Date: 20/09/03
+Version: 0 01 000
+Description: Contains the description of doctors who are age at outpatient
+Attributes:
+annoAbilitazione;Private;year in which the doctor was licensed to practice profession
+Methods:
+create;Public;Create a new object of type Doctor
+delete;Public;delete of a doctor
+GetAttributes;Public;Retrieval of all information relating to a doctor
+save;Public;Provides storage of data from an doctor within the SIO
+setAttributes;Public;Set the attributes of a physician

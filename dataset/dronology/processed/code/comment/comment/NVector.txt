@@ -1,0 +1,21 @@
+terrestri posit defin normal vector vector altitud 
+vector normal vector point surfac wgs refer ellipsoid 
+normal vector combin altitud repres distanc abov refer ellipsoid note distanc abov sea level sea level defin surfac ellipsoid wgs 
+vector altitud togeth precis defin posit earth 
+vector unit vector vector magnitud 
+altitud meter 
+ 
+compon normal vector compon normal vector compon normal vector altitud distanc abov refer ellipsoid negat altitud repres altitud ellipsoid 
+ 
+distanc abov sea level meter 
+compon vector 
+compon vector 
+compon vector 
+find distanc meter vector anoth 
+distanc laser travel 
+posit find posit 
+distanc posit meter 
+terrestri posit defin coordin earth center earth fix refer frame 
+ 
+terrestri posit defin latitud longitud altitud 
+ 

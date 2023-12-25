@@ -1,0 +1,9 @@
+logger 
+activ task 
+uavid 
+task 
+task 
+home locat 
+first waypoint locat 
+coordin altitud 
+synch mgr 

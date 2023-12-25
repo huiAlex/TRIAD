@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="src/IUAVProxy.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:38">package <name pos:start="1:9" pos:end="1:37"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:28">import <name pos:start="3:8" pos:end="3:27"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:14">io</name><operator pos:start="3:15" pos:end="3:15">.</operator><name pos:start="3:16" pos:end="3:27">Serializable</name></name>;</import>
+<import pos:start="4:1" pos:end="4:21">import <name pos:start="4:8" pos:end="4:20"><name pos:start="4:8" pos:end="4:11">java</name><operator pos:start="4:12" pos:end="4:12">.</operator><name pos:start="4:13" pos:end="4:16">util</name><operator pos:start="4:17" pos:end="4:17">.</operator><name pos:start="4:18" pos:end="4:20">Map</name></name>;</import>
+
+<import pos:start="6:1" pos:end="6:54">import <name pos:start="6:8" pos:end="6:53"><name pos:start="6:8" pos:end="6:10">edu</name><operator pos:start="6:11" pos:end="6:11">.</operator><name pos:start="6:12" pos:end="6:13">nd</name><operator pos:start="6:14" pos:end="6:14">.</operator><name pos:start="6:15" pos:end="6:23">dronology</name><operator pos:start="6:24" pos:end="6:24">.</operator><name pos:start="6:25" pos:end="6:28">core</name><operator pos:start="6:29" pos:end="6:29">.</operator><name pos:start="6:30" pos:end="6:39">coordinate</name><operator pos:start="6:40" pos:end="6:40">.</operator><name pos:start="6:41" pos:end="6:53">LlaCoordinate</name></name>;</import>
+
+<interface pos:start="8:1" pos:end="32:1"><specifier pos:start="8:1" pos:end="8:6">public</specifier> interface <name pos:start="8:18" pos:end="8:26">IUAVProxy</name> <super_list pos:start="8:28" pos:end="8:47"><extends pos:start="8:28" pos:end="8:47">extends <super pos:start="8:36" pos:end="8:47"><name pos:start="8:36" pos:end="8:47">Serializable</name></super></extends></super_list> <block pos:start="8:49" pos:end="32:1">{
+
+	<function_decl pos:start="10:9" pos:end="10:23"><type pos:start="10:9" pos:end="10:14"><name pos:start="10:9" pos:end="10:14">String</name></type> <name pos:start="10:16" pos:end="10:20">getID</name><parameter_list pos:start="10:21" pos:end="10:22">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="12:9" pos:end="12:27"><type pos:start="12:9" pos:end="12:14"><name pos:start="12:9" pos:end="12:14">String</name></type> <name pos:start="12:16" pos:end="12:24">getStatus</name><parameter_list pos:start="12:25" pos:end="12:26">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="14:9" pos:end="14:30"><type pos:start="14:9" pos:end="14:14"><name pos:start="14:9" pos:end="14:14">double</name></type> <name pos:start="14:16" pos:end="14:27">getLongitude</name><parameter_list pos:start="14:28" pos:end="14:29">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="16:9" pos:end="16:29"><type pos:start="16:9" pos:end="16:14"><name pos:start="16:9" pos:end="16:14">double</name></type> <name pos:start="16:16" pos:end="16:26">getLatitude</name><parameter_list pos:start="16:27" pos:end="16:28">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="18:9" pos:end="18:29"><type pos:start="18:9" pos:end="18:14"><name pos:start="18:9" pos:end="18:14">double</name></type> <name pos:start="18:16" pos:end="18:26">getAltitude</name><parameter_list pos:start="18:27" pos:end="18:28">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="20:9" pos:end="20:33"><type pos:start="20:9" pos:end="20:14"><name pos:start="20:9" pos:end="20:14">double</name></type> <name pos:start="20:16" pos:end="20:30">getBatteryLevel</name><parameter_list pos:start="20:31" pos:end="20:32">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="22:9" pos:end="22:29"><type pos:start="22:9" pos:end="22:14"><name pos:start="22:9" pos:end="22:14">double</name></type> <name pos:start="22:16" pos:end="22:26">getVelocity</name><parameter_list pos:start="22:27" pos:end="22:28">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="24:9" pos:end="24:38"><type pos:start="24:9" pos:end="24:27"><name pos:start="24:9" pos:end="24:27"><name pos:start="24:9" pos:end="24:11">Map</name><argument_list type="generic" pos:start="24:12" pos:end="24:27">&lt;<argument pos:start="24:13" pos:end="24:18"><name pos:start="24:13" pos:end="24:18">String</name></argument>, <argument pos:start="24:21" pos:end="24:26"><name pos:start="24:21" pos:end="24:26">String</name></argument>&gt;</argument_list></name></type> <name pos:start="24:29" pos:end="24:35">getInfo</name><parameter_list pos:start="24:36" pos:end="24:37">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="26:9" pos:end="26:39"><type pos:start="26:9" pos:end="26:21"><name pos:start="26:9" pos:end="26:21">LlaCoordinate</name></type> <name pos:start="26:23" pos:end="26:36">getCoordinates</name><parameter_list pos:start="26:37" pos:end="26:38">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="28:9" pos:end="28:40"><type pos:start="28:9" pos:end="28:21"><name pos:start="28:9" pos:end="28:21">LlaCoordinate</name></type> <name pos:start="28:23" pos:end="28:37">getHomeLocation</name><parameter_list pos:start="28:38" pos:end="28:39">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="30:9" pos:end="30:36"><type pos:start="30:9" pos:end="30:14"><name pos:start="30:9" pos:end="30:14">String</name></type> <name pos:start="30:16" pos:end="30:33">getGroundstationId</name><parameter_list pos:start="30:34" pos:end="30:35">()</parameter_list>;</function_decl>
+
+}</block></interface></unit>

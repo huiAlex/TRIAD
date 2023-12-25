@@ -1,0 +1,10 @@
+flight manag servic remot facad 
+get instanc 
+get flight info 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get current flight 
+cancel pend flight 
+takeoff 

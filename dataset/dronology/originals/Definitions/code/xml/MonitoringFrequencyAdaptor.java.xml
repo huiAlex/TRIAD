@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/MonitoringFrequencyAdaptor.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:36">package <name pos:start="1:9" pos:end="1:35"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:35">monitoring</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:57">//package edu.nd.dronology.gstation.connector.monitoring;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:2">//</comment>
+<comment type="line" pos:start="4:1" pos:end="4:27">//import java.icse.model.util.HashMap;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:24">//import java.icse.model.util.List;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:23">//import java.icse.model.util.Map;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:48">//import java.icse.model.util.concurrent.ConcurrentHashMap;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:51">//import java.icse.model.util.concurrent.atomic.AtomicBoolean;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:2">//</comment>
+<comment type="line" pos:start="10:1" pos:end="10:55">//import com.google.common.icse.model.util.concurrent.RateLimiter;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:2">//</comment>
+<comment type="line" pos:start="12:1" pos:end="12:57">//import edu.nd.dronology.core.exceptions.DroneException;</comment>
+<comment type="line" pos:start="13:1" pos:end="13:55">//import edu.nd.dronology.core.fleet.DroneFleetManager;</comment>
+<comment type="line" pos:start="14:1" pos:end="14:52">//import edu.nd.dronology.core.vehicle.ManagedDrone;</comment>
+<comment type="line" pos:start="15:1" pos:end="15:78">//import edu.nd.dronology.core.vehicle.commands.SetMonitoringFrequencyCommand;</comment>
+<comment type="line" pos:start="16:1" pos:end="16:56">//import edu.nd.dronology.validation.trust.TrustManager;</comment>
+<comment type="line" pos:start="17:1" pos:end="17:58">//import
+    edu.nd.dronology.validation.icse.model.util.BenchmarkLogger;</comment>
+<comment type="line" pos:start="18:1" pos:end="18:68">//import edu.nd.dronology.validation.validation.MonitoringValidator;</comment>
+<comment type="line" pos:start="19:1" pos:end="19:32">//import net.mv.logging.ILogger;</comment>
+<comment type="line" pos:start="20:1" pos:end="20:39">//import net.mv.logging.LoggerProvider;</comment>
+<comment type="line" pos:start="21:1" pos:end="21:2">//</comment>
+<comment type="line" pos:start="22:1" pos:end="22:63">//public class MonitoringFrequencyAdaptor implements Runnable {</comment>
+<comment type="line" pos:start="23:1" pos:end="23:2">//</comment>
+<comment type="line" pos:start="24:1" pos:end="24:54">//	RateLimiter limiter = RateLimiter.create(0.2);</comment>
+<comment type="line" pos:start="25:1" pos:end="25:105">//	private static final ILogger LOGGER = LoggerProvider.getLogger(MonitoringFrequencyAdaptor.class);</comment>
+<comment type="line" pos:start="26:1" pos:end="26:61">//	private AtomicBoolean cont = new AtomicBoolean(true);</comment>
+<comment type="line" pos:start="27:1" pos:end="27:76">//	private Map&lt;String, Double&gt; frequencies = new ConcurrentHashMap&lt;&gt;();</comment>
+<comment type="line" pos:start="28:1" pos:end="28:60">//	private Map&lt;String, Double&gt; means = new HashMap&lt;&gt;();</comment>
+<comment type="line" pos:start="29:1" pos:end="29:2">//</comment>
+<comment type="line" pos:start="30:1" pos:end="30:45">//	public MonitoringFrequencyAdaptor() {</comment>
+<comment type="line" pos:start="31:1" pos:end="31:2">//</comment>
+<comment type="line" pos:start="32:1" pos:end="32:9">//	}</comment>
+<comment type="line" pos:start="33:1" pos:end="33:2">//</comment>
+<comment type="line" pos:start="34:1" pos:end="34:17">//	@Override</comment>
+<comment type="line" pos:start="35:1" pos:end="35:27">//	public void run() {</comment>
+<comment type="line" pos:start="36:1" pos:end="36:2">//</comment>
+<comment type="line" pos:start="37:1" pos:end="37:36">//		while (cont.get()) {</comment>
+<comment type="line" pos:start="38:1" pos:end="38:42">//			limiter.acquire();</comment>
+<comment type="line" pos:start="39:1" pos:end="39:29">//			try {</comment>
+<comment type="line" pos:start="40:1" pos:end="40:90">//				// LOGGER.info("Recalculating monitoring frequencies...");</comment>
+<comment type="line" pos:start="41:1" pos:end="41:122">//				for (MonitoringValidator validator : UAVMonitoringManager.getInstance().getValidators()) {</comment>
+<comment type="line" pos:start="42:1" pos:end="42:74">//					String vid = validator.getUavId();</comment>
+<comment type="line" pos:start="43:1" pos:end="43:64">//					updateMeanDistance(vid);</comment>
+<comment type="line" pos:start="44:1" pos:end="44:119">//					double currentReputation = TrustManager.getInstance().getReputationRating(vid);</comment>
+<comment type="line" pos:start="45:1" pos:end="45:81">//					double newFrequency = calculateFrequency(</comment>
+<comment type="line" pos:start="46:1" pos:end="46:138">//							means.get(vid) != null ? means.get(vid) : 1 / DISTANCE_FACTOR, currentReputation);</comment>
+<comment type="line" pos:start="47:1" pos:end="47:82">//					Double oldFrequncy = frequencies.get(vid);</comment>
+<comment type="line" pos:start="48:1" pos:end="48:97">//					if (oldFrequncy == null || oldFrequncy != newFrequency) {</comment>
+<comment type="line" pos:start="49:1" pos:end="49:137">//						LOGGER.info("Updating monitoring frequncy for '" + vid + " from:" + oldFrequncy + " to: "</comment>
+<comment type="line" pos:start="50:1" pos:end="50:80">//								+ newFrequency);</comment>
+<comment type="line" pos:start="51:1" pos:end="51:99">//						BenchmarkLogger.reportFrequency(vid, newFrequency);</comment>
+<comment type="line" pos:start="52:1" pos:end="52:99">//						frequencies.put(vid, Double.valueOf(newFrequency));</comment>
+<comment type="line" pos:start="53:1" pos:end="53:83">//						updateFrequency(vid, newFrequency);</comment>
+<comment type="line" pos:start="54:1" pos:end="54:41">//					}</comment>
+<comment type="line" pos:start="55:1" pos:end="55:33">//				}</comment>
+<comment type="line" pos:start="56:1" pos:end="56:2">//</comment>
+<comment type="line" pos:start="57:1" pos:end="57:47">//			} catch (Exception e) {</comment>
+<comment type="line" pos:start="58:1" pos:end="58:48">//				LOGGER.error(e);</comment>
+<comment type="line" pos:start="59:1" pos:end="59:25">//			}</comment>
+<comment type="line" pos:start="60:1" pos:end="60:2">//</comment>
+<comment type="line" pos:start="61:1" pos:end="61:17">//		}</comment>
+<comment type="line" pos:start="62:1" pos:end="62:9">//	}</comment>
+<comment type="line" pos:start="63:1" pos:end="63:2">//</comment>
+<comment type="line" pos:start="64:1" pos:end="64:75">//	private void updateMeanDistance(String vid) throws DroneException {</comment>
+<comment type="line" pos:start="65:1" pos:end="65:56">//		long start = System.currentTimeMillis();</comment>
+<comment type="line" pos:start="66:1" pos:end="66:32">//		double dist = 0;</comment>
+<comment type="line" pos:start="67:1" pos:end="67:30">//		int count = 0;</comment>
+<comment type="line" pos:start="68:1" pos:end="68:93">//		ManagedDrone drone = DroneFleetManager.getInstance().getRegisteredDrone(vid);</comment>
+<comment type="line" pos:start="69:1" pos:end="69:96">//		List&lt;ManagedDrone&gt; drns = DroneFleetManager.getInstance().getRegisteredDrones();</comment>
+<comment type="line" pos:start="70:1" pos:end="70:51">//		for (ManagedDrone toCheck : drns) {</comment>
+<comment type="line" pos:start="71:1" pos:end="71:47">//			if (toCheck == drone) {</comment>
+<comment type="line" pos:start="72:1" pos:end="72:41">//				continue;</comment>
+<comment type="line" pos:start="73:1" pos:end="73:25">//			}</comment>
+<comment type="line" pos:start="74:1" pos:end="74:120">//			if (true || toCheck.getFlightModeState().isFlying() || toCheck.getFlightModeState().isInAir()) {</comment>
+<comment type="line" pos:start="75:1" pos:end="75:108">//				dist += Math.abs(drone.getCoordinates().distance(toCheck.getCoordinates()));</comment>
+<comment type="line" pos:start="76:1" pos:end="76:25">//			}</comment>
+<comment type="line" pos:start="77:1" pos:end="77:32">//			count++;</comment>
+<comment type="line" pos:start="78:1" pos:end="78:17">//		}</comment>
+<comment type="line" pos:start="79:1" pos:end="79:49">//		double mean = dist / (count - 1);</comment>
+<comment type="line" pos:start="80:1" pos:end="80:67">//		long duration = System.currentTimeMillis() - start;</comment>
+<comment type="line" pos:start="81:1" pos:end="81:2">//</comment>
+<comment type="line" pos:start="82:1" pos:end="82:92">//		mean = mean / Math.pow((Math.sqrt(ZONE_WIDHT) + Math.sqrt(ZONE_HEIGHT)), 2);</comment>
+<comment type="line" pos:start="83:1" pos:end="83:81">//		//LOGGER.info("Mean Distance: " + mean + "(" + duration + "ms)");</comment>
+<comment type="line" pos:start="84:1" pos:end="84:31">//		if (mean &gt; 0) {</comment>
+<comment type="line" pos:start="85:1" pos:end="85:62">//			means.put(drone.getDroneName(), mean);</comment>
+<comment type="line" pos:start="86:1" pos:end="86:17">//		}</comment>
+<comment type="line" pos:start="87:1" pos:end="87:9">//	}</comment>
+<comment type="line" pos:start="88:1" pos:end="88:2">//</comment>
+<comment type="line" pos:start="89:1" pos:end="89:68">//	private void updateFrequency(String vid, double frequency) {</comment>
+<comment type="line" pos:start="90:1" pos:end="90:35">//		ManagedDrone drone;</comment>
+<comment type="line" pos:start="91:1" pos:end="91:21">//		try {</comment>
+<comment type="line" pos:start="92:1" pos:end="92:88">//			drone = DroneFleetManager.getInstance().getRegisteredDrone(vid);</comment>
+<comment type="line" pos:start="93:1" pos:end="93:124">//			drone.sendCommand(new SetMonitoringFrequencyCommand(vid, new Double(frequency).longValue() * 1000));</comment>
+<comment type="line" pos:start="94:1" pos:end="94:44">//		} catch (DroneException e) {</comment>
+<comment type="line" pos:start="95:1" pos:end="95:40">//			LOGGER.error(e);</comment>
+<comment type="line" pos:start="96:1" pos:end="96:17">//		}</comment>
+<comment type="line" pos:start="97:1" pos:end="97:2">//</comment>
+<comment type="line" pos:start="98:1" pos:end="98:9">//	}</comment>
+<comment type="line" pos:start="99:1" pos:end="99:2">//</comment>
+<comment type="line" pos:start="100:1" pos:end="100:39">//	private final double LOWER = 5;</comment>
+<comment type="line" pos:start="101:1" pos:end="101:40">//	private final double UPPER = 25;</comment>
+<comment type="line" pos:start="102:1" pos:end="102:47">//	private final double ZONE_WIDHT = 1000;</comment>
+<comment type="line" pos:start="103:1" pos:end="103:48">//	private final double ZONE_HEIGHT = 1000;</comment>
+<comment type="line" pos:start="104:1" pos:end="104:49">//	private final double DISTANCE_FACTOR = 2;</comment>
+<comment type="line" pos:start="105:1" pos:end="105:2">//</comment>
+<comment type="line" pos:start="106:1" pos:end="106:86">//	private double calculateFrequency(double distance, double currentReputation) {</comment>
+<comment type="line" pos:start="107:1" pos:end="107:2">//</comment>
+<comment type="line" pos:start="108:1" pos:end="108:90">//		// double frequency = (currentReputation / (distance * DISTANCE_FACTOR)) *</comment>
+<comment type="line" pos:start="109:1" pos:end="109:43">//		// (UPPER - LOWER) + LOWER;</comment>
+<comment type="line" pos:start="110:1" pos:end="110:124">//		double frequency = (currentReputation + (1 - distance) * distance) / (DISTANCE_FACTOR + 1) * (UPPER - LOWER)</comment>
+<comment type="line" pos:start="111:1" pos:end="111:40">//				+ LOWER;</comment>
+<comment type="line" pos:start="112:1" pos:end="112:45">//		return Math.floor(frequency);</comment>
+<comment type="line" pos:start="113:1" pos:end="113:9">//	}</comment>
+<comment type="line" pos:start="114:1" pos:end="114:2">//</comment>
+<comment type="line" pos:start="115:1" pos:end="115:3">//}</comment>
+</unit>

@@ -1,0 +1,2 @@
+finds the subscribers for this requirement
+Reads the result from IdentifySubscribers method selection and adds each result into ActualSubscribers Vector.

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/RouteCreationRunner.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:64">package <name pos:start="1:9" pos:end="1:63"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:44">extensions</name><operator pos:start="1:45" pos:end="1:45">.</operator><name pos:start="1:46" pos:end="1:56">areamapping</name><operator pos:start="1:57" pos:end="1:57">.</operator><name pos:start="1:58" pos:end="1:63">unused</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:59">//package edu.nd.dronology.services.extensions.areamapping;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:2">//</comment>
+<comment type="line" pos:start="4:1" pos:end="4:30">//import java.icse.model.util.Collection;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:34">//import java.icse.model.util.logging.Logger;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:2">//</comment>
+<comment type="line" pos:start="7:1" pos:end="7:49">//import edu.nd.dronology.core.vehicle.IUAVProxy;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:80">//import edu.nd.dronology.services.core.areamapping.ExportAllocationInformation;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:59">//import edu.nd.dronology.services.core.items.IAreaMapping;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:71">//import
+    edu.nd.dronology.services.core.icse.model.util.DronologyServiceException;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:81">//import edu.nd.dronology.services.extensions.areamapping.creation.IRouteCreator;</comment>
+<comment type="line" pos:start="12:1" pos:end="12:76">//import edu.nd.dronology.services.extensions.areamapping.creation.MapRiver;</comment>
+<comment type="line" pos:start="13:1" pos:end="13:88">//import edu.nd.dronology.services.extensions.areamapping.selection.GeneratedRoutesInfo;</comment>
+<comment type="line" pos:start="14:1" pos:end="14:92">//import edu.nd.dronology.services.extensions.areamapping.selection.IRouteSelectionStrategy;</comment>
+<comment type="line" pos:start="15:1" pos:end="15:89">//import edu.nd.dronology.services.extensions.areamapping.selection.RouteSelectionResult;</comment>
+<comment type="line" pos:start="16:1" pos:end="16:2">//</comment>
+<comment type="line" pos:start="17:1" pos:end="17:36">//public class RouteCreationRunner {</comment>
+<comment type="line" pos:start="18:1" pos:end="18:2">//</comment>
+<comment type="line" pos:start="19:1" pos:end="19:42">//	private IRouteCreator riverMapper;</comment>
+<comment type="line" pos:start="20:1" pos:end="20:2">//</comment>
+<comment type="line" pos:start="21:1" pos:end="21:91">//	public RouteSelectionResult run(IAreaMapping mapping, Collection&lt;IUAVProxy&gt; uavs) {</comment>
+<comment type="line" pos:start="22:1" pos:end="22:2">//</comment>
+<comment type="line" format="doxygen" pos:start="23:1" pos:end="23:52">////		riverMapper = new MapRiver(mapping);</comment>
+<comment type="line" format="doxygen" pos:start="24:1" pos:end="24:4">////</comment>
+<comment type="line" format="doxygen" pos:start="25:1" pos:end="25:90">////		IRouteSelectionStrategy selector = StrategyFactory.getSelectionStrategy();</comment>
+<comment type="line" format="doxygen" pos:start="26:1" pos:end="26:4">////</comment>
+<comment type="line" format="doxygen" pos:start="27:1" pos:end="27:64">////		long startGenerate = System.currentTimeMillis();</comment>
+<comment type="line" format="doxygen" pos:start="28:1" pos:end="28:106">////		GeneratedRoutesInfo gInfo = new GeneratedRoutesInfo(riverMapper.generateRoutePrimitives(),</comment>
+<comment type="line" format="doxygen" pos:start="29:1" pos:end="29:129">////				riverMapper.getAverageLatitude(), riverMapper.getTotalRiverSegment(), riverMapper.getBankList());</comment>
+<comment type="line" format="doxygen" pos:start="30:1" pos:end="30:62">////		long endGenerate = System.currentTimeMillis();</comment>
+<comment type="line" format="doxygen" pos:start="31:1" pos:end="31:4">////</comment>
+<comment type="line" format="doxygen" pos:start="32:1" pos:end="32:21">////		try {</comment>
+<comment type="line" format="doxygen" pos:start="33:1" pos:end="33:66">////			selector.initialize(gInfo, uavs, mapping);</comment>
+<comment type="line" format="doxygen" pos:start="34:1" pos:end="34:4">////</comment>
+<comment type="line" format="doxygen" pos:start="35:1" pos:end="35:70">////			long startSelect = System.currentTimeMillis();</comment>
+<comment type="line" format="doxygen" pos:start="36:1" pos:end="36:102">////			RouteSelectionResult createdRouteAssignments = selector.generateAssignments();</comment>
+<comment type="line" format="doxygen" pos:start="37:1" pos:end="37:68">////			long endSelect = System.currentTimeMillis();</comment>
+<comment type="line" format="doxygen" pos:start="38:1" pos:end="38:4">////</comment>
+<comment type="line" format="doxygen" pos:start="39:1" pos:end="39:104">////			System.out.println("ROUTE Generation: " + (endGenerate - startGenerate) / 1000);</comment>
+<comment type="line" format="doxygen" pos:start="40:1" pos:end="40:99">////			System.out.println("ROUTE Selection: " + (endSelect - startSelect) / 1000);</comment>
+<comment type="line" format="doxygen" pos:start="41:1" pos:end="41:54">////			System.out.println("Specs: ");</comment>
+<comment type="line" format="doxygen" pos:start="42:1" pos:end="42:124">////			ExportAllocationInformation flight = createdRouteAssignments.getEportAllocationInformation().get(0);</comment>
+<comment type="line" format="doxygen" pos:start="43:1" pos:end="43:114">////			System.out.println("Mission Score: " + flight.getMetricStatistics().getAllocationScore());</comment>
+<comment type="line" format="doxygen" pos:start="44:1" pos:end="44:112">////			System.out.println("Coverage: " + flight.getMetricStatistics().getAllocationCoverage());</comment>
+<comment type="line" format="doxygen" pos:start="45:1" pos:end="45:118">////			System.out.println("Equality of Tasks: " + flight.getMetricStatistics().getEqualityOfTasks());</comment>
+<comment type="line" format="doxygen" pos:start="46:1" pos:end="46:106">////			System.out.println("Collisions: " + flight.getMetricStatistics().getCollisions());</comment>
+<comment type="line" format="doxygen" pos:start="47:1" pos:end="47:55">////			return createdRouteAssignments;</comment>
+<comment type="line" format="doxygen" pos:start="48:1" pos:end="48:39">////		} catch (Throwable e) {</comment>
+<comment type="line" format="doxygen" pos:start="49:1" pos:end="49:44">////			e.printStackTrace();</comment>
+<comment type="line" format="doxygen" pos:start="50:1" pos:end="50:46">////			System.out.println(e);</comment>
+<comment type="line" format="doxygen" pos:start="51:1" pos:end="51:17">////		}</comment>
+<comment type="line" format="doxygen" pos:start="52:1" pos:end="52:42">////		/// fix throw Exception...</comment>
+<comment type="line" format="doxygen" pos:start="53:1" pos:end="53:50">////		return new RouteSelectionResult();</comment>
+<comment type="line" format="doxygen" pos:start="54:1" pos:end="54:4">////</comment>
+<comment type="line" format="doxygen" pos:start="55:1" pos:end="55:9">////	}</comment>
+<comment type="line" pos:start="56:1" pos:end="56:2">//</comment>
+<comment type="line" pos:start="57:1" pos:end="57:3">//}</comment>
+</unit>

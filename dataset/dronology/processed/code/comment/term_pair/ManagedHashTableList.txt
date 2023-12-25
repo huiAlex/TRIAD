@@ -1,0 +1,10 @@
+hashtabl manag:amod
+return store:nsubj
+store key:dep
+valu queri:nmod
+hashtabl return:parataxis
+return null:xcomp
+need creat:xcomp
+type key:amod
+creat type:obj
+type valu:compound

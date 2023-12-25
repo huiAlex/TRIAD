@@ -1,0 +1,5 @@
+/
+Uses the bisection method to iteratively hone in on the nvector that is	  metersToTravel distance away from the current n-vector along the path	  that goes from current to target.
+A path can be thought of as the set of	  NVectors you can create by interpolating between current and target.
+This	  code takes advantage of this to find the NVector on this path that is the	  right distance away from the current distance.
+drone current position	  	             drone target position	  	             the distance the drone should travel along the path from	             current to target	  	          path that goes from current to target	 /

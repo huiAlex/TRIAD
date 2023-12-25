@@ -1,0 +1,3 @@
+constructor, this object will be created in the main method of these class
+onstructor, this object will be created in the main method of these class
+run method will be execute from the main method when u say Thread. start() in main

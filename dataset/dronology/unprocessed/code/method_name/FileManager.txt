@@ -1,0 +1,8 @@
+FileManager
+initWorkspace
+getFileAsByteArray
+getFile
+saveByteArrayToFile
+loadFiles
+accept
+tearDown

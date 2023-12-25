@@ -1,0 +1,5 @@
+connectionId
+groundstationid
+connectionHandler
+connector
+msg

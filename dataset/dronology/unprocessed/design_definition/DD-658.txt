@@ -1,0 +1,4 @@
+[SUMMARY]
+Delete routes
+[DESCRIPTION]
+Flight plans assigned to an UAV that have not yet been executed may be deleted by selecting the route and clicking the deselect button.

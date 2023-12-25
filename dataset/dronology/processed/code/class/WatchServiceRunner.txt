@@ -1,0 +1,38 @@
+watch servic runner 
+logger 
+recurs 
+manag 
+file extens 
+watcher 
+dir 
+notifi task 
+chang 
+chang 
+key 
+key 
+
+
+dir 
+recurs 
+manag 
+file extens 
+file 
+start 
+dir 
+attr 
+file 
+exc 
+dir 
+
+
+watch servic runner 
+run 
+chang 
+run 
+regist 
+pre visit directori 
+visit file fail 
+regist 
+stop 
+
+regist given directori watch servic 

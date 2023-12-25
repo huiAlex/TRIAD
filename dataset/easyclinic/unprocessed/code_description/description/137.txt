@@ -1,0 +1,12 @@
+Class: GUIHospitalCard
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: Make the mask for dell'Hospital Card view of a newly recorded patient
+
+Attributes:
+
+Methods:
+
+visualizzaHospitalCard;Public; Displays the data of the Hospital Card.
+stampaHC;Public;Finds the data for viewing the Hospital Card.

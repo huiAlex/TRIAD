@@ -1,0 +1,4 @@
+Abstract base class for all commands sent to the GCS.
+Contains the id of the UAV and a unique command id.
+/
+/

@@ -1,0 +1,3 @@
+resendCommand:1
+operUav:1
+hoverPlace:1

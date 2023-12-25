@@ -1,0 +1,25 @@
+drone monitor servic remot facad 
+serial version uid 
+logger 
+instanc 
+
+drone monitor servic remot facad 
+
+handler 
+handler 
+identifi 
+uavid 
+frequenc 
+
+remot monitor messag handler 
+remot monitor messag handler 
+artifact identifi 
+
+drone monitor servic remot facad 
+get instanc 
+regist monitor messag handler 
+regist monitor messag handler 
+set monitor frequenc 
+
+remot facad monitor uav allow regist remot monitor messag handler subscrib certain messag type topic 
+ 

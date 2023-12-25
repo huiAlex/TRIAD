@@ -1,0 +1,10 @@
+typeVisit:1
+patientMake:2
+makePatient:2
+returnGui:1
+guiReturn:1
+reservMake:1
+guiPrincipal:1
+principalGui:1
+makeReserv:1
+visitType:1

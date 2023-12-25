@@ -1,0 +1,9 @@
+supportMiddlewar:1
+uavActiv:1
+supportUav:1
+creatPlan:1
+assignRout:1
+assignUav:1
+supportAssign:1
+waypointRout:1
+planFlight:1

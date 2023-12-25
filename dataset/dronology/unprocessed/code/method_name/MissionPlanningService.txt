@@ -1,0 +1,8 @@
+MissionPlanningService
+getInstance
+initServiceInstance
+executeMissionPlan
+cancelMission
+removeUAV
+executeMissionPlan
+executeMissionPlan

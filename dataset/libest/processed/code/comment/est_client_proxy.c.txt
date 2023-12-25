@@ -1,0 +1,29 @@
+use wsaaddresstostringa instead inet ntop window inet ntop doe exist window xp use const struct sockaddr becaus wsaaddresstostringa take lpsockaddr 
+use wsaaddresstostringa instead inet ntop window inet ntop doe exist window xp use const struct sockaddr becaus wsaaddresstostringa take lpsockaddr 
+establish direct socket connect est server use normal system call 
+establish direct socket connect est server use normal system call 
+establish direct socket connect est server use normal system call 
+establish socket remot server use libcurl actual send url leverag libcurl proxi support just establish connect 
+entri point establish connect remot est server 
+entri point establish connect remot est server 
+win 
+want libcurl establish connect proxi server onc ll use socket normal direct connect est server 
+http tell libcurl wrap whatev data send ssl 
+proxi host port 
+proxi protocol includ http tunnel mode 
+usernam password 
+signal generat libcurl 
+perform curl request 
+retriev socket libcurl 
+connect set socket block 
+sock err alreadi set 
+sock err alreadi set 
+ret sock err alreadi set 
+https msdn microsoft com en us librari window desktop ms vs aspx ioctl ioctlsocket wsaioctl various languag run time system use ioctl purpos unrel window socket consequ ioctlsocket function wsaioctl function defin handl socket function perform ioctl fcntl berkeley softwar distribut sinc ioctlsocket window equival ioctl fcntl just set return type accord 
+sock err alreadi set 
+sock err alreadi set 
+sock err alreadi set 
+make far log messag whi wrong return 
+sock err alreadi set 
+resolv host 
+close socket clobber sock err 

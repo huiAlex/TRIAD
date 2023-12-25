@@ -1,0 +1,20 @@
+provid flight routeplan servic instanc:nsubj
+provid capabl:obj
+provid retriev:advcl
+retriev flight rout:obj
+system file:compound
+flight rout system:nmod
+detect new:nsubj
+new flight rout:dep
+load detect:advcl
+system file:compound
+detect system:obl
+load get:aux
+provid rout:nsubj
+proxi flight rout info:compound
+provid proxi:obl
+provid contain:xcomp
+info basic:amod
+contain info:obj
+rout flight:compound
+contain rout:obl

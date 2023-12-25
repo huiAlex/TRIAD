@@ -1,0 +1,8 @@
+sectionPatient:5
+accessSection:3
+operActiv:1
+sectionAccess:3
+patientAllow:1
+allowPatient:1
+activOper:1
+patientSection:5

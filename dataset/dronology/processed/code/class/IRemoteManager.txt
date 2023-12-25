@@ -1,0 +1,27 @@
+remot manag 
+
+
+servic 
+listen 
+listen 
+info 
+creat 
+servic 
+servic instanc 
+
+
+get servic 
+get servic 
+add servic listen 
+remov servic listen 
+regist 
+unregist 
+get core servic 
+get file servic 
+get servic 
+initi 
+tear 
+contribut servic 
+
+interfac handl communic server ui server servic 
+ 

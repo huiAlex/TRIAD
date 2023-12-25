@@ -1,0 +1,13 @@
+constructor 
+get current line number 
+get error count 
+get next open close symbol 
+return true ch part java identifi 
+return identifi read input stream 
+return next identifi skip comment 
+next char set ch base next charact input stream 
+precondit process comment seen 
+precondit process quot seen 
+open slash seen deal next charact 
+comment starter process 
+next charact new line 

@@ -1,0 +1,116 @@
+us896.c
+us896_clean
+us896_start_server
+us896_init_suite
+us896_destroy_suite
+client_manual_cert_verify
+us896_test1
+us896_test2
+us896_add_suite
+st_start
+SLEEP
+printf
+snprintf
+printf
+system
+us896_clean
+us896_start_server
+st_stop
+SLEEP
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+est_client_get_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+SLEEP
+read_binary_file
+CU_ASSERT
+read_private_key
+est_client_init
+CU_ASSERT
+est_client_set_auth
+CU_ASSERT
+est_client_set_server
+est_client_get_cacerts
+CU_ASSERT
+CU_ASSERT
+malloc
+est_client_copy_cacerts
+free
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_server_init_csrattrs
+CU_ASSERT
+est_client_get_csrattrs
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+CU_add_suite
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+int
+int
+X509
+int
+CLIENT_UT_CACERT
+US896_CACERTS
+US896_TRUST_CERTS
+US896_SERVER_CERTKEY
+CLIENT_UT_CACERT
+US896_CACERTS
+US896_TRUST_CERTS
+US896_SERVER_CERTKEY
+CLIENT_UT_PUBKEY
+US896_SERVER_PORT
+US896_SERVER_IP
+TEST_SHORT_ATTR
+TEST_LONG_ATTR
+TEST_CORRUPT_ATTR1
+TEST_CORRUPT_ATTR2
+EST_UT_MAX_CMD_LEN
+------------------------------------------------------------------   us896.c - Unit Tests for User Story 896 - Client CSR Attributes     November, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Test1 - exercise the est_client_get_csrattrs() API.  /
+   Test2 - exercise the response  variations triggered           by est_client_get_csrattrs()  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server       /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       output the retrieved ca certs and compare to what they should be      /
+        All of these are negative tests and require that code in the       EST server is modified such that it will allow bad/corrupted       attributes to be initialized so they can be sent to the client.      /
+ clear callback /
+ add a suite to the registry /
+ add the tests to the suite /

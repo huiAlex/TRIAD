@@ -1,0 +1,5 @@
+adapt map marker util class util folder class listen allow user interact map 
+includ mani function manipul updat current map 
+way point activ true draw line call activ flight 
+determin first line segment green shouldn flight rout 
+polylin drawn map 

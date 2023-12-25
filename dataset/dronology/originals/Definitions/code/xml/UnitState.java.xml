@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/UnitState.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:44">package <name pos:start="1:9" pos:end="1:43"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:43">util</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="8:3">/**
+ * Enum that reflects the current state of a Probe.
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<enum pos:start="9:1" pos:end="43:1"><specifier pos:start="9:1" pos:end="9:6">public</specifier> enum <name pos:start="9:13" pos:end="9:21">UnitState</name> <block pos:start="9:23" pos:end="43:1">{
+
+	<comment type="block" format="javadoc" pos:start="11:9" pos:end="13:11">/**
+	 * The unit is running and able to send data.
+	 */</comment>
+	<decl pos:start="14:9" pos:end="14:15"><name pos:start="14:9" pos:end="14:15">RUNNING</name></decl>,
+
+	<comment type="block" format="javadoc" pos:start="16:9" pos:end="18:11">/**
+	 * The unit is paused and no data is sent to the server.
+	 */</comment>
+	<decl pos:start="19:9" pos:end="19:14"><name pos:start="19:9" pos:end="19:14">PAUSED</name></decl>,
+	<comment type="block" format="javadoc" pos:start="20:9" pos:end="22:11">/**
+	 * The unit has been terminated. No further data will be processed until restarted.
+	 */</comment>
+	<decl pos:start="23:9" pos:end="23:18"><name pos:start="23:9" pos:end="23:18">TERMINATED</name></decl>,
+
+	<comment type="block" format="javadoc" pos:start="25:9" pos:end="27:11">/**
+	 * Current status is unknown.
+	 */</comment>
+	<decl pos:start="28:9" pos:end="28:15"><name pos:start="28:9" pos:end="28:15">UNKNOWN</name></decl>,
+
+	<comment type="block" format="javadoc" pos:start="30:9" pos:end="32:11">/**
+	 * The unit is registered at the server.
+	 */</comment>
+	<decl pos:start="33:9" pos:end="33:18"><name pos:start="33:9" pos:end="33:18">REGISTERED</name></decl>,
+
+	<comment type="block" format="javadoc" pos:start="35:9" pos:end="37:11">/**
+	 * The unit has been unregistered from the server.
+	 */</comment>
+	<decl pos:start="38:9" pos:end="38:20"><name pos:start="38:9" pos:end="38:20">UNREGISTERED</name></decl>, 
+	
+	
+	<decl pos:start="41:9" pos:end="41:13"><name pos:start="41:9" pos:end="41:13">ERROR</name></decl>
+
+}</block></enum>
+</unit>

@@ -1,0 +1,17 @@
+Class: Booking
+Date:15/09/2003
+Version: 0 01 000
+Description:contains data describing a reservation that is was performed in outpatient
+
+Attributes:
+dataRichiesta;Private;Data that has been carried out reservations
+dataVisita;Private;Date of the visit will take place
+Grounds;Private;Reason for which it was the request
+hour;Private;Now that the visit will take place
+
+Methods:
+create;Public;Create a new object of type Reservation
+delete;Public; Provides description to a reservation
+save;Public; Provides the storing of a reservation in the SIO
+GetAttributes;Public; retrieval of all information relating to a reservation
+setAttributes;Public;Set the attributes of a Reservation

@@ -1,0 +1,7 @@
+implement simpl:amod
+implement simul:compound
+implement contain:acl
+simul flight:compound
+contain simul:obj
+simul batteri:compound
+contain simul:obj

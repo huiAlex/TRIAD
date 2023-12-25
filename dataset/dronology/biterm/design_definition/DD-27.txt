@@ -1,0 +1,4 @@
+managPlan:1
+managFlight:1
+planPend:1
+planFlight:1

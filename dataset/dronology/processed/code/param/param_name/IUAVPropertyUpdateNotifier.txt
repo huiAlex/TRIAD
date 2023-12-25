@@ -1,0 +1,13 @@
+locat 
+batteri level 
+speed 
+veloc 
+attitud 
+locat 
+status 
+batteri level 
+veloc 
+posit 
+veloc 
+attitud 
+mode 

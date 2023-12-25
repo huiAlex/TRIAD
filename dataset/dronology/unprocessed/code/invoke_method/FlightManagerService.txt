@@ -1,0 +1,11 @@
+FlightManagerServiceInstance
+getFlightInfo
+planFlight
+planFlight
+returnToHome
+pauseFlight
+getCurrentFlights
+cancelPendingFlights
+takeoff
+emergencyStop
+FlightManagerService

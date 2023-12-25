@@ -1,0 +1,65 @@
+us unit test user stori server cacert june copyright cisco system right reserv 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+start appropri flavor st server base charact specifi basic auth digest auth crl check auth 
+http basic auth test case use libcurl test http basic authent work est server use simpleenrol messag sinc cacert messag doe requir client authent est server run port prior test run 
+http basic auth failur test case use libcurl test http basic authent work est server use bogus password use simpleenrol messag sinc cacert messag doe requir client authent est server run prior test run 
+http digest auth test case use libcurl test http digest authent work est server use simpleenrol messag sinc cacert messag doe requir client authent est server run listen port prior test run 
+http digest auth fail test case use libcurl test http digest authent work est server negat test case digest auth use simpleenrol messag sinc cacert messag doe requir client authent est server run listen port prior test run 
+test case doe simpl cacert request look http respons code 
+test attempt creat ssl connect est server fail tls allow 
+test attempt creat tls connect est server fail tls allow 
+test attempt creat tls connect est server succeed 
+test attempt creat tls connect est server succeed 
+test attempt use client certif verifi tls client authentiaiton work certif use sign explicit cert chain succeed 
+test attempt use client certif verifi tls client authentiaiton work certif use sign implicit cert chain succeed 
+test attempt use revok client certif verifi crl check work tls layer fail 
+test attempt use self sign client certif verifi cert chain reject cert sign valid ca fail 
+tls anonym cipher suit disabl test case use libcurl test est server accept anonym cipher suit client onli test singl cipher suit attempt simpl enrol server 
+null http realm initi server 
+null server certif initi server 
+null server certif privat key initi server 
+null trust ca chain initi server 
+corrupt ca chain initi server 
+test case attempt simpl cacert request use post instead get fail 
+test attempt use client certif verifi tls client authentiaiton work certif use sign explicit cert chain valid http authent credenti provid succeed 
+test attempt use client certif verifi tls client authentiaiton work certif use sign explicit cert chain invalid http authent credenti provid fail respons 
+test attempt enrol use certif ident client use good user id pwd howev est server setup onli perform certif authent http auth disabl fail respons 
+main function set run test return cue success success run anoth cunit error code failur 
+sinc pass valid userid password expect server respond 
+sinc pass invalid userid password expect server respond 
+sinc pass valid userid password expect server respond success 
+sinc pass invalid userid password expect server respond 
+expect server respond 
+ssl context readi open socket server bind socket context 
+creaea ssl session context 
+everyth readi let initi tls handshak 
+cleanup data 
+sinc pass valid userid password expect server respond 
+sinc pass valid userid password expect server respond 
+sinc client cert revok tls handshak fail est server return respons 
+sinc client cert sign local ca extern ca tls handshak fail receiv http status messag server 
+tls handshak fail curl return 
+read ca certif 
+read server cert 
+read server key 
+attempt init est server use null realm 
+read ca certif 
+read server key 
+attempt init est server use null server key 
+read ca certif 
+read server cert 
+attempt init est server use null privat key 
+read server cert 
+read server key 
+attempt init est server use null local ca chain 
+read server cert 
+read server key 
+attempt init est server corrupt ca chain 
+expect server respond 
+sinc pass valid userid password expect server respond 
+sinc pass invalid userid password expect server respond 
+sinc pass invalid userid password expect server respond 
+add suit registri 
+add test suit 
+note order import test fread fprintf 

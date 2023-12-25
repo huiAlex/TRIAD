@@ -1,0 +1,13 @@
+lla coordin 
+equal 
+get altitud 
+string 
+get latitud 
+get longitud 
+hash code 
+vector 
+vector 
+check altitud rang 
+check latitud rang 
+check longitud rang 
+lla coordin 

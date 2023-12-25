@@ -1,0 +1,9 @@
+CurrentEvent
+ebt
+lblRequirementNo
+lblProject
+lblModulePath
+txtRequirementNo
+txtProject
+txtModulePath
+HideMsg

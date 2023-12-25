@@ -1,0 +1,14 @@
+flyToNextPoint
+getWayPoints
+SoloDirector
+setWayPoints
+clearWayPoints
+hasMoreWayPoints
+flyToNextWayPoint
+isUnderSafetyDirectives
+clearCurrentWayPoint
+addWayPoint
+flyHome
+returnHome
+readyToLand
+readyToTakeOff

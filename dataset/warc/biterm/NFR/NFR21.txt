@@ -1,0 +1,2 @@
+metaphorParadigm:1
+paradigmMetaphor:1

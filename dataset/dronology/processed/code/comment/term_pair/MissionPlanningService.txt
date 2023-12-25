@@ -1,0 +1,17 @@
+servic plan:nmod
+mission execut:amod
+servic mission:nmod
+plan mission:conj
+uav multipl:amod
+mission uav:nmod
+implement initi:amod
+capabl mission:compound
+capabl plan:compound
+implement capabl:nmod
+allow retriev:xcomp
+retriev send:advcl
+plan mission:compound
+send plan:obj
+string json:compound
+send string:obl
+send dronolog:obl

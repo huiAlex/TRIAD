@@ -1,0 +1,6 @@
+toolWarc:1
+libwarcImplement:1
+warcTool:1
+toolFunction:1
+functionTool:1
+implementLibwarc:1

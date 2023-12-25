@@ -1,0 +1,8 @@
+base abstract:compound
+class base:compound
+class servic:nmod
+class allow:acl
+allow transfer:xcomp
+transfer file:obj
+array byte:compound
+class array:nmod

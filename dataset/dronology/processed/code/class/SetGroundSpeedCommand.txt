@@ -1,0 +1,12 @@
+set ground speed command 
+serial version uid 
+
+
+uavid 
+speed 
+
+
+set ground speed command 
+
+command sent gcs set groundspe uav 
+ground speed specifi 

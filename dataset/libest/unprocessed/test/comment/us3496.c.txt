@@ -1,0 +1,52 @@
+------------------------------------------------------------------   us3496.c - Unit Tests URI path segment extension support      March, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   max command line length when generating system commands  /
+   The CA certificate used to verify the EST server.  Grab it from the server's directory  /
+ #define CLIENT_UT_CACERT "../../example/server/estCA/cacert.crt" /
+   This routine is called when CUnit initializes this test   suite.    1. Generate the keypair to be used for this EST Client UT suite  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   This test case tests the set server with valid parameters,   NO path segment  /
+   pass down path segment that is valid  /
+   pass down path segment that contains 2 segments, should fail  /
+   all valid characters  /
+   pass down path segment that is invalid. invalid character.  /
+   pass down path segment that is too long (129)  /
+   pass down a path segment that is equal to an operation (cacerts)  /
+   pass down a path segment that contains an operation (cacerts),   in this case it's at the front of the string  /
+   pass down a path segment that is the empty string.   This should fail.  /
+   pass down a path segment that contains a ':'.   This should pass.  /
+   pass down path segment that is too long (129)  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Read in the CA certificates      /
+       check to see if path segment support has been compiled in      /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       Read in the CA certificates      /
+       Read in the private key file      /
+ add a suite to the registry /
+      check to see if path segment support has been compiled in     /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /

@@ -1,0 +1,80 @@
+------------------------------------------------------------------   us2174.c - Unit Tests for User Story 2174 - Proxy simple enroll     August, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+ #define US2174_PROXY_CERT "CA/estCA/private/estservercertandkey.pem"   /
+ #define US2174_PROXY_KEY "CA/estCA/private/estservercertandkey.pem" /
+ #define US2174_PROXY_CERT "CA/estCA/private/estservercertandkey.pem"   /
+ #define US2174_PROXY_KEY "CA/estCA/private/estservercertandkey.pem" /
+   The following CSR was generated using the following openssl command and then   using cat on the rsa.req file:     openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM  /
+   The following CSR was generated using the following openssl command and then   using cat on the ec.req file:     openssl req -newkey ec:256parms -keyout eckey.pem -keyform PEM -out ec.req -outform PEM  /
+   The following CSR was generated using the following openssl command and then   using cat on the dsa.req file:     openssl req -newkey dsa:dsaparms -keyout dsakey.pem -keyform PEM -out dsa.req -outform PEM  /
+   The following is a valid CSR that already contains a PoP   challengePassword.  This was collected using estserver with   the dumpbin() function.  This CSR should never work since   the PoP value in it will be stale.  /
+   auth_credentials_token_cb() is the application layer callback function that will   return a token based authentication credential when called.  It's registered   with the EST Client using the est_client_set_auth_cred_cb().   The test function is required to set some global values in order to make this   callback operate the way that the test case wants.   - auth_cred_force_error = tell this function to force a response code error   - test_token = pointer to a hard coded string that is the token string to return     This callback must provide the token credentials in a heap based buffer, and   ownership of that buffer is implicitly transferred to the ET client library upon   return.  /
+   auth_credentials_basic_cb() is the same as the token based one above, but   instead returns the basic credentials of userid and password  /
+   auth_credentials_digest_cb() is the same as the basic based one above, but   instead verfies that the auth_mode passed is digest  /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+   Callback function passed to est_client_init()  /
+   us2174_simple_enroll() is used by test cases to perform a simple enroll.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Simple enroll -   proxy - BASIC   server - BASIC     Make sure token auth mode did not break anything.    /
+       Since we passed in a valid userID/password,       we expect the server to respond with 200      /
+   Simple enroll -   proxy - TOKEN   server - TOKEN    /
+   Simple enroll -   proxy - TOKEN   server - BASIC  /
+   Simple enroll -   proxy - BASIC   server - TOKEN  /
+   Simple RE-enroll -   proxy - TOKEN   server - TOKEN    /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+       Create a client context      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Create a client context      /
+       Now that we have the cert, switch the server over to token mode      /
+       Set the EST server address/port      /
+       And attempt a reenroll while in token mode             Convert the cert to an X509.  Be warned this is       pure hackery.       PDB: This conversion code comes from other test cases.      /
+ our new cert should be the one and only       cert in the pkcs7 blob.  We shouldn't have to       iterate through the full list to find it. /
+       PDB NOTE: At the moment, this is expected to fail since       the server does not yet understand requests with token authentication.       Once 1884 is complete, the below ASSERT will begin to fail and will need       to be changed to a passing response.      /
+       Cleanup      /
+       First we start an EST server acting as the CA      /
+       Next we start an EST proxy acting as an RA with the server side       operating in token auth mode.      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       set server to do token auth challenges       tell the server which tokens to accept      /
+       set the proxy to do token auth challenges and       tell it what tokens to accept.      /
+       tell the client side of proxy which token credential to       use      /
+       Set up the EST Client and have it perform a simple enroll.             Enroll should succeed.      /
+       callback should have been called      /
+       set server to do BASIC auth challenges      /
+       set the proxy to do token auth challenges and       tell it what tokens to accept.      /
+       tell the client side of proxy which token credential to       use      /
+       Set up the EST Client and have it perform a simple enroll.             Enroll should succeed.      /
+       callback should have been called      /
+       set server to do token auth challenges       tell the server which tokens to accept      /
+       set the proxy to do BASIC auth challenges and       tell it what tokens to accept.      /
+     st_proxy_set_srv_valid_token(GOOD_TOKEN); /
+       tell the client side of proxy which token credential to       use      /
+       Set up the EST Client and have it perform a simple enroll.             Enroll should succeed.      /
+       callback should have been called      /
+       set server to do token auth challenges       tell the server which tokens to accept      /
+       set the proxy to do token auth challenges and       tell it what tokens to accept.      /
+       tell the client side of proxy which token credential to       use      /
+       Set up the EST Client and have it perform a simple RE-enroll.             RE-enroll should succeed.      /
+       callback should have been called      /
+ add a suite to the registry /
+ add the tests to the suite /
+ (NULL == CU_add_test(pSuite, "Proxy Enroll basic sanity test", us2174_test1)) || /
+           If the test_token is set to anything, then we need to allocate           space from the heap and copy in the value.          /
+           If we made it this far, token_ptr is pointing to a string           containing the token to be returned. Assign it and return success          /
+ use strlen() so that the string can be as large              as needed to test the EST client /

@@ -1,0 +1,24 @@
+initi 
+get instanc 
+get servic 
+get instanc 
+add servic listen 
+get instanc 
+remov servic listen 
+get instanc 
+get servic 
+get instanc 
+get core servic 
+get instanc 
+get servic 
+get instanc 
+get file servic 
+get instanc 
+regist 
+get instanc 
+unregist 
+get instanc 
+contribut servic 
+tear 
+remot rmi remot object 
+remot rmi remot object 

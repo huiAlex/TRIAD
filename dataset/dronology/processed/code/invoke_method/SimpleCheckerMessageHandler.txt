@@ -1,0 +1,40 @@
+creat 
+get type 
+equal 
+get altitud 
+get altitud 
+get longitud 
+get longitud 
+get latitud 
+get latitud 
+lla coordin 
+lla coordin 
+get instanc 
+notifi 
+get data 
+check lat 
+check long 
+check alt 
+get instanc 
+publish 
+get instanc 
+publish 
+get instanc 
+publish 
+get instanc 
+emerg stop 
+get locat 
+get uavid 
+get uavid 
+creat messag 
+get uavid 
+creat messag 
+get uavid 
+creat messag 
+get uavid 
+get uavid 
+get data 
+get uavid 
+get data 
+get uavid 
+get data 

@@ -1,0 +1,11 @@
+/**
+ * Directions for one flight containing multiple waypoints.
+ * 
+ *  * 
+ */
+
+/**
+	 * Constructor
+	 * 
+	 * 	 */
+

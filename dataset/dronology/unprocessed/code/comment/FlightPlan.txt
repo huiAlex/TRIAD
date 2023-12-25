@@ -1,0 +1,57 @@
+/**
+ * Stores flight information including its waypoints and current status.
+ * 
+ *  *  *
+ */
+
+/**
+	 * 
+	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * Returns the drone assigned to the flight plan. Will return null if no drone
+	 * is yet assigned.
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 * 	 * 	 */
+
+/**
+	 * Sets flightplan status to completed when called.
+	 * 
+	 * 	 * 	 */
+
+/**
+	 * Returns current flightplan status (Planned, Flying, Completed)
+	 * 
+	 * 	 */
+
+/**
+	 * Returns way points
+	 * 
+	 * 	 */
+
+/**
+	 * Returns start time of flight.
+	 * 
+	 * 	 */
+
+/**
+	 * REturns end time of flight.
+	 * 
+	 * 	 */
+

@@ -1,0 +1,10 @@
+extract give:case
+extract routenam:compound
+point first:amod
+point way:compound
+extract point:dep
+coordin home:compound
+get coordin:obj
+coordin uav:nmod
+variabl class:compound
+uav variabl:appos

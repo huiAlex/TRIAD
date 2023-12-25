@@ -1,0 +1,4 @@
+remot facad handl mission plan initi implement mission plan capabl 
+allow retriev send mission plan json string dronolog 
+ 
+ 

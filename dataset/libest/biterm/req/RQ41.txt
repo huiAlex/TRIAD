@@ -1,0 +1,5 @@
+typeContent:2
+rejectRequest:1
+returnCode:1
+enrolSuccess:1
+codeReturn:1

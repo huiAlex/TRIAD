@@ -1,0 +1,5 @@
+patternFlight:1
+flightPattern:1
+directFlight:1
+waypointFirst:1
+waypointRout:1

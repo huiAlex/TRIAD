@@ -1,0 +1,12 @@
+SynchronizationManager
+getInstance
+getNextAltitude
+createSynchronizationPoint
+synchPointExists
+addSynchItem
+activateAllSynchPoints
+uavVisitedSynchPoint
+getCountOfUnsynchedUAVs
+isFullySynched
+removeUAV
+resetAltitudes

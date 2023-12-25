@@ -1,0 +1,1 @@
+vehicl core support uav capabl receiv respond command sent ground control station 

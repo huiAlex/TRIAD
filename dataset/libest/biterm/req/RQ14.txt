@@ -1,0 +1,14 @@
+estClient:6
+requestServer:1
+estServer:1
+segmentPath:1
+segmentConfigur:1
+configurClient:3
+pathSegment:1
+requestCertif:1
+layerApplic:1
+attributRequest:1
+serverEst:1
+clientEst:6
+csrAttribut:1
+attributCsr:1

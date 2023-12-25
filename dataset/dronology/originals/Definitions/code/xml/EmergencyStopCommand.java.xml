@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/EmergencyStopCommand.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:47">package <name pos:start="1:9" pos:end="1:46"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name><operator pos:start="1:38" pos:end="1:38">.</operator><name pos:start="1:39" pos:end="1:46">commands</name></name>;</package>
+
+<class pos:start="3:1" pos:end="18:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> class <name pos:start="3:14" pos:end="3:33">EmergencyStopCommand</name> <super_list pos:start="3:35" pos:end="3:87"><extends pos:start="3:35" pos:end="3:62">extends <super pos:start="3:43" pos:end="3:62"><name pos:start="3:43" pos:end="3:62">AbstractDroneCommand</name></super></extends> <implements pos:start="3:64" pos:end="3:87">implements <super pos:start="3:75" pos:end="3:87"><name pos:start="3:75" pos:end="3:87">IDroneCommand</name></super></implements></super_list> <block pos:start="3:89" pos:end="18:1">{
+
+	<comment type="block" format="javadoc" pos:start="5:9" pos:end="11:11">/**
+	 * 
+	 * Command sent to the GCS for stopping immediately and remain hovering in place.
+	 * 
+	 * 
+	 * @author Michael Vierhauser
+	 */</comment>
+	<decl_stmt pos:start="12:9" pos:end="12:75"><decl pos:start="12:9" pos:end="12:74"><type pos:start="12:9" pos:end="12:33"><specifier pos:start="12:9" pos:end="12:15">private</specifier> <specifier pos:start="12:17" pos:end="12:22">static</specifier> <specifier pos:start="12:24" pos:end="12:28">final</specifier> <name pos:start="12:30" pos:end="12:33">long</name></type> <name pos:start="12:35" pos:end="12:50">serialVersionUID</name> <init pos:start="12:52" pos:end="12:74">= <expr pos:start="12:54" pos:end="12:74"><operator pos:start="12:54" pos:end="12:54">-</operator><literal type="number" pos:start="12:55" pos:end="12:74">8748426132223249721L</literal></expr></init></decl>;</decl_stmt>
+
+	<constructor pos:start="14:9" pos:end="16:9"><specifier pos:start="14:9" pos:end="14:14">public</specifier> <name pos:start="14:16" pos:end="14:35">EmergencyStopCommand</name><parameter_list pos:start="14:36" pos:end="14:51">(<parameter pos:start="14:37" pos:end="14:50"><decl pos:start="14:37" pos:end="14:50"><type pos:start="14:37" pos:end="14:42"><name pos:start="14:37" pos:end="14:42">String</name></type> <name pos:start="14:44" pos:end="14:50">droneId</name></decl></parameter>)</parameter_list> <block pos:start="14:53" pos:end="16:9">{<block_content pos:start="15:17" pos:end="15:56">
+		<expr_stmt pos:start="15:17" pos:end="15:56"><expr pos:start="15:17" pos:end="15:55"><call pos:start="15:17" pos:end="15:55"><name pos:start="15:17" pos:end="15:21">super</name><argument_list pos:start="15:22" pos:end="15:55">(<argument pos:start="15:23" pos:end="15:29"><expr pos:start="15:23" pos:end="15:29"><name pos:start="15:23" pos:end="15:29">droneId</name></expr></argument>, <argument pos:start="15:32" pos:end="15:54"><expr pos:start="15:32" pos:end="15:54"><name pos:start="15:32" pos:end="15:54"><name pos:start="15:32" pos:end="15:41">CommandIds</name><operator pos:start="15:42" pos:end="15:42">.</operator><name pos:start="15:43" pos:end="15:54">STOP_COMMAND</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+
+}</block></class>
+</unit>

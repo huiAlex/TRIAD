@@ -1,0 +1,13 @@
+authCred:1
+pathSeg:1
+estHdr:1
+pathSegment:1
+httpAuth:1
+authHdr:1
+estHttp:1
+csrLen:1
+estAuth:1
+httpHdr:1
+maxLen:1
+evpPkey:1
+sslCtx:1

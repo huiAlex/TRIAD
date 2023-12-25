@@ -1,0 +1,6 @@
+/**
+ * Representation of a physical UAV which either interacts with real hardware or the SITL simulated UAV.
+ * 
+ *  * 
+ */
+

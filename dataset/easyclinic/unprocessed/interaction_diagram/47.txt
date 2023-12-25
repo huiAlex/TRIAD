@@ -1,0 +1,7 @@
+Show anagrafica
+The service is launched following the explicit request by the Patient.
+The actor Patient accesses the main screen (for instance GUIPrincipale) displaying all the services provided by the system to patients, and selects to display their anagrafica.
+Control is passed to the instance of GUIPrincipaleHandler which delegates the task of managing the service to the instance of GUIAnagraficaHandler.
+Control is then passed to the instance of PazienteManager which finds the patient data requested through the panel.
+The patient data results are sent backward up to the instance of GUIAnagraficaHandler, which is responsible for displaying them on the screen that manages the patient registries (for instance GUIAnagrafica).
+This feature is described by the collaboration diagram of Fig 3.9.

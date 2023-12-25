@@ -1,0 +1,2 @@
+command valid:amod
+command uav:compound

@@ -1,0 +1,22 @@
+util class draw marker uav icon map need addit cleanup refactor 
+ 
+function get flight rout dronolog core draw map 
+focus drone focus info panel 
+flight rout orang check drone checkbox check info panel 
+rout black 
+ 
+updat flight rout 
+delet old add new redraw line differ color waypoint reach focus drone focus info panel 
+flight rout orang check drone checkbox check info panel 
+rout black 
+ 
+function updat posit drone icon map focus drone focus info panel 
+flight rout orang check drone checkbox check info panel 
+rout black 
+ 
+function add icon map repres drone posit 
+focus drone focus info panel 
+flight rout orang check drone checkbox check info panel 
+rout black 
+ 
+assist logic updat flight rout coordin 

@@ -1,0 +1,18 @@
+set manag drone 
+set base coordin 
+set coordin 
+start 
+get instanc 
+add drone 
+get instanc 
+publish 
+virtual drone 
+manag drone 
+lla coordin 
+get latitud 
+get longitud 
+get altitud 
+creat messag 
+creat drone id 
+get drone 
+virtual drone fleet factori 

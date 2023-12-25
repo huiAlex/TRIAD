@@ -1,0 +1,15 @@
+vector 
+vector 
+hash code 
+equal 
+string 
+get altitud 
+get 
+get 
+get 
+distanc 
+vector 
+lla coordin 
+laser distanc 
+travel distanc 
+travel distanc 

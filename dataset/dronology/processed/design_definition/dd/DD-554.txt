@@ -1,0 +1,1 @@
+sign next flight plan complet flight flight plan queue uav reach final waypoint current flight plan next flight plan remov queue set current execut flight plan 

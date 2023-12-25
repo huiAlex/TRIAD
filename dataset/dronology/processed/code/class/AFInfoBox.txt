@@ -1,0 +1,68 @@
+af info box 
+serial version uid 
+visibl 
+check 
+hover place 
+check click 
+check 
+status info 
+status info 
+status info 
+health 
+locat info 
+locat info 
+hover switch 
+return home 
+takeoff 
+takeoff icon 
+rtl icon 
+assign rout icon 
+resend icon 
+ok icon 
+user control 
+assign new rout 
+resend command 
+main content 
+content 
+middl content 
+content 
+uav status 
+
+
+check 
+uav status 
+hover place 
+check 
+hover place 
+visibl 
+check click 
+uav status 
+
+
+af info box 
+creat content 
+creat compon 
+creat compon 
+add listen 
+take 
+af info box 
+set check 
+get check 
+get check box 
+set hover place 
+get hover place 
+get hover switch 
+set box visibl 
+get box visibl 
+get home button 
+get rout button 
+get check click 
+set check click 
+updat 
+get 
+get status 
+get health color 
+
+box side panel contain uav inform 
+default constructor 
+expand collaps box 

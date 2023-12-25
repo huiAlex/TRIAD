@@ -1,0 +1,10 @@
+confirmSelect:1
+examinCarri:1
+operActiv:1
+visitCarri:1
+viewMask:1
+carriExamin:1
+maskView:1
+activOper:1
+carriVisit:1
+selectConfirm:1

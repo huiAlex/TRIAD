@@ -1,0 +1,11 @@
+panel 
+center lat 
+center lon 
+zoom level 
+follow 
+follow zoom 
+
+event 
+event 
+focus 
+check 

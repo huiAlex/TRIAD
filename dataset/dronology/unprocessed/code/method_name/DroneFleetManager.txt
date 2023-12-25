@@ -1,0 +1,13 @@
+getInstance
+DroneFleetManager
+hasAvailableDrone
+getAvailableDrone
+getAvailableDrone
+notifyListeners
+returnDroneToAvailablePool
+addDrone
+removeDrone
+getRegisteredDrone
+getRegisteredDrones
+unregisterDroe
+addDroneFleetListener

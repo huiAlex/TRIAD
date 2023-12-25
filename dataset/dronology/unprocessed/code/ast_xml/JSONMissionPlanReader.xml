@@ -1,0 +1,81 @@
+<Class>
+    <Id>1</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.v1</Package>
+    <ClassName>JSONMissionPlanReader</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>JSONMissionPlanReader  /** 
+ * Simple JSON Reader that converts a json String into a  {@link FullMissionPlan} object.
+ * @author Jane Cleland-Huang
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>coordinatedMission</FieldName>
+            <FieldType>FullMissionPlan</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>JSONMissionPlanReader</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>FullMissionPlan coordinatedMission</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>parseMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String content</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Map [valueMap=new Gson().fromJson(content,Map.class)]</InnerVar>
+                <InnerVar>List [plans=(List)valueMap.get("plans")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>FileNotFoundException</ExceptionType>
+                <ExceptionType>IOException</ExceptionType>
+                <ExceptionType>JSONException</ExceptionType>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>parseTasks</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>Object item</ParameterType>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Map [jsnObject=(Map)item]</InnerVar>
+                <InnerVar>String [task=(String)jsnObject.get("task")]</InnerVar>
+                <InnerVar>String [taskID]</InnerVar>
+                <InnerVar>String [duration=(String)jsnObject.get("duration")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

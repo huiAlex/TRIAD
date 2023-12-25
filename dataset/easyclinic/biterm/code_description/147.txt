@@ -1,0 +1,12 @@
+requirOper:1
+datumLaboratori:2
+laboratoriDatum:2
+findInform:1
+laboratoriNew:1
+laboratoriInsert:1
+newLaboratori:1
+operRequir:1
+laboratoriManag:3
+managLaboratori:1
+informFind:1
+insertLaboratori:1

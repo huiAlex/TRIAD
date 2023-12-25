@@ -1,0 +1,69 @@
+map draw util 
+logger 
+leaflet map 
+util 
+way point marker 
+way point marker 
+flight rout 
+flight rout 
+marker 
+marker 
+drone icon focus 
+drone icon 
+drone icon select 
+dot icon 
+map compon 
+provid 
+flight manag servic 
+drone setup servic 
+achn 
+anch 
+
+af map compon 
+
+leaflet map 
+map compon 
+focus 
+check 
+focus 
+check 
+focus 
+check 
+focus 
+check 
+coordin 
+ 
+
+af map compon 
+waypoint 
+
+map draw util 
+init connect 
+add activ flight rout 
+updat activ flight rout 
+updat drone marker 
+add drone marker 
+next reach 
+
+util class draw marker uav icon map need addit cleanup refactor 
+ 
+function get flight rout dronolog core draw map 
+drone focus af info panel 
+flight rout orang drone checkbox check af info panel 
+rout black 
+ 
+updat flight rout 
+delet old add new redraw line differ color waypoint reach drone focus af info panel 
+flight rout orang drone checkbox check af info panel 
+rout black 
+ 
+function updat posit drone icon map drone focus af info panel 
+flight rout orang drone checkbox check af info panel 
+rout black 
+ 
+function add icon map repres drone posit 
+drone focus af info panel 
+flight rout orang drone checkbox check af info panel 
+rout black 
+ 
+assist logic updat flight rout 

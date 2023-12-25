@@ -1,0 +1,9 @@
+contain implement:nsubj
+rout flight:compound
+implement rout:nmod
+contain seri:obj
+seri waypoint:nmod
+datum addit:amod
+datum meta:compound
+seri datum:nmod
+waypoint datum:conj

@@ -1,0 +1,4 @@
+[SUMMARY]
+Create a table (grid) view of all the waypoints added to the map
+[DESCRIPTION]
+"Put the table view below the map (for now).  This table should be synced with the map when either the table or the route on the map changed."

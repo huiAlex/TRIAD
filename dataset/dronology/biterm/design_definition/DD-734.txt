@@ -1,0 +1,4 @@
+commandUav:1
+vectorVeloc:1
+specifiVector:1
+specifiUse:1

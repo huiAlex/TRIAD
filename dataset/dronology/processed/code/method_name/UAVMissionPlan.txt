@@ -1,0 +1,15 @@
+uav mission plan 
+execut task 
+activ next task 
+get uav id 
+set coordin altitud 
+get coordin altitud 
+activ task 
+add task 
+build synch point 
+task 
+task count 
+expand task 
+equal 
+hash code 
+get start rout waypoint 

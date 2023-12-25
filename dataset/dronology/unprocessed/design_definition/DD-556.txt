@@ -1,0 +1,4 @@
+[SUMMARY]
+Executing flight plan associated with UAV
+[DESCRIPTION]
+The currently executing flight plan ID is associated with the UAV executing it.

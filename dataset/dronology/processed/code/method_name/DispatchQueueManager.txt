@@ -1,0 +1,13 @@
+get groundstationid 
+dispatch queue manag 
+post drone status updat 
+forward valid 
+regist new drone 
+creat dispatch thread 
+creat monitor dispatch thread 
+tear 
+get outgo command queue 
+send 
+post monitor messag 
+post handshak messag 
+regist safeti valid 

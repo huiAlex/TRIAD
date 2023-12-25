@@ -1,0 +1,2 @@
+libwarcTool:1
+toolLibwarc:1

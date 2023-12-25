@@ -1,0 +1,8 @@
+FlightSimulator
+setFlightPath
+getRemainingDistance
+computeLatitudeDelta
+computeLongitudeDelta
+computeAngle
+move
+isDestinationReached

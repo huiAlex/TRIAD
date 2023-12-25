@@ -1,0 +1,11 @@
+doctorAnagrafica:1
+selectDoctor:1
+informRetriev:1
+registDoctor:1
+containInform:1
+guiAnagrafica:2
+informContain:1
+doctorRegist:1
+retrievInform:1
+anagraficaDoctor:1
+doctorSelect:1

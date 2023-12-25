@@ -1,0 +1,4 @@
+[SUMMARY]
+UAV activation requires unique ID
+[DESCRIPTION]
+An activation request for a UAV that is received from the _GCS_Middleware_ is only accepted if the UAV provides an ID unique from all other currently activated UAVs.

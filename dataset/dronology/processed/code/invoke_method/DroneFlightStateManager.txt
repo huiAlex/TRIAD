@@ -1,0 +1,16 @@
+get drone 
+build state machin 
+string 
+get instanc 
+publish 
+add 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+notifi state chang 
+creat 
+notifi state chang 

@@ -1,0 +1,47 @@
+<Class>
+    <Id>159</Id>
+    <Package>edu.nd.dronology.core.vehicle</Package>
+    <ClassName>IDroneCommandHandler</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>sendCommand</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IDroneCommand command</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setStatusCallbackNotifier</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+                <ParameterType>IUAVPropertyUpdateNotifier listener</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHandlerId</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,6 @@
+enablValid:1
+warcFile:1
+modulPlugin:1
+pluginModul:1
+fileWarc:1
+validEnabl:1

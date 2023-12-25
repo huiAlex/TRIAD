@@ -1,0 +1,5 @@
+planExecut:2
+executPlan:2
+uavSingl:1
+planUav:1
+planFlight:2

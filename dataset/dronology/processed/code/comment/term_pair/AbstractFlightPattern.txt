@@ -1,0 +1,5 @@
+class base:compound
+pattern class:compound
+flight predefin:amod
+class flight:nmod
+pattern exand:acl

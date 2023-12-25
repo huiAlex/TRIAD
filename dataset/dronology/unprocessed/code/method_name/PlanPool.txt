@@ -1,0 +1,10 @@
+PlanPool
+setCurrentFlightCompleted
+setNextPlanToCurrent
+addPlan
+hasPendingPlans
+getCurrentPlan
+getPendingPlans
+getCompletedPlans
+overridePlan
+cancelPendingPlans

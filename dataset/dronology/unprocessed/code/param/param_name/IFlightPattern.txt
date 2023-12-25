@@ -1,0 +1,4 @@
+synchMgr
+uavMission
+currentLocation
+targetLocation

@@ -1,0 +1,10 @@
+providLibwarc:1
+dynamLanguag:1
+languagBind:1
+wrapperSwig:1
+providInterfac:1
+bindLanguag:1
+languagDynam:1
+libwarcProvid:1
+swigWrapper:1
+interfacProvid:1

@@ -1,0 +1,7 @@
+/**
+ * 
+ * Command sent to the GCS for adjusting the state frequency.
+ * The frequency is sent in ms. 
+ * 
+ *  */
+

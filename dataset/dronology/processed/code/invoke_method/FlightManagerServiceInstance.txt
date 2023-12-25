@@ -1,0 +1,10 @@
+flight zone manag 
+plan flight 
+plan flight 
+return home 
+paus flight 
+creat info 
+get currenct flight 
+cancel pend flight 
+takeoff 
+emerg stop 

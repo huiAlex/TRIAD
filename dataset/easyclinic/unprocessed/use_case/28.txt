@@ -1,0 +1,29 @@
+Use case:
+Report examinations
+
+Description:
+It allows the operator to have a report on tests carried out in reference to visits made in outpatient
+
+Preconditions:
+The Operator has interest to have a report of tests carried out
+The Operator has been recognized by system (See UcValOp)
+
+Postconditions:
+
+Sub-flows:
+The operator activates the execution of reporting service examinations
+1 View the mask for viewing the reporting of examinations
+2 Select the storm
+3 Confirm your selection 
+4 Access to the database and found in the required training
+5 View information obtained
+
+Alternative flows:
+Operator decides to print 
+information 
+   5 1 Start printing information displayed
+   5 2 generates the report and sends it to printer
+
+Operator cancels the operation 
+   3 1 ends the use case with failure 
+   2 1 The system displays a list of examinations indicating the date, prescribed prescription, completion date, patient medical prescriber diagnosis and laboratory where the examination was carried out

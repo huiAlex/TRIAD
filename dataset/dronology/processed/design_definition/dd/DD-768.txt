@@ -1,0 +1,1 @@
+uav configur command type movement command specifi follow command type set monitor frequenc set state frequenc 

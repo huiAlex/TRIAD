@@ -1,0 +1,127 @@
+------------------------------------------------------------------   us899.c - Unit Tests for User Story 899 - Client simple enroll      September, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   The following certs are used for FQDN testing  /
+   Note: this array was generated using:  xdd -i req.der req.c  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Sign an X509 certificate request using the digest and the key passed.   Returns OpenSSL error code from X509_REQ_sign_ctx();  /
+   This function performs a basic simple enroll using   a UID/PWD to identify the client to the server.  This   is used for a variety of test cases in this module.  /
+   Simple enroll -       This is a basic test to perform a /simpleenroll using a    user ID and password to identify the client to the server.    No identity certificate is used by the client.  /
+   Simple enroll CSR       This is a basic test to perform a /simpleenroll using a    user ID and password to identify the client to the server.    No identity certificate is used by the client.   This test case uses the alternate enroll method where the CSR   is provided by the application layer rather than having libest   generate the CSR.  /
+   Simple enroll CSR - Null      This is a basic test to perform a /simpleenroll using a    user ID and password to identify the client to the server.    No identity certificate is used by the client.   This test case uses the alternate enroll method where the CSR   is provided by the application layer rather than having libest   generate the CSR.  It attempts to pass in null CSR, which should   fail.  /
+   Simple enroll CSR - corrupted       This test checks the X509_REQ helper function is working proplery.  /
+   Simple enroll - FQDN mismatch hostname in CN      This test confirms that a mismatched host name on   the server cert CN will result in an auth failure   at the TLS layer on the client side.  /
+   Simple enroll - FQDN mismatch IPv4 address in CN      This test confirms that a mismatched IP address in   the server cert CN will result in an auth failure   at the TLS layer on the client side.   Note: this test may be redundant since the IP address         matching logic only occurs when the dNSName is          used instead of the CommonName.  /
+   Simple enroll - FQDN matched wildcard in CN      This test confirms that wildcard matching logic   in the CN is working. The cert uses a wildcard   pattern of .cisco.com with a server address   of localhost.cisco.com.  /
+   Simple enroll - FQDN mismatched wildcard in CN      This test confirms that wildcard matching logic   in the CN is working. The cert uses a wildcard   pattern of .google.com with a server address   of localhost.cisco.com.  /
+   Simple enroll - FQDN matched hostname in SubjectAltName      This test confirms that a matched host name on   the server cert SubjectAltName ext will result in an auth success.   /
+   Simple enroll - FQDN mismatched hostname in SubjectAltName      This test confirms that a mismatched host name on   the server cert SubjectAltName ext will result in an auth failure.   /
+   Simple enroll - FQDN mismatched IPv4 address in SubjectAltName      This test confirms that a mismatched IPv4 address on   the server cert SubjectAltName ext will result in an auth failure.   /
+   Simple enroll - FQDN matched IPv4 address in SubjectAltName      This test confirms that a matched IPv4 address on   the server cert SubjectAltName ext will result in an auth success.   /
+   Simple enroll - FQDN matched hostname in SubjectAltName with wildcard      This test confirms that a hostname matches a wildcard pattern in   the server cert SubjectAltName ext, which will result in an auth success.   /
+   Simple enroll - FQDN mismatched hostname in SubjectAltName with wildcard      This test confirms that a hostname mismatches a wildcard pattern in   the server cert SubjectAltName ext, which will result in an auth fail.   /
+   Simple enroll - CRL check enabled on client     We enable CRL checking on the client side.  We will   generate a CRL, but the server cert will not be   revoked.  The enroll should succeed.  /
+   Simple enroll - CRL check enabled on client     We enable CRL checking on the client side.  We will   generate a CRL, the server cert will  be   revoked.  The enroll should fail.  /
+   Simple enroll - Receive Retry-After response      Client issues an Enroll request and receives   a Retry-After response.  Ensure that the   retry after value can be obtained from the client.  /
+       Read in the CA certificates      /
+       Start an instance of the EST server with        automatic enrollment enabled.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+ setup version number /
+       Add Common Name entry      /
+       Set the public key on the request      /
+       Encode using DER (ASN.1)              We have to set the modified flag on the X509_REQ because       OpenSSL keeps a cached copy of the DER encoded data in some       cases.  Setting this flag tells OpenSSL to run the ASN       encoding again rather than using the cached copy.      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Generate a CSR      /
+       Get the latest CSR attributes      /
+       Use the alternate API to enroll an existing CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the alternate API to enroll a null CSR      /
+       Cleanup      /
+       First try PEM decoding       /
+       Next try DER decoding       /
+       Next try an invalid format      /
+       Next try an invalid csr length      /
+       Next try a valid PEM encoded csr      /
+       Next try a valid DER encoded csr      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Generate a private key      /
+       Generate a new CSR      /
+       Sign the CSR      /
+       Get the latest CSR attributes      /
+       Use the alternate API to enroll an existing CSR.  This should pass.      /
+       Cleanup      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Spin up a new instance of the EST server       using a certificate that contains a       bogus hostname in the CN      /
+       Stop the existing server.  This test case needs       the server to use a different cert.      /
+       Now that all the FQDN tests are completed, start       the normal server.      /
+       Generate a CRL and append it to the CA chain       we're using on the client side.      /
+       Read in the CA certificates      /
+       Create a client context       /
+       Enable CRL checking on the client      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Revoke the server cert, generate a CRL and append it to the CA chain       we're using on the client side.      /
+       Read in the CA certificates      /
+       Create a client context       /
+       Enable CRL checking on the client      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+       Stop the existing server.  This test case needs       the server to go into manual enroll mode      /
+       Start the server up in manual enroll mode      /
+       Create a client context using the default CA certs      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+ add a suite to the registry /
+       Add the tests to the suite            IMPORTANT      Do not change the order of these tests.      Some of the tests stop the EST server and restart      it using different certs.  If you change the order      then false negatives may occur.                /
+           go get the retry duration           make sure it's set to the default value          /

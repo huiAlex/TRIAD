@@ -1,0 +1,10 @@
+returnHome:1
+planSchedul:1
+homeReturn:1
+removReturn:1
+returnPend:1
+returnPlan:1
+removPlan:1
+planCurrent:1
+issuCommand:1
+planFlight:2

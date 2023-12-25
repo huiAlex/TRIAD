@@ -1,0 +1,6 @@
+LOGGER
+currentPosition
+targetPosition
+previousDistance
+reached
+drone

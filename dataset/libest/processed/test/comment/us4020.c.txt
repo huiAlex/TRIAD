@@ -1,0 +1,127 @@
+us unit test user stori unit test client proxi mode test new api function verifi correct oper client proxi mode octob copyright cisco system right reserv 
+defin us cacert ca estca cacert crt 
+defin us server cert ca estca privat estservercertandkey pem 
+defin us server key ca estca privat estservercertandkey pem 
+defin us client cert ca estca privat estservercertandkey pem 
+defin us client key ca estca privat estservercertandkey pem 
+defin us cacert ca estca cacert crt 
+defin us server cert ca estca privat estservercertandkey pem 
+defin us server key ca estca privat estservercertandkey pem 
+defin us client cert ca estca privat estservercertandkey pem 
+defin us client key ca estca privat estservercertandkey pem 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+error check paramet api 
+test sock mode credenti pass 
+test sock mode credenti pass 
+test sock mode 
+test sock mode 
+test sock mode credenti 
+test sock mode good credenti 
+test sock mode good credenti forgotten 
+test sock mode bad credenti 
+test need certifc updat 
+test sock mode domain 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+test http proxi mode note onli non tunnel mode test tunnel mode doe work ciscoest server 
+indic client proxi support built librari 
+main function set run test return cue success success run anoth cunit error code failur 
+creat rsa keypair assign pkey return 
+int readbyt count 
+readbyt count read fh read pid max pid buf 
+read ca certif 
+start instanc est server automat enrol enabl 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat client context 
+attempt call api context 
+valid call 
+don set server 
+server empti string 
+max server 
+server long 
+don set port 
+proxi protocol invalid 
+proxi protocol invalid 
+proxi auth invalid 
+max userid 
+userid long 
+userid empti string 
+max pwd 
+pwd long 
+password empti string 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+estus estpwd 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+estus estpwd 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set sock proxi server local 
+creat client context 
+sock 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+set http proxi server local 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+add suit registri 
+client proxi mode onli support libcurl specifi 
+add test suit 
+null cu add test psuit sock mode domain instead ip address us test || 

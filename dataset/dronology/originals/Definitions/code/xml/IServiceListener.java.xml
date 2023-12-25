@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IServiceListener.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:48">package <name pos:start="1:9" pos:end="1:47"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:47">listener</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:59">import <name pos:start="3:8" pos:end="3:58"><name pos:start="3:8" pos:end="3:10">edu</name><operator pos:start="3:11" pos:end="3:11">.</operator><name pos:start="3:12" pos:end="3:13">nd</name><operator pos:start="3:14" pos:end="3:14">.</operator><name pos:start="3:15" pos:end="3:23">dronology</name><operator pos:start="3:24" pos:end="3:24">.</operator><name pos:start="3:25" pos:end="3:32">services</name><operator pos:start="3:33" pos:end="3:33">.</operator><name pos:start="3:34" pos:end="3:37">core</name><operator pos:start="3:38" pos:end="3:38">.</operator><name pos:start="3:39" pos:end="3:41">api</name><operator pos:start="3:42" pos:end="3:42">.</operator><name pos:start="3:43" pos:end="3:58">IServiceInstance</name></name>;</import>
+<import pos:start="4:1" pos:end="4:56">import <name pos:start="4:8" pos:end="4:55"><name pos:start="4:8" pos:end="4:10">edu</name><operator pos:start="4:11" pos:end="4:11">.</operator><name pos:start="4:12" pos:end="4:13">nd</name><operator pos:start="4:14" pos:end="4:14">.</operator><name pos:start="4:15" pos:end="4:23">dronology</name><operator pos:start="4:24" pos:end="4:24">.</operator><name pos:start="4:25" pos:end="4:32">services</name><operator pos:start="4:33" pos:end="4:33">.</operator><name pos:start="4:34" pos:end="4:37">core</name><operator pos:start="4:38" pos:end="4:38">.</operator><name pos:start="4:39" pos:end="4:41">api</name><operator pos:start="4:42" pos:end="4:42">.</operator><name pos:start="4:43" pos:end="4:55">ServiceStatus</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="6:1" pos:end="12:3">/**
+ * Listener interface for notifying on status changes of a {@link IServiceInstance}
+ * 
+ *  
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<interface pos:start="13:1" pos:end="21:1"><specifier pos:start="13:1" pos:end="13:6">public</specifier> interface <name pos:start="13:18" pos:end="13:33">IServiceListener</name>  <block pos:start="13:36" pos:end="21:1">{
+
+	<comment type="block" format="javadoc" pos:start="15:9" pos:end="18:11">/**
+	 * 
+	 * @param newState The new status of the server process.
+	 */</comment>
+	<function_decl pos:start="19:9" pos:end="19:58"><type pos:start="19:9" pos:end="19:19"><specifier pos:start="19:9" pos:end="19:14">public</specifier> <name pos:start="19:16" pos:end="19:19">void</name></type> <name pos:start="19:21" pos:end="19:33">statusChanged</name><parameter_list pos:start="19:34" pos:end="19:57">(<parameter pos:start="19:35" pos:end="19:56"><decl pos:start="19:35" pos:end="19:56"><type pos:start="19:35" pos:end="19:47"><name pos:start="19:35" pos:end="19:47">ServiceStatus</name></type> <name pos:start="19:49" pos:end="19:56">newState</name></decl></parameter>)</parameter_list>;</function_decl>
+
+}</block></interface>
+</unit>

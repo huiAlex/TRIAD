@@ -1,0 +1,12 @@
+uav id 
+uavid 
+plan 
+waypoint 
+plan 
+waypoint 
+uavid 
+uavid 
+uavid 
+uavid 
+altitud 
+uavid 

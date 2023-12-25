@@ -1,0 +1,13 @@
+mission plan 
+load mission 
+add uav 
+remov uav 
+add task 
+mission activ 
+build synch point 
+check activ task 
+expand task 
+build 
+run pre check 
+check distanc 
+cancel mission 

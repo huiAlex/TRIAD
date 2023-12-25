@@ -1,0 +1,10 @@
+get descript 
+set descript 
+set categori 
+get categori 
+get waypoint 
+add waypoint 
+set takeoff altitud 
+add waypoint 
+remov waypoint 
+remov waypoint 

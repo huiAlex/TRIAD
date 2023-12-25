@@ -1,0 +1,17 @@
+Class: Examination
+Date: 14/09/2003
+Version: 0 01 000
+
+Description: Contains data of a survey that was prescribed in a visit held in outpatient
+
+Attributes:
+Data;Private;Data on where the patient has carried out the examination
+Diagnosis;Private; diagnosis made by medical diagnosis
+Results; Private; Individual results
+
+Methods:
+create; Public;Creates a new object of type Examination
+delete;Public;Deletes an Examination
+save; Public ;Stores data from an Examination within the SIO
+GetAttributes;Public;find all information on an Examination
+setAttributes; Public;Sets the attributes of an Examination

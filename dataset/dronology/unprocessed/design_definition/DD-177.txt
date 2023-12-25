@@ -1,0 +1,4 @@
+[SUMMARY]
+WGS-84 position reckoning
+[DESCRIPTION]
+Position reckoning shall utilize the WGS-84 reference system.

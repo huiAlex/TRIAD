@@ -1,0 +1,7 @@
+activUav:2
+uavActiv:2
+planSchedul:1
+schedulPlan:1
+deactivUav:3
+uavPhysic:1
+planFlight:1

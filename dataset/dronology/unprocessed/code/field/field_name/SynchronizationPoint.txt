@@ -1,0 +1,4 @@
+synchName
+collaborators
+collaborators
+synchronizationState

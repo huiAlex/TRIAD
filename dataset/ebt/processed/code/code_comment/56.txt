@@ -1,0 +1,5 @@
+event parser constructor 
+initi databas connect 
+check subscript exist 
+insert subscript subscript tabl 
+delet subscript subscript tabl 

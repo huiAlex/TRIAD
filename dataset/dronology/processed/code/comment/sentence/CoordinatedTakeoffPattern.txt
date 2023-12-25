@@ -1,0 +1,2 @@
+Predefined pattern for coordinated take-off that is expanded as part of a  { PatternTask} in a { FullMissionPlan}.
+/

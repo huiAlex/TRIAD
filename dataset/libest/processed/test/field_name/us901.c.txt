@@ -1,0 +1,35 @@
+us pkcs req 
+us enrol url 
+us cacert url 
+us pkcs ct 
+us uidpwd good 
+us uidpwd bad 
+us server port 
+us cacert 
+us explicit cert 
+us explicit key 
+us implicit cert 
+us implicit key 
+us revok cert 
+us revok key 
+us selfsign cert 
+us selfsign key 
+us cacert 
+us extcert 
+us server cert 
+us server key 
+us server certkey 
+us cacert 
+us explicit cert 
+us explicit key 
+us implicit cert 
+us implicit key 
+us revok cert 
+us revok key 
+us selfsign cert 
+us selfsign key 
+us cacert 
+us extcert 
+us server cert 
+us server key 
+us server certkey 

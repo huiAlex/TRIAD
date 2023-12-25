@@ -1,0 +1,1 @@
+dialog public dialog jframe parent boolean modal super parent modal content pane set layout new border layout set titl `` set `` dialog privat jtext area text

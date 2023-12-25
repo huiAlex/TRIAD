@@ -1,0 +1,20 @@
+add 
+drone initi info 
+monitor dispatch thread 
+get uavid 
+get instanc 
+initi drone 
+add 
+get instanc 
+unregist connect 
+creat monitor dispatch thread 
+string 
+regist new drone 
+status dispatch thread 
+get home 
+get 
+forward valid 
+get 
+get safeti case 
+regist new drone 
+get safeti case 

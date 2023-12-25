@@ -1,0 +1,3 @@
+messag monitor:compound
+receiv messag:nsubj
+uav specif:amod

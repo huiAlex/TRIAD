@@ -1,0 +1,28 @@
+return drone avail pool 
+notifi listen 
+get instanc 
+publish 
+stop 
+notifi listen 
+get 
+remov drone 
+add 
+get regist drone 
+add 
+drone except 
+get drone 
+drone except 
+get drone 
+creat messag 
+drone except 
+get drone 
+get drone 
+drone ad 
+drone remov 
+get drone 
+get drone 
+get drone 
+drone fleet manag 
+get drone 
+equal 
+add 

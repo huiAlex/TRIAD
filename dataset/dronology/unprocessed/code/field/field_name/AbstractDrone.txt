@@ -1,0 +1,6 @@
+LOGGER
+basePosition
+currentPosition
+droneName
+droneStatus
+mgdDrone

@@ -1,0 +1,6 @@
+logger 
+base posit 
+current posit 
+drone 
+drone status 
+mgd drone 

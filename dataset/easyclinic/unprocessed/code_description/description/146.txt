@@ -1,0 +1,12 @@
+Class: MediciManager
+Date: 16/09/2003
+Version: 0.01.000
+Description: Manage operations that require access to anagrafica data of doctors who are at outpatient.
+
+Attributes:
+Methods:
+delMedico; Public;Manages the disposal of data details of a doctor.
+editMedico; Public; Manages the change of anagrafica data of a doctor.
+getElencoMedici;Public;Finding the anagrafica data of all doctors.
+getMedicoAt;Public;Raising the anagrafica of a doctor.
+NewMedico;Public;Manage the insertion of a new doctor.

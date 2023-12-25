@@ -1,0 +1,12 @@
+set gimbal target command 
+serial version uid 
+
+
+uavid 
+coord 
+
+lla coordin 
+
+set gimbal target command 
+
+ 

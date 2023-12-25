@@ -1,0 +1,29 @@
+Use case:
+Validate operator
+
+Description:
+He works to perform the functions necessary to authenticate an operator
+
+Preconditions:
+It's Interest to make their validation in order to use the all features available in system
+
+Postconditions:
+The Operator is not recognized by system
+The Operator is recognized by system and enabled it
+
+Sub-flows:
+The operator tries to log on system
+1 View the mask for validation of operator
+2 Inserts login and password
+3 Confirm data
+4 verify login and identify password of a operator within the SIO
+5 allows access
+6 View the main mask
+
+
+Alternative flows:
+Operator cancels the validation operation
+   3 1 System: ends the execution of use case with failure
+Validation Failed
+   4 1 System: Show appropriate message
+   4 2 System: take back the execution by 1 point and underpins the fields of the form with data inserted by user

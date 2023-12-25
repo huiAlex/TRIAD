@@ -1,0 +1,8 @@
+attribut frequenc 
+attribut altitud 
+attribut speed 
+attribut mode 
+attribut 
+attribut 
+attribut 
+attribut success 

@@ -1,0 +1,7 @@
+layout main:amod
+flight activ:amod
+layout flight:nmod
+mode determin:dep
+continu map:nsubj
+determin continu:advcl
+continu follow:obl

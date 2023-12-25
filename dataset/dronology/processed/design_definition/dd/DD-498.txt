@@ -1,0 +1,1 @@
+mission plan support synchron wait uav execut flight plan reach synchron point follow delay task wait proceed delay specifi second expir 

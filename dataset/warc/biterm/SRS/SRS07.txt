@@ -1,0 +1,12 @@
+recordWarc:2
+enablDevelop:1
+recordValid:1
+availMake:1
+makeAvail:1
+creatAvail:1
+recordType:1
+warcRecord:2
+availCreat:1
+typeRecord:1
+developEnabl:1
+validRecord:1

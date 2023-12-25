@@ -1,0 +1,13 @@
+VirtualDrone
+takeOff
+flyTo
+land
+getBatteryStatus
+move
+setVoltageCheckPoint
+isDestinationReached
+setGroundSpeed
+setVelocity
+sendCommand
+resendCommand
+getLatestDroneSnapshot

@@ -1,0 +1,8 @@
+requestFromServer
+transmitToServer
+addItemChangeListener
+removeItemChangeListener
+getItems
+getItem
+createItem
+deleteItem

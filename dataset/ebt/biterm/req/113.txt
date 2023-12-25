@@ -1,0 +1,3 @@
+eventSpecul:1
+messagEvent:1
+eventEvolutionari:1

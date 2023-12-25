@@ -1,0 +1,4 @@
+wrapperSwig:1
+wrapperUse:1
+useWrapper:1
+swigWrapper:1

@@ -1,0 +1,5 @@
+get 
+timestamp 
+string 
+json string 
+get properti 

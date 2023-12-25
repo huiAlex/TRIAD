@@ -1,0 +1,2 @@
+informUav:2
+uavActiv:1

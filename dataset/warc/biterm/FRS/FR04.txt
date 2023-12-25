@@ -1,0 +1,8 @@
+typeWarc:1
+availMake:1
+makeAvail:1
+recordType:1
+creatAvail:1
+availCreat:1
+warcType:1
+typeRecord:1

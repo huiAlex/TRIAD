@@ -1,0 +1,46 @@
+------------------------------------------------------------------   us3612.c - Unit Tests for User Story US3612 - Encrypted Private Key Support         July, 2016     Copyright (c) 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------ /
+   Key wrap algorithm optionally used to protect private keys  /
+   The following certs are used for FQDN testing  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Simple Enroll b- client   Load in a password prortected private key with   the correct passphrase and attempt to enroll for a certificate  /
+   Simple enroll CSR     Load in a password protected private key with the incorrect password   and attempt to enroll for a certificate. This will fail.  /
+   Simple enroll CSR     Change the password used by the callback after reading   in the protected private key file.  /
+   Test key generation utility functions   and associated password callbacks  /
+       Generate an EC key      /
+       Hard code a password for this suite      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in our test private key       generated via the command below:             openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+        Create a client context       /
+        Set the authentication mode to use a user id/password       /
+        Set the EST server address/port       /
+        Read in our test private key        generated via the command below:               openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096       /
+        Get the latest CSR attributes       /
+        Use the simplified API to enroll a CSR       /
+        Cleanup       /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in our test private key       generated via the command below:             openssl genrsa -aes128 -passout pass:us3612 -out us3612_key.pem 4096      /
+       Change out the password, EVP_PKEY should remain unaffected      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Generate an RSA key without a password      /
+       Generate an RSA key with password      /
+       Generate an EC key without a password      /
+       Generate an EC key with a password      /
+ add a suite to the registry /
+      Add the tests to the suite     /

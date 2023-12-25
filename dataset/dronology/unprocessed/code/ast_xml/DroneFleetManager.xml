@@ -1,0 +1,301 @@
+<Class>
+    <Id>12</Id>
+    <Package>edu.nd.dronology.core.fleet</Package>
+    <ClassName>DroneFleetManager</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>DroneFleetManager  /** 
+ * Holds a fleet of virtual or physical drones.&lt;br&gt; When activated, UAVs are registered with the fleet manager and can be retrieved for assigning routes to them.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>INSTANCE</FieldName>
+            <FieldType>DroneFleetManager</FieldType>
+        </Field>
+        <Field>
+            <FieldName>registeredDrones</FieldName>
+            <FieldType>ConcurrentSkipListMap</FieldType>
+        </Field>
+        <Field>
+            <FieldName>registeredDrones</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>availableDrones</FieldName>
+            <FieldType>Queue</FieldType>
+        </Field>
+        <Field>
+            <FieldName>availableDrones</FieldName>
+            <FieldType>ManagedDrone</FieldType>
+        </Field>
+        <Field>
+            <FieldName>busyDrones</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>busyDrones</FieldName>
+            <FieldType>ManagedDrone</FieldType>
+        </Field>
+        <Field>
+            <FieldName>listeners</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>listeners</FieldName>
+            <FieldType>DroneFleetListener</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>getInstance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>DroneFleetManager</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>DroneFleetManager</MethodName>
+            <MethodComment>/** 
+ * Specifies whether virtual or physical drones will be created according to the previously specified runtime drone type. (See RuntimeDroneTypes.java)
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hasAvailableDrone</MethodName>
+            <MethodComment>/** 
+ * Checks for an available drone from the fleet.
+ * @return true if drone is available, false if it is not.
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["Drones available: " + availableDrones.size()]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAvailableDrone</MethodName>
+            <MethodComment>/** 
+ * Returns the next available drone. Currently uses FIFO to recycle drones.
+ * @return
+ */
+</MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAvailableDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType>String designatedDroneId</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>notifyListeners</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean add</ParameterType>
+                <ParameterType>ManagedDrone managedDrone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Consumer&lt;DroneFleetListener&gt; [update]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>listeners;forEach;[update]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>returnDroneToAvailablePool</MethodName>
+            <MethodComment>/** 
+ * When a drone completes a mission, returns it to the pool of available drones.
+ * @param drone
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>ManagedDrone drone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>availableDrones;offer;[drone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>ManagedDrone managedDrone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>registeredDrones;put;[managedDrone.getDroneName(), managedDrone]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;returnDroneToAvailablePool;[managedDrone]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;notifyListeners;[true, managedDrone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>removeDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>ManagedDrone managedDrone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [value=registeredDrones.remove(managedDrone.getDroneName())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["Drone '" + managedDrone.getDroneName() + "' removed from available drone pool"]</InnerMethodInvoke>
+                <InnerMethodInvoke>DronologyMonitoringManager.getInstance();publish;[MessageMarshaller.createMessage(MessageType.PHYSICAL_UAV_DEACTIVATED,managedDrone.getDroneName())]</InnerMethodInvoke>
+                <InnerMethodInvoke>availableDrones;remove;[value]</InnerMethodInvoke>
+                <InnerMethodInvoke>value;stop;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;notifyListeners;[false, managedDrone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRegisteredDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRegisteredDrones</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>unregisterDroe</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>ManagedDrone [managedDrone=getRegisteredDrone(id)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;removeDrone;[managedDrone]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addDroneFleetListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>DroneFleetListener listener</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>listeners;add;[listener]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

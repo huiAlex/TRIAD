@@ -1,0 +1,11 @@
+event processor 
+window close 
+doubl click event 
+popup open action perform 
+popup action perform 
+delet event 
+delet relat event 
+add subscript 
+updat 
+check subscript 
+analyz check subscript 

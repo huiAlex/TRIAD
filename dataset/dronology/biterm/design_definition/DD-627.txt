@@ -1,0 +1,4 @@
+uavActiv:2
+uavStatus:1
+speedGround:1
+containInform:1

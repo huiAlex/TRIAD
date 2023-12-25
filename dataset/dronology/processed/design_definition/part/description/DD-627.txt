@@ -1,0 +1,1 @@
+ui middlewar return uav proxi object contain inform activ uav includ locat batteri level ground speed health status 

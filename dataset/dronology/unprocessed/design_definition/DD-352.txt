@@ -1,0 +1,4 @@
+[SUMMARY]
+Transmit new route assignments to UI Middleware
+[DESCRIPTION]
+When routes are assigned to a UAV a request shall be sent to the _UIMiddleware_ to update the assignment in Dronology.

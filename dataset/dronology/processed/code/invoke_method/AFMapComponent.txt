@@ -1,0 +1,139 @@
+map draw util 
+add drone marker 
+add activ flight rout 
+set averag center 
+creat way point popup 
+creat drone popup 
+set center 
+set zoom level 
+get zoom level 
+updat drone marker 
+updat activ flight rout 
+get compon index 
+get instanc 
+get servic 
+get servic 
+get servic 
+get activ uav 
+get current flight 
+set center 
+get servic 
+get activ uav 
+string 
+set center 
+get content 
+get locat 
+get 
+get locat 
+get 
+get content 
+get locat 
+get 
+get locat 
+get 
+get compon index 
+get activ uav 
+get latitud 
+get longitud 
+get compon index 
+get compon index 
+set center 
+set center 
+af follow bar 
+updat uav 
+get id 
+equal 
+get waypoint 
+get waypoint 
+get zoom level 
+get current flight 
+get zoom level 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+creat content 
+set box visibl 
+get rout button 
+get home button 
+get hover switch 
+get check box 
+get id 
+equal 
+get id 
+equal 
+string 
+get id 
+af info box 
+get box 
+get num uav 
+get latitud 
+get longitud 
+get servic 
+get servic 
+get latitud 
+get longitud 
+get waypoint 
+get latitud 
+get longitud 
+get compon 
+get 
+equal 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+set check 
+set hover place 
+updat 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+get 
+get latitud 
+get longitud 
+get check 
+get hover place 
+get check box 
+get id 
+get id 
+equal 
+get id 
+get id 
+equal 
+get id 
+get id 
+equal 
+get id 
+get id 
+equal 
+get latitud 
+get longitud 
+get compon 
+get 
+equal 
+set hover place 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+get coordin 
+get altitud 
+get approachingspe 
+get 
+get compon 
+get 
+equal 
+get compon 
+get 
+equal 
+get hover place 
+set check 
+set check 
+get 
+get 

@@ -1,0 +1,6 @@
+drone initi info 
+get mode 
+get type 
+get initi locat 
+get safeti inform 
+set safeti inform 

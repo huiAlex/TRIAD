@@ -1,0 +1,12 @@
+<Class>
+    <Id>31</Id>
+    <Package>edu.nd.dronology.services.core.message</Package>
+    <ClassName>InfoNotification</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList/>
+</Class>

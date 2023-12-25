@@ -1,0 +1,5 @@
+clear vector 
+add event rect 
+add line 
+add line 
+event shape 

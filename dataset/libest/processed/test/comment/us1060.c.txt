@@ -1,0 +1,21 @@
+us unit test user stori tls srp support server proxi copyright cisco system right reserv 
+simpl callback use overrid default log facil libest ll use look specif debug output 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+worker entri test matrix abov read configur entri configur server client need attempt simpl enrol use curl client argument index entri tabl abov 
+test case run test matrix 
+test case verifi happi path est proxi configur srp mode client attempt use srp connect proxi server doe use srp perform simpl enrol oper 
+test case verifi simpl enrol fail est client provid bad srp password connect proxi server doe use srp 
+test case verifi simpl enrol fail est client provid bad http password srp use connect proxi server doe use srp 
+test case verifi simpl enrol work est client provid http password srp use connect proxi server doe use srp http auth disabl proxi 
+initi critic section window 
+start instanc est server automat enrol enabl 
+start instanc proxi srp enabl 
+read ca certif use client side api test 
+stop server restart make sure correct mode 
+set server http auth configur 
+restart est server srp disabl 
+sinc pass valid srp userid password expect server respond success 
+add suit registri 
+add test suit import chang order test test stop est server restart use differ cert chang order fals negat occur 
+srp disabl test case use client certif 

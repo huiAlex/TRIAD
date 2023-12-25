@@ -1,0 +1,2 @@
+connectUav:1
+supportVehicl:1

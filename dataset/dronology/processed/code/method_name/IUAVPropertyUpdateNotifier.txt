@@ -1,0 +1,7 @@
+updat 
+updat coordin 
+updat drone state 
+updat batteri level 
+updat veloc 
+updat collis avoid 
+updat mode 

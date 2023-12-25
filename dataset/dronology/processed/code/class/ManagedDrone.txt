@@ -1,0 +1,124 @@
+manag drone 
+logger 
+cont 
+limit 
+executor servic 
+drone 
+drone state 
+drone safeti state 
+flight director 
+target altitud 
+halt timer 
+current halt timer 
+goal 
+goal 
+activ goal 
+activ goal 
+command queue 
+command queue 
+complet command 
+complet command 
+current command 
+current executor 
+messeng 
+mailbox capac 
+fifo mailbox 
+mailbox 
+mailbox 
+executor factori 
+start gate 
+
+drone flight state manag 
+
+drone 
+target altitud 
+target coordin 
+speed 
+haltinm 
+command 
+observ 
+ 
+goal 
+msg 
+msg 
+msg 
+msg 
+msg 
+msg 
+flight direct 
+ref 
+command 
+goal 
+
+lla coordin 
+abstract drone command 
+
+manag drone 
+run 
+get messeng 
+await start 
+return home 
+set target altitud 
+take 
+fli 
+get coordin 
+start 
+start 
+run 
+permiss takeoff 
+get drone 
+land 
+halt place 
+resum flight 
+get flight mode state 
+get base coordin 
+send command 
+stop 
+emerg stop 
+resend command 
+get snapshot 
+updat 
+updat goal 
+process messag 
+process messag 
+process get snapshot messag 
+process updat guidanc messag 
+process assign flight messag 
+process unassign flight messag 
+process goal updat messag 
+notifi state chang 
+assign flight 
+run 
+unassign flight 
+check end flight 
+get flight safeti mode state 
+fli drone 
+complet 
+updat guidanc 
+clear goal 
+add goal 
+
+handler class virtual drone physic drone 
+handl basic function independ virtual physic endpoint 
+contain inform coordin state flight instruct 
+ 
+construct drone 
+get messeng associ drone 
+client code need access drone function messeng 
+oper 
+ 
+block manag drone run method call 
+ 
+ 
+control takeoff drone 
+deleg flyto behavior virtual physic drone 
+get current coordin virtual physic drone 
+ 
+land drone 
+deleg land function virtual physic drone 
+temporarili halt 
+temporarili halt 
+return current flight mode state 
+sign flight direct manag drone 
+remov assign flight 
+ 

@@ -1,0 +1,8 @@
+/**
+	 * 
+	 * Command sent to the GCS for taking off to a given alitude.
+	 * The altitude is specified in meter.
+	 * 
+	 * 
+	 * 	 */
+

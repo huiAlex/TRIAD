@@ -1,0 +1,5 @@
+specul gui 
+action perform 
+pull valu door 
+send queri server 
+main 

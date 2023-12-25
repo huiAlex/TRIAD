@@ -1,0 +1,15 @@
+us cacert 
+us cacert 
+us server cert 
+us server key 
+us cacert 
+us cacert 
+us server cert 
+us server key 
+us uid 
+us pwd 
+us server port 
+us server ip 
+us attr pop onli 
+us attr cn onli 
+us attr test 

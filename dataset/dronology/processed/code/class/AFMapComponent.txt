@@ -1,0 +1,72 @@
+af map compon 
+serial version uid 
+leaflet map 
+drone 
+drone 
+current flight 
+current flight 
+servic 
+flight manag servic 
+provid 
+follow 
+follow zoom 
+content 
+follow layout 
+follow bar 
+layout 
+popup 
+drone popup 
+panel 
+drawingutil 
+
+
+panel 
+center lat 
+center lon 
+zoom level 
+follow 
+follow zoom 
+
+event 
+event 
+focus 
+check 
+
+
+af map compon 
+set center 
+set zoom level 
+get center lat 
+get center lon 
+get zoom level 
+get map instanc 
+set averag center 
+get follow 
+set follow 
+get follow zoom 
+set follow zoom 
+follow drone 
+mous 
+creat way point popup 
+creat drone popup 
+mous 
+get waypoint listen 
+get drone listen 
+refresh 
+
+map compon activ flight ui 
+function set center zoom map includ drone flight rout 
+find averag latitud longitud first 
+find point farthest center base zoom level point 
+ 
+ 
+ 
+function set center map averag drone follow 
+constant chang drone fli 
+drone map follow 
+listen af info box popup drone just hover 
+ 
+ 
+listen popup inform certain waypoint 
+virtual same listen use flight rout ui 
+ 

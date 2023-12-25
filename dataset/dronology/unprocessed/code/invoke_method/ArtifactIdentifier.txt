@@ -1,0 +1,8 @@
+add
+equals
+equals
+hashCode
+hashCode
+ArtifactIdentifier
+toString
+finalize

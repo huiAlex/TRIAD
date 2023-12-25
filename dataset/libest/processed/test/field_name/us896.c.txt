@@ -1,0 +1,16 @@
+client ut cacert 
+us cacert 
+us trust cert 
+us server certkey 
+client ut cacert 
+us cacert 
+us trust cert 
+us server certkey 
+client ut pubkey 
+us server port 
+us server ip 
+test short attr 
+test long attr 
+test corrupt attr 
+test corrupt attr 
+est ut max cmd len 

@@ -1,0 +1,12 @@
+estClient:3
+performCheck:1
+useCertif:1
+authentClient:1
+certifServer:2
+serverEst:1
+estServer:1
+requirAuthent:1
+clientEst:3
+suitCipher:3
+certifUse:1
+authentCertif:1

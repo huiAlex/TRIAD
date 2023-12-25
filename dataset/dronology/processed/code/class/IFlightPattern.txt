@@ -1,0 +1,18 @@
+flight pattern 
+
+
+synch mgr 
+uav mission 
+current locat 
+target locat 
+
+uav mission plan 
+lla coordin 
+lla coordin 
+
+initi 
+expand flight pattern 
+get task 
+
+interfac flight pattern implement expand sever differ mission task 
+ 

@@ -1,0 +1,16 @@
+generat privat key 
+auth credenti token cb 
+auth credenti basic cb 
+client manual cert verifi 
+us simpl enrol 
+us simpl reenrol 
+us clean 
+us start server 
+us stop server 
+us init suit 
+us destroy suit 
+us test 
+us test 
+us test 
+us test 
+us add suit 

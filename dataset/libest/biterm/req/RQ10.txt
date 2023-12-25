@@ -1,0 +1,7 @@
+keyGenerat:1
+estClient:1
+requestCertif:1
+generatKey:1
+pairKey:1
+clientEst:1
+requestClient:1

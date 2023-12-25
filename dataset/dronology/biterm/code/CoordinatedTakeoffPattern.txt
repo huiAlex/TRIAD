@@ -1,0 +1,3 @@
+coordinAltitud:1
+missionPlan:1
+flightPattern:2

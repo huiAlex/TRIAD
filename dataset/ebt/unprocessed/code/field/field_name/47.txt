@@ -1,0 +1,6 @@
+serverIP
+centerPanel
+driverPanel
+driverInnerPanel
+impactPanel
+impactInnerP

@@ -1,0 +1,4 @@
+ui assign new rout uav 
+ 
+ 
+remov rout af drag layout 

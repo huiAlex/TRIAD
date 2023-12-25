@@ -1,0 +1,9 @@
+name
+id
+category
+dateModified
+dateCreated
+waypoint
+waypoint
+length
+description

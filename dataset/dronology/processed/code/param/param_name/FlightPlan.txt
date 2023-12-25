@@ -1,0 +1,7 @@
+plan 
+way point 
+uavid 
+plan 
+way point add 
+drone 
+uavid 

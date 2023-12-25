@@ -1,0 +1,20 @@
+state messag type adapt 
+logger 
+
+
+element 
+map type 
+arg 
+map object 
+itemnam 
+map object 
+itemnam 
+map object 
+itemnam 
+
+
+deseri 
+deseri batteri status 
+deseri lla coordin 
+deseri vector 
+

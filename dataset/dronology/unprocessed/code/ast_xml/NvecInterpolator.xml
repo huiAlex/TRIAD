@@ -1,0 +1,89 @@
+<Class>
+    <Id>134</Id>
+    <Package>edu.nd.dronology.core.simulator.nvecsimulator</Package>
+    <ClassName>NvecInterpolator</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>NvecInterpolator  /** 
+ * @author Michael Murphy
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>TOLERANCE</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>mid</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector a</ParameterType>
+                <ParameterType>NVector b</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [x=average(a.getX(),b.getX())]</InnerVar>
+                <InnerVar>double [y=average(a.getY(),b.getY())]</InnerVar>
+                <InnerVar>double [z=average(a.getZ(),b.getZ())]</InnerVar>
+                <InnerVar>double [alt=average(a.getAltitude(),b.getAltitude())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>average</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>double a</ParameterType>
+                <ParameterType>double b</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>move</MethodName>
+            <MethodComment>/** 
+ * Uses the bisection method to iteratively hone in on the nvector that is metersToTravel distance away from the current n-vector along the path that goes from current to target. A path can be thought of as the set of NVectors you can create by interpolating between current and target. This code takes advantage of this to find the NVector on this path that is the right distance away from the current distance.
+ * @param current drone current position
+ * @param target drone target position
+ * @param metersToTravel the distance the drone should travel along the path from current to target
+ * @return the nvector taht is meters distance away from current along thepath that goes from current to target
+ */
+</MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector current</ParameterType>
+                <ParameterType>NVector target</ParameterType>
+                <ParameterType>double metersToTravel</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>NVector [lowBall=current]</InnerVar>
+                <InnerVar>NVector [highBall=target]</InnerVar>
+                <InnerVar>NVector [nextGuess=mid(lowBall,highBall)]</InnerVar>
+                <InnerVar>double [guessDistance=current.distance(nextGuess)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

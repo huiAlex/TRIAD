@@ -1,0 +1,6 @@
+send command:nsubj
+send set:advcl
+set groundspe:obj
+groundspe uav:nmod
+speed ground:compound
+specifi speed:nsubj

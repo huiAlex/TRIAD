@@ -1,0 +1,19 @@
+drone command 
+attribut frequenc 
+attribut altitud 
+attribut speed 
+attribut mode 
+attribut 
+attribut 
+attribut 
+attribut success 
+
+
+
+
+json string 
+get uav id 
+timestamp 
+
+interfac uav command 
+ 

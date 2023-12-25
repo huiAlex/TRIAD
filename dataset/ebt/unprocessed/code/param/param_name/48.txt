@@ -1,0 +1,13 @@
+performanceModelName
+projectName
+modulePath
+requirementId
+description
+logic
+units
+value
+impactedValue
+attribute
+logic
+value
+units

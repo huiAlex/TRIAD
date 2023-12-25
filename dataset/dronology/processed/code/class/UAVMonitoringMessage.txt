@@ -1,0 +1,14 @@
+uav monitor messag 
+serial version uid 
+messag type 
+
+
+messagetyp 
+groundstationid 
+uavid 
+
+
+uav monitor messag 
+
+monitor messag receiv gcs specif uav 
+ 

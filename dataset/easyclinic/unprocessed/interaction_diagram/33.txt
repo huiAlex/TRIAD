@@ -1,0 +1,11 @@
+Inserting anagrafica laboratory 
+
+The Operator logs in to the main form (GUIPrincipale) and selects the certified laboratories management function.
+GUIPrincipaleHandler delegates control to GUIAnagraficaLaboratorioHandler to provide the service.
+GUIAnagraficaLaboratorioHandler obtains a list of all laboratories by passing control to the instance of LaboratorioManager, which retrieves the list of instances of Laboratory and returns it to GUIAnagraficaLaboratorioHandler.
+GUIAnagraficaLaboratorioHandler displays the list of laboratories received on the GUIAnagraficaLaboratorio mask for managing the laboratory database.
+The Operator selects the register inclusion function to insert the data of a new laboratory and confirms the data.
+Control passes to the instance of GUIAnagraficaLaboratorioHandler to delegate the inclusion of a new laboratory.
+GUIAnagraficaLaboratorioHandler delegates control to LaboratorioManager to include the new laboratory by passing it to the body of Laboratory to ensure the inclusion and saving data on the new laboratory.
+LaboratorioManager returns control to GUIAnagraficaLaboratorioHandler, which deals with notification of the success of the inclusion by displaying a message on the screen for managing the laboratories (GUIAnagraficaLaboratorio).
+The feature has been described through the collaboration diagram of Fig 3.4.

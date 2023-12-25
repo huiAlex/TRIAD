@@ -1,0 +1,38 @@
+abstract server servic 
+logger 
+servic instanc 
+start 
+servic 
+servic 
+custom workspac 
+
+abstract server servic 
+
+process listen 
+process listen 
+process listen 
+custom workspac 
+process listen 
+servic class 
+
+
+abstract server servic 
+get server 
+start servic 
+stop servic 
+restart servic 
+add servic listen 
+remov servic listen 
+get server info 
+add universi servic listen 
+set workspac 
+get workspac 
+remov universi servic listen 
+init servic instanc 
+get servic info 
+get file servic info 
+stop 
+restart 
+get servic 
+get core servic 
+

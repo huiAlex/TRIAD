@@ -1,0 +1,4 @@
+manag hashtabl store key valu queri hashtabl return null empti 
+doe need creat initi key type 
+valu type 
+ 

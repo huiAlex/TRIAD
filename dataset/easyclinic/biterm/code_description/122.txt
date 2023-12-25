@@ -1,0 +1,16 @@
+classGui:2
+anagraficaLaboratori:2
+anagraficaDoctor:2
+notifiSuccess:1
+operSuccess:1
+messagNotifi:1
+notifiMessag:1
+laboratoriAnagrafica:2
+doctorAnagrafica:2
+successOper:1
+guiAnagrafica:3
+successNotifi:1
+anagraficaGui:1
+changAnagrafica:1
+anagraficaChang:1
+guiClass:2

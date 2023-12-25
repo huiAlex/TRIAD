@@ -1,0 +1,10 @@
+printCard:1
+requirOper:3
+informRetriev:5
+cardHospit:1
+recordVisit:1
+retrievInform:5
+operRequir:3
+visitRecord:1
+hospitCard:3
+cardPrint:1

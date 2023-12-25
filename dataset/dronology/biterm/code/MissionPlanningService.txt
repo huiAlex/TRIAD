@@ -1,0 +1,7 @@
+executMission:7
+planMission:2
+uavMultipl:1
+executPlan:7
+missionPlan:12
+removUav:3
+cancelMission:3

@@ -1,0 +1,1 @@
+nfr interfac implement python allow librari use nativ python programm requir knowledg intern implement libwarc 

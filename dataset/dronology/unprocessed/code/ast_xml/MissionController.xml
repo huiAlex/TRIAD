@@ -1,0 +1,137 @@
+<Class>
+    <Id>116</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.plan</Package>
+    <ClassName>MissionController</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>Runnable</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>MissionController  /** 
+ * Central control class responsible for building, initializing, and executing a {@link FullMissionPlan}.&lt;br&gt; The  {@link MissionController} periodically checks for new tasks that can beactivated and activates them on demand.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>barrier</FieldName>
+            <FieldType>RateLimiter</FieldType>
+        </Field>
+        <Field>
+            <FieldName>missionrunning</FieldName>
+            <FieldType>AtomicBoolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>missionPlan</FieldName>
+            <FieldType>IExecuteableMissionPlan</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SERVICE_EXECUTOR</FieldName>
+            <FieldType>ExecutorService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>INSTANCE</FieldName>
+            <FieldType>MissionController</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>executeMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String mission</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>FullMissionPlan [mp=new FullMissionPlan(mission)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>mp;build;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>SERVICE_EXECUTOR;submit;[this]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>executeMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IMissionPlan mission</ParameterType>
+                <ParameterType>UAVMappingInfo mapping</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>FullMissionPlan2 [mp=new FullMissionPlan2(mission)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>mp;build;[mapping]</InnerMethodInvoke>
+                <InnerMethodInvoke>SERVICE_EXECUTOR;submit;[this]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>missionrunning;getAndSet;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>LOGGER;info;["Mission complete"]</InnerMethodInvoke>
+                <InnerMethodInvoke>SynchronizationManager.getInstance();resetAltitudes;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getInstance</MethodName>
+            <MethodComment>/** 
+ * @return The singleton MissionController instance
+ */
+</MethodComment>
+            <ReturnType>MissionController</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>cancelMission</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>SynchronizationManager.getInstance();resetAltitudes;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>missionrunning;getAndSet;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>missionPlan;cancelMission;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

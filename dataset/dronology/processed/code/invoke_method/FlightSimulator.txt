@@ -1,0 +1,29 @@
+get remain distanc 
+get latitud 
+get latitud 
+get longitud 
+get longitud 
+comput latitud delta 
+get remain distanc 
+lla coordin 
+set coordin 
+comput angl 
+get latitud 
+get latitud 
+get longitud 
+get longitud 
+distanc 
+get latitud 
+get latitud 
+get longitud 
+get longitud 
+get latitud 
+get latitud 
+get longitud 
+get longitud 
+get altitud 
+distanc 
+get remain distanc 
+get remain distanc 
+comput longitud delta 
+comput latitud delta 

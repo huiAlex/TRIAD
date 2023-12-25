@@ -1,0 +1,2 @@
+abstract class rmi remot object take care registri unbind 
+ 

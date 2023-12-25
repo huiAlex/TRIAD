@@ -1,0 +1,4 @@
+serialVersionUID
+uavid1
+uavid2
+distance

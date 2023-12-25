@@ -1,0 +1,18 @@
+get instanc 
+get flight info 
+get instanc 
+plan flight 
+get instanc 
+plan flight 
+get instanc 
+return home 
+get instanc 
+paus flight 
+get instanc 
+get current flight 
+get instanc 
+cancel pend flight 
+get instanc 
+takeoff 
+get instanc 
+flight manag servic remot facad 

@@ -1,0 +1,7 @@
+realTime:1
+appliUav:1
+selectUav:1
+appliOper:1
+allowUser:1
+operUav:1
+uavSelect:1

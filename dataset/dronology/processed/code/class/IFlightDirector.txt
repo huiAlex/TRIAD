@@ -1,0 +1,24 @@
+flight director 
+
+
+way point 
+way point 
+home 
+
+waypoint 
+waypoint 
+waypoint 
+
+fli next point 
+clear way point 
+way point 
+safeti direct 
+clear current way point 
+fli home 
+readi land 
+readi take 
+set way point 
+get way point 
+add way point 
+return home 
+

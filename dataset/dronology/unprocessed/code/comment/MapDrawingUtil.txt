@@ -1,0 +1,40 @@
+/**
+ * Utility class for drawing marker and UAV icons on the map 
+ * NEEDS ADDITIONAL CLEANUP & REFACTORING!
+ * 
+ *  *
+ */
+
+/**
+	 * This function gets the flight routes from dronology core and draws them on the map.
+	 * 
+	 * 	 *          this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+	 * 	 *          this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+	 */
+
+/**
+	 * updates the flight routes. Deletes old ones, adds new ones, and redraws the lines to different colors as each waypoint is reached
+	 * 
+	 * 	 *          this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+	 * 	 *          this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+	 */
+
+/**
+	 * This function updates the position of the drone icons on the map
+	 * 
+	 * 	 *          this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+	 * 	 *          this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+	 */
+
+/**
+	 * This function adds icons on the map that represent each drone's position.
+	 * 
+	 * 	 *          this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+	 * 	 *          this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+	 */
+
+/**
+	 * assists in the logic of updating flight routes
+	 * 
+	 * 	 * 	 * 	 */
+

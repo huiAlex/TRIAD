@@ -1,0 +1,46 @@
+us unit test user stori us encrypt privat key support juli copyright cisco system right reserv 
+key wrap algorithm option use protect privat key 
+follow cert use fqdn test 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+simpl enrol client load password prortect privat key correct passphras attempt enrol certif 
+simpl enrol csr load password protect privat key incorrect password attempt enrol certif fail 
+simpl enrol csr chang password use callback read protect privat key file 
+test key generat util function associ password callback 
+generat ec key 
+hard code password suit 
+read ca certif 
+start instanc est server automat enrol enabl 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read test privat key generat command openssl genrsa ae passout pass us us key pem 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read test privat key generat command openssl genrsa ae passout pass us us key pem 
+get latest csr attribut 
+use simplifi api enrol csr 
+cleanup 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read test privat key generat command openssl genrsa ae passout pass us us key pem 
+chang password evp pkey remain unaffect 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+generat rsa key password 
+generat rsa key password 
+generat ec key password 
+generat ec key password 
+add suit registri 
+add test suit 

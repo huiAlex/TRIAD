@@ -1,0 +1,40 @@
+long 
+char 
+time 
+char 
+size 
+char 
+char 
+char 
+ 
+char 
+time 
+char 
+est ctx 
+char 
+unsign 
+int 
+unsign 
+est ctx 
+http header 
+int 
+est ctx 
+http header 
+int 
+http header 
+int 
+est oper 
+ssl 
+unsign 
+int 
+int 
+ssl 
+unsign 
+int 
+int 
+int 
+est ctx 
+ssl 
+est oper 
+unsign 
+int 

@@ -1,0 +1,22 @@
+ 
+char 
+size 
+unsign 
+tcw sock 
+tcw sock 
+tcw opt 
+char 
+unsign 
+tcw sock 
+tcw sock 
+int 
+tcw sock 
+tcw opt 
+char 
+unsign 
+tcw sock 
+tcw opt 
+char 
+unsign 
+sock type 
+tcw sock 

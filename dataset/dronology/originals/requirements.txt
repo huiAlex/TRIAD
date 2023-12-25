@@ -1,0 +1,55 @@
+RE-8 UAV State transitions When requested the _VehicleCore_ shall shall transition the UAV between states according to allowed state transitions as depicted in the UAV state transition diagram
+RE-9 ListenerNotifications If a client registers for notifications the _UIMiddleware_ shall send notifications for specific events
+RE-25 UAV Identification The _VehicleCore_ shall assign a unique ID to each activated UAV.
+RE-28 UAV Flight Plan Execution The _SingleUAVFlightPlanScheduler_ shall only execute one flight plan at a time for each UAV.
+RE-36 Only one instance of each registered drone may be active any any time The _UAVActivationManager_ shall ensure that only one instance of each registered drone is active at any time.
+RE-38 UAV type specification assignment The _VehicleCore_ shall associate a {{UAV_TYPE}} for each UAV defining its basic attributes.
+RE-77 Waypoint definition Each waypoint shall be specified using coordinates that include longitude latitude and altitude.
+RE-80 Visiting waypoints during flight plan When a flight plan is executed the _VehicleCore_ shall send the next waypoint to the UAV.
+RE-86 Managed flight plan queue The _SingleUAVFlightPlanScheduler_ shall maintain a managed list of pending flight plans for Each UAV.
+RE-100 Removal of planned flight If requested the _SingleUAVFlightPlanScheduler_ shall unassign the flight plan assigned to a UAV that is awaiting execution.
+RE-101 Assigning new flight plan upon completion of previous flight If a UAV has pending flight plans then when it reaches the final waypoint of its current flight plan the _SingleUAVFlightPlanScheduler_ shall execute the next assigned flight plan.
+RE-103 Remove pending plans when return-to-home When a UAV's current flight is cancelled the _SingleUAVFlightPlanScheduler_ shall in turn cancel all scheduled flight plans for that UAV.
+RE-108 UI middleware accepts registrations The _UIMiddleware_ shall provide an interface for registering UI clients.
+RE-110 UAV controlled by only one UI client at a time The _UIMiddleware_ shall only assign one control-client at a time for each UAV.
+RE-112 UI binding to a UAV If a command is issued by the _VaadinUI_ for an UAV the _VaadinUI_ shall request control of that UAV.
+RE-114 Display map in UI When the _RealTimeFlightUI_ is loaded a map shall be displayed.
+RE-120 Real-Time Flight UI The _RealTimeFlightUI_ shall display the location of active UAVs as icons on the map.
+RE-124 Object Avoidance When a stationary or moving object is within the proximity of a UAV the _ObjectAvoidance_ system shall issue evasive directives to the UAV
+RE-125 Reach destination while avoiding objects If a UAV takes evasive actions the system will ensure that it will eventually reach its destination
+RE-127 Onboard obstacle avoidance When a UAV has an active onboard Obstacle Avoidance then the _ObstacleAvoidance_ system shall not issue directives
+RE-160 Activation of an additional UAV detected by the GCS When a _GCS_ requests activation of a newly detected UAV the _GCSMiddleware_ shall forward the request to Dronology.
+RE-161 UAV activation The _UAVActivationManager_ shall only activate UAVs that are registered.
+RE-235 Allow reconnection of GCS to the UAV after disconnecting When the _GCS_ loses the connection to an UAV the _GCS_ shall attempt to reconnect
+RE-424 Return To Home without detours "When the ""return to home"" command is issued the _FlightManager_ shall return the UAV to its original launch location without issuing any additional waypoint or routing commands."
+RE-501 Flight route defined as waypoints The _FlightRouteManager_ shall define flight routes as an ordered sequence of waypoints in which the first waypoint represents the first target location and the final waypoint represents the final target location.
+RE-503 Valid Flight Route The _FlightRouteManager_ shall ensure that all flight routes represent a {{VALID_FLIGHT_ROUTE}}.
+RE-505 Flight route persistence The _FlightRouteManager_ shall persist flight routes.
+RE-508 Specify takeoff altitude When a flight route requires a customized takeoff altitude that differs from the system's default takeoff altitude it shall be specified in the flight route.
+RE-510 Coordinate system conversion When requested the _CoordinateSystem_ shall transform coordinates to alternate formats.
+RE-516 Calculate distances When given two coordinates the _CoordinateSystem_ shall compute the distance between them.
+RE-517 Calculate directions When given two coordinates the _CoordinateSystem_ shall compute the direction from the first coordinate to the second coordinate.
+RE-521 Maintain position during Hover In Place "When the ""hover in place"" command is issued the _FlightManager_ shall halt the UAV in place and maintain its current position."
+RE-523 Flight route assignment during Hover In Place If a flight route is assigned to a UAV which is currently hovering in place the _FlightManager_ shall assign the route and maintain the hover in place mode.
+RE-525 Rescinding Hover In Place command "If a flight plan is active and the ""hover in place"" command is rescinded the _FlightManager_ shall notify the UAV to continue to the originally designated waypoint."
+RE-531 Takeoff Altitude When a flight plan is activated for a UAV currently on the ground the _FlightSchedulingandExecution _shall notify the UAV to takeoff vertically until it reaches the prescribed altitude.
+RE-541 Predefined flight patterns The _MissionPlanner _shall manage predefined FlightPatterns
+RE-545 Cancel Mission When requested if a mission is currently active the _MissionPlanner _shall cancel the active mission.
+RE-547 Flight Plan scheduling When requested the _SingleUAVFlightPlanScheduler_ shall schedule a route for execution.
+RE-549 Manual Flight Plan Assignment If a route contains a specific {{UAV_ID}} the _SingleUAVFlightPlanScheduler_ shall assign the route to the given UAV.
+RE-551 Automatic Flight Plan Assignment If a scheduled flight is not manually assigned to a UAV the _SingleUAVFlightPlanScheduler_ shall assign the route automatically to an UAV
+RE-555 Hover at completion of flight If a UAV does not have any pending flight plans then when it reaches the final waypoint of its current flight plan the _SingleUAVFlightPlanScheduler_ shall notify the UAV to hover in place.
+RE-558 Cancel active plan If requested the _SingleUAVFlightPlanScheduler_ shall abort the currently executing flight plan of an UAV
+RE-562 Pattern-based flight path A flight pattern shall document the longitude latitude and altitude of waypoints in a flight route as offsets from the starting position of the UAV.
+RE-574 Support for GCS connected UAVs The _VehicleCore_ shall support UAVs connected via the _GCS_
+RE-576 Support for internally simulated UAVs The _VehicleCore_ shall support virtual UAVs
+RE-587 Deactivates Physical UAVs When a UAV is deactivated the _UAVActivationManager_ shall cancel all current and scheduled flight plans
+RE-589 Establish maximum number of activated UAVs When the maximum numbers of allowed activated UAVs has been reached the _UAVActivationManager_ shall reject any further activation requests.
+RE-592 UAV Registration The _UAVRegistrationManager_ shall store UAV meta-data information such as the UAV's technical characteristics
+RE-594 Simulate takeoff When given a takeoff command the _InternalSimulator_ shall move the UAV to the takeoff altitude corresponding to its current longitude and latitude.
+RE-595 Simulate goto When given a goto command the _InternalSimulator_ shall update the location of the UAV at increments of {{SIMULATION_STEP_SIZE}} meters moving it towards the target destination until the destination is reached.
+RE-596 Simulate land When given a landing command the _InternalSimulator_ shall move the UAV from to the ground altitude corresponding to its current longitude and latitude.
+RE-597 Simulate battery The _InternalSimulator_ shall approximate the state of the battery
+RE-611 Logging of Flight Plan related Events The _ActivityLogger_ shall log all flight plan related events.
+RE-616 Logging of GCS related events The _ActivityLogger_ shall log all commands sent to and messages received from a _CGS_.
+RE-626 UI middleware lists currently a

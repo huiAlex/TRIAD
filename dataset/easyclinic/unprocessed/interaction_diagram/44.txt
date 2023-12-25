@@ -1,0 +1,13 @@
+Cancel Reservation 
+
+The operator logs on to the main patient section (e.g. GUIPaziente).
+The operator selects the cancellation of a reservation.
+Control is passed to the instance of the GUIPazienteHandler, which delegates the task to manage the service to the instance of the GUIEliminaPrenotazioniHandler.
+The GUIEliminaPrenotazioniHandler requests the PrenotazioniManager to obtain a list of all reservations from the patient.
+The PrenotazioniManager retrieves the list through the reservation application and returns it to the GUIEliminaPrenotazioniHandler, which then displays the obtained data on the screen (e.g. GUIEliminaPrenotazione).
+The operator selects the reservation to be deleted, and control is passed to the instance of GUIEliminaPrenotazioneHandler.
+The GUIEliminaPrenotazioneHandler delegates the request to the PrenotazioniManager to complete the transaction of canceling the reservation.
+The PrenotazioniManager verifies that the sequence remains valid even after the elimination of the reservation.
+If the sequence is valid, the PrenotazioniManager completes the cancellation of the reservation and returns control to the GUIEliminaPrenotazioneHandler.
+The GUIEliminaPrenotazioneHandler notifies the success of the transaction with a message on the screen (e.g. GUIEliminaPrenotazione).
+This feature is described in the collaboration diagram in Fig 3 of 20.

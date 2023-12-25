@@ -1,0 +1,6 @@
+sock
+opts
+host
+port
+fd
+sock

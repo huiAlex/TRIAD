@@ -1,0 +1,1 @@
+medic contain descript doctor age outpati anno abilitazion year doctor licens practic profess creat creat new object type doctor delet delet doctor get attribut retriev inform relat doctor save provid storag data doctor sio set attribut set attribut physician 

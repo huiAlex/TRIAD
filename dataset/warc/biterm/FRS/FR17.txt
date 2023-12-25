@@ -1,0 +1,6 @@
+useLibwarc:1
+defaultCompress:1
+compressDefault:1
+libwarcUse:1
+compressFormat:1
+formatCompress:1

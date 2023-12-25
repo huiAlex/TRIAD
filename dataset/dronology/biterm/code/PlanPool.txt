@@ -1,0 +1,7 @@
+cancelPlan:2
+setPlan:2
+completPlan:4
+uavSingl:1
+statusComplet:1
+setCurrent:4
+planCurrent:2

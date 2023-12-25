@@ -1,0 +1,14 @@
+/**
+ * 
+ * Remote facade for handling UAVs.
+ * Allows initializing new UAVs. 
+ * Allows retrieving active UAVs which returns a proxy ({@link IUAVProxy}) of the actual physical or virtual uav.
+ * 
+ * 
+ *  *
+ */
+
+/**
+	 * 
+	 */
+

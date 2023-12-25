@@ -1,0 +1,2 @@
+pathSeg:1
+estServer:2

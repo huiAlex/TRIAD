@@ -1,0 +1,52 @@
+plan pool manag 
+instanc 
+logger 
+plan 
+plan 
+pend plan 
+pend plan 
+plan status chang listen 
+plan status chang listen 
+
+plan pool manag 
+
+plan 
+plan 
+uav id 
+plan 
+plan 
+uavid 
+chang plan 
+plan 
+uav id 
+listen 
+uav id 
+uav id 
+uav id 
+home plane 
+uavid 
+uavid 
+
+
+get instanc 
+add new plan 
+assign plan 
+assign pool 
+pend flight 
+get next pend plan 
+activ plan 
+check form complet plan 
+notifi plan chang 
+get current flight 
+assign plan 
+add plan status chang listen 
+get current plan 
+get pend plan 
+get complet plan 
+overrid plan 
+cancel pend plan 
+get pend plan 
+
+manag pend plan individu uav 
+activ uav plan pool track assign pend flight plan 
+ 

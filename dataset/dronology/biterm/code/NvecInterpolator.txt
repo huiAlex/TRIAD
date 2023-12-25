@@ -1,0 +1,2 @@
+positCurrent:1
+distancCurrent:1

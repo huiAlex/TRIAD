@@ -1,0 +1,4 @@
+serialVersionUID
+latitude
+longitude
+altitude

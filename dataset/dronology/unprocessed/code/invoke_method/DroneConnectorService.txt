@@ -1,0 +1,5 @@
+DroneConnectorServiceInstance
+handleConnection
+registerConnection
+unregisterConnection
+DroneConnectorService

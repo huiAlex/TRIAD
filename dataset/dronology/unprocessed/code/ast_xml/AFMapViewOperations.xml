@@ -1,0 +1,108 @@
+<Class>
+    <Id>180</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFMapViewOperations</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFMapViewOperations  /** 
+ * This is the set of map operation buttons in the AFInfoPanel
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>buttons</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>follow</FieldName>
+            <FieldType>NativeButton</FieldType>
+        </Field>
+        <Field>
+            <FieldName>viewAll</FieldName>
+            <FieldType>NativeButton</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFMapViewOperations</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [layout=new VerticalLayout()]</InnerVar>
+                <InnerVar>Label [caption=new Label("Map View Operations")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>layout;addStyleName;["af_operations_group"]</InnerMethodInvoke>
+                <InnerMethodInvoke>follow;setCaptionAsHtml;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>viewAll;setCaptionAsHtml;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addComponents;[follow, viewAll]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponents;[caption, buttons]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[layout]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFollowButton</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NativeButton</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getViewButton</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NativeButton</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addOnClickListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>LayoutClickListener listener</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>buttons;addLayoutClickListener;[listener]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

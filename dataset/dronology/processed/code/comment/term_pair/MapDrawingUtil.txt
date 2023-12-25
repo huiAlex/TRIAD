@@ -1,0 +1,72 @@
+class util:amod
+need class:nsubj
+class draw:acl
+icon marker:compound
+marker uav:conj
+icon uav:compound
+draw icon:obj
+draw map:obl
+cleanup addit:amod
+need cleanup:obj
+need refactor:obj
+cleanup refactor:conj
+get function:nsubj
+draw function:nsubj
+rout flight:compound
+get rout:obj
+core dronolog:compound
+get core:obl
+get draw:conj
+draw map:obl
+drone focus:ccomp
+focus info panel:obl
+rout flight:compound
+rout orang:acl
+checkbox check:acl
+check info panel:obl
+black rout:nsubj
+rout flight:compound
+updat rout:dep
+add delet:nsubj
+redraw delet:nsubj
+add redraw:conj
+redraw line:obj
+color differ:amod
+redraw color:obl
+reach waypoint:nsubj
+color reach:dep
+drone focus:ccomp
+focus info panel:obl
+rout flight:compound
+rout orang:acl
+checkbox check:acl
+check info panel:obl
+black rout:nsubj
+updat function:compound
+focus updat:nsubj
+icon drone:compound
+posit icon:nmod
+icon map:nmod
+focus info panel:obl
+rout flight:compound
+rout orang:acl
+checkbox check:acl
+check info panel:obl
+black rout:nsubj
+add function:nsubj
+add icon:obj
+add map:obl
+map repres:acl
+posit drone:dep
+repres posit:obj
+drone focus:ccomp
+focus info panel:obl
+rout flight:compound
+rout orang:acl
+checkbox check:acl
+check info panel:obl
+black rout:nsubj
+assist logic:obl
+logic updat:acl
+rout flight:compound
+updat rout:obj

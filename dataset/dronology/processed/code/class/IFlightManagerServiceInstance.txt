@@ -1,0 +1,30 @@
+flight manag servic instanc 
+
+
+uavid 
+plan 
+waypoint 
+plan 
+waypoint 
+uavid 
+uavid 
+uav id 
+uavid 
+uavid 
+altitud 
+uavid 
+
+waypoint 
+waypoint 
+
+get flight 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get flight info 
+get current flight 
+cancel pend flight 
+takeoff 
+emerg stop 
+

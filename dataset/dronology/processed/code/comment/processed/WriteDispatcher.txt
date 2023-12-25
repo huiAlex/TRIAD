@@ -1,0 +1,3 @@
+writer thread take item outbound queue write socket 
+ 
+ 

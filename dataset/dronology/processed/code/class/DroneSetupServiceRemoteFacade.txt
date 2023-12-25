@@ -1,0 +1,26 @@
+drone setup servic remot facad 
+serial version uid 
+logger 
+instanc 
+
+drone setup servic remot facad 
+
+info 
+listen 
+listen 
+uavid 
+
+
+drone setup servic remot facad 
+get instanc 
+initi drone 
+add drone status chang listen 
+remov drone status chang listen 
+get activ uav 
+resend command 
+
+remot facad handl uav 
+allow initi new uav 
+allow retriev activ uav return proxi iuav proxi actual physic virtual uav 
+ 
+ 

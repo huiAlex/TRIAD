@@ -1,0 +1,18 @@
+vector 
+averag 
+averag 
+averag 
+averag 
+distanc 
+mid 
+distanc 
+mid 
+distanc 
+get 
+get 
+get 
+get 
+get 
+get 
+get altitud 
+get altitud 

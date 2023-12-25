@@ -1,0 +1,6 @@
+action for ""Open log database""
+action for "" exit""
+action for ""Open Events"" in popup menu
+action for ""Open Events""
+action for "" double click on Subscriber List""
+action for ""About""

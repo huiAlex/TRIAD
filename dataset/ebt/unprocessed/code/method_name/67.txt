@@ -1,0 +1,5 @@
+EventDetailDialog
+okButtonActionPerformed
+cancelButtonActionPerformed
+LeftListClicked
+RightListClicked

@@ -1,0 +1,41 @@
+get instanc 
+get instanc 
+notifi drone status chang 
+get instanc 
+get activ uav 
+get mode 
+get instanc 
+get activ uav 
+get instanc 
+get current plan 
+get instanc 
+get pend plan 
+get instanc 
+get activ uav 
+get instanc 
+unregist droe 
+get instanc 
+remov drone 
+cancel plan 
+notifi drone status chang 
+resend command 
+initi drone 
+initi drone 
+add 
+get instanc 
+get regist drone 
+init drone 
+get id 
+get id 
+get id 
+get id 
+get instanc 
+overrid plan 
+get instanc 
+cancel pend plan 
+get id 
+get type 
+get initi locat 
+get id 
+get type 
+get initi locat 

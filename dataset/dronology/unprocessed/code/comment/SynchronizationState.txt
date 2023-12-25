@@ -1,0 +1,6 @@
+/**
+ * Possible state of a {@link SynchronizationPoint}
+ * 
+ *  *
+ */
+

@@ -1,0 +1,43 @@
+get instanc 
+get activ uav 
+flight info 
+get instanc 
+get current plan 
+get instanc 
+get pend plan 
+get instanc 
+get complet plan 
+set waypoint 
+set drone id 
+add pend 
+set waypoint 
+set drone id 
+add complet 
+set waypoint 
+set drone id 
+add 
+set waypoint 
+set drone id 
+set current flight 
+flight plan info 
+flight plan info 
+flight plan info 
+flight plan info 
+get instanc 
+get current flight 
+get way point 
+get design drone id 
+get way point 
+get design drone id 
+get way point 
+get design drone id 
+get way point 
+get design drone id 
+get flight id 
+get flight id 
+get flight id 
+get flight id 
+get flight id 
+get flight id 
+get flight id 
+get flight id 

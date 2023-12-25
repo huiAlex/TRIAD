@@ -1,0 +1,1 @@
+fr libwarc use gzip default compress format 

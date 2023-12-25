@@ -1,0 +1,46 @@
+/**
+ * This is the side panel that contains the AFInfoBoxes with the UAV information
+ * 
+ *  *
+ */
+
+/**
+	 * Adds a box to the panel
+	 * 
+	 * 	 * 	 * 	 * 	 * 	 * 	 * 	 * 	 * 	 * 	 */
+
+/**
+	 * Removes a box from the panel
+	 * 
+	 * 	 *          the name/ID of the drone
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * Expands or collapses all the boxes
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * gets updated information from dronology about the UAV's location information and status. adds any new drones to the panel and removes any drones that were deactivated
+	 */
+

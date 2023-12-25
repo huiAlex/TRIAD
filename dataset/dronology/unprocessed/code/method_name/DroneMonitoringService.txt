@@ -1,0 +1,8 @@
+DroneMonitoringService
+getInstance
+initServiceInstance
+registerMonitoringMessageHandler
+registerMonitoringMessageHandler
+setMonitoringFrequency
+getSubscribedHandler
+unsubscribeHandler

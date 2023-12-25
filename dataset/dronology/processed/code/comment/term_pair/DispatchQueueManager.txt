@@ -1,0 +1,17 @@
+handl dispatch queue manag:nsubj
+handl incom:obj
+queue outgo:amod
+handl queue:obj
+incom queue:conj
+queue incom:amod
+contain queue:nsubj
+receiv uav state:nsubj
+contain receiv:ccomp
+receiv uav:obl
+receiv dispatch:xcomp
+dispatch physic drone:obl
+queue outgo:amod
+contain queue:nsubj
+contain drone command:obj
+contain send:parataxis
+send uav:obl

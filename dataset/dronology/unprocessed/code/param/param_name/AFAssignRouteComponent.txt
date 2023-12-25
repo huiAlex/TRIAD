@@ -1,0 +1,5 @@
+uavStatus
+sidePanel
+statusContent
+routeInfo
+index

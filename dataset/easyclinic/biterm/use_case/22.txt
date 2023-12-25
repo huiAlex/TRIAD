@@ -1,0 +1,12 @@
+accessType:1
+patientAllow:1
+patientBook:1
+informRetriev:1
+obtainPatient:1
+bookPatient:1
+patientReserv:1
+allowPatient:1
+retrievInform:1
+reservPatient:1
+patientObtain:1
+typeAccess:1

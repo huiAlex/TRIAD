@@ -1,0 +1,12 @@
+hold fleet virtual physic drone 
+activ uav regist fleet manag retriev assign rout 
+ 
+specifi virtual physic drone creat accord previous specifi runtim drone type 
+see runtim drone type java 
+check avail drone fleet 
+ 
+return next avail drone 
+current use fifo recycl drone 
+ 
+drone complet mission return pool avail drone 
+ 

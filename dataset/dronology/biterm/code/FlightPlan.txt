@@ -1,0 +1,3 @@
+assignPlan:1
+statusComplet:2
+planFlight:1

@@ -1,0 +1,6 @@
+computDistanc:2
+waypointNext:1
+coordinCurrent:1
+waypointAssign:1
+coordinUav:1
+distancCurrent:1

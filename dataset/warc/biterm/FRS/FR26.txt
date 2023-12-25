@@ -1,0 +1,4 @@
+configurFile:1
+fileSpecif:1
+fileConfigur:1
+specifFile:1

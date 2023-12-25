@@ -1,0 +1,32 @@
+Use case:
+Input anagrafica of a laboratory
+
+Description:
+It allows the operator to enter the anagrafica of a laboratory analysis or any data that the characterize
+
+Preconditions:
+The Operator has an interest to enter the age of laboratory within the SIO
+The Operator has been recognized by system (See UcValOp)
+The Operator has all the data that characterize  the anagrafica of the laboratory
+
+Postconditions:
+The data in the SIO not be modified
+The anagrafica of the laboratory is properly inserted inside the SIO
+
+Sub-flows:
+The operator activates the execution of the anagrafica input service Laboratory
+[S1] View the mask to enter information needed
+[S2] Inserts data about the anagrafica of laboratory
+[S3] Confirm placement
+[S4] Verify the data entered
+[S5] Stores data
+[S6] Notify that the operation it is finished with success
+
+Alternative flows:
+Data entered invalid
+   4-1 Display a message showing the data deemed invalid
+   4-2 Reinserts running from 1, underpinned the fields of the form with data entered
+Operator cancels operation
+   3-1 ends the execution of use case with failure
+   2-1 The anagrafica of a laboratory is characterized by the following data: name, VAT, address, city, province, CAP, additional addresses, telephone, and notes.
+       Note: In italics, data are highlighted optional whose inclusion does not affect the correct completion of the operation.

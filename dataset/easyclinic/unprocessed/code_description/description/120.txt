@@ -1,0 +1,16 @@
+Class:GUILogin
+
+Date: 16/09/2003
+Version: 0 01 000
+
+Description:Make the mask that guides Operator during the validation
+
+Attributes:
+btnAnnulla ; Private;button used to end the implementation of Easy Clinic 2003 Operator
+btnEsegui ;Private; button used to confirm data
+panelDati; Private;panel containing the text boxes where the operator enters the login
+
+Methods:
+showLoginError;Public;Show an error message if in the process of validation is not successful
+login; Public;Manages the event generated when the patient start the process of validation
+logout; Public; Manages the event when the operator leaves the system

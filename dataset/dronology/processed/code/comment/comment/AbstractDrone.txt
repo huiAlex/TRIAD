@@ -1,0 +1,3 @@
+abstract base class virtual physic drone 
+set base coordin drone base posit 
+get uniqu base coordin drone base coordin 

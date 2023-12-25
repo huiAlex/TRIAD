@@ -1,0 +1,35 @@
+<Class>
+    <Id>160</Id>
+    <Package>edu.nd.dronology.core.simulator</Package>
+    <ClassName>SimulatorFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>USE_SIMPLE_SIMULATOR</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>getSimulator</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>IFlightSimulator</ReturnType>
+            <ParameterList>
+                <ParameterType>VirtualDrone drone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

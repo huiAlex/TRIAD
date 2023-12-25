@@ -1,0 +1,14 @@
+abstract mission task 
+uav id 
+task 
+
+
+uav id 
+task 
+
+
+abstract mission task 
+get task 
+get uav id 
+get waypoint 
+

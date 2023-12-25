@@ -1,0 +1,30 @@
+add 
+reload item 
+tear 
+set 
+notifi file chang 
+get servic info 
+get instanc 
+get instanc 
+get sim scenario locat 
+get instanc 
+get 
+get instanc 
+initi drone 
+get 
+get id 
+get instanc 
+get item 
+get id 
+get 
+get id 
+add 
+get instanc 
+plan flight 
+drone initi info 
+get id 
+get waypoint 
+get 
+get 
+get 
+get start coordin 

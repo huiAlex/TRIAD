@@ -1,0 +1,12 @@
+threat handl:acl
+messag incom:amod
+handl messag:obj
+handl read dispatch:nsubj
+messag json:compound
+handl messag:obj
+messag transform:acl
+messag uav:compound
+transform messag:obl
+transform extend:parataxis
+extend abstract uav messag:obj
+handl uav messag factori:obl

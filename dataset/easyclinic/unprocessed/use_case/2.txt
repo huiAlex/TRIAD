@@ -1,0 +1,34 @@
+Use case:
+Changing anagrafica laboratory
+
+Description:
+It allows the operator to change the anagrafica of a laboratory analysis
+It deals with the modification of data about anagrafica of laboratory analysis
+
+Preconditions:
+The Operator has been recognized by system (See UcValOp) and anagrafica of laboratory is inside the SIO
+
+Postconditions:
+The anagrafica data of laboratory are not changed: remain in the first state
+The anagrafica of the laboratory is properly amended
+
+Sub-flows:
+The operator activates the execution of service changing of the anagrafica of laboratory
+1 View the list of laboratories in the SIO
+2 Select the laboratory which change the anagrafica
+3 Confirm your selection
+4 View the mask for editing the anagrafica of laboratory
+5 Changing the angrafica of laboratory
+6 Confirm the changes
+7 Verify the data insert by operator
+8 updates data
+9 Notify that the operation finished with success
+
+Alternative flows:
+Data entered invalid
+   7 1 Display a message showing the data deemed invalid
+   7 2 Reinserts running from 4, underpinned the fields of the form with data entered
+Operator cancels operation
+  3 1 ends the execution of use case with failure
+   5 1 The anagrafica of a laboratory is characterized by the following data: name, VAT, address, city, province, CAP, addresses, additional telephone, and notes.
+       NB: In italics are highlighted optional data whose inclusion does not affect the correct completion of the operation.

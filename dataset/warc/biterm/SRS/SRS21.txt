@@ -1,0 +1,2 @@
+memoriManag:1
+managMemori:1

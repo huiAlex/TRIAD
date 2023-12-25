@@ -1,0 +1,7 @@
+centerPanel
+desLabel
+changeLabel
+fromLabel
+toLabel
+AreadesText
+c

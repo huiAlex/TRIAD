@@ -1,0 +1,4 @@
+[SUMMARY]
+GCS connection to GCS Middleware
+[DESCRIPTION]
+In step one  the _GCS_ announces itself to the _GCSMiddleware_ providing its unique ID.

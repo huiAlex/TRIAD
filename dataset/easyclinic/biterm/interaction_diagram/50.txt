@@ -1,0 +1,16 @@
+patientRequest:1
+examinRelat:1
+visitRelat:1
+requestPatient:1
+retrievInform:2
+patientAccess:1
+relatExamin:1
+relatVisit:1
+informRetriev:2
+accessPatient:1
+findInform:2
+selectAccess:1
+selectVisit:2
+visitSelect:2
+informFind:2
+accessSelect:1

@@ -1,0 +1,11 @@
+type
+uavid
+taskname
+params
+type
+uavid
+taskname
+params
+type
+uavid
+coordinate

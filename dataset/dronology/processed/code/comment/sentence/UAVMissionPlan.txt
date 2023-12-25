@@ -1,0 +1,11 @@
+Mission plan for an individual UAV.
+Part of an { IExecuteableMissionPlan}.
+/
+Check if task if finished	  	  	  	 /
+Needs to actually activate the flight route.
+NOTE: Needs to handle ROUTE, WAYPOINT, TAKEOFF, and LAND (Synch is done internally and shouldn't need any extra coordination).
+/
+Expand the task list with PATTERNS.
+Currently supports two different patterns "SynchronizedTakeoff" and "SynchronizedLanding" Assumptions: SynchronizedTakeoff has a ROUTE definied immediately	  after.
+SynchronizedLanding has a ROUTE defined immediately prior.
+/

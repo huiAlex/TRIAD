@@ -1,0 +1,8 @@
+libwarcBase:1
+libwarcTool:1
+interfacLibwarc:1
+baseLibwarc:1
+applicTool:1
+libwarcInterfac:1
+toolApplic:1
+toolLibwarc:1

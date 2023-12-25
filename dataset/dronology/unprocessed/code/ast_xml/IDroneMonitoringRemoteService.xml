@@ -1,0 +1,51 @@
+<Class>
+    <Id>154</Id>
+    <Package>edu.nd.dronology.monitoring.service</Package>
+    <ClassName>IDroneMonitoringRemoteService</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IRemoteableService</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>IDroneMonitoringRemoteService  /** 
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>registerMonitoringMessageHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteMonitoringMessageHandler handler</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerMonitoringMessageHandler</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>IRemoteMonitoringMessageHandler handler</ParameterType>
+                <ParameterType>ArtifactIdentifier identifier</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setMonitoringFrequency</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>Double frequency</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>RemoteException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

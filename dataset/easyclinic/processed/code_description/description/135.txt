@@ -1,0 +1,1 @@
+gui seleziona prenotazion class allow oper select particular reserv btn seleziona prenota button allow oper confirm select reserv option mask seleziona prenotazioni retriev necessari inform gui seleziona prenotazioni mask 

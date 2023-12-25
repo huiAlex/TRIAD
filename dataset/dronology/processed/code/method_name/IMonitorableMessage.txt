@@ -1,0 +1,5 @@
+get identifi 
+get uavid 
+get data 
+get timestamp 
+get type 

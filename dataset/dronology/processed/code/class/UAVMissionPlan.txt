@@ -1,0 +1,49 @@
+uav mission plan 
+logger 
+activ task 
+uavid 
+task 
+task 
+home locat 
+first waypoint locat 
+coordin altitud 
+synch mgr 
+
+lla coordin 
+lla coordin 
+
+uav id 
+synch mgr 
+alt 
+task 
+synch mgr 
+ 
+
+
+uav mission plan 
+execut task 
+activ next task 
+get uav id 
+set coordin altitud 
+get coordin altitud 
+activ task 
+add task 
+build synch point 
+task 
+task count 
+expand task 
+equal 
+hash code 
+get start rout waypoint 
+
+mission plan individu uav 
+part execut mission plan 
+ 
+check task finish 
+need actual activ flight rout 
+note need handl rout waypoint takeoff land synch intern shouldn need ani extra coordin 
+ 
+expand task pattern 
+current support differ pattern synchron takeoff synchron land sumption synchron takeoff rout defini immedi 
+synchron land rout defin immedi prior 
+ 

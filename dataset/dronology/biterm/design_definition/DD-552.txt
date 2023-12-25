@@ -1,0 +1,8 @@
+uavSpecif:1
+schedulFlight:1
+schedulPlan:1
+planAutomat:1
+signmentPlan:1
+assignPlan:1
+assignUav:2
+planFlight:2

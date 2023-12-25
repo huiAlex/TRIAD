@@ -1,0 +1,13 @@
+datumPerson:2
+newPatient:1
+requirOper:1
+personDatum:2
+pazientManag:2
+datumPatient:3
+patientCreat:1
+patientDatum:3
+findInform:1
+patientNew:1
+operRequir:1
+creatPatient:1
+informFind:1

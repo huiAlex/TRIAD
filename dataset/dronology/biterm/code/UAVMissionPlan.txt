@@ -1,0 +1,7 @@
+planMission:1
+uavIndividu:1
+coordinAltitud:5
+missionPlan:4
+flightPattern:1
+planUav:1
+routFlight:1

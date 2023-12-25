@@ -1,0 +1,2 @@
+remot facad monitor uav allow regist remot monitor messag handler subscrib certain messag type topic 
+ 

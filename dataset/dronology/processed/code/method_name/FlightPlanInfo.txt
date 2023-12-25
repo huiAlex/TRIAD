@@ -1,0 +1,11 @@
+get drone id 
+get waypoint 
+get start locat 
+get start time 
+get end time 
+flight plan info 
+set drone id 
+set waypoint 
+set start locat 
+set start time 
+set end time 

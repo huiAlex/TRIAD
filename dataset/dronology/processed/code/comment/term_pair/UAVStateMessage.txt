@@ -1,0 +1,3 @@
+messag state:compound
+receiv messag:nsubj
+uav specif:amod

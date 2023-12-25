@@ -1,0 +1,4 @@
+serialVersionUID
+MESSAGE_TYPE
+HOME
+SAFETY_CASE

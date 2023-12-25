@@ -1,0 +1,15 @@
+AbstractUAVMessage
+timestamp
+getTimestamp
+getSendtimestamp
+toString
+getUavid
+setUavid
+addPropery
+getProperty
+getProperties
+setType
+getGCSId
+getIdentifier
+getData
+getType

@@ -1,0 +1,4 @@
+examinVisit:1
+visitExamin:1
+reservVisit:1
+visitReserv:1

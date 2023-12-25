@@ -1,0 +1,3 @@
+interfac intern simul use virtual drone 
+simul consist batteri simul movement simul approxim behavior uav 
+ 

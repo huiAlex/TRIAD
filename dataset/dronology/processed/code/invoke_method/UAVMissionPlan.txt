@@ -1,0 +1,57 @@
+get current flight 
+add 
+get 
+get waypoint 
+get instanc 
+get flight info 
+get home 
+hash code 
+mission execut except 
+get 
+finish 
+execut task 
+get first way point 
+get task 
+synch point exist 
+fulli synch 
+get uav id 
+add 
+uav visit synch point 
+activ rout 
+start delay task 
+activ waypoint 
+get task 
+get task 
+equal 
+get task 
+equal 
+fulli synch 
+initi 
+initi 
+get final waypoint 
+expand flight pattern 
+mission execut except 
+get task 
+get task 
+get task 
+get instanc 
+get rout 
+get waypoint 
+get 
+get coordin 
+creat synchron point 
+add synch item 
+get pattern 
+get task 
+get pattern 
+get task 
+get task 
+expand flight pattern 
+get task 
+get task 
+get task 
+get task 
+get task 
+get task 
+get uav id 
+get task 

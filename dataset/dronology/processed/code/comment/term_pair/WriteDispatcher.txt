@@ -1,0 +1,8 @@
+thread writer:compound
+take thread:nsubj
+write thread:nsubj
+take item:obj
+queue outbound:amod
+take queue:obl
+take write:conj
+write socket:obl

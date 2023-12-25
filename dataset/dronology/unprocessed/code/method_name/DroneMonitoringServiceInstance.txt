@@ -1,0 +1,10 @@
+DroneMonitoringServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+registerMonitoringMessageHandler
+registerMonitoringMessageHandler
+getSubscribedHandler
+unsubscribeHandler

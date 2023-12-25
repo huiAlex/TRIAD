@@ -1,0 +1,15 @@
+input examination
+
+The service is launched following the explicit request by the actor.
+The operator logs on to the management of visits (for instance GUIVisita) and selects a visit to add an assessment.
+The operator activates the function of inserting a new examination.
+Control passes to the instance of GUIVisitaHandler, which delegates GUIEsameHandler to the instance of the task of providing the service.
+The first step is to find information on the visit that the operator has selected; therefore, control passes to the application of VisiteManager through the application Visit.
+VisiteManager retrieves information on the selected visit and passes control to the instance of EsamiManager.
+Through the examination of bodies found, EsamiManager retrieves a list containing the information relating to the examinations of the selected visit.
+The list is returned to the instance of GUIVisitaHandler, which ensures the display of the visit and examinations on the mask on the management of examinations (GUIEsami instance).
+The operator inserts the data for the further examination and confirms the inclusion of the same.
+At this point, the control switches GUIEsamiHandler to the instance of the delegation, which enters a new examination of the application latter EsameManager.
+Through the application for review, EsameManager ensures the inclusion and saving of data for further examination and passes control to the instance of GUIEsameHandler.
+GUIEsameHandler, in turn, deals with notifying success by viewing a special message in the mask on the management of examinations (for GUIEsame instance).
+This feature was described by the collaboration diagrams of Fig 3.22.

@@ -1,0 +1,2 @@
+specifiMeter:1
+specifiAltitud:1

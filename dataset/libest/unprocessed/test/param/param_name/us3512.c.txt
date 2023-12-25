@@ -1,0 +1,10 @@
+cur_cert
+openssl_cert_error
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+cn
+server
+expected_enroll_rv
+path_segment

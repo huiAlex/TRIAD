@@ -1,0 +1,6 @@
+useLibwarc:1
+dynamMemori:1
+useMemori:1
+memoriUse:1
+libwarcUse:1
+memoriDynam:1

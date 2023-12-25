@@ -1,0 +1,8 @@
+returnHome:2
+returnCommand:1
+commandReturn:1
+commandWaypoint:1
+homeReturn:2
+managFlight:1
+waypointRout:1
+issuCommand:1

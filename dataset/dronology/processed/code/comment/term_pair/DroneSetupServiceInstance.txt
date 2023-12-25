@@ -1,0 +1,5 @@
+instanc servic:compound
+see instanc:nsubj
+uav handl:amod
+instanc uav:nmod
+see drone setup remot servic:obj

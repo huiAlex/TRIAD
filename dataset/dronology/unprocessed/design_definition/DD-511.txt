@@ -1,0 +1,4 @@
+[SUMMARY]
+Default coordinate system
+[DESCRIPTION]
+The default coordinate representation shall use LLA (longitude  latitude  altitude) format.

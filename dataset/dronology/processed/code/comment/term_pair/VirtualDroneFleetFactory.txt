@@ -1,0 +1,5 @@
+class factori:compound
+class initi:acl
+instanc new:amod
+instanc virtual drone:compound
+initi instanc:obj

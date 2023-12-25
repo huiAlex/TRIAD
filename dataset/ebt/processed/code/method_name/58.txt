@@ -1,0 +1,18 @@
+subscrib model 
+privat string subscrib 
+privat string subscrib reqno 
+privat string subscrib modul 
+privat string subscrib keyword 
+privat string subscrib keyword 
+public subscrib model string sn string sr string sm string sk string sk 
+ 
+subscrib sn 
+subscrib reqno sr 
+subscrib modul sm 
+subscrib keyword sk 
+subscrib keyword 
+public string get subscrib return subscrib 
+public string get subscrib reqno return subscrib reqno 
+public string get subscrib modul return subscrib modul 
+public string get subscrib keyword return subscrib keyword 
+public string get subscrib keyword return subscrib keyword 

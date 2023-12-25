@@ -1,0 +1,19 @@
+drone 
+target altitud 
+target coordin 
+speed 
+haltinm 
+command 
+observ 
+ 
+goal 
+msg 
+msg 
+msg 
+msg 
+msg 
+msg 
+flight direct 
+ref 
+command 
+goal 

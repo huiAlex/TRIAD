@@ -1,0 +1,4 @@
+initializeDrone
+getLatitude
+getLongitude
+getAltitude

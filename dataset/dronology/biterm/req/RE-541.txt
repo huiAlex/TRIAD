@@ -1,0 +1,5 @@
+patternFlight:2
+plannerMission:1
+managFlight:1
+flightPattern:2
+missionPlanner:1

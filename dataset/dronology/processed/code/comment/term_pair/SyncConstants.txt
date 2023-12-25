@@ -1,0 +1,2 @@
+predefin build:amod
+predefin synchron point:dep

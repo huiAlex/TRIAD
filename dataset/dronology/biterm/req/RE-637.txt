@@ -1,0 +1,9 @@
+activUav:1
+supportMiddlewar:1
+uavActiv:1
+supportUav:1
+assignRout:2
+uavAssign:1
+assignUav:1
+supportAssign:1
+routAssign:2

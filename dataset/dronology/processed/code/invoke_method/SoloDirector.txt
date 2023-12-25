@@ -1,0 +1,17 @@
+fli next way point 
+add 
+fli 
+add way point 
+way point 
+safeti direct 
+way point 
+fli 
+get coordin 
+get base coordin 
+equal 
+get 
+get coordin 
+get approachingspe 
+reach 
+get flight mode state 
+set mode air 

@@ -1,0 +1,4 @@
+warcFile:1
+contentFile:1
+fileWarc:1
+fileContent:1

@@ -1,0 +1,3 @@
+[SUMMARY]
+Style: Apply styles to the emergency controls
+[DESCRIPTION]

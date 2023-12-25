@@ -1,0 +1,83 @@
+/**
+ * 
+ * Handler class for both {@link VirtualDrone} and {@link PhysicalDrone}.
+ * Handles basic functionality that is independent of a virtual or physical endpoint.
+ * Contains information on coordinates, state, and flight instructions.
+ *  
+ *  
+ *  */
+
+/**
+	 * Constructs drone
+	 *
+	 * 	 */
+
+/**
+	 * Get the messenger associated with this drone. Client code needing to access
+	 * this drone's functionality must do so through the messenger.
+	 * 
+	 * 	 *         operations.
+	 */
+
+/**
+	 * Blocks until the ManagedDrone run method has been called.
+	 */
+
+/**
+	 *
+	 * 	 */
+
+/**
+	 * Controls takeoff of drone
+	 *
+	 * 	 */
+
+/**
+	 * Delegates flyto behavior to virtual or physical drone
+	 *
+	 * 	 * 	 */
+
+/**
+	 * Gets current coordinates from virtual or physical drone
+	 *
+	 * 	 */
+
+/**
+	 *
+	 * 	 */
+
+/**
+	 * Land the drone. Delegate land functions to virtual or physical drone
+	 *
+	 * 	 */
+
+/**
+	 * Temporarily Halt
+	 *
+	 * 	 */
+
+/**
+	 * Temporarily Halt
+	 * 
+	 * 	 * 	 */
+
+/**
+	 * 
+	 *
+	 * return current flight mode state
+	 *
+	 * 	 */
+
+/**
+	 * Assigns a flight directive to the managed drone
+	 *
+	 * 	 */
+
+/**
+	 * Removes an assigned flight
+	 */
+
+/**
+	 *
+	 * 	 */
+

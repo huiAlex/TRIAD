@@ -1,0 +1,42 @@
+<Class>
+    <Id>11</Id>
+    <Package>edu.nd.dronology.core.vehicle.commands</Package>
+    <ClassName>GoToCommand</ClassName>
+    <SuperClass>AbstractDroneCommand</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IDroneCommand</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>GoToCommand  /** 
+ * Command sent to the GCS for sending a new waypoint.
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>GoToCommand</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String uavid</ParameterType>
+                <ParameterType>LlaCoordinate coord</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>data;put;[ATTRIBUTE_X, coord.getLatitude()]</InnerMethodInvoke>
+                <InnerMethodInvoke>data;put;[ATTRIBUTE_Y, coord.getLongitude()]</InnerMethodInvoke>
+                <InnerMethodInvoke>data;put;[ATTRIBUTE_Z, coord.getAltitude()]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

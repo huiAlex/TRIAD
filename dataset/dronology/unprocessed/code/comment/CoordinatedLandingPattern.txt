@@ -1,0 +1,7 @@
+/**
+ * 
+ * Predefined pattern for coordinated landing that is expanded as part of a {@link PatternTask} in a {@link FullMissionPlan}.
+ * 
+ *  *
+ */
+

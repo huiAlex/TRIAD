@@ -1,0 +1,7 @@
+changMessag:1
+receivMessag:1
+messagState:1
+messagUav:1
+messagMonitor:1
+uavMessag:1
+middlewarHandl:1

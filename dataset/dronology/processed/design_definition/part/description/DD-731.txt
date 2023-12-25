@@ -1,0 +1,1 @@
+movement command specifi follow command type goto waypoint set groundspe set veloc takeoff land hover 

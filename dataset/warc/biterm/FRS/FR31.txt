@@ -1,0 +1,6 @@
+enablDevelop:1
+availMake:1
+makeAvail:1
+pythonScript:1
+scriptPython:1
+developEnabl:1

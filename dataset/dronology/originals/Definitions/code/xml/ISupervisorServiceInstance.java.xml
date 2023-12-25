@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/ISupervisorServiceInstance.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:45">package <name pos:start="1:9" pos:end="1:44"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:44">supervisor</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:21">import <name pos:start="3:8" pos:end="3:20"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:20">Map</name></name>;</import>
+
+<import pos:start="5:1" pos:end="5:59">import <name pos:start="5:8" pos:end="5:58"><name pos:start="5:8" pos:end="5:10">edu</name><operator pos:start="5:11" pos:end="5:11">.</operator><name pos:start="5:12" pos:end="5:13">nd</name><operator pos:start="5:14" pos:end="5:14">.</operator><name pos:start="5:15" pos:end="5:23">dronology</name><operator pos:start="5:24" pos:end="5:24">.</operator><name pos:start="5:25" pos:end="5:32">services</name><operator pos:start="5:33" pos:end="5:33">.</operator><name pos:start="5:34" pos:end="5:37">core</name><operator pos:start="5:38" pos:end="5:38">.</operator><name pos:start="5:39" pos:end="5:41">api</name><operator pos:start="5:42" pos:end="5:42">.</operator><name pos:start="5:43" pos:end="5:58">IServiceInstance</name></name>;</import>
+<import pos:start="6:1" pos:end="6:69">import <name pos:start="6:8" pos:end="6:68"><name pos:start="6:8" pos:end="6:10">edu</name><operator pos:start="6:11" pos:end="6:11">.</operator><name pos:start="6:12" pos:end="6:13">nd</name><operator pos:start="6:14" pos:end="6:14">.</operator><name pos:start="6:15" pos:end="6:23">dronology</name><operator pos:start="6:24" pos:end="6:24">.</operator><name pos:start="6:25" pos:end="6:32">services</name><operator pos:start="6:33" pos:end="6:33">.</operator><name pos:start="6:34" pos:end="6:37">core</name><operator pos:start="6:38" pos:end="6:38">.</operator><name pos:start="6:39" pos:end="6:42">util</name><operator pos:start="6:43" pos:end="6:43">.</operator><name pos:start="6:44" pos:end="6:68">DronologyServiceException</name></name>;</import>
+
+
+<comment type="block" format="javadoc" pos:start="9:1" pos:end="14:3">/**
+ * 
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<interface pos:start="15:1" pos:end="42:1"><specifier pos:start="15:1" pos:end="15:6">public</specifier> interface <name pos:start="15:18" pos:end="15:43">ISupervisorServiceInstance</name> <super_list pos:start="15:45" pos:end="15:68"><extends pos:start="15:45" pos:end="15:68">extends <super pos:start="15:53" pos:end="15:68"><name pos:start="15:53" pos:end="15:68">IServiceInstance</name></super></extends></super_list> <block pos:start="15:70" pos:end="42:1">{
+
+	<function_decl pos:start="17:9" pos:end="17:30"><type pos:start="17:9" pos:end="17:12"><name pos:start="17:9" pos:end="17:12">void</name></type> <name pos:start="17:14" pos:end="17:27">shutdownServer</name><parameter_list pos:start="17:28" pos:end="17:29">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="19:9" pos:end="19:34"><type pos:start="19:9" pos:end="19:12"><name pos:start="19:9" pos:end="19:12">void</name></type> <name pos:start="19:14" pos:end="19:31">restartAllServices</name><parameter_list pos:start="19:32" pos:end="19:33">()</parameter_list>;</function_decl>
+
+
+	<function_decl pos:start="22:9" pos:end="22:38"><type pos:start="22:9" pos:end="22:14"><name pos:start="22:9" pos:end="22:14">String</name></type> <name pos:start="22:16" pos:end="22:35">getWorkspaceLocation</name><parameter_list pos:start="22:36" pos:end="22:37">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="24:9" pos:end="24:50"><type pos:start="24:9" pos:end="24:27"><name pos:start="24:9" pos:end="24:27"><name pos:start="24:9" pos:end="24:11">Map</name><argument_list type="generic" pos:start="24:12" pos:end="24:27">&lt;<argument pos:start="24:13" pos:end="24:18"><name pos:start="24:13" pos:end="24:18">String</name></argument>, <argument pos:start="24:21" pos:end="24:26"><name pos:start="24:21" pos:end="24:26">String</name></argument>&gt;</argument_list></name></type> <name pos:start="24:29" pos:end="24:47">getGlobalProperties</name><parameter_list pos:start="24:48" pos:end="24:49">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="26:9" pos:end="26:114"><type pos:start="26:9" pos:end="26:15"><name pos:start="26:9" pos:end="26:15">boolean</name></type> <name pos:start="26:17" pos:end="26:26">importItem</name><parameter_list pos:start="26:27" pos:end="26:80">(<parameter pos:start="26:28" pos:end="26:42"><decl pos:start="26:28" pos:end="26:42"><type pos:start="26:28" pos:end="26:42"><name pos:start="26:28" pos:end="26:33">String</name></type> <name pos:start="26:35" pos:end="26:42">fileName</name></decl></parameter>, <parameter pos:start="26:45" pos:end="26:60"><decl pos:start="26:45" pos:end="26:60"><type pos:start="26:45" pos:end="26:60"><name pos:start="26:45" pos:end="26:50"><name pos:start="26:45" pos:end="26:48">byte</name><index pos:start="26:49" pos:end="26:50">[]</index></name></type> <name pos:start="26:52" pos:end="26:60">byteArray</name></decl></parameter>, <parameter pos:start="26:63" pos:end="26:79"><decl pos:start="26:63" pos:end="26:79"><type pos:start="26:63" pos:end="26:79"><name pos:start="26:63" pos:end="26:69">boolean</name></type> <name pos:start="26:71" pos:end="26:79">overwrite</name></decl></parameter>)</parameter_list> <throws pos:start="26:82" pos:end="26:113">throws <argument pos:start="26:89" pos:end="26:113"><expr pos:start="26:89" pos:end="26:113"><name pos:start="26:89" pos:end="26:113">DronologyServiceException</name></expr></argument></throws>;</function_decl>
+
+	
+
+	<function_decl pos:start="30:9" pos:end="30:39"><type pos:start="30:9" pos:end="30:14"><name pos:start="30:9" pos:end="30:14">String</name></type> <name pos:start="30:16" pos:end="30:36">getFlightPathLocation</name><parameter_list pos:start="30:37" pos:end="30:38">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="32:9" pos:end="32:47"><type pos:start="32:9" pos:end="32:14"><name pos:start="32:9" pos:end="32:14">String</name></type> <name pos:start="32:16" pos:end="32:44">getDroneSpecificationLocation</name><parameter_list pos:start="32:45" pos:end="32:46">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="34:9" pos:end="34:40"><type pos:start="34:9" pos:end="34:14"><name pos:start="34:9" pos:end="34:14">String</name></type> <name pos:start="34:16" pos:end="34:37">getSimScenarioLocation</name><parameter_list pos:start="34:38" pos:end="34:39">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="36:9" pos:end="36:40"><type pos:start="36:9" pos:end="36:14"><name pos:start="36:9" pos:end="36:14">String</name></type> <name pos:start="36:16" pos:end="36:37">getAreaMappingLocation</name><parameter_list pos:start="36:38" pos:end="36:39">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="38:9" pos:end="38:44"><type pos:start="38:9" pos:end="38:14"><name pos:start="38:9" pos:end="38:14">String</name></type> <name pos:start="38:16" pos:end="38:41">getMissionPlanningLocation</name><parameter_list pos:start="38:42" pos:end="38:43">()</parameter_list>;</function_decl>
+
+
+
+}</block></interface>
+</unit>

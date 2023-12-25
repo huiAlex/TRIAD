@@ -1,0 +1,6 @@
+planManual:1
+uavSpecif:1
+assignPlan:1
+assignUav:1
+planSignment:1
+planFlight:2

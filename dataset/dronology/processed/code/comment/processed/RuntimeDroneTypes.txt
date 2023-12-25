@@ -1,0 +1,12 @@
+singleton class 
+get instanc call get instanc set runtim mode flight zone simul physic mode onli set time dure execut 
+simul use soft drone object 
+physic use real drone control use dronekit api 
+ 
+set flightmod simul 
+doe allow flight mode reset initi set 
+ 
+set flightmod physic doe allow flight mode reset initi set 
+ 
+ 
+ 

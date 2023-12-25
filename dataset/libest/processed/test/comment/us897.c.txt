@@ -1,0 +1,113 @@
+us unit test user stori client cacert june copyright cisco system right reserv 
+max command line length generat system command 
+ca certif use verifi est server grab server directori 
+defin client ut cacert exampl server estca cacert crt 
+routin call cunit initi test suit generat keypair use est client ut suit 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+test case initi est client context use local ca cert client cert valid public key userid password 
+test case initi est client context use local ca cert expect success initi sinc local ca trust anchor cert mandatori 
+test case initi est client context use local ca cert client cert valid public key userid password 
+test case initi est client context use explict ca cert client cert valid public key userid password 
+read ca certif 
+read privat key file 
+test case initi est client context use explict ca cert client cert public key userid password 
+test case initi est client context use explict ca cert client cert public key userid password 
+test case test set server valid paramet 
+test case test set server invalid paramet 
+test case test get cacert request 
+test case test get cacert request invalid input paramet 
+test case test ca cert respons verif function verifi cacert respons contain singl certif 
+test case test ca cert respons verif function verifi cacert respons contain singl chain multipl cert 
+test case test ca cert respons verif function verifi cacert respons contain singl chain multipl cert miss cert chain 
+test case test ca cert respons verif function verifi cacert respons contain singl chain multipl cert intermedi cert expir 
+test case test ca cert respons verif function verifi cacert respons contain multipl chain multipl cert crl block crls ignor 
+test case test ssl read set timeout api set min max valu valu max 
+main function set run test return cue success success run anoth cunit error code failur 
+gen keypair use est client test 
+start server test need talk server 
+start instanc est server 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+read ca certif 
+read privat key file 
+null server 
+server long 
+port num 
+port num greater max 
+read ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+output retriev ca cert compar 
+make sure context longer valid est client uniniti state 
+read ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+stop exist server need ensur server use specif ca cert chain 
+spin new instanc est server use ca cert chain contain just cert 
+read thestartup ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+stop exist server need ensur server use specif ca cert chain 
+spin new instanc est server use ca cert chain contain just cert 
+read thestartup ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+stop exist server need ensur server use specif ca cert chain 
+spin new instanc est server use ca cert chain contain just cert 
+read thestartup ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+stop exist server need ensur server use specif ca cert chain 
+spin new instanc est server use ca cert chain contain just cert 
+read thestartup ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+stop exist server need ensur server use specif ca cert chain 
+spin new instanc est server use ca cert chain contain just cert 
+read startup ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+read startup ca certif 
+read privat key file 
+proceed get cacert verifi noth get broken 
+issu get ca cert request 
+success obtain valid length size ca cert buffer 
+output retriev ca cert compar 
+add suit registri 
+add test suit 
+note order import test fread fprintf 
+shouldn malloc call 
+est fail indic cert provid 
+shouldn malloc call 
+est fail indic cert provid 
+shouldn malloc call 
+est fail indic cert provid 
+shouldn malloc call 
+est fail indic cert provid 
+null cu add test psuit est client init local ca explicit ca client ca privat key us test || 
+null cu add test psuit est client init local ca userid password us test || 

@@ -1,0 +1,15 @@
+UAVMissionPlan
+isExecutingTask
+activateNextTask
+getUavID
+setCoordinationAltitude
+getCoordinationAltitude
+hasActiveTask
+addTask
+buildSynchPoints
+hasTasks
+taskCount
+expandTaskList
+equals
+hashCode
+getStartingRouteWaypoint

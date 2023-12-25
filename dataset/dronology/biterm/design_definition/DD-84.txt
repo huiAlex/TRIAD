@@ -1,0 +1,3 @@
+servicUav:1
+planUav:1
+planFlight:1

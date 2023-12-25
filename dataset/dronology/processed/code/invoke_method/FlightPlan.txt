@@ -1,0 +1,18 @@
+get 
+get coordin 
+string 
+string 
+get start locat 
+get end locat 
+get status 
+waypoint reach 
+set approachingspe 
+get coordin 
+waypoint 
+reach 
+get approachingspe 
+get flight id 
+get drone 
+get flight id 
+get drone 
+get coordin 

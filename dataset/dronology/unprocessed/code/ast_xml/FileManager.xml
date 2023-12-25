@@ -1,0 +1,186 @@
+<Class>
+    <Id>141</Id>
+    <Package>edu.nd.dronology.services.core.util</Package>
+    <ClassName>FileManager</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>EXECUTOR_SERVICE</FieldName>
+            <FieldType>ExecutorService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>directoryWatcher</FieldName>
+            <FieldType>WatchServiceRunner</FieldType>
+        </Field>
+        <Field>
+            <FieldName>extension</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>path</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>FileManager</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>IFileChangeNotifyable instance</ParameterType>
+                <ParameterType>String path</ParameterType>
+                <ParameterType>String extension</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;initWorkspace;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>EXECUTOR_SERVICE;submit;[directoryWatcher]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initWorkspace</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>File [f=new File(path)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFileAsByteArray</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>byte[]</ReturnType>
+            <ParameterList>
+                <ParameterType>String fileId</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [savelocation=path + File.separator + fileId+ "."+ extension]</InnerVar>
+                <InnerVar>File [f=new File(savelocation)]</InnerVar>
+                <InnerVar>byte[] [content=FileUtil.toByteArray(f)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["File '" + fileId + "' requested"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFile</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>File</ReturnType>
+            <ParameterList>
+                <ParameterType>String fileId</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [savelocation=path + File.separator + fileId+ "."+ extension]</InnerVar>
+                <InnerVar>File [f=new File(savelocation)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["File '" + fileId + "' requested"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DronologyServiceException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>saveByteArrayToFile</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+                <ParameterType>byte[] content</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>FileOutputStream [stream=null]</InnerVar>
+                <InnerVar>String [savelocation=path + File.separator + id+ "."+ extension]</InnerVar>
+                <InnerVar>File [f=new File(savelocation)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["File '" + id + "' received"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>loadFiles</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>File[]</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>File [f=new File(path)]</InnerVar>
+                <InnerVar>File[] [files=f.listFiles(new FilenameFilter(){
+  @Override public boolean accept(  File arg0,  String arg1){
+    return arg1.endsWith(extension);
+  }
+}
+)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>LOGGER;info;["Loading Files | extension:'" + extension + "' path: ["+ path+ "]"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>accept</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>File arg0</ParameterType>
+                <ParameterType>String arg1</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>tearDown</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>directoryWatcher;stop;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,7 @@
+activ rout 
+activ waypoint 
+get final waypoint 
+get waypoint 
+get first way point 
+get home 
+stop uav 

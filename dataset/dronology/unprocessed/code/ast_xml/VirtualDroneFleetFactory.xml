@@ -1,0 +1,84 @@
+<Class>
+    <Id>63</Id>
+    <Package>edu.nd.dronology.core.fleet</Package>
+    <ClassName>VirtualDroneFleetFactory</ClassName>
+    <SuperClass>AbstractDroneFleetFactory</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>VirtualDroneFleetFactory  /** 
+ * Factory class for initializing a new  {@link VirtualDrone} instance.
+ * @author Jane Cleland-Huang 
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>INSTANCE</FieldName>
+            <FieldType>VirtualDroneFleetFactory</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>VirtualDroneFleetFactory</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getInstance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>VirtualDroneFleetFactory</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initializeDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType>String droneID</ParameterType>
+                <ParameterType>String droneType</ParameterType>
+                <ParameterType>double latitude</ParameterType>
+                <ParameterType>double longitude</ParameterType>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>IDrone [drone=new VirtualDrone(createDroneID(droneID))]</InnerVar>
+                <InnerVar>ManagedDrone [managedDrone=new ManagedDrone(drone)]</InnerVar>
+                <InnerVar>LlaCoordinate [currentPosition=new LlaCoordinate(latitude,longitude,altitude)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>drone;setManagedDrone;[managedDrone]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone;setBaseCoordinates;[currentPosition]</InnerMethodInvoke>
+                <InnerMethodInvoke>drone;setCoordinates;[currentPosition.getLatitude(), currentPosition.getLongitude(), currentPosition.getAltitude()]</InnerMethodInvoke>
+                <InnerMethodInvoke>managedDrone;start;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>DroneFleetManager.getInstance();addDrone;[managedDrone]</InnerMethodInvoke>
+                <InnerMethodInvoke>DronologyMonitoringManager.getInstance();publish;[MessageMarshaller.createMessage(MessageType.VIRTUAL_UAV_ACTIVATED,drone.getDroneName(),currentPosition)]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

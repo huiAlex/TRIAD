@@ -1,0 +1,578 @@
+<Class>
+    <Id>157</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFInfoPanel</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFInfoPanel  /** 
+ * This is the side panel that contains the AFInfoBoxes with the UAV information
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>panel</FieldName>
+            <FieldType>Panel</FieldType>
+        </Field>
+        <Field>
+            <FieldName>selectButton</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>visibleButton</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>content</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>numUAVs</FieldName>
+            <FieldType>int</FieldType>
+        </Field>
+        <Field>
+            <FieldName>selectAll</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>visible</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>focused</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>mapView</FieldName>
+            <FieldType>AFMapViewOperations</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drones</FieldName>
+            <FieldType>Collection</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drones</FieldName>
+            <FieldType>IUAVProxy</FieldType>
+        </Field>
+        <Field>
+            <FieldName>service</FieldName>
+            <FieldType>IDroneSetupRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>provider</FieldName>
+            <FieldType>BaseServiceProvider</FieldType>
+        </Field>
+        <Field>
+            <FieldName>missionView</FieldName>
+            <FieldType>AFMissionOperations</FieldType>
+        </Field>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFInfoPanel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>HorizontalLayout [buttons=new HorizontalLayout()]</InnerVar>
+                <InnerVar>VerticalLayout [sideBar=new VerticalLayout()]</InnerVar>
+                <InnerVar>AFEmergencyComponent [emergency=new AFEmergencyComponent()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>panel;setCaption;[Integer.toString(numUAVs) + " Active UAVs"]</InnerMethodInvoke>
+                <InnerMethodInvoke>panel;setContent;[content]</InnerMethodInvoke>
+                <InnerMethodInvoke>panel;addStyleName;[StyleConstants.AF_INFO_PANEL]</InnerMethodInvoke>
+                <InnerMethodInvoke>panel;addStyleName;[StyleConstants.CONTROL_PANEL]</InnerMethodInvoke>
+                <InnerMethodInvoke>emergency.getHome();addClickListener;[e -&gt; {
+  List&lt;String&gt; checked=this.getChecked();
+  String message="";
+  boolean sendHome=true;
+  if (checked.size() &gt; 0) {
+    if (checked.size() == 1) {
+      for (int i=1; i &lt; numUAVs + 1; i++) {
+        AFInfoBox box=(AFInfoBox)content.getComponent(i);
+        if (box.getName().equals(checked.get(0))) {
+          if (box.getStatus().equals("ON_GROUND")) {
+            Notification.show(checked.get(0) + " is already home.");
+            sendHome=false;
+          }
+ else {
+            message="Are you sure you want to send " + checked.get(0) + " to its home?";
+          }
+        }
+      }
+    }
+ else {
+      String drones="";
+      for (int i=0; i &lt; checked.size() - 1; i++) {
+        drones+=checked.get(i) + ", ";
+      }
+      message="Are you sure you want to send " + drones + "and "+ checked.get(checked.size() - 1)+ " to their homes?";
+    }
+  }
+ else {
+    message="Are you sure to send all UAVs to their homes?";
+  }
+  Window confirm=new Window("Confirm");
+  confirm.addStyleName("confirm_window");
+  VerticalLayout subContent=new VerticalLayout();
+  HorizontalLayout subButtons=new HorizontalLayout();
+  subButtons.addStyleName("confirm_button_area");
+  Label label=new Label(message);
+  Button yes=new Button("Yes");
+  yes.addStyleName("btn-danger");
+  Button no=new Button("No");
+  yes.addClickListener(subEvent -&gt; {
+    UI.getCurrent().removeWindow(confirm);
+    IFlightManagerRemoteService service;
+    try {
+      service=(IFlightManagerRemoteService)provider.getRemoteManager().getService(IFlightManagerRemoteService.class);
+      if (checked.size() &gt; 0) {
+        for (int i=0; i &lt; checked.size(); i++) {
+          for (int j=1; j &lt; numUAVs + 1; j++) {
+            AFInfoBox box=(AFInfoBox)content.getComponent(j);
+            if (box.getName().equals(checked.get(i))) {
+              if (!box.getStatus().equals("ON_GROUND")) {
+                service.returnToHome(checked.get(i));
+              }
+            }
+          }
+        }
+      }
+ else {
+        for (int i=1; i &lt; numUAVs + 1; i++) {
+          AFInfoBox box=(AFInfoBox)content.getComponent(i);
+          if (!box.getStatus().equals("ON_GROUND"))           service.returnToHome(box.getName());
+        }
+      }
+    }
+ catch (    Exception exc) {
+      exc.printStackTrace();
+    }
+  }
+);
+  no.addClickListener(subEvent -&gt; {
+    UI.getCurrent().removeWindow(confirm);
+  }
+);
+  subButtons.addComponents(yes,no);
+  subContent.addComponents(label,subButtons);
+  confirm.setContent(subContent);
+  confirm.setModal(true);
+  confirm.setResizable(false);
+  confirm.center();
+  if (sendHome)   UI.getCurrent().addWindow(confirm);
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addLayoutClickListener;[e -&gt; {
+  Component testChild=e.getChildComponent();
+  if (testChild.getClass() == AFInfoBox.class) {
+    AFInfoBox child=(AFInfoBox)e.getChildComponent();
+    if (!child.getCheckClick()) {
+      child.addStyleName("info_box_focus");
+      child.setIsChecked(true);
+      focused=child.getName();
+      for (int i=1; i &lt; numUAVs + 1; i++) {
+        AFInfoBox box=(AFInfoBox)content.getComponent(i);
+        if (!box.getName().equals(child.getName())) {
+          box.removeStyleName("info_box_focus");
+          box.setIsChecked(false);
+          box.setCheckClick(false);
+        }
+      }
+    }
+ else {
+      child.removeStyleName("info_box_focus");
+      if (focused.equals(child.getName()))       focused="";
+    }
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideBar;addComponents;[panel, mapView, missionView, emergency]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[sideBar]</InnerMethodInvoke>
+                <InnerMethodInvoke>selectButton;addStyleName;[ValoTheme.BUTTON_LINK]</InnerMethodInvoke>
+                <InnerMethodInvoke>selectButton;addStyleName;[StyleConstants.SMALL_BUTTON_LINK]</InnerMethodInvoke>
+                <InnerMethodInvoke>visibleButton;addStyleName;[ValoTheme.BUTTON_LINK]</InnerMethodInvoke>
+                <InnerMethodInvoke>visibleButton;addStyleName;[StyleConstants.SMALL_BUTTON_LINK]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addComponents;[selectButton, visibleButton]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addStyleName;["af_uav_list_controls"]</InnerMethodInvoke>
+                <InnerMethodInvoke>selectButton;addClickListener;[e -&gt; {
+  if (selectAll) {
+    selectAll(true);
+    selectButton.setCaption("Deselect all");
+    selectAll=false;
+  }
+ else {
+    selectAll(false);
+    selectButton.setCaption("Select all");
+    selectAll=true;
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>visibleButton;addClickListener;[e -&gt; {
+  if (visible) {
+    visible=false;
+    setVisibility(true);
+    visibleButton.setCaption("Expand all");
+  }
+ else {
+    visible=true;
+    setVisibility(false);
+    visibleButton.setCaption("Collapse all");
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponent;[buttons]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getMapView</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>AFMapViewOperations</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getFocusedName</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addBox</MethodName>
+            <MethodComment>/** 
+ * Adds a box to the panel
+ * @param isChecked
+ * @param name
+ * @param status
+ * @param batteryLife
+ * @param healthColor
+ * @param lat
+ * @param lon
+ * @param alt
+ * @param speed
+ * @param hoverInPlace
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean isChecked</ParameterType>
+                <ParameterType>UAVStatusWrapper uavStatus</ParameterType>
+                <ParameterType>boolean hoverInPlace</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>AFInfoBox [box=new AFInfoBox(isChecked,uavStatus,hoverInPlace)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>box;createContents;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponent;[box]</InnerMethodInvoke>
+                <InnerMethodInvoke>panel;setCaption;[Integer.toString(numUAVs) + " Active UAVs"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addBox</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>AFInfoBox [box=new AFInfoBox()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>content;addComponent;[box]</InnerMethodInvoke>
+                <InnerMethodInvoke>panel;setCaption;[Integer.toString(numUAVs) + " Active UAVs"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>removeBox</MethodName>
+            <MethodComment>/** 
+ * Removes a box from the panel
+ * @param name the name/ID of the drone
+ * @return returns true if successful. returns false if failed
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>String name</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>selectAll</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean select</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getChecked</MethodName>
+            <MethodComment>/** 
+ * @return a list of all drones that have their checkbox checked
+ */
+</MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>List&lt;String&gt; [names=new ArrayList&lt;&gt;()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAllChecked</MethodName>
+            <MethodComment>/** 
+ * @return true if all the drones are checked
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [checked=true]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAllNotChecked</MethodName>
+            <MethodComment>/** 
+ * @return true if all drones are not checked
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [notChecked=true]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setVisibility</MethodName>
+            <MethodComment>/** 
+ * Expands or collapses all the boxes
+ * @param visible
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean visible</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAllVisible</MethodName>
+            <MethodComment>/** 
+ * @return true if all boxes are expanded
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [visible=true]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAllNotVisible</MethodName>
+            <MethodComment>/** 
+ * @return true if all boxes are collapsed
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>boolean [notVisible=true]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setAllToHover</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getBoxes</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>VerticalLayout</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getNumUAVS</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>int</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>refreshDrones</MethodName>
+            <MethodComment>/** 
+ * gets updated information from dronology about the UAV's location information and status. adds any new drones to the panel and removes any drones that were deactivated
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createContents</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

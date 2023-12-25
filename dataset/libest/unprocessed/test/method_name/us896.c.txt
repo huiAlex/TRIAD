@@ -1,0 +1,8 @@
+us896_clean
+us896_start_server
+us896_init_suite
+us896_destroy_suite
+client_manual_cert_verify
+us896_test1
+us896_test2
+us896_add_suite

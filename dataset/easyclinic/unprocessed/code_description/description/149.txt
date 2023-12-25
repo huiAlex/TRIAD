@@ -1,0 +1,12 @@
+Class: CartellaClinicaManager
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: Manage the data that make up the medical records of a patient
+
+Attributes:
+
+Methods:
+getCartellaClinica;Public;Find all the information on the clinic folder of a patient
+getDettagli;Public; Provides a load all the details of a visit
+getDatiPaziente;Public;Find the anagrafica data of a patient

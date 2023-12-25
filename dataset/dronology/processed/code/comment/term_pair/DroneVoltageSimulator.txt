@@ -1,0 +1,5 @@
+simul voltag:compound
+decreas minut:obl
+minut flight:nmod
+decreas batteri:nsubj
+decreas volt:obl

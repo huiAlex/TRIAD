@@ -1,0 +1,10 @@
+FlightManagerServiceRemoteFacade
+getInstance
+getFlightInfo
+planFlight
+planFlight
+returnToHome
+pauseFlight
+getCurrentFlights
+cancelPendingFlights
+takeoff

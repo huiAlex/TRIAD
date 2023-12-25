@@ -1,0 +1,5 @@
+servic handl uav 
+allow initi new uav 
+allow retriev activ uav return proxi iuav proxi actual physic virtual uav 
+ 
+ 

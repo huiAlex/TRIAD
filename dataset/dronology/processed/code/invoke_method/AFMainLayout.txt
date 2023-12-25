@@ -1,0 +1,20 @@
+af control compon 
+af map compon 
+get panel 
+get map 
+get button 
+get panel 
+get map 
+get follow button 
+get follow 
+get panel 
+follow drone 
+get panel 
+get check 
+set follow 
+set averag center 
+set follow 
+set follow zoom 
+follow drone 
+get panel 
+get check 

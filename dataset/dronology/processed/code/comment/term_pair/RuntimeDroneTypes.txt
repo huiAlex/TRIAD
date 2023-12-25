@@ -1,0 +1,38 @@
+class singleton:compound
+set get:dep
+call instanc:compound
+get call:obj
+get get instanc:obl
+get instanc set:dep
+mode runtim:compound
+get instanc mode:dep
+mode flight zone:nmod
+get simul:obl
+get physic:obl
+simul physic:conj
+set mode:nsubj
+set time:obl
+set execut:obl
+use simul:nsubj
+object drone:compound
+use object:obj
+use physic:amod
+control use:nsubj
+drone real:amod
+use drone:dep
+control use:xcomp
+api dronekit:compound
+use api:obj
+flightmod set:nsubj
+flightmod simul:obl
+mode flight:compound
+allow mode:obj
+allow reset:xcomp
+reset set:advcl
+allow set:nsubj
+set flightmod:acl
+flightmod physic:obl
+mode flight:compound
+allow mode:obj
+allow reset:xcomp
+reset set:advcl

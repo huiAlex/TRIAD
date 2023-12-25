@@ -1,0 +1,47 @@
+<Class>
+    <Id>9</Id>
+    <Package>edu.nd.dronology.gstation.connector.service.connector</Package>
+    <ClassName>IDroneConnectorServiceInstance</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IServiceInstance</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>unregisterConnection</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String groundstationid</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>GroundStationException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>handleConnection</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>GroundstationConnector handler</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerConnection</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>GroundstationConnector connector</ParameterType>
+                <ParameterType>ConnectionRequestMessage msg</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>GroundStationException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

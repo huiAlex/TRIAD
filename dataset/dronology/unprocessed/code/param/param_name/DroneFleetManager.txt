@@ -1,0 +1,9 @@
+designatedDroneId
+add
+managedDrone
+drone
+managedDrone
+managedDrone
+uavid
+id
+listener

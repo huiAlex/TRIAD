@@ -1,0 +1,3 @@
+vectorNormal:6
+distancMeter:1
+vectorAltitud:2

@@ -1,0 +1,11 @@
+afa sign rout compon 
+creat content 
+creat side pannel 
+creat status pannel 
+get rout assign 
+add rout 
+remov rout 
+get cancel 
+get appli 
+get return home 
+get hover 

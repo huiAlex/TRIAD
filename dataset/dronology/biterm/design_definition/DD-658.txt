@@ -1,0 +1,5 @@
+deletRout:1
+selectRout:1
+assignUav:1
+uavExecut:1
+planFlight:1

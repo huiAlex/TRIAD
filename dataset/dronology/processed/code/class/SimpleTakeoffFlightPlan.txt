@@ -1,0 +1,63 @@
+simpl takeoff flight plan 
+serial version uid 
+logger 
+flight number 
+flight id 
+status 
+drone 
+start time 
+end time 
+uavid 
+altitud 
+way point 
+way point 
+
+manag drone 
+waypoint 
+
+drone 
+plan 
+altitud 
+drone 
+uavid 
+
+manag drone 
+manag drone 
+
+string 
+simpl takeoff flight plan 
+get flight id 
+get start locat 
+get end locat 
+get assign drone 
+clear assign drone 
+set status fli 
+set status complet 
+get status 
+string 
+get way point 
+get start time 
+get end time 
+get design drone id 
+complet 
+get takeoff altitud 
+set design drone id 
+
+store flight inform includ waypoint current status 
+ 
+ 
+ 
+ 
+ 
+return drone assign flight plan 
+return null drone assign 
+ 
+ 
+set flightplan status complet call 
+ 
+return current flightplan status plan fli complet 
+return way point 
+return start time flight 
+ 
+eturn end time flight 
+ 

@@ -1,0 +1,7 @@
+commandIntern:1
+computCoordin:1
+computAngl:1
+simulGoto:1
+commandGive:1
+commandGoto:1
+simulIntern:1

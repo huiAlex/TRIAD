@@ -1,0 +1,100 @@
+init connect 
+reach 
+get 
+get servic 
+get servic 
+add activ flight rout 
+get activ uav 
+add 
+init connect 
+init connect 
+init connect 
+init connect 
+get current flight 
+get current flight 
+get activ uav 
+get id 
+equal 
+get follow 
+add 
+get servic 
+get servic 
+get id 
+get drone listen 
+set averag center 
+get waypoint 
+get drone id 
+equal 
+add 
+get latitud 
+get longitud 
+add 
+remov compon 
+get follow 
+get id 
+equal 
+add 
+get follow 
+add 
+add 
+add 
+set averag center 
+get coordin 
+get latitud 
+get coordin 
+get longitud 
+next reach 
+get drone id 
+equal 
+get 
+get waypoint 
+get 
+get coordin 
+get latitud 
+get 
+get waypoint 
+get 
+get coordin 
+get longitud 
+set averag center 
+get id 
+equal 
+get id 
+equal 
+get id 
+equal 
+get id 
+equal 
+get follow 
+get waypoint listen 
+remov compon 
+get id 
+get drone listen 
+set averag center 
+get id 
+get id 
+equal 
+get id 
+get id 
+get latitud 
+get longitud 
+get latitud 
+get longitud 
+add 
+get id 
+equal 
+get id 
+equal 
+get follow 
+get id 
+equal 
+get id 
+get drone listen 
+set averag center 
+get id 
+equal 
+get id 
+get latitud 
+get longitud 
+get id 
+equal 

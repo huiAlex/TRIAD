@@ -1,0 +1,9 @@
+drone id 
+drone id 
+drone type 
+latitud 
+longitud 
+altitud 
+id 
+type 
+initi locat 

@@ -1,0 +1,69 @@
+------------------------------------------------------------------   us900.c - Unit Tests for User Story 900 - Server CSR Attributes     November, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   Test1 - exercise the est_server_init_csrattrs() API.  /
+   Test2 - exercise the server side variations triggered           by est_client_get_csrattrs()  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       gen the keypair to be used for EST Client testing      /
+       start the server for the tests that need to talk to a server      /
+       Start an instance of the EST server      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+ NULL ctx - should fail /
+ NULL string - should pass /
+ Zero length - should fail /
+ Length too long - should fail /
+ Not a real base64 string - should fail /
+ Real base64 string - should pass /
+ Setting the smallest base64 size /
+ Setting an illegally small base64 size /
+ Setting the size 122 /
+ Setting the size 117 /
+ enable PoP /
+ Real base64 string needs PoP added - should pass /
+ Not a real base64 string - should fail /
+ Setting the smallest size /
+ Setting the size 122 /
+ Setting the size 117 /
+ Setting the size 116 /
+ Setting the size 244 /
+ Setting the size 245 /
+ Setting the size 250 /
+ All ASN.1 types supported by CiscoSSL /
+ disable PoP /
+ All ASN.1 types supported by CiscoSSL /
+ Real base64 string PoP should not be added - should pass /
+       Read in the CA certificates      /
+       Read in the private key file      /
+       issue the get ca certs request      /
+       should be successful, and should have obtained a valid buffer       containing the CA certs      /
+       output the retrieved ca certs and compare to what they should be      /
+ clear callback /
+ clear csrattrs /
+ should get 204 with no data /
+ Real base64 string - should pass /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ callback should supersede init csrattrs /
+ clear csrattrs /
+ clear callback /
+ Setting the smallest size /
+ clear csrattrs /
+ Enable PoP and test responses with PoP added /
+ Setting the size 122 /
+ Setting the size 117 /
+ Real base64 string needs PoP added - should pass /
+ Not a real base64 string - should fail /
+ Setting the smallest size /
+ Setting the size 116 /
+ Setting the size 244 /
+ Setting the size 245 /
+ Setting the size 250 /
+ disable PoP /
+ clear callback /
+ Real base64 string PoP should not be added - should pass /
+ All ASN.1 types supported by CiscoSSL /
+ add a suite to the registry /
+ add the tests to the suite /

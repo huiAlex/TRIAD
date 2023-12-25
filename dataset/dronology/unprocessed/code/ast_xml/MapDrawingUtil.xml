@@ -1,0 +1,245 @@
+<Class>
+    <Id>149</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>MapDrawingUtil</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>MapDrawingUtil  /** 
+ * Utility class for drawing marker and UAV icons on the map &lt;br&gt; &lt;b&gt;NEEDS ADDITIONAL CLEANUP &amp; REFACTORING!&lt;b&gt;
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>leafletMap</FieldName>
+            <FieldType>LMap</FieldType>
+        </Field>
+        <Field>
+            <FieldName>utilities</FieldName>
+            <FieldType>MapMarkerUtilities</FieldType>
+        </Field>
+        <Field>
+            <FieldName>wayPointMarkers</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>wayPointMarkers</FieldName>
+            <FieldType>List&lt;LMarker&gt;</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightRoutes</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightRoutes</FieldName>
+            <FieldType>List&lt;LPolyline&gt;</FieldType>
+        </Field>
+        <Field>
+            <FieldName>markers</FieldName>
+            <FieldType>ArrayList</FieldType>
+        </Field>
+        <Field>
+            <FieldName>markers</FieldName>
+            <FieldType>LMarker</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneIconFocused</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneIconSelected</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dotIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>mapComponent</FieldName>
+            <FieldType>AFMapComponent</FieldType>
+        </Field>
+        <Field>
+            <FieldName>provider</FieldName>
+            <FieldType>BaseServiceProvider</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightManagerService</FieldName>
+            <FieldType>IFlightManagerRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneSetupService</FieldName>
+            <FieldType>IDroneSetupRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>ACHN_X</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>ANCH_Y</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>MapDrawingUtil</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>LMap leafletMap</ParameterType>
+                <ParameterType>AFMapComponent mapComponent</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;initConnection;[]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initConnection</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addActiveFlightRoutes</MethodName>
+            <MethodComment>/** 
+ * This function gets the flight routes from dronology core and draws them on the map.
+ * @param focused this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+ * @param checked this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String focused</ParameterType>
+                <ParameterType>String checked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>updateActiveFlightRoutes</MethodName>
+            <MethodComment>/** 
+ * updates the flight routes. Deletes old ones, adds new ones, and redraws the lines to different colors as each waypoint is reached
+ * @param focused this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+ * @param checked this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String focused</ParameterType>
+                <ParameterType>String checked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>updateDroneMarkers</MethodName>
+            <MethodComment>/** 
+ * This function updates the position of the drone icons on the map
+ * @param focused this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+ * @param checked this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String focused</ParameterType>
+                <ParameterType>String checked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addDroneMarkers</MethodName>
+            <MethodComment>/** 
+ * This function adds icons on the map that represent each drone's position.
+ * @param focused this is the drone that is focused in the AFInfoPanel. It's flight route will be orange
+ * @param checked this is a list of drones that have their checkbox checked in the AFInfoPanel. Their routes will be black.
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String focused</ParameterType>
+                <ParameterType>String checked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Collection&lt;IUAVProxy&gt; [drones=Collections.emptyList()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>nextReached</MethodName>
+            <MethodComment>/** 
+ * assists in the logic of updating flight routes
+ * @param coordinates
+ * @param i
+ * @return
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>Waypoint coordinates</ParameterType>
+                <ParameterType>int i</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Waypoint [next=coordinates.get(i)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

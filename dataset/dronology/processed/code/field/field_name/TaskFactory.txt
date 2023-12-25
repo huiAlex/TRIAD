@@ -1,0 +1,7 @@
+flightpattern 
+rout 
+sync 
+waypoint 
+takeoff 
+land 
+delay 

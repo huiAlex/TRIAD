@@ -1,0 +1,10 @@
+ssClass: GUISelezionaPrenotazione
+Date: 16/09/2003
+Version: 0.01.000
+Description: This class allows the operator to select a particular reservation.
+
+Attributes:
+btnSelezionaPrenota;Private;Button that allows the operator to confirm the selection of the reservation options made in the mask.
+
+Methods:
+selezionaPrenotazioni; Public; Retrieves all the necessary information to display the GUISelezionaPrenotazioni mask.

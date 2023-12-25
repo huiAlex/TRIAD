@@ -1,0 +1,8 @@
+assignRout:2
+transmitMiddlewar:1
+uavAssign:1
+assignUav:1
+routAssign:2
+removRout:1
+removAssign:1
+transmitAssign:1

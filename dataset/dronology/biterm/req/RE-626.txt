@@ -1,0 +1,3 @@
+activUav:2
+uavActiv:2
+middlewarProvid:1

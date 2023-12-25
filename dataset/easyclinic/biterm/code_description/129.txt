@@ -1,0 +1,6 @@
+reservManag:1
+findInform:1
+managReserv:1
+reservMake:1
+informFind:1
+makeReserv:1

@@ -1,0 +1,22 @@
+set manag drone 
+get instanc 
+publish 
+set base coordin 
+set coordin 
+start 
+get instanc 
+add drone 
+physic drone 
+manag drone 
+lla coordin 
+drone except 
+string 
+creat messag 
+get latitud 
+get longitud 
+get altitud 
+creat drone id 
+get instanc 
+get command handler 
+get drone 
+physic drone fleet factori 

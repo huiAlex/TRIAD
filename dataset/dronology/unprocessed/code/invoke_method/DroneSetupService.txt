@@ -1,0 +1,9 @@
+DroneSetupServiceInstance
+initializeDrones
+addDroneStatusChangeListener
+removeDroneStatusChangeListener
+getActiveUAVs
+deactivateDrone
+getActiveUAV
+resendCommand
+DroneSetupService

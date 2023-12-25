@@ -1,0 +1,10 @@
+servic flighrout 
+servic simul 
+servic remot 
+servic flightmanag 
+servic dronesetup 
+servic registr 
+servic equip type registr 
+servic typeregistr 
+servic missionplan 
+servic areamap 

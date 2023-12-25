@@ -1,0 +1,28 @@
+Use case:
+Delete anagrafica laboratory
+
+Description:
+It allows the operator to remove the anagrafica of a laboratory analysis.
+It works for the elimination of data at anagrafica on a laboratory analysis.
+
+Preconditions:
+The Operator has been recognized by system (See UcValOp) and age Laboratory is inside the SIO.
+
+Postconditions:
+The anagrafica data of the laboratory are not changed, they remain in the state of the first execution.
+The age of the laboratory is successfully eliminated.
+
+Sub-flows:
+The operator activates the execution of the elimination of the anagrafica of the laboratory.
+1 View the list of laboratories in the SIO.
+2 Select the laboratory which needs to change the anagrafica.
+3 Confirm your selection.
+4 View the mask to eliminate the anagrafica of the laboratory.
+5 Confirm the delete of laboratory.
+6 Delete the data about anagrafica of laboratory.
+7 Notify that the operation is finished with success.
+
+Alternative flows:
+Operator cancels operation.
+3.1 ends the execution of use case with 6.1 failure.
+4.1 The mask will contain data on the laboratory selected to enable the operator to monitor them in detail before to act the delete.

@@ -1,0 +1,20 @@
+Class:GUIManagement
+Date: 16/09/2003
+Version: 0 01 000
+
+Description: Its task is to display the mask on the management functions to monitor activities Outpatients
+
+Attributes:
+btnPianiPrenotazioni; Privat;e  Button that provides access to the mask implemented by GUIPianiPrenotazioni
+btnResocontoEsami;     Private;  Button that provides access to the mask implemented by GUIResocontoEsami
+btnResocontoMedicina;  Private;  Button that provides access to the mask implemented by GUIResocontoMedicinali
+btnResocontoPrenotaz;  Private;  Button that provides access to the form implemented by operator GUIResocontoPrenotazioni
+btnResocontoVisite;    Private;  Button that provides access to the mask implemented by GUIResocontoVisite
+btnTempiMedi;          Private;  Button that provides access to the mask implemented by GUITempiMedi
+
+Methods:
+resocontoVisite;     Public;   Draws the handler class associated with the mask implemented by GUIResocontoVisite
+resocontoEsami;      Public;   Draws the handler class associated with the mask implemented by GUIResocontoEsami
+resocontoPrenotazioni; Public; Draws the handler class associated with the mask implemented by GUIResocontoPrenotazioni
+tempiMedi;          Public;   Draws the handler class associated with the mask implemented by GUITempiMedi
+pianiPrenotazioni ;   Public;  Draws the handler class associated with the mask implemented by GUIPianiPrenotazioni

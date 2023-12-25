@@ -1,0 +1,4 @@
+Waypoint implementation used in { FlightPlan} and Fight Route to represent coordinates (as { LlaCoordinate})  and the approaching speed towards the respective waypoint.
+This class (and all its constituent fields) have to be { Serializable} as this class is passed via the remote interface.
+/
+/

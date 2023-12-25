@@ -1,0 +1,3 @@
+locatUav:1
+updatUav:1
+updatLocat:1

@@ -1,0 +1,6 @@
+relatInform:1
+informRetriev:1
+storeReserv:1
+reservStore:1
+retrievInform:1
+informRelat:1

@@ -1,0 +1,4 @@
+UAVHandshakeMessage
+getHome
+getSafetyCase
+setHome

@@ -1,0 +1,9 @@
+vector 
+vector 
+lla coordin 
+distanc 
+travel distanc 
+rot matrix 
+find ned 
+find lla 
+make vector 

@@ -1,0 +1,14 @@
+Class: GUILoginPaziente
+Date: 19/09/03
+Version: 0 01 000
+Description: Makes the mask that manages access by part of the section Patient
+
+Attributes:
+btnValida;Private; Button that starts the process of accessing this patient
+btnAnnulla;Private; Button that lets you exit the login mask
+editCodiceHC;Private; Text box used to allow the operator to enter the code of the Hospital Card of the patient
+editCodiceFiscale;Private; Text box used to enable the operator to enter the tax code of the patient
+
+Methods:
+showLoginError ;Public ;Shows an error message if the procedure for access to the section Patient fails
+login ;Public ;Manages the event generated when the operator inserts the hospital card code or the patient's tax code and runs the validation procedure

@@ -1,0 +1,8 @@
+flight simul 
+set flight path 
+get remain distanc 
+comput latitud delta 
+comput longitud delta 
+comput angl 
+
+destin reach 

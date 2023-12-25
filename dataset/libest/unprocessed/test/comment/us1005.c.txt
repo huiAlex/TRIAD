@@ -1,0 +1,73 @@
+------------------------------------------------------------------   us1005.c - Unit Tests for User Story 1005 - Client easy provision     November, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This is a simple callback used to override the default   logging facility in libest.  We'll use this to look   for specific debug output.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   This function performs the easy provision operation using   a UID/PWD to identify the client to the server.  This   is used for a variety of test cases in this module.  /
+   Easy provision - HTTP basic auth, no client cert     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+   Easy provision - with HTTP basic auth hint enabled, no client cert     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+   Easy provision - client cert with HTTP basic auth enabled     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+   Easy provision - client cert with HTTP basic auth hint enabled     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+   Null pointers test  /
+    Enable pop on server, enable CSR attributes on server w/o challengePassword OID  /
+    Disable pop on server, enable CSR attributes on server w/o challengePassword OID  /
+    Enable pop on server, enable CSR attributes on server w/ challengePassword OID  /
+    Disable pop on server, enable CSR attributes on server w/challengePassword OID  /
+    Enable pop on server, disable CSR attributes on server  /
+    Disable pop on server, disable CSR attributes on server  /
+   Easy provision - client cert with HTTP basic auth disabled     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+   Easy provision - client cert with HTTP basic auth hint enabled     This is a basic test to perform a a full trusted enroll   sequence of /cacerts, /csrattrs, and /simpleenroll using a   user ID and password to identify the client to the server.   No identity certificate is used by the client.  /
+ Initialize critical section on Windows/
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a new private key      /
+       Attempt to provision a new cert      /
+       Retrieve the cert that was given to us by the EST server      /
+       Retrieve a copy of the new CA certs      /
+       Cleanup      /
+       Create a valid context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Create a valid key pair      /
+       Try with a NULL context      /
+       Try with a NULL p7 length      /
+       Try with a NULL cacerts length      /
+       Try with a NULL key      /
+       Restart the server with PoP enabled      /
+       Set the CSR attributes to a value that doesn't include challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with PoP disabled      /
+       Set the CSR attributes to a value that doesn't include challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with PoP enabled      /
+       Set the CSR attributes to the default value, which includes challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with PoP disabled      /
+       Set the CSR attributes to the default value, which includes challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with PoP enabled      /
+       Set the CSR attributes to the default value, which includes challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with PoP disabled      /
+       Set the CSR attributes to the default value, which includes challengePassword OID      /
+       We will search the debugs for the appropriate output       to confirm the PoP behavior is working as desired.      /
+       Provision a new cert      /
+       Set the CSR attributes back to default value      /
+       Restart the server with HTTP auth disabled      /
+ add a suite to the registry /
+       Add the tests to the suite             IMPORTANT       Do not change the order of these tests.       Some of the tests stop the EST server and restart       it using different certs.  If you change the order       then false negatives may occur.                   /
+           Read in the private key          /
+           Read in the old cert          /

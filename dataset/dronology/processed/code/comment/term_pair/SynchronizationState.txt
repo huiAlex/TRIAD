@@ -1,0 +1,2 @@
+state possibl:amod
+state synchron point:obl

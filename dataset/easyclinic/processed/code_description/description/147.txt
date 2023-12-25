@@ -1,0 +1,1 @@
+laboratori manag manag oper requir access data laboratori del laboratorio task descript control delet laboratori data edit laboratorio manag chang data laboratori get elenco laboratori obtain laboratori get laboratorio find inform laboratori new laboratorio manag insert new laboratori 

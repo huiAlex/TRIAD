@@ -1,0 +1,14 @@
+FlightRouteInfo
+getCategory
+setCategory
+getWaypoints
+setDateModified
+setDateCreated
+addWaypoint
+removeWaypoint
+getRouteLength
+getDateCreated
+getDateModified
+setRouteLength
+getDescription
+setDescription

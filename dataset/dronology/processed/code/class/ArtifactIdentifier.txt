@@ -1,0 +1,38 @@
+artifact identifi 
+serial version uid 
+separ 
+root 
+id 
+counter 
+child 
+attacheditem 
+attacheditem 
+
+artifact identifi 
+
+id 
+obj 
+item 
+handler 
+add 
+
+
+artifact identifi 
+get id 
+get child 
+string 
+hash code 
+equal 
+final 
+get attach item 
+attach item 
+remov attach item 
+attach item 
+
+structur identifi 
+object hold id part refer child id turn hold id part altogeth form identifi 
+ 
+id map root child artifact identifi 
+ 
+ 
+return artifact identifi concaten separ 

@@ -1,0 +1,6 @@
+commandTakeoff:1
+forwardMiddlewar:1
+commandClient:1
+clientDronolog:1
+forwardCommand:1
+acceptMiddlewar:1

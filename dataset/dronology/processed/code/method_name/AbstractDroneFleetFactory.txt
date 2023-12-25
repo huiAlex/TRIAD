@@ -1,0 +1,4 @@
+abstract drone fleet factori 
+creat drone id 
+initi drone 
+initi drone 

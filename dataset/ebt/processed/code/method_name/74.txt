@@ -1,0 +1,9 @@
+get connect 
+get 
+save current model 
+inject va 
+solv structur 
+solv structur equat 
+get track variabl 
+set calcul valu 
+get impact report 

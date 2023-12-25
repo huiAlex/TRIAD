@@ -1,0 +1,4 @@
+activUav:1
+setWaypoint:1
+completPlan:1
+setCurrent:1

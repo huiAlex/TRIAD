@@ -1,0 +1,11 @@
+schedulFlight:1
+planAutomat:1
+uavAssign:3
+assignRout:1
+signmentPlan:1
+assignUav:3
+planSignment:1
+uavSingl:1
+routAssign:1
+flightSchedul:1
+planFlight:1

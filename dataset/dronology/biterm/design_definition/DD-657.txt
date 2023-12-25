@@ -1,0 +1,5 @@
+assignUav:1
+routAssign:1
+uavExecut:1
+reorderRout:1
+planFlight:1

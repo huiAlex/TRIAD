@@ -1,0 +1,7 @@
+longitudTarget:1
+computDistanc:1
+longitudCurrent:1
+coordinCurrent:1
+computAngl:4
+positCurrent:3
+coordinPosit:3

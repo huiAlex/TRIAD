@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/NedCommand.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:66">package <name pos:start="1:9" pos:end="1:65"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:48">collisionavoidance</name><operator pos:start="1:49" pos:end="1:49">.</operator><name pos:start="1:50" pos:end="1:65">guidancecommands</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="5:3">/**
+ * A command that tells a UAV to fly in a direction for a specified amount of time.
+ */</comment>
+<class pos:start="6:1" pos:end="75:1"><specifier pos:start="6:1" pos:end="6:6">public</specifier> class <name pos:start="6:14" pos:end="6:23">NedCommand</name> <super_list pos:start="6:25" pos:end="6:39"><extends pos:start="6:25" pos:end="6:39">extends <super pos:start="6:33" pos:end="6:39"><name pos:start="6:33" pos:end="6:39">Command</name></super></extends></super_list> <block pos:start="6:41" pos:end="75:1">{
+    <decl_stmt pos:start="7:5" pos:end="7:49"><decl pos:start="7:5" pos:end="7:30"><type pos:start="7:5" pos:end="7:24"><specifier pos:start="7:5" pos:end="7:11">private</specifier> <specifier pos:start="7:13" pos:end="7:17">final</specifier> <name pos:start="7:19" pos:end="7:24">double</name></type> <name pos:start="7:26" pos:end="7:30">north</name></decl>, <decl pos:start="7:33" pos:end="7:36"><type ref="prev" pos:start="7:5" pos:end="7:24"/><name pos:start="7:33" pos:end="7:36">east</name></decl>, <decl pos:start="7:39" pos:end="7:42"><type ref="prev" pos:start="7:5" pos:end="7:24"/><name pos:start="7:39" pos:end="7:42">down</name></decl>, <decl pos:start="7:45" pos:end="7:48"><type ref="prev" pos:start="7:5" pos:end="7:24"/><name pos:start="7:45" pos:end="7:48">time</name></decl>;</decl_stmt>
+
+    <comment type="block" format="javadoc" pos:start="9:5" pos:end="31:7">/**
+     * &lt;p&gt;
+     * Creates a command that tells a UAV to fly in the direction given as a NED vector for the given amount of time.
+     * &lt;/p&gt;
+     *
+     * &lt;p&gt;
+     * Each component of the NED vector is given in meters per second. The time parameter is given in seconds.
+     * &lt;/p&gt;
+     *
+     * &lt;p&gt;
+     *     For example, to create a NedCommand that tells the UAV to fly north at 5 meters per second for 10 seconds.
+     *     &lt;pre&gt;
+     *         {@code
+     *         NedCommand north = new NedCommand(5, 0, 0, 10);
+     *         }
+     *     &lt;/pre&gt;
+     * &lt;/p&gt;
+     *
+     * @param north the north component of the velocity vector given in meters per second
+     * @param east the east component of the velocity vector given in meters per second
+     * @param down the down component of the velocity vector given in meters per second
+     * @param time the amount of time to fly at the given velocity in seconds
+     */</comment>
+    <constructor pos:start="32:5" pos:end="37:5"><specifier pos:start="32:5" pos:end="32:10">public</specifier> <name pos:start="32:12" pos:end="32:21">NedCommand</name><parameter_list pos:start="32:22" pos:end="32:74">(<parameter pos:start="32:23" pos:end="32:34"><decl pos:start="32:23" pos:end="32:34"><type pos:start="32:23" pos:end="32:34"><name pos:start="32:23" pos:end="32:28">double</name></type> <name pos:start="32:30" pos:end="32:34">north</name></decl></parameter>, <parameter pos:start="32:37" pos:end="32:47"><decl pos:start="32:37" pos:end="32:47"><type pos:start="32:37" pos:end="32:47"><name pos:start="32:37" pos:end="32:42">double</name></type> <name pos:start="32:44" pos:end="32:47">east</name></decl></parameter>, <parameter pos:start="32:50" pos:end="32:60"><decl pos:start="32:50" pos:end="32:60"><type pos:start="32:50" pos:end="32:60"><name pos:start="32:50" pos:end="32:55">double</name></type> <name pos:start="32:57" pos:end="32:60">down</name></decl></parameter>, <parameter pos:start="32:63" pos:end="32:73"><decl pos:start="32:63" pos:end="32:73"><type pos:start="32:63" pos:end="32:73"><name pos:start="32:63" pos:end="32:68">double</name></type> <name pos:start="32:70" pos:end="32:73">time</name></decl></parameter>)</parameter_list> <block pos:start="32:76" pos:end="37:5">{<block_content pos:start="33:9" pos:end="36:25">
+        <expr_stmt pos:start="33:9" pos:end="33:27"><expr pos:start="33:9" pos:end="33:26"><name pos:start="33:9" pos:end="33:18"><name pos:start="33:9" pos:end="33:12">this</name><operator pos:start="33:13" pos:end="33:13">.</operator><name pos:start="33:14" pos:end="33:18">north</name></name> <operator pos:start="33:20" pos:end="33:20">=</operator> <name pos:start="33:22" pos:end="33:26">north</name></expr>;</expr_stmt>
+        <expr_stmt pos:start="34:9" pos:end="34:25"><expr pos:start="34:9" pos:end="34:24"><name pos:start="34:9" pos:end="34:17"><name pos:start="34:9" pos:end="34:12">this</name><operator pos:start="34:13" pos:end="34:13">.</operator><name pos:start="34:14" pos:end="34:17">east</name></name> <operator pos:start="34:19" pos:end="34:19">=</operator> <name pos:start="34:21" pos:end="34:24">east</name></expr>;</expr_stmt>
+        <expr_stmt pos:start="35:9" pos:end="35:25"><expr pos:start="35:9" pos:end="35:24"><name pos:start="35:9" pos:end="35:17"><name pos:start="35:9" pos:end="35:12">this</name><operator pos:start="35:13" pos:end="35:13">.</operator><name pos:start="35:14" pos:end="35:17">down</name></name> <operator pos:start="35:19" pos:end="35:19">=</operator> <name pos:start="35:21" pos:end="35:24">down</name></expr>;</expr_stmt>
+        <expr_stmt pos:start="36:9" pos:end="36:25"><expr pos:start="36:9" pos:end="36:24"><name pos:start="36:9" pos:end="36:17"><name pos:start="36:9" pos:end="36:12">this</name><operator pos:start="36:13" pos:end="36:13">.</operator><name pos:start="36:14" pos:end="36:17">time</name></name> <operator pos:start="36:19" pos:end="36:19">=</operator> <name pos:start="36:21" pos:end="36:24">time</name></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+
+    <comment type="block" format="javadoc" pos:start="39:5" pos:end="42:7">/**
+     *
+     * @return the north component of the velocity vector in meters per second
+     */</comment>
+    <function pos:start="43:5" pos:end="45:5"><type pos:start="43:5" pos:end="43:17"><specifier pos:start="43:5" pos:end="43:10">public</specifier> <name pos:start="43:12" pos:end="43:17">double</name></type> <name pos:start="43:19" pos:end="43:26">getNorth</name><parameter_list pos:start="43:27" pos:end="43:28">()</parameter_list> <block pos:start="43:30" pos:end="45:5">{<block_content pos:start="44:9" pos:end="44:21">
+        <return pos:start="44:9" pos:end="44:21">return <expr pos:start="44:16" pos:end="44:20"><name pos:start="44:16" pos:end="44:20">north</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <comment type="block" format="javadoc" pos:start="47:5" pos:end="50:7">/**
+     *
+     * @return the east component of the velocity vector in meters per second
+     */</comment>
+    <function pos:start="51:5" pos:end="53:5"><type pos:start="51:5" pos:end="51:17"><specifier pos:start="51:5" pos:end="51:10">public</specifier> <name pos:start="51:12" pos:end="51:17">double</name></type> <name pos:start="51:19" pos:end="51:25">getEast</name><parameter_list pos:start="51:26" pos:end="51:27">()</parameter_list> <block pos:start="51:29" pos:end="53:5">{<block_content pos:start="52:9" pos:end="52:20">
+        <return pos:start="52:9" pos:end="52:20">return <expr pos:start="52:16" pos:end="52:19"><name pos:start="52:16" pos:end="52:19">east</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <comment type="block" format="javadoc" pos:start="55:5" pos:end="58:7">/**
+     *
+     * @return the down component of the velocity vector in meters per second
+     */</comment>
+    <function pos:start="59:5" pos:end="61:5"><type pos:start="59:5" pos:end="59:17"><specifier pos:start="59:5" pos:end="59:10">public</specifier> <name pos:start="59:12" pos:end="59:17">double</name></type> <name pos:start="59:19" pos:end="59:25">getDown</name><parameter_list pos:start="59:26" pos:end="59:27">()</parameter_list> <block pos:start="59:29" pos:end="61:5">{<block_content pos:start="60:9" pos:end="60:20">
+        <return pos:start="60:9" pos:end="60:20">return <expr pos:start="60:16" pos:end="60:19"><name pos:start="60:16" pos:end="60:19">down</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <comment type="block" format="javadoc" pos:start="63:5" pos:end="66:7">/**
+     *
+     * @return the amount of time to fly at the given velocity in seconds
+     */</comment>
+    <function pos:start="67:5" pos:end="69:5"><type pos:start="67:5" pos:end="67:17"><specifier pos:start="67:5" pos:end="67:10">public</specifier> <name pos:start="67:12" pos:end="67:17">double</name></type> <name pos:start="67:19" pos:end="67:25">getTime</name><parameter_list pos:start="67:26" pos:end="67:27">()</parameter_list> <block pos:start="67:29" pos:end="69:5">{<block_content pos:start="68:9" pos:end="68:20">
+        <return pos:start="68:9" pos:end="68:20">return <expr pos:start="68:16" pos:end="68:19"><name pos:start="68:16" pos:end="68:19">time</name></expr>;</return>
+    </block_content>}</block></function>
+
+    <function pos:start="71:5" pos:end="74:5"><annotation pos:start="71:5" pos:end="71:13">@<name pos:start="71:6" pos:end="71:13">Override</name></annotation>
+    <type pos:start="72:5" pos:end="72:17"><specifier pos:start="72:5" pos:end="72:10">public</specifier> <name pos:start="72:12" pos:end="72:17">String</name></type> <name pos:start="72:19" pos:end="72:26">toString</name><parameter_list pos:start="72:27" pos:end="72:28">()</parameter_list> <block pos:start="72:30" pos:end="74:5">{<block_content pos:start="73:9" pos:end="73:98">
+        <return pos:start="73:9" pos:end="73:98">return <expr pos:start="73:16" pos:end="73:97"><literal type="string" pos:start="73:16" pos:end="73:28">"NedCommand("</literal> <operator pos:start="73:30" pos:end="73:30">+</operator> <name pos:start="73:32" pos:end="73:36">north</name> <operator pos:start="73:38" pos:end="73:38">+</operator> <literal type="string" pos:start="73:40" pos:end="73:45">" N, "</literal> <operator pos:start="73:47" pos:end="73:47">+</operator> <name pos:start="73:49" pos:end="73:52">east</name> <operator pos:start="73:54" pos:end="73:54">+</operator> <literal type="string" pos:start="73:56" pos:end="73:61">" E, "</literal> <operator pos:start="73:63" pos:end="73:63">+</operator> <name pos:start="73:65" pos:end="73:68">down</name> <operator pos:start="73:70" pos:end="73:70">+</operator><literal type="string" pos:start="73:71" pos:end="73:76">" D, "</literal> <operator pos:start="73:78" pos:end="73:78">+</operator> <name pos:start="73:80" pos:end="73:83">time</name> <operator pos:start="73:85" pos:end="73:85">+</operator> <literal type="string" pos:start="73:87" pos:end="73:97">" seconds)"</literal></expr>;</return>
+    </block_content>}</block></function>
+}</block></class>
+</unit>

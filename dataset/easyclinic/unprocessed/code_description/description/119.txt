@@ -1,0 +1,16 @@
+Class: GUIVisita
+Date: 18/09/2003
+Version: 0.01.000
+Description:Make the mask on visits offers the opportunity to view patient detailed data for a visit
+
+Attributes:
+btnNext;Private; button used to see the subsequent examination of the visit concerned
+btnPrev ;Private; button used to see the previous examination of the visit concerned
+btnRitorna;Private; button used to return to the form of clinic folder  (GUICartellaClinica)
+panelDatiEsami; Private; panel containing data on a review carried out by Patient
+panelDatiVisita; Private; panel containing all data for a visit
+
+Methods:
+create; Public; Manufacturer of Class
+destroy; Public;Destroyer description of the class
+getDettagliVisita; Public; AcGet the details of a visit

@@ -1,0 +1,105 @@
+<Class>
+    <Id>84</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFFollowBar</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFFollowBar  /** 
+ * This is the bar that indicates when the active flights UI is in follow mode
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>totalLayout</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>stopFollowingButton</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>textLabel</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>smallText</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>UAVNames</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFFollowBar</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>AFMapComponent map</ParameterType>
+                <ParameterType>String uavs</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>smallText;setValue;[UAVNames]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setStyleName;["af_follow_bar"]</InnerMethodInvoke>
+                <InnerMethodInvoke>textLabel;setStyleName;["large_text"]</InnerMethodInvoke>
+                <InnerMethodInvoke>smallText;setStyleName;["small_text"]</InnerMethodInvoke>
+                <InnerMethodInvoke>stopFollowingButton;setHeight;["25px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>totalLayout;addComponents;[textLabel, smallText, stopFollowingButton]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[totalLayout]</InnerMethodInvoke>
+                <InnerMethodInvoke>stopFollowingButton;addClickListener;[e -&gt; {
+  map.setAverageCenter();
+  map.setFollow(false);
+}
+]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getStopFollowingButton</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>updateUAVList</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String uavs</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>smallText;setValue;[UAVNames]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

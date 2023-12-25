@@ -1,0 +1,19 @@
+drone connector servic 
+instanc 
+
+drone connector servic 
+
+connector 
+connector 
+msg 
+groundstationid 
+
+
+drone connector servic 
+get instanc 
+init servic instanc 
+handl connect 
+regist connect 
+unregist connect 
+
+ 

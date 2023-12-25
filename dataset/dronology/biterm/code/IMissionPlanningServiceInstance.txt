@@ -1,0 +1,5 @@
+executMission:6
+executPlan:6
+missionPlan:8
+removUav:2
+cancelMission:2

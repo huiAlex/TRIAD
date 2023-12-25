@@ -1,0 +1,9 @@
+vectorNormal:2
+computCoordin:1
+useSimul:1
+positCurrent:2
+coordinPosit:1
+vectorAltitud:3
+simulGoto:1
+commandGive:1
+commandGoto:1

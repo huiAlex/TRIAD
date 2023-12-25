@@ -1,0 +1,9 @@
+datumPatient:3
+patientDatum:3
+guiReturn:1
+returnGui:1
+guiAnagrafica:2
+anagraficaDatum:4
+principalGui:1
+guiPrincipal:1
+datumAnagrafica:4

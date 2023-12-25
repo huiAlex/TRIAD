@@ -1,0 +1,6 @@
+abstract base class info object 
+ 
+ 
+object null 
+uniqu object null 
+ 

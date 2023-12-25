@@ -1,0 +1,19 @@
+abstract server servic 
+get server 
+start servic 
+stop servic 
+restart servic 
+add servic listen 
+remov servic listen 
+get server info 
+add universi servic listen 
+set workspac 
+get workspac 
+remov universi servic listen 
+init servic instanc 
+get servic info 
+get file servic info 
+stop 
+restart 
+get servic 
+get core servic 

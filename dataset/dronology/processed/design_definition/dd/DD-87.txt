@@ -1,0 +1,1 @@
+remov flight plan queue flight plan unassign uav remov uav flight plan queue 

@@ -1,0 +1,12 @@
+uav acknowledg messag 
+serial version uid 
+messag type 
+
+
+messagetyp 
+groundstationid 
+uavid 
+
+
+uav acknowledg messag 
+

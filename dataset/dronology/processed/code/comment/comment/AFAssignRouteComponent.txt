@@ -1,0 +1,4 @@
+assign new rout uav 
+ 
+order flight rout assign uav base order drag layout 
+remov rout drag layout index 

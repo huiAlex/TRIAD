@@ -1,0 +1,15 @@
+set veloc command 
+serial version uid 
+
+
+uavid 
+ 
+ 
+ 
+
+
+set veloc command 
+
+command sent gcs set veloc vector uav 
+vector specifi ned north east 
+ 

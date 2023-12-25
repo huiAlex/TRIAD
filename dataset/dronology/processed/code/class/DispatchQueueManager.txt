@@ -1,0 +1,56 @@
+dispatch queue manag 
+logger 
+num thread 
+servic executor 
+use monitor 
+queue map 
+queue map 
+dispatch thread 
+dispatch thread 
+outgo command queue 
+outgo command queue 
+monitor queue 
+monitor queue 
+groundstationid 
+valid 
+
+abstract uav messag 
+
+groundstationid 
+id 
+status 
+status 
+uavid 
+messag 
+id 
+listen 
+queue 
+cmd 
+messag 
+uavid 
+messag 
+valid 
+
+uav state messag 
+iuav properti updat notifi 
+abstract uav messag 
+uav monitor messag 
+
+get groundstationid 
+dispatch queue manag 
+post drone status updat 
+forward valid 
+regist new drone 
+creat dispatch thread 
+creat monitor dispatch thread 
+tear 
+get outgo command queue 
+send 
+post monitor messag 
+post handshak messag 
+regist safeti valid 
+
+dispatch queue manag handl incom outgo queue 
+incom queue contain uav state receiv uav dispatch physic drone 
+outgo queue contain drone command sent uav 
+ 

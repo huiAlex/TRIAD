@@ -1,0 +1,7 @@
+reader simpl:amod
+reader json:compound
+reader convert:acl
+string json:compound
+convert string:obj
+object mission plan:compound
+convert object:obl

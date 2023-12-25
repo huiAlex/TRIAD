@@ -1,0 +1,9 @@
+
+descript 
+categori 
+waypoint 
+coordin 
+waypoint 
+index 
+index 
+altitud 

@@ -1,0 +1,9 @@
+design drone id 
+add 
+manag drone 
+drone 
+manag drone 
+manag drone 
+uavid 
+id 
+listen 

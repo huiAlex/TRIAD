@@ -1,0 +1,9 @@
+class factori:compound
+class predefin:nmod
+predefin flight pattern:dep
+pattern flight:compound
+pattern type pattern:nmod
+pattern type creat:acl
+support illeg argument except:nsubj
+illeg argument except case:nmod
+case pattern:dep

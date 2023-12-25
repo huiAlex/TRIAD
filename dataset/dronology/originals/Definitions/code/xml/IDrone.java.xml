@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IDrone.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:38">package <name pos:start="1:9" pos:end="1:37"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:70">import <name pos:start="3:8" pos:end="3:69"><name pos:start="3:8" pos:end="3:10">edu</name><operator pos:start="3:11" pos:end="3:11">.</operator><name pos:start="3:12" pos:end="3:13">nd</name><operator pos:start="3:14" pos:end="3:14">.</operator><name pos:start="3:15" pos:end="3:23">dronology</name><operator pos:start="3:24" pos:end="3:24">.</operator><name pos:start="3:25" pos:end="3:28">core</name><operator pos:start="3:29" pos:end="3:29">.</operator><name pos:start="3:30" pos:end="3:47">collisionavoidance</name><operator pos:start="3:48" pos:end="3:48">.</operator><name pos:start="3:49" pos:end="3:69">DroneSnapshotInternal</name></name>;</import>
+<import pos:start="4:1" pos:end="4:54">import <name pos:start="4:8" pos:end="4:53"><name pos:start="4:8" pos:end="4:10">edu</name><operator pos:start="4:11" pos:end="4:11">.</operator><name pos:start="4:12" pos:end="4:13">nd</name><operator pos:start="4:14" pos:end="4:14">.</operator><name pos:start="4:15" pos:end="4:23">dronology</name><operator pos:start="4:24" pos:end="4:24">.</operator><name pos:start="4:25" pos:end="4:28">core</name><operator pos:start="4:29" pos:end="4:29">.</operator><name pos:start="4:30" pos:end="4:39">coordinate</name><operator pos:start="4:40" pos:end="4:40">.</operator><name pos:start="4:41" pos:end="4:53">LlaCoordinate</name></name>;</import>
+<import pos:start="5:1" pos:end="5:55">import <name pos:start="5:8" pos:end="5:54"><name pos:start="5:8" pos:end="5:10">edu</name><operator pos:start="5:11" pos:end="5:11">.</operator><name pos:start="5:12" pos:end="5:13">nd</name><operator pos:start="5:14" pos:end="5:14">.</operator><name pos:start="5:15" pos:end="5:23">dronology</name><operator pos:start="5:24" pos:end="5:24">.</operator><name pos:start="5:25" pos:end="5:28">core</name><operator pos:start="5:29" pos:end="5:29">.</operator><name pos:start="5:30" pos:end="5:39">exceptions</name><operator pos:start="5:40" pos:end="5:40">.</operator><name pos:start="5:41" pos:end="5:54">DroneException</name></name>;</import>
+<import pos:start="6:1" pos:end="6:60">import <name pos:start="6:8" pos:end="6:59"><name pos:start="6:8" pos:end="6:10">edu</name><operator pos:start="6:11" pos:end="6:11">.</operator><name pos:start="6:12" pos:end="6:13">nd</name><operator pos:start="6:14" pos:end="6:14">.</operator><name pos:start="6:15" pos:end="6:23">dronology</name><operator pos:start="6:24" pos:end="6:24">.</operator><name pos:start="6:25" pos:end="6:28">core</name><operator pos:start="6:29" pos:end="6:29">.</operator><name pos:start="6:30" pos:end="6:39">exceptions</name><operator pos:start="6:40" pos:end="6:40">.</operator><name pos:start="6:41" pos:end="6:59">FlightZoneException</name></name>;</import>
+<import pos:start="7:1" pos:end="7:67">import <name pos:start="7:8" pos:end="7:66"><name pos:start="7:8" pos:end="7:10">edu</name><operator pos:start="7:11" pos:end="7:11">.</operator><name pos:start="7:12" pos:end="7:13">nd</name><operator pos:start="7:14" pos:end="7:14">.</operator><name pos:start="7:15" pos:end="7:23">dronology</name><operator pos:start="7:24" pos:end="7:24">.</operator><name pos:start="7:25" pos:end="7:28">core</name><operator pos:start="7:29" pos:end="7:29">.</operator><name pos:start="7:30" pos:end="7:36">vehicle</name><operator pos:start="7:37" pos:end="7:37">.</operator><name pos:start="7:38" pos:end="7:45">commands</name><operator pos:start="7:46" pos:end="7:46">.</operator><name pos:start="7:47" pos:end="7:66">AbstractDroneCommand</name></name>;</import>
+<import pos:start="8:1" pos:end="8:52">import <name pos:start="8:8" pos:end="8:51"><name pos:start="8:8" pos:end="8:10">edu</name><operator pos:start="8:11" pos:end="8:11">.</operator><name pos:start="8:12" pos:end="8:13">nd</name><operator pos:start="8:14" pos:end="8:14">.</operator><name pos:start="8:15" pos:end="8:23">dronology</name><operator pos:start="8:24" pos:end="8:24">.</operator><name pos:start="8:25" pos:end="8:28">core</name><operator pos:start="8:29" pos:end="8:29">.</operator><name pos:start="8:30" pos:end="8:36">vehicle</name><operator pos:start="8:37" pos:end="8:37">.</operator><name pos:start="8:38" pos:end="8:42">proxy</name><operator pos:start="8:43" pos:end="8:43">.</operator><name pos:start="8:44" pos:end="8:51">UAVProxy</name></name>;</import>
+
+
+<comment type="block" format="javadoc" pos:start="11:1" pos:end="17:3">/**
+ * iDrone interface
+ * 
+ * @author Jane Cleland-Huang
+ * @version 0.01
+ *
+ */</comment>
+<interface pos:start="18:1" pos:end="112:1"><specifier pos:start="18:1" pos:end="18:6">public</specifier> interface <name pos:start="18:18" pos:end="18:23">IDrone</name> <block pos:start="18:25" pos:end="112:1">{
+
+	<function_decl pos:start="20:9" pos:end="20:41"><type pos:start="20:9" pos:end="20:23"><specifier pos:start="20:9" pos:end="20:14">public</specifier> <name pos:start="20:16" pos:end="20:23">UAVProxy</name></type> <name pos:start="20:25" pos:end="20:38">getDroneStatus</name><parameter_list pos:start="20:39" pos:end="20:40">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="22:9" pos:end="25:11">/**
+	 * 
+	 * @return latitude of drone
+	 */</comment>
+	<function_decl pos:start="26:9" pos:end="26:36"><type pos:start="26:9" pos:end="26:21"><specifier pos:start="26:9" pos:end="26:14">public</specifier> <name pos:start="26:16" pos:end="26:21">double</name></type> <name pos:start="26:23" pos:end="26:33">getLatitude</name><parameter_list pos:start="26:34" pos:end="26:35">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="28:9" pos:end="31:11">/**
+	 * 
+	 * @return longitude of drone
+	 */</comment>
+	<function_decl pos:start="32:9" pos:end="32:37"><type pos:start="32:9" pos:end="32:21"><specifier pos:start="32:9" pos:end="32:14">public</specifier> <name pos:start="32:16" pos:end="32:21">double</name></type> <name pos:start="32:23" pos:end="32:34">getLongitude</name><parameter_list pos:start="32:35" pos:end="32:36">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="34:9" pos:end="37:11">/**
+	 * 
+	 * @return altitude of drone
+	 */</comment>
+	<function_decl pos:start="38:9" pos:end="38:36"><type pos:start="38:9" pos:end="38:21"><specifier pos:start="38:9" pos:end="38:14">public</specifier> <name pos:start="38:16" pos:end="38:21">double</name></type> <name pos:start="38:23" pos:end="38:33">getAltitude</name><parameter_list pos:start="38:34" pos:end="38:35">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="40:9" pos:end="45:11">/**
+	 * Fly drone to target coordinates
+	 * 
+	 * @param targetCoordinates
+	 * @param speed
+	 */</comment>
+	<function_decl pos:start="46:9" pos:end="46:73"><type pos:start="46:9" pos:end="46:19"><specifier pos:start="46:9" pos:end="46:14">public</specifier> <name pos:start="46:16" pos:end="46:19">void</name></type> <name pos:start="46:21" pos:end="46:25">flyTo</name><parameter_list pos:start="46:26" pos:end="46:72">(<parameter pos:start="46:27" pos:end="46:57"><decl pos:start="46:27" pos:end="46:57"><type pos:start="46:27" pos:end="46:57"><name pos:start="46:27" pos:end="46:39">LlaCoordinate</name></type> <name pos:start="46:41" pos:end="46:57">targetCoordinates</name></decl></parameter>, <parameter pos:start="46:60" pos:end="46:71"><decl pos:start="46:60" pos:end="46:71"><type pos:start="46:60" pos:end="46:71"><name pos:start="46:60" pos:end="46:65">Double</name></type> <name pos:start="46:67" pos:end="46:71">speed</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="48:9" pos:end="51:11">/**
+	 * 
+	 * @return current coordinates
+	 */</comment>
+	<function_decl pos:start="52:9" pos:end="52:46"><type pos:start="52:9" pos:end="52:28"><specifier pos:start="52:9" pos:end="52:14">public</specifier> <name pos:start="52:16" pos:end="52:28">LlaCoordinate</name></type> <name pos:start="52:30" pos:end="52:43">getCoordinates</name><parameter_list pos:start="52:44" pos:end="52:45">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="54:9" pos:end="57:11">/**
+	 * 
+	 * @return unique name of drone
+	 */</comment>
+	<function_decl pos:start="58:9" pos:end="58:37"><type pos:start="58:9" pos:end="58:21"><specifier pos:start="58:9" pos:end="58:14">public</specifier> <name pos:start="58:16" pos:end="58:21">String</name></type> <name pos:start="58:23" pos:end="58:34">getDroneName</name><parameter_list pos:start="58:35" pos:end="58:36">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="60:9" pos:end="64:11">/**
+	 * Land the drone. Update status.
+	 * 
+	 * @throws FlightZoneException
+	 */</comment>
+	<function_decl pos:start="65:9" pos:end="65:47"><type pos:start="65:9" pos:end="65:12"><name pos:start="65:9" pos:end="65:12">void</name></type> <name pos:start="65:14" pos:end="65:17">land</name><parameter_list pos:start="65:18" pos:end="65:19">()</parameter_list> <throws pos:start="65:21" pos:end="65:46">throws <argument pos:start="65:28" pos:end="65:46"><expr pos:start="65:28" pos:end="65:46"><name pos:start="65:28" pos:end="65:46">FlightZoneException</name></expr></argument></throws>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="67:9" pos:end="71:11">/**
+	 * Takeoff. Update status.
+	 * 
+	 * @throws FlightZoneException
+	 */</comment>
+	<function_decl pos:start="72:9" pos:end="72:65"><type pos:start="72:9" pos:end="72:12"><name pos:start="72:9" pos:end="72:12">void</name></type> <name pos:start="72:14" pos:end="72:20">takeOff</name><parameter_list pos:start="72:21" pos:end="72:37">(<parameter pos:start="72:22" pos:end="72:36"><decl pos:start="72:22" pos:end="72:36"><type pos:start="72:22" pos:end="72:27"><name pos:start="72:22" pos:end="72:27">double</name></type> <name pos:start="72:29" pos:end="72:36">altitude</name></decl></parameter>)</parameter_list> <throws pos:start="72:39" pos:end="72:64">throws <argument pos:start="72:46" pos:end="72:64"><expr pos:start="72:46" pos:end="72:64"><name pos:start="72:46" pos:end="72:64">FlightZoneException</name></expr></argument></throws>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="74:9" pos:end="83:11">/**
+	 * Sets drones coordinates
+	 * 
+	 * @param lat
+	 *          latitude
+	 * @param lon
+	 *          Longitude
+	 * @param alt
+	 *          Altitude
+	 */</comment>
+	<function_decl pos:start="84:9" pos:end="84:71"><type pos:start="84:9" pos:end="84:19"><specifier pos:start="84:9" pos:end="84:14">public</specifier> <name pos:start="84:16" pos:end="84:19">void</name></type> <name pos:start="84:21" pos:end="84:34">setCoordinates</name><parameter_list pos:start="84:35" pos:end="84:70">(<parameter pos:start="84:36" pos:end="84:45"><decl pos:start="84:36" pos:end="84:45"><type pos:start="84:36" pos:end="84:45"><name pos:start="84:36" pos:end="84:41">double</name></type> <name pos:start="84:43" pos:end="84:45">lat</name></decl></parameter>, <parameter pos:start="84:48" pos:end="84:57"><decl pos:start="84:48" pos:end="84:57"><type pos:start="84:48" pos:end="84:57"><name pos:start="84:48" pos:end="84:53">double</name></type> <name pos:start="84:55" pos:end="84:57">lon</name></decl></parameter>, <parameter pos:start="84:60" pos:end="84:69"><decl pos:start="84:60" pos:end="84:69"><type pos:start="84:60" pos:end="84:69"><name pos:start="84:60" pos:end="84:65">double</name></type> <name pos:start="84:67" pos:end="84:69">alt</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="86:9" pos:end="86:41"><type pos:start="86:9" pos:end="86:21"><specifier pos:start="86:9" pos:end="86:14">public</specifier> <name pos:start="86:16" pos:end="86:21">double</name></type> <name pos:start="86:23" pos:end="86:38">getBatteryStatus</name><parameter_list pos:start="86:39" pos:end="86:40">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="88:9" pos:end="88:38"><type pos:start="88:9" pos:end="88:22"><specifier pos:start="88:9" pos:end="88:14">public</specifier> <name pos:start="88:16" pos:end="88:22">boolean</name></type> <name pos:start="88:24" pos:end="88:27">move</name><parameter_list pos:start="88:28" pos:end="88:37">(<parameter pos:start="88:29" pos:end="88:36"><decl pos:start="88:29" pos:end="88:36"><type pos:start="88:29" pos:end="88:34"><name pos:start="88:29" pos:end="88:34">double</name></type> <name pos:start="88:36" pos:end="88:36">i</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="90:9" pos:end="90:43"><type pos:start="90:9" pos:end="90:19"><specifier pos:start="90:9" pos:end="90:14">public</specifier> <name pos:start="90:16" pos:end="90:19">void</name></type> <name pos:start="90:21" pos:end="90:40">setVoltageCheckPoint</name><parameter_list pos:start="90:41" pos:end="90:42">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="92:9" pos:end="92:74"><type pos:start="92:9" pos:end="92:22"><specifier pos:start="92:9" pos:end="92:14">public</specifier> <name pos:start="92:16" pos:end="92:22">boolean</name></type> <name pos:start="92:24" pos:end="92:43">isDestinationReached</name><parameter_list pos:start="92:44" pos:end="92:73">(<parameter pos:start="92:45" pos:end="92:72"><decl pos:start="92:45" pos:end="92:72"><type pos:start="92:45" pos:end="92:47"><name pos:start="92:45" pos:end="92:47">int</name></type> <name pos:start="92:49" pos:end="92:72">distanceMovedPerTimeStep</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="94:9" pos:end="94:60"><type pos:start="94:9" pos:end="94:12"><name pos:start="94:9" pos:end="94:12">void</name></type> <name pos:start="94:14" pos:end="94:31">setBaseCoordinates</name><parameter_list pos:start="94:32" pos:end="94:59">(<parameter pos:start="94:33" pos:end="94:58"><decl pos:start="94:33" pos:end="94:58"><type pos:start="94:33" pos:end="94:45"><name pos:start="94:33" pos:end="94:45">LlaCoordinate</name></type> <name pos:start="94:47" pos:end="94:58">basePosition</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="96:9" pos:end="96:50"><type pos:start="96:9" pos:end="96:28"><specifier pos:start="96:9" pos:end="96:14">public</specifier> <name pos:start="96:16" pos:end="96:28">LlaCoordinate</name></type> <name pos:start="96:30" pos:end="96:47">getBaseCoordinates</name><parameter_list pos:start="96:48" pos:end="96:49">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="98:9" pos:end="98:49"><type pos:start="98:9" pos:end="98:19"><specifier pos:start="98:9" pos:end="98:14">public</specifier> <name pos:start="98:16" pos:end="98:19">void</name></type> <name pos:start="98:21" pos:end="98:34">setGroundSpeed</name><parameter_list pos:start="98:35" pos:end="98:48">(<parameter pos:start="98:36" pos:end="98:47"><decl pos:start="98:36" pos:end="98:47"><type pos:start="98:36" pos:end="98:41"><name pos:start="98:36" pos:end="98:41">double</name></type> <name pos:start="98:43" pos:end="98:47">speed</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="100:9" pos:end="100:62"><type pos:start="100:9" pos:end="100:19"><specifier pos:start="100:9" pos:end="100:14">public</specifier> <name pos:start="100:16" pos:end="100:19">void</name></type> <name pos:start="100:21" pos:end="100:31">setVelocity</name><parameter_list pos:start="100:32" pos:end="100:61">(<parameter pos:start="100:33" pos:end="100:40"><decl pos:start="100:33" pos:end="100:40"><type pos:start="100:33" pos:end="100:40"><name pos:start="100:33" pos:end="100:38">double</name></type> <name pos:start="100:40" pos:end="100:40">x</name></decl></parameter>, <parameter pos:start="100:43" pos:end="100:50"><decl pos:start="100:43" pos:end="100:50"><type pos:start="100:43" pos:end="100:50"><name pos:start="100:43" pos:end="100:48">double</name></type> <name pos:start="100:50" pos:end="100:50">y</name></decl></parameter>, <parameter pos:start="100:53" pos:end="100:60"><decl pos:start="100:53" pos:end="100:60"><type pos:start="100:53" pos:end="100:60"><name pos:start="100:53" pos:end="100:58">double</name></type> <name pos:start="100:60" pos:end="100:60">z</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="102:9" pos:end="102:54"><type pos:start="102:9" pos:end="102:12"><name pos:start="102:9" pos:end="102:12">void</name></type> <name pos:start="102:14" pos:end="102:27">setCoordinates</name><parameter_list pos:start="102:28" pos:end="102:53">(<parameter pos:start="102:29" pos:end="102:52"><decl pos:start="102:29" pos:end="102:52"><type pos:start="102:29" pos:end="102:41"><name pos:start="102:29" pos:end="102:41">LlaCoordinate</name></type> <name pos:start="102:43" pos:end="102:52">coordinate</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="104:9" pos:end="104:84"><type pos:start="104:9" pos:end="104:19"><specifier pos:start="104:9" pos:end="104:14">public</specifier> <name pos:start="104:16" pos:end="104:19">void</name></type> <name pos:start="104:21" pos:end="104:31">sendCommand</name><parameter_list pos:start="104:32" pos:end="104:61">(<parameter pos:start="104:33" pos:end="104:60"><decl pos:start="104:33" pos:end="104:60"><type pos:start="104:33" pos:end="104:52"><name pos:start="104:33" pos:end="104:52">AbstractDroneCommand</name></type> <name pos:start="104:54" pos:end="104:60">command</name></decl></parameter>)</parameter_list> <throws pos:start="104:63" pos:end="104:83">throws <argument pos:start="104:70" pos:end="104:83"><expr pos:start="104:70" pos:end="104:83"><name pos:start="104:70" pos:end="104:83">DroneException</name></expr></argument></throws>;</function_decl>
+
+	<function_decl pos:start="106:9" pos:end="106:62"><type pos:start="106:9" pos:end="106:36"><specifier pos:start="106:9" pos:end="106:14">public</specifier> <name pos:start="106:16" pos:end="106:36">DroneSnapshotInternal</name></type> <name pos:start="106:38" pos:end="106:59">getLatestDroneSnapshot</name><parameter_list pos:start="106:60" pos:end="106:61">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="108:9" pos:end="108:63"><type pos:start="108:9" pos:end="108:19"><specifier pos:start="108:9" pos:end="108:14">public</specifier> <name pos:start="108:16" pos:end="108:19">void</name></type> <name pos:start="108:21" pos:end="108:35">setManagedDrone</name><parameter_list pos:start="108:36" pos:end="108:62">(<parameter pos:start="108:37" pos:end="108:61"><decl pos:start="108:37" pos:end="108:61"><type pos:start="108:37" pos:end="108:48"><name pos:start="108:37" pos:end="108:48">ManagedDrone</name></type> <name pos:start="108:50" pos:end="108:61">managedDrone</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="110:9" pos:end="110:58"><type pos:start="110:9" pos:end="110:19"><specifier pos:start="110:9" pos:end="110:14">public</specifier> <name pos:start="110:16" pos:end="110:19">void</name></type> <name pos:start="110:21" pos:end="110:33">resendCommand</name><parameter_list pos:start="110:34" pos:end="110:35">()</parameter_list> <throws pos:start="110:37" pos:end="110:57">throws <argument pos:start="110:44" pos:end="110:57"><expr pos:start="110:44" pos:end="110:57"><name pos:start="110:44" pos:end="110:57">DroneException</name></expr></argument></throws>;</function_decl>
+
+}</block></interface>
+</unit>

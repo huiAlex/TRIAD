@@ -1,0 +1,7 @@
+planName
+wayPoints
+uavid
+planName
+wayPointsToAdd
+drone
+uavid

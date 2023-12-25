@@ -1,0 +1,105 @@
+------------------------------------------------------------------   us1159.c - Unit Tests for User Story 1159 - CSR Attributes enforce     October, 2014     Copyright (c) 2014, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   This function generates an EC public/private key   pair that will be used with the certificate   we provision.  /
+   This test attempts does a simple enroll with the   client providing no CSR attributes other than   challengePassword. The enroll should succeed.  /
+   This routine builds a PKCS10 CSR.  /
+   Sign an X509 certificate request using the digest and the key passed.   Returns OpenSSL error code from X509_REQ_sign_ctx();  /
+       Encode using DER (ASN.1)             We have to set the modified flag on the X509_REQ because       OpenSSL keeps a cached copy of the DER encoded data in some       cases.  Setting this flag tells OpenSSL to run the ASN       encoding again rather than using the cached copy.      /
+   This test attempts does a simple enroll with the   client providing all the required CSR attributes in   the CSR. The enroll should succeed.  /
+   This test attempts does a simple enroll with the   client providing all the required CSR attributes in   the CSR except that the 521-bit curve is used. The enroll   should fail since the server CSR attrs specify to   use the 384-bit curve.  /
+   This test attempts does a simple enroll with the   client providing all the required CSR attributes in   the CSR except that SHA-384 is used for the   signature. The enroll should fail since the server   CSR attrs require SHA-256.  /
+   This test attempts does a simple enroll when the   server has no CSR attributes configured to only   require the CommonName.  The CSR attributes on   the server are configured through the static API,   not the callback.  /
+   This test attempts does a simple enroll with the   client providing all the required CSR attributes in   the CSR. The client also provides a large   quantity of additional attriutes.  /
+   This test attempts does a simple enroll with the   client providing all the required CSR attributes in   the CSR. The client also provides an attribute with   a very long name and value.  /
+   This test attempts does a simple enroll when the   server has no CSR attributes configured with   PoP enabled.  /
+   This test attempts does a simple enroll when the   server has no CSR attributes configured with   PoP disabled.  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Start an EST server acting as the CA      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with       automatic enrollment enabled.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Generate an EC key      /
+       read it back in to an EVP_PKEY struct      /
+       This reads in the private key file, which is expected to be a PEM       encoded private key.  If using DER encoding, you would invoke       d2i_PrivateKey_bio() instead.      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+ setup version number /
+       Add Common Name entry      /
+       Add serial number Name entry      /
+       Add all the other attributes that the server will be expecting      /
+       Set the public key on the request      /
+       This sets the full list of attributes on the server      /
+       generate a private key      /
+       Sign the request      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       This sets the full list of attributes on the server      /
+       generate a private key      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+       This sets the full list of attributes on the server      /
+       generate a private key      /
+       Create a client context      /
+       Change to SHA-384 for the signature      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+       Disable the CSR attr callback on the server context      /
+       Configure the static CSR attributes value      /
+       generate a private key      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Enroll a new cert      /
+       Cleanup      /
+       This sets the full list of attributes on the server      /
+       generate a private key      /
+       Jam another 25 attributes into the request       We could do more, but this causes a failure on the EST server when       base64 decoding the CSR due to a safeC constraint.  The max string       size in safeC defaults to 4096 bytes.      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       This sets the full list of attributes on the server      /
+       generate a private key      /
+       Add an attribute with a long value      /
+       Add an attribute with a long name      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Cleanup      /
+       Disable the CSR attr callback on the server context      /
+       generate a private key      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Enroll a new cert      /
+       Cleanup      /
+       Disable the CSR attr callback on the server context      /
+       generate a private key      /
+       Create a client context      /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Enroll a new cert      /
+       Cleanup      /
+ add a suite to the registry /
+ add the tests to the suite /
+ NOTE - ORDER IS IMPORTANT - MUST TEST fread() AFTER fprintf() /
+NID_X9_62_prime256v1/

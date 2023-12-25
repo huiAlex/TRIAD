@@ -1,0 +1,10 @@
+PVector
+getX
+getY
+getZ
+toNVector
+toLlaCoordinate
+hashCode
+toString
+equals
+toPVector

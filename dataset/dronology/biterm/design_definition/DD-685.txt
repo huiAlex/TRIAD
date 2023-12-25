@@ -1,0 +1,3 @@
+mapUav:1
+loadMap:1
+uavLocat:1

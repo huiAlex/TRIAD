@@ -1,0 +1,3 @@
+Voltage simulator.
+For every minute of flight, the battery decreases by 0.25 volts.
+/

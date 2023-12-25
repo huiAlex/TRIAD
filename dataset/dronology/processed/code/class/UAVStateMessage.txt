@@ -1,0 +1,45 @@
+uav state messag 
+serial version uid 
+messag type 
+locat 
+attitud 
+veloc 
+mode 
+status 
+arm 
+armabl 
+groundspe 
+batterystatus 
+serial version uid 
+current 
+voltag 
+level 
+
+
+messag 
+groundstationid 
+uavid 
+current 
+voltag 
+level 
+
+
+uav state messag 
+get locat 
+get attitud 
+get veloc 
+armabl 
+get groundspe 
+get status 
+arm 
+get mode 
+get batterystatus 
+string 
+batteri status 
+get batteri level 
+get batteri current 
+get batteri voltag 
+
+state messag receiv gcs specif uav 
+ 
+ 

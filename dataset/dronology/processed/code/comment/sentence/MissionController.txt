@@ -1,0 +1,4 @@
+Central control class responsible for building, initializing, and executing a  { FullMissionPlan}.
+The { MissionController} periodically checks for new tasks that can be  activated and activates them on demand.
+/
+/

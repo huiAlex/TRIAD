@@ -1,0 +1,7 @@
+split pane 
+split pane 
+frame parent 
+menu panel 
+work area 
+visual panel 
+ 

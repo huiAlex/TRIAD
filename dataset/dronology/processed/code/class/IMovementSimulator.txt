@@ -1,0 +1,18 @@
+movement simul 
+
+
+ 
+current posit 
+target coordin 
+distanc time step 
+
+lla coordin 
+lla coordin 
+
+
+set flight path 
+check point 
+destin reach 
+
+movement simul simul movement virtual drone reach assign waypoint 
+ 

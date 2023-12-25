@@ -1,0 +1,12 @@
+AbstractFileTransmitServiceInstance
+getItems
+getItem
+requestFromServer
+transmitToServer
+notifyFileChange
+reloadItems
+deleteItem
+addItemChangeListener
+removeItemChangeListener
+getPath
+fromFile

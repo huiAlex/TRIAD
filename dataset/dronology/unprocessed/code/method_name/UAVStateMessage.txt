@@ -1,0 +1,15 @@
+UAVStateMessage
+getLocation
+getAttitude
+getVelocity
+isArmable
+getGroundspeed
+getStatus
+isArmed
+getMode
+getBatterystatus
+toString
+BatteryStatus
+getBatteryLevel
+getBatteryCurrent
+getBatteryVoltage

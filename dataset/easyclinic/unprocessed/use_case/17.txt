@@ -1,0 +1,35 @@
+Use case:
+Changing anagrafica of the patient
+
+Description:
+It allows the operator to change the anagrafica of a patient that are at outpatient
+It deals with the modification of data about anagrafica a Patient
+
+Preconditions:
+The Operator has been recognized by system (See UcValOp)
+The patient is been recognized by the system (See UcValPaz)
+The age of the patient is inside of SIO
+
+Postconditions:
+The anagrafica data of the patient are not modified before execution.
+The anagrafica of the patient is properly changed
+
+Sub-flows:
+The operator activates the execution of change Service  of the anagrafica of the patient
+1 View the mask for editing the anagrafica of patient
+2 Change the anagrafica of patient
+3 Confirm Changes 
+4 Verify the data inserted by operator
+5 Remember the updates
+6 Notify that the operation finished with success
+
+Alternative flows:
+Invalid data set 
+   4 1 Display a message showing the data deemed invalid
+   4 2 Reinserts running from 1, underpinned the fields of the form with data insterted by user
+
+Operator cancels function 
+change
+   3 1 ends the execution of use case with failure
+   2 1 The anagrafica of a patient is characterized by following data: name, surname, sex, code, tax, date of birth, place of birth, province of birth, place of home address, province of residence address, ZIP code, additional telephone and Notes.
+   NB: In italics are highlighted data, Optional whose inclusion does not affect on the correct completion of the operation

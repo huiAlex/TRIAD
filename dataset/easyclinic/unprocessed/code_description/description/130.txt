@@ -1,0 +1,11 @@
+Class:GUITempiMedi
+Date: 16/09/2003
+Version: 0 01 000
+Description: Its task is to display the mask on the calculation of the average time that are occurred to serve a request for Reservations
+Attributes:
+btnUscita;Private ; button that allows you to return the mask represented by GUIPrincipale
+graphRisultati;Private;  Chart shows the average time that is `to serve occurred a request for reservations
+panelRisultati;Private ; panel with the results (numerical) obtained from the calculation of average time to serve the demands of reservations
+
+Methods:
+tempiMedi ; Public;It description to find all the information necessary for the calculation of average Pending

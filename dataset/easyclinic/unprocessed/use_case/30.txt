@@ -1,0 +1,28 @@
+Use case:
+Plans reservations
+
+Description:
+It allows the operator to view and print plans of bookings made for each type visit in tabular form
+
+Preconditions:
+The Operator's interest to see and print the plans reservations
+The Operator has been recognized by system (See UcValOp)
+
+Postconditions:
+
+Sub-flows:
+The operator activates the execution of service to view and print plans reservations
+1 View a mask to view and print plans reservations
+2 Select the type of visit
+3 Enable 
+4 Access to the database and found in the required training
+5 View information obtained
+
+Alternative flows:
+Operator decides to print information
+   5 1 Start printing information displayed
+   5 2 generates the report and sends it to printer
+Operator cancels the operation 
+   3 1 ends the use case with failure 
+   2 1 The types of access that the operator can select are: First Visit Day, and Hospital Visit Check
+   5 1 for each reservation in this plan Reservations is the name of patient

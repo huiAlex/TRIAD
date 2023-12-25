@@ -1,0 +1,2 @@
+new gcs connect dronolog send connect request messag 
+ 

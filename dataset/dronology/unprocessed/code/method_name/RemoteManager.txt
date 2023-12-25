@@ -1,0 +1,13 @@
+getInstance
+getService
+addServiceListener
+removeServiceListener
+getServices
+getCoreServices
+getAllServices
+getFileServices
+contributeService
+register
+unregister
+initialize
+tearDown

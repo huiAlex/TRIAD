@@ -1,0 +1,8 @@
+serialVersionUID
+category
+waypoints
+waypoints
+dateCreated
+dateModified
+length
+description

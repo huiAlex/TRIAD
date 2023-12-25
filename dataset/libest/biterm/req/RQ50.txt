@@ -1,0 +1,10 @@
+keyGenerat:1
+typeContent:1
+requestCertif:1
+setValu:1
+generatKey:1
+csrAttribut:1
+sideServer:1
+attributCsr:1
+requestClient:1
+addValu:2

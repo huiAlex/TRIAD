@@ -1,0 +1,15 @@
+incom groundstat connect server 
+port 
+server socket 
+cont 
+logger 
+url 
+
+
+
+
+incom groundstat connect server 
+run 
+
+incom groundstat connect server listen predefin port new connect gcs 
+ 

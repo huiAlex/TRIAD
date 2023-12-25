@@ -1,0 +1,6 @@
+LOGGER
+serviceInstance
+isStarted
+services
+services
+customWorkspace

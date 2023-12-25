@@ -1,0 +1,26 @@
+us retri interv 
+us tcp server port 
+us tcp proxi port 
+us server cert 
+us server key 
+us proxi cert 
+us proxi key 
+us cacert 
+us trust cert 
+us server cert 
+us server key 
+us proxi cert 
+us proxi key 
+us cacert 
+us trust cert 
+us pkcs rsa 
+us pkcs dsa 
+us pkcs ecdsa 
+us pkcs corrupt 
+us pkcs stale pop 
+us enrol url ba 
+us pkcs ct 
+us uidpwd good 
+us cacert 
+us explicit cert 
+us explicit key 

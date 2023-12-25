@@ -1,0 +1,37 @@
+abstract uav messag 
+serial version uid 
+receiv timestamp 
+sendtimestamp 
+type 
+data 
+data 
+uavid 
+groundstationid 
+
+
+type 
+groundstationid 
+uavid 
+uavid 
+key 
+valu 
+key 
+type 
+
+
+abstract uav messag 
+timestamp 
+get timestamp 
+get sendtimestamp 
+string 
+get uavid 
+set uavid 
+add properi 
+get properti 
+get properti 
+set type 
+get gcs id 
+get identifi 
+get data 
+get type 
+

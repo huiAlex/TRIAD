@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IFlightSimulator.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:40">package <name pos:start="1:9" pos:end="1:39"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:39">simulator</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:59">import <name pos:start="3:8" pos:end="3:58"><name pos:start="3:8" pos:end="3:10">edu</name><operator pos:start="3:11" pos:end="3:11">.</operator><name pos:start="3:12" pos:end="3:13">nd</name><operator pos:start="3:14" pos:end="3:14">.</operator><name pos:start="3:15" pos:end="3:23">dronology</name><operator pos:start="3:24" pos:end="3:24">.</operator><name pos:start="3:25" pos:end="3:28">core</name><operator pos:start="3:29" pos:end="3:29">.</operator><name pos:start="3:30" pos:end="3:36">vehicle</name><operator pos:start="3:37" pos:end="3:37">.</operator><name pos:start="3:38" pos:end="3:45">internal</name><operator pos:start="3:46" pos:end="3:46">.</operator><name pos:start="3:47" pos:end="3:58">VirtualDrone</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="5:1" pos:end="12:3">/**
+ * 
+ * Interface for the internal simulator used with {@link VirtualDrone}.&lt;br&gt;
+ * The simulator consists of a {@link IBatterySimulator} and a {@link IMovementSimulator} approximating the behavior of a UAV.
+ * 
+ * @author Michael Vierhauser
+ *
+ */</comment>
+<interface pos:start="13:1" pos:end="15:1"><specifier pos:start="13:1" pos:end="13:6">public</specifier> interface <name pos:start="13:18" pos:end="13:33">IFlightSimulator</name> <super_list pos:start="13:35" pos:end="13:79"><extends pos:start="13:35" pos:end="13:79">extends <super pos:start="13:43" pos:end="13:59"><name pos:start="13:43" pos:end="13:59">IBatterySimulator</name></super>, <super pos:start="13:62" pos:end="13:79"><name pos:start="13:62" pos:end="13:79">IMovementSimulator</name></super></extends></super_list> <block pos:start="13:81" pos:end="15:1">{
+
+}</block></interface>
+</unit>

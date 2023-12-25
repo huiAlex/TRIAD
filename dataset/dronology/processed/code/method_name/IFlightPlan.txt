@@ -1,0 +1,14 @@
+get assign drone 
+set status complet 
+get start locat 
+get end locat 
+clear assign drone 
+get flight id 
+set status fli 
+get way point 
+get start time 
+get end time 
+get design drone id 
+complet 
+get takeoff altitud 
+set design drone id 

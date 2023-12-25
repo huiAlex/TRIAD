@@ -1,0 +1,1 @@
+Abstract base class for all services that allow transferring files as a byte  array        /

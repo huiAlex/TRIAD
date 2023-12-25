@@ -1,0 +1,4 @@
+assignUav:1
+planPend:2
+planAssign:1
+planFlight:3

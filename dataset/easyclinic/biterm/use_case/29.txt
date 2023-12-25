@@ -1,0 +1,4 @@
+operActiv:1
+reservRequest:2
+requestReserv:2
+activOper:1

@@ -1,0 +1,11 @@
+/**
+ * Representation of a virtual UAV which is controlled by the internal simulator.
+ * 
+ *  * 
+ */
+
+/**
+	 * Constructs drone without specifying its current position. This will be used by the physical drone (later) where positioning status will be acquired from the drone.
+	 * 
+	 * 	 */
+

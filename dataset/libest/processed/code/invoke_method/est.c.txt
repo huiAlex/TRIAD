@@ -1,0 +1,78 @@
+flockfil 
+vfprintf 
+fflush 
+funlockfil 
+va start 
+va end 
+va start 
+va end 
+getcurrentprocess 
+syminiti 
+capturestackbacktrac 
+calloc 
+free 
+est log info 
+est log info 
+est log info 
+est log info 
+bio new mem buf 
+bio free 
+bio new mem buf 
+bio free 
+stack 
+bio new 
+obj nid obj 
+obj nid obj 
+pkcs bio 
+bio flush 
+bio new mem buf 
+est get cert pkcs 
+bio get mem data 
+malloc 
+memcpi 
+bio free 
+bio free 
+store new 
+store set verifi cb 
+ossl init cert store 
+free 
+strnlen 
+bio new 
+bio new mem buf 
+bio push 
+bio read 
+bio free 
+bio new 
+bio new 
+bio push 
+bio set flag 
+bio write 
+bio flush 
+bio get mem ptr 
+bio free 
+bio new 
+bio new 
+bio flush 
+bio push 
+bio write 
+bio flush 
+bio get mem ptr 
+bio free 
+malloc 
+est base decod 
+est asn saniti test 
+free 
+malloc 
+est base decod 
+asn get object 
+memcpi 
+malloc 
+memzero 
+est base encod 
+strnlen 
+est log info 
+malloc 
+est base decod 
+uriparseuria 
+malloc 
+strcasecmp 

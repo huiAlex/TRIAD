@@ -1,0 +1,14 @@
+batteri status 
+lla coordin 
+deseri lla coordin 
+deseri vector 
+deseri vector 
+get 
+get 
+get 
+get 
+get 
+deseri batteri status 
+get 
+get 
+get 

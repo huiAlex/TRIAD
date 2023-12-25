@@ -1,0 +1,130 @@
+us unit test user stori client enrol octob copyright cisco system right reserv 
+start instanc est server run separ thread use test client side api modul 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+function perform basic simpl enrol use uid pwd identifi client server use variet test case modul 
+test case use exist expir cert attempt enrol expir cert contain sever extens verifi new issu cert preserv extens use grep note preserv extens requir openssl ca enabl copi extens knob openssl config file whi test suit use uniqu copi estexampleca cnf 
+test enrol api ensur grace handl null cert pointer 
+test enrol api ensur grace handl null evp pkey pointer 
+test attempt enrol corrupt cert public key cert corrupt 
+test attempt enrol expir cert est server configur manual approv server send retri respons 
+verifi bogus user id password fail use http basic auth 
+verifi good user id password pass use http digest auth 
+verifi bogus user id password fail use http digest auth 
+verifi server fail authent client send valid ident cert doesn provid http auth credenti 
+verifi server fail authent client send expir identi cert use valid http auth credenti 
+temporari file creat various test case 
+read ca certif 
+start instanc est server automat enrol enabl 
+creat rsa keypair assign pkey return 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+convert cert warn pure hackeri 
+new cert onli cert pkcs blob shouldn iter find 
+wow lot work final don just love openssl represent cert let tri enrol cert ca 
+cleanup 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+retriev cert given us est server 
+save cert local file 
+base decod cert respons 
+convert pkcs cert pem cert 
+convert pem cert textual represent cert 
+verifi jimbob dns extens preserv 
+verifi bobcat dns extens preserv 
+verifi ip address extens preserv 
+verifi repudi key usag extens preserv 
+verifi public key preserv 
+clean 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+enrol use null pointer 
+clean 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read old cert use enrol 
+get latest csr attribut 
+enrol use null evp key pointer 
+clean 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+clean 
+stop server 
+restart server manual approv enabl 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+clean 
+stop server 
+restart server manual approv disabl 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+enabl http digest authent 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+enabl http basic authent 
+enabl http digest authent 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+read privat key 
+read old cert 
+get latest csr attribut 
+enrol expir cert contain extens 
+check http status code reenrol oper 
+enabl http basic authent 
+creat csr 
+sign csr use local ca 
+creat client context 
+read privat key 
+read old cert 
+set authent mode use certif http auth credenti provid 
+set est server address port 
+get latest csr attribut 
+enrol cert fail becaus didn provid valid http auth credenti 
+enrol cert work sinc provid valid cert identifi ourselv http auth isn requir enrol server enabl http auth 
+creat client context 
+read privat key 
+read old cert 
+set authent mode use expir certif valid http auth credenti 
+set est server address port 
+get latest csr attribut 
+enrol cert 
+add suit registri 
+add test suit 

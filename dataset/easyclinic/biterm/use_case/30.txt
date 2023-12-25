@@ -1,0 +1,12 @@
+typeVisit:2
+accessType:1
+operActiv:1
+selectOper:1
+operSelect:1
+selectAccess:1
+typeSelect:1
+selectType:1
+activOper:1
+typeAccess:1
+accessSelect:1
+visitType:2

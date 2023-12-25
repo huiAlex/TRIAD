@@ -1,0 +1,4 @@
+action for "" double click on Event List""
+action for ""Open First Record"" in popup menu
+action for ""View Current Record"" in popup menu
+Passes a CHECK_SUBSCRIPTION message to the eventserver and waits for a response

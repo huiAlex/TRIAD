@@ -1,0 +1,4 @@
+constructor
+end of class Notification_Event
+Set the other members before calling this function
+This method displays the contents of two array list to console

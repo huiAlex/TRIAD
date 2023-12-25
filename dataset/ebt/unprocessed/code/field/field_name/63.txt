@@ -1,0 +1,7 @@
+count
+taskNumber
+done
+theServer
+conn
+stmt
+rs

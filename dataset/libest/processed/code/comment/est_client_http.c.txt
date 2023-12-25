@@ -1,0 +1,88 @@
+sign long sign int 
+parsed return parsed ok fine convers parsed fail fail convert parsed later time overflow far end time parsed sooner time underflow low end time 
+return day monday sunday 
+return day monday sunday 
+return time zone offset gmt input number second timezon wasn legal 
+return time zone offset gmt input number second timezon wasn legal 
+struct tm time sinc epoch gmt time zone similar standard mktime function gmt onli doesn suffer various bug portabl problem system implement 
+parsed return parsed ok fine convers parsed fail fail convert parsed later time overflow far end time parsed sooner time underflow low end time 
+find next field find next rfc token string entri pstr point string contain word separ white white space word option quot use comment surrround filter exit pstr first delimit past field string mutil termin return pointer first word null error 
+function pars authent token server server request http digest authent token requir generat valid authent respons futur http request 
+function pars authent token server server request http digest authent token requir generat valid authent respons futur http request 
+function pars http status code first header onli hand code handl est http stack ani unrecogn code result error note http expect 
+function search process www authent header server result set auth mode valu context www authent header valu header invalid set auth mode failur set multipl authent header onli first process 
+function take header server respons walk header look retri respons header valu pars save away est context valu format repres ascii string first format count number second client wait befor retri request second format time date stamp point time client retri request result function set retri valu context retri header receiv receiv pars valu zero otherwis set valu receiv note est client current doe support time date format respons process respons format 
+function verifi content type header return length content header content type import exampl content type expect pkcs simpl enrol 
+function verifi content type header return length content header content type import exampl content type expect pkcs simpl enrol 
+function extract data ssl context buffer 
+function provid primari entri point modul use est client read http respons server data read ssl context http pars invok est err return raw buf buffer freed caller otherwis freed 
+convers lose signific bit 
+return offset real offset 
+skip everyth aren letter digit 
+day week number mon sun 
+month year number 
+day month 
+save origin pointer 
+max part 
+time make zero 
+bit time onli hold date begin 
+clear illeg date 
+timegm return time time bit mani architectur featur bit long system bit time deal year howev system bit time mktime return date utc januari aix 
+time zone adjust cast int compar negat 
+header come basic digest field skip 
+find offset header delimint 
+skip first line 
+walk header look www authent ll onli process first erron second includ ignor 
+initi assum retri header 
+travers http header process need check 
+make sure necessari header present 
+load timev struct pass select 
+multipl call ssl read requir get http payload 
+read raw data ssl connect 
+pars http header get status look status success 
+check status header first see server accept request 
+strip white space delimit 
+content type 
+server report ok noth 
+server ask retri 
+server request user auth credenti 
+check ve alreadi tri authent bail first time auth mode set 
+unsupport http respons 
+http respons given want handl 
+don support year befor caus function return negat valu 
+lack vital info fail 
+add time zone diff local time zone gmt 
+time overflow 
+get content type content length header verifi http respons contain correct data 
+come 
+bad string 
+digit 
+field 
+quot field 
+kr need stop 
+quot field 
+kr need stop 
+comment 
+spool field 
+got 
+determin valu date time string integ repres number second client wait 
+verifi content pkcs data 
+content length 
+alloc buffer hold payload pass 
+just time zone string 
+time stamp 
+time stamp second 
+onli support md moment 
+pars realm 
+pars realm nonc 
+pars realm possibl token error field 
+convert date time string time 
+format current support 
+make sure digit make sure larger byte integ cach away valu return retri delay 
+skip escap char 
+skip escap char 
+skip escap char 
+digit valu equal take account sort funni time zone diff preced plus minus time zone indic pick sinc frequent use mention edg number document iso propos timezon function http david tribbl com text xtimezon html anyon authorit sourc exact maximum time zone offset pleas speak 
+prefix indic local time compar gmt need ther revers math get want 
+digit year month day yyyymmdd 
+month 

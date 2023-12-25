@@ -1,0 +1,12 @@
+providLibwarc:1
+warcFile:1
+recordWarc:1
+recordValid:1
+recordType:1
+providInterfac:1
+warcRecord:1
+libwarcProvid:1
+fileWarc:1
+typeRecord:1
+interfacProvid:1
+validRecord:1

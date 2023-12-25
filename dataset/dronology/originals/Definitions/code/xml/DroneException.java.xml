@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/DroneException.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:41">package <name pos:start="1:9" pos:end="1:40"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:40">exceptions</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="6:3">/**
+ * @author Michael
+ *
+ */</comment>
+<class pos:start="7:1" pos:end="20:1"><specifier pos:start="7:1" pos:end="7:6">public</specifier> class <name pos:start="7:14" pos:end="7:27">DroneException</name> <super_list pos:start="7:29" pos:end="7:45"><extends pos:start="7:29" pos:end="7:45">extends <super pos:start="7:37" pos:end="7:45"><name pos:start="7:37" pos:end="7:45">Exception</name></super></extends></super_list> <block pos:start="7:47" pos:end="20:1">{
+	<comment type="block" format="javadoc" pos:start="8:9" pos:end="10:11">/**
+	 * 
+	 */</comment>
+	<decl_stmt pos:start="11:9" pos:end="11:75"><decl pos:start="11:9" pos:end="11:74"><type pos:start="11:9" pos:end="11:33"><specifier pos:start="11:9" pos:end="11:15">private</specifier> <specifier pos:start="11:17" pos:end="11:22">static</specifier> <specifier pos:start="11:24" pos:end="11:28">final</specifier> <name pos:start="11:30" pos:end="11:33">long</name></type> <name pos:start="11:35" pos:end="11:50">serialVersionUID</name> <init pos:start="11:52" pos:end="11:74">= <expr pos:start="11:54" pos:end="11:74"><operator pos:start="11:54" pos:end="11:54">-</operator><literal type="number" pos:start="11:55" pos:end="11:74">6599291683788888263L</literal></expr></init></decl>;</decl_stmt>
+
+	<comment type="block" format="javadoc" pos:start="13:9" pos:end="15:10">/**
+	* 
+	*/</comment>
+
+	<constructor pos:start="17:9" pos:end="19:9"><specifier pos:start="17:9" pos:end="17:14">public</specifier> <name pos:start="17:16" pos:end="17:29">DroneException</name><parameter_list pos:start="17:30" pos:end="17:41">(<parameter pos:start="17:31" pos:end="17:40"><decl pos:start="17:31" pos:end="17:40"><type pos:start="17:31" pos:end="17:36"><name pos:start="17:31" pos:end="17:36">String</name></type> <name pos:start="17:38" pos:end="17:40">msg</name></decl></parameter>)</parameter_list> <block pos:start="17:43" pos:end="19:9">{<block_content pos:start="18:17" pos:end="18:27">
+		<expr_stmt pos:start="18:17" pos:end="18:27"><expr pos:start="18:17" pos:end="18:26"><call pos:start="18:17" pos:end="18:26"><name pos:start="18:17" pos:end="18:21">super</name><argument_list pos:start="18:22" pos:end="18:26">(<argument pos:start="18:23" pos:end="18:25"><expr pos:start="18:23" pos:end="18:25"><name pos:start="18:23" pos:end="18:25">msg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+}</block></class>
+</unit>

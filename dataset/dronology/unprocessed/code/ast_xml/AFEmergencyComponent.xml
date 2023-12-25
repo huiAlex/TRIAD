@@ -1,0 +1,93 @@
+<Class>
+    <Id>93</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFEmergencyComponent</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFEmergencyComponent  /** 
+ * This is the set of emergency buttons in the AFInfoPanel
+ * @author Patrick Falvey 
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>buttons</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>hover</FieldName>
+            <FieldType>NativeButton</FieldType>
+        </Field>
+        <Field>
+            <FieldName>home</FieldName>
+            <FieldType>NativeButton</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFEmergencyComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [layout=new VerticalLayout()]</InnerVar>
+                <InnerVar>Label [caption=new Label("Emergency Operations")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>layout;addStyleName;["af_operations_group"]</InnerMethodInvoke>
+                <InnerMethodInvoke>hover;setCaptionAsHtml;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>hover;addStyleName;["btn-warning"]</InnerMethodInvoke>
+                <InnerMethodInvoke>home;setCaptionAsHtml;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>home;addStyleName;["btn-warning"]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addComponents;[hover, home]</InnerMethodInvoke>
+                <InnerMethodInvoke>layout;addComponents;[caption, buttons]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[layout]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHome</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NativeButton</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHover</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NativeButton</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,18 @@
+drone monitor remot servic 
+
+
+handler 
+handler 
+identifi 
+uavid 
+frequenc 
+
+remot monitor messag handler 
+remot monitor messag handler 
+artifact identifi 
+
+regist monitor messag handler 
+regist monitor messag handler 
+set monitor frequenc 
+
+ 

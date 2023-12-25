@@ -1,0 +1,17 @@
+flyToNextWayPoint
+add
+flyTo
+addWayPoint
+hasMoreWayPoints
+isUnderSafetyDirectives
+hasMoreWayPoints
+flyTo
+getCoordinate
+getBaseCoordinates
+equals
+get
+getCoordinate
+getApproachingspeed
+reached
+getFlightModeState
+setModeToInAir

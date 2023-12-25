@@ -1,0 +1,6 @@
+parseSpeculateInformation
+identifyPerformanceModels
+pullInformationFromDoors
+insertValuesInDataBase
+createExecuteString
+parseImpactReport

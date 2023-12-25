@@ -1,0 +1,7 @@
+informUav:1
+messagUav:1
+messagMonitor:2
+uavSingl:1
+containInform:1
+uavMessag:1
+uavRegard:1

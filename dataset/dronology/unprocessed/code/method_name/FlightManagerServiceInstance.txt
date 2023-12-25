@@ -1,0 +1,16 @@
+FlightManagerServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+getFlightDetails
+planFlight
+planFlight
+returnToHome
+pauseFlight
+getFlightInfo
+getCurrentFlights
+cancelPendingFlights
+takeoff
+emergencyStop

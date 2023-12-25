@@ -1,0 +1,22 @@
+Class: GUIPrenotaVisita
+Date: 16/09/2003
+Version: 0.01.000
+Description: Make the mask on the management of booking a visit
+
+Attributes:
+btnAnnulla; Private;button that allows you to return the mask implemented by GUIPaziente
+btnConfermaTipo;Private;button that allows you to confirm access type of the reservation
+btnPrenota;Private;button that allows you to confirm reservations
+panelDataVisita; Private;panel containing the date of proposed visit by the system
+panelDati;Private;panel containing the necessary data to make a reservation
+panelTipoVisita ;Private;panel containing the various types of visit which can be booked
+
+Methods:
+notificaSuccesso;Public; Its task is to notify the success
+show; Public; View mask
+visualizzaDataVisita; Public; View date proposed by the system
+visualizzaDatiVisita;Public; View data of a reservation
+eliminaPrenotazione ;Public; Manages the event generated when the Operator Select a reservation and start the delete procedure
+modificaPrenotazione; Public; Manages the event generated when the Operator Select a reservation and start the change procedure
+prenotaVisita;Public; Manages the event generated when the Operator select and start the reservation process a new visit
+primaVisita;Public; Manages the event generated when the Operator Select a reservation and start a first visit reservation procedure

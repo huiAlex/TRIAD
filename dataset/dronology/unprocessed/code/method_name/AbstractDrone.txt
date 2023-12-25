@@ -1,0 +1,15 @@
+AbstractDrone
+setCoordinates
+setCoordinates
+getLatitude
+getLongitude
+getAltitude
+getCoordinates
+getDroneName
+getDroneStatus
+setBaseCoordinates
+getBaseCoordinates
+setVelocity
+updateBatteryLevel
+setUserControlled
+setManagedDrone

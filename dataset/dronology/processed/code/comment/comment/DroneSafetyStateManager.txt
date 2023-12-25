@@ -1,0 +1,5 @@
+sociat drone safeti state object drone 
+onli set drone constructor 
+interchang runtim otherwis drone state incorrect chang 
+ 
+constructor state flight mode safeti mode set initi state 

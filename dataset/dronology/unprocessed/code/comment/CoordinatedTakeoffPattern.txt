@@ -1,0 +1,8 @@
+/**
+ * 
+ * Predefined pattern for coordinated take-off that is expanded as part of a
+ * {@link PatternTask} in a {@link FullMissionPlan}.
+ * 
+ *  *
+ */
+

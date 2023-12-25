@@ -1,0 +1,11 @@
+LOGGER
+EXECUTOR
+socket
+registeredListeners
+registeredListeners
+readDispatcher
+writeDispatcher
+groundstationid
+dispatchQueueManager
+connected
+server

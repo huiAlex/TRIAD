@@ -1,0 +1,10 @@
+wrapperSwig:1
+libwarcImplement:1
+interfacLibwarc:1
+javaInterfac:1
+interfacJava:1
+wrapperUse:1
+useWrapper:1
+swigWrapper:1
+libwarcInterfac:1
+implementLibwarc:1

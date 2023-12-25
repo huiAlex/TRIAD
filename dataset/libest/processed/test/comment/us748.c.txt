@@ -1,0 +1,61 @@
+us unit test user stori proxi simpl enrol august copyright cisco system right reserv 
+defin us proxi cert ca estca privat estservercertandkey pem 
+defin us proxi key ca estca privat estservercertandkey pem 
+defin us proxi cert ca estca privat estservercertandkey pem 
+defin us proxi key ca estca privat estservercertandkey pem 
+follow csr generat use follow openssl command use cat rsa req file openssl req newkey rsa keyout rsakey pem keyform pem rsa req outform pem 
+follow csr generat use follow openssl command use cat ec req file openssl req newkey ec parm keyout eckey pem keyform pem ec req outform pem 
+follow csr generat use follow openssl command use cat dsa req file openssl req newkey dsa dsaparm keyout dsakey pem keyform pem dsa req outform pem 
+follow valid csr alreadi contain pop challengepassword collect use estserv dumpbin function csr work sinc pop valu stale 
+callback function pass est client init 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+simpl enrol rsa test case use libcurl test simpl enrol bit rsa csr http basic authent use 
+simpl enrol ec prime test case use libcurl test simpl enrol bit ec csr http basic authent use 
+simpl enrol dsa prime test case use libcurl test simpl enrol bit dsa csr http basic authent use 
+simpl enrol corrupt pkcs test case use libcurl test simpl enrol usinga corrupt csr http basic authent use 
+simpl enrol manual enrol test case verifi server send appropri retri respons 
+simpl enrol pop check fail curl test case verifi server verifi pop client csr sinc curl doe set pop est enrol fail 
+simpl enrol pop check succeed estclient test case verifi proxi verifi pop client csr use estclient sinc support pop 
+simpl enrol pop disabl csr contain valid pop test case ensur server handl scenario csr includ valid pop server didn request use ciscoest client generat csr contain valid pop way includ valid pop use curl sinc tls channel bind inform known advanc 
+simpl enrol pop disabl csr contain invalid pop test case ensur server handl scenario csr includ invalid pop server didn request 
+main function set run test return cue success success run anoth cunit error code failur 
+creat rsa keypair assign pkey return 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+first start est server act ca 
+next start est proxi act ra 
+read ca certif 
+start instanc est server automat enrol enabl 
+sinc pass valid userid password expect server respond 
+sinc pass valid userid password expect server respond 
+sinc pass valid userid password expect server respond 
+sinc csr valid server respond 
+stop est server 
+restart server manual enrol enabl 
+sinc server hasn seen csr past respond retri respons 
+verifi retri valu sprintf cmd grep retri grep test outfil us retri interv rv system cmd 
+avoid wait retri period sinc onli simul manual enrol wait second tri enrol cert 
+enrol request succeed time simul manual enrol automat enrol second attempt 
+stop est server 
+restart server manual enrol disabl 
+send valid enrol request use curl curl doe includ pop 
+server respond failur code 
+test case requir pop enabl 
+creat client context 
+specifi user id password sinc server run basic authent mode 
+get keypair use enrol 
+attempt enrol csr 
+client librari obtain new client certif retriev librari 
+clean 
+disabl pop futur test case 
+make sure est server pop disabl 
+read ca cert 
+init client context 
+ll use simpl http auth identifi ourselv 
+creat space hold cert generat privat key 
+attempt enrol 
+make sure est server pop disabl 
+enrol request fail sinc pop invalid expect respons 
+add suit registri 
+add test suit 

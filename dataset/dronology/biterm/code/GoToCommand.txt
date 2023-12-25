@@ -1,0 +1,2 @@
+sendCommand:1
+sendWaypoint:1

@@ -1,0 +1,2 @@
+set map oper button info panel 
+ 

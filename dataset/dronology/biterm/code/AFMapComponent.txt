@@ -1,0 +1,6 @@
+activUav:1
+componMap:1
+centerMap:2
+updatUav:1
+hoverPlace:1
+routFlight:2

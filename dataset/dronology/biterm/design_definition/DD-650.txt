@@ -1,0 +1,5 @@
+transmitMiddlewar:1
+assignRout:1
+removUav:1
+removRout:1
+removAssign:2

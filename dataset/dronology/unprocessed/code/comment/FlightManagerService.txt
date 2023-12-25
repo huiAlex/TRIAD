@@ -1,0 +1,13 @@
+/**
+ * 
+ * Service for handling UAV flights
+ * Allows assigning flight plans to UAVs 
+ * Allows sending flight related commands to UAVs (take-off, return to home...).
+ * 
+ *  
+ *  *
+ */
+
+/**
+	 * 	 */
+

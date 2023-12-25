@@ -1,0 +1,12 @@
+max cmds 
+us server domain 
+us server ip 
+us server tcp port 
+us proxi ip 
+us proxi tcp port 
+us uid 
+us pwd 
+us cacert 
+us cacert 
+max cmd buf 
+max pid buf 

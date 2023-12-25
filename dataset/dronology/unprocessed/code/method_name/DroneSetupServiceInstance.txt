@@ -1,0 +1,16 @@
+DroneSetupServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+initializeDrones
+doInitDrone
+addDroneStatusChangeListener
+removeDroneStatusChangeListener
+notifyDroneStatusChange
+getActiveUAVs
+deactivateDrone
+cancelPlans
+getActiveUAV
+resendCommand

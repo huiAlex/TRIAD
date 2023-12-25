@@ -1,0 +1,6 @@
+planWaypoint:1
+planExecut:1
+reachWaypoint:2
+reachPlan:1
+planReach:1
+planFlight:2

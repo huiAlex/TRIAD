@@ -1,0 +1,8 @@
+typeContent:1
+useMessag:1
+headerType:2
+csrAttribut:1
+sideServer:1
+attributCsr:1
+specifiUse:1
+certifClient:1

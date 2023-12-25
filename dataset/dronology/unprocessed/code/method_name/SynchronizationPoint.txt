@@ -1,0 +1,7 @@
+SynchronizationPoint
+toString
+registerCollaborator
+activateSynchronizationPoint
+removeCollaborator
+countUnsynched
+isSynched

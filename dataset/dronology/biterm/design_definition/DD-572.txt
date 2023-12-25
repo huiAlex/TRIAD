@@ -1,0 +1,4 @@
+activUav:1
+requestActiv:1
+uavActiv:1
+acceptRequest:1

@@ -1,0 +1,19 @@
+af mission oper 
+serial version uid 
+button 
+upload 
+cancel mission 
+execut mission 
+
+
+info panel 
+listen 
+
+af info panel 
+
+af mission oper 
+cancel misison 
+add click listen 
+
+set map oper button af info panel 
+ 

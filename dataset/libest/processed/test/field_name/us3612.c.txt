@@ -1,0 +1,16 @@
+us server port 
+us server ip 
+us uid 
+us pwd 
+us good pwd 
+us bad pwd 
+rsa keysiz 
+est privat key enc 
+us cacert 
+us trust cert 
+us server certkey 
+us privat key file 
+us cacert 
+us trust cert 
+us server certkey 
+us privat key file 

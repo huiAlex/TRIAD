@@ -1,0 +1,8 @@
+Returns the id.
+Returns the logic.
+Returns the name.
+Returns the value.
+Sets the id.
+Sets the logic.
+Sets the name.
+Sets the value.

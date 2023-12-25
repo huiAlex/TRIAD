@@ -1,0 +1,6 @@
+resendCommand:2
+sendCommand:2
+setPoint:2
+positCurrent:1
+targetCoordin:1
+simulIntern:1

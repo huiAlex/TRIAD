@@ -1,0 +1,4 @@
+commandUav:1
+stateCommand:1
+setState:1
+setCommand:1

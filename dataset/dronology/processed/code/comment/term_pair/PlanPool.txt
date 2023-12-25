@@ -1,0 +1,8 @@
+manag plan pool:nsubj
+complet plan pool:nsubj
+manag pend:ccomp
+pend execut:dep
+manag complet:conj
+complet plan:obj
+uav singl:amod
+complet uav:obl

@@ -1,0 +1,14 @@
+rout handl:amod
+rout flight:compound
+servic rout:nmod
+allow creat:ccomp
+rout new:amod
+creat rout:obj
+allow retriev:ccomp
+creat retriev:conj
+routus exist:amod
+retriev routus:obj
+allow transmit:ccomp
+creat transmit:conj
+rout modifi:amod
+transmit rout:obj

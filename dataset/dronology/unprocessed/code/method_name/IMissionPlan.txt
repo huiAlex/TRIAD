@@ -1,0 +1,4 @@
+getDescription
+setDescription
+getMissionDescriptions
+addMissionDescription

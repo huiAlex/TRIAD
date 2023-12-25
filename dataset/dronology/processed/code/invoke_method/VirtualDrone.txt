@@ -1,0 +1,23 @@
+creat 
+get simul 
+start batteri drain 
+updat batteri level 
+set coordin 
+set flight path 
+updat batteri level 
+get voltag 
+get batteri status 
+updat coordin 
+check point 
+destin reach 
+
+check point 
+stop batteri drain 
+get voltag 
+get latitud 
+get longitud 
+get voltag 
+get latitud 
+get longitud 
+get altitud 
+get coordin 

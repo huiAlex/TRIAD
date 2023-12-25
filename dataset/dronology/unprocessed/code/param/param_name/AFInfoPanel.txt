@@ -1,0 +1,6 @@
+isChecked
+uavStatus
+hoverInPlace
+name
+select
+visible

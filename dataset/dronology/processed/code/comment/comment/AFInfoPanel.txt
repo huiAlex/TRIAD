@@ -1,0 +1,12 @@
+side panel contain info box uav inform 
+add box panel check status batteri life health color lat lon alt speed hover place 
+remov box panel drone return true success 
+return fals fail 
+drone checkbox check 
+true drone check 
+true drone check 
+expand collaps box visibl 
+true box expand 
+true box collaps 
+get updat inform dronolog uav locat inform status 
+add ani new drone panel remov ani drone deactiv 

@@ -1,0 +1,6 @@
+drone voltag simul 
+recharg batteri 
+start batteri drain 
+stop batteri drain 
+check point 
+get voltag 

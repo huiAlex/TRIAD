@@ -1,0 +1,48 @@
+st start 
+est init logger 
+read binari file 
+us clean 
+us start server 
+st stop 
+free 
+read binari file 
+cu assert 
+bio new 
+bio read filenam 
+cu assert 
+pem read bio 
+cu assert 
+bio free 
+bio new 
+bio read filenam 
+cu assert 
+pem read bio privatekey 
+cu assert 
+bio free 
+est init logger 
+est server init 
+cu assert 
+est server set auth mode 
+cu assert 
+est server set auth mode 
+cu assert 
+est server set auth mode 
+cu assert 
+est server set auth mode 
+cu assert 
+est server set auth mode 
+cu assert 
+fip mode set 
+est server set auth mode 
+cu assert 
+fip mode set 
+free 
+evp pkey free 
+est destroy 
+curl http post 
+cu assert 
+st enabl http token auth 
+curl http post cert write 
+cu assert 
+cu assert 
+cu add suit 

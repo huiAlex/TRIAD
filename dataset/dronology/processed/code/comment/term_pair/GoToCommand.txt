@@ -1,0 +1,3 @@
+send command:nsubj
+waypoint new:amod
+send waypoint:obj

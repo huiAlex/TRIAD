@@ -1,0 +1,218 @@
+<Class>
+    <Id>75</Id>
+    <Package>edu.nd.dronology.core.simulator.simplesimulator</Package>
+    <ClassName>FlightSimulator</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>FlightSimulator  /** 
+ * Computes the current position of a virtual drone as it moves during flight. Serves as a lightweight SITL for a drone.
+ * @author Jane Cleland-Huang
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>currentPosition</FieldName>
+            <FieldType>LlaCoordinate</FieldType>
+        </Field>
+        <Field>
+            <FieldName>targetPosition</FieldName>
+            <FieldType>LlaCoordinate</FieldType>
+        </Field>
+        <Field>
+            <FieldName>previousDistance</FieldName>
+            <FieldType>Long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>reached</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>drone</FieldName>
+            <FieldType>VirtualDrone</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>FlightSimulator</MethodName>
+            <MethodComment>/** 
+ * Creates a flight simulator object for a single virtual drone
+ * @param drone
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>VirtualDrone drone</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setFlightPath</MethodName>
+            <MethodComment>/** 
+ * Sets current flight path from current position to a targeted position
+ * @param currentPos Coordinates of current position
+ * @param targetPos Coordinates of target position
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>LlaCoordinate currentPos</ParameterType>
+                <ParameterType>LlaCoordinate targetPos</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRemainingDistance</MethodName>
+            <MethodComment>/** 
+ * Computes the distance between current position and target position
+ * @return distance remaining in degree points.
+ */
+</MethodComment>
+            <ReturnType>long</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>computeLatitudeDelta</MethodName>
+            <MethodComment>/** 
+ * Computes the delta between the drones current latitude and its target latitude.
+ * @return
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>computeLongitudeDelta</MethodName>
+            <MethodComment>/** 
+ * Computes the delta between the drones current longitude and its target longitude
+ * @return
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>computeAngle</MethodName>
+            <MethodComment>/** 
+ * Computes the angle at which a drone is flying with respect to the vertical
+ * @return
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [height=computeLatitudeDelta()]</InnerVar>
+                <InnerVar>double [hypotenuse=getRemainingDistance()]</InnerVar>
+                <InnerVar>double [sinTheta=height / hypotenuse]</InnerVar>
+                <InnerVar>double [angle=Math.asin(sinTheta) * 180 / Math.PI]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>move</MethodName>
+            <MethodComment>/** 
+ * Computes the position of the drone following one step. Checks if destination has been reached.
+ * @param step : Distance in degree points to move per iteration
+ * @return isStillMoving?
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>double step</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>isDestinationReached</MethodName>
+            <MethodComment>/** 
+ * Checks if a drone has reached its target destination.
+ * @param distanceMovedPerTimeStep Checks location with respect to target position.
+ * @return true if target position is reached.
+ */
+</MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>double distanceMovedPerTimeStep</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [latDistance=Math.abs(currentPosition.getLatitude() - targetPosition.getLatitude())]</InnerVar>
+                <InnerVar>double [lonDistance=Math.abs(currentPosition.getLongitude() - targetPosition.getLongitude())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,79 @@
+sinc hijack openssl buf mem data util function allow us free buf mem free data 
+bsearch compar use bsearch function perform comparison node client context array 
+get client ctx perform search order array key search current thread id valu return client context creat thread entri exist array thread id new creat 
+proxi cleanup invok est destroy current context proxi mode 
+routin check result code enrol attempt propag retri messag client need 
+routin send pkcs encod certif est client http 
+est proxi retriev cacert issu request server obtain ca cert chain use get ca cert request client ca cert chain return server pass caller respons caller free buffer 
+routin connect est server attempt enrol csr pkcs buffer success return cert pkcs buffer length return cert pkcs len pkcs buffer alloc caller 
+routin connect est server attempt enrol csr pkcs buffer success return cert pkcs buffer length return cert pkcs len pkcs buffer alloc caller 
+function use server side est proxi respond incom simpl enrol request function similar client api function est client enrol req except bypass thing function proxi sign csr insert tls uniqu id instead includ id kp cmcra usag extens 
+function use server side est proxi respond incom cacert request ca cert respons set local respond local set buffer set issu request upstream server 
+function use server side est proxi respond incom csr attribut request function similar client api function est client get csrattr 
+function call web server layer http request arriv listen port est proxi determin est request type dispatch request appropri handler paramt ctx pointer est ctx http ctx context pointer web server method html method request get post uri pointer http uri bodi pointer html bodi content bodi len length html bodi ct html content type header 
+est proxi start use applic start est proxi est proxi init est proxi set server call requir callback function provid applic ctx pointer est context libest use http code mongoos http server function allow applic start http servic layer requir est est error 
+est proxi stop use applic stop est proxi call prior est destroy ctx pointer est context libest use http code mongoos http server function allow applic stop http servic layer est error 
+est proxi set auth mode use applic layer configur http authent method use valid ident est client ctx pointer est proxi context return est proxi init amod auth basic auth digest function option invok applic layer chang default http authent mode default mode http basic authent applic desir use digest authent instead case function use set mode function invok prior start est proxi est error 
+est proxi set read timeout use applic set timeout valu read oper est proxi send request est server attempt read respons server timeout valu limit time proxi wait respons ctx pointer est context timeout integ valu repres read timeout second minimum valu est ssl read timeout min maximum valu est ssl read timeout max est error 
+est proxi set server call applic layer specifi address port est server call est proxi init prior issu ani est command ctx pointer est context client session server est server connect ascii string repres server limit charact port tcp port est server connect est error est err success est err ctx null valu pass est context est err invalid server null valu pass est server server string long est err invalid port num invalid port number input zero greater est proxi set server error check input paramet store hostnam port number est context 
+window todo like need replac getcurrentthreadid addit realli return pointer opaqu valu use typic pointer pthread base environ actual pthread id onli helper api access actual id pthread equal use array search best chang linear search mix pid current process thread id case applic fork new process nginx 
+ca did sign request ask client retri futur occur ca configur automat enrol send http retri respons client need propag retri respons client 
+send http header 
+send sign pkcs certif bodi 
+get client context thread 
+alloc buffer retriev ca cert get copi 
+retriev ca cert normal client interfac caus client uniniti state case get just pass downstream client client context initi state 
+connect server 
+send enrol request 
+disconnect server 
+make sure client sent us pkcs csr request 
+authent client 
+pars pkcs csr client 
+perform saniti check csr 
+pop check proof possess challeng password pkcs request match tls uniqu id 
+bodi point pkcs data pass enrol routin need hi jack buf mem attach bodi new buf mem 
+get client context thread 
+path segment path seg valu come downstream client request alreadi valid place ctx use client code 
+alloc space hold cert expect receiv est server 
+attempt enrol csr client 
+handl ani error like occur 
+prevent openssl free data 
+cert respons est server let forward est client 
+get client context thread 
+path segment path seg valu come downstream client request alreadi valid place ctx use client code 
+invok client code retriev csr attribut note need authent client see sec 
+csr data point memori alloc hold csr attribut freed call stack prevent doubl free null pointer client context 
+verifi context proxi client server 
+see cacert request 
+saniti check input 
+verifi length cert chain 
+alloc set proxi base est context context use oper server downstream client est proxi mode basic server function requir client capabl communic upstream server need 
+load ca certif local memori retain futur use use cacert request 
+load ca certif chain store structur use verifi incom cert dure tls establish save way raw copi ca chain buffer use creat client context use communinc upstream server 
+see simpl enrol request 
+see enrol request 
+see keygen request fixm current implement 
+onli post allow 
+see csr attribut request 
+send error uri didn match 
+tri time digest auth 
+need alloc context get readi use 
+bit mislead ident cert privat key use proxi mode store server cert server priv key howev use direct set client side look mix want chang context hold 
+wrt path segment unlik true client mode path segment chang everi request upstream need obtain local proxi set time left null 
+make sure room anoth entri 
+add array sort proper place 
+entri tree return client context pid 
+get client context thread 
+path segment path seg valu come downstream client request alreadi valid place ctx use client code 
+invok client code retriev cacert note need authent client see sec 
+upstream request success retriev ca cert context 
+onli get allow 
+onli post allow 
+case bodi indic content pass enrol request correct becaus csr requir continu proxi mode ll tri forward non exist csr 
+get ssl context requir authent client 
+onli post allow 
+case bodi indic content pass enrol request correct becaus csr requir continu proxi mode ll tri forward non exist csr 
+get ssl context requir authent client 
+onli get allow 
+space alloc new array copi alreadi doubl size current 
+someth went wrong upstream request server treat condit 

@@ -1,0 +1,3 @@
+commandUav:1
+commandTakeoff:2
+specifiAltitud:1

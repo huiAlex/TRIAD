@@ -1,0 +1,39 @@
+header est 
+libest api 
+libest api 
+libest api 
+path segment support enabl 
+est max file len 
+est max servernam len 
+est portnum len 
+est max servernam port len 
+est max client cert len 
+est max path segment len 
+est client proxi auth 
+est client proxi auth basic 
+est client proxi auth ntlm 
+foreach est error 
+generat enum enum 
+generat string string 
+est err num str 
+est format pem 
+est format der 
+max realm 
+max nonc 
+max uidpwd 
+max nc 
+max qop 
+max respons 
+min csrattr 
+max csrattr 
+min asn csrattr 
+max csrattr withpop 
+max token error 
+max token error desc 
+max auth token len 
+max http method len 
+est ssl read timeout min 
+est ssl read timeout max 
+est ssl read timeout def 
+est app startup 
+est app shutdown 

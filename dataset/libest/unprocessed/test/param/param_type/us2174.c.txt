@@ -1,0 +1,14 @@
+EST_HTTP_AUTH_HDR
+EST_HTTP_AUTH_HDR
+X509
+int
+char
+char
+EST_ERROR
+auth_credentials_cb
+char
+char
+EST_ERROR
+auth_credentials_cb
+int
+int

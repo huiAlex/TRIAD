@@ -1,0 +1,7 @@
+splitPane
+splitPane2
+FrameParent
+MenuPanel
+WorkArea
+VisualPanel
+M

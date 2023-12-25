@@ -1,0 +1,16 @@
+obtainPatient:1
+retrievInform:1
+patientObtain:1
+folderClinic:8
+clinicFolder:8
+folderShow:1
+relatInform:1
+patientAllow:1
+informRetriev:1
+allowPatient:1
+containInform:1
+informContain:1
+selectVisit:2
+visitSelect:2
+informRelat:1
+showFolder:1

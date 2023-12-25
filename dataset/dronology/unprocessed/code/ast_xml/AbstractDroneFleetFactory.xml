@@ -1,0 +1,90 @@
+<Class>
+    <Id>123</Id>
+    <Package>edu.nd.dronology.core.fleet</Package>
+    <ClassName>AbstractDroneFleetFactory</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AbstractDroneFleetFactory  /** 
+ * Abstract factory class for drone fleet factory
+ * @author Jane
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>AbstractDroneFleetFactory</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createDroneID</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType>String droneID</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initializeDrone</MethodName>
+            <MethodComment>/** 
+ * Returns list of drones
+ * @return array list of iDrones
+ * @throws DroneException 
+ */
+</MethodComment>
+            <ReturnType>ManagedDrone</ReturnType>
+            <ParameterList>
+                <ParameterType>String DroneID</ParameterType>
+                <ParameterType>String DroneType</ParameterType>
+                <ParameterType>double latitude</ParameterType>
+                <ParameterType>double longitude</ParameterType>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>initializeDrone</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String id</ParameterType>
+                <ParameterType>String type</ParameterType>
+                <ParameterType>LlaCoordinate initialLocation</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;initializeDrone;[id, type, initialLocation.getLatitude(), initialLocation.getLongitude(), initialLocation.getAltitude()]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>DroneException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

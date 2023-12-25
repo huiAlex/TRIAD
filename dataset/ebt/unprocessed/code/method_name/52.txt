@@ -1,0 +1,7 @@
+Pair
+getQueryID
+getQueryString
+setQueryID
+setQueryString
+toString
+

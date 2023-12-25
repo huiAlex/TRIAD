@@ -1,0 +1,621 @@
+<Class>
+    <Id>43</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFInfoBox</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFInfoBox  /** 
+ * This is the box in the side panel that contains a UAV's information
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>visible</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>isChecked</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>hoverInPlace</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>checkClicked</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>check</FieldName>
+            <FieldType>CheckBox</FieldType>
+        </Field>
+        <Field>
+            <FieldName>statusInfo1</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>statusInfo2</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>statusInfo3</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>health</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>locationInfo1</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>locationInfo4</FieldName>
+            <FieldType>Label</FieldType>
+        </Field>
+        <Field>
+            <FieldName>hoverSwitch</FieldName>
+            <FieldType>Switch</FieldType>
+        </Field>
+        <Field>
+            <FieldName>returnToHome</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>takeoff</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>takeoffIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>rtlIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>assignRouteIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>resendIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>okIcon</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>user_controlled</FieldName>
+            <FieldType>Resource</FieldType>
+        </Field>
+        <Field>
+            <FieldName>assignNewRoute</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>resendCommand</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>mainContent</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>topContent</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>middleContent</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>bottomContent</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>uavStatus</FieldName>
+            <FieldType>UAVStatusWrapper</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFInfoBox</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>boolean isChecked</ParameterType>
+                <ParameterType>UAVStatusWrapper uavStatus</ParameterType>
+                <ParameterType>boolean hoverInPlace</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createContents</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>this;addStyleName;[StyleConstants.INFO_BOX]</InnerMethodInvoke>
+                <InnerMethodInvoke>this;addStyleName;[StyleConstants.AF_INFO_BOX]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addStyleName;[StyleConstants.AF_BOX_INFO_TOP_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>middleContent;addStyleName;[StyleConstants.AF_BOX_INFO_DETAIL_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomContent;addStyleName;[StyleConstants.AF_BOX_INFO_BOTTOM_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;createTopComponent;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>middleContent;addComponents;[locationInfo1, locationInfo4]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;createBottomComponent;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>mainContent;addComponents;[topContent, middleContent, bottomContent]</InnerMethodInvoke>
+                <InnerMethodInvoke>mainContent;setSizeUndefined;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>mainContent;setSpacing;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>middleContent;setVisible;[visible]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomContent;setVisible;[visible]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[mainContent]</InnerMethodInvoke>
+                <InnerMethodInvoke>returnToHome;setHeight;["30px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>assignNewRoute;setHeight;["30px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;setHeight;["30px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>resendCommand;setHeight;["30px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;setWidth;["55px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>returnToHome;setWidth;["55px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>assignNewRoute;setWidth;["55px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>resendCommand;setWidth;["55px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;setDescription;["Take-off to target altitude"]</InnerMethodInvoke>
+                <InnerMethodInvoke>resendCommand;setDescription;["Resend previous command"]</InnerMethodInvoke>
+                <InnerMethodInvoke>returnToHome;setDescription;["Cancel all routes and return to home imediatelly"]</InnerMethodInvoke>
+                <InnerMethodInvoke>assignNewRoute;setDescription;["Assign a new flight route"]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;setStyleName;[ValoTheme.BUTTON_ICON_ONLY]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;setIcon;[takeoffIcon]</InnerMethodInvoke>
+                <InnerMethodInvoke>returnToHome;setIcon;[rtlIcon]</InnerMethodInvoke>
+                <InnerMethodInvoke>assignNewRoute;setIcon;[assignRouteIcon]</InnerMethodInvoke>
+                <InnerMethodInvoke>resendCommand;setIcon;[resendIcon]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addListener;[]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;update;[uavStatus]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createBottomComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>GridLayout [bottomButtons=new GridLayout(2,2)]</InnerVar>
+                <InnerVar>VerticalLayout [bottomSwitch=new VerticalLayout()]</InnerVar>
+                <InnerVar>Label [caption=new Label("Hover in Place")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>bottomButtons;setWidth;["150px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomButtons;setHeight;["70px"]</InnerMethodInvoke>
+                <InnerMethodInvoke>hoverSwitch;setValue;[this.hoverInPlace]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomSwitch;addComponents;[caption, hoverSwitch]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomButtons;addComponents;[takeoff, returnToHome, assignNewRoute, resendCommand]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomContent;addComponents;[bottomSwitch, bottomButtons]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createTopComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [statusContent=new VerticalLayout()]</InnerVar>
+                <InnerVar>Image [droneImage=ImageProvider.getDefaultUAVImage()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>check;setValue;[this.isChecked]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo1;addStyleName;["info_box_name"]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo1;addStyleName;[ValoTheme.LABEL_BOLD]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusContent;addComponents;[statusInfo1, statusInfo2, statusInfo3]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusContent;setSpacing;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>health;setIcon;[okIcon]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addComponents;[check, droneImage, statusContent, health]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setSpacing;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setComponentAlignment;[check, Alignment.TOP_LEFT]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setComponentAlignment;[droneImage, Alignment.TOP_LEFT]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setComponentAlignment;[statusContent, Alignment.TOP_LEFT]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setComponentAlignment;[health, Alignment.TOP_RIGHT]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addListener</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>returnToHome;addClickListener;[e -&gt; {
+  DronologyActionExecutor.returnHome(null,uavStatus);
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>takeoff;addClickListener;[e -&gt; {
+  this.takeOff();
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>assignNewRoute;addClickListener;[assignEvent -&gt; {
+  DronologyActionExecutor.assignRouteToUAV(uavStatus);
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>resendCommand;addClickListener;[assignEvent -&gt; {
+  DronologyActionExecutor.resendCommand(uavStatus);
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>hoverSwitch;addValueChangeListener;[e -&gt; {
+  this.setHoverInPlace(this.hoverSwitch.getValue());
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addLayoutClickListener;[e -&gt; {
+  Component child=e.getChildComponent();
+  if (child != null &amp;&amp; child.getClass() == CheckBox.class) {
+    checkClicked=true;
+  }
+ else {
+    checkClicked=false;
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addLayoutClickListener;[e -&gt; {
+  Component child=e.getChildComponent();
+  if (child == null || !child.getClass().getCanonicalName().equals("com.vaadin.ui.CheckBox")) {
+    setBoxVisible(visible);
+  }
+}
+]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>takeOff</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>TakeoffAltitudeWindow [takeoffAltitudeWindow=new TakeoffAltitudeWindow(uavStatus.getName())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>UI.getCurrent();addWindow;[takeoffAltitudeWindow]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>AFInfoBox</MethodName>
+            <MethodComment>/** 
+ * default constructor
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setIsChecked</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean isChecked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>check;setValue;[this.isChecked]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getIsChecked</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCheckBox</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>CheckBox</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setHoverInPlace</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean hoverInPlace</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>hoverSwitch;setValue;[this.hoverInPlace]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHoverInPlace</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHoverSwitch</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Switch</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setBoxVisible</MethodName>
+            <MethodComment>/** 
+ * Expands and collapses the box
+ * @param visible
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean visible</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getBoxVisible</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHomeButton</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRouteButton</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCheckClick</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>setCheckClick</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>boolean checkClicked</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>update</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVStatusWrapper uavStatus</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>String [locString=String.format("Lat: %s | Long: %s | Alt: %s",uavStatus.getLatitude(),uavStatus.getLongitude(),uavStatus.getAltitude())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>statusInfo1;setValue;[uavStatus.getName()]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo2;setValue;["Status: " + uavStatus.getStatus()]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo3;setValue;["Battery Life: " + uavStatus.getBatteryLife() + " %"]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo1;setValue;[locString]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo4;setValue;["Ground Speed:\t" + uavStatus.getSpeed() + " m/s"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getName</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getStatus</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHealthColor</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

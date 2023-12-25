@@ -1,0 +1,5 @@
+serialVersionUID
+buttons
+upload
+cancelMission
+executeMission

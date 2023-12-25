@@ -1,0 +1,51 @@
+drone 
+
+
+target coordin 
+speed 
+altitud 
+lat 
+lon 
+alt 
+ 
+distanc time step 
+base posit 
+speed 
+ 
+ 
+ 
+coordin 
+command 
+manag drone 
+
+lla coordin 
+lla coordin 
+lla coordin 
+abstract drone command 
+manag drone 
+
+get drone status 
+get latitud 
+get longitud 
+get altitud 
+fli 
+get coordin 
+get drone 
+land 
+take 
+set coordin 
+get batteri status 
+
+set voltag check point 
+destin reach 
+set base coordin 
+get base coordin 
+set ground speed 
+set veloc 
+set coordin 
+send command 
+get latest drone snapshot 
+set manag drone 
+resend command 
+
+drone interfac 

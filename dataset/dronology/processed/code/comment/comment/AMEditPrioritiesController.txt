@@ -1,0 +1,3 @@
+allow user creat edit map chang prioriti area 
+ 
+ 

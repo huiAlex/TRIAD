@@ -1,0 +1,21 @@
+snprintf 
+est log info 
+ioctlsocket 
+curl easi init 
+curl easi setopt 
+strlen 
+calloc 
+snprintf 
+curl easi setopt 
+curl easi setopt 
+curl easi setopt 
+curl easi setopt 
+curl easi setopt 
+curl easi setopt 
+est log info 
+curl easi perform 
+curl easi getinfo 
+set block mode 
+free 
+memset 
+est log info 

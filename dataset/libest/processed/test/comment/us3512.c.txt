@@ -1,0 +1,87 @@
+us unit test uri path segment support server april copyright cisco system right reserv 
+max command line length generat system command 
+ca certif use verifi est server grab server directori 
+defin client ut cacert exampl server estca cacert crt 
+ca certif use verifi est server grab server directori 
+defin client ut cacert exampl server estca cacert crt 
+routin call cunit initi test suit generat keypair use est client ut suit 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+saniti check server side path segment process simpl enrol direct server path segment outcom pass 
+function perform basic simpl enrol use uid pwd identifi client server use varieti test case modul 
+taken us test simpl enrol includ path segment uri path segment test verifi client includ configur path segment proper send verifi server correct pars valid path segment pass simpl enrol 
+taken us test simpl enrol includ path segment uri path segment test verifi client includ configur path segment verifi server correct pars valid path segment pass simpl enrol auth callback 
+taken us test cacert server includ path segment uri path segment test verifi client includ configur path segment verifi server correct pars valid path segment pass ca cert callback 
+taken us test csrattribut includ path segment uri path segment test verifi client includ configur path segment verifi server correct pars valid path segment pass csr attribut callback 
+test flow path segment proxi mode valid path segment simpleenrol 
+test flow path segment proxi mode path segment set maximum size 
+test flow path segment proxi mode path segment larg 
+test segment oper path 
+test segment oper path 
+test segment contain valid oper string case valid path segment test pass 
+taken us test cacert server includ path segment uri path segment test verifi client includ configur path segment verifi server correct pars valid path segment pass ca cert callback 
+main function set run test return cue success success run anoth cunit error code failur 
+next start est proxi act ra 
+read ca certif 
+gen keypair use est client test 
+start server test need talk server 
+start instanc est server 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+sinc pass valid userid password expect server respond 
+creat rsa keypair assign pkey return 
+read ca certif 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+read ca certif 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+convert cert warn pure hackeri 
+new cert onli cert pkcs blob shouldn iter find 
+wow lot work final don just love openssl represent cert let tri enrol cert ca 
+cleanup 
+read ca certif 
+read privat key file 
+clear global prove path segment applic layer cal function 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+verifi path segment way callback function applic layer 
+output retriev ca cert compar 
+read ca certif 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+clear global prove path segment applic layer cal function 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+verifi path segment way callback function applic layer 
+cleanup 
+sinc pass valid userid password expect server respond 
+sinc pass path segment long get caught proxi return 
+sinc pass path segment long get caught proxi return 
+sinc pass path segment equal oper get return 
+sinc pass path segment equal oper get return 
+sinc pass path segment equal oper get return 
+read ca certif 
+read privat key file 
+clear global prove path segment applic layer cal function 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+verifi path segment way callback function applic layer 
+output retriev ca cert compar 
+add suit registri 
+check see path segment support compil 
+add test suit 
+note order import test fread fprintf 

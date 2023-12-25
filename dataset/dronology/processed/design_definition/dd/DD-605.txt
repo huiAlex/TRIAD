@@ -1,0 +1,1 @@
+simul takeoff nvec simul given takeoff command nvec simul infinit acceler uav takeoff altitud correspond current longitud latitud 

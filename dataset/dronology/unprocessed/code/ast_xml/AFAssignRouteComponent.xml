@@ -1,0 +1,429 @@
+<Class>
+    <Id>181</Id>
+    <Package>edu.nd.dronology.ui.vaadin.activeflights</Package>
+    <ClassName>AFAssignRouteComponent</ClassName>
+    <SuperClass>CustomComponent</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>AFAssignRouteComponent  /** 
+ * This is the UI for assigning new routes to a UAV
+ * @author Patrick Falvey
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>serialVersionUID</FieldName>
+            <FieldType>long</FieldType>
+        </Field>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>content</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>topContent</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>sideContent</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>bottomButtons</FieldName>
+            <FieldType>HorizontalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>sideButtons</FieldName>
+            <FieldType>VerticalLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>panelContent</FieldName>
+            <FieldType>AFDragLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>frLayout</FieldName>
+            <FieldType>FRMainLayout</FieldType>
+        </Field>
+        <Field>
+            <FieldName>sidePanel</FieldName>
+            <FieldType>Panel</FieldType>
+        </Field>
+        <Field>
+            <FieldName>cancel</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>apply</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>left</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>right</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>numRoutes</FieldName>
+            <FieldType>int</FieldType>
+        </Field>
+        <Field>
+            <FieldName>hoverSwitch</FieldName>
+            <FieldType>Switch</FieldType>
+        </Field>
+        <Field>
+            <FieldName>returnToHome</FieldName>
+            <FieldType>Button</FieldType>
+        </Field>
+        <Field>
+            <FieldName>index</FieldName>
+            <FieldType>int</FieldType>
+        </Field>
+        <Field>
+            <FieldName>boxID</FieldName>
+            <FieldType>int</FieldType>
+        </Field>
+        <Field>
+            <FieldName>provider</FieldName>
+            <FieldType>BaseServiceProvider</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightRouteService</FieldName>
+            <FieldType>IFlightManagerRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightRouteInfo</FieldName>
+            <FieldType>FlightInfo</FieldType>
+        </Field>
+        <Field>
+            <FieldName>flightInfoService</FieldName>
+            <FieldType>IFlightRouteplanningRemoteService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>droneImage</FieldName>
+            <FieldType>Image</FieldType>
+        </Field>
+        <Field>
+            <FieldName>uavStatus</FieldName>
+            <FieldType>UAVStatusWrapper</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>AFAssignRouteComponent</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>UAVStatusWrapper uavStatus</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createContents</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>VerticalLayout [statusContent=new VerticalLayout()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>this;addStyleName;[StyleConstants.AF_ASSING_ROUTE]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addStyleName;[StyleConstants.AF_ASSING_ROUTE_TOP_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideContent;addStyleName;[StyleConstants.AF_ASSING_ROUTE_MIDDLE_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomButtons;addStyleName;[StyleConstants.AF_ASSING_ROUTE_BOTTOM_CONTENT]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;createStatusPannel;[statusContent]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;createSidePannel;[sidePanel]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomButtons;addComponents;[cancel, apply]</InnerMethodInvoke>
+                <InnerMethodInvoke>apply;addStyleName;["btn-okay"]</InnerMethodInvoke>
+                <InnerMethodInvoke>content;addComponents;[topContent, sideContent, bottomButtons]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;setCompositionRoot;[content]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createSidePannel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>Panel sidePanel</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>sidePanel;addStyleName;["fr_info_panel"]</InnerMethodInvoke>
+                <InnerMethodInvoke>sidePanel;addStyleName;["control_panel"]</InnerMethodInvoke>
+                <InnerMethodInvoke>sidePanel;setCaption;[numRoutes + " Routes Assigned"]</InnerMethodInvoke>
+                <InnerMethodInvoke>apply;setEnabled;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideButtons;addComponents;[left, right]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideButtons;setComponentAlignment;[left, Alignment.MIDDLE_CENTER]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideButtons;setComponentAlignment;[right, Alignment.MIDDLE_CENTER]</InnerMethodInvoke>
+                <InnerMethodInvoke>left;addClickListener;[e -&gt; {
+  if (frLayout.getControls().getInfoPanel().getHighlightedFRInfoBox() != null) {
+    FlightRouteInfo selectedFlight=frLayout.getControls().getInfoPanel().getHighlightedFRInfoBox().getFlightRouteInfo();
+    if (selectedFlight.getWaypoints().size() &lt; 1) {
+      Notification.show("There is no waypoint defined in " + selectedFlight.getName() + ". You cannot assign an empty route to a UAV.");
+    }
+ else {
+      addRoute(selectedFlight);
+    }
+  }
+ else   Notification.show("Please select route to assign.");
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>right;addClickListener;[e -&gt; {
+  if (index != -1) {
+    removeRoute(this.index);
+    this.index=-1;
+  }
+ else   Notification.show("Please select assigned route to remove.");
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>panelContent.getSortableLayout().getVerticalLayout();addLayoutClickListener;[e -&gt; {
+  WrappedComponent child=(WrappedComponent)e.getChildComponent();
+  Component childContent=child.getContent();
+  if (panelContent.getComponentIndex(childContent) != -1) {
+    ((FRInfoBox)childContent).addStyleName("info_box_focus");
+    frLayout.switchRoute(((FRInfoBox)childContent));
+  }
+  index=panelContent.getComponentIndex(childContent);
+  int numComponents=panelContent.getComponentCount();
+  for (int i=0; i &lt; numComponents; i++) {
+    if (i != index) {
+      panelContent.getComponent(i).removeStyleName("info_box_focus");
+    }
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>frLayout.getControls().getInfoPanel().getRoutes();addLayoutClickListener;[e -&gt; {
+  if (e.isDoubleClick()) {
+    if (frLayout.getControls().getInfoPanel().getHighlightedFRInfoBox() != null) {
+      FlightRouteInfo selectedFlight=frLayout.getControls().getInfoPanel().getHighlightedFRInfoBox().getFlightRouteInfo();
+      if (selectedFlight.getWaypoints().size() &lt; 1) {
+        Notification.show("There is no waypoint defined in " + selectedFlight.getName() + ". You cannot assign an empty route to a UAV.");
+      }
+ else {
+        addRoute(selectedFlight);
+      }
+    }
+ else     Notification.show("Please select route to assign.");
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>panelContent.getSortableLayout().getVerticalLayout();addLayoutClickListener;[e -&gt; {
+  if (e.isDoubleClick()) {
+    if (index != -1) {
+      removeRoute(this.index);
+      this.index=-1;
+    }
+ else     Notification.show("Please select assigned route to remove.");
+  }
+}
+]</InnerMethodInvoke>
+                <InnerMethodInvoke>sidePanel;setContent;[panelContent]</InnerMethodInvoke>
+                <InnerMethodInvoke>sideContent;addComponents;[sidePanel, sideButtons, frLayout]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>createStatusPannel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>VerticalLayout statusContent</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Label [statusInfo1=new Label()]</InnerVar>
+                <InnerVar>Label [statusInfo2=new Label()]</InnerVar>
+                <InnerVar>Label [statusInfo3=new Label()]</InnerVar>
+                <InnerVar>Label [health=new Label()]</InnerVar>
+                <InnerVar>VerticalLayout [coordinates=new VerticalLayout()]</InnerVar>
+                <InnerVar>VerticalLayout [altAndSpeed=new VerticalLayout()]</InnerVar>
+                <InnerVar>HorizontalLayout [positionInfo=new HorizontalLayout()]</InnerVar>
+                <InnerVar>Label [locationInfo1=new Label()]</InnerVar>
+                <InnerVar>Label [locationInfo2=new Label()]</InnerVar>
+                <InnerVar>Label [locationInfo3=new Label()]</InnerVar>
+                <InnerVar>Label [locationInfo4=new Label()]</InnerVar>
+                <InnerVar>VerticalLayout [buttons=new VerticalLayout()]</InnerVar>
+                <InnerVar>HorizontalLayout [bottomSwitch=new HorizontalLayout()]</InnerVar>
+                <InnerVar>Label [caption=new Label("Hover in Place")]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>statusInfo1;setValue;["Assigning Routes for " + uavStatus.getName()]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo1;addStyleName;["info_box_name"]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo1;addStyleName;[ValoTheme.LABEL_BOLD]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo2;setValue;["Status: " + uavStatus.getStatus()]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusInfo3;setValue;["Battery Life: " + uavStatus.getBatteryLife() + " %"]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusContent;addComponents;[statusInfo1, statusInfo2, statusInfo3]</InnerMethodInvoke>
+                <InnerMethodInvoke>statusContent;setSpacing;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>health;setCaptionAsHtml;[true]</InnerMethodInvoke>
+                <InnerMethodInvoke>health;setCaption;["&lt;span style=\'color: " + uavStatus.getHealthColor() + " !important;\'&gt; "+ VaadinIcons.CIRCLE.getHtml()+ "&lt;/span&gt;"]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addComponents;[droneImage, statusContent, health]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;setSpacing;[false]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo1;setValue;["Latitude:\t" + uavStatus.getLatitude()]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo2;setValue;["Longitude:\t" + uavStatus.getLongitude()]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo3;setValue;["Altitude:\t" + uavStatus.getAltitude() + " meters"]</InnerMethodInvoke>
+                <InnerMethodInvoke>locationInfo4;setValue;["Ground Speed:\t" + uavStatus.getSpeed() + " m/s"]</InnerMethodInvoke>
+                <InnerMethodInvoke>coordinates;addComponents;[locationInfo1, locationInfo2]</InnerMethodInvoke>
+                <InnerMethodInvoke>altAndSpeed;addComponents;[locationInfo3, locationInfo4]</InnerMethodInvoke>
+                <InnerMethodInvoke>positionInfo;addComponents;[coordinates, altAndSpeed]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addComponent;[positionInfo]</InnerMethodInvoke>
+                <InnerMethodInvoke>bottomSwitch;addComponents;[caption, hoverSwitch]</InnerMethodInvoke>
+                <InnerMethodInvoke>buttons;addComponents;[bottomSwitch, returnToHome]</InnerMethodInvoke>
+                <InnerMethodInvoke>topContent;addComponent;[buttons]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRoutesToAssign</MethodName>
+            <MethodComment>/** 
+ * @return in-order list of flight routes to be assigned to the UAV based on the order in the AFDragLayout
+ */
+</MethodComment>
+            <ReturnType>FlightRouteInfo</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Collection&lt;FlightRouteInfo&gt; [current=new ArrayList&lt;&gt;()]</InnerVar>
+                <InnerVar>Collection&lt;FlightRouteInfo&gt; [items=null]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>addRoute</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>FlightRouteInfo routeInfo</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>FRInfoBox [box=new FRInfoBox(routeInfo)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>box;setId;[Integer.toString(this.boxID)]</InnerMethodInvoke>
+                <InnerMethodInvoke>panelContent;addNewComponent;[box]</InnerMethodInvoke>
+                <InnerMethodInvoke>sidePanel;setCaption;[numRoutes + " Routes Assigned"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>removeRoute</MethodName>
+            <MethodComment>/** 
+ * removes a route from the AFDragLayout
+ * @param index
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>int index</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>panelContent;removeComponent;[panelContent.getComponent(index)]</InnerMethodInvoke>
+                <InnerMethodInvoke>sidePanel;setCaption;[numRoutes + " Routes Assigned"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getCancel</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getApply</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getReturnToHome</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Button</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getHover</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>Switch</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

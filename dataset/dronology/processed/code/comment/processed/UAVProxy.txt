@@ -1,0 +1,3 @@
+proxi class mang drone 
+datastructur intend pass extern client contain necessari inform regard actual uav manag dronolog 
+ 

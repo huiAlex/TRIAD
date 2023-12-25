@@ -1,0 +1,6 @@
+supportBrowser:2
+fileCdx:1
+browserSupport:2
+warcBrowser:1
+cdxFile:1
+browserWarc:1

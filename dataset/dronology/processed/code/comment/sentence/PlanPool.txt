@@ -1,0 +1,2 @@
+The { PlanPool} manages pending, executing, and completed plans for a single UAV.
+/

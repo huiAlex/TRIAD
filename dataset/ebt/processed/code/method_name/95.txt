@@ -1,0 +1,6 @@
+text model 
+show text 
+hide text 
+show info 
+draw model 
+paint compon 

@@ -1,0 +1,9 @@
+drnName
+lat
+lon
+alt
+coordinate
+basePosition
+velocity
+batteryLevel
+mgdDrone

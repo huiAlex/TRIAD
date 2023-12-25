@@ -1,0 +1,130 @@
+------------------------------------------------------------------   us898.c - Unit Tests for User Story 898 - Client re-enroll      October, 2013     Copyright (c) 2013, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   This starts an instance of the EST server running on   a separate thread.  We use this to test the   client side API in this module.  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   This function performs a basic simple enroll using   a UID/PWD to identify the client to the server.  This   is used for a variet of test cases in this module.  /
+   This test case uses an existing expired cert and   attempts to re-enroll it.  The expired certs contains   several X509 extensions. We verify the new issued   cert preserves these extensions using grep.  Note,    preserving these extensions requires the OpenSSL CA   to enable the "copy_extensions" knob in the OpenSSL   config file.  This is why this test suite uses a   unique copy of estExampleCA.cnf.  /
+   Test the re-enroll API to ensure it gracefully   handles a null X509 cert pointer.  /
+   Test the re-enroll API to ensure it gracefully   handles a null EVP_PKEY pointer.  /
+   This test attempts to re-enroll a corrupted cert   The public key in the cert is has been corrupted.  /
+   This test attempts to re-enroll an expired cert   while the EST server is configured for manual   approval.  The server will send back a retry-after   response.  /
+   Verify that a bogus user ID/password fails when   using HTTP basic auth.  /
+   Verify that a good user ID/password passes when   using HTTP digest auth.  /
+   Verify that a bogus user ID/password fails when   using HTTP digest auth.  /
+   Verify the server fails authentication when the   client sends a valid identity cert but doesn't    provide HTTP auth credentials.  /
+   Verify the server fails authentication when the   client sends an expired identy cert and uses    valid HTTP auth credentials.  /
+       These are all temporary files created        by the various test cases.      /
+       Read in the CA certificates      /
+       Start an instance of the EST server with        automatic enrollment enabled.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Get the latest CSR attributes      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Convert the cert to an X509.  Be warned this is       pure hackery.        /
+ our new cert should be the one and only       cert in the pkcs7 blob.  We shouldn't have to       iterate through the full list to find it. /
+        Wow, that's a lot of work, but we finally have the X509.       (don't you just love OpenSSL!!!)       Now that we have an X509 representation of the cert,       let's try to re-enroll this cert with the CA      /
+       Cleanup      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Retrieve the cert that was given to us by the EST server      /
+       Save the cert to a local file      /
+       Base 64 decode the cert response      /
+       Convert the pkcs7 cert to a PEM cert      /
+       Convert PEM cert to a textual representation of the cert      /
+       Verify the jimbob DNS extension was preserved      /
+       Verify the bobcat DNS extension was preserved      /
+       Verify the IP address extension was preserved      /
+       Verify the Repudiation key usage extension was preserved      /
+       Verify the public key was preserved      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Generate a private key      /
+       Get the latest CSR attributes      /
+       re-enroll using a null x509 pointer.      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in an old cert that we can use for re-enroll      /
+       Get the latest CSR attributes      /
+       re-enroll using a null EVP_KEY pointer.      /
+       Clean up      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Clean up      /
+       Stop the server.      /
+       Restart the server with manual approval enabled      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Clean up      /
+       Stop the server.      /
+       Restart the server with manual approval disabled      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Enable HTTP digest authentication      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Re-enable HTTP basic authentication      /
+       Enable HTTP digest authentication      /
+       Create a client context       /
+       Set the authentication mode to use a user id/password      /
+       Set the EST server address/port      /
+       Read in the private key      /
+       Read in the old cert      /
+       Get the latest CSR attributes      /
+       Enroll an expired cert that contains x509 extensions.      /
+       Check the HTTP status code from the reenroll operation      /
+       Re-enable HTTP basic authentication      /
+       Create a CSR      /
+       Sign the CSR using our local CA      /
+       Create a client context       /
+       Read in the private key      /
+       Read in the old cert      /
+       Set the authentication mode to use the certificate        No HTTP auth credentials are provided.      /
+       Set the EST server address/port      /
+       Get the latest CSR attributes      /
+       Enroll a cert, should fail because we        didn't provide valid HTTP auth credentials      /
+       Re-Enroll the cert, should work since       we provide a valid cert to identify ourselves       and HTTP auth isn't required for re-enroll even when       the server has enabled HTTP auth.      /
+       Create a client context       /
+       Read in the private key      /
+       Read in the old cert      /
+       Set the authentication mode to use the expired certificate        and valid HTTP auth credentials.      /
+       Set the EST server address/port      /
+       Get the latest CSR attributes      /
+       Re-Enroll the cert       /
+ add a suite to the registry /
+       Add the tests to the suite      /

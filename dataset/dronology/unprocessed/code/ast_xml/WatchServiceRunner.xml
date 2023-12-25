@@ -1,0 +1,239 @@
+<Class>
+    <Id>117</Id>
+    <Package>edu.nd.dronology.services.core.util</Package>
+    <ClassName>WatchServiceRunner</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>Runnable</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LOGGER</FieldName>
+            <FieldType>ILogger</FieldType>
+        </Field>
+        <Field>
+            <FieldName>recursive</FieldName>
+            <FieldType>boolean</FieldType>
+        </Field>
+        <Field>
+            <FieldName>manager</FieldName>
+            <FieldType>IFileChangeNotifyable</FieldType>
+        </Field>
+        <Field>
+            <FieldName>fileExtensions</FieldName>
+            <FieldType>String[]</FieldType>
+        </Field>
+        <Field>
+            <FieldName>watcher</FieldName>
+            <FieldType>WatchService</FieldType>
+        </Field>
+        <Field>
+            <FieldName>dir</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>notifyTask</FieldName>
+            <FieldType>Object</FieldType>
+        </Field>
+        <Field>
+            <FieldName>changeList</FieldName>
+            <FieldType>List</FieldType>
+        </Field>
+        <Field>
+            <FieldName>changeList</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>keys</FieldName>
+            <FieldType>Map</FieldType>
+        </Field>
+        <Field>
+            <FieldName>keys</FieldName>
+            <FieldType>WatchKey</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>WatchServiceRunner</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>String dir</ParameterType>
+                <ParameterType>boolean recursive</ParameterType>
+                <ParameterType>IFileChangeNotifyable manager</ParameterType>
+                <ParameterType>String fileExtensions</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>changed</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String fileName</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Timer [timer=new Timer()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>changeList;add;[fileName]</InnerMethodInvoke>
+                <InnerMethodInvoke>timer;schedule;[new NotifyChangeTask(), 500]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>run</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>Set&lt;String&gt; [changed=new HashSet&lt;&gt;()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>manager;notifyFileChange;[changed]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>registerAll</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>Path start</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>Files;walkFileTree;[start, new SimpleFileVisitor&lt;Path&gt;(){
+  @Override public FileVisitResult preVisitDirectory(  Path dir,  BasicFileAttributes attrs) throws IOException {
+    try {
+      if (dir.getFileName() != null &amp;&amp; (dir.getFileName().toString().startsWith(".") || dir.getFileName().toString().startsWith("$"))) {
+        return FileVisitResult.SKIP_SUBTREE;
+      }
+      register(dir);
+      return FileVisitResult.CONTINUE;
+    }
+ catch (    Exception e) {
+      e.printStackTrace();
+      return FileVisitResult.SKIP_SUBTREE;
+    }
+  }
+  @Override public FileVisitResult visitFileFailed(  Path file,  IOException exc){
+    System.err.format("Unable to register:" + " %s: %s%n",file,exc);
+    return FileVisitResult.CONTINUE;
+  }
+}
+]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>IOException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>preVisitDirectory</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FileVisitResult</ReturnType>
+            <ParameterList>
+                <ParameterType>Path dir</ParameterType>
+                <ParameterType>BasicFileAttributes attrs</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>IOException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>visitFileFailed</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FileVisitResult</ReturnType>
+            <ParameterList>
+                <ParameterType>Path file</ParameterType>
+                <ParameterType>IOException exc</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>System.err;format;["Unable to register:" + " %s: %s%n", file, exc]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>register</MethodName>
+            <MethodComment>/** 
+ * Register the given directory with the WatchService
+ */
+</MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>Path dir</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>WatchKey [key=dir.register(watcher,ENTRY_CREATE,StandardWatchEventKinds.ENTRY_MODIFY,StandardWatchEventKinds.ENTRY_DELETE)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>keys;put;[key, dir]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>IOException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>stop</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

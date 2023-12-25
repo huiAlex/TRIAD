@@ -1,0 +1,6 @@
+implement flight:compound
+implement pattern:compound
+interfac implement:nmod
+implement expand:acl
+expand differ:obl
+differ mission task:dep

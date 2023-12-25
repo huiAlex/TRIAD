@@ -1,0 +1,14 @@
+BatteryStatus
+LlaCoordinate
+deserializeLLACoordinate
+deserializeVector3D
+deserializeVector3D
+get
+get
+get
+get
+get
+deserializeBatteryStatus
+get
+get
+get

@@ -1,0 +1,43 @@
+/**
+ * This is the map component for the Active Flights UI
+ * 
+ *  * 
+ */
+
+/**
+	 * This function sets the center and zoom of the map to include all drones and their flight routes. It finds the average latitude and longitude first. It then finds the point farthest from the
+	 * center and bases the zoom level off of that point.
+	 */
+
+/**
+	 * 	 */
+
+/**
+	 * 	 */
+
+/**
+	 * This function sets the center of the map as an average of the drones that it is following. This will constantly change as each drone flies.
+	 * 
+	 * 	 *          The list of drone names that the map should be following
+	 */
+
+/**
+	 * this is a listener that displays an AFInfoBox in a popup over the drone that was just hovered over
+	 * 
+	 * 	 *
+	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * 
+	 * 	 */
+
+/**
+	 * This listener displays a popup of information about a certain waypoint. Virtually the same listener used in the flight routes UI.
+	 * 
+	 * 	 *
+	 */
+

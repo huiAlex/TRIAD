@@ -1,0 +1,3 @@
+Establishes new, and handles established connections between Dronology and  multiple GCS.
+Creates new { ReadDispatcher} and { WriteDispatcher} threads when a  connection to a new GCS is established.
+/

@@ -1,0 +1,18 @@
+pattern task 
+rout task 
+sync task 
+delay task 
+mission execut except 
+pattern task 
+rout task 
+sync task 
+delay task 
+mission execut except 
+waypoint task 
+takeoff task 
+land task 
+mission execut except 
+mission execut except 
+string 
+get 
+string 

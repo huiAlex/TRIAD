@@ -1,0 +1,3 @@
+waypoint 
+waypoint 
+manag drone 

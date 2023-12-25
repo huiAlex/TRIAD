@@ -1,0 +1,10 @@
+contributCommuniti:1
+patchImplement:1
+communitiAppropri:1
+contributDistribut:1
+appropriCommuniti:1
+implementPatch:1
+partiProject:1
+projectParti:1
+distributContribut:1
+communitiContribut:1

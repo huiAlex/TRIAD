@@ -1,0 +1,29 @@
+ Use WSAAddressToStringA instead of inet_ntop on Windows as inet_ntop does not   exist on Windows XP.   Can't use `const struct sockaddr ` here because WSAAddressToStringA takes   a LPSOCKADDR.  /
+ Use WSAAddressToStringA instead of inet_ntop on Windows as inet_ntop does not   exist on Windows XP.   Can't use `const struct sockaddr ` here because WSAAddressToStringA takes   a LPSOCKADDR.  /
+   Establish a direct socket connection with the EST server using   normal system calls  /
+   Establish a direct socket connection with the EST server using   normal system calls  /
+   Establish a direct socket connection with the EST server using   normal system calls  /
+   Establish a socket with the remote server using libcurl. Do not have it   actually send a URL. Leverage libcurl's proxy support to just establish   the connection.  /
+   entry point to establish a connection with the remote EST server  /
+   entry point to establish a connection with the remote EST server  /
+ WIN32 /
+       All we want libcurl to do here is establish the connection to       the proxy server.  Once that's done we'll use the socket       as we normally do on a direct connect to the EST server      /
+       "http" here is telling libcurl not to wrap whatever data we send in        SSL.       /
+       proxy host and port      /
+       proxy protocol including HTTP tunnel mode      /
+       username and password      /
+       no signals generated from libcurl      /
+       perform the curl request      /
+       retrieve the socket from libcurl      /
+ after connection is made, set socket to blocking /
+ SOCK_ERR already set /
+ SOCK_ERR already set /
+ ret and SOCK_ERR already set /
+           As per:           https://msdn.microsoft.com/en-us/library/windows/desktop/ms740126(v=vs.85).aspx                     Ioctl and Ioctlsocket/WSAIoctl                     Various C language run-time systems use the IOCTLs for purposes           unrelated to Windows Sockets. As a consequence, the ioctlsocket           function and the WSAIoctl function were defined to handle socket           functions that were performed by IOCTL and fcntl in the Berkeley           Software Distribution.                     Since ioctlsocket is the Windows equivalent of ioctl/fcntl, just           set return type accordingly.          /
+ SOCK_ERR is already set /
+ SOCK_ERR is already set /
+ SOCK_ERR is already set /
+           We should not make it this far, but if we do,           log a message as to why this is wrong and return          /
+ SOCK_ERR already set /
+ Could not resolve host /
+ CLOSE_SOCKET() may clobber SOCK_ERR /

@@ -1,0 +1,13 @@
+LlaCoordinate
+equals
+getAltitude
+toString
+getLatitude
+getLongitude
+hashCode
+toNVector
+toPVector
+checkAltitudeRange
+checkLatitudeRange
+checkLongitudeRange
+toLlaCoordinate

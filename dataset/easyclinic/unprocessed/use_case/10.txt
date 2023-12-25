@@ -1,0 +1,28 @@
+Use case:
+Delete visit
+
+Description:
+It allows the operator to delete a visit previously recorded
+
+Preconditions:
+The Operator's interest to delete a visit previously recorded
+The Operator has been recognized by system (See UcValOp) and the visit is registered in the SIO
+
+Postconditions:
+The data in the SIO not be modified
+The Folder Clinic Patient   which was submitted to visit eliminated is updated
+
+Sub-flows:
+The operator activates the execution of service elimination of a visit
+1 View the list of visits in chronological order
+2 Select the visit to delete
+3 Confirm the selection
+4 View the mask for viewing of visit
+5 Confirm the delete
+6 Delete the visit and examinations related to it
+7 Notify the operator that the operation was concluded successfully
+
+Alternative flows:
+Operator cancels the operation
+  3 1 ends the use case with failure
+   4 1 The mask will contain data on the visit selected so as to allow the operator to verify them in detail before proceeding to delete

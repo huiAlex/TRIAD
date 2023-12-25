@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/PhysicalDroneTest.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:49">package <name pos:start="1:9" pos:end="1:48"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:38">groundstation</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:48">connector</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:20">//package TestCases;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:28">//import java.icse.model.util.Calendar;</comment>
+<comment type="line" pos:start="4:1" pos:end="4:2">//</comment>
+<comment type="line" pos:start="5:1" pos:end="5:24">//import org.junit.Test;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:2">//</comment>
+<comment type="line" pos:start="7:1" pos:end="7:62">//import edu.nd.dronology.core.exceptions.FlightZoneException;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:47">//import edu.nd.dronology.core.icse.model.util.Coordinate;</comment>
+<comment type="line" pos:start="9:1" pos:end="9:46">//import edu.nd.dronology.core.vehicle.IDrone;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:46">//import model.drone.groundstation.PythonBase;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:43">//import model.drone.runtime.PhysicalDrone;</comment>
+<comment type="line" pos:start="12:1" pos:end="12:2">//</comment>
+<comment type="line" pos:start="13:1" pos:end="13:34">//public class PhysicalDroneTest {</comment>
+<comment type="line" pos:start="14:1" pos:end="14:2">//</comment>
+<comment type="line" pos:start="15:1" pos:end="15:13">//	@Test</comment>
+<comment type="line" pos:start="16:1" pos:end="16:77">//	public void test() throws FlightZoneException, InterruptedException {</comment>
+<comment type="line" pos:start="17:1" pos:end="17:58">//		PythonBase baseStation = new PythonBase();</comment>
+<comment type="line" pos:start="18:1" pos:end="18:16">//		</comment>
+<comment type="line" pos:start="19:1" pos:end="19:24">//		DroneSet</comment>
+<comment type="line" pos:start="20:1" pos:end="20:16">//		</comment>
+<comment type="line" pos:start="21:1" pos:end="21:77">//		IDrone drone = DroneFleetfacotry.("test_drone", baseStation);</comment>
+<comment type="line" pos:start="22:1" pos:end="22:39">//		long alt_tolerance = 1;</comment>
+<comment type="line" pos:start="23:1" pos:end="23:52">//		long init_lat = drone.getLatitude();</comment>
+<comment type="line" pos:start="24:1" pos:end="24:53">//		long init_lon = drone.getLongitude();</comment>
+<comment type="line" pos:start="25:1" pos:end="25:52">//		long init_alt = drone.getAltitude();</comment>
+<comment type="line" pos:start="26:1" pos:end="26:45">//		System.out.println(init_lat);</comment>
+<comment type="line" pos:start="27:1" pos:end="27:45">//		System.out.println(init_lon);</comment>
+<comment type="line" pos:start="28:1" pos:end="28:45">//		System.out.println(init_alt);</comment>
+<comment type="line" pos:start="29:1" pos:end="29:16">//		</comment>
+<comment type="line" pos:start="30:1" pos:end="30:48">//		assert(init_alt&lt;=alt_tolerance);</comment>
+<comment type="line" pos:start="31:1" pos:end="31:16">//		</comment>
+<comment type="line" pos:start="32:1" pos:end="32:48">//		long dest_lat = init_lat + 1000;</comment>
+<comment type="line" pos:start="33:1" pos:end="33:48">//		long dest_lon = init_lon + 1000;</comment>
+<comment type="line" pos:start="34:1" pos:end="34:34">//		int dest_alt = 20;</comment>
+<comment type="line" pos:start="35:1" pos:end="35:16">//		</comment>
+<comment type="line" pos:start="36:1" pos:end="36:66">//		//TestTakeoff(drone,alt_tolerance,45000,dest_alt);</comment>
+<comment type="line" pos:start="37:1" pos:end="37:42">//		//TestLand(drone,0,45000);</comment>
+<comment type="line" pos:start="38:1" pos:end="38:16">//		</comment>
+<comment type="line" pos:start="39:1" pos:end="39:91">//		//Thread.sleep(1000); //TODO: figure out why land then takeoff doesn't work</comment>
+<comment type="line" pos:start="40:1" pos:end="40:16">//		</comment>
+<comment type="line" pos:start="41:1" pos:end="41:64">//		TestTakeoff(drone,alt_tolerance,45000,dest_alt);</comment>
+<comment type="line" pos:start="42:1" pos:end="42:70">//		TestFlyTo(drone, 60000, dest_lat, dest_lon, dest_alt);</comment>
+<comment type="line" pos:start="43:1" pos:end="43:70">//		TestFlyTo(drone, 60000, init_lat, init_lon, dest_alt);</comment>
+<comment type="line" pos:start="44:1" pos:end="44:52">//		TestLand(drone,alt_tolerance,45000);</comment>
+<comment type="line" pos:start="45:1" pos:end="45:9">//	}</comment>
+<comment type="line" pos:start="46:1" pos:end="46:8">//	</comment>
+<comment type="line" pos:start="47:1" pos:end="47:145">//	private void TestTakeoff(IDrone drone, long alt_tolerance, long timeout, int dest_alt) throws FlightZoneException, InterruptedException {</comment>
+<comment type="line" pos:start="48:1" pos:end="48:40">//		drone.takeOff(dest_alt);</comment>
+<comment type="line" pos:start="49:1" pos:end="49:74">//		long init_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="50:1" pos:end="50:62">//		//long init_time = System.currentTimeMillis();</comment>
+<comment type="line" pos:start="51:1" pos:end="51:46">//		long current_time = init_time;</comment>
+<comment type="line" pos:start="52:1" pos:end="52:48">//		boolean still_taking_off = true;</comment>
+<comment type="line" pos:start="53:1" pos:end="53:79">//		while(((current_time-init_time)&lt;timeout) &amp;&amp; still_taking_off) {</comment>
+<comment type="line" pos:start="54:1" pos:end="54:41">//			Thread.sleep(10);</comment>
+<comment type="line" pos:start="55:1" pos:end="55:75">//			if(drone.getAltitude()&gt;=(dest_alt-alt_tolerance)) {</comment>
+<comment type="line" pos:start="56:1" pos:end="56:57">//				still_taking_off = false;</comment>
+<comment type="line" pos:start="57:1" pos:end="57:25">//			}</comment>
+<comment type="line" pos:start="58:1" pos:end="58:80">//			current_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="59:1" pos:end="59:17">//		}</comment>
+<comment type="line" pos:start="60:1" pos:end="60:42">//		assert(!still_taking_off);</comment>
+<comment type="line" pos:start="61:1" pos:end="61:9">//	}</comment>
+<comment type="line" pos:start="62:1" pos:end="62:8">//	</comment>
+<comment type="line" pos:start="63:1" pos:end="63:128">//	private void TestLand(IDrone drone, long alt_tolerance, long timeout) throws FlightZoneException, InterruptedException {</comment>
+<comment type="line" pos:start="64:1" pos:end="64:29">//		drone.land();</comment>
+<comment type="line" pos:start="65:1" pos:end="65:74">//		long init_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="66:1" pos:end="66:46">//		long current_time = init_time;</comment>
+<comment type="line" pos:start="67:1" pos:end="67:45">//		boolean still_landing = true;</comment>
+<comment type="line" pos:start="68:1" pos:end="68:76">//		while(((current_time-init_time)&lt;timeout) &amp;&amp; still_landing) {</comment>
+<comment type="line" pos:start="69:1" pos:end="69:41">//			Thread.sleep(10);</comment>
+<comment type="line" pos:start="70:1" pos:end="70:64">//			if(drone.getAltitude()&lt;=alt_tolerance) {</comment>
+<comment type="line" pos:start="71:1" pos:end="71:54">//				still_landing = false;</comment>
+<comment type="line" pos:start="72:1" pos:end="72:25">//			}</comment>
+<comment type="line" pos:start="73:1" pos:end="73:80">//			current_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="74:1" pos:end="74:17">//		}</comment>
+<comment type="line" pos:start="75:1" pos:end="75:39">//		assert(!still_landing);</comment>
+<comment type="line" pos:start="76:1" pos:end="76:9">//	}</comment>
+<comment type="line" pos:start="77:1" pos:end="77:8">//	</comment>
+<comment type="line" pos:start="78:1" pos:end="78:139">//	private void TestFlyTo(IDrone drone, long timeout, long lat, long lon, long alt) throws FlightZoneException, InterruptedException {</comment>
+<comment type="line" pos:start="79:1" pos:end="79:64">//		drone.flyTo(new Coordinate(lat, lon, (int)alt));</comment>
+<comment type="line" pos:start="80:1" pos:end="80:74">//		long init_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="81:1" pos:end="81:46">//		long current_time = init_time;</comment>
+<comment type="line" pos:start="82:1" pos:end="82:44">//		boolean still_flying = true;</comment>
+<comment type="line" pos:start="83:1" pos:end="83:75">//		while(((current_time-init_time)&lt;timeout) &amp;&amp; still_flying) {</comment>
+<comment type="line" pos:start="84:1" pos:end="84:41">//			Thread.sleep(10);</comment>
+<comment type="line" pos:start="85:1" pos:end="85:59">//			if(drone.isDestinationReached(0)) {</comment>
+<comment type="line" pos:start="86:1" pos:end="86:53">//				still_flying = false;</comment>
+<comment type="line" pos:start="87:1" pos:end="87:25">//			}</comment>
+<comment type="line" pos:start="88:1" pos:end="88:80">//			current_time = Calendar.getInstance().getTimeInMillis();</comment>
+<comment type="line" pos:start="89:1" pos:end="89:17">//		}</comment>
+<comment type="line" pos:start="90:1" pos:end="90:38">//		assert(!still_flying);</comment>
+<comment type="line" pos:start="91:1" pos:end="91:9">//	}</comment>
+<comment type="line" pos:start="92:1" pos:end="92:3">//}</comment>
+</unit>

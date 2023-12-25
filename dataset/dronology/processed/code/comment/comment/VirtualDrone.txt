@@ -1,0 +1,5 @@
+represent virtual uav control intern simul 
+ 
+construct drone specifi current posit 
+use physic drone later posit status acquir drone 
+drn 

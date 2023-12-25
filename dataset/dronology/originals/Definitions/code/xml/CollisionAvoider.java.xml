@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/CollisionAvoider.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:49">package <name pos:start="1:9" pos:end="1:48"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:48">collisionavoidance</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:27">import <name pos:start="3:8" pos:end="3:26"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:26">ArrayList</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="5:1" pos:end="57:3">/**
+ * &lt;p&gt;
+ *     A collision avoidance strategy.
+ * &lt;/p&gt;
+ * &lt;p&gt;
+ *     This is the strategy pattern from Design Patterns (Gang of four) where all information is passed in as a
+ *     parameter.
+ * &lt;/p&gt;
+ *
+ * &lt;p&gt;
+ *     When implementing this class you need to use the data provided in the list of DroneSnapshotInternal(s) to figure out
+ *     how to command each drone so that they donât crash into one another. You change where the drones will fly by
+ *     changing the list of commands in each DroneSnapshotInternal(s). For example, if you want a drone to pause
+ *     (hover in place) for 5 seconds before continuing with its mission, you would:
+ * &lt;/p&gt;
+ * &lt;pre&gt;
+ * {@code
+ *
+ * DroneSnapshotInternal drone = ...
+ * drone.getCommands().add(0, new StopCommand(5.0));
+ * }
+ * &lt;/pre&gt;
+ *
+ * &lt;h2&gt;FAQ&lt;/h2&gt;
+ * &lt;h3&gt;Who is this for?&lt;/h3&gt;
+ * &lt;p&gt;Developers who want to create a collision avoidance approach with Dronology.&lt;/p&gt;
+ * &lt;h3&gt;What do you need to know?&lt;/h3&gt;
+ * &lt;p&gt;You need to know how to read the state of each drone and how to command each drone to avoid crashing.&lt;/p&gt;
+ * &lt;h3&gt; How do you read the state of each drone?&lt;/h3&gt;
+ * &lt;p&gt;You iterate through the list of Drone Snapshots. Each Drone Snapshot includes getters for data sensed by each drone. For example, you can call the get position method to access the drone's position:&lt;/p&gt;
+ * &lt;pre&gt;
+ *     {@code
+ *     drone.getPosition();
+ *     }
+ * &lt;/pre&gt;
+ * &lt;h3&gt;How do you control each drone?&lt;/h3&gt;
+ * &lt;p&gt;Each drone snapshot includes a get Commands method that gives you access to an array list of commands. By changing this list you are changing the queue of actions a given drone will execute. For example, to have a drone pause for 5 seconds before continuing on with its mission, insert a stop command at the start of the commands list:&lt;/p&gt;
+ *
+ * &lt;pre&gt;
+ *     {@code
+ *     drone.getCommands().add(0, new StopCommand(5.0));
+ *     }
+ * &lt;/pre&gt;
+ *
+ * &lt;p&gt;This inserts the stop command at the start of the commands list. When Dronology sees this change, it will radio the drone's on board autopilot and tell it to hover in place for 5 seconds. After that Dronology will radio the autopilot again with the next command in the get commands list. Here are 3 examples of possible commands you can create:
+ * &lt;ul&gt;
+ *     &lt;li&gt;A NedCommand. This command tells a drone to fly at given North, East, and Down velocity for a specified amount of time. @see {@link edu.nd.dronology.core.collisionavoidance.guidancecommands.NedCommand}&lt;/li&gt;
+ *     &lt;li&gt;A StopCommand. This tells a drone to hover in place for a specified amount of time. @see {@link edu.nd.dronology.core.collisionavoidance.guidancecommands.StopCommand}&lt;/li&gt;
+ *     &lt;li&gt;A WaypointCommand. This tells a drone to fly to a given waypoint. @see {@link edu.nd.dronology.core.collisionavoidance.guidancecommands.WaypointCommand}&lt;/li&gt;
+ * &lt;/ul&gt;
+ * Finally, you can also remove commands from the commands list.
+ * &lt;/p&gt;
+ */</comment>
+<interface pos:start="58:1" pos:end="60:1"><specifier pos:start="58:1" pos:end="58:6">public</specifier> interface <name pos:start="58:18" pos:end="58:33">CollisionAvoider</name> <block pos:start="58:35" pos:end="60:1">{
+    <function_decl pos:start="59:5" pos:end="59:55"><type pos:start="59:5" pos:end="59:15"><specifier pos:start="59:5" pos:end="59:10">public</specifier> <name pos:start="59:12" pos:end="59:15">void</name></type> <name pos:start="59:17" pos:end="59:21">avoid</name><parameter_list pos:start="59:22" pos:end="59:54">(<parameter pos:start="59:23" pos:end="59:53"><decl pos:start="59:23" pos:end="59:53"><type pos:start="59:23" pos:end="59:46"><name pos:start="59:23" pos:end="59:46"><name pos:start="59:23" pos:end="59:31">ArrayList</name><argument_list type="generic" pos:start="59:32" pos:end="59:46">&lt;<argument pos:start="59:33" pos:end="59:45"><name pos:start="59:33" pos:end="59:45">DroneSnapshot</name></argument>&gt;</argument_list></name></type> <name pos:start="59:48" pos:end="59:53">drones</name></decl></parameter>)</parameter_list>;</function_decl>
+}</block></interface>
+</unit>

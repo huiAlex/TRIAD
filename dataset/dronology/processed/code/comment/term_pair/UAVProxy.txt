@@ -1,0 +1,16 @@
+class proxi:compound
+drone mang:amod
+class drone:nmod
+intend datastructur:nsubj
+contain datastructur:nsubj
+intend pass:xcomp
+client extern:amod
+pass client:obl
+intend contain:conj
+inform necessari:amod
+contain inform:obj
+uav regard:case
+uav actual:amod
+inform uav:nmod
+uav manag:acl
+manag dronolog:obl

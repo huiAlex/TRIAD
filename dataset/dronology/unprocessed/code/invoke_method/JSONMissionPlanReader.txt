@@ -1,0 +1,10 @@
+get
+get
+get
+get
+addUAV
+addTask
+addTask
+get
+get
+parseTasks

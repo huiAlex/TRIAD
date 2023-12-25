@@ -1,0 +1,31 @@
+flight info 
+serial version uid 
+current flight 
+pend 
+pend 
+complet 
+complet 
+
+flight plan info 
+flight plan info 
+flight plan info 
+
+
+id 
+current flight 
+plan info 
+plan info 
+
+flight plan info 
+flight plan info 
+flight plan info 
+
+flight info 
+set current flight 
+get current flight 
+get pend flight 
+get complet flight 
+add pend 
+add complet 
+
+ 

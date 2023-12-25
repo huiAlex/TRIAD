@@ -1,0 +1,16 @@
+Class: PrenotazioniManager
+Date: 16/09/2003
+Version: 0.01.000
+Description: This class manages operations that require access to data related to reservations.
+Attributes:
+
+Methods:
+deletePrenotazione;Public;Manages the deletion of a reservation.
+editPrenotazione;Public;Manages the modification of a reservation.
+getDataDisponibile;Public;Given the nature of the visit, calculates the first available date when the visit can be scheduled.
+getPrenotazioneAt;Public;Finds all information related to a reservation.
+getPrenotazioniPaziente;Public;Finds all reservations made by a patient.
+newPrenotazione;Public;Manages the creation of a new reservation.
+savePrenotazione;Public; Saves the standing of a reservation.
+pianoSettimanale; Public;Finds all necessary information for the weekly settlement plan of reservations.
+tempiMediAttesa;Public;Calculates the average waiting time for pending requests for outpatient services.

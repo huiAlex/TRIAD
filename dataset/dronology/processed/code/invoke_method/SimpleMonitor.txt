@@ -1,0 +1,8 @@
+start 
+regist monitor messag handler 
+regist monitor messag handler 
+get servic 
+artifact identifi 
+artifact identifi 
+remot messag handler 
+main 

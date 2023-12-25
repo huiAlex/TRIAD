@@ -1,0 +1,9 @@
+/**
+ * 
+ * Abstract base class for all services that can handle files.
+ * 
+ *  *
+ *  *          The service instance.
+ *  *          The type of file that is supported.
+ */
+

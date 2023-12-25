@@ -1,0 +1,14 @@
+confirmSelect:1
+operActiv:1
+anagraficaLaboratori:4
+activOper:1
+selectConfirm:1
+laboratoriSelect:2
+datumAnagrafica:2
+laboratoriAnagrafica:4
+laboratoriDatum:1
+datumLaboratori:1
+anagraficaDatum:2
+selectLaboratori:2
+changAnagrafica:1
+anagraficaChang:1

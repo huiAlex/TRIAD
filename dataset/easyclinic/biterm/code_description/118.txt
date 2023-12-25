@@ -1,0 +1,14 @@
+mainForm:1
+formMain:1
+formGui:1
+folderClinic:2
+datumAnagrafica:2
+clinicFolder:2
+guiForm:1
+datumPatient:2
+patientDatum:2
+anagraficaDatum:2
+panelVisit:1
+guiCartella:2
+selectVisit:1
+visitSelect:1

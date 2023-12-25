@@ -1,0 +1,8 @@
+planManual:1
+assignRout:1
+uavAssign:1
+signmentPlan:1
+assignUav:1
+planSignment:1
+routAssign:1
+planFlight:1

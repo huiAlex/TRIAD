@@ -1,0 +1,6 @@
+clear vector 
+add event rect 
+current event 
+event shape 
+draw string 
+paint compon 

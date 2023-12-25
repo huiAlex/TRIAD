@@ -1,0 +1,6 @@
+pair 
+get queri id 
+get queri string 
+set queri id 
+set queri string 
+string 

@@ -1,0 +1,15 @@
+estServer:3
+useClient:1
+configurServer:2
+extensKey:1
+authentHttp:1
+serverConfigur:2
+extensUsag:1
+identClient:1
+certifIdent:1
+serverAct:1
+serverEst:3
+certifCredenti:1
+credentiAuthent:1
+httpAuthent:1
+certifClient:2

@@ -1,0 +1,25 @@
+write dispatch 
+output stream 
+cont 
+output queue 
+output queue 
+logger 
+serial version uid 
+
+drone command 
+
+python socket 
+output queue 
+
+drone command 
+
+write dispatch 
+run 
+tear 
+json string 
+timestamp 
+get uav id 
+
+writer thread take item outbound queue write socket 
+ 
+ 

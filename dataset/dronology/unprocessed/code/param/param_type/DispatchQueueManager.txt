@@ -1,0 +1,4 @@
+UAVStateMessage
+IUAVPropertyUpdateNotifier
+AbstractUAVMessage
+UAVMonitoringMessage

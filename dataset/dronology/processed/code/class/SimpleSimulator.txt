@@ -1,0 +1,27 @@
+simpl simul 
+flight simul 
+voltag simul 
+
+flight simul 
+
+drone 
+current posit 
+target coordin 
+distanc time step 
+step 
+
+virtual drone 
+lla coordin 
+lla coordin 
+
+simpl simul 
+start batteri drain 
+get voltag 
+set flight path 
+check point 
+destin reach 
+stop batteri drain 
+
+
+simpl simul implement contain flight simul batteri simul 
+ 

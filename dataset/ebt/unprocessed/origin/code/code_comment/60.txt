@@ -1,0 +1,3 @@
+Add a task to the thread pool. Any class which implements the Runnable interface may be assigned. When this task runs, its run method will be called.
+Get a new work assignment.
+Called to block the current thread until the thread pool has no more work.

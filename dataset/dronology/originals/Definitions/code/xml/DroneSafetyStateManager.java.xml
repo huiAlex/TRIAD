@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/DroneSafetyStateManager.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:38">package <name pos:start="1:9" pos:end="1:37"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="9:3">/**
+ * Associates a drone safety state object with a drone. ONLY set this in the drone constructor. NEVER interchange at runtime - otherwise drone state will be incorrectly changed.
+ * 
+ * @author Jane Cleland-Huang
+ * @version 0.01
+ *
+ */</comment>
+<class pos:start="10:1" pos:end="56:1"><specifier pos:start="10:1" pos:end="10:6">public</specifier> class <name pos:start="10:14" pos:end="10:36">DroneSafetyStateManager</name> <block pos:start="10:38" pos:end="56:1">{
+
+	<enum pos:start="12:9" pos:end="14:9"><specifier pos:start="12:9" pos:end="12:15">private</specifier> enum <name pos:start="12:22" pos:end="12:31">SafetyMode</name> <block pos:start="12:33" pos:end="14:9">{
+		<decl pos:start="13:17" pos:end="13:24"><name pos:start="13:17" pos:end="13:24">DIVERTED</name></decl>, <decl pos:start="13:27" pos:end="13:32"><name pos:start="13:27" pos:end="13:32">HALTED</name></decl>, <decl pos:start="13:35" pos:end="13:40"><name pos:start="13:35" pos:end="13:40">NORMAL</name></decl>
+	}</block></enum>
+
+	<decl_stmt pos:start="16:9" pos:end="16:38"><decl pos:start="16:9" pos:end="16:37"><type pos:start="16:9" pos:end="16:26"><specifier pos:start="16:9" pos:end="16:15">private</specifier> <name pos:start="16:17" pos:end="16:26">SafetyMode</name></type> <name pos:start="16:28" pos:end="16:37">safetyMode</name></decl>;</decl_stmt>
+
+	<comment type="block" format="javadoc" pos:start="18:9" pos:end="20:11">/**
+	 * Constructor States for both FlightMode and SafetyMode set to initial state
+	 */</comment>
+	<constructor pos:start="21:9" pos:end="23:9"><specifier pos:start="21:9" pos:end="21:14">public</specifier> <name pos:start="21:16" pos:end="21:38">DroneSafetyStateManager</name><parameter_list pos:start="21:39" pos:end="21:40">()</parameter_list> <block pos:start="21:42" pos:end="23:9">{<block_content pos:start="22:17" pos:end="22:47">
+		<expr_stmt pos:start="22:17" pos:end="22:47"><expr pos:start="22:17" pos:end="22:46"><name pos:start="22:17" pos:end="22:26">safetyMode</name> <operator pos:start="22:28" pos:end="22:28">=</operator> <name pos:start="22:30" pos:end="22:46"><name pos:start="22:30" pos:end="22:39">SafetyMode</name><operator pos:start="22:40" pos:end="22:40">.</operator><name pos:start="22:41" pos:end="22:46">NORMAL</name></name></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+
+	<comment type="line" pos:start="25:9" pos:end="25:18">// Setters</comment>
+	<function pos:start="26:9" pos:end="28:9"><type pos:start="26:9" pos:end="26:19"><specifier pos:start="26:9" pos:end="26:14">public</specifier> <name pos:start="26:16" pos:end="26:19">void</name></type> <name pos:start="26:21" pos:end="26:41">setSafetyModeToNormal</name><parameter_list pos:start="26:42" pos:end="26:43">()</parameter_list> <block pos:start="26:45" pos:end="28:9">{<block_content pos:start="27:17" pos:end="27:47">
+		<expr_stmt pos:start="27:17" pos:end="27:47"><expr pos:start="27:17" pos:end="27:46"><name pos:start="27:17" pos:end="27:26">safetyMode</name> <operator pos:start="27:28" pos:end="27:28">=</operator> <name pos:start="27:30" pos:end="27:46"><name pos:start="27:30" pos:end="27:39">SafetyMode</name><operator pos:start="27:40" pos:end="27:40">.</operator><name pos:start="27:41" pos:end="27:46">NORMAL</name></name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+
+	<function pos:start="30:9" pos:end="32:9"><type pos:start="30:9" pos:end="30:19"><specifier pos:start="30:9" pos:end="30:14">public</specifier> <name pos:start="30:16" pos:end="30:19">void</name></type> <name pos:start="30:21" pos:end="30:43">setSafetyModeToDiverted</name><parameter_list pos:start="30:44" pos:end="30:45">()</parameter_list> <block pos:start="30:47" pos:end="32:9">{<block_content pos:start="31:17" pos:end="31:49">
+		<expr_stmt pos:start="31:17" pos:end="31:49"><expr pos:start="31:17" pos:end="31:48"><name pos:start="31:17" pos:end="31:26">safetyMode</name> <operator pos:start="31:28" pos:end="31:28">=</operator> <name pos:start="31:30" pos:end="31:48"><name pos:start="31:30" pos:end="31:39">SafetyMode</name><operator pos:start="31:40" pos:end="31:40">.</operator><name pos:start="31:41" pos:end="31:48">DIVERTED</name></name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+
+	<function pos:start="34:9" pos:end="36:9"><type pos:start="34:9" pos:end="34:19"><specifier pos:start="34:9" pos:end="34:14">public</specifier> <name pos:start="34:16" pos:end="34:19">void</name></type> <name pos:start="34:21" pos:end="34:41">setSafetyModeToHalted</name><parameter_list pos:start="34:42" pos:end="34:43">()</parameter_list> <block pos:start="34:45" pos:end="36:9">{<block_content pos:start="35:17" pos:end="35:47">
+		<expr_stmt pos:start="35:17" pos:end="35:47"><expr pos:start="35:17" pos:end="35:46"><name pos:start="35:17" pos:end="35:26">safetyMode</name> <operator pos:start="35:28" pos:end="35:28">=</operator> <name pos:start="35:30" pos:end="35:46"><name pos:start="35:30" pos:end="35:39">SafetyMode</name><operator pos:start="35:40" pos:end="35:40">.</operator><name pos:start="35:41" pos:end="35:46">HALTED</name></name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+
+	<function pos:start="38:9" pos:end="40:9"><type pos:start="38:9" pos:end="38:22"><specifier pos:start="38:9" pos:end="38:14">public</specifier> <name pos:start="38:16" pos:end="38:22">boolean</name></type> <name pos:start="38:24" pos:end="38:41">isSafetyModeNormal</name><parameter_list pos:start="38:42" pos:end="38:43">()</parameter_list> <block pos:start="38:45" pos:end="40:9">{<block_content pos:start="39:17" pos:end="39:55">
+		<return pos:start="39:17" pos:end="39:55">return <expr pos:start="39:24" pos:end="39:54"><name pos:start="39:24" pos:end="39:33">safetyMode</name> <operator pos:start="39:35" pos:end="39:36">==</operator> <name pos:start="39:38" pos:end="39:54"><name pos:start="39:38" pos:end="39:47">SafetyMode</name><operator pos:start="39:48" pos:end="39:48">.</operator><name pos:start="39:49" pos:end="39:54">NORMAL</name></name></expr>;</return>
+	</block_content>}</block></function>
+
+	<function pos:start="42:9" pos:end="45:9"><type pos:start="42:9" pos:end="42:22"><specifier pos:start="42:9" pos:end="42:14">public</specifier> <name pos:start="42:16" pos:end="42:22">boolean</name></type> <name pos:start="42:24" pos:end="42:43">isSafetyModeDiverted</name><parameter_list pos:start="42:44" pos:end="42:45">()</parameter_list> <block pos:start="42:47" pos:end="45:9">{<block_content pos:start="43:17" pos:end="43:57">
+		<return pos:start="43:17" pos:end="43:57">return <expr pos:start="43:24" pos:end="43:56"><name pos:start="43:24" pos:end="43:33">safetyMode</name> <operator pos:start="43:35" pos:end="43:36">==</operator> <name pos:start="43:38" pos:end="43:56"><name pos:start="43:38" pos:end="43:47">SafetyMode</name><operator pos:start="43:48" pos:end="43:48">.</operator><name pos:start="43:49" pos:end="43:56">DIVERTED</name></name></expr>;</return>
+
+	</block_content>}</block></function>
+
+	<function pos:start="47:9" pos:end="50:9"><type pos:start="47:9" pos:end="47:22"><specifier pos:start="47:9" pos:end="47:14">public</specifier> <name pos:start="47:16" pos:end="47:22">boolean</name></type> <name pos:start="47:24" pos:end="47:41">isSafetyModeHalted</name><parameter_list pos:start="47:42" pos:end="47:43">()</parameter_list> <block pos:start="47:45" pos:end="50:9">{<block_content pos:start="48:17" pos:end="48:55">
+		<return pos:start="48:17" pos:end="48:55">return <expr pos:start="48:24" pos:end="48:54"><name pos:start="48:24" pos:end="48:33">safetyMode</name> <operator pos:start="48:35" pos:end="48:36">==</operator> <name pos:start="48:38" pos:end="48:54"><name pos:start="48:38" pos:end="48:47">SafetyMode</name><operator pos:start="48:48" pos:end="48:48">.</operator><name pos:start="48:49" pos:end="48:54">HALTED</name></name></expr>;</return>
+
+	</block_content>}</block></function>
+
+	<function pos:start="52:9" pos:end="54:9"><type pos:start="52:9" pos:end="52:21"><specifier pos:start="52:9" pos:end="52:14">public</specifier> <name pos:start="52:16" pos:end="52:21">String</name></type> <name pos:start="52:23" pos:end="52:37">getSafetyStatus</name><parameter_list pos:start="52:38" pos:end="52:39">()</parameter_list> <block pos:start="52:41" pos:end="54:9">{<block_content pos:start="53:17" pos:end="53:45">
+		<return pos:start="53:17" pos:end="53:45">return <expr pos:start="53:24" pos:end="53:44"><call pos:start="53:24" pos:end="53:44"><name pos:start="53:24" pos:end="53:42"><name pos:start="53:24" pos:end="53:33">safetyMode</name><operator pos:start="53:34" pos:end="53:34">.</operator><name pos:start="53:35" pos:end="53:42">toString</name></name><argument_list pos:start="53:43" pos:end="53:44">()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+
+}</block></class>
+</unit>

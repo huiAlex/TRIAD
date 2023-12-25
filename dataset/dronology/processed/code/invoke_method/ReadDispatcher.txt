@@ -1,0 +1,19 @@
+tear 
+get 
+tear 
+post drone status updat 
+post drone status updat 
+post handshak messag 
+post monitor messag 
+get instanc 
+publish 
+get groundstationid 
+json 
+get uavid 
+get uavid 
+string 
+get uavid 
+tear 
+get timestamp 
+process messag 
+creat 

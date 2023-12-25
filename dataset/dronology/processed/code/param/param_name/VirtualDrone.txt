@@ -1,0 +1,11 @@
+drn 
+target altitud 
+target coordin 
+speed 
+ 
+distanc time step 
+speed 
+ 
+ 
+ 
+command 

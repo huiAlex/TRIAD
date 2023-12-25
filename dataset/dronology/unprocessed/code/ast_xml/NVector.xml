@@ -1,0 +1,351 @@
+<Class>
+    <Id>49</Id>
+    <Package>edu.nd.dronology.core.coordinate</Package>
+    <ClassName>NVector</ClassName>
+    <SuperClass>AbstractPosition</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>NVector  /** 
+ * A terrestrial position defined by a normal vector (N-vector) and an altitude. An N-vector is a normal Vector that points out from the surface of the WGS-84 reference ellipsoid. The normal vector is combined with an altitude which represents the distance above (or below) the reference ellipsoid (note this is the distance above sea level as sea level is defined as the surface of the ellipsoid in WGS-84). The n-vector and altitude together precisely define a position on Earth. The n-vector should be a unit vector (i.e. a vector with a magnitude = 1). The altitude should be in meters.
+ * @author Michael Murphy 
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>SEMI_MAJOR</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SEMI_MINOR</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>x</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>y</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>z</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+        <Field>
+            <FieldName>altitude</FieldName>
+            <FieldType>double</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>NVector</MethodName>
+            <MethodComment>/** 
+ * @param x the x component of the normal vector
+ * @param y the y component of the normal vector
+ * @param z the z component of the normal vector
+ * @param altitude the distance above the reference ellipsoid (negative altitudes represent altitude below this ellipsoid).
+ */
+</MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType>double x</ParameterType>
+                <ParameterType>double y</ParameterType>
+                <ParameterType>double z</ParameterType>
+                <ParameterType>double altitude</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [m=Math.sqrt(x * x + y * y + z * z)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toNVector</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>NVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>hashCode</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>int</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>int [prime=31]</InnerVar>
+                <InnerVar>int [result=1]</InnerVar>
+                <InnerVar>long [temp]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>equals</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>boolean</ReturnType>
+            <ParameterList>
+                <ParameterType>Object obj</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>NVector [other=(NVector)obj]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toString</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>String</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getAltitude</MethodName>
+            <MethodComment>/** 
+ * @return the distance above sea level in meters
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getX</MethodName>
+            <MethodComment>/** 
+ * @return the x component of the n-vector
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getY</MethodName>
+            <MethodComment>/** 
+ * @return the y component of the n-vector
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getZ</MethodName>
+            <MethodComment>/** 
+ * @return the z component of the n-vector
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>distance</MethodName>
+            <MethodComment>/** 
+ * Finds the distance in meters from this NVector to another. This is the distance that a laser would travel.
+ * @param other the other position to find the position to.
+ * @return The distance from this position to the other in meters
+ */
+</MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector other</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>PVector [pSelf=toPVector()]</InnerVar>
+                <InnerVar>PVector [pOther=other.toPVector()]</InnerVar>
+                <InnerVar>double [dx=pSelf.getX() - pOther.getX()]</InnerVar>
+                <InnerVar>double [dy=pSelf.getY() - pOther.getY()]</InnerVar>
+                <InnerVar>double [dz=pSelf.getZ() - pOther.getZ()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toPVector</MethodName>
+            <MethodComment>/** 
+ * @return a terrestrial position defined by an x, y, and z coordinate in anEarth centered Earth fixed reference frame.
+ */
+</MethodComment>
+            <ReturnType>PVector</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [a=SEMI_MAJOR]</InnerVar>
+                <InnerVar>double [b=SEMI_MINOR]</InnerVar>
+                <InnerVar>double [ab2=(a * a) / (b * b)]</InnerVar>
+                <InnerVar>double [f=b / Math.sqrt(z * z + ab2 * y * y + ab2 * x * x)]</InnerVar>
+                <InnerVar>double [pz=f * z + altitude * z]</InnerVar>
+                <InnerVar>double [py=f * ab2 * y + altitude * y]</InnerVar>
+                <InnerVar>double [px=f * ab2 * x + altitude * x]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>toLlaCoordinate</MethodName>
+            <MethodComment>/** 
+ * @return a terrestrial position defined by a latitude, longitude, andaltitude.
+ */
+</MethodComment>
+            <ReturnType>LlaCoordinate</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [lat=Math.atan2(this.getZ(),Math.sqrt(this.getX() * this.getX() + this.getY() * this.getY()))]</InnerVar>
+                <InnerVar>double [lon=Math.atan2(this.getY(),this.getX())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>laserDistance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector a</ParameterType>
+                <ParameterType>NVector b</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>PVector [pa=a.toPVector()]</InnerVar>
+                <InnerVar>PVector [pb=b.toPVector()]</InnerVar>
+                <InnerVar>double [dx=pa.getX() - pb.getX()]</InnerVar>
+                <InnerVar>double [dy=pa.getY() - pb.getY()]</InnerVar>
+                <InnerVar>double [dz=pa.getZ() - pb.getZ()]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>travelDistance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector a</ParameterType>
+                <ParameterType>NVector b</ParameterType>
+                <ParameterType>double stepDistance</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>double [dist=0.0]</InnerVar>
+                <InnerVar>NVector [current=a]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>travelDistance</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>double</ReturnType>
+            <ParameterList>
+                <ParameterType>NVector a</ParameterType>
+                <ParameterType>NVector b</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,17 @@
+format
+l
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+auth_credentials
+auth_credentials
+auth_credentials
+cn
+server
+expected_enroll_rv
+callback
+cn
+server
+expected_enroll_rv
+callback

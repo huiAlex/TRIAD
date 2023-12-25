@@ -1,0 +1,6 @@
+gridBag
+c
+topPanel
+modelLabel
+typeLabel
+modelField

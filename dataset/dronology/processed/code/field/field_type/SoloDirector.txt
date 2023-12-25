@@ -1,0 +1,3 @@
+lla coordin 
+waypoint 
+lla coordin 

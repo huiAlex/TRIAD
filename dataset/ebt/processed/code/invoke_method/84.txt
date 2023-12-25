@@ -1,0 +1,4 @@
+time broadcast shape 
+time broadcast text 
+time broadcast shape befor 
+time broadcast text 

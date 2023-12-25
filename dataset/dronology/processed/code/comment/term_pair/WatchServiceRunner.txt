@@ -1,0 +1,3 @@
+directori give:amod
+regist directori:nmod
+directori watch servic:obl

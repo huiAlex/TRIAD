@@ -1,0 +1,4 @@
+recordWarc:1
+recordArc:1
+warcRecord:1
+arcRecord:1

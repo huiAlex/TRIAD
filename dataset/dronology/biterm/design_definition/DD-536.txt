@@ -1,0 +1,4 @@
+planMission:1
+uavIndividu:1
+routAssign:1
+routFlight:1

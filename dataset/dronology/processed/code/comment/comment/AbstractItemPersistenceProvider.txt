@@ -1,0 +1,18 @@
+abstract base class item factori 
+provid method read save item interfac persist object 
+persistor 
+default constructor 
+need implement subclass initi use persistor 
+singleton instanc persistor 
+read item repres resourc resourc item repres resourc except 
+ 
+read item store given path path item locat path except 
+ 
+read item repres content content item locat content except 
+ 
+model model object save ountput stream write object 
+true save success 
+ 
+item item object save path path save object 
+true save success 
+ 

@@ -1,0 +1,6 @@
+Construct a connection object.
+Returns GraphId as int
+Copy data from one set of columns to other in table Variable
+Injects new value into Variable table, using Data stored in Vector of Variable object
+this method will pick up the structure id from SPE Structure
+If DependentStructureId is 0 then select StructureID and invoke the executeStructure method on Selected StructureId

@@ -1,0 +1,19 @@
+get drone 
+add 
+string 
+string 
+get start locat 
+get end locat 
+get status 
+get way point 
+get 
+reach 
+get coordin 
+waypoint 
+lla coordin 
+get flight id 
+get drone 
+get flight id 
+get drone 
+get latitud 
+get longitud 

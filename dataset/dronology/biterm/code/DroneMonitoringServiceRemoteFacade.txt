@@ -1,0 +1,2 @@
+typeMessag:1
+typeCertain:1

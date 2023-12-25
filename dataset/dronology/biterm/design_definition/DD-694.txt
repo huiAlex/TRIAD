@@ -1,0 +1,5 @@
+appliUav:2
+selectUav:1
+appliOper:1
+operEmerg:1
+uavSelect:1

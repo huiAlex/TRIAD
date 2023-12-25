@@ -1,0 +1,14 @@
+LOGGER
+NUM_THREADS
+SERVICE_EXECUTOR
+USE_MONITORING
+queueMap
+queueMap
+dispatchThreads
+dispatchThreads
+outgoingCommandQueue
+outgoingCommandQueue
+monitoringQueue
+monitoringQueue
+groundstationid
+validator

@@ -1,0 +1,28 @@
+task factori 
+flightpattern 
+rout 
+sync 
+waypoint 
+takeoff 
+land 
+delay 
+
+
+type 
+uavid 
+tasknam 
+param 
+type 
+uavid 
+tasknam 
+param 
+type 
+uavid 
+coordin 
+
+lla coordin 
+
+get task 
+get task 
+get task 
+

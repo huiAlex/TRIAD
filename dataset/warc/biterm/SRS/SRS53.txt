@@ -1,0 +1,4 @@
+availMake:1
+makeAvail:1
+curlCommand:1
+commandCurl:1

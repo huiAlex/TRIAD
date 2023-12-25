@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/ExportDroneRouteAssignment.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:46">package <name pos:start="1:9" pos:end="1:45"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:45">unused</name></name>;</package>
+<comment type="line" pos:start="2:1" pos:end="2:53">//package edu.nd.dronology.services.core.areamapping;</comment>
+<comment type="line" pos:start="3:1" pos:end="3:2">//</comment>
+<comment type="line" pos:start="4:1" pos:end="4:30">//import java.io.Serializable;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:29">//import java.icse.model.util.ArrayList;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:31">//import java.icse.model.util.Collections;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:24">//import java.icse.model.util.List;</comment>
+<comment type="line" pos:start="8:1" pos:end="8:2">//</comment>
+<comment type="line" pos:start="9:1" pos:end="9:58">//import edu.nd.dronology.services.core.items.FlightRoute;</comment>
+<comment type="line" pos:start="10:1" pos:end="10:59">//import edu.nd.dronology.services.core.items.IFlightRoute;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:2">//</comment>
+<comment type="line" pos:start="12:1" pos:end="12:67">//public class ExportDroneRouteAssignment implements Serializable {</comment>
+<comment type="line" pos:start="13:1" pos:end="13:11">//	/**</comment>
+<comment type="line" pos:start="14:1" pos:end="14:11">//	 * </comment>
+<comment type="line" pos:start="15:1" pos:end="15:11">//	 */</comment>
+<comment type="line" pos:start="16:1" pos:end="16:74">//	private static final long serialVersionUID = -942703933531286156L;</comment>
+<comment type="line" pos:start="17:1" pos:end="17:38">//	List&lt;IFlightRoute&gt; droneRoute;</comment>
+<comment type="line" pos:start="18:1" pos:end="18:8">//	</comment>
+<comment type="line" pos:start="19:1" pos:end="19:45">//	public ExportDroneRouteAssignment() {</comment>
+<comment type="line" pos:start="20:1" pos:end="20:47">//		droneRoute = new ArrayList&lt;&gt;();</comment>
+<comment type="line" pos:start="21:1" pos:end="21:9">//	}</comment>
+<comment type="line" pos:start="22:1" pos:end="22:8">//	</comment>
+<comment type="line" pos:start="23:1" pos:end="23:51">//	public void add(IFlightRoute flightRoute) {</comment>
+<comment type="line" pos:start="24:1" pos:end="24:44">//		droneRoute.add(flightRoute);</comment>
+<comment type="line" pos:start="25:1" pos:end="25:9">//	}</comment>
+<comment type="line" pos:start="26:1" pos:end="26:8">//	</comment>
+<comment type="line" pos:start="27:1" pos:end="27:40">//	public List&lt;IFlightRoute&gt; get(){</comment>
+<comment type="line" pos:start="28:1" pos:end="28:64">//		return Collections.unmodifiableList(droneRoute);</comment>
+<comment type="line" pos:start="29:1" pos:end="29:9">//	}</comment>
+<comment type="line" pos:start="30:1" pos:end="30:8">//	</comment>
+<comment type="line" pos:start="31:1" pos:end="31:44">//	public IFlightRoute get(int entry) {</comment>
+<comment type="line" pos:start="32:1" pos:end="32:45">//		return droneRoute.get(entry);</comment>
+<comment type="line" pos:start="33:1" pos:end="33:9">//	}</comment>
+<comment type="line" pos:start="34:1" pos:end="34:8">//	</comment>
+<comment type="line" pos:start="35:1" pos:end="35:55">//	public void set(int index, FlightRoute entry) {</comment>
+<comment type="line" pos:start="36:1" pos:end="36:45">//		droneRoute.set(index, entry);</comment>
+<comment type="line" pos:start="37:1" pos:end="37:9">//	}</comment>
+<comment type="line" pos:start="38:1" pos:end="38:8">//	</comment>
+<comment type="line" pos:start="39:1" pos:end="39:76">//	public void setDroneRouteAssignment(List&lt;IFlightRoute&gt; assignment) {</comment>
+<comment type="line" pos:start="40:1" pos:end="40:40">//		droneRoute = assignment;</comment>
+<comment type="line" pos:start="41:1" pos:end="41:9">//	}</comment>
+<comment type="line" pos:start="42:1" pos:end="42:3">//}</comment>
+</unit>

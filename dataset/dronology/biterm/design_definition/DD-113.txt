@@ -1,0 +1,4 @@
+uavActiv:1
+coordinCurrent:1
+stateUav:1
+coordinUav:1

@@ -1,0 +1,27 @@
+us server port 
+us server ip 
+us uid 
+us pwd 
+us cacert 
+us trust cert 
+us server certkey 
+us vfile 
+us explicit cert 
+us explicit key 
+us selfsign cert 
+us selfsign key 
+us cacert 
+us trust cert 
+us server certkey 
+us vfile 
+us explicit cert 
+us explicit key 
+us selfsign cert 
+us selfsign key 
+us enrol url 
+us uidpwd good 
+us uidpwd bad 
+us pkcs ct 
+us proxi enrol url 
+us proxi port 
+us pkcs req 

@@ -1,0 +1,25 @@
+serial version uid 
+logger 
+content 
+content 
+side content 
+button 
+side button 
+panel content 
+fr layout 
+side panel 
+cancel 
+appli 
+left 
+right 
+num rout 
+hover switch 
+return home 
+index 
+box id 
+provid 
+flight rout servic 
+flight rout info 
+flight info servic 
+drone imag 
+uav status 

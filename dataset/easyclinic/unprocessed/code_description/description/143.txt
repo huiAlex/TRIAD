@@ -1,0 +1,15 @@
+Class: PrintManager
+Date: 16/09/2003
+Version: 0 01 000
+Description: managing the print operations for the operator
+
+Attributes:
+
+Methods:
+stampaHospitalCard; Public;Retrieve necessary information for printing the hospital card
+stampaPianoSettimanale;Public;Retrieve necessary information for printing the weekly reservations plan in tabular form
+stampaResocontoEsami;Public;Retrieve necessary information for printing reports of the examinations that the Operator has required
+stampaResocontoPrenotazioni;Public;Retrieve necessary information for printing reports of reservations that the Operator has required
+stampaResocontoVisite;Public;Retrieve necessary information for printing records of visits that the operator has required
+
+

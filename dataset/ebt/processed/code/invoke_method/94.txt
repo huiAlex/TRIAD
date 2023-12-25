@@ -1,0 +1,3 @@
+clear vector 
+add event rect 
+event shape 

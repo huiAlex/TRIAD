@@ -1,0 +1,6 @@
+socket 
+id 
+event log 
+conn 
+rs 
+stmt 

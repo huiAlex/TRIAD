@@ -1,0 +1,4 @@
+[SUMMARY]
+Subscribe to monitoring topics
+[DESCRIPTION]
+Clients shall be able to subscribe to any number of topics

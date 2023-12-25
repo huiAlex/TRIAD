@@ -1,0 +1,10 @@
+DroneConnectorServiceInstance
+getServiceClass
+getOrder
+getPropertyPath
+doStartService
+doStopService
+unregisterConnection
+unregisterDrones
+handleConnection
+registerConnection

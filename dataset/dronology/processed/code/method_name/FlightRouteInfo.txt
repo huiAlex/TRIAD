@@ -1,0 +1,14 @@
+flight rout info 
+get categori 
+set categori 
+get waypoint 
+set date modifi 
+set date creat 
+add waypoint 
+remov waypoint 
+get rout length 
+get date creat 
+get date modifi 
+set rout length 
+get descript 
+set descript 

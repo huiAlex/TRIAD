@@ -1,0 +1,11 @@
+dir
+recursive
+manager
+fileExtensions
+fileName
+start
+dir
+attrs
+file
+exc
+dir

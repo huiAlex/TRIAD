@@ -1,0 +1,41 @@
+<Class>
+    <Id>158</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.sync</Package>
+    <ClassName>SyncConstants</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>SyncConstants  /** 
+ * Synchronization IDs for predefined, built-in  {@link SynchronizationPoint} .
+ * @author Michael Vierhauser 
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>LANDING_ASC_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>LANDING_LONLAT_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>LANDING_HOME_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TAKEOFF_ASC_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TAKEOFF_LATLON_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TAKEOFF_WP_REACHED</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList/>
+</Class>

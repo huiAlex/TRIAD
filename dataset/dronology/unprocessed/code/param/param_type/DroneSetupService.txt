@@ -1,0 +1,2 @@
+DroneInitializationInfo
+IUAVProxy

@@ -1,0 +1,5 @@
+serialVersionUID
+LOGGER
+instance
+externalServices
+externalServices

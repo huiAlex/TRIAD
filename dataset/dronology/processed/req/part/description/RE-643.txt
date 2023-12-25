@@ -1,0 +1,1 @@
+load map posit pre defin locat 

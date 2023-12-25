@@ -1,0 +1,57 @@
+<Class>
+    <Id>6</Id>
+    <Package>edu.nd.dronology.core.vehicle.commands</Package>
+    <ClassName>CommandIds</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>CommandIds  /** 
+ * Ids for valid UAV commands 
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>SET_MODE_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>GOTO_LOCATION_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>PING_PONG_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>TAKEOFF_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>STOP_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SET_GROUND_SPEED_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SET_VELOCITY_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SET_MONITOR_FREQUENCY_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>SET_STATE_FREQUENCY_COMMAND</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>CONNECTION_RESPONSE</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList/>
+</Class>

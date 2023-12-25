@@ -1,0 +1,8 @@
+configur util class provid remot servic rmi 
+ 
+address server port port remot servic 
+ 
+default constructor use standard port localhost 
+ 
+remot manag instanc rmi servic retriev 
+ 

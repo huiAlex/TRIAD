@@ -1,0 +1,9 @@
+/**
+ * The {@link SynchronizationManager} holds a list of {@link SynchronizationPoint} and ensures that a point is fully synced
+ * before allowing UAVs to proceed with the next task.
+ * 
+ *  * 
+ * 
+ *
+ */
+

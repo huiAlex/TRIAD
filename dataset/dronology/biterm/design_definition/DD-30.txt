@@ -1,0 +1,4 @@
+assignPlan:1
+assignUav:1
+stateTransit:1
+planFlight:1

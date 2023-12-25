@@ -1,0 +1,4 @@
+Managed Hashtable: stores a key and a list as value -> a query on the hashtable never returns null but an empty list.
+The list does not need to be created initially                   Key type.
+Value type.
+/

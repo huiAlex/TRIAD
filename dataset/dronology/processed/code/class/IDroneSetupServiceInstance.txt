@@ -1,0 +1,19 @@
+drone setup servic instanc 
+
+
+info 
+listen 
+listen 
+status 
+uav id 
+uav id 
+
+
+initi drone 
+add drone status chang listen 
+remov drone status chang listen 
+get activ uav 
+deactiv drone 
+get activ uav 
+resend command 
+

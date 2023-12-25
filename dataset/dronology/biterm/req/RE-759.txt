@@ -1,0 +1,10 @@
+planExecut:1
+executUav:1
+planMission:1
+uavMultipl:1
+plannerMission:1
+missionPlan:1
+executPlan:1
+uavExecut:1
+missionPlanner:1
+planFlight:1

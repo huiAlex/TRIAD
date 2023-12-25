@@ -1,0 +1,3 @@
+commandIntern:1
+targetCoordin:1
+commandGoto:1

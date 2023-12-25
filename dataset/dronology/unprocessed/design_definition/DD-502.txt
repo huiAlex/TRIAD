@@ -1,0 +1,4 @@
+[SUMMARY]
+Specify flight route in standard format
+[DESCRIPTION]
+Flight routes shall be specified in the standard XML_FlightRoute format.

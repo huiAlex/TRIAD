@@ -1,0 +1,7 @@
+This is the drag and drop vertical layout in which the FRInfoBoxes are stored   in the assign routes UI.
+/
+/
+/
+/
+/
+/

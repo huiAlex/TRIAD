@@ -1,0 +1,14 @@
+create
+IncommingGroundstationConnectionServer
+getInstance
+getActiveUAVs
+getGCSId
+tearDown
+unregisterDrones
+getGCSId
+getGroundstationId
+equals
+getInstance
+unregisterCommandHandler
+getInstance
+deactivateDrone

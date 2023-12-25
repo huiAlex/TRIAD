@@ -1,0 +1,36 @@
+flight manag servic remot facad 
+serial version uid 
+logger 
+instanc 
+
+flight manag servic remot facad 
+
+uav id 
+uavid 
+plan 
+waypoint 
+plan 
+waypoint 
+uavid 
+uavid 
+uavid 
+uavid 
+altitud 
+
+waypoint 
+waypoint 
+
+flight manag servic remot facad 
+get instanc 
+get flight info 
+plan flight 
+plan flight 
+return home 
+paus flight 
+get current flight 
+cancel pend flight 
+takeoff 
+
+remot facad handl uav fligth allow assign flight plan uav allow send flight relat command uav take return home 
+ 
+ 

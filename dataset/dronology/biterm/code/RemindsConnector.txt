@@ -1,0 +1,2 @@
+uavMessag:1
+uavState:1

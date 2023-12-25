@@ -1,0 +1,2 @@
+command uav:compound
+interfac command:nmod

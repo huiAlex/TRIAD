@@ -1,0 +1,15 @@
+Changing laboratory anagrafica
+
+The Operator logs on to the main form (for instance GUIPrincipale) and selects the function for laboratories certified management.
+GUIPrincipaleHandler delegates the task to GUIAnagraficaLaboratorioHandler for providing the service.
+The first step is to obtain a list of all laboratories, therefore control passes to the instance of LaboratorioManager through which instances of Laboratory retrieves the list and return it backward up the application of GUIAnagraficaLaboratorioHandler.
+GUIAnagraficaLaboratorioHandler displays the list of laboratories received on the mask of the management of the database laboratories (for instance GUIAnagraficaLaboratorio).
+The Operator selects the laboratory to change the active register function.
+Control passes to the instance of GUIAnagraficaLaboratorioHandler which delegates the task to collect data on the selected laboratory to the instance of LaboratorioManager.
+The latter, by the Laboratory of the application, retrieves the necessary data and supplies it to the instance of GUIAnagraficaLaboratorioHandler.
+The instance of GUIAnagraficaLaboratorioHandler is responsible for displaying the data on the mask GUIAnagraficaLaboratorio.
+The operator confirms the changes made.
+Control passes to the instance of GUIAnagraficaLaboratorioHandler which delegates the task of storing the data in the laboratory considered to the application of LaboratorioManager.
+The latter, through the body of the laboratory, provides the data to be saved.
+Control passes backward up to the instance of GUIAnagraficaLaboratorioHandler which deals with notifying the success by viewing a special message on the screen on the management of the register of laboratories (for instance GUIAnagraficaLaboratorio).
+This service is described through collaboration diagram of Fig 3.5.

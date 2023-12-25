@@ -1,0 +1,4 @@
+[SUMMARY]
+Support for GCS connected UAVs
+[DESCRIPTION]
+The _VehicleCore_ shall support UAVs capable of receiving and responding to commands sent via the ground control station

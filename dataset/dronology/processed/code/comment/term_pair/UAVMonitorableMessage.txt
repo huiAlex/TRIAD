@@ -1,0 +1,3 @@
+class base:compound
+messag monitor:amod
+class messag:nmod

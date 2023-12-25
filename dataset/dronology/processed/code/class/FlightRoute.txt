@@ -1,0 +1,45 @@
+flight rout 
+serial version uid 
+
+id 
+categori 
+waypoint 
+waypoint 
+takeoffaltitud 
+descript 
+
+waypoint 
+
+
+descript 
+categori 
+waypoint 
+coordin 
+waypoint 
+index 
+index 
+altitud 
+
+waypoint 
+waypoint 
+waypoint 
+
+set takeoff altitud 
+flight rout 
+set 
+get id 
+get 
+get descript 
+set descript 
+set categori 
+get categori 
+get waypoint 
+add waypoint 
+remov waypoint 
+add waypoint 
+remov waypoint 
+set takeoff altitud 
+
+implement flight rout contain seri waypoint addit meta data 
+ 
+ 

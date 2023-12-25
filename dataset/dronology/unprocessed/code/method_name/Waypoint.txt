@@ -1,0 +1,9 @@
+getCoordinate
+Waypoint
+Waypoint
+equals
+isReached
+hashCode
+reached
+getApproachingspeed
+setApproachingspeed

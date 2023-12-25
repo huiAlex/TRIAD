@@ -1,0 +1,18 @@
+get current posit drone 
+note send messag block wait receiv return messag manag drone coordin 
+time take method run indetermin 
+ 
+sign flight direct manag drone flight direct 
+remov assign flight 
+tell drone fli home 
+target altitud set target altitud takeoff 
+tell drone takeoff 
+tell drone land 
+drone touch ground 
+ 
+get drone base coordin home locat 
+note send messag block wait receiv return messag manag drone return valu 
+time take method run indetermin 
+manag drone base coordin 
+updat manag drone command 
+command command drone carri 

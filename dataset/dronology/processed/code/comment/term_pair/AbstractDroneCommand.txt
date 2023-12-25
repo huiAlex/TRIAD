@@ -1,0 +1,4 @@
+base abstract:compound
+class base:compound
+send class:nsubj
+class command:nmod

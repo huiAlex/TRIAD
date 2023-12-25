@@ -1,0 +1,16 @@
+char
+va_list
+BIO
+int
+int
+pem_password_cb
+int
+pem_password_cb
+char
+int
+int
+void
+int
+int
+X509
+int

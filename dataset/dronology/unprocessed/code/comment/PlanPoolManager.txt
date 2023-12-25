@@ -1,0 +1,7 @@
+/**
+ * Management of pending plans for individual UAVs.
+ * Each active UAV has a {@link PlanPool} that keeps track of the assigned (and pending) flight plans.
+ * 
+ *  *
+ */
+

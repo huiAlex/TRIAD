@@ -1,0 +1,4 @@
+object dummi:amod
+block synchron:amod
+synchron dummi:dep
+handi block:obl

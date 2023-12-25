@@ -1,0 +1,4 @@
+specifiRout:1
+altitudTakeoff:3
+specifiAltitud:1
+routFlight:2

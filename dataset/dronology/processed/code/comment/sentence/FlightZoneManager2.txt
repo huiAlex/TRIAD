@@ -1,0 +1,8 @@
+Central management class for all UAV related actions.
+This includes take-off, and landing checks as well as assignment of flight plans to UAVs.
+/
+Constructs a new FlightZoneManager.
+/
+Checks if the next pending flight is able to takeoff.
+Currently takeoff occurs in order of pending list.
+/

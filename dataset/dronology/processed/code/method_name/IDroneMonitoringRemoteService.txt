@@ -1,0 +1,3 @@
+regist monitor messag handler 
+regist monitor messag handler 
+set monitor frequenc 

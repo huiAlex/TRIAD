@@ -1,0 +1,6 @@
+event notifi 
+identifi subscrib 
+process result set 
+dispatch 
+get error messag 
+contain 

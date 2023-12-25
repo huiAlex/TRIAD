@@ -1,0 +1,34 @@
+messag marshal 
+serial version uid 
+oldstat 
+newstat 
+uavid 
+
+
+uavid 
+old state 
+new state 
+drone id 
+old state 
+new state 
+plan 
+plan 
+cmd 
+type 
+uavid 
+data 
+type 
+uavid 
+
+flight plan 
+flight plan 
+
+state wrapper 
+creat 
+creat plan activ 
+creat plan complet 
+creat messag 
+creat messag 
+creat messag 
+
+ 

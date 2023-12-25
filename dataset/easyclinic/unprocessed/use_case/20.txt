@@ -1,0 +1,35 @@
+Use case:
+Validate patient
+
+Description:
+He works to perform the functions necessary to authenticate an patient
+
+Preconditions:
+Operator has an interest in validating the patient to access to the section relating to his information
+The Operator has been recognized by system (See UcValOp)
+The patient must provide the operator with the Hospital Card or tax code
+
+
+Postconditions:
+The patient is not recognized system
+The patient is recognized by system Operator and access to its section
+
+Sub-flows:
+The Operator active enforcement of a depending on a specific patient
+1 View the mask for validating the patient
+2 input the code of hospital Card
+3 Confirm validation 
+4 Verify that the code of hospital card or tax code to identify a patient within SIO
+5 Get patient information
+6 Transfer patient data to the memory
+
+Alternative flows:
+Validation through tax code 
+   2 1 injects the tax code of patient
+   2 2 Reinserts running from step 3 
+Operator cancels function 
+validation 
+   3 1 ends the execution of use case with failure
+Login failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts execution from step 2

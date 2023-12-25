@@ -1,0 +1,15 @@
+setTakeoffAltitude
+FlightRoute
+setName
+getId
+getName
+getDescription
+setDescription
+setCategory
+getCategory
+getWaypoints
+addWaypoint
+removeWaypoint
+addWaypoint
+removeWaypoint
+setTakeoffAltitude

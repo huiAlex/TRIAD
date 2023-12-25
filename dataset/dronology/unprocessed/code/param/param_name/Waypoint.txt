@@ -1,0 +1,4 @@
+coordinate
+obj
+reached
+approachingspeed

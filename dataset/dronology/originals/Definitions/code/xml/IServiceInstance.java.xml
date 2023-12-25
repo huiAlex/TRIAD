@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IServiceInstance.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:43">package <name pos:start="1:9" pos:end="1:42"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:42">api</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:28">import <name pos:start="3:8" pos:end="3:27"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:27">Properties</name></name>;</import>
+
+<import pos:start="5:1" pos:end="5:64">import <name pos:start="5:8" pos:end="5:63"><name pos:start="5:8" pos:end="5:10">edu</name><operator pos:start="5:11" pos:end="5:11">.</operator><name pos:start="5:12" pos:end="5:13">nd</name><operator pos:start="5:14" pos:end="5:14">.</operator><name pos:start="5:15" pos:end="5:23">dronology</name><operator pos:start="5:24" pos:end="5:24">.</operator><name pos:start="5:25" pos:end="5:32">services</name><operator pos:start="5:33" pos:end="5:33">.</operator><name pos:start="5:34" pos:end="5:37">core</name><operator pos:start="5:38" pos:end="5:38">.</operator><name pos:start="5:39" pos:end="5:46">listener</name><operator pos:start="5:47" pos:end="5:47">.</operator><name pos:start="5:48" pos:end="5:63">IServiceListener</name></name>;</import>
+<import pos:start="6:1" pos:end="6:69">import <name pos:start="6:8" pos:end="6:68"><name pos:start="6:8" pos:end="6:10">edu</name><operator pos:start="6:11" pos:end="6:11">.</operator><name pos:start="6:12" pos:end="6:13">nd</name><operator pos:start="6:14" pos:end="6:14">.</operator><name pos:start="6:15" pos:end="6:23">dronology</name><operator pos:start="6:24" pos:end="6:24">.</operator><name pos:start="6:25" pos:end="6:32">services</name><operator pos:start="6:33" pos:end="6:33">.</operator><name pos:start="6:34" pos:end="6:37">core</name><operator pos:start="6:38" pos:end="6:38">.</operator><name pos:start="6:39" pos:end="6:42">util</name><operator pos:start="6:43" pos:end="6:43">.</operator><name pos:start="6:44" pos:end="6:68">DronologyServiceException</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="8:1" pos:end="14:3">/**
+ * Base interface for all server processes.
+ * 
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<interface pos:start="15:1" pos:end="80:1"><specifier pos:start="15:1" pos:end="15:6">public</specifier> interface <name pos:start="15:18" pos:end="15:33">IServiceInstance</name> <block pos:start="15:35" pos:end="80:1">{
+
+	<comment type="block" format="javadoc" pos:start="17:9" pos:end="20:11">/**
+	 * 
+	 * @return The id of the service.
+	 */</comment>
+	<function_decl pos:start="21:9" pos:end="21:37"><type pos:start="21:9" pos:end="21:21"><specifier pos:start="21:9" pos:end="21:14">public</specifier> <name pos:start="21:16" pos:end="21:21">String</name></type> <name pos:start="21:23" pos:end="21:34">getServiceID</name><parameter_list pos:start="21:35" pos:end="21:36">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="23:9" pos:end="26:11">/**
+	 * 
+	 * @return The human readable description for this service.
+	 */</comment>
+	<function_decl pos:start="27:9" pos:end="27:39"><type pos:start="27:9" pos:end="27:21"><specifier pos:start="27:9" pos:end="27:14">public</specifier> <name pos:start="27:16" pos:end="27:21">String</name></type> <name pos:start="27:23" pos:end="27:36">getDescription</name><parameter_list pos:start="27:37" pos:end="27:38">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="29:9" pos:end="31:11">/**
+	 * @return The configuration properties of the service containing infos on host, port...
+	 */</comment>
+	<function_decl pos:start="32:9" pos:end="32:55"><type pos:start="32:9" pos:end="32:25"><specifier pos:start="32:9" pos:end="32:14">public</specifier> <name pos:start="32:16" pos:end="32:25">Properties</name></type> <name pos:start="32:27" pos:end="32:52">getConfigurationProperties</name><parameter_list pos:start="32:53" pos:end="32:54">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="34:9" pos:end="37:11">/**
+	 * 
+	 * @return The current status of the service.
+	 */</comment>
+	<function_decl pos:start="38:9" pos:end="38:41"><type pos:start="38:9" pos:end="38:28"><specifier pos:start="38:9" pos:end="38:14">public</specifier> <name pos:start="38:16" pos:end="38:28">ServiceStatus</name></type> <name pos:start="38:30" pos:end="38:38">getStatus</name><parameter_list pos:start="38:39" pos:end="38:40">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="40:9" pos:end="44:11">/**
+	 * Starts the services.
+	 * 
+	 * @throws DronologyServiceException
+	 */</comment>
+	<function_decl pos:start="45:9" pos:end="45:61"><type pos:start="45:9" pos:end="45:12"><name pos:start="45:9" pos:end="45:12">void</name></type> <name pos:start="45:14" pos:end="45:25">startService</name><parameter_list pos:start="45:26" pos:end="45:27">()</parameter_list> <throws pos:start="45:29" pos:end="45:60">throws <argument pos:start="45:36" pos:end="45:60"><expr pos:start="45:36" pos:end="45:60"><name pos:start="45:36" pos:end="45:60">DronologyServiceException</name></expr></argument></throws>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="47:9" pos:end="51:11">/**
+	 * Stops the service.
+	 * 
+	 * @throws DronologyServiceException
+	 */</comment>
+	<function_decl pos:start="52:9" pos:end="52:60"><type pos:start="52:9" pos:end="52:12"><name pos:start="52:9" pos:end="52:12">void</name></type> <name pos:start="52:14" pos:end="52:24">stopService</name><parameter_list pos:start="52:25" pos:end="52:26">()</parameter_list> <throws pos:start="52:28" pos:end="52:59">throws <argument pos:start="52:35" pos:end="52:59"><expr pos:start="52:35" pos:end="52:59"><name pos:start="52:35" pos:end="52:59">DronologyServiceException</name></expr></argument></throws>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="54:9" pos:end="56:11">/**
+	 * @return The {@link ServiceInfo} object.
+	 */</comment>
+	<function_decl pos:start="57:9" pos:end="57:44"><type pos:start="57:9" pos:end="57:26"><specifier pos:start="57:9" pos:end="57:14">public</specifier> <name pos:start="57:16" pos:end="57:26">ServiceInfo</name></type> <name pos:start="57:28" pos:end="57:41">getServiceInfo</name><parameter_list pos:start="57:42" pos:end="57:43">()</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="59:9" pos:end="66:11">/**
+	 * Adds a new {@link IServiceListener} to the service.&lt;br&gt;
+	 * The listener is triggered when the status of the service changes.
+	 * 
+	 * @param listener
+	 *          The listener to be added.
+	 * @return True if adding was performed successfully, false otherwise.
+	 */</comment>
+	<function_decl pos:start="67:9" pos:end="67:62"><type pos:start="67:9" pos:end="67:15"><name pos:start="67:9" pos:end="67:15">boolean</name></type> <name pos:start="67:17" pos:end="67:34">addServiceListener</name><parameter_list pos:start="67:35" pos:end="67:61">(<parameter pos:start="67:36" pos:end="67:60"><decl pos:start="67:36" pos:end="67:60"><type pos:start="67:36" pos:end="67:51"><name pos:start="67:36" pos:end="67:51">IServiceListener</name></type> <name pos:start="67:53" pos:end="67:60">listener</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<comment type="block" format="javadoc" pos:start="69:9" pos:end="74:11">/**
+	 * 
+	 * @param listener
+	 *          The listener to be removed.
+	 * @return True if removing was performed successfully, false otherwise.
+	 */</comment>
+	<function_decl pos:start="75:9" pos:end="75:65"><type pos:start="75:9" pos:end="75:15"><name pos:start="75:9" pos:end="75:15">boolean</name></type> <name pos:start="75:17" pos:end="75:37">remoteServiceListener</name><parameter_list pos:start="75:38" pos:end="75:64">(<parameter pos:start="75:39" pos:end="75:63"><decl pos:start="75:39" pos:end="75:63"><type pos:start="75:39" pos:end="75:54"><name pos:start="75:39" pos:end="75:54">IServiceListener</name></type> <name pos:start="75:56" pos:end="75:63">listener</name></decl></parameter>)</parameter_list>;</function_decl>
+
+
+
+
+}</block></interface>
+</unit>

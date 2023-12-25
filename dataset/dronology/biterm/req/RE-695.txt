@@ -1,0 +1,5 @@
+realTime:2
+uavFollow:1
+uavMultipl:1
+mapUav:1
+allowUser:1

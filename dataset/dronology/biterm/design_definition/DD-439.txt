@@ -1,0 +1,4 @@
+componMap:1
+layerMap:1
+mapMultipl:1
+supportProvid:1

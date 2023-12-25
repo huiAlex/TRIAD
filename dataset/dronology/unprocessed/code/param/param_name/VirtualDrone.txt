@@ -1,0 +1,11 @@
+drnName
+targetAltitude
+targetCoordinates
+speed
+i
+distanceMovedPerTimeStep
+speed
+x
+y
+z
+command

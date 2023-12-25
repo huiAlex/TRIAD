@@ -1,0 +1,8 @@
+datumPatient:1
+patientAllow:1
+patientDatum:1
+accessPatient:2
+cardHospit:1
+allowPatient:1
+patientAccess:2
+hospitCard:1

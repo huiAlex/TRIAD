@@ -1,0 +1,14 @@
+confirmSelect:1
+operActiv:1
+activOper:1
+notifiOper:1
+selectConfirm:1
+changSelect:1
+relatInform:1
+operNotifi:1
+containInform:1
+recordVisit:1
+informContain:1
+visitRecord:1
+selectChang:1
+informRelat:1

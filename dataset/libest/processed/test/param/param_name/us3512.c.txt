@@ -1,0 +1,10 @@
+cur cert 
+openssl cert error 
+manual enrol 
+nid 
+cur cert 
+openssl cert error 
+cn 
+server 
+expect enrol rv 
+path segment 

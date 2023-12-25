@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/UAVPlanChangeMessage.java" pos:tabs="8"><comment type="line" pos:start="1:1" pos:end="1:52">//package edu.nd.dronology.core.monitoring.messages;</comment>
+<comment type="line" pos:start="2:1" pos:end="2:2">//</comment>
+<comment type="line" pos:start="3:1" pos:end="3:61">//import edu.nd.dronology.core.monitoring.ArtifactIdentifier;</comment>
+<comment type="line" pos:start="4:1" pos:end="4:62">//import edu.nd.dronology.core.monitoring.IMonitorableMessage;</comment>
+<comment type="line" pos:start="5:1" pos:end="5:85">//import edu.nd.dronology.core.monitoring.messages.UAVMonitorableMessage.MessageType;</comment>
+<comment type="line" pos:start="6:1" pos:end="6:53">//import edu.nd.dronology.core.icse.model.util.PreciseTimestamp;</comment>
+<comment type="line" pos:start="7:1" pos:end="7:2">//</comment>
+<comment type="line" pos:start="8:1" pos:end="8:68">//public class UAVPlanChangeMessage implements IMonitorableMessage {</comment>
+<comment type="line" pos:start="9:1" pos:end="9:2">//</comment>
+<comment type="line" pos:start="10:1" pos:end="10:29">//	private String uavid;</comment>
+<comment type="line" pos:start="11:1" pos:end="11:31">//	private long startTime;</comment>
+<comment type="line" pos:start="12:1" pos:end="12:28">//	private String type;</comment>
+<comment type="line" pos:start="13:1" pos:end="13:32">//	private String flightid;</comment>
+<comment type="line" pos:start="14:1" pos:end="14:29">//	private long endTime;</comment>
+<comment type="line" pos:start="15:1" pos:end="15:49">//	private final PreciseTimestamp timestamp;</comment>
+<comment type="line" pos:start="16:1" pos:end="16:2">//</comment>
+<comment type="line" pos:start="17:1" pos:end="17:111">//	public UAVPlanChangeMessage(String uavid, String type, String flightid, long startTime, long endTime) {</comment>
+<comment type="line" pos:start="18:1" pos:end="18:59">//		this.timestamp = PreciseTimestamp.create();</comment>
+<comment type="line" pos:start="19:1" pos:end="19:35">//		this.uavid = uavid;</comment>
+<comment type="line" pos:start="20:1" pos:end="20:33">//		this.type = type;</comment>
+<comment type="line" pos:start="21:1" pos:end="21:41">//		this.flightid = flightid;</comment>
+<comment type="line" pos:start="22:1" pos:end="22:43">//		this.startTime = startTime;</comment>
+<comment type="line" pos:start="23:1" pos:end="23:39">//		this.endTime = endTime;</comment>
+<comment type="line" pos:start="24:1" pos:end="24:9">//	}</comment>
+<comment type="line" pos:start="25:1" pos:end="25:2">//</comment>
+<comment type="line" pos:start="26:1" pos:end="26:17">//	@Override</comment>
+<comment type="line" pos:start="27:1" pos:end="27:54">//	public ArtifactIdentifier&lt;?&gt; getIdentifier() {</comment>
+<comment type="line" pos:start="28:1" pos:end="28:126">//		return new ArtifactIdentifier(ArtifactIdentifier.ROOT, "INTERNAL", MessageType.PLAN_CHANGE.toString(), uavid);</comment>
+<comment type="line" pos:start="29:1" pos:end="29:9">//	}</comment>
+<comment type="line" pos:start="30:1" pos:end="30:2">//</comment>
+<comment type="line" pos:start="31:1" pos:end="31:34">//	public String getUavid() {</comment>
+<comment type="line" pos:start="32:1" pos:end="32:29">//		return uavid;</comment>
+<comment type="line" pos:start="33:1" pos:end="33:9">//	}</comment>
+<comment type="line" pos:start="34:1" pos:end="34:2">//</comment>
+<comment type="line" pos:start="35:1" pos:end="35:17">//	@Override</comment>
+<comment type="line" pos:start="36:1" pos:end="36:33">//	public String getData() {</comment>
+<comment type="line" pos:start="37:1" pos:end="37:50">//		// TODO Auto-generated method stub</comment>
+<comment type="line" pos:start="38:1" pos:end="38:28">//		return null;</comment>
+<comment type="line" pos:start="39:1" pos:end="39:9">//	}</comment>
+<comment type="line" pos:start="40:1" pos:end="40:2">//</comment>
+<comment type="line" pos:start="41:1" pos:end="41:17">//	@Override</comment>
+<comment type="line" pos:start="42:1" pos:end="42:48">//	public PreciseTimestamp getTimestamp() {</comment>
+<comment type="line" pos:start="43:1" pos:end="43:33">//		return timestamp;</comment>
+<comment type="line" pos:start="44:1" pos:end="44:9">//	}</comment>
+<comment type="line" pos:start="45:1" pos:end="45:2">//</comment>
+<comment type="line" pos:start="46:1" pos:end="46:17">//	@Override</comment>
+<comment type="line" pos:start="47:1" pos:end="47:38">//	public MessageType getType() {</comment>
+<comment type="line" pos:start="48:1" pos:end="48:47">//		return MessageType.PLAN_CHANGE;</comment>
+<comment type="line" pos:start="49:1" pos:end="49:9">//	}</comment>
+<comment type="line" pos:start="50:1" pos:end="50:2">//</comment>
+<comment type="line" pos:start="51:1" pos:end="51:3">//}</comment>
+</unit>

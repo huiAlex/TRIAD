@@ -1,0 +1,8 @@
+description
+category
+waypoint
+altitude
+waypoint
+index
+waypoint
+index

@@ -1,0 +1,4 @@
+[SUMMARY]
+Indicate route completion status
+[DESCRIPTION]
+The UI shall differentiate between completed  current  and not yet traversed flight segments.

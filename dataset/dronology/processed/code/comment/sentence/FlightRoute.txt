@@ -1,0 +1,3 @@
+Implementation of a flight route, containing a series of waypoints and additional meta-data.
+/
+/

@@ -1,0 +1,4 @@
+[SUMMARY]
+No reassignment of aborted flight plan
+[DESCRIPTION]
+An aborted flight plan shall not be reassigned to any UAV

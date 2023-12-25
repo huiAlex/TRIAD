@@ -1,0 +1,48 @@
+get instanc 
+publish 
+get instanc 
+publish 
+get instanc 
+publish 
+add task 
+add task 
+add task 
+add task 
+add task 
+add task 
+add sync point 
+add sync point 
+add sync point 
+get coordin altitud 
+lla coordin 
+lla coordin 
+lla coordin 
+set coordin altitud 
+creat messag 
+creat messag 
+creat messag 
+get task 
+get task 
+get task 
+get task 
+get task 
+get task 
+get latitud 
+get longitud 
+get coordin altitud 
+get latitud 
+get longitud 
+get coordin altitud 
+get latitud 
+get longitud 
+get altitud 
+get next altitud 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 

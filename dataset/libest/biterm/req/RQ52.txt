@@ -1,0 +1,4 @@
+authentBasic:2
+authentDigest:1
+bindChannel:1
+keyPublic:4

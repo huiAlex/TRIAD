@@ -1,0 +1,50 @@
+mission execut except 
+mission execut except 
+waypoint 
+get 
+get instanc 
+get activ uav 
+get instanc 
+get item 
+get instanc 
+plan flight 
+get instanc 
+plan flight 
+get coordin 
+get coordin 
+get instanc 
+emerg stop 
+mission execut except 
+mission execut except 
+mission execut except 
+mission execut except 
+mission execut except 
+mission execut except 
+get 
+equal 
+get instanc 
+get item 
+get instanc 
+get item 
+get waypoint 
+get 
+get id 
+equal 
+get waypoint 
+get waypoint 
+get uav id 
+get task 
+get uav id 
+get task 
+mission execut except 
+mission execut except 
+get home locat 
+get task 
+get 
+equal 
+get 
+equal 
+get task 
+get waypoint 
+get waypoint 
+get task 

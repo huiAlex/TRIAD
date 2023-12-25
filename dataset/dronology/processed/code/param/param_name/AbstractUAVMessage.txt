@@ -1,0 +1,8 @@
+type 
+groundstationid 
+uavid 
+uavid 
+key 
+valu 
+key 
+type 

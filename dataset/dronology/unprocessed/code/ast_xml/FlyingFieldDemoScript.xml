@@ -1,0 +1,57 @@
+<Class>
+    <Id>104</Id>
+    <Package>edu.nd.dronology.services.launch</Package>
+    <ClassName>FlyingFieldDemoScript</ClassName>
+    <SuperClass></SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface></SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment></ClassComment>
+    <FieldList>
+        <Field>
+            <FieldName>ADDRESS_SCHEME</FieldName>
+            <FieldType>String</FieldType>
+        </Field>
+        <Field>
+            <FieldName>rand</FieldName>
+            <FieldType>Random</FieldType>
+        </Field>
+    </FieldList>
+    <MethodList>
+        <Method>
+            <MethodName>main</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>String[] args</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>getRandomRoute</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>FlightRouteInfo</ReturnType>
+            <ParameterList>
+                <ParameterType>FlightRouteInfo allRoutes</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>int [routeSize=allRoutes.size()]</InnerVar>
+                <InnerVar>int [randomNumber=rand.nextInt(routeSize)]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,10 @@
+planWaypoint:1
+waypointFinal:1
+reachWaypoint:1
+hoverComplet:1
+planPend:1
+waypointPlan:1
+planCurrent:1
+completFlight:1
+planFlight:2
+hoverPlace:1

@@ -1,0 +1,4 @@
+uavActiv:2
+numberMaximum:2
+tablishNumber:1
+numberUav:2

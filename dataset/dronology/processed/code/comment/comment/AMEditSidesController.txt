@@ -1,0 +1,5 @@
+allow user creat edit map 
+howev primarili shell necessari button 
+save button cancel button function primarili carri save click cancel click area control 
+ 
+ 

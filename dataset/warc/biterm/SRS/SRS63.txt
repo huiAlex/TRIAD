@@ -1,0 +1,10 @@
+dynamLanguag:1
+libwarcEnabl:1
+enablUse:1
+useEnabl:1
+paradigmMetaphor:1
+useIter:1
+metaphorParadigm:1
+languagDynam:1
+iterUse:1
+enablLibwarc:1

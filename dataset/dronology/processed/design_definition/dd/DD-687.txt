@@ -1,0 +1,1 @@
+uav inform oper activ uav ui inform uav longitud latitud altitud groud speed batteri level 

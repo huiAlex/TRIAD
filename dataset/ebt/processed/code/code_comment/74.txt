@@ -1,0 +1,6 @@
+construct connect object 
+return graph id int 
+copi data set column tabl variabl 
+inject new valu variabl tabl use data store vector variabl object 
+method pick structur id spe structur 
+depend structur id select structur id invok execut structur method select structur id 

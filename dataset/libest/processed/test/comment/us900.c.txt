@@ -1,0 +1,69 @@
+us unit test user stori server csr attribut novemb copyright cisco system right reserv 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+test exercis est server init csrattr api 
+test exercis server side variat trigger est client get csrattr 
+main function set run test return cue success success run anoth cunit error code failur 
+gen keypair use est client test 
+start server test need talk server 
+start instanc est server 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+null ctx fail 
+null string pass 
+zero length fail 
+length long fail 
+real base string fail 
+real base string pass 
+set smallest base size 
+set illeg small base size 
+set size 
+set size 
+enabl pop 
+real base string need pop ad pass 
+real base string fail 
+set smallest size 
+set size 
+set size 
+set size 
+set size 
+set size 
+set size 
+asn type support ciscossl 
+disabl pop 
+asn type support ciscossl 
+real base string pop ad pass 
+read ca certif 
+read privat key file 
+issu get ca cert request 
+success obtain valid buffer contain ca cert 
+output retriev ca cert compar 
+clear callback 
+clear csrattr 
+get data 
+real base string pass 
+callback supersed init csrattr 
+callback supersed init csrattr 
+callback supersed init csrattr 
+callback supersed init csrattr 
+clear csrattr 
+clear callback 
+set smallest size 
+clear csrattr 
+enabl pop test respons pop ad 
+set size 
+set size 
+real base string need pop ad pass 
+real base string fail 
+set smallest size 
+set size 
+set size 
+set size 
+set size 
+disabl pop 
+clear callback 
+real base string pop ad pass 
+asn type support ciscossl 
+add suit registri 
+add test suit 

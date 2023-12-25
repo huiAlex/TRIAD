@@ -1,0 +1,8 @@
+serialVersionUID
+GSON
+type
+timestamp
+id
+uavid
+data
+datatype

@@ -1,0 +1,47 @@
+/**
+ * 
+ * Manages a mission plan. Each Mission plan has one FullMissionPlan instance, and one UAVMissionPlan instance for each UAV in the Mission plan. 
+ * Each of the UAV's individual mission plans are composed of MissionTasks. 
+ * Once the entire mission plan is loaded, a thread is created which checks each of the individual UAVMissionPlans to determine if they can start the next task.
+ * 
+ * */
+
+/**
+	 * Constructs the CoordinatedMission instance. A mission consists of one or more UAVs, each of which has a set of assigned tasks and synchronization points.
+	 * 
+	 * 	 */
+
+/**
+	 * Loads mission from JSON file. Currently hard coded. 
+	 * 
+	 * 	 * 	 */
+
+/**
+	 * Adds an additional UAV to the mission plan. Creates the UAVMissionTasks instance and passes it a reference to the synchPointMgr
+	 * 
+	 * 	 *          the ID of the UAV
+	 * 	 */
+
+/**
+	 * Assigns a task to a specific UAV
+	 * 
+	 * 	 *          UAV Identifier
+	 * 	 *          Task to perform (e.g., Route, Waypoint, Synchronize, FlightPattern)
+	 * 	 *          Task specifics (e.g., specific waypoint, route name etc)
+	 * 	 */
+
+/**
+	 * Build all synch points
+	 */
+
+/**
+	 * Activates next task in each UAV mission, if there is no unfinished active task
+	 * 
+	 * 	 */
+
+/**
+	 * Expands flight pattern tasks (e.g., coordinatedTakeOff or coordinatedLanding)
+	 * 
+	 * 	 *   
+	 */
+

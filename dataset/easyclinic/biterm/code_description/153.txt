@@ -1,0 +1,6 @@
+relatInform:1
+informRetriev:1
+deletDoctor:1
+retrievInform:1
+doctorDelet:1
+informRelat:1

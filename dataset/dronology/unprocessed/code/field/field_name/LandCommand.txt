@@ -1,0 +1,2 @@
+serialVersionUID
+MODE_LAND

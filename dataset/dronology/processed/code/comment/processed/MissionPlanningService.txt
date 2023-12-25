@@ -1,0 +1,5 @@
+servic plan execut mission multipl uav 
+initi implement mission plan capabl 
+allow retriev send mission plan json string dronolog 
+ 
+ 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IBatterySimulator.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:40">package <name pos:start="1:9" pos:end="1:39"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:39">simulator</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:59">import <name pos:start="3:8" pos:end="3:58"><name pos:start="3:8" pos:end="3:10">edu</name><operator pos:start="3:11" pos:end="3:11">.</operator><name pos:start="3:12" pos:end="3:13">nd</name><operator pos:start="3:14" pos:end="3:14">.</operator><name pos:start="3:15" pos:end="3:23">dronology</name><operator pos:start="3:24" pos:end="3:24">.</operator><name pos:start="3:25" pos:end="3:28">core</name><operator pos:start="3:29" pos:end="3:29">.</operator><name pos:start="3:30" pos:end="3:36">vehicle</name><operator pos:start="3:37" pos:end="3:37">.</operator><name pos:start="3:38" pos:end="3:45">internal</name><operator pos:start="3:46" pos:end="3:46">.</operator><name pos:start="3:47" pos:end="3:58">VirtualDrone</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="5:1" pos:end="11:3">/**
+ * 
+ * The battery simulator simulates the battery usage / voltage drain while a {@link VirtualDrone} is in flight.
+ * 
+ * @author Michael Vierhauser
+ *
+ */</comment>
+<interface pos:start="12:1" pos:end="20:1"><specifier pos:start="12:1" pos:end="12:6">public</specifier> interface <name pos:start="12:18" pos:end="12:34">IBatterySimulator</name> <block pos:start="12:36" pos:end="20:1">{
+
+	<function_decl pos:start="14:9" pos:end="14:33"><type pos:start="14:9" pos:end="14:12"><name pos:start="14:9" pos:end="14:12">void</name></type> <name pos:start="14:14" pos:end="14:30">startBatteryDrain</name><parameter_list pos:start="14:31" pos:end="14:32">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="16:9" pos:end="16:32"><type pos:start="16:9" pos:end="16:12"><name pos:start="16:9" pos:end="16:12">void</name></type> <name pos:start="16:14" pos:end="16:29">stopBatteryDrain</name><parameter_list pos:start="16:30" pos:end="16:31">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="18:9" pos:end="18:28"><type pos:start="18:9" pos:end="18:14"><name pos:start="18:9" pos:end="18:14">double</name></type> <name pos:start="18:16" pos:end="18:25">getVoltage</name><parameter_list pos:start="18:26" pos:end="18:27">()</parameter_list>;</function_decl>
+
+}</block></interface>
+</unit>

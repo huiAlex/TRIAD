@@ -1,0 +1,4 @@
+uavAssign:1
+executPlan:2
+eventLog:2
+planFlight:2

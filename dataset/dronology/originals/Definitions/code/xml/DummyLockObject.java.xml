@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/DummyLockObject.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:35">package <name pos:start="1:9" pos:end="1:34"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:34">util</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="8:3">/**
+ * Use as dummy object handy for "synchronized(dummy)" blocks.
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<class pos:start="9:1" pos:end="11:1"><specifier pos:start="9:1" pos:end="9:6">public</specifier> class <name pos:start="9:14" pos:end="9:28">DummyLockObject</name> <block pos:start="9:30" pos:end="11:1">{
+
+}</block></class>
+</unit>

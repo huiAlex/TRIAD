@@ -1,0 +1,8 @@
+panel side:compound
+box panel:nmod
+panel contain:acl
+inform uav:nmod
+contain inform:obj
+constructor default:compound
+expand collaps:conj
+expand box:obj

@@ -1,0 +1,13 @@
+validProcess:2
+processValid:2
+operEnter:1
+successProcess:1
+messagError:1
+loginEnter:1
+guiLogin:2
+processSuccess:1
+datumConfirm:1
+confirmDatum:1
+enterLogin:1
+errorMessag:1
+enterOper:1

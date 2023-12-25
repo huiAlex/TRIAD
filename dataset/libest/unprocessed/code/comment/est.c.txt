@@ -1,0 +1,107 @@
+   This is our default logger routine, which just   dumps log data to stderr.  The application can   override this by calling est_init_logger() and   passing in a function pointer to a function   that implements this prototype.  /
+   This is our default logger routine, which just   dumps log data to stderr.  The application can   override this by calling est_init_logger() and   passing in a function pointer to a function   that implements this prototype.  /
+   Global function to be called to log something  /
+   Global function to be called to log something  /
+   Global function to be called to log something  /
+!  est_get_version() allows the application to retrieve     the libEST version string.  Returns a char array containing     the full version string value for the library.        const char  /
+!  est_get_api_level() allows the application to retrieve     the libEST API level.  This is a numeric value that     indicates the API level of the library.  When new versions of     libEST are released and the API changes, this value will be     incremented.  Applications can use this to determine which capabilities     in the libEST library should or should not be attempted.        int  /
+   Use this to log the libEST version to an information   log message.  Also logs the compile-time and run-time    OpenSSL versions.  /
+!  est_init_logger() allows the application to override the      default log handler for EST logging messages.        lvl Sets the desired logging level to EST_LOG_LEVEL      loggerfunc Sets the callback function to handle logging       This function allows an application that uses EST to provide     a function for logging EST messages.  EST provides a default handler     that sends messages to stderr.  Applications may desire to send     messages to syslog or some other logging facility.  An application     would provide a function pointer using this method to intercept     and handle EST log messages.  This setting is global to the library     and will impact all contexts.        EST_ERROR.  /
+!  est_enable_backtrace() allows the application to toggle     whether the stack trace is displayed for WARNING and ERROR     log messages coming from libEST.           enable Set to zero to disable stack traces, non-zero to                   enable stack traces through the logging facility.       This function allows an application to enable stack traces, which     may be useful for troubleshooting the libEST library.  Stack     traces are disabled by default.  Call this function with a      non-zero argument to enable stack traces for both WARNING and     ERROR log messages.  This setting is global to the library and     will impact all contexts.        void.  /
+   Converts from PEM to pkcs7 encoded certs.  Optionally   applies base64 encoding to the output.  This is used   when creating the cached cacerts response.  The returned   BIO contains the PKCS7 encoded certs.  The response   can optionally be base64 encoded by passing in a   non-zero value for the do_base_64 argument.  The caller   of this function should invoke BIO_free_all() on the   return value to avoid memory leaks.  Note, BIO_free()    will not be sufficient.  /
+   Takes a raw char array containg the CA certificates, reads the data   in and loads the certificates on to the context as pkcs7 certs.  This is   stored on the EST context and used to respond to the /cacerts request,   which requires PKCS7 encoding.     This function also loads the x509 store on the context used to   verify the peer.  /
+   Takes a char array containing the PEM encoded CA certificates,   both implicit and explict certs.  These are decoded and loaded   into the trusted_certs_store member on the EST context.  This cert   store is used by the TLS stack for peer verification at the TLS   layer.   Note: we do not include defensive code to check for NULL arguments         because this function is not part of the public API.  These         checks should have already been performed.  /
+!  est_set_ex_data() sets the application specific data     on the EST context.         ctx Pointer to an EST context      ex_data Pointer to application specific data that will be                    passed through to the EST callbacks.        EST_ERROR      This function is used to link application specific data to the     EST_CTX structure.  This can be used by an application to bind     application specific data to an EST operation.  libEST does      not use the application specific data.  The ex_data pointer is     passed back to the application when libEST invokes the      enroll, re-enroll, CSR attributes, and HTTP auth callbacks.      libEST will not free the memory referenced by the ex_data     parameter when est_destroy() is invoked.  The application is     responsible for releasing its application specific data.   /
+!  est_get_ex_data() retrieves the application specific data     on the EST context.         ctx Pointer to an EST context        void       This function is used to attain a reference to the application      specific data on the EST_CTX structure.  This data should have     been set by invoking est_set_ex_data() earlier.  Otherwise it     will return NULL.   /
+!  est_destroy() frees an EST context         ctx Pointer to an EST context        EST_ERROR      This function is used to release all the memory allocated under     the EST_CTX.  This should be called last after performing EST     operations using the context.  /
+   This routine is used to determine whether the BIO_FLAGS_BASE64_NO_NL    option needs to be used when using the OpenSSL   base64 decoder.  It takes a string as input and   checks if it contains newline characters.     Returns 1 if OpenSSL should use the BIO_FLAGS_BASE64_NO_NL option   Returns 0 otherwise  /
+   This routine is used to decode base64 encoded data.   Pass in the base64 encoded data and a pointer to a buffer   to receive the decoded data.  The length of the decoded    data is returned.  If the return value is zero or negative, then   an error occurred.  The dst_size parameter is the maximum   allowed size of the decoded data.  /
+   This routine is used to encode base64 data.   Pass in the unencoded data, the length of the source buffer,   and a pointer to a buffer to receive the encoded data.   The length of the encoded data is returned.  If the return value   is zero, then an error occurred.  The max_dest_len parameter   is the maximum allowed size of the encoded data.  /
+   This routine is used to encode base64 data.   Pass in the unencoded data, the length of the source buffer,   and a pointer to a buffer to receive the encoded data.   The length of the encoded data is returned.  If the return value   is zero, then an error occurred.  The max_dest_len parameter   is the maximum allowed size of the encoded data.  /
+   This is a utility function to convert a hex value   to a string. This is used with the HTTP digest   authentication logic.  /
+!  est_enable_crl() is used by an application to enable      checking of a certificate revocation list when validating the client     TLS peer certificate during the TLS handshake. When enabled,      the ca_chain parameter provided to either est_server_init()     or est_client_init() should contain both the trusted certificates      along with the CRL entries.  The CRL entries should be appened     at the end.        ctx Pointer to the EST context      CRL checking is disabled by default.  This function must be called      after invoking est_server_init() or est_client_init() and prior      to performing any EST operations.  Therefore, there is no 'disable'      version of this method.          EST_ERROR.  /
+   est_asn1_sanity_test - perform a sanity test on the CSR   attribute string.  This function operates on an ASN.1 hex   string, so it should already be un-based64.     return EST_ERROR and the presence of challengePassword  /
+   est_is_challengePassword_present - take a base64    encoded ASN.1 string and scan through it to see    if challengePassword is included.     return EST_ERROR and the presence of challengePassword  /
+   est_asn1_parse_attributes - base64 decode and sanity test   the given attributes string     return EST_ERROR and the presence of challengePassword  /
+    est_add_challengePassword - caller has verified that challengePassword    is configured and not included, so add it to the attributes here.   No sanity check is needed since est_is_challengePassword_present   has already been called.  /
+!  est_add_attributes_helper() Add a NID and its character string to     an X509_REQ as an attribute.        req an X509_REQ structure used for the CSR request      nid NID to be added as an attribute      string pointer to the NID string if needed      chtype type of string used with this NID        EST_ERROR      This function is used to add a CSR attribute to a CSR request by the     EST client.  /
+!  est_decode_attributes_helper() Decode a base64 encoded string     into DER format(ASN.1 hex).        csrattrs pointer to a base64 encoded string      csrattrs_len base64 string length      der_ptr pointer to a pointer to store the DER encoded string      der_len pointer to store the DER string length        EST_ERROR      This function is used decode a base64 encoded CSR attributes string     into DER format.  It also performs range checking on the input parameters.  /
+!  est_get_attributes_helper() get attributes NID from a DER     encoded string.        der_ptr pointer to a pointer of DER encoded string      der_len pointer to the DER encoded string length      new_nid pointer to storage for NID, if found        EST_ERROR      This function is used to find the next NID in a DER encoded string.     If no NID is found before reaching the end of the string, then     new_nid returned as zero and EST_ERR_BAD_ASN1_HEX.  /
+    cleanse_auth_credentials - Walk through the auth_credentials structure and   overwrite and free each value.  /
+   Given an input string, look for the four valid operations  /
+   Given an input string, look for the four valid operations  /
+   Given an input string, look for the four valid operations  /
+   Store the path segment into the context.  /
+   Store the path segment into the context.  /
+       Pull the arguments from the stack and invoke       the logger function      /
+       check if user is interested in this log message      /
+       Pull the arguments from the stack and invoke       the logger function      /
+ 	 Spit out a backtrace if this is enabled globally 	/
+       Spit out a backtrace if this is enabled globally      /
+ WIN32/
+ DISABLE_BACKTRACE/
+ Initialize the logger /
+       Set the desired logging level      /
+       Check for an error while parsing the input data      /
+       Create a PKCS7 object       /
+       Create the PKCS7 signed object      /
+       Set the version      /
+       Create a stack of X509 certs      /
+       Populate the cert stack      /
+       Create the BIO which will receive the output      /
+       Add the base64 encoder if needed      /
+       Convert from PEM to PKCS7      /
+        Only need to cleanup p7.  This frees up the p7s and       cert_stack allocations for us since these are linked       to the p7.      /
+       Only the server and proxy modes may load the cacerts response      /
+       convert the CA certs to PKCS7 encoded char array       This is used by an EST server to respond to the       cacerts request.      /
+       Create the combined cert store on the context       This contains both the implicit and explicit certs      /
+ Only free the SSL context when acting as a client.  When       operating as a server, it's expected the web server       will free the context /
+       And finally free the EST context itself      /
+       Start looking for newlines at the 64th position      /
+       When decoding base64, the output will always be smaller by a       ratio of 4:3.  Determine what the max size can be for the input       based on the size of the given output buffer and then make sure that       the actual input buffer is not too big.      /
+       Get the length of the base64 encoded data.  Make sure it's not too       big      /
+       When encoding base64, the output will always be larger by a       ratio of 3:4.  Determine what the max size can be for the input       based on the size of the given output buffer and then make sure that       the actual input buffer is not too big.      /
+       We don't ever insert new lines      /
+       Write the source buffer through the BIOs and then get a pointer       to the resulting memory buffer on the other side to obtain the       result.      /
+       RFC5929 states the first finished message is used       to derive the tls-unique-id.  When session resumption       is used, the server sends the first finished message.       Normally the client sends the first finished messaged.      /
+       Be aware that OpenSSL adds a newline character at the       end of the base64 encoded data      /
+       Assume the challengePassword OID is not present      /
+ make sure its long enough to be ASN.1 /
+ assume its not there /
+ just return if no data /
+        check smallest possible base64 case here for now        and sanity test will check min/max value for ASN.1 data      /
+ grab the first one and do the POP stuff /
+ remove leading sequence and length and copy to new buffer /
+ if >= 256 need 4 byte Seq header /
+ Only MBSTRING_ASC used today, but callers could pass in other values /
+ just return if no data /
+        check smallest possible base64 case here for now        and sanity test will check min/max value for ASN.1 data      /
+ char path_seg_end; /
+ int   path_seg_len = 0; /
+       Assume that the uri is pointing to         /.well-known/est/<operation>      /
+       reset what might already be cached      /
+ install our default logger /
+           If the SSL session had been cached, this means that           SSL_get1_session() has been called, so now it needs to be explictly           freed to get its ref count decrememnted.          /
+  	  Any base64 less than 64 bytes shouldn't be a  	  problem for OpenSSL since this is the minimum 	  line length for base64 encoding. 	 /
+ 	  Enable the no newlines option if the input 	  data doesn't contain any newline characters. 	  It's too bad OpenSSL doesn't do this implicitly. 	 /
+           Make sure the response is null terminated          /
+           copy out the resulting base64 encoded string, make sure it's           null terminated, and return the length          /
+ if <= 256, but >= 128 need 3 byte Seq header /
+ else just need 2 byte header /
+           validate the URI           - parse the path-prefix (/.well-known/est)           - look to see if there is a path segment extension           - determine which operation it is          /
+           This next segment is either a segment extension           or it's the operation           /
+           If there's another segment after this one then use it           to find the end, else walk this one for the length          /
+           See if the current segment needs to be put into its own           string          /
+           look to see if the operation path comes next:           cacerts, csrattrs, simpleenroll, simplereenroll          /
+     	  Log that we encountered a SafeC error      	 /
+ have to adjust string pointer here /
+ have to adjust string pointer here /
+               It wasn't one of the 4 known operations so               it must be a path segment.  parse it out.                             Find the end of the path segment,               determine the length,               save it away              /
+ path_seg_end = (char )cur_seg->text.afterLast; /
+ if (path_seg_end != NULL) { /
+     path_seg_len = path_seg_end - cur_seg_str; /
+ } /
+               now that we have the path segment parsed, try               for the operation again.  jump over the path segment               and the next '/'              /
+               It was one of the operations, make sure it's the end              /
+                   Operation code was suppose to be next but is not                  /
+ just signifiy it's there /

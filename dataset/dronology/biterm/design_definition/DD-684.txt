@@ -1,0 +1,2 @@
+realTime:1
+loadMap:1

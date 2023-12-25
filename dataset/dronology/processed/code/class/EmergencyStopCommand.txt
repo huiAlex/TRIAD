@@ -1,0 +1,11 @@
+emerg stop command 
+serial version uid 
+
+
+drone id 
+
+
+emerg stop command 
+
+command sent gcs stop immedi remain hover place 
+ 

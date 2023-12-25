@@ -1,0 +1,15 @@
+NVector
+toNVector
+hashCode
+equals
+toString
+getAltitude
+getX
+getY
+getZ
+distance
+toPVector
+toLlaCoordinate
+laserDistance
+travelDistance
+travelDistance

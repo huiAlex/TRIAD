@@ -1,0 +1,8 @@
+returnHome:3
+routNew:1
+assignRout:1
+signRout:4
+uavStatus:2
+assignUav:1
+routAssign:2
+removRout:4

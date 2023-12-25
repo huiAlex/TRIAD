@@ -1,0 +1,20 @@
+af follow bar 
+serial version uid 
+total layout 
+stop follow button 
+text label 
+small text 
+uav 
+
+
+map 
+uav 
+uav 
+
+af map compon 
+
+af follow bar 
+get stop follow button 
+updat uav 
+
+bar indic activ flight ui follow mode 

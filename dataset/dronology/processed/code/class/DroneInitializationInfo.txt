@@ -1,0 +1,25 @@
+drone initi info 
+serial version uid 
+type 
+initi locat 
+mode 
+safeti inform 
+
+lla coordin 
+
+id 
+mode 
+type 
+initi locat 
+safeti inform 
+
+lla coordin 
+
+drone initi info 
+get mode 
+get type 
+get initi locat 
+get safeti inform 
+set safeti inform 
+
+ 

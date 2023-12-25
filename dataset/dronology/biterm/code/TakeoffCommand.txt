@@ -1,0 +1,3 @@
+sendCommand:1
+specifiMeter:1
+specifiAltitud:1

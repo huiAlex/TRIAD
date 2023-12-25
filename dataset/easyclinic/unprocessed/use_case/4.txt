@@ -1,0 +1,33 @@
+Use case:
+Inserting doctor anagrafica
+
+Description:
+It allows the operator to input the anagrafica of a doctor who works at the outpatient.
+The Operator is responsible for the input of the doctor anagrafica in the SIO.
+
+Preconditions:
+The Operator has been recognized by the System (See UcValOp) and has all the data that characterize the doctor anagrafica.
+
+Postconditions:
+The data in the SIO cannot be modified.
+The doctor anagrafica is correctly inserted in the SIO. The operator activates the execution of the input service of the doctor anagrafica.
+
+Sub-flows:
+View the mask for input of needed information
+Insert data of doctor anagrafica
+Confirm input
+Verify the data insert by the operator
+Store data
+Notify that the operation is finished with success
+Data entered invalid:
+4.1. Display a message showing the data deemed invalid
+4.2. Take back running from point 1, underpinned the fields of the form with data inserted by the operator
+
+
+Alternative flows:
+Operator cancels operation:
+3.1. Ends the execution of use case with failure
+
+The age of a physician is characterized by the following data: name, surname, sex, code tax, date of birth, province of birth place, address of home, province of residence, ZIP code, telephone, specialization year, certification, and additional notes.
+
+NB: In italics are highlighted data Optional whose inclusion does not affect on the correct completion of the operation.

@@ -1,0 +1,36 @@
+add task 
+add task 
+add task 
+add task 
+add task 
+add task 
+add sync point 
+add sync point 
+add sync point 
+get coordin altitud 
+lla coordin 
+lla coordin 
+lla coordin 
+set coordin altitud 
+get task 
+get task 
+get task 
+get task 
+get task 
+get task 
+get latitud 
+get longitud 
+get coordin altitud 
+get latitud 
+get longitud 
+get coordin altitud 
+get latitud 
+get longitud 
+get altitud 
+get next altitud 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 
+get uav id 

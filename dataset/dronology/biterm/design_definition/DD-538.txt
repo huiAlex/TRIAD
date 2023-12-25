@@ -1,0 +1,5 @@
+pointSynchron:3
+executUav:1
+executPlan:1
+planFlight:1
+reachPoint:2

@@ -1,0 +1,4 @@
+config dialog 
+close dialo 
+ok button action perform 
+cancel button action perform 

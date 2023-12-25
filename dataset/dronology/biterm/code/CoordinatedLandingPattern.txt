@@ -1,0 +1,2 @@
+coordinAltitud:1
+flightPattern:2

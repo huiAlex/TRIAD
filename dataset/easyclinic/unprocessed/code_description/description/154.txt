@@ -1,0 +1,15 @@
+Class: Patient
+Date: 15/09/2003
+Version: 0.01.000
+
+Description:Contains the data of patients who are at the outpatient clinic.
+
+Attributes:
+dataRegistrazion;Private;Data in which the patient has contacted the outpatient clinic for the first time
+
+Methods:
+create;Public;Creates a new object of type Patient
+GetAttributes;Public;Retrieves all information related to a Patient
+save;Public;Stores the data of a Patient in the SIO
+setAttributes;Public; Sets the attributes of a Patient
+validaPaziente;Public; Validates a Patient.

@@ -1,0 +1,2 @@
+uavSimul:2
+supportUav:2

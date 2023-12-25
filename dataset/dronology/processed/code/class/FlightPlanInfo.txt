@@ -1,0 +1,36 @@
+flight plan info 
+serial version uid 
+drone id 
+waypoint 
+waypoint 
+start locat 
+start time 
+end time 
+
+waypoint 
+lla coordin 
+
+
+id 
+drone id 
+waypoint 
+start locat 
+start time 
+end time 
+
+waypoint 
+lla coordin 
+
+get drone id 
+get waypoint 
+get start locat 
+get start time 
+get end time 
+flight plan info 
+set drone id 
+set waypoint 
+set start locat 
+set start time 
+set end time 
+
+ 

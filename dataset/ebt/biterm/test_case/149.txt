@@ -1,0 +1,2 @@
+receivNotif:1
+notifEvent:1

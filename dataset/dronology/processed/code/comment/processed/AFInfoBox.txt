@@ -1,0 +1,3 @@
+box side panel contain uav inform 
+default constructor 
+expand collaps box 

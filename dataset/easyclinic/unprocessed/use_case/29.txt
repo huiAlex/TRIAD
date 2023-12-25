@@ -1,0 +1,24 @@
+Use case:
+The average time of waiting
+
+Description:
+It allows the operator to get an estimate the average time required to serve a booking
+
+Preconditions:
+The Operator's interest to have a estimating the average time to serve a reservation request
+
+Postconditions:
+
+Sub-flows:
+The operator activates the execution of service for calculating the estimated average time
+1 View a mask to see the result of the calculation estimation of average time to serve a request reservations
+2 Start function 
+3 View results calculating
+
+Alternative flows:
+Operator decides to print information
+   3 1 Start printing information displayed
+   3 2 generates the report and sends it to printer
+Operator cancels the operation 
+   2 1 ends the use case with failure 
+   1 1 The time of service delivered in days equals the time between the date of request reservation and when the appointment is assigned

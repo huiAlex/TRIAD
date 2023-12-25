@@ -1,0 +1,14 @@
+default root folder 
+dronolog root folder 
+extens flightrout 
+extens registr 
+extens typeregistr 
+extens equip typeregistr 
+folder flightrout 
+folder registr 
+foldern sim scenario 
+extens sim scenario 
+extens mission 
+extens area 
+folder areamap 
+folder missionplan 

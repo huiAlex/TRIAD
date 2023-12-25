@@ -1,0 +1,28 @@
+creat compon 
+creat compon 
+set descript 
+set descript 
+set descript 
+set descript 
+add listen 
+updat 
+get 
+get status 
+get health color 
+equal 
+get status 
+equal 
+get 
+get status 
+set box visibl 
+get 
+get latitud 
+get longitud 
+get altitud 
+get 
+return home 
+take 
+resend command 
+set hover place 
+equal 
+set box visibl 

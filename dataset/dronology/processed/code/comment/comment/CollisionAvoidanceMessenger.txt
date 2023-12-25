@@ -1,0 +1,18 @@
+collis avoid messeng class facilit send messag instanc collis avoid backend 
+instanc class need send messag collis avoid backend 
+ 
+send messag collis avoid backend tell run collis avoid avoid dispers guidanc manag drone 
+ 
+send updat messag state physic drone 
+messag contain data sens drone posit veloc 
+messag type sent new data receiv drone 
+snapshot snapshot data receiv drone 
+send updat messag state manag drone 
+messag contain snapshot activ goal queue command current execut 
+messag type sent set activ goal chang queue command chang 
+drone command queue current queue command manag drone execut same object use manag drone copi goal snapshot goal drone state state drone fli ground manag drone refer manag drone data came use pass guidanc manag drone next call collis avoid avoid 
+ 
+send stop messag 
+messag sent program shut 
+messag caus collis avoid backend thread stop grace 
+ 

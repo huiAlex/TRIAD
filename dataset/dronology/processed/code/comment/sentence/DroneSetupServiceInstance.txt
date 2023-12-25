@@ -1,0 +1,2 @@
+Service instance for handling UAVs  See { IDroneSetupRemoteService} for details.
+/

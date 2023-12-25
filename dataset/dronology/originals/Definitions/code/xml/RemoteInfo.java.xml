@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/RemoteInfo.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:46">package <name pos:start="1:9" pos:end="1:45"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:45">remote</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:29">import <name pos:start="3:8" pos:end="3:28"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:28">Collections</name></name>;</import>
+<import pos:start="4:1" pos:end="4:25">import <name pos:start="4:8" pos:end="4:24"><name pos:start="4:8" pos:end="4:11">java</name><operator pos:start="4:12" pos:end="4:12">.</operator><name pos:start="4:13" pos:end="4:16">util</name><operator pos:start="4:17" pos:end="4:17">.</operator><name pos:start="4:18" pos:end="4:24">HashSet</name></name>;</import>
+<import pos:start="5:1" pos:end="5:21">import <name pos:start="5:8" pos:end="5:20"><name pos:start="5:8" pos:end="5:11">java</name><operator pos:start="5:12" pos:end="5:12">.</operator><name pos:start="5:13" pos:end="5:16">util</name><operator pos:start="5:17" pos:end="5:17">.</operator><name pos:start="5:18" pos:end="5:20">Set</name></name>;</import>
+
+<import pos:start="7:1" pos:end="7:48">import <name pos:start="7:8" pos:end="7:47"><name pos:start="7:8" pos:end="7:12">javax</name><operator pos:start="7:13" pos:end="7:13">.</operator><name pos:start="7:14" pos:end="7:16">xml</name><operator pos:start="7:17" pos:end="7:17">.</operator><name pos:start="7:18" pos:end="7:21">bind</name><operator pos:start="7:22" pos:end="7:22">.</operator><name pos:start="7:23" pos:end="7:32">annotation</name><operator pos:start="7:33" pos:end="7:33">.</operator><name pos:start="7:34" pos:end="7:47">XmlRootElement</name></name>;</import>
+
+<import pos:start="9:1" pos:end="9:68">import <name pos:start="9:8" pos:end="9:67"><name pos:start="9:8" pos:end="9:10">edu</name><operator pos:start="9:11" pos:end="9:11">.</operator><name pos:start="9:12" pos:end="9:13">nd</name><operator pos:start="9:14" pos:end="9:14">.</operator><name pos:start="9:15" pos:end="9:23">dronology</name><operator pos:start="9:24" pos:end="9:24">.</operator><name pos:start="9:25" pos:end="9:32">services</name><operator pos:start="9:33" pos:end="9:33">.</operator><name pos:start="9:34" pos:end="9:37">core</name><operator pos:start="9:38" pos:end="9:38">.</operator><name pos:start="9:39" pos:end="9:42">base</name><operator pos:start="9:43" pos:end="9:43">.</operator><name pos:start="9:44" pos:end="9:67">AbstractRegisterableUnit</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="11:1" pos:end="17:3">/**
+ * 
+ * Transmittable object for a Remote Clients containing information on the Subscriber.
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<class pos:start="18:1" pos:end="64:1"><annotation pos:start="18:1" pos:end="18:15">@<name pos:start="18:2" pos:end="18:15">XmlRootElement</name></annotation>
+<specifier pos:start="19:1" pos:end="19:6">public</specifier> class <name pos:start="19:14" pos:end="19:23">RemoteInfo</name> <super_list pos:start="19:25" pos:end="19:56"><extends pos:start="19:25" pos:end="19:56">extends <super pos:start="19:33" pos:end="19:56"><name pos:start="19:33" pos:end="19:56">AbstractRegisterableUnit</name></super></extends></super_list> <block pos:start="19:58" pos:end="64:1">{
+
+	<comment type="block" format="javadoc" pos:start="21:9" pos:end="23:11">/**
+	 * 
+	 */</comment>
+	<decl_stmt pos:start="24:9" pos:end="24:74"><decl pos:start="24:9" pos:end="24:73"><type pos:start="24:9" pos:end="24:33"><specifier pos:start="24:9" pos:end="24:15">private</specifier> <specifier pos:start="24:17" pos:end="24:22">static</specifier> <specifier pos:start="24:24" pos:end="24:28">final</specifier> <name pos:start="24:30" pos:end="24:33">long</name></type> <name pos:start="24:35" pos:end="24:50">serialVersionUID</name> <init pos:start="24:52" pos:end="24:73">= <expr pos:start="24:54" pos:end="24:73"><literal type="number" pos:start="24:54" pos:end="24:73">1876222975522920266L</literal></expr></init></decl>;</decl_stmt>
+
+	<comment type="block" format="javadoc" pos:start="26:9" pos:end="26:51">/** Flag for subscribing to all sources. */</comment>
+	<decl_stmt pos:start="27:9" pos:end="27:47"><decl pos:start="27:9" pos:end="27:46"><type pos:start="27:9" pos:end="27:34"><specifier pos:start="27:9" pos:end="27:14">public</specifier> <specifier pos:start="27:16" pos:end="27:21">static</specifier> <specifier pos:start="27:23" pos:end="27:27">final</specifier> <name pos:start="27:29" pos:end="27:34">String</name></type> <name pos:start="27:36" pos:end="27:38">ALL</name> <init pos:start="27:40" pos:end="27:46">= <expr pos:start="27:42" pos:end="27:46"><literal type="string" pos:start="27:42" pos:end="27:46">"all"</literal></expr></init></decl>;</decl_stmt>
+
+	<decl_stmt pos:start="29:9" pos:end="29:59"><decl pos:start="29:9" pos:end="29:58"><type pos:start="29:9" pos:end="29:27"><specifier pos:start="29:9" pos:end="29:15">private</specifier> <name pos:start="29:17" pos:end="29:27"><name pos:start="29:17" pos:end="29:19">Set</name><argument_list type="generic" pos:start="29:20" pos:end="29:27">&lt;<argument pos:start="29:21" pos:end="29:26"><name pos:start="29:21" pos:end="29:26">String</name></argument>&gt;</argument_list></name></type> <name pos:start="29:29" pos:end="29:40">subscribeIDs</name> <init pos:start="29:42" pos:end="29:58">= <expr pos:start="29:44" pos:end="29:58"><operator pos:start="29:44" pos:end="29:46">new</operator> <call pos:start="29:48" pos:end="29:58"><name pos:start="29:48" pos:end="29:56"><name pos:start="29:48" pos:end="29:54">HashSet</name><argument_list type="generic" pos:start="29:55" pos:end="29:56">&lt;&gt;</argument_list></name><argument_list pos:start="29:57" pos:end="29:58">()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+	<constructor pos:start="31:9" pos:end="33:9"><specifier pos:start="31:9" pos:end="31:17">protected</specifier> <name pos:start="31:19" pos:end="31:28">RemoteInfo</name><parameter_list pos:start="31:29" pos:end="31:56">(<parameter pos:start="31:30" pos:end="31:38"><decl pos:start="31:30" pos:end="31:38"><type pos:start="31:30" pos:end="31:38"><name pos:start="31:30" pos:end="31:35">String</name></type> <name pos:start="31:37" pos:end="31:38">ID</name></decl></parameter>, <parameter pos:start="31:41" pos:end="31:55"><decl pos:start="31:41" pos:end="31:55"><type pos:start="31:41" pos:end="31:55"><name pos:start="31:41" pos:end="31:46">String</name></type> <name pos:start="31:48" pos:end="31:55">hostname</name></decl></parameter>)</parameter_list> <block pos:start="31:58" pos:end="33:9">{<block_content pos:start="32:17" pos:end="32:36">
+		<expr_stmt pos:start="32:17" pos:end="32:36"><expr pos:start="32:17" pos:end="32:35"><call pos:start="32:17" pos:end="32:35"><name pos:start="32:17" pos:end="32:21">super</name><argument_list pos:start="32:22" pos:end="32:35">(<argument pos:start="32:23" pos:end="32:24"><expr pos:start="32:23" pos:end="32:24"><name pos:start="32:23" pos:end="32:24">ID</name></expr></argument>, <argument pos:start="32:27" pos:end="32:34"><expr pos:start="32:27" pos:end="32:34"><name pos:start="32:27" pos:end="32:34">hostname</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></constructor>
+
+	<comment type="block" format="javadoc" pos:start="35:9" pos:end="37:11">/**
+	 * @return A list of subscribed sources.
+	 */</comment>
+	<function pos:start="38:9" pos:end="40:9"><type pos:start="38:9" pos:end="38:26"><specifier pos:start="38:9" pos:end="38:14">public</specifier> <name pos:start="38:16" pos:end="38:26"><name pos:start="38:16" pos:end="38:18">Set</name><argument_list type="generic" pos:start="38:19" pos:end="38:26">&lt;<argument pos:start="38:20" pos:end="38:25"><name pos:start="38:20" pos:end="38:25">String</name></argument>&gt;</argument_list></name></type> <name pos:start="38:28" pos:end="38:42">getSubscribeIDs</name><parameter_list pos:start="38:43" pos:end="38:44">()</parameter_list> <block pos:start="38:46" pos:end="40:9">{<block_content pos:start="39:17" pos:end="39:65">
+		<return pos:start="39:17" pos:end="39:65">return <expr pos:start="39:24" pos:end="39:64"><call pos:start="39:24" pos:end="39:64"><name pos:start="39:24" pos:end="39:50"><name pos:start="39:24" pos:end="39:34">Collections</name><operator pos:start="39:35" pos:end="39:35">.</operator><name pos:start="39:36" pos:end="39:50">unmodifiableSet</name></name><argument_list pos:start="39:51" pos:end="39:64">(<argument pos:start="39:52" pos:end="39:63"><expr pos:start="39:52" pos:end="39:63"><name pos:start="39:52" pos:end="39:63">subscribeIDs</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+
+
+	<comment type="block" format="javadoc" pos:start="43:9" pos:end="46:11">/**
+	 * 
+	 * @param id The source to be added.
+	 */</comment>
+	<function pos:start="47:9" pos:end="50:9"><type pos:start="47:9" pos:end="47:19"><specifier pos:start="47:9" pos:end="47:14">public</specifier> <name pos:start="47:16" pos:end="47:19">void</name></type> <name pos:start="47:21" pos:end="47:31">addSourceID</name><parameter_list pos:start="47:32" pos:end="47:42">(<parameter pos:start="47:33" pos:end="47:41"><decl pos:start="47:33" pos:end="47:41"><type pos:start="47:33" pos:end="47:38"><name pos:start="47:33" pos:end="47:38">String</name></type> <name pos:start="47:40" pos:end="47:41">id</name></decl></parameter>)</parameter_list> <block pos:start="47:44" pos:end="50:9">{<block_content pos:start="48:17" pos:end="48:37">
+		<expr_stmt pos:start="48:17" pos:end="48:37"><expr pos:start="48:17" pos:end="48:36"><call pos:start="48:17" pos:end="48:36"><name pos:start="48:17" pos:end="48:32"><name pos:start="48:17" pos:end="48:28">subscribeIDs</name><operator pos:start="48:29" pos:end="48:29">.</operator><name pos:start="48:30" pos:end="48:32">add</name></name><argument_list pos:start="48:33" pos:end="48:36">(<argument pos:start="48:34" pos:end="48:35"><expr pos:start="48:34" pos:end="48:35"><name pos:start="48:34" pos:end="48:35">id</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	</block_content>}</block></function>
+
+
+
+	<function pos:start="54:9" pos:end="58:9"><annotation pos:start="54:9" pos:end="54:17">@<name pos:start="54:10" pos:end="54:17">Override</name></annotation>
+	<type pos:start="55:9" pos:end="55:21"><specifier pos:start="55:9" pos:end="55:14">public</specifier> <name pos:start="55:16" pos:end="55:21">String</name></type> <name pos:start="55:23" pos:end="55:30">toString</name><parameter_list pos:start="55:31" pos:end="55:32">()</parameter_list> <block pos:start="55:34" pos:end="58:9">{<block_content pos:start="56:17" pos:end="57:38">
+		<return pos:start="56:17" pos:end="57:38">return <expr pos:start="56:24" pos:end="57:37"><literal type="string" pos:start="56:24" pos:end="56:45">"REMOTE CLIENT  [id: "</literal> <operator pos:start="56:47" pos:end="56:47">+</operator> <name pos:start="56:49" pos:end="56:50">ID</name> <comment type="block" pos:start="56:52" pos:end="56:132">/* + " | callbackURL: " + callbackURL + " subscribeIDs: " + getRegisteredIds() */</comment>
+				<operator pos:start="57:33" pos:end="57:33">+</operator> <literal type="string" pos:start="57:35" pos:end="57:37">"]"</literal></expr>;</return>
+	</block_content>}</block></function>
+
+	<function pos:start="60:9" pos:end="63:9"><annotation pos:start="60:9" pos:end="60:17">@<name pos:start="60:10" pos:end="60:17">Override</name></annotation>
+	<type pos:start="61:9" pos:end="61:21"><specifier pos:start="61:9" pos:end="61:14">public</specifier> <name pos:start="61:16" pos:end="61:21">String</name></type> <name pos:start="61:23" pos:end="61:33">getUnitType</name><parameter_list pos:start="61:34" pos:end="61:35">()</parameter_list> <block pos:start="61:37" pos:end="63:9">{<block_content pos:start="62:17" pos:end="62:36">
+		<return pos:start="62:17" pos:end="62:36">return <expr pos:start="62:24" pos:end="62:35"><literal type="string" pos:start="62:24" pos:end="62:35">"Subscriber"</literal></expr>;</return>
+	</block_content>}</block></function>
+}</block></class>
+</unit>

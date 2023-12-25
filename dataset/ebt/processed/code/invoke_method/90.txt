@@ -1,0 +1,5 @@
+clear vector 
+add event rect 
+add event rect 
+add event rect 
+add event 

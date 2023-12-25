@@ -1,0 +1,13 @@
+Class: HospitalCardManager
+Date: 16/09/2003
+Version: 0.01.000
+Description: Manage operations that require access to data of the hospital card.
+
+Attributes:
+
+Methods:
+assegnaHC;Public;Assigns the hospital card to a patient.
+getHospitalCard;Public;Returns a description of the data in the hospital card for a patient.
+login;Public;Verifies the patient's presence in the SIO through hospital based on their hospital card code and PIN.
+saveHC;Public;Permanently stores the data in the hospital card.
+validaPaziente;Public;Verifies the patient's presence in the SIO through their hospital card code.

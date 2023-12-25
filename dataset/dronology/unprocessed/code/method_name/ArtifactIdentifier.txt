@@ -1,0 +1,11 @@
+ArtifactIdentifier
+getId
+getChild
+toString
+hashCode
+equals
+finalize
+getAttachedItems
+attachItem
+removeAttachedItem
+attachItems

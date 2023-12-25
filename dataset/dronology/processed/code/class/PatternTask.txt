@@ -1,0 +1,11 @@
+pattern task 
+
+
+uav id 
+task 
+
+
+pattern task 
+
+pattern task repres predefin pattern expand mission creat 
+ 

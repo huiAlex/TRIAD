@@ -1,0 +1,4 @@
+i
+currentPosition
+targetCoordinates
+distanceMovedPerTimeStep

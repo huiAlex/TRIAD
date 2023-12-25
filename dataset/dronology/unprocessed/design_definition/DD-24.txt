@@ -1,0 +1,4 @@
+[SUMMARY]
+Coordinate Units
+[DESCRIPTION]
+Altitude shall be specified in meters

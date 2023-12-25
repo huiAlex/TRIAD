@@ -1,0 +1,5 @@
+abstract drone command 
+string 
+json string 
+timestamp 
+get uav id 

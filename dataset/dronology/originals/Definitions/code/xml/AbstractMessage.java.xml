@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/AbstractMessage.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:67">package <name pos:start="1:9" pos:end="1:66"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:29">core</name><operator pos:start="1:30" pos:end="1:30">.</operator><name pos:start="1:31" pos:end="1:37">vehicle</name><operator pos:start="1:38" pos:end="1:38">.</operator><name pos:start="1:39" pos:end="1:58">manageddroneinternal</name><operator pos:start="1:59" pos:end="1:59">.</operator><name pos:start="1:60" pos:end="1:66">message</name></name>;</package>
+
+<class pos:start="3:1" pos:end="4:1"><specifier pos:start="3:1" pos:end="3:6">public</specifier> <specifier pos:start="3:8" pos:end="3:15">abstract</specifier> class <name pos:start="3:23" pos:end="3:37">AbstractMessage</name> <block pos:start="3:39" pos:end="4:1">{
+}</block></class>
+</unit>

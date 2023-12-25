@@ -1,0 +1,27 @@
+abstract file transmit server servic 
+logger 
+
+
+id 
+id 
+content 
+listen 
+listen 
+id 
+itemid 
+
+
+abstract file transmit server servic 
+request server 
+transmit server 
+add item chang listen 
+remov item chang listen 
+get item 
+get item 
+creat item 
+delet item 
+
+abstract base class servic handl file 
+servic instanc 
+type file support 
+ 

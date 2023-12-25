@@ -1,0 +1,4 @@
+connector
+connector
+msg
+groundstationid

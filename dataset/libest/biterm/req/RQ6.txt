@@ -1,0 +1,15 @@
+estClient:2
+respondClient:1
+verifiServer:1
+certifServer:1
+useAuthent:1
+estServer:4
+authentUse:1
+useCertif:1
+serverEst:4
+requirAuthent:1
+clientEst:2
+certifUse:1
+authentCertif:2
+requestClient:2
+certifClient:1

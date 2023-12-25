@@ -1,0 +1,6 @@
+DroneVoltageSimulator
+rechargeBattery
+startBatteryDrain
+stopBatteryDrain
+checkPoint
+getVoltage

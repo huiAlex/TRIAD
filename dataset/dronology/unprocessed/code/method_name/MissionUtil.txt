@@ -1,0 +1,7 @@
+activateRoute
+activateWaypoint
+getFinalWaypoint
+getLastWaypoint
+getFirstWayPoint
+getHome
+stopUAV

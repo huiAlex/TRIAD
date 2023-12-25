@@ -1,0 +1,4 @@
+waypoint implement use flight plan fight rout repres coordin lla coordin approach speed respect waypoint 
+class constitu field serializ class pass remot interfac 
+ 
+ 

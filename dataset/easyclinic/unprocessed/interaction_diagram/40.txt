@@ -1,0 +1,11 @@
+Changing Patient age
+
+The operator logs on to the patient's main section (e.g. GUIPaziente).
+The operator selects the function for amending the patient's register.
+Control passes to the instance of GUIAnagraficaPazienteHandler to manage the service.
+GUIAnagraficaPazienteHandler retrieves the patient's data from PazienteManager.
+The patient's data is displayed on screen in GUIAnagraficaPaziente.
+The operator confirms the changes made.
+Control goes back to GUIAnagraficaPazienteHandler to store the changes made to the patient's data.
+PazienteManager rescues the patient's data and modifies it.
+Control is passed back to GUIAnagraficaPazienteHandler to notify the success of the operation by displaying a message on the patient management screen.

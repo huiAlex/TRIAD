@@ -1,0 +1,14 @@
+groundstationid 
+id 
+status 
+status 
+uavid 
+messag 
+id 
+listen 
+queue 
+cmd 
+messag 
+uavid 
+messag 
+valid 

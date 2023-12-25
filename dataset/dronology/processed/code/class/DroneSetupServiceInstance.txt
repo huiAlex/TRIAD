@@ -1,0 +1,38 @@
+drone setup servic instanc 
+logger 
+physic drone fleet factori 
+virtual drone fleet factori 
+listen 
+listen 
+
+
+info 
+di 
+listen 
+listen 
+status 
+status 
+id 
+uav id 
+uav id 
+
+
+drone setup servic instanc 
+get servic class 
+get order 
+get properti path 
+start servic 
+stop servic 
+initi drone 
+init drone 
+add drone status chang listen 
+remov drone status chang listen 
+notifi drone status chang 
+get activ uav 
+deactiv drone 
+cancel plan 
+get activ uav 
+resend command 
+
+servic instanc handl uav see drone setup remot servic 
+ 

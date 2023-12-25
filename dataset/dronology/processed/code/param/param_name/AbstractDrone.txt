@@ -1,0 +1,9 @@
+drn 
+lat 
+lon 
+alt 
+coordin 
+base posit 
+veloc 
+batteri level 
+mgd drone 

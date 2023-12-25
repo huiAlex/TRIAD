@@ -1,0 +1,7 @@
+symbol repres place stack 
+print error messag unbalanc symbol 
+print error messag cl sym doe match op sym 
+main routin balanc symbol checker 
+slight differ text 
+command line paramet standard input use 
+file command line use 

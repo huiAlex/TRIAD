@@ -1,0 +1,29 @@
+iuav properti updat notifi 
+
+
+locat 
+batteri level 
+speed 
+veloc 
+attitud 
+locat 
+status 
+batteri level 
+veloc 
+posit 
+veloc 
+attitud 
+mode 
+
+lla coordin 
+lla coordin 
+lla coordin 
+
+updat 
+updat coordin 
+updat drone state 
+updat batteri level 
+updat veloc 
+updat collis avoid 
+updat mode 
+

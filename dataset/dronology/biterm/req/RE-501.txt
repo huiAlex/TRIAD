@@ -1,0 +1,3 @@
+waypointFinal:1
+waypointFirst:1
+routFlight:3

@@ -1,0 +1,14 @@
+sync constant 
+land asc reach 
+land lonlat reach 
+land home reach 
+takeoff asc reach 
+takeoff latlon reach 
+takeoff wp reach 
+
+
+
+
+
+synchron id predefin built synchron point 
+ 

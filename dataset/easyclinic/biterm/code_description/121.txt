@@ -1,0 +1,13 @@
+operAccess:5
+sectionManag:2
+mainForm:1
+formMain:1
+managVisit:2
+visitManag:2
+managSection:2
+accessSection:7
+sectionAccess:7
+accessOper:5
+visitFirst:1
+guiPrincipal:2
+firstVisit:1

@@ -1,0 +1,6 @@
+resendCommand:2
+sendCommand:3
+setPoint:2
+uavPhysic:1
+setCommand:1
+targetCoordin:1

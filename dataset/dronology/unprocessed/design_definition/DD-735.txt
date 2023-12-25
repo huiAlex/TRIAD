@@ -1,0 +1,4 @@
+[SUMMARY]
+UAV Takeoff Command
+[DESCRIPTION]
+The {{TAKEOFF}} command shall specify the target altitude

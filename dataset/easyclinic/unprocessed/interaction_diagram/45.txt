@@ -1,0 +1,10 @@
+Patient Login Scenario validation run 
+
+The Patient requests access to the system and accesses the management screen (GUISfondo).
+Control is then passed to the GUISfondoHandler instance, which delegates the task of managing the service to the GUILoginHandler instance.
+The Patient enters their Hospital Patient Card and PIN on the login page (GUILogin) presented by the system.
+The Patient confirms the insertion of their data, and the control is returned to the GUILoginHandler instance for validation.
+The HospitalCardManager application validates the information entered by the patient and returns the outcome to the GUILoginHandler instance.
+If the validation is positive, the GUILoginHandler instance notifies the application to allow GUIPrincipaleHandler of access to the patient.
+The GUIPrincipaleHandler instance then arranges for the display of the main form (GUIPrincipale) for the patient to use.
+This feature was described by the sequence diagram of Fig 3.7

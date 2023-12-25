@@ -1,0 +1,18 @@
+Class: GUIPaziente
+Date: 16/09/2003
+Version: 0.01.000
+Description: Make the mask on the management of reservation by Patient operator
+
+Attributes:
+btnAnnullaPrenot;Private;button that allows you to start action procedure delete of a procedure
+btnModificaDatiP;Private;button that allows you to start pazient procedure for changing the data anagrafica Patient
+btnModificaPreno;Private;button that allows you to start assessment procedure for changing a Reservations
+btnPrenotaVisita;Private;button that allows you to start reservation procedure of a visit
+
+Methods:
+show;Public;View mask
+abilitaAccesso;Public; Manages the event generated when the procedure validation goes well
+eliminaPrenotazione; Public; Its task description call the handler class associated with the mask represented by GUIEliminaPrenotazuione and begin the process delete of a reservation
+modificaAnagrafica;Public ; Its task is to draw handler class associated with the mask represented by GUIAnagraficaPaziente and start the process of review patient anagrafica data
+modificaPrenotazione;Public;Its task is to draw handler class associated with the mask represented by GUIAnagraficaPaziente and start the procedure review the reservation data
+prenotaVisita; Public; Its task is to draw handler class associated with the mask represented by GUIPrenotaVisita and start the a visit reservation procedure

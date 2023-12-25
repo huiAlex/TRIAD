@@ -1,0 +1,6 @@
+instalGuid:1
+toolWarc:1
+warcTool:1
+guidInstal:1
+developGuid:1
+guidDevelop:1

@@ -1,0 +1,82 @@
+<Class>
+    <Id>72</Id>
+    <Package>edu.nd.dronology.services.extensions.missionplanning.patterns</Package>
+    <ClassName>CoordinatedLandingPattern</ClassName>
+    <SuperClass>AbstractFlightPattern</SuperClass>
+    <SuperInterfaceList>
+        <SuperInterface>IFlightPattern</SuperInterface>
+    </SuperInterfaceList>
+    <ClassComment>CoordinatedLandingPattern  /** 
+ * Predefined pattern for coordinated landing that is expanded as part of a  {@link PatternTask} in a {@link FullMissionPlan}.&lt;br&gt;
+ * @author Michael Vierhauser
+ */
+</ClassComment>
+    <FieldList/>
+    <MethodList>
+        <Method>
+            <MethodName>CoordinatedLandingPattern</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType></ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke></InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>expandFlightPattern</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType>UAVMissionPlan uavMission</ParameterType>
+                <ParameterType>LlaCoordinate currentLocation</ParameterType>
+                <ParameterType>LlaCoordinate targetLocation</ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar>LlaCoordinate [targetWaypoint1=new LlaCoordinate(currentLocation.getLatitude(),currentLocation.getLongitude(),uavMission.getCoordinationAltitude())]</InnerVar>
+                <InnerVar>LlaCoordinate [targetWaypoint2=new LlaCoordinate(targetLocation.getLatitude(),targetLocation.getLongitude(),uavMission.getCoordinationAltitude())]</InnerVar>
+                <InnerVar>LlaCoordinate [landWaypoint=new LlaCoordinate(targetLocation.getLatitude(),targetLocation.getLongitude(),targetLocation.getAltitude())]</InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>DronologyMonitoringManager.getInstance();publish;[MessageMarshaller.createMessage(MessageType.MISSION_WAYPOINT,uavMission.getUavID(),targetWaypoint1)]</InnerMethodInvoke>
+                <InnerMethodInvoke>DronologyMonitoringManager.getInstance();publish;[MessageMarshaller.createMessage(MessageType.MISSION_WAYPOINT,uavMission.getUavID(),targetWaypoint2)]</InnerMethodInvoke>
+                <InnerMethodInvoke>DronologyMonitoringManager.getInstance();publish;[MessageMarshaller.createMessage(MessageType.MISSION_WAYPOINT,uavMission.getUavID(),landWaypoint)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.WAYPOINT,uavMission.getUavID(),targetWaypoint1)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.SYNC,uavMission.getUavID(),SyncConstants.LANDING_ASC_REACHED)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.WAYPOINT,uavMission.getUavID(),targetWaypoint2)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.SYNC,uavMission.getUavID(),SyncConstants.LANDING_LONLAT_REACHED)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.LAND,uavMission.getUavID(),landWaypoint)]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addTask;[TaskFactory.getTask(TaskFactory.SYNC,uavMission.getUavID(),SyncConstants.LANDING_HOME_REACHED)]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType>MissionExecutionException</ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+        <Method>
+            <MethodName>doCreateSyncPoints</MethodName>
+            <MethodComment></MethodComment>
+            <ReturnType>void</ReturnType>
+            <ParameterList>
+                <ParameterType></ParameterType>
+            </ParameterList>
+            <InnerVarList>
+                <InnerVar></InnerVar>
+            </InnerVarList>
+            <InnerMethodInvokeList>
+                <InnerMethodInvoke>null;addSyncPoint;["SP-TakeOff-AscentTargetReached"]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addSyncPoint;["SP-TakeOff-LonLatReached"]</InnerMethodInvoke>
+                <InnerMethodInvoke>null;addSyncPoint;["SP-TakeOff-FirstWayPointReached"]</InnerMethodInvoke>
+            </InnerMethodInvokeList>
+            <ThrowExceptionList>
+                <ExceptionType></ExceptionType>
+            </ThrowExceptionList>
+        </Method>
+    </MethodList>
+</Class>

@@ -1,0 +1,15 @@
+facad remot:amod
+facad handl:acl
+implement mission plan:compound
+implement initi:amod
+handl implement:obj
+capabl mission:compound
+capabl plan:compound
+implement capabl:nmod
+allow retriev:xcomp
+retriev send:advcl
+plan mission:compound
+send plan:obj
+string json:compound
+send string:obl
+send dronolog:obl

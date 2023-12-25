@@ -1,0 +1,15 @@
+estClient:5
+useAuthent:2
+useClient:1
+estServer:1
+applicClient:1
+authentUse:2
+authentHttp:1
+configurClient:1
+authentBase:1
+failAuthent:1
+initiServer:1
+serverEst:1
+clientEst:5
+httpAuthent:1
+specifiUse:1

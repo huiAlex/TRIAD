@@ -1,0 +1,11 @@
+getID
+getStatus
+getLongitude
+getLatitude
+getAltitude
+getBatteryLevel
+getVelocity
+getInfo
+getCoordinates
+getHomeLocation
+getGroundstationId

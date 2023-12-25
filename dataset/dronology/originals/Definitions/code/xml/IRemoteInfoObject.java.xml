@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IRemoteInfoObject.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:43">package <name pos:start="1:9" pos:end="1:42"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:33">services</name><operator pos:start="1:34" pos:end="1:34">.</operator><name pos:start="1:35" pos:end="1:38">core</name><operator pos:start="1:39" pos:end="1:39">.</operator><name pos:start="1:40" pos:end="1:42">api</name></name>;</package>
+
+<import pos:start="3:1" pos:end="3:27">import <name pos:start="3:8" pos:end="3:26"><name pos:start="3:8" pos:end="3:11">java</name><operator pos:start="3:12" pos:end="3:12">.</operator><name pos:start="3:13" pos:end="3:16">util</name><operator pos:start="3:17" pos:end="3:17">.</operator><name pos:start="3:18" pos:end="3:20">Map</name><operator pos:start="3:21" pos:end="3:21">.</operator><name pos:start="3:22" pos:end="3:26">Entry</name></name>;</import>
+<import pos:start="4:1" pos:end="4:21">import <name pos:start="4:8" pos:end="4:20"><name pos:start="4:8" pos:end="4:11">java</name><operator pos:start="4:12" pos:end="4:12">.</operator><name pos:start="4:13" pos:end="4:16">util</name><operator pos:start="4:17" pos:end="4:17">.</operator><name pos:start="4:18" pos:end="4:20">Set</name></name>;</import>
+
+<comment type="block" format="javadoc" pos:start="6:1" pos:end="11:3">/**
+ * Base interface for all serializable objects sent over remote interfaces containing information on constraints, requirements, models etc.
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<interface pos:start="12:1" pos:end="31:1"><specifier pos:start="12:1" pos:end="12:6">public</specifier> interface <name pos:start="12:18" pos:end="12:34">IRemoteInfoObject</name> <super_list pos:start="12:36" pos:end="12:95"><extends pos:start="12:36" pos:end="12:95">extends <super pos:start="12:44" pos:end="12:64"><name pos:start="12:44" pos:end="12:64">IRemoteTransferObject</name></super>, <super pos:start="12:67" pos:end="12:95"><name pos:start="12:67" pos:end="12:95"><name pos:start="12:67" pos:end="12:76">Comparable</name><argument_list type="generic" pos:start="12:77" pos:end="12:95">&lt;<argument pos:start="12:78" pos:end="12:94"><name pos:start="12:78" pos:end="12:94">IRemoteInfoObject</name></argument>&gt;</argument_list></name></super></extends></super_list> <block pos:start="12:97" pos:end="31:1">{
+
+	<comment type="block" format="javadoc" pos:start="14:9" pos:end="20:11">/**
+	 * 
+	 * @param key
+	 *          The key of the attribute.
+	 * @return The value for the given attribute key.&lt;br&gt;
+	 *         Returns {@code null} if no value for the given key is available.
+	 */</comment>
+	<function_decl pos:start="21:9" pos:end="21:40"><type pos:start="21:9" pos:end="21:14"><name pos:start="21:9" pos:end="21:14">String</name></type> <name pos:start="21:16" pos:end="21:27">getAttribute</name><parameter_list pos:start="21:28" pos:end="21:39">(<parameter pos:start="21:29" pos:end="21:38"><decl pos:start="21:29" pos:end="21:38"><type pos:start="21:29" pos:end="21:34"><name pos:start="21:29" pos:end="21:34">String</name></type> <name pos:start="21:36" pos:end="21:38">key</name></decl></parameter>)</parameter_list>;</function_decl>
+
+	<function_decl pos:start="23:9" pos:end="23:25"><type pos:start="23:9" pos:end="23:14"><name pos:start="23:9" pos:end="23:14">String</name></type> <name pos:start="23:16" pos:end="23:22">getName</name><parameter_list pos:start="23:23" pos:end="23:24">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="25:9" pos:end="25:23"><type pos:start="25:9" pos:end="25:14"><name pos:start="25:9" pos:end="25:14">String</name></type> <name pos:start="25:16" pos:end="25:20">getId</name><parameter_list pos:start="25:21" pos:end="25:22">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="27:9" pos:end="27:51"><type pos:start="27:9" pos:end="27:34"><name pos:start="27:9" pos:end="27:34"><name pos:start="27:9" pos:end="27:11">Set</name><argument_list type="generic" pos:start="27:12" pos:end="27:34">&lt;<argument pos:start="27:13" pos:end="27:33"><name pos:start="27:13" pos:end="27:33"><name pos:start="27:13" pos:end="27:17">Entry</name><argument_list type="generic" pos:start="27:18" pos:end="27:33">&lt;<argument pos:start="27:19" pos:end="27:24"><name pos:start="27:19" pos:end="27:24">String</name></argument>, <argument pos:start="27:27" pos:end="27:32"><name pos:start="27:27" pos:end="27:32">String</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name></type> <name pos:start="27:36" pos:end="27:48">getAttributes</name><parameter_list pos:start="27:49" pos:end="27:50">()</parameter_list>;</function_decl>
+
+	<function_decl pos:start="29:9" pos:end="29:52"><type pos:start="29:9" pos:end="29:12"><name pos:start="29:9" pos:end="29:12">void</name></type> <name pos:start="29:14" pos:end="29:25">addAttribute</name><parameter_list pos:start="29:26" pos:end="29:51">(<parameter pos:start="29:27" pos:end="29:36"><decl pos:start="29:27" pos:end="29:36"><type pos:start="29:27" pos:end="29:36"><name pos:start="29:27" pos:end="29:32">String</name></type> <name pos:start="29:34" pos:end="29:36">key</name></decl></parameter>, <parameter pos:start="29:39" pos:end="29:50"><decl pos:start="29:39" pos:end="29:50"><type pos:start="29:39" pos:end="29:50"><name pos:start="29:39" pos:end="29:44">String</name></type> <name pos:start="29:46" pos:end="29:50">value</name></decl></parameter>)</parameter_list>;</function_decl>
+
+}</block></interface>
+</unit>

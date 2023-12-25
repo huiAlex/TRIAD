@@ -1,0 +1,19 @@
+delay task 
+logger 
+durat 
+start time 
+
+
+uav id 
+task 
+durat 
+
+
+delay task 
+get durat 
+start delay task 
+finish 
+
+delay task specifi delay rout execut befor commenc next round 
+ 
+second 

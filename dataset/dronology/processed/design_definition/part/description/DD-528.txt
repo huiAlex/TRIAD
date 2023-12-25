@@ -1,0 +1,1 @@
+vehicl core receiv uav current coordin uav assign target waypoint vehicl core comput current distanc target waypoint 

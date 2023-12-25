@@ -1,0 +1,4 @@
+[SUMMARY]
+Establish conneciton with GCT middleware
+[DESCRIPTION]
+The _GCSMiddleware_ shall accept connections with multiple _GCS_ 

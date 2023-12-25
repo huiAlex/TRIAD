@@ -1,0 +1,8 @@
+add 
+equal 
+equal 
+hash code 
+hash code 
+artifact identifi 
+string 
+final 

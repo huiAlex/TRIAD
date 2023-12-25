@@ -1,0 +1,11 @@
+side panel contain af info box uav inform 
+add box panel 
+remov box panel id drone 
+ 
+ 
+ 
+expand collaps box 
+ 
+ 
+get updat inform dronolog uav locat inform status 
+add ani new drone panel remov ani drone deactiv 

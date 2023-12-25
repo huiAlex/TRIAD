@@ -1,0 +1,6 @@
+uavID
+synchMgr
+alt
+task
+synchMgr
+o

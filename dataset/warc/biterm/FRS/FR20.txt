@@ -1,0 +1,8 @@
+toolLine:1
+toolCommand:1
+enablValid:2
+warcFile:2
+commandTool:1
+lineTool:1
+fileWarc:2
+validEnabl:2

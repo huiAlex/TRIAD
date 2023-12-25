@@ -1,0 +1,12 @@
+UAVMonitorableMessage
+UAVMonitorableMessage
+UAVMonitorableMessage
+UAVMonitorableMessage
+UAVMonitorableMessage
+createMessage
+toString
+toString
+StateWrapper
+getDesignatedDroneId
+getDesignatedDroneId
+getUAVId

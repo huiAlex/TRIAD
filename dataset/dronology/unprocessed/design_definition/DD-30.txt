@@ -1,0 +1,4 @@
+[SUMMARY]
+Transition from ON_GROUND to AWAITING_TAKEOFF_CLEARANCE
+[DESCRIPTION]
+When a flight plan is assigned to a UAV in the {{ON_GROUND}} state it transitions to the {{AWAITING_TAKEOFF_CLEARANCE}} state.

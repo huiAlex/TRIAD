@@ -1,0 +1,3 @@
+[SUMMARY]
+Add icons to waypoints in Active Flights view
+[DESCRIPTION]

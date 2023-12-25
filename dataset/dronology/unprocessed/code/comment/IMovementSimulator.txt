@@ -1,0 +1,7 @@
+/**
+ * 
+ * The movement simulator simulates the movement of a {@link VirtualDrone} to reach its assigned waypoints.
+ * 
+ *  *
+ */
+

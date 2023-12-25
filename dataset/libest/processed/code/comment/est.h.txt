@@ -1,0 +1,17 @@
+ 
+est est public api enrol secur transport novemb copyright cisco system right reserv 
+allow runtim check path segment support 
+valu ore togeth 
+enum allow log filter desir level bitmask filter ad new log level order maintain base urgenc log messag 
+follow valu defin minimum maximum default valu timeout valu ssl read oper valu use est client proxi oper 
+defin valid return code applic layer auth credenti callback function provid 
+est ctx structur use maintain state est oper behalf applic singl context use repres singl instanc est client est server est proxi server member structur public access applic use function provid libest api manag context context creat use est client init est server init est proxi init context longer need applic shoud invok est destroy releas memori associ context 
+auth credenti cb typedef defin prototyp callback function resid applic code applic regist function callback use est client set auth cred cb api function callback call est client librari requir http authent credenti callback function take input pointer est http auth hdr structur callback function look mode structur element determin type credenti requir mode set auth basic auth digest callback function suppli user pwd valu mode set auth token callback suppli auth token valu auth token valu base encod string repres access token 
+begin public api prototyp 
+est proxi specif function 
+follow function use est client 
+follow callback entri point set applic act est server proxi 
+follow helper function deal openssl data type cert key 
+helper macro applic use initi initi openssl 
+est app startup use applic initi openssl librari call first prior use ani function libest api helper function invok crypto malloc init err load crypto string openssl add algorithm engin load builtin engin ssl librari init ssl load error string void 
+est app shutdown use applic initi openssl librari call prevent memori leak openssl librari helper function invok conf modul unload obj cleanup evp cleanup engin cleanup crypto cleanup ex data err remov thread state err free string void 

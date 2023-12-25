@@ -1,0 +1,9 @@
+facad remot:amod
+allow facad:nsubj
+facad handl:acl
+rout uav:compound
+handl rout:obj
+allow creat:xcomp
+allow modifi:xcomp
+creat modifi:conj
+creat rout:obj

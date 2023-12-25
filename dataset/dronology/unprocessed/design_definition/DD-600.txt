@@ -1,0 +1,4 @@
+[SUMMARY]
+Simulate goto in internal simulator
+[DESCRIPTION]
+When given a goto command the _InternalSimulator_ shall compute the next coordinate based upon the angle of travel and the step-size.

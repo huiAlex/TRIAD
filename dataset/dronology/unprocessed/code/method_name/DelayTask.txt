@@ -1,0 +1,4 @@
+DelayTask
+getDuration
+startDelayTask
+isFinished

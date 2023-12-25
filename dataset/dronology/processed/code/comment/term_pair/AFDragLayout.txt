@@ -1,0 +1,6 @@
+layout vertic:amod
+drop layout:obj
+store info box:nsubj
+layout store:acl
+rout assign:compound
+store rout:obl

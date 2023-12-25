@@ -1,0 +1,13 @@
+uavActiv:1
+creatPlan:1
+managPlan:1
+uavIndividu:1
+cancelPlan:3
+setPlan:1
+assignPlan:5
+completPlan:5
+planPend:1
+setCurrent:1
+planCurrent:1
+planUav:1
+planFlight:1

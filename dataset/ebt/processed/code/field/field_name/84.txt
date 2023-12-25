@@ -1,0 +1,7 @@
+avg shape size origin 
+avg shape size specul 
+avg text size 
+write time 
+shape 
+text item 
+band width 

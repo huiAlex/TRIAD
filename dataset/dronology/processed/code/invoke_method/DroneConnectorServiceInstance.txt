@@ -1,0 +1,14 @@
+creat 
+incom groundstat connect server 
+get instanc 
+get activ uav 
+get gcs id 
+tear 
+unregist drone 
+get gcs id 
+get groundstat id 
+equal 
+get instanc 
+unregist command handler 
+get instanc 
+deactiv drone 

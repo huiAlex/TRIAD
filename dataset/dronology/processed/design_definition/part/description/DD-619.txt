@@ -1,0 +1,1 @@
+log level hw trace activ state monitor messag log 

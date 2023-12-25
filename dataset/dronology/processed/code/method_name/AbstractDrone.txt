@@ -1,0 +1,15 @@
+abstract drone 
+set coordin 
+set coordin 
+get latitud 
+get longitud 
+get altitud 
+get coordin 
+get drone 
+get drone status 
+set base coordin 
+get base coordin 
+set veloc 
+updat batteri level 
+set user control 
+set manag drone 

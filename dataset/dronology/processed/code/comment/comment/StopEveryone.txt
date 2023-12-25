@@ -1,0 +1,14 @@
+stop everyon collis avoid failsaf onli trigger detect drone intrud space becaus someth gone wrong 
+mission plan care navig drone avoid crash anoth 
+stop everyon assum drone follow mission plan take account drone space time 
+stop everyon collis avoid trigger mission abort human need land drone manual 
+ 
+initi newli creat stop everyon object trigger drone stop whatev hover place ani drone closer threshold distanc anoth 
+threshold distanc meter 
+ani drone close threshold distanc stop everyon command drone stop whatev hover place 
+ 
+fli drone drone fli drone true everi drone threshold distanc apart 
+check drone close first drone second drone true distanc drone threshold distanc 
+given drone snapshot filter drone fli drone drone snapshot fli drone 
+make sure drone command queue stop command overwrit current command queue need 
+drone stop 

@@ -1,0 +1,286 @@
+us1883.c
+us1883_logger_stderr
+us1883_clean
+us1883_start_server
+us1883_init_suite
+us1883_destroy_suite
+client_manual_cert_verify
+generate_private_key
+auth_credentials_token_cb
+auth_credentials_basic_cb
+auth_credentials_digest_cb
+us1883_test1
+us1883_simple_enroll
+us1883_simple_reenroll
+us1883_test2
+us1883_test3
+us1883_test4
+us1883_test5
+us1883_test6
+us1883_test7
+us1883_test8
+us1883_test9
+us1883_test10
+us1883_add_suite
+EnterCriticalSection
+vfprintf
+fflush
+LeaveCriticalSection
+st_start
+InitializeCriticalSection
+est_init_logger
+read_binary_file
+us1883_clean
+us1883_start_server
+st_stop
+free
+BIO_new_fp
+printf
+printf
+X509_print_fp
+X509_signature_print
+BIO_free
+BN_set_word
+RSA_generate_key_ex
+EVP_PKEY_new
+RSA_free
+BN_free
+CU_ASSERT
+CU_ASSERT
+CU_ASSERT
+est_client_init
+CU_ASSERT
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_destroy
+est_client_init
+CU_ASSERT
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+STACK_OF
+est_client_init
+CU_ASSERT
+st_enable_http_basic_auth
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_client_set_server
+generate_private_key
+CU_ASSERT
+est_client_enroll
+CU_ASSERT
+est_destroy
+est_client_init
+CU_ASSERT
+st_enable_http_token_auth
+est_client_set_auth_cred_cb
+CU_ASSERT
+est_client_set_server
+BIO_new
+BIO_new_mem_buf
+BIO_push
+d2i_PKCS7_bio
+CU_ASSERT
+BIO_free_all
+OBJ_obj2nid
+CU_ASSERT
+sk_X509_value
+CU_ASSERT
+est_client_reenroll
+CU_ASSERT
+EVP_PKEY_free
+est_destroy
+st_enable_http_token_auth
+st_set_token
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_token_auth
+st_set_token
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_token_auth
+st_set_token
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_token_auth
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_basic_auth
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_token_auth
+st_set_token
+us1883_simple_reenroll
+CU_ASSERT
+st_enable_http_token_auth
+st_set_token
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_digest_auth
+us1883_simple_enroll
+CU_ASSERT
+st_enable_http_token_auth
+st_set_token
+us1883_simple_enroll
+CU_ASSERT
+CU_add_suite
+format
+l
+manual_enroll
+nid
+cur_cert
+openssl_cert_error
+auth_credentials
+auth_credentials
+auth_credentials
+cn
+server
+expected_enroll_rv
+callback
+cn
+server
+expected_enroll_rv
+callback
+char
+va_list
+int
+int
+X509
+int
+EST_HTTP_AUTH_HDR
+EST_HTTP_AUTH_HDR
+EST_HTTP_AUTH_HDR
+char
+char
+EST_ERROR
+auth_credentials_cb
+char
+char
+EST_ERROR
+auth_credentials_cb
+US1883_SERVER_IP
+US1883_TCP_PORT
+US1883_PKCS10_RSA2048
+US1883_PKCS10_4096_REQ
+US1883_ENROLL_URL_BA
+US1883_PKCS10_CT
+US1883_UIDPWD_GOOD
+US1883_CACERTS
+US1883_CACERT
+US1883_SERVER_CERT
+US1883_SERVER_KEY
+US1883_CLIENT_CERT
+US1883_CLIENT_KEY
+US1883_CACERTS
+US1883_CACERT
+US1883_SERVER_CERT
+US1883_SERVER_KEY
+US1883_CLIENT_CERT
+US1883_CLIENT_KEY
+GOOD_TOKEN
+DIFFERENT_TOKEN
+NULL_TOKEN
+LONG_TOKEN
+------------------------------------------------------------------   us1883.c - Unit Tests for User Story 1883 - Enable token auth mode for              the EST Client.     March, 2015     Copyright (c) 2015, 2016 by cisco Systems, Inc.   All rights reserved.  ------------------------------------------------------------------  /
+   The following CSR was generated using the following openssl command and then   using cat on the rsa.req file:     openssl req -newkey rsa:2048 -keyout rsakey.pem -keyform PEM -out rsa.req -outform PEM  /
+   This routine is called when CUnit initializes this test   suite.  This can be used to allocate data or open any   resources required for all the test cases.  /
+   This routine is called when CUnit uninitializes this test   suite.  This can be used to deallocate data or close any   resources that were used for the test cases.  /
+   Callback function passed to est_client_init()  /
+   auth_credentials_token_cb() is the application layer callback function that will   return a token based authentication credential when called.  It's registered   with the EST Client using the est_client_set_auth_cred_cb().   The test function is required to set some global values in order to make this   callback operate the way that the test case wants.   - auth_cred_force_error = tell this function to force a response code error   - test_token = pointer to a hard coded string that is the token string to return     This callback must provide the token credentials in a heap based buffer, and   ownership of that buffer is implicitly transferred to the ET client library upon   return.  /
+   auth_credentials_basic_cb() is the same as the token based one above, but   instead returns the basic credentials of userid and password  /
+   auth_credentials_digest_cb() is the same as the basic based one above, but   instead verfies that the auth_mode passed is digest  /
+   Test the est_client_set_auth_cred_cb API     Exercise the parameters  /
+   us1883_simple_enroll() is used by test cases to perform a simple enroll.  /
+   Perform a simple enroll first in order to get a valid cert, then perform the   reenroll.  The simple enroll needs to be successful, so it's currently   being done using basic mode because the EST server does not yet have token   based support.   PDB NOTE:  Once the server side token support have been implemented, this   this function can optionally be updated to do token mode on the first enroll,   but it's not absolutely necessary since the purpose of this is to test reenroll   and the initial enroll is needed just to get the cert.  /
+   Test2 - Application layer did not register callback, causing an           HTTP Aithentication header with an empty token credential              In this test,   - application layer DOES NOT register its callback   - EST Client gets the challenge, finds no callback registered and goes with     the credentials it has stored in the Context, which is nothing.     NOTE: This is the way the preloaded credential flow has always worked.   - enroll is sent with no token credentials   - server fails and does not give a certificate  /
+   Test3 - Application layer registers callback, BUT does not set any           credentials when invoked.  Same result as previous test              In this test,   - application layer registers its callback   - EST Client gets the challenge, calls the callback, gets back an      empty credential structure and ends up sending an HTTP auth header     with no credentials.     NOTE: This is the way the preloaded credential flow has always worked.   - enroll is sent with no token credentials   - server fails and does not give a certificate  /
+   Test4 - Good token is sent to server and is accepted.  Cert should   be generated and returned     In this test,   - application layer registers its callback and responds with a valid token   - enroll is sent with this token credential   - server is set to match on this token and send back a cert  /
+   Test EST client receiving a token auth challenge     In this test, the application layer registers its callback and responds   with a failing return code.  /
+   Test6 - Sanity test BASIC auth mode     In this test,   - server into BASIC mode   - Client application registers its BASIC based callback   - Client should send the estuser/estpwd credentials and get a cert  /
+   Test7 - Make sure re-enroll works with the credential callback flow           to obtain credentials     In this test,   - server into TOKEN mode   - Client application registers its TOKEN based callback   - Client should send the valid token credential and get a cert  /
+   Test7 - Token credentials that are too long     In this test,   - server into TOKEN mode and told to match against the GOOD token   - Client application registers its TOKEN based callback and is told to     give back a token that is TOO LONG.   - Client should send a corrupted token that does not match the GOOD token.  /
+   Test7 - Test DIGEST mode with on demand credential flow     In this test,   - server into DIGEST mode     NOTE: This means the server is expecting: "estuser"/"estpwd" and "estrealm"           These values are hardcoded into data in the st_server, so st_server           must be started with estrealm so that it returns this realm to client           so that the client returns it in its request.   - Client application registers its DIGEST based callback   - Client should send a valid DIGEST and get a cert  /
+   Test4 - Valid token is provided by appliaction callback, but it's the WRONG           token     In this test,   - application layer registers its callback and responds with a valid token   - Server is set up for token mode, but with a different token.   - enroll is sent with this token credential   - server is set to match on this token and send back a cert  /
+ The main() function for setting up and running the tests.   Returns a CUE_SUCCESS on successful running, another   CUnit error code on failure.  /
+       Read in the CA certificates      /
+       Start an instance of the EST server with        automatic enrollment enabled.      /
+       Print out the specifics of this cert      /
+       Next call prints out the signature which can be used as the fingerprint       This fingerprint can be checked against the anticipated value to determine       whether or not the server's cert should be approved.      /
+       create an RSA keypair and assign them to a PKEY and return it.      /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+       report that the callback has been called.      /
+       See if the test is requesting to force an error response code from the       callback      /
+       Create a client context       /
+ Forgot to specify any parameters. Context will       get caught      /
+       valid call      /
+       attempt to reset the callback function      /
+       Create a client context       /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Cleanup      /
+       Create a client context       /
+       Make sure the server is currently in  BASIC auth mode      /
+       Set the EST server address/port      /
+       generate a private key      /
+       Use the simplified API to enroll a CSR      /
+       Retrieve the cert that was given to us by the EST server      /
+       Create a client context       /
+       Now that we have the cert, switch the server over to token mode      /
+       Set the EST server address/port      /
+       And attempt a reenroll while in token mode             Convert the cert to an X509.  Be warned this is       pure hackery.       PDB: This conversion code comes from other test cases.      /
+ our new cert should be the one and only       cert in the pkcs7 blob.  We shouldn't have to       iterate through the full list to find it. /
+       PDB NOTE: At the moment, this is expected to fail since       the server does not yet understand requests with token authentication.       Once 1884 is complete, the below ASSERT will begin to fail and will need       to be changed to a passing response.      /
+       Cleanup      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       tell the server which token to check against.      /
+       Set up the EST Client and have it perform a simple enroll.       Pass no callback function to catch and handle the request for a token auth.             enroll better fail due to missing credentials      /
+       callback was never registered, so it should not have been invoked.      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       tell the server which token to check against.      /
+       Set up the EST Client and have it perform a simple enroll.       Register the token based callback, but set it so that it passes back no token.             enroll better fail due to missing credentials      /
+       callback should have been called      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       tell the server which token to check against.      /
+       Set up the EST Client and have it perform a simple enroll.             Enroll should succeed.      /
+       callback should have been called      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+ Force the callback to give a failing return code /
+       Set up the EST Client and have it perform a simple enroll.             enroll better fail due to credentials not being supplied by the application layer       and eventual failure at the server due to missing credentials.      /
+       callback should have been called      /
+       Switch the server over to BASIC mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       Set up the EST Client and have it perform a simple enroll.       Pass a callback function to catch and handle the request for a token auth.             enroll should pass because BASIC mode fully works.  Make sure that the       callback is called.  This will ensure that the credentials came from       the callback.      /
+       callback should have been called      /
+       tell the server which token to check against.      /
+       Set up the EST Client and have it perform a simple enroll.             Re-enroll should succeed.            /
+       callback should have been called      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       tell the server which token to check against.      /
+ Force the callback to give a failing return code /
+       Set up the EST Client and have it perform a simple enroll.       Pass a callback function to catch and handle the request for a token auth.            /
+       callback should have been called      /
+       Switch the server over to DIGEST mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       Set up the EST Client and have it perform a simple enroll.       Pass a callback function to catch and handle the request for a token auth.             enroll should pass because DIGEST mode fully works.  Make sure that the       callback is called.  This will ensure that the credentials came from       the callback.      /
+       callback should have been called      /
+       Switch the server over to Token mode.              NOTE: I see the equivalent calls being made in numerous places, and       it's probably safe in a test setting, but it's dangerous to change       this on the fly in an operational setting.  Also note, no return code       for any of these set/enable functions.      /
+       tell the server which token to check against.      /
+       Set up the EST Client and have it perform a simple enroll.             Enroll should FAIL because the tokens will not match      /
+       callback should have been called      /
+ add a suite to the registry /
+ add the tests to the suite /
+           If the test_token is set to anything, then we need to allocate           space from the heap and copy in the value.          /
+           If we made it this far, token_ptr is pointing to a string           containing the token to be returned. Assign it and return success          /
+ use strlen() so that the string can be as large                                                as needed to test the EST client /

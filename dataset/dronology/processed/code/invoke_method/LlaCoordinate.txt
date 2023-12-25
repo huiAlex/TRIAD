@@ -1,0 +1,6 @@
+check latitud rang 
+check longitud rang 
+check altitud rang 
+vector 
+vector 
+vector 

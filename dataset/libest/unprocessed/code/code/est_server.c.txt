@@ -1,0 +1,468 @@
+est_server.c
+est_send_http_error
+est_server_send_http_retry_after
+est_handle_cacerts
+est_server_handle_cacerts
+est_server_generate_auth_digest
+est_create_ah
+est_destroy_ah
+est_enroll_auth
+est_check_cmcRA
+est_server_parse_csr
+est_tls_uid_auth
+est_server_check_csr
+est_server_free_csr_oid_list
+est_server_add_oid_to_list
+est_server_csr_asn1_parse
+est_server_build_csr_oid_list
+est_server_all_csrattrs_present
+est_handle_simple_enroll
+est_handle_csr_attrs
+est_http_request
+est_server_start
+est_server_stop
+est_server_init
+est_server_set_auth_mode
+est_set_ca_enroll_cb
+est_set_ca_reenroll_cb
+est_set_http_auth_cb
+est_set_http_auth_required
+est_server_enable_srp
+est_server_enable_pop
+est_server_disable_pop
+est_server_set_retry_period
+est_server_set_ecdhe_curve
+est_server_set_dh_parms
+est_server_init_csrattrs
+est_server_enable_tls10
+est_server_enforce_csrattr
+est_server_set_read_timeout
+snprintf
+snprintf
+strnlen_s
+snprintf
+strnlen_s
+snprintf
+strnlen_s
+snprintf
+EST_LOG_INFO
+EVP_MD_CTX_create
+EVP_DigestInit_ex
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestFinal
+EVP_MD_CTX_destroy
+est_hex_to_str
+EVP_MD_CTX_create
+EVP_DigestInit_ex
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestUpdate
+EVP_DigestFinal
+EVP_MD_CTX_destroy
+malloc
+est_hex_to_str
+malloc
+memzero_s
+free
+BIO_new
+BIO_new_mem_buf
+BIO_push
+BIO_free_all
+X509_REQ_get_attr_by_NID
+X509_REQ_verify
+EVP_PKEY_free
+free
+malloc
+est_base64_decode
+est_server_csr_asn1_parse
+free
+EST_LOG_INFO
+est_server_build_csr_oid_list
+EST_LOG_INFO
+malloc
+est_base64_decode
+free
+est_server_free_csr_oid_list
+free
+est_server_parse_csr
+SSL_get_peer_certificate
+EST_LOG_INFO
+X509_REQ_free
+est_parse_uri
+free
+mg_start
+est_log_version
+strnlen_s
+malloc
+memzero_s
+strncpy_s
+DHparams_dup
+EST_LOG_INFO
+malloc
+strncpy_s
+EST_LOG_INFO
+EST_LOG_ERR
+ctx
+http_ctx
+fail_code
+ctx
+http_ctx
+delay
+ctx
+ca_certs
+ca_certs_len
+http_ctx
+path_seg
+ctx
+http_ctx
+path_seg
+ah
+HA1
+ah
+ctx
+http_ctx
+ssl
+path_seg
+reenroll
+cert
+pkcs10
+pkcs10_len
+ctx
+ssl
+req
+req
+head
+list
+new_entry
+list
+blob
+length
+offset
+list
+body
+body_len
+ctx
+body
+body_len
+ctx
+http_ctx
+ssl
+ct
+body
+body_len
+path_seg
+reenroll
+ctx
+http_ctx
+path_seg
+ctx
+http_ctx
+method
+uri
+body
+body_len
+ct
+ctx
+ctx
+ca_chain
+ca_chain_len
+cacerts_resp_chain
+cacerts_resp_chain_len
+cert_format
+http_realm
+tls_id_cert
+tls_id_key
+ctx
+amode
+ctx
+ctx
+ctx
+ctx
+required
+ctx
+ctx
+ctx
+ctx
+seconds
+ctx
+nid
+ctx
+parms
+ctx
+csrattrs
+csrattrs_len
+ctx
+ctx
+ctx
+timeout
+pkcs10
+p10_len
+pkcs7
+pkcs7_len
+user_id
+peer_cert
+path_seg
+ex_data
+pkcs10
+p10_len
+pkcs7
+pkcs7_len
+user_id
+peer_cert
+path_seg
+ex_data
+ctx
+ah
+peer_cert
+path_seg
+ex_data
+s
+ad
+arg
+EST_CTX
+void
+int
+EST_CTX
+void
+int
+EST_CTX
+unsigned
+int
+void
+char
+EST_CTX
+void
+char
+EST_HTTP_AUTH_HDR
+char
+EST_HTTP_AUTH_HDR
+EST_CTX
+void
+SSL
+char
+int
+X509
+unsigned
+int
+EST_CTX
+SSL
+X509_REQ
+X509_REQ
+EST_OID_LIST
+EST_OID_LIST
+EST_OID_LIST
+EST_OID_LIST
+unsigned
+long
+int
+EST_OID_LIST
+char
+int
+EST_CTX
+char
+int
+EST_CTX
+void
+SSL
+char
+char
+int
+char
+int
+EST_CTX
+void
+char
+EST_CTX
+void
+char
+char
+char
+int
+char
+EST_CTX
+EST_CTX
+unsigned
+int
+unsigned
+int
+EST_CERT_FORMAT
+char
+X509
+EVP_PKEY
+EST_CTX
+EST_HTTP_AUTH_MODE
+EST_CTX
+EST_CTX
+EST_CTX
+EST_CTX
+EST_HTTP_AUTH_REQUIRED
+EST_CTX
+EST_CTX
+EST_CTX
+EST_CTX
+int
+EST_CTX
+int
+EST_CTX
+DH
+EST_CTX
+char
+int
+EST_CTX
+EST_CTX
+EST_CTX
+int
+unsigned
+int
+unsigned
+int
+char
+X509
+char
+void
+unsigned
+int
+unsigned
+int
+char
+X509
+char
+void
+EST_CTX
+EST_HTTP_AUTH_HDR
+X509
+char
+void
+SSL
+int
+void
+   This function sends EST specific HTTP error responses.  /
+   This function sends a HTTP 202 Accepted response to the    client with the retry-after value from the CA. This   notifies the client that it should check back later to   see if the CSR was approved.  /
+   This function handles an incoming cacerts request from   the client.  /
+   Handle a CA certs request.  If the application layer has   registered a callback then call it.  Else, if the application   layer has provided a locally configured buffer then send it.   Else, return an error indicating that there are no CA Certs   available.  /
+   This function allocates an HTTP authentication header   structure, which is used to pass the auth credentials   to the application layer to allow the app to authenticate   an EST client.  /
+   This function frees all the elements on an HTTP   authentication header structure.  /
+   This function verifies that the peer either provided a certificate   that was verifed by the TLS stack, or HTTP authentication   credentials were provided.      Returns a EST_AUTH_STATE authorization result   /
+   This function is used to determine if the EST client, which could be   an RA, is using a certificate that contains the id-kp-cmcRA usage   extension.  When this usage bit is present, the PoP check is disabled   to allow the RA use case.      This logic was taken from x509v3_cache_extensions() in v3_purp.c (OpenSSL).     Returns 1 if the cert contains id-kp-cmcRA extended key usage extension.   Otherwise it returns 0.  /
+   This is a utility function to convert the base64 DER encoded   CSR to an OpenSSL X509_REQ pointer.  Returns NULL if there   was a problem.  /
+   This function performs a simple sanity check on a PKCS10   CSR.  It will check the signature in the CSR.   Returns 0 for success, non-zero if the sanity check failed.  /
+   Frees the linked-list containing the attributes in   the client CSR.  /
+   Adds a new entry to the tail of the list of attributes   in the client CSR.  /
+   This is a recursive routine that walks through an ASN.1 blob   looking for ASN.1 object definitions.  For any that are   found, the OID for the object is added to the EST_OID_LIST (first argument).   The end result of this routine is list will contain all the OID   values for every ASN.1 object in the blob.   This code was shamelessly taken from OpenSSL ans1_parse2(), which   explains some of the poorly chosen variable names.  /
+   Utility function that populates a linked-list containing   the OID (or name) of the attributes present in the   client CSR.  /
+   This function checks the locally configured CSR attributes   against the attributes in the CSR.  If any attributes are   missing from the CSR, then an error is returned.  /
+   This function is used by the server to process an incoming   Simple Enroll request from the client.  /
+   This function is used by the server to process an incoming   csr attributes request from the client.  /
+   This function should be called by the web server layer when   a HTTP request arrives on the listening port of the EST server.   It will determine the EST request type and dispatch the request   to the appropriate handler.     Paramters:        ctx:	    Pointer to EST_CTX        http_ctx:   Context pointer from web server        method:     The HTML method in the request, should be either "GET" or "POST"  	uri:	    pointer to HTTP URI  	body:	    pointer to full HTML body contents  	body_len:   length of HTML body  	ct:         HTML content type header  /
+!  est_server_start() is used by an application to start     the EST server after est_server_init() has been called and     all the required callback functions have been provided by     the application.           ctx Pointer to the EST context      libEST uses HTTP code from the Mongoose HTTP server.     This function allows the application to start the HTTP     services layer, which is required by EST.        EST_ERROR.  /
+!  est_server_stop() is used by an application to stop     the EST server.  This should be called prior to est_destroy().        ctx Pointer to the EST context      libEST uses HTTP code from the Mongoose HTTP server.     This function allows the application to stop the HTTP     services layer.        EST_ERROR.  /
+!  est_server_set_auth_mode() is used by an application to configure     the HTTP authentication method to use for validating the identity of     an EST client.        ctx   Pointer to the EST context      amode Must be one of the following: AUTH_BASIC, AUTH_DIGEST, AUTH_TOKEN      This function can optionally be invoked by the application to change the     default HTTP authentication mode.  The default mode is HTTP Basic     authentication.  An application may desire to use Digest or Token     authentication instead, in which case this function can be used to set     that mode.  This function must be invoked prior to starting the EST     server.       EST_ERROR.  /
+!  est_set_ca_enroll_cb() is used by an application to install     a handler for signing incoming PKCS10 requests.          ctx Pointer to the EST context      cb Function address of the handler      This function must be called prior to starting the EST server.  The     callback function must match the following prototype:          int func(unsigned char, int, unsigned char, int, char, X509, char , void );      This function is called by libEST when a certificate request     needs to be signed by the CA server.  The application will need     to forward the request to the signing authority and return     the response.  The response should be a PKCS7 signed certificate.        EST_ERROR.  /
+!  est_set_ca_reenroll_cb() is used by an application to install     a handler for re-enrolling certificates.          ctx Pointer to the EST context      cb Function address of the handler      This function must be called prior to starting the EST server.  The     callback function must match the following prototype:          int func(unsigned char, int, unsigned char, int, char, X509)      This function is called by libEST when a certificate      needs to be renewed by the CA server.  The application will need     to forward the request to the signing authority and return     the response.  The response should be a PKCS7 signed certificate.        EST_ERROR.  /
+!  est_set_http_auth_required() is used by an application to define whether     HTTP authentication should be required in addition to using client certificates.        ctx Pointer to the EST context      required Flag indicating that HTTP authentication is required. Set      to HTTP_AUTH_REQUIRED value to require HTTP auth.  Set to HTTP_AUTH_NOT_REQUIRED      if HTTP auth should occur only when TLS client authentication fails.        EST_ERROR.      The default mode is HTTP_AUTH_REQUIRED.  This means that HTTP authentication     will be attempted even when TLS client authentication succeeds.  If HTTP     authentication is only needed when TLS client auth fails, then set this     to HTTP_AUTH_NOT_REQUIRED.  /
+!  est_server_enable_pop() is used by an application to enable      the proof-of-possession check on the EST server.  This proves the      EST client that sent the CSR to the server is in possesion of the      private key that was used to sign the CSR.  This binds the TLS      session ID to the CSR.      Note, if the CSR attributes configured on the server require PoP      checking, then there is no need to call this function to enable     PoP.  The PoP will be enabled automatically under this scenario.          Note, PoP checking is not possible when an EST proxy is used to     between the EST client and EST server.  Since the proxy will not      be in possession of the private key, an EST server woul fail the     PoP check.  However, an EST proxy can enable this feature to ensure      the EST client has the signing key.       ctx Pointer to the EST context      This function may be called at any time.           EST_ERROR.  /
+!  est_server_disable_pop() is used by an application to disable      the proof-of-possession check on the EST server.  Please see     the documenation for est_server_enable_pop() for more information     on the proof-of-possession check.       ctx Pointer to the EST context      This function may be called at any time.           EST_ERROR.  /
+!  est_server_set_retry_period() is used by an application to       change the default retry-after period sent to the EST client when     the CA server is not configured for auto-enroll.  This retry-after     value notifies the client about how long it should wait before     attempting the enroll operation again to see if the CA has      approved the original CSR.         ctx Pointer to the EST context      seconds Number of seconds the server will use in the            retry-after response.      This function may be called at any time after a context has     been created.           EST_ERROR.  /
+!  est_server_set_ecdhe_curve() is used by an application to      specify the ECC curve that should be used for ephemeral diffie-hellman     keys during the TLS handshake.  Ephemeral diffie-hellman is enabled     by libEST and provides better forward secrecy.  If the curve     is not specified by the application using this function, then     the prime256v1 curve is used as the default curve.          ctx Pointer to the EST context      nid OpenSSL NID value for the desired curve      This function must be called prior to starting the EST server.       The NID values are defined in <openssl/obj_mac.h>.  Typical NID      values provided to this function would include: 	 	NID_X9_62_prime192v1 	NID_X9_62_prime256v1 	NID_secp384r1 	NID_secp521r1        EST_ERROR.  /
+!  est_server_set_dh_parms() is used by an application to      specify the Diffie-Hellman parameters to be used for single     use DH key generation during the TLS handshake.  If these      parameters are not used, then single-use DH key generation     is not enabled.  This should be enabled to improve the      forward secrecy of the TLS handshake operation.            The DH parameters provided through this API should not be     hard-coded in the application.  The parameters should be     generated at the time of product installation.  Reusing the     parameters across multiple installations of the product     results in a vulnerable product.          ctx Pointer to the EST context      parms Pointer to OpenSSL DH parameters      This function must be called prior to starting the EST server.          EST_ERROR.  /
+!  est_server_enable_tls10() is a deprecated function. TLS 1.0     is a violation of RFC7030 and it is no longer supported by the EST library.     This function will log an error message and return EST_ERR_BAD_MODE.           ctx Pointer to the EST context      This function must be called prior to starting the EST server.          EST_ERROR.  /
+!  est_server_enforce_csrattrs() is used by an application to      enable checking of the CSR attributes on the EST server.  When     enabled, the EST client must provide all the CSR attributes that     were in the /csrattrs response sent by the server.  The enrollment     will fail if the client fails to provide all the CSR attributes.     This setting applies to simple enroll and reenroll operations.     This setting applies only to server mode and has no bearing on     proxy mode operation.           ctx Pointer to the EST context      This function must be called prior to starting the EST server.          EST_ERROR.  /
+!  est_server_set_read_timeout() is used by an application to set     timeout value of server read operations.  Once a socket is opened the     EST server begins attempting to read from this socket.  This     timeout value limits the amount of time the client will wait for the     response.  The default value is set to EST_SSL_READ_TIMEOUT_DEF.       ctx Pointer to the EST context      timeout Integer value representing the read timeout in seconds.     The minimum value is EST_SSL_READ_TIMEOUT_MIN and the maximum value is     EST_SSL_READ_TIMEOUT_MAX.        EST_ERROR.  /
+       Send HTTP header      /
+       Send the CA certs in the body      /
+       If there is a call back set then call it.       otherwise, if there is a locally configured cacerts buffer,       then return that.       otherwise, return an error indicating that we don't have any cacerts      /
+       Calculate HA2 using method, URI,      /
+       Calculate auth digest using HA1, nonce, nonce count, client nonce, qop, HA2      /
+       Get client certificate from TLS stack.        /
+       See if SRP is being used.  If so, there will be no       certificate.      /
+       If the application layer has enabled HTTP authentication we       will attempt HTTP authentication when TLS client auth fails       or when the require_http_auth flag is set by the application.       All this assumes the application layer has provided the HTTP auth       callback facility.      /
+       Get the extended key usage extension.  If found       loop through the values and look for the ik-kp-cmcRA       value in this extension.      /
+       Get the original pkcs10 request from the client      /
+       Read the PEM encoded pkcs10 cert request      /
+       Get the index of the challengePassword attribute in the request      /
+       Extract the public key from the CSR      /
+       Verify the signature in the CSR       /
+       Check the result      /
+       If the list doesn't have a head yet, the new entry       simply becomes the head      /
+       grab some space to hold the decoded CSR data      /
+       Decode the CSR data      /
+       Build the list of attributes present in the CSR.  This list will be       used later when we confirm the required attributes are present.      /
+       Get the CSR attributes configured on the server.  We'll need to        look in the CSR to make sure the CSR provided each of these.        Use the callback if configured, otherwise use the local copy.      /
+        We have the CSR configured on the server and it needs base64 decoding.       Check smallest possible base64 case here for now        and sanity test will check min/max value for ASN.1 data      /
+       grab some space to hold the decoded CSR data      /
+       Decode the CSR data      /
+       pointer fun starts here, joy to OpenSSL      /
+ make sure its long enough to be ASN.1 /
+       Iterate through the CSR attributes configured on the server      /
+       One file check to ensure we didn't missing something when parsing       the locally configured CSR attributes.      /
+       If we're lucky enough to make it this far, then it means all the       locally configured CSR attributes were found in the client's CSR.      /
+       Make sure the client has sent us a PKCS10 CSR request      /
+       Authenticate the client      /
+       Parse the PKCS10 CSR from the client      /
+       Perform a sanity check on the CSR      /
+       Get the peer certificate if available.  This       identifies the client. The CA may desire       this information.      /
+       Do the PoP check (Proof of Possession).  The challenge password       in the pkcs10 request should match the TLS unique ID.       The PoP check is not performend when the client is an RA.      /
+       Check if we need to ensure the client included all the       CSR attributes required by the CA.      /
+ body now points to the pkcs10 data, pass       this to the enrollment routine /
+       Peer cert is no longer needed, delete it if we have one      /
+       Invoke CA server callback to retrieve the CSR.  Callback takes priority       over saved values in the context.       Note: there is no need to authenticate the client (see sec 4.5)      /
+       Verify the context is for a server, not a client      /
+       See if this is a cacerts request      /
+       Sanity check the input      /
+        Check the length value, it should match.      /
+       Load the CA certificates into local memory and retain       for future use.  This will be used for /cacerts requests.       They are optional parameters.  The alternative is for the       app layer to provide callback and return them on the fly.      /
+        Create a new ASN object for the id-kp-cmcRA OID.         OpenSSL doesn't define this, so we need to create it       ourselves.       http://www.openssl.org/docs/crypto/OBJ_nid2obj.html      /
+       Verify the context is for a server, not a client or proxy      /
+ Free old version if previously initialized /
+ caller just wanted to clear it, so return /
+       In order to run Client negative unit testing the parameter,        PoP and parse checks all need to be disabled via #define       in a couple of places here.      /
+        check smallest possible base64 case here for now        and sanity test will check min/max value for ASN.1 data      /
+ assume PoP not in CSR attributes /
+       See if this is a simple enrollment request      /
+       See if this is a re-enrollment request      /
+       See if this is a keygen request       FIXME: this is currently not implemented      /
+ Only POST is allowed /
+       See if this is a CSR attributes request      /
+       Send a 404 error if the URI didn't match       /
+ 	  Get the next attributes 	 /
+ 	  this means the user was authorized, either through 	  HTTP authoriztion or certificate authorization 	 /
+           Since HTTP digest auth uses MD5, make sure we're not in FIPS mode.          /
+ fallthrough /
+ 	  Get the length of the password so it can be zeroized  	 /
+           Try HTTP authentication.          /
+ 	  Iterate through the extended key usage values 	 /
+ 	  If PoP is enabled, we must fail at this point 	  since the client didn't send the channel binding 	  info in the CSR. 	 /
+           Get a reference to the attribute now that we know where it's located 	  RFC 7030 requires that we check the PoP when it's present          /
+           If we found the attribute, get the actual value of the challengePassword          /
+           Now that we have the challengePassword from the client cert request,           compare it to the TLS UID we calculated on the server side.           This implements the PoP check to verify the client holds the private           key used to sign the cert request.          /
+ 	  Walk the list to find the tail, add the new entry to the end 	 /
+           Send HTTP header          /
+           Send the signed PKCS7 certificate in the body          /
+           The CA did not sign the request and has asked the           client to retry in the future.  This may occur if           the CA is not configured for automatic enrollment.           Send the HTTP retry response to the client.          /
+ Only GET is allowed /
+ rc = est_handle_cacerts(ctx, ctx->ca_certs, ctx->ca_certs_len, /
+                         http_ctx, path_seg); /
+ rc = est_server_handle_cacerts(ctx, http_ctx, path_seg); /
+ Only POST is allowed /
+           Get the SSL context, which is required for authenticating           the client.          /
+ Only POST is allowed /
+           Get the SSL context, which is required for authenticating           the client.          /
+ Only GET is allowed /
+ 	      If this is the challengePassword, no need to check it. 	      This is already covered when authenticating the client 	     /
+ 	      If there were no attrubutes in the CSR, we can 	      bail now. 	     /
+ 	      Iterate through the attributes that are in the CSR 	     /
+ have to adjust string pointer here, move on to the next item /
+ 	      Invoke the application specific auth check now  	      that we have the user's credentials 	     /
+ 	      Compare the current iteration with the global 	      id-kp-cmcRA value that was created earlier 	     /
+ We need to bail since the client is using a bogus cert, 	      no need to contiue with HTTP authentication below /
+ Send a 204 response indicating the server doesn't have a CSR /

@@ -1,0 +1,21 @@
+us logger stderr 
+generat privat key 
+us clean 
+us start server 
+shutdown antinat 
+shutdown haproxi 
+us init suit 
+us destroy suit 
+client manual cert verifi 
+us test 
+us test 
+us test 
+us test 
+us test 
+us test 
+us test 
+us test 
+us test 
+us test 
+client proxi enabl 
+us add suit 

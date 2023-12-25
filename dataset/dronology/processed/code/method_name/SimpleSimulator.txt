@@ -1,0 +1,8 @@
+simpl simul 
+start batteri drain 
+get voltag 
+set flight path 
+check point 
+destin reach 
+stop batteri drain 
+

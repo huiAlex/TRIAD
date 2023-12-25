@@ -1,0 +1,51 @@
+/**
+ * A terrestrial position defined by a normal vector (N-vector) and an altitude.
+ * 
+ * An N-vector is a normal Vector that points out from the surface of the WGS-84
+ * reference ellipsoid. The normal vector is combined with an altitude which
+ * represents the distance above (or below) the reference ellipsoid (note this
+ * is the distance above sea level as sea level is defined as the surface of the
+ * ellipsoid in WGS-84). The n-vector and altitude together precisely define a
+ * position on Earth. The n-vector should be a unit vector (i.e. a vector with a
+ * magnitude = 1). The altitude should be in meters.
+ *  
+ *  *  
+ */
+
+/**
+	 * 
+	 * 	 *            the x component of the normal vector
+	 * 	 *            the y component of the normal vector
+	 * 	 *            the z component of the normal vector
+	 * 	 *            the distance above the reference ellipsoid (negative altitudes
+	 *            represent altitude below this ellipsoid).
+	 */
+
+/**
+	 * 	 */
+
+/**
+	 * 	 */
+
+/**
+	 * 	 */
+
+/**
+	 * 	 */
+
+/**
+	 * Finds the distance in meters from this NVector to another.
+	 * 
+	 * This is the distance that a laser would travel.
+	 * 
+	 * 	 *            the other position to find the position to.
+	 * 	 */
+
+/**
+	 * 	 *         Earth centered Earth fixed reference frame.
+	 */
+
+/**
+	 * 	 *         altitude.
+	 */
+

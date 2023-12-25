@@ -1,0 +1,3 @@
+changMode:1
+eventRelat:1
+logEvent:1

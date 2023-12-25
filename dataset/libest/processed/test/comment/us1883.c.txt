@@ -1,0 +1,93 @@
+us unit test user stori enabl token auth mode est client march copyright cisco system right reserv 
+follow csr generat use follow openssl command use cat rsa req file openssl req newkey rsa keyout rsakey pem keyform pem rsa req outform pem 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+auth credenti token cb applic layer callback function return token base authent credenti call regist est client use est client set auth cred cb test function requir set global valu order make callback oper way test case want auth cred forc error tell function forc respons code error test token pointer hard code string token string return callback provid token credenti heap base buffer ownership buffer implicit transfer et client librari return 
+auth credenti basic cb same token base abov instead return basic credenti userid password 
+auth credenti digest cb same basic base abov instead verfi auth mode pass digest 
+test est client set auth cred cb api exercis paramet 
+us simpl enrol use test case perform simpl enrol 
+perform simpl enrol first order get valid cert perform reenrol simpl enrol need success current use basic mode becaus est server doe token base support pdb note onc server side token support implement function option updat token mode first enrol absolut necessari sinc purpos test reenrol initi enrol need just get cert 
+test applic layer did regist callback caus http aithent header empti token credenti test applic layer doe regist callback est client get challeng find callback regist goe credenti store context noth note way preload credenti flow alway work enrol sent token credenti server fail doe give certif 
+test applic layer regist callback doe set ani credenti invok same result previous test test applic layer regist callback est client get challeng call callback get empti credenti structur end send http auth header credenti note way preload credenti flow alway work enrol sent token credenti server fail doe give certif 
+test good token sent server accept cert generat return test applic layer regist callback respond valid token enrol sent token credenti server set match token send cert 
+test est client receiv token auth challeng test applic layer regist callback respond fail return code 
+test saniti test basic auth mode test server basic mode client applic regist basic base callback client send estus estpwd credenti get cert 
+test make sure enrol work credenti callback flow obtain credenti test server token mode client applic regist token base callback client send valid token credenti get cert 
+test token credenti long test server token mode told match good token client applic regist token base callback told give token long client send corrupt token doe match good token 
+test test digest mode demand credenti flow test server digest mode note mean server expect estus estpwd estrealm valu hardcod data st server st server start estrealm return realm client client return request client applic regist digest base callback client send valid digest get cert 
+test valid token provid appliact callback wrong token test applic layer regist callback respond valid token server set token mode differ token enrol sent token credenti server set match token send cert 
+main function set run test return cue success success run anoth cunit error code failur 
+read ca certif 
+start instanc est server automat enrol enabl 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat rsa keypair assign pkey return 
+report callback call 
+see test request forc error respons code callback 
+report callback call 
+see test request forc error respons code callback 
+report callback call 
+see test request forc error respons code callback 
+creat client context 
+forgot specifi ani paramet context get caught 
+valid call 
+attempt reset callback function 
+creat client context 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+cleanup 
+creat client context 
+make sure server current basic auth mode 
+set est server address port 
+generat privat key 
+use simplifi api enrol csr 
+retriev cert given us est server 
+creat client context 
+cert switch server token mode 
+set est server address port 
+attempt reenrol token mode convert cert warn pure hackeri pdb convers code come test case 
+new cert onli cert pkcs blob shouldn iter find 
+pdb note moment expect fail sinc server doe understand request token authent onc complet assert begin fail need chang pass respons 
+cleanup 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+tell server token check 
+set est client perform simpl enrol pass callback function catch handl request token auth enrol better fail miss credenti 
+callback regist invok 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+tell server token check 
+set est client perform simpl enrol regist token base callback set pass token enrol better fail miss credenti 
+callback call 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+tell server token check 
+set est client perform simpl enrol enrol succeed 
+callback call 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+forc callback give fail return code 
+set est client perform simpl enrol enrol better fail credenti suppli applic layer eventu failur server miss credenti 
+callback call 
+switch server basic mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+set est client perform simpl enrol pass callback function catch handl request token auth enrol pass becaus basic mode fulli work make sure callback call ensur credenti came callback 
+callback call 
+tell server token check 
+set est client perform simpl enrol enrol succeed 
+callback call 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+tell server token check 
+forc callback give fail return code 
+set est client perform simpl enrol pass callback function catch handl request token auth 
+callback call 
+switch server digest mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+set est client perform simpl enrol pass callback function catch handl request token auth enrol pass becaus digest mode fulli work make sure callback call ensur credenti came callback 
+callback call 
+switch server token mode note see equival call numer place probabl safe test set danger chang fli oper set note return code ani set enabl function 
+tell server token check 
+set est client perform simpl enrol enrol fail becaus token match 
+callback call 
+add suit registri 
+add test suit 
+test token set anyth need alloc space heap copi valu 
+far token ptr point string contain token return assign return success 
+use strlen string larg need test est client 

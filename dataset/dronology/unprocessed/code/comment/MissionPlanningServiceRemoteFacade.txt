@@ -1,0 +1,14 @@
+/**
+ * 
+ * Remote facade for handling MissionPlanning
+ * Initial implementation of mission planning capabilities. 
+ * Allows retrieving sending a mission plan as JSON String to Dronology.
+ * 
+ * 
+ *  *
+ */
+
+/**
+	 * 
+	 */
+

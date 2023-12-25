@@ -1,0 +1,127 @@
+us unit test user stori client simpl enrol septemb copyright cisco system right reserv 
+follow cert use fqdn test 
+note array generat use xdd req der req 
+routin call cunit initi test suit use alloc data open ani resourc requir test case 
+routin call cunit uniniti test suit use dealloc data close ani resourc use test case 
+callback function pass est client init 
+sign certif request use digest key pass return openssl error code req sign ctx 
+function perform basic simpl enrol use uid pwd identifi client server use varieti test case modul 
+simpl enrol basic test perform simpleenrol use user id password identifi client server ident certif use client 
+simpl enrol csr basic test perform simpleenrol use user id password identifi client server ident certif use client test case use altern enrol method csr provid applic layer libest generat csr 
+simpl enrol csr null basic test perform simpleenrol use user id password identifi client server ident certif use client test case use altern enrol method csr provid applic layer libest generat csr attempt pass null csr fail 
+simpl enrol csr corrupt test check req helper function work propleri 
+simpl enrol fqdn mismatch hostnam cn test confirm mismatch host server cert cn result auth failur tls layer client side 
+simpl enrol fqdn mismatch ipv address cn test confirm mismatch ip address server cert cn result auth failur tls layer client side note test redund sinc ip address match logic onli occur dnsname use instead commonnam 
+simpl enrol fqdn match wildcard cn test confirm wildcard match logic cn work cert use wildcard pattern cisco com server address localhost cisco com 
+simpl enrol fqdn mismatch wildcard cn test confirm wildcard match logic cn work cert use wildcard pattern googl com server address localhost cisco com 
+simpl enrol fqdn match hostnam subjectaltnam test confirm match host server cert subjectaltnam ext result auth success 
+simpl enrol fqdn mismatch hostnam subjectaltnam test confirm mismatch host server cert subjectaltnam ext result auth failur 
+simpl enrol fqdn mismatch ipv address subjectaltnam test confirm mismatch ipv address server cert subjectaltnam ext result auth failur 
+simpl enrol fqdn match ipv address subjectaltnam test confirm match ipv address server cert subjectaltnam ext result auth success 
+simpl enrol fqdn match hostnam subjectaltnam wildcard test confirm hostnam match wildcard pattern server cert subjectaltnam ext result auth success 
+simpl enrol fqdn mismatch hostnam subjectaltnam wildcard test confirm hostnam mismatch wildcard pattern server cert subjectaltnam ext result auth fail 
+simpl enrol crl check enabl client enabl crl check client side generat crl server cert revok enrol succeed 
+simpl enrol crl check enabl client enabl crl check client side generat crl server cert revok enrol fail 
+simpl enrol receiv retri respons client issu enrol request receiv retri respons ensur retri valu obtain client 
+read ca certif 
+start instanc est server automat enrol enabl 
+print specif cert 
+next call print signatur use fingerprint fingerprint check anticip valu determin server cert approv 
+creat rsa keypair assign pkey return 
+setup version number 
+add common entri 
+set public key request 
+encod use der asn set modifi flag req becaus openssl cach copi der encod data case set flag tell openssl run asn encod use cach copi 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+generat csr 
+get latest csr attribut 
+use altern api enrol exist csr 
+retriev cert given us est server 
+cleanup 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+use altern api enrol null csr 
+cleanup 
+first tri pem decod 
+next tri der decod 
+next tri invalid format 
+next tri invalid csr length 
+next tri valid pem encod csr 
+next tri valid der encod csr 
+creat client context 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+generat new csr 
+sign csr 
+get latest csr attribut 
+use altern api enrol exist csr pass 
+cleanup 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+spin new instanc est server use certif contain bogus hostnam cn 
+stop exist server test case need server use differ cert 
+fqdn test complet start normal server 
+generat crl append ca chain use client side 
+read ca certif 
+creat client context 
+enabl crl check client 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+retriev cert given us est server 
+cleanup 
+revok server cert generat crl append ca chain use client side 
+read ca certif 
+creat client context 
+enabl crl check client 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+cleanup 
+stop exist server test case need server manual enrol mode 
+start server manual enrol mode 
+creat client context use default ca cert 
+set authent mode use user id password 
+set est server address port 
+generat privat key 
+get latest csr attribut 
+use simplifi api enrol csr 
+cleanup 
+add suit registri 
+add test suit import chang order test test stop est server restart use differ cert chang order fals negat occur 
+get retri durat make sure set default valu 

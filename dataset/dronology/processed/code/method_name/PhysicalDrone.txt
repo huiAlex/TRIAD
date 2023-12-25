@@ -1,0 +1,24 @@
+physic drone 
+get latitud 
+get longitud 
+get altitud 
+fli 
+get coordin 
+land 
+take 
+get batteri status 
+
+set voltag check point 
+destin reach 
+updat 
+updat coordin 
+updat drone state 
+set ground speed 
+set veloc 
+updat batteri level 
+updat veloc 
+updat collis avoid 
+get latest drone snapshot 
+updat mode 
+send command 
+resend command 

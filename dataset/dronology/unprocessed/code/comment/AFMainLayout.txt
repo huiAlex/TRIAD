@@ -1,0 +1,9 @@
+/**
+ * This is the main layout for the Active Flights UI
+ * 
+ *  */
+
+/**
+	 * determines if the map should continue in follow mode
+	 */
+

@@ -1,0 +1,10 @@
+datumConfirm:1
+passwordLogin:1
+confirmDatum:1
+insertDatum:1
+failValid:1
+maskMain:1
+validFail:1
+loginPassword:1
+datumInsert:1
+mainMask:1

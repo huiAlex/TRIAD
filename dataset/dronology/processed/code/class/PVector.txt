@@ -1,0 +1,36 @@
+vector 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+obj 
+
+
+vector 
+get 
+get 
+get 
+vector 
+lla coordin 
+hash code 
+string 
+equal 
+vector 
+
+posit earth repres coordin earth center earth fix refer frame 
+origin frame center mass earth 
+axi point equat meet prime meridean latitud longitud 
+axi point geograph north pole latitud longitud undefin 
+axi deriv use right hand rule point latitud longitud 
+unit meter 
+ 
+distanc meter axi point center mass earth equat meet prime meridean latitud longitud distanc meter axi point center mass earth latitud longitud distanc meter axi point center mass earth geograph north pole latitud longitud undefin 
+ 
+ 
+ 
+ 
+ 

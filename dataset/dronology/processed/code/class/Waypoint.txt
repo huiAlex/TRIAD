@@ -1,0 +1,27 @@
+waypoint 
+serial version uid 
+coordin 
+destin reach 
+approachingspe 
+
+
+coordin 
+obj 
+reach 
+approachingspe 
+
+
+get coordin 
+waypoint 
+waypoint 
+equal 
+reach 
+hash code 
+reach 
+get approachingspe 
+set approachingspe 
+
+waypoint implement use flight plan fight rout repres coordin lla coordin approach speed respect waypoint 
+class constitu field serializ class pass remot interfac 
+ 
+ 

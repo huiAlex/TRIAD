@@ -1,0 +1,14 @@
+connect request messag 
+serial version uid 
+messag type 
+
+
+groundstat id 
+type 
+
+
+connect request messag 
+set type 
+
+new gcs connect dronolog send connect request messag 
+ 

@@ -1,0 +1,53 @@
+afa sign rout compon 
+serial version uid 
+logger 
+content 
+content 
+side content 
+button 
+side button 
+panel content 
+fr layout 
+side panel 
+cancel 
+appli 
+left 
+right 
+num rout 
+hover switch 
+return home 
+index 
+box id 
+provid 
+flight rout servic 
+flight rout info 
+flight info servic 
+drone imag 
+uav status 
+
+af drag layout 
+flight info 
+
+uav status 
+side panel 
+status content 
+rout info 
+index 
+
+
+afa sign rout compon 
+creat content 
+creat side pannel 
+creat status pannel 
+get rout assign 
+add rout 
+remov rout 
+get cancel 
+get appli 
+get return home 
+get hover 
+
+ui assign new rout uav 
+ 
+ 
+remov rout af drag layout 

@@ -1,0 +1,6 @@
+relatInform:1
+laboratoriDatum:2
+informRetriev:1
+datumLaboratori:2
+retrievInform:1
+informRelat:1

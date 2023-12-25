@@ -1,0 +1,7 @@
+activUav:2
+requestActiv:1
+uavActiv:2
+rejectRequest:1
+numberMaximum:2
+tablishNumber:1
+numberUav:2

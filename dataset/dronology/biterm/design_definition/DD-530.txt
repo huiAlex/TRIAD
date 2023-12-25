@@ -1,0 +1,8 @@
+sendUav:1
+reachWaypoint:1
+waypointNext:1
+sendWaypoint:1
+visitWaypoint:1
+specifiWaypoint:1
+visitPlan:1
+planFlight:2

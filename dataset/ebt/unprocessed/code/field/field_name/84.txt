@@ -1,0 +1,7 @@
+avgShapeSize_Original
+avgShapeSize_Speculate
+avgTextSize
+writeTime
+noShapes
+noTextItems
+bandWidth

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" xmlns:pos="http://www.srcML.org/srcML/position" revision="1.0.0" language="Java" filename="flatCode/IdentifierCreator.java" pos:tabs="8"><package pos:start="1:1" pos:end="1:41">package <name pos:start="1:9" pos:end="1:40"><name pos:start="1:9" pos:end="1:11">edu</name><operator pos:start="1:12" pos:end="1:12">.</operator><name pos:start="1:13" pos:end="1:14">nd</name><operator pos:start="1:15" pos:end="1:15">.</operator><name pos:start="1:16" pos:end="1:24">dronology</name><operator pos:start="1:25" pos:end="1:25">.</operator><name pos:start="1:26" pos:end="1:35">monitoring</name><operator pos:start="1:36" pos:end="1:36">.</operator><name pos:start="1:37" pos:end="1:40">tree</name></name>;</package>
+
+<comment type="block" format="javadoc" pos:start="3:1" pos:end="13:3">/**
+ * 
+ * Factory Class for Artifact Identifier for creating Artifact Identifier for
+ * the VarModel &lt;br&gt;
+ * &lt;br&gt;
+ * &lt;b&gt; Only use the factory methods for creating Artifact Identifier! &lt;/b&gt;
+ * &lt;p/&gt;
+ * 
+ * @author Michael Vierhauser
+ * 
+ */</comment>
+<class pos:start="14:1" pos:end="45:1"><specifier pos:start="14:1" pos:end="14:6">public</specifier> class <name pos:start="14:14" pos:end="14:30">IdentifierCreator</name> <block pos:start="14:32" pos:end="45:1">{
+
+	
+
+	<comment type="line" pos:start="18:9" pos:end="18:88">// public static ArtifactIdentifier createIdentifier(String gid, UAVStateMessage</comment>
+	<comment type="line" pos:start="19:9" pos:end="19:21">// message) {</comment>
+	<comment type="line" pos:start="20:9" pos:end="20:45">// String uavid = message.getUavid();</comment>
+	<comment type="line" pos:start="21:9" pos:end="21:77">// return new ArtifactIdentifier(ArtifactIdentifier.ROOT, gid, uavid,</comment>
+	<comment type="line" pos:start="22:9" pos:end="22:50">// UAVStateMessage.class.getSimpleName());</comment>
+	<comment type="line" pos:start="23:9" pos:end="23:10">//</comment>
+	<comment type="line" pos:start="24:9" pos:end="24:12">// }</comment>
+	<comment type="line" pos:start="25:9" pos:end="25:10">//</comment>
+	<comment type="line" pos:start="26:9" pos:end="26:72">// public static ArtifactIdentifier createIdentifier(String gid,</comment>
+	<comment type="line" pos:start="27:9" pos:end="27:42">// UAVMonitoringMessage message) {</comment>
+	<comment type="line" pos:start="28:9" pos:end="28:45">// String uavid = message.getUavid();</comment>
+	<comment type="line" pos:start="29:9" pos:end="29:77">// return new ArtifactIdentifier(ArtifactIdentifier.ROOT, gid, uavid,</comment>
+	<comment type="line" pos:start="30:9" pos:end="30:55">// UAVMonitoringMessage.class.getSimpleName());</comment>
+	<comment type="line" pos:start="31:9" pos:end="31:10">//</comment>
+	<comment type="line" pos:start="32:9" pos:end="32:12">// }</comment>
+
+	<comment type="line" pos:start="34:9" pos:end="34:72">// public static ArtifactIdentifier createIdentifier(String gid,</comment>
+	<comment type="line" pos:start="35:9" pos:end="35:41">// IMonitorableMessage message) {</comment>
+	<comment type="line" pos:start="36:9" pos:end="36:52">// if (message instanceof UAVStateMessage) {</comment>
+	<comment type="line" pos:start="37:9" pos:end="37:67">// return createIdentifier(gid, (UAVStateMessage) message);</comment>
+	<comment type="line" pos:start="38:9" pos:end="38:12">// }</comment>
+	<comment type="line" pos:start="39:9" pos:end="39:57">// if (message instanceof UAVMonitoringMessage) {</comment>
+	<comment type="line" pos:start="40:9" pos:end="40:72">// return createIdentifier(gid, (UAVMonitoringMessage) message);</comment>
+	<comment type="line" pos:start="41:9" pos:end="41:12">// }</comment>
+	<comment type="line" pos:start="42:9" pos:end="42:23">// return null;</comment>
+	<comment type="line" pos:start="43:9" pos:end="43:12">// }</comment>
+
+}</block></class>
+</unit>

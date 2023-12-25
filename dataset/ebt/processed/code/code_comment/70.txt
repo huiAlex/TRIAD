@@ -1,0 +1,6 @@
+action open log databas 
+action exit 
+action open event popup menu 
+action open event 
+action doubl click subscrib 
+action 

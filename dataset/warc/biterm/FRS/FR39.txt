@@ -1,0 +1,2 @@
+interfacImplement:1
+implementInterfac:1
